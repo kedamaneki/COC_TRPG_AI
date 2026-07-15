@@ -1,0 +1,163 @@
+{
+    "pc_01": {
+        "profile": {
+            "name": "マクガフィン刑事",
+            "occupation": "刑事",
+            "age": 38,
+            "gender": "男",
+            "personality": "ぶっきらぼうだが正義感が強い。現場勘に自信がある。",
+            "action_guide": "率先して現場を調査し、目星・聞き耳を優先。危険時は仲間を庇う。"
+        },
+        "attributes": {
+            "STR": 55,
+            "CON": 60,
+            "POW": 55,
+            "DEX": 70,
+            "APP": 50,
+            "SIZ": 60,
+            "INT": 65,
+            "EDU": 60,
+            "SAN": {
+                "current": 55,
+                "max": 99,
+                "session_start": 55
+            },
+            "HP": {
+                "current": 12,
+                "max": 12
+            },
+            "MP": {
+                "current": 11,
+                "max": 11
+            },
+            "LUCK": 45,
+            "MOV": 8,
+            "BLD": 0,
+            "DB": "0"
+        },
+        "skills": {
+            "目星": 65,
+            "聞き耳": 55,
+            "心理学": 45,
+            "近接戦闘": 55,
+            "射撃（拳銃）": 50,
+            "回避": 35,
+            "威圧": 60,
+            "法律": 40
+        },
+        "weapons": [
+            {
+                "name": "サービス・リボルバー",
+                "skill": "射撃（拳銃）",
+                "damage": "1D10",
+                "apply_damage_bonus": false,
+                "type": "firearm"
+            },
+            {
+                "name": "警棒",
+                "skill": "近接戦闘",
+                "damage": "1D6",
+                "apply_damage_bonus": true
+            }
+        ],
+        "inventory": [],
+        "memo": "ボストン市警のベテラン刑事。不可解な事件の匂いを嗅ぎつけると動き出す。",
+        "states": []
+    },
+    "pc_02": {
+        "profile": {
+            "name": "エレノア教授",
+            "occupation": "民俗学教授",
+            "age": 42,
+            "gender": "女",
+            "personality": "冷静で分析的。丁寧語だが芯は強い。",
+            "action_guide": "図書館・歴史・目星で手がかりを集める。単独行動より相談（OOC）を好む。"
+        },
+        "attributes": {
+            "STR": 40,
+            "CON": 50,
+            "POW": 70,
+            "DEX": 55,
+            "APP": 65,
+            "SIZ": 50,
+            "INT": 80,
+            "EDU": 85,
+            "SAN": {
+                "current": 60,
+                "max": 99,
+                "session_start": 60
+            },
+            "HP": {
+                "current": 10,
+                "max": 10
+            },
+            "MP": {
+                "current": 14,
+                "max": 14
+            },
+            "LUCK": 50,
+            "MOV": 8,
+            "BLD": 0,
+            "DB": "-1"
+        },
+        "skills": {
+            "図書館": 75,
+            "歴史": 70,
+            "目星": 50,
+            "心理学": 55,
+            "説得": 60,
+            "回避": 27,
+            "近接戦闘": 30,
+            "聞き耳": 45
+        },
+        "inventory": [],
+        "memo": "ミスカトニック大学の民俗学教授。古い文献と伝承に詳しい。",
+        "states": []
+    },
+    "new_investigator": {
+        "profile": {
+            "name": "新たな探索者",
+            "occupation": "ジャーナリスト",
+            "age": 25,
+            "gender": "男"
+        },
+        "attributes": {
+            "STR": 50,
+            "CON": 60,
+            "POW": 70,
+            "DEX": 65,
+            "APP": 60,
+            "SIZ": 65,
+            "INT": 75,
+            "EDU": 80,
+            "SAN": {
+                "current": 50,
+                "max": 99,
+                "session_start": 50
+            },
+            "HP": {
+                "current": 12,
+                "max": 12
+            },
+            "MP": {
+                "current": 14,
+                "max": 14
+            },
+            "LUCK": 33,
+            "MOV": 8,
+            "BLD": 0,
+            "DB": "0"
+        },
+        "skills": {
+            "目星": 60,
+            "図書館": 70,
+            "説得": 50,
+            "近接戦闘": 40,
+            "隠密": 50,
+            "回避": 32
+        },
+        "inventory": [],
+        "memo": "好奇心旺盛なジャーナリスト。常にスクープを狙っているが、危険な状況になると真っ先に逃げる。",
+        "states": []
+    }
+}
