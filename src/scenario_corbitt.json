@@ -1,0 +1,2501 @@
+{
+  "scenario_meta": {
+    "title": "悪霊の家",
+    "background": "ウォルター・コービットの遺体はコービット屋敷の地階に横たわっているが、彼の精神は生きており、屋敷にとりついている。クトゥルフ神話の魔術により死後も自我を保ち、体をよみがえらせることができる。彼は時に吸血鬼じみた姿で住人を襲い、秘密を知った者を追い払うか殺す。探索者が謎を解明するにはコービットについて知る必要があるが、彼は探索者を誤った方向に導き、怖がらせ、最終的には殺そうとするだろう。",
+    "summary": "探索者は1920年代のボストンで、幽霊が出ると噂される古い屋敷「コービット屋敷」の調査を家主のノット氏から依頼される。以前の借家人であるマカリオ一家が不幸に見舞われたため、ノット氏は屋敷の謎を解明し、評判を回復させたいと考えている。探索者には報酬、屋敷の鍵、住所、そして前払い金25ドルが渡される。",
+    "initial_phase": "introduction",
+    "initial_location": "introduction",
+    "startup_effects": {},
+    "intervention_level": "light",
+    "max_stagnation_turns": 4,
+    "stagnation_hint": "住人への聞き込み、屋敷内の別室、書物や痕跡など別の手がかりを当たってみよう。"
+  },
+  "initial_state": {
+    "current_phase": "introduction",
+    "location": "introduction",
+    "turn_counter": 0,
+    "flags": {
+      "case_accepted": false,
+      "knott_letter_read": false,
+      "knott_memo_read": false,
+      "newspaper_info_found": false,
+      "library_info_found": false,
+      "records_info_found": false,
+      "neighbor_gossip_found": false,
+      "dolly_told_chapel_location": false,
+      "dolly_told_sanitarium_location": false,
+      "sanitarium_info_found": false,
+      "chapel_investigated": false,
+      "exterior_approached": false,
+      "corbitt_house_entered": false,
+      "front_door_unlocked": false,
+      "back_door_unlocked": false,
+      "living_room_investigated": false,
+      "ground_floor_haunting_done": false,
+      "basement_accessible": false,
+      "basement_door_unlocked": false,
+      "hidden_passage_found": false,
+      "basement_planks_broken": false,
+      "basement_planks_examined": false,
+      "junk_searched": false,
+      "has_corbitt_knife": false,
+      "trigger_flying_bed": false,
+      "trigger_knife_attack": false,
+      "spare_bedroom_bed_investigated": false,
+      "in_basement": false,
+      "found_corbitt_history_all": false,
+      "hall_of_records_clerk_interacted": false,
+      "higher_courts_records_accessed": false,
+      "corbitt_body_encountered": false,
+      "trigger_corbitt_boss_battle": false,
+      "corbitt_defeated": false,
+      "ruined_altar_investigated": false,
+      "learned_corbitt_weakness": false
+    },
+    "counters": {}
+  },
+  "locations": {
+    "introduction": {
+      "name": "導入",
+      "default_description": "あなたはスティーブン・ノット氏と向かい合っている。場所はあなたの探偵事務所かもしれないし、馴染みの喫茶店の一角かもしれない。ノット氏は最近、とある屋敷を相続したものの、その悪評のせいで賃貸も売却もできずに困り果てている様子だ。彼はあなたに、その屋敷にまつわる奇妙な出来事を調査してほしいと依頼してきた。",
+      "connected_to": [
+        "boston_globe",
+        "central_library",
+        "hall_of_records",
+        "higher_courts_police_station",
+        "the_neighborhood",
+        "corbitt_exterior"
+      ],
+      "objects": {
+        "knott_letter": {
+          "name": "ノット氏からの依頼書",
+          "description": "スティーブン・ノット氏が作成した、屋敷の調査を依頼する正式な書類。屋敷の住所と、最近になって相続したこと、そして奇妙な出来事のために賃貸も売却もできない現状が記されている。書類の隅には、屋敷の過去の所有者に関する古い新聞記事の切り抜きがホチキスで留められている。",
+          "investigated_flag": "knott_letter_read",
+          "reject_message": "依頼書はすでに読んだはずだ。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "knott_memo": {
+          "name": "ノット氏のメモ",
+          "description": "ノット氏が依頼書に添えて渡してきた手書きのメモ。そこには、屋敷の近隣住民が『奇妙な音』や『不気味な影』について話していたこと、そして『ボストン・グローブ』紙の過去の記事に何か手がかりがあるかもしれない、という推測が走り書きされている。",
+          "investigated_flag": "knott_memo_read",
+          "reject_message": "メモはすでに確認した。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "office_desk": {
+          "name": "事務机",
+          "type": "furniture",
+          "description": "ノット氏と向かい合う事務机。書類や筆記具が几帳面に並べられているだけで、調査の手がかりになるようなものは特に見当たらない。依頼の話を進めるための背景に過ぎない。",
+          "usable_actions": [
+            "inspect"
+          ]
+        }
+      },
+      "exits": {
+        "boston_globe": {
+          "name": "boston_globe",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "central_library": {
+          "name": "central_library",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "hall_of_records": {
+          "name": "hall_of_records",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "higher_courts_police_station": {
+          "name": "higher_courts_police_station",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "the_neighborhood": {
+          "name": "the_neighborhood",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "corbitt_exterior": {
+          "name": "corbitt_exterior",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        }
+      }
+    },
+    "boston_globe": {
+      "name": "ボストン・グローブ",
+      "default_description": "評判のいい日刊新聞社『ボストン・グローブ』のオフィスです。受付やジャーナリスト、編集者など、様々な人々が行き交っています。地下には一般には公開されていない「参考資料室」（新聞の切り抜きファイルがある）が存在します。",
+      "connected_to": [
+        "introduction",
+        "central_library",
+        "hall_of_records"
+      ],
+      "objects": {
+        "reception_desk": {
+          "name": "受付デスク",
+          "description": "ボストン・グローブ社のロビーにある受付デスクです。電話対応の合間でも、来客の用件を聞いてくれる女性が座っています。コービット屋敷や過去の記事について尋ねれば、編集者のアーティ・ウィルモットを紹介してくれるだろう。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "artie_wilmott": {
+          "name": "編集者アーティ・ウィルモット",
+          "description": "ボストン・グローブ社の編集者。彼は自分のちっぽけな権限を振りかざし、参考資料室へのアクセスを拒否しようとするでしょう。〈魅惑〉、〈威圧〉、〈説得〉、〈言いくるめ〉で交渉できるほか、〈信用〉や手持ちの財産を使った賄賂で釣る手もある。うまくいかなければ、彼が目を離した隙に地下の資料室へ忍び込む方法もあるかもしれない（〈隠密〉や〈鍵開け〉の示唆）。",
+          "reject_message": "アーティ・ウィルモットはまだ許可を出していない。別の対人技能で再交渉するか、賄賂を試すか、あるいは彼の気を引いて資料室へ忍び込む別ルートを検討しよう。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "reference_room_clipping_files": {
+          "name": "参考資料室の切り抜きファイル",
+          "description": "ほこりだらけの地下室にあるファイル棚に並べられた、古い新聞の切り抜きファイルです。カビ臭い匂いが立ち込め、ボイラーの熱で暑い。コービット屋敷に関する記事を探すことができるでしょう。保管記録係のルース・ブレイクは、1878年の火事以前の記録は不完全だと教えてくれるかもしれません。",
+          "investigated_flag": "accessed_clipping_files",
+          "reject_message": "正面からは入れないが、アーティの許可を得るか、受付や廊下から地下へ忍び込む（隠密・鍵開け）など別手段を試せる。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        }
+      },
+      "exits": {
+        "introduction": {
+          "name": "ボストン市街へ",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "central_library": {
+          "name": "central_library",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "hall_of_records": {
+          "name": "hall_of_records",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        }
+      }
+    },
+    "central_library": {
+      "name": "中央図書館",
+      "default_description": "この立派な施設には興味深い情報がいくつも収められている。図書館での調査にゲーム内での半日を使うごとに、各プレイヤーに〈図書館〉ロールを1回ずつさせること。失敗しても、ロールをプッシュする必要はない。プレイヤーは何度でも挑戦できる。ただし、ロールするごとに調査にさらに半日使ったことになる。探索者が調査に1日以上の時間をかけているようなら、雇い主であるノット氏が探索者に連絡して調査の進捗具合を尋ね、問題の解決を促す。とどのつまり時は金なり、ということだ。",
+      "connected_to": [
+        "hall_of_records",
+        "higher_courts_police_station",
+        "the_neighborhood"
+      ],
+      "objects": {
+        "newspaper_archives": {
+          "name": "新聞アーカイブ",
+          "description": "古い新聞の山が積み上げられている。ボストン・グローブ紙のマイクロフィルムもあるようだ。特定の年代の記事を探すには、根気と集中力が必要だろう。成功すれば、1918年の未掲載記事（プレイヤー資料2）が見つかるかもしれない。",
+          "investigated_flag": "found_newspaper_article_1918",
+          "reject_message": "古い新聞をいくら漁っても、それらしい記事は見つからない。もっと時間をかける必要があるか、あるいは別の方法を試すべきだろう。すでにこの情報は見つけているかもしれない。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "local_history_section": {
+          "name": "郷土史資料",
+          "description": "この地域の歴史に関する書籍や文書が並べられている。古い不動産記録や人物伝記なども含まれているようだ。ウォルター・コービット氏や屋敷に関する情報が見つかるかもしれない。成功すれば、屋敷の歴史に関する資料（プレイヤー資料3〜6）が得られるだろう。",
+          "investigated_flag": "found_corbitt_history_all",
+          "reject_message": "郷土史資料を丹念に調べたが、コービット氏や屋敷に関する決定的な情報はまだ見つからない。さらに深く掘り下げる必要があるだろう。すでにこの情報は見つけているかもしれない。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        }
+      },
+      "exits": {
+        "hall_of_records": {
+          "name": "hall_of_records",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "higher_courts_police_station": {
+          "name": "higher_courts_police_station",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "the_neighborhood": {
+          "name": "the_neighborhood",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        }
+      }
+    },
+    "hall_of_records": {
+      "name": "公文書館",
+      "default_description": "古びた石造りの建物で、内部は薄暗く、埃っぽい紙の匂いが充満している。膨大な量の公文書が棚にぎっしりと並べられ、静寂が支配している。奥には事務官のデスクが見える。",
+      "connected_to": [
+        "the_neighborhood",
+        "central_library",
+        "higher_courts_police_station"
+      ],
+      "objects": {
+        "crime_court_records": {
+          "name": "犯罪裁判所の記録",
+          "description": "過去の犯罪裁判に関する記録が収められた棚だ。黙想チャペルの名前を検索すると、1912年に行われた裁判で言及されているのを発見する。しかし、その裁判の具体的な記録はなぜか残されていない。〈法律〉の知識があれば手続き面から、〈図書館〉の索引術があれば資料の並びから、どちらでも辿ることができる。",
+          "investigated_flag": "hall_of_records_court_records_investigated",
+          "required_skill": [
+            "法律",
+            "図書館"
+          ],
+          "reject_message": "この記録からは、これ以上新しい情報は得られないようだ。なぜ記録が残っていないのかは不明だ。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "clerk_desk": {
+          "name": "事務官のデスク",
+          "description": "書類の山に埋もれたデスクで、初老の事務官が忙しそうに作業している。彼に話しかけると、重い犯罪は郡や州、あるいは連邦の裁判所へ送られること、そして逮捕や押収に関わる市の警官の記録は中央警察署にあることを教えてくれる。",
+          "investigated_flag": "hall_of_records_clerk_interacted",
+          "reject_message": "事務官は忙しそうだ。これ以上話しかけても、同じ情報しか得られないだろう。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "public_records": {
+          "name": "一般的な公文書",
+          "description": "様々な年代の公文書が分類され、保管されている。特定の情報を探すには、根気強い調査が必要だろう。もしかしたら、プレイヤー資料7に繋がる情報が見つかるかもしれない。〈法律〉で公的手続きの記録を辿ってもよいし、〈図書館〉で膨大な資料を効率よく索引しても構わない。どちらの技能でもアプローチできる。",
+          "investigated_flag": "hall_of_records_general_archives_searched",
+          "required_skill": [
+            "法律",
+            "図書館"
+          ],
+          "reject_message": "膨大な記録の山だ。これ以上、何かを見つけるには時間と根気が必要だろう。今は他に優先すべきことがあるかもしれない。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        }
+      },
+      "exits": {
+        "the_neighborhood": {
+          "name": "the_neighborhood",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "central_library": {
+          "name": "central_library",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "higher_courts_police_station": {
+          "name": "higher_courts_police_station",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        }
+      }
+    },
+    "higher_courts_police_station": {
+      "name": "上級裁判所、中央警察署",
+      "default_description": "上級裁判所と中央警察署が併設された厳粛な建物だ。ここでは重要な記録が保管されているが、その閲覧は容易ではない。事務官の目を掻い潜り、必要な情報にたどり着くには、相応の交渉術やコネクション、あるいは人目を忍ぶ大胆さが必要となるだろう。",
+      "connected_to": [
+        "introduction",
+        "boston_globe",
+        "central_library",
+        "hall_of_records",
+        "higher_courts_police_station",
+        "the_neighborhood",
+        "roxbury_sanitarium",
+        "chapel_of_contemplation",
+        "corbitt_exterior",
+        "corbitt_ground_floor",
+        "corbitt_upper_floor",
+        "corbitt_basement"
+      ],
+      "objects": {
+        "police_archives": {
+          "name": "保管されている記録",
+          "description": "上級裁判所と中央警察署に保管されている、様々な事件や人物に関する公式記録だ。閲覧には厳格な手続きが必要とされ、通常は一般人のアクセスは許可されていない。ここにはプレイヤー資料8に相当する情報が眠っている。正攻法なら〈信用〉で正式な閲覧許可を得られるが、受付を〈言いくるめ〉や〈説得〉で丸め込む、あるいは書庫へ〈隠密〉で忍び込み〈鍵開け〉で施錠を突破するなど、複数の手段でたどり着ける。",
+          "investigated_flag": "higher_courts_records_accessed",
+          "required_skill": [
+            "信用",
+            "言いくるめ",
+            "説得",
+            "隠密",
+            "鍵開け"
+          ],
+          "reject_message": "正面からの閲覧は断られた。だが手はある——〈信用〉で正式な許可を求めるか、受付を〈言いくるめ〉／〈説得〉で丸め込むか、あるいは隙を突いて書庫へ〈隠密〉で忍び込むかだ。別のアプローチを試そう。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "kim_deblanc": {
+          "name": "事務官キム・デブラン",
+          "description": "裁判所の事務官。探索者は彼女と知り合いのようだ。彼女の態度次第で、記録へのアクセスが大きく左右されるだろう。〈信用〉で正式に頼むほか、〈言いくるめ〉や〈説得〉で交渉したり、賄賂を渡したりもできる。彼女の対応が芳しくなければ、彼女の目を盗んで書庫へ忍び込む手もある。",
+          "investigated_flag": "kim_deblanc_interacted",
+          "required_skill": [
+            "信用",
+            "言いくるめ",
+            "説得"
+          ],
+          "reject_message": "キム・デブランは今は取り合ってくれない。別の対人技能で交渉し直すか、賄賂を試すか、いっそ彼女が席を外した隙に書庫へ忍び込むことを検討しよう。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        }
+      },
+      "exits": {
+        "introduction": {
+          "name": "introduction",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "boston_globe": {
+          "name": "boston_globe",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "central_library": {
+          "name": "central_library",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "hall_of_records": {
+          "name": "hall_of_records",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "higher_courts_police_station": {
+          "name": "higher_courts_police_station",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "the_neighborhood": {
+          "name": "the_neighborhood",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "roxbury_sanitarium": {
+          "name": "roxbury_sanitarium",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "chapel_of_contemplation": {
+          "name": "chapel_of_contemplation",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "corbitt_exterior": {
+          "name": "corbitt_exterior",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "corbitt_ground_floor": {
+          "name": "corbitt_ground_floor",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "corbitt_upper_floor": {
+          "name": "corbitt_upper_floor",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "corbitt_basement": {
+          "name": "corbitt_basement",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        }
+      }
+    },
+    "the_neighborhood": {
+      "name": "屋敷の近所",
+      "default_description": "第1次世界大戦の前からこの地区に住んでいた人々の大半は引っ越したか、すでに亡くなっている。19世紀の家屋は、新しい事務所や店に改装されている。問題の屋敷（コービット屋敷）は、表庭が雑草で伸び放題となっており、現在売りに出されている唯一の個人住宅である。",
+      "connected_to": [
+        "introduction",
+        "boston_globe",
+        "central_library",
+        "hall_of_records",
+        "higher_courts_police_station",
+        "the_neighborhood",
+        "roxbury_sanitarium",
+        "chapel_of_contemplation",
+        "corbitt_exterior",
+        "corbitt_ground_floor",
+        "corbitt_upper_floor",
+        "corbitt_basement"
+      ],
+      "objects": {
+        "local_residents": {
+          "name": "ドーリー氏",
+          "description": "タバコや新聞を売っている店主のドーリー氏をはじめとする近隣住民。彼はこの地区に長く住んでおり、多くのことを知っているようだ。〈言いくるめ〉〈説得〉〈魅惑〉のいずれか、あるいは〈威圧〉や〈信用〉でも打ち解けて話を聞き出せるだろう。",
+          "investigated_flag": "dolly_talked",
+          "required_skill": [
+            "言いくるめ",
+            "説得",
+            "魅惑",
+            "威圧",
+            "信用"
+          ],
+          "reject_message": "ドーリー氏は今は口が重い。〈言いくるめ〉〈説得〉〈魅惑〉など別の対人技能でアプローチし直せば、話を聞けるかもしれない。",
+          "clues": {
+            "macario_family_info": "マカリオ一家は2年前にこの屋敷へ引っ越してきた。1年後、父親が事故で狂気に陥り、『燃える目をした化け物』について話していた。約1か月後、母親も狂気に陥り、夫妻はボストンのロックスベリー・サナトリウムに入院している。子供たちはボルチモアの親戚に引き取られた。",
+            "corbitt_house_name": "屋敷は『コービット屋敷』と呼ばれている。",
+            "chapel_location_hint": "黙想チャペルはここから2、3ブロック離れた先にある。"
+          },
+          "triggers_flag_on_success": {
+            "dolly_told_chapel_location": true,
+            "dolly_told_sanitarium_location": true
+          },
+          "interaction_prompt": "近隣住民に話しかけますか？ (魅惑/言いくるめ/説得/威圧/信用)",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "corbitt_house_exterior_view": {
+          "name": "コービット屋敷",
+          "description": "表庭が雑草で伸び放題となっており、現在売りに出されている唯一の個人住宅である。荒れ果てた様子から、長い間手入れされていないことがうかがえる。",
+          "investigated_flag": "corbitt_house_observed",
+          "reject_message": "屋敷は荒れ果てており、中に入るには何らかの方法を見つける必要があるだろう。",
+          "clues": {
+            "for_sale": "屋敷は売りに出されている。",
+            "neglected": "庭は雑草だらけで、手入れされていない。"
+          },
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        }
+      },
+      "exits": {
+        "introduction": {
+          "name": "introduction",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "boston_globe": {
+          "name": "boston_globe",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "central_library": {
+          "name": "central_library",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "hall_of_records": {
+          "name": "hall_of_records",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "higher_courts_police_station": {
+          "name": "higher_courts_police_station",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "the_neighborhood": {
+          "name": "the_neighborhood",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "roxbury_sanitarium": {
+          "name": "ロックスベリー・サナトリウムへ",
+          "requires_flag": "dolly_told_sanitarium_location",
+          "reject_message": "マカリオ夫妻が入院しているサナトリウムの場所はまだ知らない。"
+        },
+        "chapel_of_contemplation": {
+          "name": "黙想チャペルへ",
+          "requires_flag": "dolly_told_chapel_location",
+          "reject_message": "黙想チャペルがどこにあるのか、まだ正確には分からない。"
+        },
+        "corbitt_exterior": {
+          "name": "コービット屋敷の外観へ",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "corbitt_ground_floor": {
+          "name": "corbitt_ground_floor",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "corbitt_upper_floor": {
+          "name": "corbitt_upper_floor",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "corbitt_basement": {
+          "name": "corbitt_basement",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        }
+      }
+    },
+    "roxbury_sanitarium": {
+      "name": "ロックスベリー・サナトリウム",
+      "default_description": "ロックスベリー・サナトリウムは、ヴィットリオ・マカリオが収容されている施設です。彼の妻ガブリエラもここに滞在しています。静かで重苦しい空気が漂っています。",
+      "connected_to": [
+        "the_neighborhood"
+      ],
+      "objects": {
+        "patient_records": {
+          "name": "患者記録・カルテ",
+          "description": "事務室や看護師長のデスクに保管された患者記録だ。ウォルター・コービットやマカリオ夫妻に関する記載が残されているかもしれない。〈医学〉（通常難易度）でカルテを読み解くほか、〈図書館〉で膨大な書類から該当記録を索引し、〈説得〉や〈精神分析〉で職員を安心させて閲覧を許可させる、あるいは〈隠密〉でこっそりカルテを盗み見るなど、複数の手段で情報を得られる。",
+          "investigated_flag": "sanitarium_info_found",
+          "required_skill": [
+            "医学",
+            "図書館",
+            "説得",
+            "精神分析",
+            "隠密"
+          ],
+          "difficulty": "通常",
+          "reject_message": "正面からは閲覧を断られた。〈医学〉でカルテを読むか、〈図書館〉で記録を探すか、〈説得〉〈精神分析〉で職員を説得するか、〈隠密〉で忍び込む——別のアプローチを試そう。",
+          "triggers_flag_on_success": {
+            "sanitarium_info_found": true
+          },
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "vittorio_macario": {
+          "name": "ヴィットリオ・マカリオ",
+          "description": "正気を失ったヴィットリオ・マカリオが、胸に聖書を抱きしめています。彼は時折、聖書の一節を指差して「己の武器によって悪魔は滅びる！」とつぶやきます。これ以上、彼から具体的な情報は得られそうにありません。",
+          "investigated_flag": "vittorio_interviewed",
+          "reject_message": "ヴィットリオは同じ言葉を繰り返すばかりで、これ以上話すことはできません。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "gabriella_macario": {
+          "name": "ガブリエラ・マカリオ",
+          "description": "意識のはっきりしたガブリエラ・マカリオが、あなたに話しかけやすい様子です。彼女は屋敷に棲みつく悪霊のような存在について説明してくれます。その存在は夜中に彼女にのしかかり、皿などを部屋中に飛び回らせ、夫ヴィットリオに憎しみを向けていたと言います。彼女は質問に動揺しやすく、具体的な情報はあまり持っていません。",
+          "investigated_flag": "gabriella_interviewed",
+          "reject_message": "ガブリエラはこれ以上話すと激しく動揺してしまいます。今はそっとしておきましょう。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        }
+      },
+      "exits": {
+        "the_neighborhood": {
+          "name": "サナトリウムを出る",
+          "requires_flag": "gabriella_interviewed",
+          "reject_message": "まだガブリエラ夫人と話が終わっていません。もう少し話を聞いてみましょう。"
+        }
+      }
+    },
+    "chapel_of_contemplation": {
+      "name": "黙想チャペル",
+      "default_description": "古びた教会の残骸は、曲がりくねった薄汚い通りの突き当たりにある。風雨にさらされ続け、草木が生い茂っているため、灰色のがれきは建築物の壁や土台の跡というより、自然の石のように見える。探索者は崩れかけた壁のそばを通りかかる。壁には白いペンキで塗られた記号があり、これは明らかに最近になってブラシで描かれたものである。記号は、3つのYが三角形を形成している。Yの2つの頂点が、両側にある別のYの頂点と接する向きで配置されているのだ。そうやってできた真ん中のスペースには、じっと見つめているような目が描き込まれている。\n探索者が記号のそばにいる間、額の中でうずくような感じがし始める兆候をプレイヤーに描写する。これは頭痛のようだが、ちょっと頭痛とは違う感じだ。そこを離れれば、うずきは止まる。",
+      "connected_to": [
+        "the_neighborhood"
+      ],
+      "objects": {
+        "chapel_secret_cellar": {
+          "aliases": [
+            "chapel_ruins"
+          ],
+          "name": "焼け残った祭壇下の秘密の保管庫",
+          "description": "焼け落ちた床の隙間に、かつての秘密の保管庫が隠されているのが見て取れる。崩れた祭壇の残骸の下に、火事を免れた区画があるようだ。〈目星〉で隙間や隠し扉の痕跡を見つけるか、〈図書館〉で散乱した教会記録や書付を読み解くことで、内部に眠るものへ辿り着けるだろう。",
+          "investigated_flag": "chapel_investigated",
+          "required_skill": [
+            "目星",
+            "図書館"
+          ],
+          "difficulty": "通常",
+          "success_message": "保管庫からは、カルトの不気味な儀式記録と、ウォルター・コービットが残した日記の断片が見つかった。そこにはコービットの遺体が自宅の地下室に埋葬された経緯や、『地底の裁判官』——イゴーロナクをはじめとする神格——に捧げられた冒涜的な記述が綴られている。読み進めるほどに、額の奥のうずきが増していく。",
+          "reject_message": "保管庫はすでに調べ尽くした。これ以上は新しい記述は見つからないだろう。",
+          "triggers_flag_on_success": {
+            "chapel_investigated": true
+          },
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "chapel_ruins": {
+          "aliases": [
+            "chapel_ruins"
+          ],
+          "name": "焼け残った祭壇下の秘密の保管庫",
+          "description": "焼け落ちた床の隙間に、かつての秘密の保管庫が隠されているのが見て取れる。崩れた祭壇の残骸の下に、火事を免れた区画があるようだ。〈目星〉で隙間や隠し扉の痕跡を見つけるか、〈図書館〉で散乱した教会記録や書付を読み解くことで、内部に眠るものへ辿り着けるだろう。",
+          "investigated_flag": "chapel_investigated",
+          "required_skill": [
+            "目星",
+            "図書館"
+          ],
+          "difficulty": "通常",
+          "success_message": "保管庫からは、カルトの不気味な儀式記録と、ウォルター・コービットが残した日記の断片が見つかった。そこにはコービットの遺体が自宅の地下室に埋葬された経緯や、『地底の裁判官』——イゴーロナクをはじめとする神格——に捧げられた冒涜的な記述が綴られている。読み進めるほどに、額の奥のうずきが増していく。",
+          "reject_message": "保管庫はすでに調べ尽くした。これ以上は新しい記述は見つからないだろう。",
+          "triggers_flag_on_success": {
+            "chapel_investigated": true
+          },
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "white_symbol": {
+          "name": "白いペンキの記号",
+          "description": "崩れかけた壁に描かれた、3つのYが三角形を形成し、中央に目が描き込まれた奇妙な記号だ。最近描かれたもののようだ。見つめていると、額の奥でうずくような不快な感覚がする。",
+          "investigated_flag": "symbol_investigated",
+          "reject_message": "記号をじっと見つめていると、額の奥でうずくような不快な感覚が強まる。これ以上調べても、気分が悪くなるだけだろう。",
+          "requires_flag": "!in_basement",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "rotting_floorboards": {
+          "name": "もろくなった床板",
+          "description": "足元の地面に隠された、もろくなった床板がある。注意深く調べれば、その下になにか隠されているかもしれない。踏み抜けば、地階へ落下する危険がある。",
+          "investigated_flag": "floorboards_examined",
+          "reject_message": "床板は非常に脆く、少し力を加えるだけで崩れそうだ。慎重に扱わないと危険だろう。",
+          "requires_flag": "!in_basement",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "skeletons_in_robes": {
+          "name": "ローブをまとった骸骨",
+          "description": "地階の棚のそばに横たわる、ぼろぼろの絹のローブをまとった2体の骸骨。おそらく警察から隠れていたものの、火事に巻き込まれて死んだのだろう。",
+          "investigated_flag": "skeletons_examined",
+          "reject_message": "骸骨はただの死体だ。これ以上調べても何も得られないだろう。",
+          "requires_flag": "in_basement",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "shelf_with_records": {
+          "name": "朽ちかけた棚",
+          "description": "地階の壁際に置かれた、朽ちかけた木製の棚。中には古い教会の記録類が散乱している。注意深く調べれば、重要なものが見つかるかもしれない。",
+          "investigated_flag": "shelf_searched",
+          "reject_message": "棚はすでに調べ尽くした。これ以上は何も見つからないだろう。",
+          "requires_flag": "in_basement",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "cult_diary": {
+          "name": "カルトの日誌",
+          "description": "カビ臭く古い日誌。ページをめくるたびにバラバラになってしまうが、ウォルター・コービットという名前と、彼がコービット屋敷の地階に埋葬されたことが記されている。「本人の希望と『闇の中で待つもの』の希望による」とある。",
+          "investigated_flag": "diary_read",
+          "reject_message": "日誌はすでに読んだ。これ以上読んでも、ただ朽ちていくだけだ。",
+          "requires_flag": "found_diary",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "grimoire_book_of_eibon": {
+          "name": "魔道書『エイボンの書』",
+          "description": "日誌の隣にあった、手書きのラテン語で記された非常に分厚い本。かなり腐って虫が食い荒らしており、内容全体を理解することはもうできない。オカルト的な内容を論じているようだ。読むには時間がかかるだろう。",
+          "investigated_flag": "grimoire_examined",
+          "reject_message": "魔道書はすでに調べた。読むには時間がかかるだろう。",
+          "requires_flag": "found_grimoire",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        }
+      },
+      "exits": {
+        "the_neighborhood": {
+          "name": "通りへ戻る",
+          "requires_flag": "!in_basement",
+          "reject_message": "ここから通りへ戻ることができる。"
+        }
+      }
+    },
+    "corbitt_exterior": {
+      "name": "コービット屋敷（外観）",
+      "default_description": "そのれんが造りの建物は、両隣を高く新しいオフィスビルに挟まれている。屋敷の正面は道路に面している。裏の庭に植えられた草木は伸び放題で、半壊した日除け棚がある。屋敷を眺めてみれば、屋敷が両隣のビルの陰になってすっかり目立たなくなっている様子に強い印象を受ける。また、カーテンの閉じた飾り気のない窓が、中に何があるのかをすべて覆い隠しているような印象も受ける。",
+      "connected_to": [
+        "the_neighborhood",
+        "corbitt_ground_floor"
+      ],
+      "objects": {
+        "corbitt_house": {
+          "name": "コービット屋敷",
+          "description": "荒れ果てたれんが造りの屋敷だ。ノット氏から受け取った正規の鍵があれば、正面玄関の鍵と差し錠を開けてそのまま入れる。扉が歪んで鍵が回りにくい場合は〈STR〉で力ずくでこじ開けるか、〈目星〉で裏手の弱い窓枠や隠された裏口を見つけて侵入できる。",
+          "investigated_flag": "corbitt_house_entered",
+          "required_skill": [
+            "STR",
+            "目星"
+          ],
+          "allows_key_use": true,
+          "auto_success_flag": "case_accepted",
+          "success_message": "ノット氏から渡された鍵で正面玄関を開けた。差し錠が固いときは力ずくでこじ開け、あるいは目星で見つけた裏口から屋敷の中へ足を踏み入れた。",
+          "reject_message": "まだ屋敷の中へ入れていない。正規の鍵を使うか、〈STR〉で扉をこじ開けるか、〈目星〉で別の侵入経路を探そう。",
+          "triggers_flag_on_success": {
+            "corbitt_house_entered": true,
+            "front_door_unlocked": true
+          },
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "front_door": {
+          "name": "正面玄関のドア",
+          "description": "頑丈な木製のドアで、鍵1つと4本の差し錠で施錠されている。ノット氏の鍵があれば正規に開けられるが、年季で歪んでいる。力を入れればこじ開けられるかもしれない。",
+          "investigated_flag": "front_door_investigated",
+          "required_skill": [
+            "STR",
+            "目星"
+          ],
+          "allows_key_use": true,
+          "auto_success_flag": "case_accepted",
+          "reject_message": "ドアは閉ざされたままだ。ノット氏の鍵を使うか、力ずくでこじ開けるか、別の侵入経路を探そう。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "exterior_windows": {
+          "name": "1階の窓",
+          "description": "飾り気のない窓はカーテンが閉められ、内側から釘で打ち付けられている。〈目星〉で釘の緩い箇所や、裏庭側の弱い窓枠を見つければ、板を外して侵入できる可能性がある。",
+          "investigated_flag": "ground_floor_windows_investigated",
+          "required_skill": [
+            "目星",
+            "STR"
+          ],
+          "reject_message": "窓は固く固定されている。〈目星〉で緩い箇所を探すか、〈STR〉で板を外す手もある。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "aliases": [
+            "ground_floor_windows",
+            "1階の窓"
+          ]
+        },
+        "ground_floor_windows": {
+          "name": "1階の窓",
+          "description": "飾り気のない窓はカーテンが閉められ、内側から釘で打ち付けられている。〈目星〉で釘の緩い箇所や、裏庭側の弱い窓枠を見つければ、板を外して侵入できる可能性がある。",
+          "investigated_flag": "ground_floor_windows_investigated",
+          "required_skill": [
+            "目星",
+            "STR"
+          ],
+          "reject_message": "窓は固く固定されている。〈目星〉で緩い箇所を探すか、〈STR〉で板を外す手もある。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "aliases": [
+            "ground_floor_windows",
+            "1階の窓"
+          ]
+        },
+        "1階の窓": {
+          "name": "1階の窓",
+          "description": "飾り気のない窓はカーテンが閉められ、内側から釘で打ち付けられている。〈目星〉で釘の緩い箇所や、裏庭側の弱い窓枠を見つければ、板を外して侵入できる可能性がある。",
+          "investigated_flag": "ground_floor_windows_investigated",
+          "required_skill": [
+            "目星",
+            "STR"
+          ],
+          "reject_message": "窓は固く固定されている。〈目星〉で緩い箇所を探すか、〈STR〉で板を外す手もある。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "aliases": [
+            "ground_floor_windows",
+            "1階の窓"
+          ]
+        }
+      },
+      "exits": {
+        "the_neighborhood": {
+          "name": "周辺の通りへ戻る",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "corbitt_ground_floor": {
+          "name": "正面玄関から屋敷に入る",
+          "requires_flag": "corbitt_house_entered",
+          "reject_message": "まだ屋敷の中へ入れていない。正面玄関のドアを開けるか、別の侵入経路を見つけよう。"
+        }
+      }
+    },
+    "corbitt_ground_floor": {
+      "name": "コービット屋敷（1階）",
+      "default_description": "古びたコービット屋敷の1階は、薄暗く、どこか陰鬱な雰囲気が漂っている。窓は内側から釘で打ち付けられ、外の光をほとんど通さない。各部屋には生活の痕跡があるものの、全体的に荒廃しており、不気味な静けさが支配している。",
+      "connected_to": [
+        "corbitt_exterior",
+        "corbitt_upper_floor",
+        "corbitt_basement"
+      ],
+      "objects": {
+        "living_room_clutter": {
+          "name": "リビングの散乱した荷物",
+          "description": "リビングルームには家具や荷物が散乱している。壁や床に不気味な染みや引きずられた跡がないか、注意深く調べる価値がある。",
+          "investigated_flag": "living_room_investigated",
+          "required_skill": [
+            "目星"
+          ],
+          "difficulty": "困難",
+          "reject_message": "リビングは荒れ放題だが、これ以上目立つ手がかりは見当たらない。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "basement_door": {
+          "aliases": [
+            "hidden_passage"
+          ],
+          "name": "地下室への扉",
+          "description": "廊下の奥にある、頑丈な木製の扉。地下室へ続いているようだが、太いネジや板で厳重に打ち付けられているか、鍵がかかっている。〈STR〉で力ずくでこじ開けるか、〈目星〉で錠前の弱点や隙間を見つけて開けられるだろう。",
+          "investigated_flag": "basement_accessible",
+          "required_skill": [
+            "STR",
+            "目星"
+          ],
+          "difficulty": "通常",
+          "success_message": "地下室への扉を開けた。力ずくでこじ開けるか、目星で見つけた隙間から錠を外し、冷たい空気とカビの匂いが地下から漂ってくる。",
+          "reject_message": "扉はまだ閉ざされたままだ。〈STR〉でこじ開けるか、〈目星〉で錠や板の弱点を探そう。",
+          "triggers_flag_on_success": {
+            "basement_accessible": true,
+            "basement_door_unlocked": true,
+            "hidden_passage_found": true
+          },
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "hidden_passage": {
+          "aliases": [
+            "hidden_passage"
+          ],
+          "name": "地下室への扉",
+          "description": "廊下の奥にある、頑丈な木製の扉。地下室へ続いているようだが、太いネジや板で厳重に打ち付けられているか、鍵がかかっている。〈STR〉で力ずくでこじ開けるか、〈目星〉で錠前の弱点や隙間を見つけて開けられるだろう。",
+          "investigated_flag": "basement_accessible",
+          "required_skill": [
+            "STR",
+            "目星"
+          ],
+          "difficulty": "通常",
+          "success_message": "地下室への扉を開けた。力ずくでこじ開けるか、目星で見つけた隙間から錠を外し、冷たい空気とカビの匂いが地下から漂ってくる。",
+          "reject_message": "扉はまだ閉ざされたままだ。〈STR〉でこじ開けるか、〈目星〉で錠や板の弱点を探そう。",
+          "triggers_flag_on_success": {
+            "basement_accessible": true,
+            "basement_door_unlocked": true,
+            "hidden_passage_found": true
+          },
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "storage_room1_cupboard": {
+          "name": "物置部屋の食器棚",
+          "description": "この物置部屋の右端にある食器棚は、板で固くふさがれている。中には何か隠されているようだ。",
+          "investigated_flag": "corbitt_diaries_found",
+          "reject_message": "食器棚は板で固くふさがれており、素手では開けられそうにない。何かこじ開ける道具が必要だろう。",
+          "success_message": "食器棚をこじ開けると、丈夫な表紙の本が3冊見つかった。ウォルター・コービットの日記のようだ。1冊目の最初のページにそのことが書かれている。日記にはオカルトの実験や魔術、特に《彼方への道を切り開くものの招請》という呪文が記されている。",
+          "clue_flags_on_success": [
+            "corbitt_diaries_found",
+            "clue_occult_experiments",
+            "clue_summoning_spell"
+          ],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "kitchen_breaker_box": {
+          "name": "台所のブレーカーボックス",
+          "description": "台所の壁にある古いブレーカーボックスだ。地下への電気を制御しているようだ。",
+          "investigated_flag": "basement_power_state_known",
+          "reject_message": "ブレーカーボックスは古いが、特に異常はないようだ。触る必要もなさそうだ。",
+          "success_message": "ブレーカーを調べると、地下への電気が止められていることがわかった。これを操作すれば、地下の電気を通電させたり、止めたりできるだろう。しかし、コービットがいつでも電気を止めることができるという不穏な予感もする。",
+          "clue_flags_on_success": [
+            "basement_power_state_known"
+          ],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "ground_floor_windows": {
+          "name": "1階の窓",
+          "description": "1階の窓はすべて内側から釘で打ち付けられ、固定されている。外の様子はほとんど見えない。",
+          "investigated_flag": "ground_floor_windows_inspected",
+          "reject_message": "窓は内側から釘で打ち付けられており、開けることはできない。",
+          "success_message": "1階の窓はすべて内側から釘で厳重に打ち付けられている。まるで誰かが中に閉じこもったか、あるいは外からの侵入を防ごうとしたかのようだ。外から見ても、カーテンが閉ざされ、中の様子はうかがえない。",
+          "clue_flags_on_success": [
+            "ground_floor_windows_inspected"
+          ],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        }
+      },
+      "exits": {
+        "corbitt_exterior": {
+          "name": "正面玄関",
+          "requires_flag": "front_door_unlocked",
+          "reject_message": "正面のドアには鍵が1つ、さらに4本の差し錠が追加で取り付けられており、固く閉ざされている。"
+        },
+        "corbitt_upper_floor": {
+          "name": "2階への階段",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "corbitt_basement": {
+          "name": "地階への階段",
+          "requires_flag": "basement_door_unlocked",
+          "reject_message": "地階へ降りる扉はまだ開いていない。廊下奥の地下室への扉を開けよう。"
+        }
+      }
+    },
+    "corbitt_upper_floor": {
+      "name": "コービット屋敷（2階）",
+      "default_description": "古びたコービット屋敷の2階だ。主人の寝室、子供の寝室、予備用寝室、そして浴室がある。全体的に生活感は薄れているが、各部屋には以前の住人の痕跡が残されている。特に予備用寝室からは、どこか不穏な気配が漂っている。",
+      "connected_to": [
+        "corbitt_ground_floor"
+      ],
+      "objects": {
+        "master_bedroom_bookshelf": {
+          "name": "主人の寝室の本棚",
+          "description": "平凡な本棚だが、宗教的な書物や聖具が並べられている。ヴィットリオとガブリエラの信仰心の深さがうかがえる。",
+          "investigated_flag": "master_bedroom_bookshelf_investigated",
+          "investigated_description": "本棚を詳しく調べると、いくつかの聖書や祈祷書の中に、古びた家族写真が挟まっているのを見つけた。写真には、ヴィットリオとガブリエラ、そして幼い子供たちが写っている。裏には『1920年、コービット屋敷にて』と書かれている。",
+          "reject_message": "特に変わったものはないようだ。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "spare_bedroom_bed": {
+          "name": "予備用寝室のベッド",
+          "description": "ベッドフレームとむき出しになったベッドスプリングがあるだけの、簡素なベッドだ。使われた形跡はないが、どこか不気味な雰囲気が漂っている。この部屋は以前、老コービットの部屋だったという。",
+          "investigated_flag": "spare_bedroom_bed_investigated",
+          "investigated_description": "ベッドを調べると、スプリングの一部が不自然に歪んでいることに気づく。また、微かに甘ったるい、吐き気を催すような腐敗臭がする。この部屋がコービットの霊的な影響下にあることを示唆している。",
+          "reject_message": "ただの古いベッドのようだ。",
+          "clue_flags_on_success": [
+            "spare_bedroom_bed_investigated",
+            "trigger_flying_bed"
+          ],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "bathroom_bathtub": {
+          "name": "浴室の浴槽",
+          "description": "浴槽には塩気を含んだ水がたまっている。蛇口が緩んでおり、水がしたたっている音がする。タオルなども家族4人分がまだ揃っている。",
+          "investigated_flag": "bathroom_bathtub_investigated",
+          "investigated_description": "浴槽の水をよく見ると、底に微細な黒い沈殿物があることに気づく。水は一般的な水道水とは異なる、奇妙な塩気を感じさせる。何かの儀式に使われたか、あるいは単なる腐敗の兆候か。",
+          "reject_message": "ただ水がたまっているだけの浴槽だ。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        }
+      },
+      "exits": {
+        "corbitt_ground_floor": {
+          "name": "1階への階段",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        }
+      }
+    },
+    "corbitt_basement": {
+      "name": "コービット屋敷（地階・物置部屋）",
+      "default_description": "地階へ降りるドアは、鍵1つと差し錠3本によって閉じられている。そのため上の階の側からしか開けられない。階段を下りると、そこは大きな物置部屋になっている。階段は壊れたものを簡単に直しただけの状態で、電球も点灯しない。地階の壁は、板で隙間なく覆われている。コービットは1階の台所にあるブレーカーを落として地下の電気を止めてしまっている。探索者がもう一度通電させても、コービットはいつでも自分の都合の良い時に電気を止めることができる。この部屋はやや小さめで、道具類、鉛管、ごみ缶のふた、木材、釘、ねじなどが散らばっている。",
+      "connected_to": [
+        "corbitt_ground_floor",
+        "corbitt_basement_room2",
+        "corbitt_basement_room3"
+      ],
+      "objects": {
+        "scattered_junk": {
+          "name": "散らばったガラクタ",
+          "description": "部屋の床には、道具類、鉛管、ごみ缶のふた、木材、釘、ねじなどが無造作に散らばっている。",
+          "investigated_flag": "junk_searched",
+          "reject_message": "ガラクタの中には鋭利なものが多く、注意深く探さないと怪我をするかもしれない。",
+          "clue_on_success": "ガラクタの中から、古びたナイフの柄がわずかに見えている。刃は異様に厚いサビで覆われているようだ。",
+          "on_push_fail_damage": "不注意な探索者は鋭利な破片で手を切ってしまい、耐久力に1D4＋2ポイントのダメージを受けた。",
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "basement_planks": {
+          "aliases": [
+            "wall_planks"
+          ],
+          "name": "板で覆われた壁",
+          "description": "地階の壁は木の板で隙間なく覆われている。ざっと見渡すと、板の向こうに空間があるように見える。〈STR〉で力ずくで板を破壊するか、〈近接戦闘（格闘）〉で板を叩き砕けば、奥の部屋へ進めるだろう。",
+          "investigated_flag": "basement_planks_examined",
+          "required_skill": [
+            "STR",
+            "近接戦闘（格闘）"
+          ],
+          "difficulty": "通常",
+          "reject_message": "板で覆われた壁は頑丈に見える。力でこじ開けるか、格闘技能で板を破壊しよう。",
+          "clue_on_success": "板の向こうに、さらに部屋があることがわかった。部屋2と部屋3のようだ。壊せば進めそうだ。",
+          "success_message": "力ずくで板を破壊し、奥の部屋への通路を開けた。",
+          "triggers_flag_on_success": {
+            "basement_planks_broken": true
+          },
+          "clue_flags_on_success": [
+            "basement_planks_examined",
+            "basement_planks_broken"
+          ],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "wall_planks": {
+          "aliases": [
+            "wall_planks"
+          ],
+          "name": "板で覆われた壁",
+          "description": "地階の壁は木の板で隙間なく覆われている。ざっと見渡すと、板の向こうに空間があるように見える。〈STR〉で力ずくで板を破壊するか、〈近接戦闘（格闘）〉で板を叩き砕けば、奥の部屋へ進めるだろう。",
+          "investigated_flag": "basement_planks_examined",
+          "required_skill": [
+            "STR",
+            "近接戦闘（格闘）"
+          ],
+          "difficulty": "通常",
+          "reject_message": "板で覆われた壁は頑丈に見える。力でこじ開けるか、格闘技能で板を破壊しよう。",
+          "clue_on_success": "板の向こうに、さらに部屋があることがわかった。部屋2と部屋3のようだ。壊せば進めそうだ。",
+          "success_message": "力ずくで板を破壊し、奥の部屋への通路を開けた。",
+          "triggers_flag_on_success": {
+            "basement_planks_broken": true
+          },
+          "clue_flags_on_success": [
+            "basement_planks_examined",
+            "basement_planks_broken"
+          ],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        },
+        "corbitt_knife": {
+          "name": "コービットのナイフ",
+          "description": "古いもののようで、柄には装飾が施され、刃は異様に厚いサビで覆われている。これはコービットの魔法のダガーで、サビのように見えるのは付着した犠牲者の血が乾いたものだ。",
+          "requires_flag": "junk_searched",
+          "investigated_flag": "has_corbitt_knife",
+          "reject_message": "ナイフは宙に浮いており、近づくと危険な気配がする。",
+          "clue_on_investigate": "ナイフを拾い上げると、ひとりでに探索者の手を振りほどいて宙に浮き上がり、攻撃してきた！",
+          "clue_flags_on_success": [
+            "has_corbitt_knife",
+            "trigger_knife_attack"
+          ],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        }
+      },
+      "exits": {
+        "corbitt_ground_floor": {
+          "name": "1階へ続く階段",
+          "condition": "DEXと〈登攀〉の組み合わせロールに成功する",
+          "reject_message": "階段は壊れかけており、コービットの妨害もあるため、慎重に進まないと危険だ。"
+        },
+        "corbitt_basement_room2": {
+          "name": "空の物置場への通路",
+          "requires_flag": "basement_planks_broken",
+          "reject_message": "板で塞がれており、通るには板を壊す必要がある。"
+        },
+        "corbitt_basement_room3": {
+          "name": "コービットの隠れ家への通路",
+          "requires_flag": "basement_planks_broken",
+          "reject_message": "板で塞がれており、通るには板を壊す必要がある。"
+        }
+      }
+    },
+    "corbitt_basement_room2": {
+      "name": "コービット屋敷（地下室の隠し部屋）",
+      "default_description": "板を打ち破った先にある、ジメジメとした悪臭の立ち込める不気味な空間。床は土が剥き出しになっており、中央には不自然な長方形の寝台（あるいは古びた棺）が置かれている。壁は奇妙な緑色の粘液で覆われ、この世のものとは思えない冒涜的な気配が部屋全体を支配している。",
+      "connected_to": [
+        "corbitt_basement",
+        "corbitt_basement_room3"
+      ],
+      "objects": {
+        "corbitt_body": {
+          "name": "ウォルター・コービットの遺体",
+          "description": "ベッドに横たわる、干からびた木乃伊（ミイラ）のような死体。しかし、その皮膚は異常な弾力を保っており、何よりその『ぎらぎらと輝く目』は見開かれ、憎悪を込めてあなたを凝視している。彼は生きている！",
+          "investigated_flag": "corbitt_body_encountered",
+          "reject_message": "コービットの遺体は憎悪に燃える目でこちらを睨んでいる。もはや調べている場合ではない——対峙するしかない。",
+          "clue_flags_on_success": [
+            "corbitt_body_encountered",
+            "trigger_corbitt_boss_battle"
+          ],
+          "san_check": {
+            "required": true,
+            "value": "1/1D8",
+            "reason": "生ける屍・ウォルター・コービットとの遭遇"
+          },
+          "combat_trigger": {
+            "event_id": "corbitt_boss_battle",
+            "enemy_id": "walter_corbitt",
+            "enemy_ref_flag": "walter_corbitt_stats"
+          },
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        }
+      },
+      "exits": {
+        "corbitt_basement": {
+          "name": "物置部屋へ戻る",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        },
+        "corbitt_basement_room3": {
+          "name": "地下の集会所跡へ",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        }
+      }
+    },
+    "corbitt_basement_room3": {
+      "name": "地下の古い集会所跡",
+      "default_description": "隠し寝室のさらに脇に広がる、かつて『黙想のチャペル』の信者たちが秘密の儀式を行っていたと思われる空洞。崩れかけた不気味な祭壇の残骸があり、床には何らかの魔方陣の跡が薄れて残っている。",
+      "connected_to": [
+        "corbitt_basement_room2"
+      ],
+      "objects": {
+        "ruined_altar": {
+          "name": "崩れた地下の祭壇",
+          "description": "オカルト的なシンボルが刻まれた石造りの祭壇。コービットを完全に消滅させるためのヒントや、あるいは彼が力を引き出している神話的源泉（地底の裁判官）への冒涜的な繋がりを物語るフレーバーが残されている。",
+          "investigated_flag": "ruined_altar_investigated",
+          "required_skill": [
+            "目星",
+            "オカルト",
+            "図書館"
+          ],
+          "difficulty": "通常",
+          "reject_message": "祭壇はすでに調べ尽くした。これ以上の手がかりは見当たらない。",
+          "success_message": "祭壇の刻印を読み解くと、コービットが『地底の裁判官』——イゴーロナクに連なる神格——から不死の力を引き出していること、そして彼を完全に滅ぼすには遺体を清め、破壊する必要があることが示唆されている。",
+          "clue_flags_on_success": [
+            "ruined_altar_investigated",
+            "learned_corbitt_weakness"
+          ],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ]
+        }
+      },
+      "exits": {
+        "corbitt_basement_room2": {
+          "name": "隠し部屋へ戻る",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        }
+      }
+    }
+  },
+  "event_triggers": [
+    {
+      "event_id": "introduction__knott_letter__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'knott_letter' and location == 'introduction' and flags.knott_letter_read == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ノット氏からの依頼書を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "knott_letter_read": true,
+          "case_accepted": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "introduction__knott_letter__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'knott_letter' and location == 'introduction' and flags.knott_letter_read == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ノット氏からの依頼書を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "introduction__knott_memo__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'knott_memo' and location == 'introduction' and flags.knott_memo_read == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ノット氏のメモを注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "knott_memo_read": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "introduction__knott_memo__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'knott_memo' and location == 'introduction' and flags.knott_memo_read == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ノット氏のメモを調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "boston_globe__reference_room_clipping_files__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'reference_room_clipping_files' and location == 'boston_globe' and flags.accessed_clipping_files == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "参考資料室の切り抜きファイルを注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "accessed_clipping_files": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "boston_globe__reference_room_clipping_files__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'reference_room_clipping_files' and location == 'boston_globe' and flags.accessed_clipping_files == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "参考資料室の切り抜きファイルを調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "central_library__newspaper_archives__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'newspaper_archives' and location == 'central_library' and flags.found_newspaper_article_1918 == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "新聞アーカイブを注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "found_newspaper_article_1918": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "central_library__newspaper_archives__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'newspaper_archives' and location == 'central_library' and flags.found_newspaper_article_1918 == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "新聞アーカイブを調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "central_library__local_history_section__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'local_history_section' and location == 'central_library' and flags.found_corbitt_history_all == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "郷土史資料を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "found_corbitt_history_all": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "central_library__local_history_section__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'local_history_section' and location == 'central_library' and flags.found_corbitt_history_all == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "郷土史資料を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "hall_of_records__crime_court_records__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'crime_court_records' and location == 'hall_of_records' and flags.hall_of_records_court_records_investigated == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "犯罪裁判所の記録を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "hall_of_records_court_records_investigated": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "hall_of_records__crime_court_records__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'crime_court_records' and location == 'hall_of_records' and flags.hall_of_records_court_records_investigated == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "犯罪裁判所の記録を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "hall_of_records__clerk_desk__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'clerk_desk' and location == 'hall_of_records' and flags.hall_of_records_clerk_interacted == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "事務官のデスクを注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "hall_of_records_clerk_interacted": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "hall_of_records__clerk_desk__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'clerk_desk' and location == 'hall_of_records' and flags.hall_of_records_clerk_interacted == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "事務官のデスクを調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "hall_of_records__public_records__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'public_records' and location == 'hall_of_records' and flags.hall_of_records_general_archives_searched == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "一般的な公文書を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "hall_of_records_general_archives_searched": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "hall_of_records__public_records__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'public_records' and location == 'hall_of_records' and flags.hall_of_records_general_archives_searched == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "一般的な公文書を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "higher_courts_police_station__police_archives__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'police_archives' and location == 'higher_courts_police_station' and flags.higher_courts_records_accessed == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "保管されている記録を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "higher_courts_records_accessed": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "higher_courts_police_station__police_archives__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'police_archives' and location == 'higher_courts_police_station' and flags.higher_courts_records_accessed == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "保管されている記録を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "higher_courts_police_station__kim_deblanc__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'kim_deblanc' and location == 'higher_courts_police_station' and flags.kim_deblanc_interacted == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "事務官キム・デブランを注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "kim_deblanc_interacted": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "higher_courts_police_station__kim_deblanc__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'kim_deblanc' and location == 'higher_courts_police_station' and flags.kim_deblanc_interacted == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "事務官キム・デブランを調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "the_neighborhood__local_residents__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'local_residents' and location == 'the_neighborhood' and flags.dolly_talked == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ドーリー氏を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "dolly_talked": true,
+          "dolly_told_chapel_location": true,
+          "dolly_told_sanitarium_location": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "the_neighborhood__local_residents__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'local_residents' and location == 'the_neighborhood' and flags.dolly_talked == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ドーリー氏を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "the_neighborhood__corbitt_house_exterior_view__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'corbitt_house_exterior_view' and location == 'the_neighborhood' and flags.corbitt_house_observed == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "コービット屋敷を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "corbitt_house_observed": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "the_neighborhood__corbitt_house_exterior_view__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'corbitt_house_exterior_view' and location == 'the_neighborhood' and flags.corbitt_house_observed == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "コービット屋敷を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "roxbury_sanitarium__patient_records__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'patient_records' and location == 'roxbury_sanitarium' and flags.sanitarium_info_found == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "患者記録・カルテを注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "sanitarium_info_found": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "roxbury_sanitarium__patient_records__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'patient_records' and location == 'roxbury_sanitarium' and flags.sanitarium_info_found == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "患者記録・カルテを調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "roxbury_sanitarium__vittorio_macario__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'vittorio_macario' and location == 'roxbury_sanitarium' and flags.vittorio_interviewed == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ヴィットリオ・マカリオを注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "vittorio_interviewed": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "roxbury_sanitarium__vittorio_macario__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'vittorio_macario' and location == 'roxbury_sanitarium' and flags.vittorio_interviewed == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ヴィットリオ・マカリオを調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "roxbury_sanitarium__gabriella_macario__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'gabriella_macario' and location == 'roxbury_sanitarium' and flags.gabriella_interviewed == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ガブリエラ・マカリオを注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "gabriella_interviewed": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "roxbury_sanitarium__gabriella_macario__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'gabriella_macario' and location == 'roxbury_sanitarium' and flags.gabriella_interviewed == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ガブリエラ・マカリオを調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__chapel_secret_cellar__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'chapel_secret_cellar' and location == 'chapel_of_contemplation' and flags.chapel_investigated == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "保管庫からは、カルトの不気味な儀式記録と、ウォルター・コービットが残した日記の断片が見つかった。そこにはコービットの遺体が自宅の地下室に埋葬された経緯や、『地底の裁判官』——イゴーロナクをはじめとする神格——に捧げられた冒涜的な記述が綴られている。読み進めるほどに、額の奥のうずきが増していく。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "chapel_investigated": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__chapel_secret_cellar__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'chapel_secret_cellar' and location == 'chapel_of_contemplation' and flags.chapel_investigated == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "焼け残った祭壇下の秘密の保管庫を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__chapel_ruins__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'chapel_ruins' and location == 'chapel_of_contemplation' and flags.chapel_investigated == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "保管庫からは、カルトの不気味な儀式記録と、ウォルター・コービットが残した日記の断片が見つかった。そこにはコービットの遺体が自宅の地下室に埋葬された経緯や、『地底の裁判官』——イゴーロナクをはじめとする神格——に捧げられた冒涜的な記述が綴られている。読み進めるほどに、額の奥のうずきが増していく。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "chapel_investigated": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__chapel_ruins__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'chapel_ruins' and location == 'chapel_of_contemplation' and flags.chapel_investigated == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "焼け残った祭壇下の秘密の保管庫を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__white_symbol__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'white_symbol' and location == 'chapel_of_contemplation' and flags.symbol_investigated == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "白いペンキの記号を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "symbol_investigated": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__white_symbol__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'white_symbol' and location == 'chapel_of_contemplation' and flags.symbol_investigated == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "白いペンキの記号を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__rotting_floorboards__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'rotting_floorboards' and location == 'chapel_of_contemplation' and flags.floorboards_examined == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "もろくなった床板を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "floorboards_examined": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__rotting_floorboards__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'rotting_floorboards' and location == 'chapel_of_contemplation' and flags.floorboards_examined == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "もろくなった床板を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__skeletons_in_robes__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'skeletons_in_robes' and location == 'chapel_of_contemplation' and flags.skeletons_examined == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ローブをまとった骸骨を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "skeletons_examined": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__skeletons_in_robes__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'skeletons_in_robes' and location == 'chapel_of_contemplation' and flags.skeletons_examined == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ローブをまとった骸骨を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__shelf_with_records__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'shelf_with_records' and location == 'chapel_of_contemplation' and flags.shelf_searched == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "朽ちかけた棚を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "shelf_searched": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__shelf_with_records__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'shelf_with_records' and location == 'chapel_of_contemplation' and flags.shelf_searched == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "朽ちかけた棚を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__cult_diary__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'cult_diary' and location == 'chapel_of_contemplation' and flags.diary_read == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "カルトの日誌を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "diary_read": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__cult_diary__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'cult_diary' and location == 'chapel_of_contemplation' and flags.diary_read == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "カルトの日誌を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__grimoire_book_of_eibon__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'grimoire_book_of_eibon' and location == 'chapel_of_contemplation' and flags.grimoire_examined == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "魔道書『エイボンの書』を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "grimoire_examined": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "chapel_of_contemplation__grimoire_book_of_eibon__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'grimoire_book_of_eibon' and location == 'chapel_of_contemplation' and flags.grimoire_examined == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "魔道書『エイボンの書』を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_exterior__corbitt_house__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'corbitt_house' and location == 'corbitt_exterior' and flags.corbitt_house_entered == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ノット氏から渡された鍵で正面玄関を開けた。差し錠が固いときは力ずくでこじ開け、あるいは目星で見つけた裏口から屋敷の中へ足を踏み入れた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "corbitt_house_entered": true,
+          "front_door_unlocked": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_exterior__corbitt_house__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'corbitt_house' and location == 'corbitt_exterior' and flags.corbitt_house_entered == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "コービット屋敷を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_exterior__front_door__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'front_door' and location == 'corbitt_exterior' and flags.front_door_investigated == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "正面玄関のドアを注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "front_door_investigated": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_exterior__front_door__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'front_door' and location == 'corbitt_exterior' and flags.front_door_investigated == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "正面玄関のドアを調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_exterior__exterior_windows__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'exterior_windows' and location == 'corbitt_exterior' and flags.ground_floor_windows_investigated == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "1階の窓を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "ground_floor_windows_investigated": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_exterior__exterior_windows__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'exterior_windows' and location == 'corbitt_exterior' and flags.ground_floor_windows_investigated == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "1階の窓を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_exterior__ground_floor_windows__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'ground_floor_windows' and location == 'corbitt_exterior' and flags.ground_floor_windows_investigated == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "1階の窓を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "ground_floor_windows_investigated": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_exterior__ground_floor_windows__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'ground_floor_windows' and location == 'corbitt_exterior' and flags.ground_floor_windows_investigated == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "1階の窓を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_exterior__1階の窓__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == '1階の窓' and location == 'corbitt_exterior' and flags.ground_floor_windows_investigated == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "1階の窓を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "ground_floor_windows_investigated": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_exterior__1階の窓__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == '1階の窓' and location == 'corbitt_exterior' and flags.ground_floor_windows_investigated == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "1階の窓を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_ground_floor__living_room_clutter__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'living_room_clutter' and location == 'corbitt_ground_floor' and flags.living_room_investigated == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "リビングの散乱した荷物を注意深く調べ、重要な手がかりを見つけた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "living_room_investigated": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_ground_floor__living_room_clutter__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'living_room_clutter' and location == 'corbitt_ground_floor' and flags.living_room_investigated == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "リビングの散乱した荷物を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_ground_floor__basement_door__success",
+      "priority": 70,
+      "trigger_condition": "action_id in ['search', 'inspect', 'break', 'force', 'push'] and target == 'basement_door' and location == 'corbitt_ground_floor' and flags.basement_accessible == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "地下室への扉を開けた。力ずくでこじ開けるか、目星で見つけた隙間から錠を外し、冷たい空気とカビの匂いが地下から漂ってくる。",
+        "kp_instruction": "扉が開いたことを描写し、地階へ降りるか問いかけてください。",
+        "flag_updates": {
+          "basement_accessible": true,
+          "basement_door_unlocked": true,
+          "hidden_passage_found": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_ground_floor__basement_door__failure",
+      "priority": 70,
+      "trigger_condition": "action_id in ['search', 'inspect', 'break', 'force', 'push'] and target == 'basement_door' and location == 'corbitt_ground_floor' and flags.basement_accessible == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "扉はまだ閉ざされたままだ。〈STR〉でこじ開けるか、〈目星〉で錠や板の弱点を探そう。",
+        "kp_instruction": "扉が開かなかったことを描写し、STRでこじ開けるか目星で弱点を探すよう促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_ground_floor__hidden_passage__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'hidden_passage' and location == 'corbitt_ground_floor' and flags.basement_accessible == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "地下室への扉を開けた。力ずくでこじ開けるか、目星で見つけた隙間から錠を外し、冷たい空気とカビの匂いが地下から漂ってくる。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "basement_accessible": true,
+          "basement_door_unlocked": true,
+          "hidden_passage_found": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_ground_floor__hidden_passage__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'hidden_passage' and location == 'corbitt_ground_floor' and flags.basement_accessible == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "地下室への扉を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_ground_floor__storage_room1_cupboard__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'storage_room1_cupboard' and location == 'corbitt_ground_floor' and flags.corbitt_diaries_found == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "食器棚をこじ開けると、丈夫な表紙の本が3冊見つかった。ウォルター・コービットの日記のようだ。1冊目の最初のページにそのことが書かれている。日記にはオカルトの実験や魔術、特に《彼方への道を切り開くものの招請》という呪文が記されている。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "corbitt_diaries_found": true,
+          "clue_occult_experiments": true,
+          "clue_summoning_spell": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_ground_floor__storage_room1_cupboard__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'storage_room1_cupboard' and location == 'corbitt_ground_floor' and flags.corbitt_diaries_found == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "物置部屋の食器棚を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_ground_floor__kitchen_breaker_box__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'kitchen_breaker_box' and location == 'corbitt_ground_floor' and flags.basement_power_state_known == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ブレーカーを調べると、地下への電気が止められていることがわかった。これを操作すれば、地下の電気を通電させたり、止めたりできるだろう。しかし、コービットがいつでも電気を止めることができるという不穏な予感もする。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "basement_power_state_known": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_ground_floor__kitchen_breaker_box__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'kitchen_breaker_box' and location == 'corbitt_ground_floor' and flags.basement_power_state_known == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "台所のブレーカーボックスを調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_ground_floor__ground_floor_windows__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'ground_floor_windows' and location == 'corbitt_ground_floor' and flags.ground_floor_windows_inspected == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "1階の窓はすべて内側から釘で厳重に打ち付けられている。まるで誰かが中に閉じこもったか、あるいは外からの侵入を防ごうとしたかのようだ。外から見ても、カーテンが閉ざされ、中の様子はうかがえない。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "ground_floor_windows_inspected": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_ground_floor__ground_floor_windows__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'ground_floor_windows' and location == 'corbitt_ground_floor' and flags.ground_floor_windows_inspected == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "1階の窓を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_upper_floor__master_bedroom_bookshelf__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'master_bedroom_bookshelf' and location == 'corbitt_upper_floor' and flags.master_bedroom_bookshelf_investigated == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "本棚を詳しく調べると、いくつかの聖書や祈祷書の中に、古びた家族写真が挟まっているのを見つけた。写真には、ヴィットリオとガブリエラ、そして幼い子供たちが写っている。裏には『1920年、コービット屋敷にて』と書かれている。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "master_bedroom_bookshelf_investigated": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_upper_floor__master_bedroom_bookshelf__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'master_bedroom_bookshelf' and location == 'corbitt_upper_floor' and flags.master_bedroom_bookshelf_investigated == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "主人の寝室の本棚を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_upper_floor__spare_bedroom_bed__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'spare_bedroom_bed' and location == 'corbitt_upper_floor' and flags.spare_bedroom_bed_investigated == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ベッドを調べると、スプリングの一部が不自然に歪んでいることに気づく。また、微かに甘ったるい、吐き気を催すような腐敗臭がする。この部屋がコービットの霊的な影響下にあることを示唆している。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "spare_bedroom_bed_investigated": true,
+          "trigger_flying_bed": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_upper_floor__spare_bedroom_bed__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'spare_bedroom_bed' and location == 'corbitt_upper_floor' and flags.spare_bedroom_bed_investigated == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "予備用寝室のベッドを調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_upper_floor__bathroom_bathtub__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'bathroom_bathtub' and location == 'corbitt_upper_floor' and flags.bathroom_bathtub_investigated == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "浴槽の水をよく見ると、底に微細な黒い沈殿物があることに気づく。水は一般的な水道水とは異なる、奇妙な塩気を感じさせる。何かの儀式に使われたか、あるいは単なる腐敗の兆候か。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "bathroom_bathtub_investigated": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_upper_floor__bathroom_bathtub__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'bathroom_bathtub' and location == 'corbitt_upper_floor' and flags.bathroom_bathtub_investigated == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "浴室の浴槽を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_basement__scattered_junk__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'scattered_junk' and location == 'corbitt_basement' and flags.junk_searched == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ガラクタの中から、古びたナイフの柄がわずかに見えている。刃は異様に厚いサビで覆われているようだ。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "junk_searched": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_basement__scattered_junk__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'scattered_junk' and location == 'corbitt_basement' and flags.junk_searched == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "散らばったガラクタを調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_basement__basement_planks__success",
+      "priority": 70,
+      "trigger_condition": "action_id in ['search', 'inspect', 'break', 'force', 'push'] and target == 'basement_planks' and location == 'corbitt_basement' and flags.basement_planks_broken == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "力ずくで板を破壊し、奥の部屋への通路を開けた。",
+        "kp_instruction": "板が砕けて奥への道が開けたことを描写してください。",
+        "flag_updates": {
+          "basement_planks_broken": true,
+          "basement_planks_examined": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_basement__basement_planks__failure",
+      "priority": 70,
+      "trigger_condition": "action_id in ['search', 'inspect', 'break', 'force', 'push'] and target == 'basement_planks' and location == 'corbitt_basement' and flags.basement_planks_broken == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "板で覆われた壁は頑丈に見える。力でこじ開けるか、格闘技能で板を破壊しよう。",
+        "kp_instruction": "板を壊せなかったことを描写し、再挑戦を促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_basement__wall_planks__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'wall_planks' and location == 'corbitt_basement' and flags.basement_planks_examined == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "力ずくで板を破壊し、奥の部屋への通路を開けた。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "basement_planks_examined": true,
+          "basement_planks_broken": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_basement__wall_planks__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'wall_planks' and location == 'corbitt_basement' and flags.basement_planks_examined == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "板で覆われた壁を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_basement__corbitt_knife__encounter",
+      "priority": 75,
+      "trigger_condition": "action_id in ['search', 'inspect', 'use'] and target == 'corbitt_knife' and location == 'corbitt_basement' and flags.has_corbitt_knife == false",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "ナイフを拾い上げると、ひとりでに探索者の手を振りほどいて宙に浮き上がり、攻撃してきた！",
+        "kp_instruction": "コービットの魔法のダガーが自律的に襲撃してくる戦闘シーンを描写してください。システムは戦闘フラグを立てています。緊迫した戦闘描写を行ってください。",
+        "flag_updates": {
+          "has_corbitt_knife": true,
+          "trigger_knife_attack": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": true,
+          "value": "1D4",
+          "source": "generic"
+        },
+        "combat_start": {
+          "enemies": [
+            "corbitt_floating_dagger"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_basement_room2__corbitt_body__encounter",
+      "priority": 90,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'corbitt_body' and location == 'corbitt_basement_room2' and flags.corbitt_body_encountered == false",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "干からびた遺体の『ぎらぎらと輝く目』がぐるりと動き、憎悪を込めて凝視してきた。ウォルター・コービットは生きている！ 彼が身を起こし、襲いかかろうとする！",
+        "kp_instruction": "生ける屍コービットとの戦闘開始を描写してください。探索者は攻撃するか、遺体を破壊・浄化するか、逃走するかを選べます。遺体（corbitt_body）を破壊すればシナリオクリアです。",
+        "flag_updates": {
+          "corbitt_body_encountered": true,
+          "trigger_corbitt_boss_battle": true
+        },
+        "san_check": {
+          "required": true,
+          "value": "1D8",
+          "source": "generic"
+        },
+        "combat_start": {
+          "enemies": [
+            "walter_corbitt"
+          ],
+          "roll_armor_for": [
+            "walter_corbitt"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_basement_room2__corbitt_body__defeat",
+      "priority": 95,
+      "trigger_condition": "action_id in ['break', 'force', 'attack', 'use', 'push', 'kick'] and target == 'corbitt_body' and location == 'corbitt_basement_room2' and flags.corbitt_defeated == false and flags.corbitt_body_encountered == true and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "渾身の一撃、あるいは浄化の儀式によってウォルター・コービットの遺体は崩れ落ち、屋敷を覆っていた冒涜的な気配が霧散していく。悪霊の家の呪いは解かれた。",
+        "kp_instruction": "コービット討伐とシナリオクリアを劇的に描写して、セッションを締めくくってください。",
+        "flag_updates": {
+          "corbitt_defeated": true
+        },
+        "new_phase": "clear",
+        "combat_end": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_basement_room2__corbitt_body__defeat_fail",
+      "priority": 95,
+      "trigger_condition": "action_id in ['break', 'force', 'attack', 'use', 'push', 'kick'] and target == 'corbitt_body' and location == 'corbitt_basement_room2' and flags.corbitt_defeated == false and flags.corbitt_body_encountered == true and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "攻撃は決定打とならず、コービットは反撃してくる。戦いは続く。",
+        "kp_instruction": "攻撃が失敗し反撃されることを描写し、再挑戦を促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_basement_room3__ruined_altar__success",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'ruined_altar' and location == 'corbitt_basement_room3' and flags.ruined_altar_investigated == false and success_level >= 2",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "祭壇の刻印を読み解くと、コービットが『地底の裁判官』——イゴーロナクに連なる神格——から不死の力を引き出していること、そして彼を完全に滅ぼすには遺体を清め、破壊する必要があることが示唆されている。",
+        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "flag_updates": {
+          "ruined_altar_investigated": true,
+          "learned_corbitt_weakness": true
+        },
+        "mark_investigated": true,
+        "san_check": {
+          "required": false
+        }
+      }
+    },
+    {
+      "event_id": "corbitt_basement_room3__ruined_altar__failure",
+      "priority": 60,
+      "trigger_condition": "action_id in ['search', 'inspect'] and target == 'ruined_altar' and location == 'corbitt_basement_room3' and flags.ruined_altar_investigated == false and success_level <= 1",
+      "action_type": "update_and_describe",
+      "payload": {
+        "system_log": "崩れた地下の祭壇を調べたが、これといった手がかりは見つからなかった。",
+        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "san_check": {
+          "required": false
+        }
+      }
+    }
+  ]
+}

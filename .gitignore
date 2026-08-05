@@ -1,0 +1,19 @@
+# Streamlit / ローカル LLM 設定（Ollama 等）
+src/.streamlit/secrets.toml
+
+# Gemini API（シナリオコンバーター専用・TRPG本体は読まない）
+src/.local/gemini.env
+
+# 多段変換の途中キャッシュ
+src/.local/.staged_cache/
+
+# セーブ・ログ
+src/save_*.json
+src/replay_log.json
+src/trpg_save_data.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/

@@ -1,0 +1,19 @@
+{
+  "scenario_meta": {
+    "title": "粘土板に描かれた恐怖",
+    "background": "ウォルター・コービットの遺体は、コービット屋敷の地階に横たわっている。彼の精神はまだ生きており、屋敷にとりついている。彼はクトゥルフ神話の魔術によって死後も自我を保ち、自分の体をよみがえらせることができる。探索者はコービットについて知り、謎を解明しなければならない。コービットは探索者を誤った方向に導き、怖がらせ、追い払おうとし、失敗すれば殺そうとするだろう。",
+    "summary": "1920年代のボストンを舞台に、幽霊が出ると噂される古い屋敷「コービット屋敷」の謎を解明するシナリオ。探索者は家主ノット氏に雇われ、屋敷にまつわる不可解な出来事の真相を突き止める。調査を進める中で、屋敷にとりついた魔術師ウォルター・コービットの存在が明らかになり、探索者は彼を排除するための戦いに挑むことになる。",
+    "initial_phase": "introduction",
+    "initial_location": "introduction_scene",
+    "startup_effects": {}
+  },
+  "initial_state": {
+    "current_phase": "introduction",
+    "location": "introduction_scene",
+    "turn_counter": 0,
+    "flags": {},
+    "counters": {}
+  },
+  "locations": {},
+  "event_triggers": []
+}

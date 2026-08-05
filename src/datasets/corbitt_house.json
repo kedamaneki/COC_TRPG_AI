@@ -1,0 +1,1417 @@
+{
+  "scenario_meta": {
+    "title": "悪霊の家",
+    "background": "ウォルター・コービットの遺体はコービット屋敷の地階に横たわっているが、彼の精神は生きており、屋敷にとりついている。クトゥルフ神話の魔術により死後も自我を保ち、体をよみがえらせることができる。彼は時に吸血鬼じみた姿で住人を襲い、秘密を知った者を追い払うか殺す。探索者が謎を解明するにはコービットについて知る必要があるが、彼は探索者を誤った方向に導き、怖がらせ、最終的には殺そうとするだろう。",
+    "summary": "探索者は1920年代のボストンで、幽霊が出ると噂される古い屋敷「コービット屋敷」の調査を家主のノット氏から依頼される。以前の借家人であるマカリオ一家が不幸に見舞われたため、ノット氏は屋敷の謎を解明し、評判を回復させたいと考えている。探索者には報酬、屋敷の鍵、住所、そして前払い金25ドルが渡される。",
+    "initial_phase": "introduction",
+    "initial_location": "introduction",
+    "startup_effects": {}
+  },
+  "initial_state": {
+    "current_phase": "introduction",
+    "location": "introduction",
+    "turn_counter": 0,
+    "flags": {},
+    "counters": {}
+  },
+  "locations": {
+    "introduction": {
+      "name": "導入",
+      "default_description": "あなたはスティーブン・ノット氏と向かい合っている。場所はあなたの探偵事務所かもしれないし、馴染みの喫茶店の一角かもしれない。ノット氏は最近、とある屋敷を相続したものの、その悪評のせいで賃貸も売却もできずに困り果てている様子だ。彼はあなたに、その屋敷にまつわる奇妙な出来事を調査してほしいと依頼してきた。",
+      "connected_to": [
+        "boston_globe",
+        "central_library",
+        "hall_of_records",
+        "higher_courts_police_station",
+        "the_neighborhood",
+        "corbitt_exterior"
+      ],
+      "objects": {
+        "knott_letter": {
+          "name": "ノット氏からの依頼書",
+          "description": "スティーブン・ノット氏が作成した、屋敷の調査を依頼する正式な書類。屋敷の住所と、最近になって相続したこと、そして奇妙な出来事のために賃貸も売却もできない現状が記されている。書類の隅には、屋敷の過去の所有者に関する古い新聞記事の切り抜きがホチキスで留められている。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "knott_letter_read",
+          "reject_message": "依頼書はすでに読んだはずだ。",
+          "purpose": ""
+        },
+        "knott_memo": {
+          "name": "ノット氏のメモ",
+          "description": "ノット氏が依頼書に添えて渡してきた手書きのメモ。そこには、屋敷の近隣住民が『奇妙な音』や『不気味な影』について話していたこと、そして『ボストン・グローブ』紙の過去の記事に何か手がかりがあるかもしれない、という推測が走り書きされている。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "knott_memo_read",
+          "reject_message": "メモはすでに確認した。",
+          "purpose": ""
+        }
+      },
+      "exits": {
+        "boston_globe": {
+          "name": "ボストン・グローブ紙の新聞社へ",
+          "condition": "true",
+          "reject_message": "今はまだ、そちらへ向かう準備ができていない。"
+        },
+        "central_library": {
+          "name": "中央図書館へ",
+          "condition": "true",
+          "reject_message": "今はまだ、そちらへ向かう準備ができていない。"
+        },
+        "hall_of_records": {
+          "name": "公文書館へ",
+          "condition": "true",
+          "reject_message": "今はまだ、そちらへ向かう準備ができていない。"
+        },
+        "higher_courts_police_station": {
+          "name": "警察署へ",
+          "condition": "true",
+          "reject_message": "今はまだ、そちらへ向かう準備ができていない。"
+        },
+        "the_neighborhood": {
+          "name": "近隣住民への聞き込みへ",
+          "condition": "true",
+          "reject_message": "今はまだ、そちらへ向かう準備ができていない。"
+        },
+        "corbitt_exterior": {
+          "name": "屋敷の外観へ",
+          "requires_flag": "knott_letter_read",
+          "reject_message": "ノット氏からの依頼書をよく読んでから、屋敷へ向かうべきだろう。"
+        }
+      }
+    },
+    "boston_globe": {
+      "name": "ボストン・グローブ",
+      "default_description": "評判のいい日刊新聞社『ボストン・グローブ』のオフィスです。受付やジャーナリスト、編集者など、様々な人々が行き交っています。地下には一般には公開されていない「参考資料室」（新聞の切り抜きファイルがある）が存在します。",
+      "connected_to": [
+        "introduction",
+        "central_library",
+        "hall_of_records"
+      ],
+      "objects": {
+        "reception_desk": {
+          "name": "受付デスク",
+          "description": "ボストン・グローブ社のロビーにある受付デスクです。忙しそうに電話をかける女性が座っています。彼女に話しかければ、編集者のアーティ・ウィルモットを紹介してくれるでしょう。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "talked_to_receptionist",
+          "reject_message": "受付は現在、他の来客対応で忙しいようです。少し待ってみましょう。",
+          "purpose": ""
+        },
+        "artie_wilmott": {
+          "name": "編集者アーティ・ウィルモット",
+          "description": "ボストン・グローブ社の編集者。彼は自分のちっぽけな権限を振りかざし、参考資料室へのアクセスを拒否しようとするでしょう。彼を説得するには、〈魅惑〉、〈威圧〉、〈説得〉、または〈言いくるめ〉の技能が必要です。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "talked_to_artie",
+          "reject_message": "アーティ・ウィルモットはあなたの要求を拒否しています。彼を説得するには、適切な技能を使う必要があります。",
+          "purpose": ""
+        },
+        "reference_room_clipping_files": {
+          "name": "参考資料室の切り抜きファイル",
+          "description": "ほこりだらけの地下室にあるファイル棚に並べられた、古い新聞の切り抜きファイルです。カビ臭い匂いが立ち込め、ボイラーの熱で暑い。コービット屋敷に関する記事を探すことができるでしょう。保管記録係のルース・ブレイクは、1878年の火事以前の記録は不完全だと教えてくれるかもしれません。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "accessed_clipping_files",
+          "reject_message": "参考資料室の切り抜きファイルは一般公開されていません。編集者のアーティ・ウィルモットの許可が必要です。",
+          "purpose": ""
+        }
+      },
+      "exits": {
+        "city_streets_exit": {
+          "name": "ボストン市街へ",
+          "reject_message": "【システムブロック】その方向へは進めません。",
+          "connected_to": "introduction"
+        }
+      }
+    },
+    "central_library": {
+      "name": "中央図書館",
+      "default_description": "この立派な施設には興味深い情報がいくつも収められている。図書館での調査にゲーム内での半日を使うごとに、各プレイヤーに〈図書館〉ロールを1回ずつさせること。失敗しても、ロールをプッシュする必要はない。プレイヤーは何度でも挑戦できる。ただし、ロールするごとに調査にさらに半日使ったことになる。探索者が調査に1日以上の時間をかけているようなら、雇い主であるノット氏が探索者に連絡して調査の進捗具合を尋ね、問題の解決を促す。とどのつまり時は金なり、ということだ。",
+      "connected_to": [
+        "hall_of_records",
+        "higher_courts_police_station",
+        "the_neighborhood"
+      ],
+      "objects": {
+        "newspaper_archives": {
+          "name": "新聞アーカイブ",
+          "description": "古い新聞の山が積み上げられている。ボストン・グローブ紙のマイクロフィルムもあるようだ。特定の年代の記事を探すには、根気と集中力が必要だろう。成功すれば、1918年の未掲載記事（プレイヤー資料2）が見つかるかもしれない。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "found_newspaper_article_1918",
+          "reject_message": "古い新聞をいくら漁っても、それらしい記事は見つからない。もっと時間をかける必要があるか、あるいは別の方法を試すべきだろう。すでにこの情報は見つけているかもしれない。",
+          "purpose": ""
+        },
+        "local_history_section": {
+          "name": "郷土史資料",
+          "description": "この地域の歴史に関する書籍や文書が並べられている。古い不動産記録や人物伝記なども含まれているようだ。ウォルター・コービット氏や屋敷に関する情報が見つかるかもしれない。成功すれば、屋敷の歴史に関する資料（プレイヤー資料3〜6）が得られるだろう。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "found_corbitt_history_all",
+          "reject_message": "郷土史資料を丹念に調べたが、コービット氏や屋敷に関する決定的な情報はまだ見つからない。さらに深く掘り下げる必要があるだろう。すでにこの情報は見つけているかもしれない。",
+          "purpose": ""
+        }
+      },
+      "exits": {
+        "to_neighborhood": {
+          "name": "図書館の出口",
+          "condition": "true",
+          "reject_message": "出口は開いている。"
+        },
+        "to_hall_of_records": {
+          "name": "記録保管所へ向かう",
+          "requires_flag": "found_corbitt_history_all",
+          "reject_message": "記録保管所へ行く必要性はまだ感じられない。まずは図書館で得られる情報を全て集めるべきだろう。"
+        }
+      }
+    },
+    "hall_of_records": {
+      "name": "公文書館",
+      "default_description": "古びた石造りの建物で、内部は薄暗く、埃っぽい紙の匂いが充満している。膨大な量の公文書が棚にぎっしりと並べられ、静寂が支配している。奥には事務官のデスクが見える。",
+      "connected_to": [
+        "the_neighborhood",
+        "central_library",
+        "higher_courts_police_station"
+      ],
+      "objects": {
+        "crime_court_records": {
+          "name": "犯罪裁判所の記録",
+          "description": "過去の犯罪裁判に関する記録が収められた棚だ。黙想チャペルの名前を検索すると、1912年に行われた裁判で言及されているのを発見する。しかし、その裁判の具体的な記録はなぜか残されていない。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "hall_of_records_court_records_investigated",
+          "reject_message": "この記録からは、これ以上新しい情報は得られないようだ。なぜ記録が残っていないのかは不明だ。",
+          "purpose": ""
+        },
+        "clerk_desk": {
+          "name": "事務官のデスク",
+          "description": "書類の山に埋もれたデスクで、初老の事務官が忙しそうに作業している。彼に話しかけると、重い犯罪は郡や州、あるいは連邦の裁判所へ送られること、そして逮捕や押収に関わる市の警官の記録は中央警察署にあることを教えてくれる。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "hall_of_records_clerk_interacted",
+          "reject_message": "事務官は忙しそうだ。これ以上話しかけても、同じ情報しか得られないだろう。",
+          "purpose": ""
+        },
+        "general_archives": {
+          "name": "一般的な公文書",
+          "description": "様々な年代の公文書が分類され、保管されている。特定の情報を探すには、根気強い調査が必要だろう。もしかしたら、プレイヤー資料7に繋がる情報が見つかるかもしれない。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "hall_of_records_general_archives_searched",
+          "reject_message": "膨大な記録の山だ。これ以上、何かを見つけるには時間と根気が必要だろう。今は他に優先すべきことがあるかもしれない。",
+          "purpose": ""
+        }
+      },
+      "exits": {
+        "to_street": {
+          "name": "通りへ出る",
+          "condition": "true",
+          "reject_message": "【システムブロック】その方向へは進めません。",
+          "description": "公文書館の外、賑やかな通りへと続く。"
+        },
+        "to_central_library": {
+          "name": "中央図書館へ向かう",
+          "condition": "true",
+          "reject_message": "【システムブロック】その方向へは進めません。",
+          "description": "さらに詳しい資料を探すため、中央図書館へ移動する。"
+        },
+        "to_higher_courts_police_station": {
+          "name": "中央警察署へ向かう",
+          "requires_flag": "hall_of_records_clerk_interacted",
+          "reject_message": "どこへ向かうべきか、まだはっきりしない。まずは公文書館で情報を集めるべきだろう。",
+          "description": "事務官が言っていた、市の警官の記録がある中央警察署へ向かう。"
+        }
+      }
+    },
+    "higher_courts_police_station": {
+      "name": "上級裁判所、中央警察署",
+      "default_description": "上級裁判所と中央警察署が併設された厳粛な建物だ。ここでは重要な記録が保管されているが、その閲覧は容易ではない。事務官の目を掻い潜り、必要な情報にたどり着くには、相応の交渉術やコネクションが必要となるだろう。",
+      "connected_to": [
+        "introduction",
+        "boston_globe",
+        "central_library",
+        "hall_of_records",
+        "higher_courts_police_station",
+        "the_neighborhood",
+        "roxbury_sanitarium",
+        "chapel_of_contemplation",
+        "corbitt_exterior",
+        "corbitt_ground_floor",
+        "corbitt_upper_floor",
+        "corbitt_basement"
+      ],
+      "objects": {
+        "stored_records": {
+          "name": "保管されている記録",
+          "description": "上級裁判所と中央警察署に保管されている、様々な事件や人物に関する公式記録だ。閲覧には厳格な手続きが必要とされ、通常は一般人のアクセスは許可されていない。ここにはプレイヤー資料8に相当する情報が眠っている。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "higher_courts_records_accessed",
+          "reject_message": "記録は厳重に管理されており、事務官の許可なしに閲覧することはできない。どうにかしてアクセスする方法を探す必要がある。",
+          "purpose": ""
+        },
+        "kim_deblanc": {
+          "name": "事務官キム・デブラン",
+          "description": "裁判所の事務官。探索者は彼女と知り合いのようだ。彼女の態度次第で、記録へのアクセスが大きく左右されるだろう。彼女は探索者の技能ロールの結果によって、親切にも賄賂を要求する恥知らずにもなり得る。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "kim_deblanc_interacted",
+          "reject_message": "キム・デブランは忙しそうだ。話しかけるには、適切なタイミングとアプローチが必要だろう。彼女の機嫌を損ねないように注意が必要だ。",
+          "purpose": ""
+        }
+      },
+      "exits": {
+        "main_entrance": {
+          "name": "正面玄関から出る",
+          "condition": "",
+          "reject_message": "【システムブロック】その方向へは進めません。"
+        }
+      }
+    },
+    "the_neighborhood": {
+      "name": "屋敷の近所",
+      "default_description": "第1次世界大戦の前からこの地区に住んでいた人々の大半は引っ越したか、すでに亡くなっている。19世紀の家屋は、新しい事務所や店に改装されている。問題の屋敷（コービット屋敷）は、表庭が雑草で伸び放題となっており、現在売りに出されている唯一の個人住宅である。",
+      "connected_to": [
+        "introduction",
+        "boston_globe",
+        "central_library",
+        "hall_of_records",
+        "higher_courts_police_station",
+        "the_neighborhood",
+        "roxbury_sanitarium",
+        "chapel_of_contemplation",
+        "corbitt_exterior",
+        "corbitt_ground_floor",
+        "corbitt_upper_floor",
+        "corbitt_basement"
+      ],
+      "objects": {
+        "dolly_the_shopkeeper": {
+          "name": "ドーリー氏",
+          "description": "タバコや新聞を売っている店主のドーリー氏が、店の前で客と話している。彼はこの地区に長く住んでおり、多くのことを知っているようだ。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "dolly_talked",
+          "reject_message": "ドーリー氏は忙しそうだ。話しかけるには、もう少し工夫が必要だろう。",
+          "purpose": "",
+          "clues": {
+            "macario_family_info": "マカリオ一家は2年前にこの屋敷へ引っ越してきた。1年後、父親が事故で狂気に陥り、『燃える目をした化け物』について話していた。約1か月後、母親も狂気に陥り、夫妻はボストンのロックスベリー・サナトリウムに入院している。子供たちはボルチモアの親戚に引き取られた。",
+            "corbitt_house_name": "屋敷は『コービット屋敷』と呼ばれている。",
+            "chapel_location_hint": "黙想チャペルはここから2、3ブロック離れた先にある。"
+          },
+          "triggers_flag_on_success": {
+            "dolly_told_chapel_location": true,
+            "dolly_told_sanitarium_location": true
+          },
+          "interaction_prompt": "ドーリー氏に話しかけますか？ (APP/信用、または魅惑/言いくるめ/説得/威圧)"
+        },
+        "corbitt_house_exterior_view": {
+          "name": "コービット屋敷",
+          "description": "表庭が雑草で伸び放題となっており、現在売りに出されている唯一の個人住宅である。荒れ果てた様子から、長い間手入れされていないことがうかがえる。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "corbitt_house_observed",
+          "reject_message": "屋敷は荒れ果てており、中に入るには何らかの方法を見つける必要があるだろう。",
+          "purpose": "",
+          "clues": {
+            "for_sale": "屋敷は売りに出されている。",
+            "neglected": "庭は雑草だらけで、手入れされていない。"
+          }
+        }
+      },
+      "exits": {
+        "to_corbitt_exterior": {
+          "name": "コービット屋敷の外観へ",
+          "condition": "true",
+          "reject_message": "【システムブロック】その方向へは進めません。",
+          "target_location": "corbitt_exterior",
+          "description": "荒れ果てたコービット屋敷の敷地へと足を踏み入れる。"
+        },
+        "to_chapel_of_contemplation": {
+          "name": "黙想チャペルへ",
+          "requires_flag": "dolly_told_chapel_location",
+          "reject_message": "黙想チャペルがどこにあるのか、まだ正確には分からない。",
+          "target_location": "chapel_of_contemplation",
+          "description": "ドーリー氏から聞いた情報をもとに、黙想チャペルがあった場所へと向かう。"
+        },
+        "to_roxbury_sanitarium": {
+          "name": "ロックスベリー・サナトリウムへ",
+          "requires_flag": "dolly_told_sanitarium_location",
+          "reject_message": "マカリオ夫妻が入院しているサナトリウムの場所はまだ知らない。",
+          "target_location": "roxbury_sanitarium",
+          "description": "マカリオ夫妻が入院しているというロックスベリー・サナトリウムへと向かう。"
+        }
+      }
+    },
+    "roxbury_sanitarium": {
+      "name": "ロックスベリー・サナトリウム",
+      "default_description": "ロックスベリー・サナトリウムは、ヴィットリオ・マカリオが収容されている施設です。彼の妻ガブリエラもここに滞在しています。静かで重苦しい空気が漂っています。",
+      "connected_to": [
+        "the_neighborhood"
+      ],
+      "objects": {
+        "vittorio_macario": {
+          "name": "ヴィットリオ・マカリオ",
+          "description": "正気を失ったヴィットリオ・マカリオが、胸に聖書を抱きしめています。彼は時折、聖書の一節を指差して「己の武器によって悪魔は滅びる！」とつぶやきます。これ以上、彼から具体的な情報は得られそうにありません。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "vittorio_interviewed",
+          "reject_message": "ヴィットリオは同じ言葉を繰り返すばかりで、これ以上話すことはできません。",
+          "purpose": ""
+        },
+        "gabriella_macario": {
+          "name": "ガブリエラ・マカリオ",
+          "description": "意識のはっきりしたガブリエラ・マカリオが、あなたに話しかけやすい様子です。彼女は屋敷に棲みつく悪霊のような存在について説明してくれます。その存在は夜中に彼女にのしかかり、皿などを部屋中に飛び回らせ、夫ヴィットリオに憎しみを向けていたと言います。彼女は質問に動揺しやすく、具体的な情報はあまり持っていません。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "gabriella_interviewed",
+          "reject_message": "ガブリエラはこれ以上話すと激しく動揺してしまいます。今はそっとしておきましょう。",
+          "purpose": ""
+        }
+      },
+      "exits": {
+        "exit_to_neighborhood": {
+          "name": "サナトリウムを出る",
+          "requires_flag": "gabriella_interviewed",
+          "reject_message": "まだガブリエラ夫人と話が終わっていません。もう少し話を聞いてみましょう。",
+          "destination": "the_neighborhood"
+        }
+      }
+    },
+    "chapel_of_contemplation": {
+      "name": "黙想チャペル",
+      "default_description": "古びた教会の残骸は、曲がりくねった薄汚い通りの突き当たりにある。風雨にさらされ続け、草木が生い茂っているため、灰色のがれきは建築物の壁や土台の跡というより、自然の石のように見える。探索者は崩れかけた壁のそばを通りかかる。壁には白いペンキで塗られた記号があり、これは明らかに最近になってブラシで描かれたものである。記号は、3つのYが三角形を形成している。Yの2つの頂点が、両側にある別のYの頂点と接する向きで配置されているのだ。そうやってできた真ん中のスペースには、じっと見つめているような目が描き込まれている。\n探索者が記号のそばにいる間、額の中でうずくような感じがし始める兆候をプレイヤーに描写する。これは頭痛のようだが、ちょっと頭痛とは違う感じだ。そこを離れれば、うずきは止まる。",
+      "connected_to": [
+        "the_neighborhood"
+      ],
+      "objects": {
+        "white_symbol": {
+          "name": "白いペンキの記号",
+          "description": "崩れかけた壁に描かれた、3つのYが三角形を形成し、中央に目が描き込まれた奇妙な記号だ。最近描かれたもののようだ。見つめていると、額の奥でうずくような不快な感覚がする。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "symbol_investigated",
+          "reject_message": "記号をじっと見つめていると、額の奥でうずくような不快な感覚が強まる。これ以上調べても、気分が悪くなるだけだろう。",
+          "purpose": "",
+          "requires_flag": "!in_basement"
+        },
+        "rotting_floorboards": {
+          "name": "もろくなった床板",
+          "description": "足元の地面に隠された、もろくなった床板がある。注意深く調べれば、その下になにか隠されているかもしれない。踏み抜けば、地階へ落下する危険がある。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "floorboards_examined",
+          "reject_message": "床板は非常に脆く、少し力を加えるだけで崩れそうだ。慎重に扱わないと危険だろう。",
+          "purpose": "",
+          "requires_flag": "!in_basement"
+        },
+        "skeletons_in_robes": {
+          "name": "ローブをまとった骸骨",
+          "description": "地階の棚のそばに横たわる、ぼろぼろの絹のローブをまとった2体の骸骨。おそらく警察から隠れていたものの、火事に巻き込まれて死んだのだろう。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "skeletons_examined",
+          "reject_message": "骸骨はただの死体だ。これ以上調べても何も得られないだろう。",
+          "purpose": "",
+          "requires_flag": "in_basement"
+        },
+        "shelf_with_records": {
+          "name": "朽ちかけた棚",
+          "description": "地階の壁際に置かれた、朽ちかけた木製の棚。中には古い教会の記録類が散乱している。注意深く調べれば、重要なものが見つかるかもしれない。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "shelf_searched",
+          "reject_message": "棚はすでに調べ尽くした。これ以上は何も見つからないだろう。",
+          "purpose": "",
+          "requires_flag": "in_basement"
+        },
+        "cult_diary": {
+          "name": "カルトの日誌",
+          "description": "カビ臭く古い日誌。ページをめくるたびにバラバラになってしまうが、ウォルター・コービットという名前と、彼がコービット屋敷の地階に埋葬されたことが記されている。「本人の希望と『闇の中で待つもの』の希望による」とある。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "diary_read",
+          "reject_message": "日誌はすでに読んだ。これ以上読んでも、ただ朽ちていくだけだ。",
+          "purpose": "",
+          "requires_flag": "found_diary"
+        },
+        "grimoire_book_of_eibon": {
+          "name": "魔道書『エイボンの書』",
+          "description": "日誌の隣にあった、手書きのラテン語で記された非常に分厚い本。かなり腐って虫が食い荒らしており、内容全体を理解することはもうできない。オカルト的な内容を論じているようだ。読むには時間がかかるだろう。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "grimoire_examined",
+          "reject_message": "魔道書はすでに調べた。読むには時間がかかるだろう。",
+          "purpose": "",
+          "requires_flag": "found_grimoire"
+        }
+      },
+      "exits": {
+        "to_neighborhood": {
+          "name": "通りへ戻る",
+          "requires_flag": "!in_basement",
+          "reject_message": "ここから通りへ戻ることができる。",
+          "destination": "the_neighborhood"
+        },
+        "climb_out_of_basement": {
+          "name": "地階から這い上がる",
+          "requires_flag": "in_basement",
+          "reject_message": "崩れた床板の隙間から、上へ這い上がることができるだろう。"
+        }
+      }
+    },
+    "corbitt_exterior": {
+      "name": "コービット屋敷（外観）",
+      "default_description": "そのれんが造りの建物は、両隣を高く新しいオフィスビルに挟まれている。屋敷の正面は道路に面している。裏の庭に植えられた草木は伸び放題で、半壊した日除け棚がある。屋敷を眺めてみれば、屋敷が両隣のビルの陰になってすっかり目立たなくなっている様子に強い印象を受ける。また、カーテンの閉じた飾り気のない窓が、中に何があるのかをすべて覆い隠しているような印象も受ける。",
+      "connected_to": [
+        "the_neighborhood",
+        "corbitt_ground_floor"
+      ],
+      "objects": {
+        "front_door": {
+          "name": "正面玄関のドア",
+          "description": "頑丈な木製のドアで、鍵が1つと、ここ1〜2年の間に新たに追加されたと思われる4本の差し錠で厳重に施錠されている。侵入は困難を極めるだろう。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "front_door_investigated",
+          "reject_message": "ドアは固く閉ざされており、これ以上調べても開く気配はない。",
+          "purpose": ""
+        },
+        "ground_floor_windows": {
+          "name": "1階の窓",
+          "description": "飾り気のない窓はカーテンが閉められ、中を窺い知ることはできない。よく見ると、どの窓も内側から釘で打ち付けられ、完全に固定されているようだ。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "ground_floor_windows_investigated",
+          "reject_message": "窓は内側から完全に固定されており、ここから侵入するのは不可能だ。",
+          "purpose": ""
+        }
+      },
+      "exits": {
+        "enter_front_door": {
+          "name": "正面玄関から屋敷に入る",
+          "requires_flag": "front_door_unlocked",
+          "reject_message": "正面玄関のドアは固く施錠されており、開けることができない。",
+          "target_location_id": "corbitt_ground_floor"
+        },
+        "leave_to_neighborhood": {
+          "name": "周辺の通りへ戻る",
+          "condition": "true",
+          "reject_message": "【システムブロック】その方向へは進めません。",
+          "target_location_id": "the_neighborhood"
+        }
+      }
+    },
+    "corbitt_ground_floor": {
+      "name": "コービット屋敷（1階）",
+      "default_description": "古びたコービット屋敷の1階は、薄暗く、どこか陰鬱な雰囲気が漂っている。窓は内側から釘で打ち付けられ、外の光をほとんど通さない。各部屋には生活の痕跡があるものの、全体的に荒廃しており、不気味な静けさが支配している。",
+      "connected_to": [
+        "corbitt_exterior",
+        "corbitt_upper_floor",
+        "corbitt_basement"
+      ],
+      "objects": {
+        "storage_room1_cupboard": {
+          "name": "物置部屋の食器棚",
+          "description": "この物置部屋の右端にある食器棚は、板で固くふさがれている。中には何か隠されているようだ。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "corbitt_diaries_found",
+          "reject_message": "食器棚は板で固くふさがれており、素手では開けられそうにない。何かこじ開ける道具が必要だろう。",
+          "purpose": "",
+          "success_message": "食器棚をこじ開けると、丈夫な表紙の本が3冊見つかった。ウォルター・コービットの日記のようだ。1冊目の最初のページにそのことが書かれている。日記にはオカルトの実験や魔術、特に《彼方への道を切り開くものの招請》という呪文が記されている。",
+          "clue_flags_on_success": [
+            "corbitt_diaries_found",
+            "clue_occult_experiments",
+            "clue_summoning_spell"
+          ]
+        },
+        "kitchen_breaker_box": {
+          "name": "台所のブレーカーボックス",
+          "description": "台所の壁にある古いブレーカーボックスだ。地下への電気を制御しているようだ。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "basement_power_state_known",
+          "reject_message": "ブレーカーボックスは古いが、特に異常はないようだ。触る必要もなさそうだ。",
+          "purpose": "",
+          "success_message": "ブレーカーを調べると、地下への電気が止められていることがわかった。これを操作すれば、地下の電気を通電させたり、止めたりできるだろう。しかし、コービットがいつでも電気を止めることができるという不穏な予感もする。",
+          "clue_flags_on_success": [
+            "basement_power_state_known"
+          ]
+        },
+        "ground_floor_windows": {
+          "name": "1階の窓",
+          "description": "1階の窓はすべて内側から釘で打ち付けられ、固定されている。外の様子はほとんど見えない。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "ground_floor_windows_inspected",
+          "reject_message": "窓は内側から釘で打ち付けられており、開けることはできない。",
+          "purpose": "",
+          "success_message": "1階の窓はすべて内側から釘で厳重に打ち付けられている。まるで誰かが中に閉じこもったか、あるいは外からの侵入を防ごうとしたかのようだ。外から見ても、カーテンが閉ざされ、中の様子はうかがえない。",
+          "clue_flags_on_success": [
+            "ground_floor_windows_inspected"
+          ]
+        }
+      },
+      "exits": {
+        "front_door": {
+          "name": "正面玄関",
+          "requires_flag": "front_door_unlocked",
+          "reject_message": "正面のドアには鍵が1つ、さらに4本の差し錠が追加で取り付けられており、固く閉ざされている。",
+          "destination": "corbitt_exterior",
+          "description": "屋敷の正面に面した重厚なドア。厳重に施錠されている。"
+        },
+        "back_door": {
+          "name": "通用口",
+          "requires_flag": "back_door_unlocked",
+          "reject_message": "通用口は3本の差し錠と2つの鍵で固く閉ざされている。",
+          "destination": "corbitt_exterior",
+          "description": "マッドルームにある裏庭へと続く通用口。こちらも厳重に施錠されている。"
+        },
+        "stairs_to_upper_floor": {
+          "name": "2階への階段",
+          "reject_message": "【システムブロック】その方向へは進めません。",
+          "destination": "corbitt_upper_floor",
+          "description": "上階へと続く古い階段だ。軋む音が聞こえるかもしれない。"
+        },
+        "stairs_to_basement": {
+          "name": "地階への階段",
+          "requires_flag": "basement_door_unlocked",
+          "reject_message": "地階へ降りるドアは、鍵1つと差し錠3本によって閉じられている。上の階の側からしか開けられないようだ。",
+          "destination": "corbitt_basement",
+          "description": "薄暗い地階へと続く階段。ドアが固く閉ざされている。"
+        }
+      }
+    },
+    "corbitt_upper_floor": {
+      "name": "コービット屋敷（2階）",
+      "default_description": "古びたコービット屋敷の2階だ。主人の寝室、子供の寝室、予備用寝室、そして浴室がある。全体的に生活感は薄れているが、各部屋には以前の住人の痕跡が残されている。特に予備用寝室からは、どこか不穏な気配が漂っている。",
+      "connected_to": [
+        "corbitt_ground_floor"
+      ],
+      "objects": {
+        "master_bedroom_bookshelf": {
+          "name": "主人の寝室の本棚",
+          "description": "平凡な本棚だが、宗教的な書物や聖具が並べられている。ヴィットリオとガブリエラの信仰心の深さがうかがえる。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "master_bedroom_bookshelf_investigated",
+          "reject_message": "特に変わったものはないようだ。",
+          "purpose": "",
+          "investigated_description": "本棚を詳しく調べると、いくつかの聖書や祈祷書の中に、古びた家族写真が挟まっているのを見つけた。写真には、ヴィットリオとガブリエラ、そして幼い子供たちが写っている。裏には『1920年、コービット屋敷にて』と書かれている。"
+        },
+        "spare_bedroom_bed": {
+          "name": "予備用寝室のベッド",
+          "description": "ベッドフレームとむき出しになったベッドスプリングがあるだけの、簡素なベッドだ。使われた形跡はないが、どこか不気味な雰囲気が漂っている。この部屋は以前、老コービットの部屋だったという。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "spare_bedroom_bed_investigated",
+          "reject_message": "ただの古いベッドのようだ。",
+          "purpose": "",
+          "investigated_description": "ベッドを調べると、スプリングの一部が不自然に歪んでいることに気づく。また、微かに甘ったるい、吐き気を催すような腐敗臭がする。この部屋がコービットの霊的な影響下にあることを示唆している。"
+        },
+        "bathroom_bathtub": {
+          "name": "浴室の浴槽",
+          "description": "浴槽には塩気を含んだ水がたまっている。蛇口が緩んでおり、水がしたたっている音がする。タオルなども家族4人分がまだ揃っている。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "bathroom_bathtub_investigated",
+          "reject_message": "ただ水がたまっているだけの浴槽だ。",
+          "purpose": "",
+          "investigated_description": "浴槽の水をよく見ると、底に微細な黒い沈殿物があることに気づく。水は一般的な水道水とは異なる、奇妙な塩気を感じさせる。何かの儀式に使われたか、あるいは単なる腐敗の兆候か。"
+        }
+      },
+      "exits": {
+        "stairs_down_to_ground_floor": {
+          "name": "1階への階段",
+          "condition": "true",
+          "reject_message": "【システムブロック】その方向へは進めません。",
+          "description": "古びた木製の階段が1階へと続いている。",
+          "destination": "corbitt_ground_floor"
+        },
+        "window_spare_bedroom": {
+          "name": "予備用寝室の窓",
+          "condition": "false",
+          "reject_message": "窓から外に出るのは危険すぎる。特にこの部屋では、何かが起こりそうだ。窓ガラスがガタガタと音を立てている。",
+          "description": "外が見える窓だが、どこか不安定な感じがする。コービットの霊的な影響が強い場所だ。",
+          "destination": "corbitt_exterior"
+        }
+      }
+    },
+    "corbitt_basement": {
+      "name": "コービット屋敷（地階・物置部屋）",
+      "default_description": "地階へ降りるドアは、鍵1つと差し錠3本によって閉じられている。そのため上の階の側からしか開けられない。階段を下りると、そこは大きな物置部屋になっている。階段は壊れたものを簡単に直しただけの状態で、電球も点灯しない。地階の壁は、板で隙間なく覆われている。コービットは1階の台所にあるブレーカーを落として地下の電気を止めてしまっている。探索者がもう一度通電させても、コービットはいつでも自分の都合の良い時に電気を止めることができる。この部屋はやや小さめで、道具類、鉛管、ごみ缶のふた、木材、釘、ねじなどが散らばっている。",
+      "connected_to": [
+        "corbitt_ground_floor",
+        "corbitt_basement_room2",
+        "corbitt_basement_room3"
+      ],
+      "objects": {
+        "scattered_junk": {
+          "name": "散らばったガラクタ",
+          "description": "部屋の床には、道具類、鉛管、ごみ缶のふた、木材、釘、ねじなどが無造作に散らばっている。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "junk_searched",
+          "reject_message": "ガラクタの中には鋭利なものが多く、注意深く探さないと怪我をするかもしれない。",
+          "purpose": "",
+          "clue_on_success": "ガラクタの中から、古びたナイフの柄がわずかに見えている。刃は異様に厚いサビで覆われているようだ。",
+          "on_push_fail_damage": "不注意な探索者は鋭利な破片で手を切ってしまい、耐久力に1D4＋2ポイントのダメージを受けた。"
+        },
+        "wall_planks": {
+          "name": "板で覆われた壁",
+          "description": "地階の壁は木の板で隙間なく覆われている。ざっと見渡すと、板の向こうに空間があるように見える。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "basement_planks_examined",
+          "reject_message": "板で覆われた壁は頑丈に見える。何か隠されているのだろうか？",
+          "purpose": "",
+          "clue_on_success": "板の向こうに、さらに部屋があることがわかった。部屋2と部屋3のようだ。壊せば進めそうだ。"
+        },
+        "corbitt_knife": {
+          "name": "コービットのナイフ",
+          "description": "古いもののようで、柄には装飾が施され、刃は異様に厚いサビで覆われている。これはコービットの魔法のダガーで、サビのように見えるのは付着した犠牲者の血が乾いたものだ。",
+          "names": [],
+          "usable_actions": [
+            "search",
+            "inspect"
+          ],
+          "investigated_flag": "has_corbitt_knife",
+          "reject_message": "ナイフは宙に浮いており、近づくと危険な気配がする。",
+          "purpose": "",
+          "requires_flag": "junk_searched",
+          "clue_on_investigate": "ナイフを拾い上げると、ひとりでに探索者の手を振りほどいて宙に浮き上がり、攻撃してきた！"
+        }
+      },
+      "exits": {
+        "stairs_to_ground_floor": {
+          "name": "1階へ続く階段",
+          "condition": "DEXと〈登攀〉の組み合わせロールに成功する",
+          "reject_message": "階段は壊れかけており、コービットの妨害もあるため、慎重に進まないと危険だ。",
+          "connected_to": "corbitt_ground_floor"
+        },
+        "room2_passage": {
+          "name": "空の物置場への通路",
+          "requires_flag": "basement_planks_broken",
+          "reject_message": "板で塞がれており、通るには板を壊す必要がある。",
+          "connected_to": "corbitt_basement_room2"
+        },
+        "room3_passage": {
+          "name": "コービットの隠れ家への通路",
+          "requires_flag": "basement_planks_broken",
+          "reject_message": "板で塞がれており、通るには板を壊す必要がある。",
+          "connected_to": "corbitt_basement_room3",
+          "clue_on_enter": "隙間の内壁には、乱暴に引っかいたような文字で「黙想チャペル」と彫り込まれている。"
+        }
+      }
+    }
+  },
+  "event_triggers": [
+    {
+      "event_id": "intro_case_acceptance",
+      "priority": 100,
+      "location": "introduction",
+      "target_object": "Mr. Knott",
+      "action_types": [
+        "set_flag",
+        "update_and_describe",
+        "system_unlock_location"
+      ],
+      "payloads": [
+        {
+          "action_type": "set_flag",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "flag_name": "case_accepted",
+          "value": true
+        },
+        {
+          "action_type": "update_and_describe",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "description_id": "knott_briefing_complete",
+          "text": "ノット氏から事件の概要と報酬、屋敷の鍵と住所を受け取った。調査を開始できる。"
+        },
+        {
+          "action_type": "set_flag",
+          "parameters": {
+            "flag": "exit_unlocked",
+            "value": true
+          },
+          "on_success": [],
+          "on_failure": [],
+          "location_id": "boston_globe"
+        },
+        {
+          "action_type": "set_flag",
+          "parameters": {
+            "flag": "exit_unlocked",
+            "value": true
+          },
+          "on_success": [],
+          "on_failure": [],
+          "location_id": "central_library"
+        },
+        {
+          "action_type": "set_flag",
+          "parameters": {
+            "flag": "exit_unlocked",
+            "value": true
+          },
+          "on_success": [],
+          "on_failure": [],
+          "location_id": "hall_of_records"
+        },
+        {
+          "action_type": "set_flag",
+          "parameters": {
+            "flag": "exit_unlocked",
+            "value": true
+          },
+          "on_success": [],
+          "on_failure": [],
+          "location_id": "the_neighborhood"
+        },
+        {
+          "action_type": "set_flag",
+          "parameters": {
+            "flag": "exit_unlocked",
+            "value": true
+          },
+          "on_success": [],
+          "on_failure": [],
+          "location_id": "corbitt_exterior"
+        }
+      ],
+      "trigger_condition": "location == 'introduction' and target == 'Mr. Knott' and action_id in ['set_flag', 'update_and_describe', 'system_unlock_location']",
+      "payload": {
+        "san_check": {
+          "required": false
+        },
+        "flag_updates": {
+          "exit_unlocked": true
+        }
+      },
+      "action_type": "update_and_describe"
+    },
+    {
+      "event_id": "research_boston_globe",
+      "priority": 50,
+      "location": "boston_globe",
+      "target_object": "newspaper_archives",
+      "action_types": [
+        "system_intercept_roll",
+        "set_flag",
+        "update_and_describe"
+      ],
+      "payloads": [
+        {
+          "action_type": "system_intercept_roll",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "skill": "図書館",
+          "difficulty": "通常",
+          "success_payloads": [
+            {
+              "action_type": "set_flag",
+              "flag_name": "newspaper_info_found",
+              "value": true
+            },
+            {
+              "action_type": "update_and_describe",
+              "description_id": "newspaper_success",
+              "text": "古い新聞記事から、コービット屋敷で過去に不審な事件があったこと、そしてウォルター・コービットに関する奇妙な噂を見つけた。"
+            }
+          ],
+          "failure_payloads": [
+            {
+              "action_type": "update_and_describe",
+              "description_id": "newspaper_failure",
+              "text": "特に目新しい情報は得られなかった。もっと深く調べる必要があるだろう。"
+            }
+          ]
+        }
+      ],
+      "trigger_condition": "location == 'boston_globe' and target == 'newspaper_archives' and action_id in ['system_intercept_roll', 'set_flag', 'update_and_describe']",
+      "payload": {
+        "san_check": {
+          "required": false
+        }
+      },
+      "action_type": "update_and_describe"
+    },
+    {
+      "event_id": "research_central_library",
+      "priority": 50,
+      "location": "central_library",
+      "target_object": "library_catalog",
+      "action_types": [
+        "system_intercept_roll",
+        "set_flag",
+        "update_and_describe"
+      ],
+      "payloads": [
+        {
+          "action_type": "system_intercept_roll",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "skill": "図書館",
+          "difficulty": "通常",
+          "success_payloads": [
+            {
+              "action_type": "set_flag",
+              "flag_name": "library_info_found",
+              "value": true
+            },
+            {
+              "action_type": "update_and_describe",
+              "description_id": "library_success",
+              "text": "図書館の資料から、コービット家の歴史や、ウォルター・コービットが奇妙な研究に没頭していたという記述を発見した。"
+            }
+          ],
+          "failure_payloads": [
+            {
+              "action_type": "update_and_describe",
+              "description_id": "library_failure",
+              "text": "図書館の膨大な資料の中から、関連する情報を見つけるのは困難だった。"
+            }
+          ]
+        }
+      ],
+      "trigger_condition": "location == 'central_library' and target == 'library_catalog' and action_id in ['system_intercept_roll', 'set_flag', 'update_and_describe']",
+      "payload": {
+        "san_check": {
+          "required": false
+        }
+      },
+      "action_type": "update_and_describe"
+    },
+    {
+      "event_id": "research_hall_of_records",
+      "priority": 50,
+      "location": "hall_of_records",
+      "target_object": "public_records",
+      "action_types": [
+        "system_intercept_roll",
+        "set_flag",
+        "update_and_describe"
+      ],
+      "payloads": [
+        {
+          "action_type": "system_intercept_roll",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "skill": "法律",
+          "difficulty": "通常",
+          "success_payloads": [
+            {
+              "action_type": "set_flag",
+              "flag_name": "records_info_found",
+              "value": true
+            },
+            {
+              "action_type": "update_and_describe",
+              "description_id": "records_success",
+              "text": "公文書館でウォルター・コービットの死亡記録と遺言書を発見。遺言書には奇妙な条項が含まれていた。"
+            },
+            {
+              "action_type": "system_unlock_location",
+              "location_id": "roxbury_sanitarium"
+            },
+            {
+              "action_type": "system_unlock_location",
+              "location_id": "chapel_of_contemplation"
+            }
+          ],
+          "failure_payloads": [
+            {
+              "action_type": "update_and_describe",
+              "description_id": "records_failure",
+              "text": "公文書の山から、目的の情報を見つけ出すことはできなかった。"
+            }
+          ]
+        }
+      ],
+      "trigger_condition": "location == 'hall_of_records' and target == 'public_records' and action_id in ['system_intercept_roll', 'set_flag', 'update_and_describe']",
+      "payload": {
+        "san_check": {
+          "required": false
+        }
+      },
+      "action_type": "update_and_describe"
+    },
+    {
+      "event_id": "interview_neighborhood",
+      "priority": 50,
+      "location": "the_neighborhood",
+      "target_object": "local_residents",
+      "action_types": [
+        "system_intercept_roll",
+        "set_flag",
+        "update_and_describe"
+      ],
+      "payloads": [
+        {
+          "action_type": "system_intercept_roll",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "skill": "言いくるめ",
+          "difficulty": "通常",
+          "success_payloads": [
+            {
+              "action_type": "set_flag",
+              "flag_name": "neighbor_gossip_found",
+              "value": true
+            },
+            {
+              "action_type": "update_and_describe",
+              "description_id": "neighbor_success",
+              "text": "近隣住民から、コービット屋敷に関する不気味な噂や、マカリオ一家が経験した不幸について聞き出した。"
+            }
+          ],
+          "failure_payloads": [
+            {
+              "action_type": "update_and_describe",
+              "description_id": "neighbor_failure",
+              "text": "住民たちは屋敷の話をしたがらず、ほとんど情報は得られなかった。"
+            }
+          ]
+        }
+      ],
+      "trigger_condition": "location == 'the_neighborhood' and target == 'local_residents' and action_id in ['system_intercept_roll', 'set_flag', 'update_and_describe']",
+      "payload": {
+        "san_check": {
+          "required": false
+        }
+      },
+      "action_type": "update_and_describe"
+    },
+    {
+      "event_id": "approach_corbitt_exterior",
+      "priority": 80,
+      "location": "corbitt_exterior",
+      "target_object": "corbitt_house",
+      "action_types": [
+        "force_san_check",
+        "update_and_describe",
+        "system_unlock_location"
+      ],
+      "payloads": [
+        {
+          "action_type": "update_and_describe",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "description_id": "exterior_description",
+          "text": "コービット屋敷は、荒れ果てた庭に囲まれた、陰鬱な雰囲気の古い建物だ。窓は板で打ち付けられ、まるで死んだ眼のように見える。"
+        },
+        {
+          "action_type": "force_san_check",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "reason": "屋敷の不気味な外観",
+          "san_loss_range": "0/1"
+        },
+        {
+          "action_type": "set_flag",
+          "parameters": {
+            "flag": "exit_unlocked",
+            "value": true
+          },
+          "on_success": [],
+          "on_failure": [],
+          "location_id": "corbitt_ground_floor"
+        }
+      ],
+      "trigger_condition": "location == 'corbitt_exterior' and target == 'corbitt_house' and action_id in ['force_san_check', 'update_and_describe', 'system_unlock_location']",
+      "payload": {
+        "san_check": {
+          "required": true,
+          "value": "1d3",
+          "source": "generic"
+        },
+        "flag_updates": {
+          "exit_unlocked": true
+        }
+      },
+      "action_type": "update_and_describe"
+    },
+    {
+      "event_id": "enter_corbitt_ground_floor",
+      "priority": 80,
+      "location": "corbitt_ground_floor",
+      "target_object": "main_entrance",
+      "action_types": [
+        "force_san_check",
+        "update_and_describe"
+      ],
+      "payloads": [
+        {
+          "action_type": "update_and_describe",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "description_id": "ground_floor_entrance",
+          "text": "屋敷の扉を開けると、埃とカビの匂いが鼻を突く。薄暗いホールには、朽ちた家具の影が不気味に伸びている。"
+        },
+        {
+          "action_type": "force_san_check",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "reason": "屋敷内部の陰鬱な雰囲気",
+          "san_loss_range": "0/1D2"
+        }
+      ],
+      "trigger_condition": "location == 'corbitt_ground_floor' and target == 'main_entrance' and action_id in ['force_san_check', 'update_and_describe']",
+      "payload": {
+        "san_check": {
+          "required": true,
+          "value": "1d3",
+          "source": "generic"
+        }
+      },
+      "action_type": "update_and_describe"
+    },
+    {
+      "event_id": "investigate_living_room",
+      "priority": 50,
+      "location": "corbitt_ground_floor",
+      "target_object": "living_room_clutter",
+      "action_types": [
+        "system_intercept_roll",
+        "force_san_check",
+        "set_flag",
+        "update_and_describe"
+      ],
+      "payloads": [
+        {
+          "action_type": "system_intercept_roll",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "skill": "目星",
+          "difficulty": "困難",
+          "success_payloads": [
+            {
+              "action_type": "set_flag",
+              "flag_name": "living_room_investigated",
+              "value": true
+            },
+            {
+              "action_type": "update_and_describe",
+              "description_id": "living_room_success",
+              "text": "リビングルームを注意深く調べると、壁に血痕のような染みと、何かが引きずられたような跡を発見した。"
+            },
+            {
+              "action_type": "force_san_check",
+              "reason": "不気味な血痕と痕跡",
+              "san_loss_range": "0/1D3"
+            }
+          ],
+          "failure_payloads": [
+            {
+              "action_type": "update_and_describe",
+              "description_id": "living_room_failure",
+              "text": "リビングルームは荒れ放題で、特に目を引くものは見当たらなかった。"
+            }
+          ]
+        }
+      ],
+      "trigger_condition": "location == 'corbitt_ground_floor' and target == 'living_room_clutter' and action_id in ['system_intercept_roll', 'force_san_check', 'set_flag', 'update_and_describe']",
+      "payload": {
+        "san_check": {
+          "required": false
+        }
+      },
+      "action_type": "update_and_describe"
+    },
+    {
+      "event_id": "minor_haunting_ground_floor",
+      "priority": 80,
+      "location": "corbitt_ground_floor",
+      "target_object": "ambient_haunting",
+      "action_types": [
+        "force_san_check",
+        "update_and_describe"
+      ],
+      "payloads": [
+        {
+          "action_type": "update_and_describe",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "description_id": "haunting_whisper",
+          "text": "突然、背後から冷たい風が吹き抜け、耳元で何かが囁いたような気がした。しかし、そこには誰もいない。"
+        },
+        {
+          "action_type": "force_san_check",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "reason": "不可解な現象",
+          "san_loss_range": "0/1"
+        }
+      ],
+      "trigger_condition": "location == 'corbitt_ground_floor' and target == 'ambient_haunting' and action_id in ['force_san_check', 'update_and_describe']",
+      "payload": {
+        "san_check": {
+          "required": true,
+          "value": "1d3",
+          "source": "generic"
+        }
+      },
+      "action_type": "update_and_describe"
+    },
+    {
+      "event_id": "research_roxbury_sanitarium",
+      "priority": 50,
+      "location": "roxbury_sanitarium",
+      "target_object": "patient_records",
+      "action_types": [
+        "system_intercept_roll",
+        "set_flag",
+        "update_and_describe"
+      ],
+      "payloads": [
+        {
+          "action_type": "system_intercept_roll",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "skill": "医学",
+          "difficulty": "困難",
+          "success_payloads": [
+            {
+              "action_type": "set_flag",
+              "flag_name": "sanitarium_info_found",
+              "value": true
+            },
+            {
+              "action_type": "update_and_describe",
+              "description_id": "sanitarium_success",
+              "text": "ロックスベリー・サナトリウムの古い記録から、ウォルター・コービットが精神的な問題を抱え、一時的に入院していたこと、そして奇妙な治療法を求めていたことが判明した。"
+            }
+          ],
+          "failure_payloads": [
+            {
+              "action_type": "update_and_describe",
+              "description_id": "sanitarium_failure",
+              "text": "サナトリウムの記録は厳重に管理されており、ウォルター・コービットに関する情報は得られなかった。"
+            }
+          ]
+        }
+      ],
+      "trigger_condition": "location == 'roxbury_sanitarium' and target == 'patient_records' and action_id in ['system_intercept_roll', 'set_flag', 'update_and_describe']",
+      "payload": {
+        "san_check": {
+          "required": false
+        }
+      },
+      "action_type": "update_and_describe"
+    },
+    {
+      "event_id": "investigate_chapel_of_contemplation",
+      "priority": 50,
+      "location": "chapel_of_contemplation",
+      "target_object": "corbitt_grave",
+      "action_types": [
+        "system_intercept_roll",
+        "force_san_check",
+        "set_flag",
+        "update_and_describe"
+      ],
+      "payloads": [
+        {
+          "action_type": "system_intercept_roll",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "skill": "目星",
+          "difficulty": "通常",
+          "success_payloads": [
+            {
+              "action_type": "set_flag",
+              "flag_name": "chapel_investigated",
+              "value": true
+            },
+            {
+              "action_type": "update_and_describe",
+              "description_id": "chapel_success",
+              "text": "黙想チャペルの墓地でウォルター・コービットの墓を見つけた。墓石は古いが、土が最近掘り返されたような痕跡がある。"
+            },
+            {
+              "action_type": "force_san_check",
+              "reason": "掘り返された墓の痕跡",
+              "san_loss_range": "0/1D4"
+            }
+          ],
+          "failure_payloads": [
+            {
+              "action_type": "update_and_describe",
+              "description_id": "chapel_failure",
+              "text": "広大な墓地の中から、ウォルター・コービットの墓を見つけることはできなかった。"
+            }
+          ]
+        }
+      ],
+      "trigger_condition": "location == 'chapel_of_contemplation' and target == 'corbitt_grave' and action_id in ['system_intercept_roll', 'force_san_check', 'set_flag', 'update_and_describe']",
+      "payload": {
+        "san_check": {
+          "required": false
+        }
+      },
+      "action_type": "update_and_describe"
+    },
+    {
+      "event_id": "corbitt_ground_floor_hidden_passage",
+      "priority": 80,
+      "location": "corbitt_ground_floor",
+      "target_object": "hidden_passage",
+      "action_types": [
+        "system_intercept_roll",
+        "set_flag",
+        "update_and_describe"
+      ],
+      "payloads": [
+        {
+          "action_type": "system_intercept_roll",
+          "parameters": {},
+          "on_success": [],
+          "on_failure": [],
+          "skill": "目星",
+          "difficulty": "極端",
+          "success_payloads": [
+            {
+              "action_type": "set_flag",
+              "flag_name": "hidden_passage_found",
+              "value": true
+            },
+            {
+              "action_type": "update_and_describe",
+              "description_id": "hidden_passage_found_desc",
+              "text": "暖炉の裏に隠された、地階へと続く秘密の通路を発見した！暗闇の奥から、冷たい空気が流れ込んでいる。"
+            }
+          ],
+          "failure_payloads": [
+            {
+              "action_type": "update_and_describe",
+              "description_id": "hidden_passage_not_found_desc",
+              "text": "特に変わった場所は見当たらない。"
+            }
+          ]
+        }
+      ],
+      "trigger_condition": "location == 'corbitt_ground_floor' and target == 'hidden_passage' and action_id in ['system_intercept_roll', 'set_flag', 'update_and_describe']",
+      "payload": {
+        "san_check": {
+          "required": false
+        }
+      },
+      "action_type": "update_and_describe"
+    }
+  ]
+}
