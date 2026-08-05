@@ -1,0 +1,614 @@
+{
+    "steven_knott": {
+        "profile": {
+            "name": "スティーブン・ノット",
+            "is_npc": true,
+            "locations": [
+                "introduction"
+            ]
+        },
+        "attributes": {
+            "STR": 45,
+            "CON": 50,
+            "POW": 55,
+            "DEX": 45,
+            "INT": 60,
+            "APP": 55,
+            "SIZ": 55,
+            "EDU": 70,
+            "SAN": {
+                "current": 55,
+                "max": 99,
+                "session_start": 55,
+                "session_start_san": 55
+            },
+            "HP": {
+                "current": 10,
+                "max": 10
+            },
+            "MP": {
+                "current": 11,
+                "max": 11
+            }
+        },
+        "skills": {
+            "心理学": 40,
+            "信用": 45,
+            "説得": 50,
+            "母国語": 70,
+            "法律": 35
+        },
+        "personality": "丁寧で焦り気味の依頼人。屋敷の悪評に困っており、探索者に協力的。過度なホラー話は避け、実務的に要件を伝える。",
+        "relationship_status": "cooperative",
+        "secrets": {
+            "secret_case_brief": {
+                "content": "最近相続したコービット屋敷の悪評のせいで賃貸も売却もできず困っている。奇妙な出来事の調査を依頼し、報酬・屋敷の鍵・住所・前払い金25ドルを用意している。",
+                "reveal_condition": "True"
+            },
+            "secret_tenant_hint": {
+                "content": "以前の借家人マカリオ一家が不幸に見舞われたため、評判を回復したいと考えている。",
+                "reveal_condition": "dialogue_count >= 2"
+            }
+        },
+        "memo": "悪霊の家・導入の依頼人。対話で talked_with_knott が立つ。"
+    },
+    "globe_receptionist": {
+        "profile": {
+            "name": "ボストン・グローブの受付",
+            "is_npc": true,
+            "locations": [
+                "boston_globe"
+            ],
+            "aliases": [
+                "受付",
+                "受付係",
+                "受付の女性"
+            ]
+        },
+        "attributes": {
+            "STR": 40,
+            "CON": 50,
+            "POW": 50,
+            "DEX": 55,
+            "INT": 55,
+            "APP": 60,
+            "SIZ": 50,
+            "EDU": 55,
+            "SAN": {
+                "current": 50,
+                "max": 99,
+                "session_start": 50,
+                "session_start_san": 50
+            },
+            "HP": {
+                "current": 10,
+                "max": 10
+            },
+            "MP": {
+                "current": 10,
+                "max": 10
+            }
+        },
+        "skills": {
+            "信用": 40,
+            "言いくるめ": 35,
+            "母国語": 65,
+            "心理学": 30
+        },
+        "personality": "てきぱきした受付係。来客には用件を聞き、適切な担当者へ取り次ぐ。無駄話は好まないが無礼ではない。",
+        "relationship_status": "neutral",
+        "secrets": {
+            "secret_call_artie": {
+                "content": "コービット屋敷や古い記事の照会なら、編集者のアーティ・ウィルモットが担当だ。内線で呼び出せる。資料室へはアーティの許可が必要。",
+                "reveal_condition": "True"
+            }
+        },
+        "memo": "ボストン・グローブ受付。対話で artie_introduced が立つ。"
+    },
+    "artie_wilmott": {
+        "profile": {
+            "name": "アーティ・ウィルモット",
+            "is_npc": true,
+            "locations": [
+                "boston_globe"
+            ],
+            "require_flag": "artie_introduced",
+            "aliases": [
+                "アーティ",
+                "アーティ氏",
+                "ウィルモット",
+                "編集者アーティ"
+            ]
+        },
+        "attributes": {
+            "STR": 45,
+            "CON": 50,
+            "POW": 55,
+            "DEX": 50,
+            "INT": 65,
+            "APP": 50,
+            "SIZ": 55,
+            "EDU": 70,
+            "SAN": {
+                "current": 55,
+                "max": 99,
+                "session_start": 55,
+                "session_start_san": 55
+            },
+            "HP": {
+                "current": 10,
+                "max": 10
+            },
+            "MP": {
+                "current": 11,
+                "max": 11
+            }
+        },
+        "skills": {
+            "図書館": 50,
+            "歴史": 45,
+            "説得": 40,
+            "信用": 45,
+            "母国語": 70,
+            "心理学": 35
+        },
+        "personality": "小さな権限を振りかざす編集者。資料室への部外者入場を嫌がり、なかなか許可を出さない。社交技能や賄賂、信用で揺さぶれる。",
+        "relationship_status": "uncooperative",
+        "secrets": {
+            "secret_ref_room_gate": {
+                "content": "参考資料室は関係者以外立ち入り禁止。許可を出すかどうかは自分の裁量だ、と主張する。",
+                "reveal_condition": "True"
+            },
+            "secret_ruth_blake": {
+                "content": "保管記録係のルース・ブレイクなら、1878年の火事以前の記録が不完全だと教えてくれるかもしれない。",
+                "reveal_condition": "success_level >= 2 or relationship == 'cooperative'"
+            }
+        },
+        "memo": "ボストン・グローブ編集者。受付紹介（artie_introduced）後に対話可能。"
+    },
+    "npc_neighbor_elder": {
+        "profile": {
+            "name": "近所の老人",
+            "is_npc": true,
+            "locations": [
+                "the_neighborhood"
+            ]
+        },
+        "attributes": {
+            "STR": 30,
+            "CON": 40,
+            "POW": 50,
+            "DEX": 30,
+            "INT": 50,
+            "APP": 45,
+            "SIZ": 50,
+            "SAN": {
+                "current": 50,
+                "max": 99,
+                "session_start": 50,
+                "session_start_san": 50
+            },
+            "HP": {
+                "current": 9,
+                "max": 9
+            },
+            "MP": {
+                "current": 10,
+                "max": 10
+            }
+        },
+        "skills": {
+            "心理学": 40,
+            "聞き耳": 50,
+            "目星": 35,
+            "歴史": 45
+        },
+        "personality": "頑固で疑り深い。夜の屋敷から聞こえる奇妙な音を恐れている。",
+        "relationship_status": "uncooperative",
+        "secrets": {
+            "secret_01": {
+                "content": "夜になると、地下から鎖を引きずるような音ときしみ声が聞こえる。",
+                "reveal_condition": "success_level >= 2 and (skill in ['説得', '言いくるめ', '威圧', '魅惑'])"
+            },
+            "secret_02": {
+                "content": "一昨年、屋敷の地下室からうめき声がしたあと、若い夫婦が急に引っ越したという噂がある。",
+                "reveal_condition": "success_level >= 3 and skill in ['説得', '言いくるめ']"
+            }
+        },
+        "memo": "悪霊の家の近所住民。探索者への初期態度は非協力的。"
+    },
+    "npc_guard_01": {
+        "profile": {
+            "name": "警備員のボブ",
+            "is_npc": true
+        },
+        "attributes": {
+            "STR": 60,
+            "CON": 55,
+            "POW": 45,
+            "DEX": 50,
+            "INT": 40,
+            "APP": 40,
+            "SIZ": 55,
+            "SAN": {
+                "current": 50,
+                "max": 99,
+                "session_start": 50,
+                "session_start_san": 50
+            },
+            "HP": {
+                "current": 10,
+                "max": 10
+            },
+            "MP": {
+                "current": 9,
+                "max": 9
+            }
+        },
+        "skills": {
+            "近接戦闘": 60,
+            "威圧": 50,
+            "心理学": 25,
+            "聞き耳": 40,
+            "目星": 35
+        },
+        "personality": "美術館の夜間警備員。すぐ怒り、規則にうるさい。賄賂めいた話には弱い。",
+        "relationship_status": "neutral",
+        "secrets": {
+            "secret_key_location": {
+                "content": "夜間巡視用の合鍵は警備室の引き出しに隠してある。",
+                "reveal_condition": "success_level >= 2 and skill in ['言いくるめ', '説得', '威圧']"
+            }
+        },
+        "memo": "美術館の夜間警備員。すぐ怒る。"
+    },
+    "npc_thug": {
+        "profile": {
+            "name": "街のチンピラ",
+            "is_npc": true
+        },
+        "attributes": {
+            "STR": 65,
+            "CON": 55,
+            "POW": 40,
+            "DEX": 55,
+            "INT": 35,
+            "APP": 30,
+            "SIZ": 60,
+            "SAN": {
+                "current": 50,
+                "max": 99,
+                "session_start": 50,
+                "session_start_san": 50
+            },
+            "HP": {
+                "current": 10,
+                "max": 10
+            },
+            "MP": {
+                "current": 8,
+                "max": 8
+            }
+        },
+        "skills": {
+            "近接戦闘": 50,
+            "威圧": 45,
+            "心理学": 15
+        },
+        "personality": "短絡的でガサツ。強い相手には媚び、弱い相手を踏みつける。",
+        "relationship_status": "hostile",
+        "secrets": {
+            "secret_boss_hint": {
+                "content": "近くの古い屋敷で『何か変な仕事』を持ちかけられたが、怖くなって断った。",
+                "reveal_condition": "success_level >= 3 and skill in ['威圧', '言いくるめ']"
+            }
+        }
+    },
+    "walter_corbitt": {
+        "profile": {
+            "name": "ウォルター・コービット",
+            "subtitle": "アンデッドの悪霊",
+            "is_npc": true,
+            "monster": true
+        },
+        "attributes": {
+            "STR": 90,
+            "CON": 115,
+            "SIZ": 55,
+            "INT": 80,
+            "POW": 90,
+            "DEX": 35,
+            "APP": 5,
+            "EDU": 80,
+            "SAN": {
+                "current": 0,
+                "max": 82,
+                "session_start": 0,
+                "session_start_san": 0
+            },
+            "HP": {
+                "current": 17,
+                "max": 17
+            },
+            "MP": {
+                "current": 18,
+                "max": 18
+            },
+            "MOV": 8,
+            "BLD": 1,
+            "DB": "+1D4",
+            "LUCK": 0
+        },
+        "skills": {
+            "近接戦闘": 50,
+            "回避": 17,
+            "クトゥルフ神話": 17,
+            "威圧": 64,
+            "聞き耳": 60,
+            "手さばき": 30,
+            "隠密": 72
+        },
+        "combat_profile": {
+            "attacks_per_round": 1,
+            "armor_roll": "2D6",
+            "armor_points": null,
+            "armor_source": "肉体の保護（《肉体の保護》呪文・既に発動済み）",
+            "armor_note": "装甲ポイントは受けたダメージ分だけ減少する。非魔術的攻撃のみ軽減。",
+            "mp_recovery": "1ポイント/時間",
+            "sanity_loss_on_sight": "1/1D8",
+            "ignore_spell_san_cost": true
+        },
+        "weapons": [
+            {
+                "id": "corbitt_unarmed",
+                "name": "徒手（パンチ・キック・かぎ爪）",
+                "skill": "近接戦闘",
+                "skill_value": 50,
+                "damage": "1D3",
+                "apply_damage_bonus": true,
+                "special_effect": "claw_infection"
+            },
+            {
+                "id": "corbitt_floating_dagger",
+                "name": "空中に浮かぶ魔法のダガー",
+                "skill": "近接戦闘",
+                "skill_value": 50,
+                "damage": "1D3",
+                "apply_damage_bonus": true,
+                "mp_cost_per_use": 1,
+                "counts_as_round_action": true,
+                "ref_npc": "corbitt_floating_dagger"
+            }
+        ],
+        "special_abilities": {
+            "claw_infection": {
+                "name": "かぎ爪感染",
+                "trigger": "徒手攻撃が1回成功した後",
+                "luck_roll": true,
+                "on_luck_fail": "1日後に意識もうろう→CONロール必須",
+                "on_con_fail": "せん妄1D10日、CONを1D10永久喪失",
+                "on_con_success": "せん妄1D6日、CON喪失なし",
+                "repeat_until": "回復または死亡まで繰り返す。失ったCONは回復しない"
+            }
+        },
+        "spells": [
+            {
+                "name": "支配（独自のバージョン）",
+                "cost_mp": 1,
+                "casting_time_rounds": 1,
+                "target": "屋敷内にいる探索者1名",
+                "resolution": "コービットPOW90 vs 対象POWの対抗ロール",
+                "effect": "勝利時、対象は1D6+1戦闘ラウンドぼんやり状態。テレパシー支配下。自殺はさせられないが殺人・愚行は可能。解除後は記憶なし"
+            },
+            {
+                "name": "肉体の保護",
+                "cost_mp": "可変（1MPにつき装甲1D6）",
+                "casting_time_rounds": 5,
+                "effect": "非魔術的攻撃に対し装甲を付与。ダメージをさえぎるたび装甲が消耗。24時間または使い切るまで継続。補強・再詠唱不可",
+                "pre_cast": true
+            },
+            {
+                "name": "次元をさまようものの召喚／従属",
+                "note": "キーパー判断で使用"
+            }
+        ],
+        "magic_items": [
+            "空中に浮かぶ魔法のダガー"
+        ],
+        "personality": "悪意に満ちたアンデッド。探索者を分断して対立させ、ひどい目に遭わせることに興奮する。神話の知識を何でも欲しがる。",
+        "relationship_status": "hostile",
+        "secrets": {
+            "secret_crypt": {
+                "content": "本体は地下室の納骨堂にあり、遺体を破壊・浄化すれば討伐できる。",
+                "reveal_condition": "False"
+            }
+        },
+        "roleplay_notes": [
+            "悪意に満ち、探索者を分断して対立させようとする",
+            "探索者がひどい目に遭うことに興奮と変質的な楽しみを見いだす",
+            "屋敷に持ち込まれた神話の知識（『エイボンの書』など）を何でも手に入れようとする"
+        ],
+        "keeper_notes": [
+            "記載技能以外もキーパー判断で即興設定可",
+            "マジック・ポイントは1時間に1ポイント回復するのを忘れないこと",
+            "侵入者が屋敷に入ると《肉体の保護》をかける。本体へ直行すればMP回復前に遭遇する可能性あり",
+            "呪文の正気度コストは無視する（コービット正気度0）"
+        ],
+        "memo": "シナリオ「悪霊の家」ラスボス。生ける屍。遺体を破壊・浄化すれば討伐完了。"
+    },
+    "corbitt_floating_dagger": {
+        "profile": {
+            "name": "空中に浮かぶ魔法のダガー",
+            "subtitle": "コービットの魔法の品物",
+            "is_npc": true,
+            "monster": true
+        },
+        "attributes": {
+            "DEX": 70,
+            "SAN": {
+                "current": 0,
+                "max": 99,
+                "session_start": 0,
+                "session_start_san": 0
+            },
+            "HP": {
+                "current": 1,
+                "max": 1
+            },
+            "MP": {
+                "current": 0,
+                "max": 10
+            },
+            "MOV": 0,
+            "DB": "0",
+            "BLD": 0
+        },
+        "skills": {
+            "近接戦闘": 40,
+            "回避": 35
+        },
+        "combat_profile": {
+            "attacks_per_round": 1,
+            "armor_points": 0,
+            "destroy_on_extreme_success": true,
+            "autonomous": true,
+            "note": "コービットが使用する場合は1MP消費・コービットの1行動として数える"
+        },
+        "weapons": [
+            {
+                "name": "ダガー斬りつけ",
+                "skill": "近接戦闘",
+                "skill_value": 40,
+                "damage": "1D4",
+                "apply_damage_bonus": false
+            }
+        ],
+        "memo": "地下室で発見される自律攻撃のナイフ。イクストリーム成功の近接攻撃で無力化可能（キーパー判断）。"
+    },
+    "hall_records_clerk": {
+        "profile": {
+            "name": "公文書館の事務官",
+            "is_npc": true,
+            "locations": [
+                "hall_of_records"
+            ],
+            "aliases": [
+                "事務官",
+                "受付の事務官",
+                "デスクの男",
+                "初老の事務官"
+            ]
+        },
+        "attributes": {
+            "STR": 40,
+            "CON": 45,
+            "POW": 50,
+            "DEX": 40,
+            "INT": 60,
+            "APP": 45,
+            "SIZ": 55,
+            "EDU": 65,
+            "SAN": {
+                "current": 50,
+                "max": 99,
+                "session_start": 50,
+                "session_start_san": 50
+            },
+            "HP": {
+                "current": 10,
+                "max": 10
+            },
+            "MP": {
+                "current": 10,
+                "max": 10
+            }
+        },
+        "skills": {
+            "図書館": 50,
+            "法律": 55,
+            "信用": 40,
+            "母国語": 70,
+            "心理学": 30
+        },
+        "personality": "忙しそうだが実務的な初老の事務官。質問には簡潔に答え、重い犯罪記録と警察記録の所在を案内する。デスクをこじ開けられるのは嫌がる。",
+        "relationship_status": "neutral",
+        "secrets": {
+            "secret_jurisdiction": {
+                "content": "重い犯罪は郡や州、あるいは連邦の裁判所へ送られる。逮捕や押収に関わる市の警官の記録は中央警察署にある。",
+                "reveal_condition": "True"
+            }
+        },
+        "memo": "公文書館事務官。対話で hall_of_records_clerk_interacted が立つ。デスクへの search/inspect は talk へ変換。"
+    },
+    "dolly_shopkeeper": {
+        "profile": {
+            "name": "ドーリー氏",
+            "is_npc": true,
+            "locations": [
+                "the_neighborhood"
+            ],
+            "aliases": [
+                "ドーリー",
+                "Dolly",
+                "dolly",
+                "店主",
+                "タバコ屋",
+                "新聞屋",
+                "近隣住民"
+            ]
+        },
+        "attributes": {
+            "STR": 45,
+            "CON": 50,
+            "POW": 50,
+            "DEX": 50,
+            "INT": 55,
+            "APP": 50,
+            "SIZ": 55,
+            "EDU": 50,
+            "SAN": {
+                "current": 50,
+                "max": 99,
+                "session_start": 50,
+                "session_start_san": 50
+            },
+            "HP": {
+                "current": 10,
+                "max": 10
+            },
+            "MP": {
+                "current": 10,
+                "max": 10
+            }
+        },
+        "skills": {
+            "信用": 45,
+            "言いくるめ": 50,
+            "説得": 40,
+            "魅惑": 35,
+            "心理学": 35,
+            "母国語": 65
+        },
+        "personality": "タバコや新聞を売る近所の商売人。冗談とうわさ話で人を引きつけるのが上手く、話は大げさになりがち。この地区の事情に詳しい。",
+        "relationship_status": "neutral",
+        "secrets": {
+            "secret_corbitt_house_name": {
+                "content": "あの屋敷は『コービット屋敷』と呼ばれている。",
+                "reveal_condition": "True"
+            },
+            "secret_macario_family": {
+                "content": "マカリオ一家は2年前にコービット屋敷へ引っ越してきた。1年後、父親が事故のあと激しい狂気に陥り、『燃える目をした化け物』について口走っていた。約1か月後、母親も狂気に陥り、夫妻はボストンのロックスベリー・サナトリウムに入院している。子供たちはボルチモアの親戚に引き取られた。",
+                "reveal_condition": "True"
+            },
+            "secret_chapel_location": {
+                "content": "黙想チャペルがあった場所は、ここから2、3ブロック離れた先にある。",
+                "reveal_condition": "True"
+            },
+            "secret_sanitarium_hint": {
+                "content": "マカリオ夫妻はロックスベリー・サナトリウムにいる。ボストンから3〜5kmほどの所だ。",
+                "reveal_condition": "True"
+            }
+        },
+        "memo": "近隣の店主ドーリー。対話で dolly_talked / dolly_told_chapel_location / dolly_told_sanitarium_location が立つ。local_residents への search/inspect は talk へ変換。"
+    }
+}

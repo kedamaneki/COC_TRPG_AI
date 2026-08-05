@@ -1,0 +1,57 @@
+test_combat_pipeline (__main__.TestCombatPipeline.test_combat_pipeline) ... ok
+test_accept_hit_requires_regular_success (__main__.TestFirearmCombatPipeline.test_accept_hit_requires_regular_success) ... ok
+test_fight_back_not_allowed_against_firearm (__main__.TestFirearmCombatPipeline.test_fight_back_not_allowed_against_firearm) ... ok
+test_firearm_initiative_uses_shoot_skill_tiebreak (__main__.TestFirearmCombatPipeline.test_firearm_initiative_uses_shoot_skill_tiebreak) ... ok
+test_impale_damage_on_extreme_hit (__main__.TestFirearmCombatPipeline.test_impale_damage_on_extreme_hit) ... ok
+test_point_blank_grants_bonus_die (__main__.TestFirearmCombatPipeline.test_point_blank_grants_bonus_die) ... ok
+test_indefinite_insanity_20_percent (__main__.TestInsanityRules.test_indefinite_insanity_20_percent) ... ok
+test_session_start_san_helpers (__main__.TestInsanityRules.test_session_start_san_helpers) ... ok
+test_temporary_insanity_avoided_on_int_failure (__main__.TestInsanityRules.test_temporary_insanity_avoided_on_int_failure) ... ok
+test_temporary_insanity_on_int_success (__main__.TestInsanityRules.test_temporary_insanity_on_int_success) ... ok
+test_under_five_no_temp_check (__main__.TestInsanityRules.test_under_five_no_temp_check) ... ok
+test_failure_margin_includes_fumble (__main__.TestLuckAndPushRecovery.test_failure_margin_includes_fumble) ... ok
+test_insufficient_luck_goes_to_push (__main__.TestLuckAndPushRecovery.test_insufficient_luck_goes_to_push) ... ok
+test_luck_accept_rewrites_success_and_spends (__main__.TestLuckAndPushRecovery.test_luck_accept_rewrites_success_and_spends) ... ok
+test_luck_decline_goes_to_push_decision_without_finalizing (__main__.TestLuckAndPushRecovery.test_luck_decline_goes_to_push_decision_without_finalizing) ... ok
+test_luck_points_needed (__main__.TestLuckAndPushRecovery.test_luck_points_needed) ... ok
+test_push_decline_finalizes_failure (__main__.TestLuckAndPushRecovery.test_push_decline_finalizes_failure) ... ok
+test_push_failure_applies_dire_penalty (__main__.TestLuckAndPushRecovery.test_push_failure_applies_dire_penalty) ... ok
+test_push_not_allowed_for_combat_skill (__main__.TestLuckAndPushRecovery.test_push_not_allowed_for_combat_skill) ... ok
+test_push_roll_success_clears_pending (__main__.TestLuckAndPushRecovery.test_push_roll_success_clears_pending) ... ok
+test_skill_fail_offers_luck_before_scenario (__main__.TestLuckAndPushRecovery.test_skill_fail_offers_luck_before_scenario) ... ok
+test_timeline_priority_pending_phases (__main__.TestLuckAndPushRecovery.test_timeline_priority_pending_phases) ... ok
+test_combat_queue_includes_all_pcs_by_dex (__main__.TestMultiPlayerSupport.test_combat_queue_includes_all_pcs_by_dex) ... ok
+test_exploration_round_robin (__main__.TestMultiPlayerSupport.test_exploration_round_robin) ... ok
+test_get_pc_and_active_list (__main__.TestMultiPlayerSupport.test_get_pc_and_active_list) ... ok
+test_log_prefix_and_combat_start_participants (__main__.TestMultiPlayerSupport.test_log_prefix_and_combat_start_participants) ... ok
+test_npc_picks_capable_pc_target (__main__.TestMultiPlayerSupport.test_npc_picks_capable_pc_target) ... ok
+test_casual_talk_no_dice_no_secret (__main__.TestNPCSocialNegotiation.test_casual_talk_no_dice_no_secret) ... ok
+test_main_process_system_social_action (__main__.TestNPCSocialNegotiation.test_main_process_system_social_action) ... ok
+test_metadata_and_relationship_normalize (__main__.TestNPCSocialNegotiation.test_metadata_and_relationship_normalize) ... ok
+test_negotiate_fumble_worsens_intimidate (__main__.TestNPCSocialNegotiation.test_negotiate_fumble_worsens_intimidate) ... ok
+test_negotiate_success_reveals_secret_and_can_improve_relation (__main__.TestNPCSocialNegotiation.test_negotiate_success_reveals_secret_and_can_improve_relation) ... ok
+test_reveal_condition_evaluates_skill_list (__main__.TestNPCSocialNegotiation.test_reveal_condition_evaluates_skill_list) ... ok
+test_get_action_difficulty_from_object (__main__.TestScenarioDifficultyWiring.test_get_action_difficulty_from_object) ... ok
+test_opposed_str_required_check_has_difficulty (__main__.TestScenarioDifficultyWiring.test_opposed_str_required_check_has_difficulty) ... ok
+test_detect_stagnation_counter_increments (__main__.TestStagnationIntervention.test_detect_stagnation_counter_increments) ... ok
+test_force_idea_roll_without_relief_event (__main__.TestStagnationIntervention.test_force_idea_roll_without_relief_event) ... ok
+test_force_intervention_fires_relief_or_idea (__main__.TestStagnationIntervention.test_force_intervention_fires_relief_or_idea) ... ok
+test_intervention_level_resolution (__main__.TestStagnationIntervention.test_intervention_level_resolution) ... ok
+test_light_intervention_sets_kp_nudge (__main__.TestStagnationIntervention.test_light_intervention_sets_kp_nudge) ... ok
+test_scenario_meta_intervention_wiring (__main__.TestStagnationIntervention.test_scenario_meta_intervention_wiring) ... ok
+test_session_effective_level_max (__main__.TestStagnationIntervention.test_session_effective_level_max) ... ok
+test_standard_intervention_sets_pl_hint (__main__.TestStagnationIntervention.test_standard_intervention_sets_pl_hint) ... ok
+test_critical_is_always_one (__main__.TestSuccessLevelsAndDifficulty.test_critical_is_always_one) ... ok
+test_difficulty_targets (__main__.TestSuccessLevelsAndDifficulty.test_difficulty_targets) ... ok
+test_extreme_difficulty (__main__.TestSuccessLevelsAndDifficulty.test_extreme_difficulty) ... ok
+test_fumble_50_or_more (__main__.TestSuccessLevelsAndDifficulty.test_fumble_50_or_more) ... ok
+test_fumble_under_50 (__main__.TestSuccessLevelsAndDifficulty.test_fumble_under_50) ... ok
+test_hard_difficulty_accepts_hard_success (__main__.TestSuccessLevelsAndDifficulty.test_hard_difficulty_accepts_hard_success) ... ok
+test_hard_difficulty_fails_regular_quality_only (__main__.TestSuccessLevelsAndDifficulty.test_hard_difficulty_fails_regular_quality_only) ... ok
+test_normalize_difficulty_aliases (__main__.TestSuccessLevelsAndDifficulty.test_normalize_difficulty_aliases) ... ok
+test_skill_roll_carries_difficulty (__main__.TestSuccessLevelsAndDifficulty.test_skill_roll_carries_difficulty) ... ok
+
+----------------------------------------------------------------------
+Ran 52 tests in 0.101s
+
+OK
