@@ -114,6 +114,8 @@ class TestBostonGlobeReceptionGate(unittest.TestCase):
         self.scenario.flags["artie_introduced"] = True
         rec2 = game_main._build_pl_recommended_action(self.scenario, "boston_globe")
         self.assertIn("artie_wilmott", rec2)
+        self.assertIn("persuade", rec2)
+        self.assertNotIn("talk または", rec2)
 
     def test_search_desk_remapped_to_talk(self):
         fixed = game_main.reconcile_pl_action(

@@ -7,7 +7,7 @@
     "initial_location": "introduction",
     "startup_effects": {},
     "intervention_level": "light",
-    "max_stagnation_turns": 4,
+    "max_stagnation_turns": 6,
     "stagnation_hint": "住人への聞き込み、屋敷内の別室、書物や痕跡など別の手がかりを当たってみよう。"
   },
   "initial_state": {
@@ -214,6 +214,8 @@
           "name": "参考資料室の切り抜きファイル",
           "description": "ほこりだらけの地下室にあるファイル棚に並べられた、古い新聞の切り抜きファイルです。カビ臭い匂いが立ち込め、ボイラーの熱で暑い。コービット屋敷に関する記事を探すことができるでしょう。保管記録係のルース・ブレイクは、1878年の火事以前の記録は不完全だと教えてくれるかもしれません。",
           "investigated_flag": "accessed_clipping_files",
+          "success_message": "【プレイヤー資料2相当】『ボストン・グローブ』紙の1918年未掲載特集が見つかった。1880年にフランス人移民の家族が屋敷へ引っ越したが災難が続き逃げ出した（両親は死亡、子供は障害を負った）。その後長い空き家ののち1909年に別の家族が入居するも病に襲われ、1914年には長男が狂気に陥り包丁で自殺して一家は退去。1918年にはマカリオ一家が借りたが不可解な事態に見舞われ、ほとんど時を移さず出て行った、と記されている。",
+          "clue_on_success": "1918年の未掲載記事に、コービット屋敷へ入居した複数の家族が災難・病・狂気・不可解な退去に見舞われた記録がある。",
           "access_gate": {
             "requires_intro_flag": "artie_introduced",
             "permission_npc_id": "artie_wilmott",
@@ -259,6 +261,8 @@
           "name": "新聞アーカイブ",
           "description": "古い新聞の山が積み上げられている。ボストン・グローブ紙のマイクロフィルムもあるようだ。特定の年代の記事を探すには、根気と集中力が必要だろう。成功すれば、1918年の未掲載記事（プレイヤー資料2）が見つかるかもしれない。",
           "investigated_flag": "found_newspaper_article_1918",
+          "success_message": "【プレイヤー資料2】『ボストン・グローブ』紙の1918年未掲載特集を発見した。1880年、フランス人移民の家族が屋敷へ引っ越すも災難が続き逃走（両親死亡・子供は障害）。長い空き家ののち1909年に別家族が入居するも病に襲われ、1914年には長男が狂気で包丁自殺して退去。1918年マカリオ一家も不可解な事態で直ちに出て行った、とある。",
+          "clue_on_success": "1918年未掲載記事に、コービット屋敷の入居者たちが連続して災難・病・狂気に見舞われた記録がある。",
           "reject_message": "古い新聞をいくら漁っても、それらしい記事は見つからない。もっと時間をかける必要があるか、あるいは別の方法を試すべきだろう。すでにこの情報は見つけているかもしれない。",
           "usable_actions": [
             "search",
@@ -269,6 +273,8 @@
           "name": "郷土史資料",
           "description": "この地域の歴史に関する書籍や文書が並べられている。古い不動産記録や人物伝記なども含まれているようだ。ウォルター・コービット氏や屋敷に関する情報が見つかるかもしれない。成功すれば、屋敷の歴史に関する資料（プレイヤー資料3〜6）が得られるだろう。",
           "investigated_flag": "found_corbitt_history_all",
+          "success_message": "【プレイヤー資料3〜6】郷土史から次が判明した。(3)1835年に商人が屋敷を建てたが病気でウォルター・コービットに売却。(4)1852年、近隣がコービットの「奇害な習慣と不吉なふるまい」を理由に退去を求めて提訴。(5)コービットは裁判に勝ち、1866年の死亡記事でも同住所に居住。遺言で地階への自らの埋葬を指示した件でも第二の訴訟が起きた。(6)第二訴訟の結果は記録に残っていない。",
+          "clue_on_success": "コービットは近隣訴訟に勝ち、遺言で自宅地階への埋葬を指示していた。第二訴訟の結果は不明。",
           "reject_message": "郷土史資料を丹念に調べたが、コービット氏や屋敷に関する決定的な情報はまだ見つからない。さらに深く掘り下げる必要があるだろう。すでにこの情報は見つけているかもしれない。",
           "usable_actions": [
             "search",
@@ -1312,8 +1318,8 @@
       "trigger_condition": "action_id in ['search', 'inspect'] and target == 'reference_room_clipping_files' and location == 'boston_globe' and flags.accessed_clipping_files == false and success_level >= 2",
       "action_type": "update_and_describe",
       "payload": {
-        "system_log": "参考資料室の切り抜きファイルを注意深く調べ、重要な手がかりを見つけた。",
-        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "system_log": "参考資料室の切り抜きファイルを注意深く調べ、1918年の未掲載記事（プレイヤー資料2相当）を見つけた。",
+        "kp_instruction": "【確定手がかりを必ず描写】1918年未掲載記事の内容（移民家族の災難、1909年の病、1914年の自殺、1918年マカリオ一家の退去）を情景に織り込め。システム内部用語や『と主張する』等のメタ文は禁止。その後どうするかを問え。",
         "flag_updates": {
           "accessed_clipping_files": true
         },
@@ -1342,8 +1348,8 @@
       "trigger_condition": "action_id in ['search', 'inspect'] and target == 'newspaper_archives' and location == 'central_library' and flags.found_newspaper_article_1918 == false and success_level >= 2",
       "action_type": "update_and_describe",
       "payload": {
-        "system_log": "新聞アーカイブを注意深く調べ、重要な手がかりを見つけた。",
-        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "system_log": "新聞アーカイブを注意深く調べ、1918年の未掲載記事（プレイヤー資料2）を見つけた。",
+        "kp_instruction": "【確定手がかりを必ず描写】1918年未掲載記事の内容を情景に織り込め。『手がかりがあるかもしれない』でお茶を濁すな。システム内部のメタ文は禁止。未調査の郷土史や公文書館への案内は可。",
         "flag_updates": {
           "found_newspaper_article_1918": true
         },
@@ -1360,7 +1366,7 @@
       "action_type": "update_and_describe",
       "payload": {
         "system_log": "新聞アーカイブを調べたが、これといった手がかりは見つからなかった。",
-        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "kp_instruction": "【失敗時制約】1回の失敗で調査終了と誤解させるな。再挑戦・別技能、または郷土史資料／公文書館への移動を促せ。『もう何もない』締めは禁止。",
         "san_check": {
           "required": false
         }
@@ -1372,8 +1378,8 @@
       "trigger_condition": "action_id in ['search', 'inspect'] and target == 'local_history_section' and location == 'central_library' and flags.found_corbitt_history_all == false and success_level >= 2",
       "action_type": "update_and_describe",
       "payload": {
-        "system_log": "郷土史資料を注意深く調べ、重要な手がかりを見つけた。",
-        "kp_instruction": "システムが判定した調査成功の結果を、情景に自然に織り込んで描写してください。その後どうするかをPLに問いかけてください。",
+        "system_log": "郷土史資料を注意深く調べ、コービット屋敷の沿革（プレイヤー資料3〜6相当）を見つけた。",
+        "kp_instruction": "【確定手がかりを必ず描写】1835年の売却、1852年の近隣訴訟、1866年死亡記事と地階埋葬の遺言、第二訴訟結果不明を織り込め。1回の成功で『もう何もない』と締めるな。公文書館への案内は可。メタ文禁止。",
         "flag_updates": {
           "found_corbitt_history_all": true
         },
@@ -1390,7 +1396,7 @@
       "action_type": "update_and_describe",
       "payload": {
         "system_log": "郷土史資料を調べたが、これといった手がかりは見つからなかった。",
-        "kp_instruction": "調査に失敗したことを描写し、再挑戦（プッシュ）や別の対象・アプローチを促してください。",
+        "kp_instruction": "【失敗時制約】1回の失敗で『もう手がかりはない』『これ以上調べても無駄』と締めるな。プッシュロールや別技能（〈図書館〉等）での再挑戦、または未調査の新聞アーカイブ／公文書館（hall_of_records）への移動を促せ。",
         "san_check": {
           "required": false
         }

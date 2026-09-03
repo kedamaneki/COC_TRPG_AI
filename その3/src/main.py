@@ -47,19 +47,49 @@ from ActionValidator import (
     KP_LOCKED_ROUTE_GUARD,
     FORCE_IC_ACTION_CHAT_ROUNDS,
     FORCE_IC_ACTION_STAGNATION_STREAK,
+    STAGNATION_HINT_TURNS,
+    STAGNATION_FORCE_TURNS,
+    STAGNATION_MILD_NOTICE,
+    VALIDATION_RETRY_BREAKOUT_COUNT,
     OOC_LOOP_FORCE_ACTION_WARNING,
     FORCE_IC_WAIT_REJECT_ERROR,
     FORCE_IC_STALE_TALK_REJECT_ERROR,
     STALE_KNOTT_TALK_REJECT_ERROR,
+    STALE_RECEPTION_TALK_REJECT_ERROR,
+    STALE_ARTIE_TALK_REJECT_ERROR,
+    ARTIE_NEGOTIATE_STAGNATION_HINT,
+    ARTIE_NEGOTIATE_ALTERNATE_SKILL_HINT,
+    ACCESS_GATE_NEGOTIATE_SKILL_HINT,
+    ARTIE_ACCESS_GRANTED_SEARCH_HINT,
+    ARTIE_ACCESS_GRANTED_KP_DIRECTIVE,
+    BOSTON_GLOBE_INVESTIGATION_DONE_HINT,
+    ABSENT_NPC_REDIRECT_SEARCH_HINT,
+    POST_ACCESS_SEARCH_FORCE_TURNS,
+    LOCATION_EXHAUSTED_FORCE_TURNS,
+    BOSTON_GLOBE_NEGOTIATE_GRACE_RETRY_COUNT,
+    INVESTIGATION_DEADLOCK_FORCE_TURNS,
+    INVESTIGATION_BAILOUT_HINT,
+    HOUSE_ENTRY_LOCATION_ID,
+    LOCATION_FORCED_PROGRESS_PREFERENCE,
     FORCE_PROGRESS_BREAKOUT_LOG,
     STAGNATION_STANDARD_PL_HINT,
+    TALK_ACTION_IDS,
+    NEGOTIATION_ACTION_IDS,
     validate_move_intent,
     validate_force_ic_action,
     validate_completed_knott_talk,
     is_stale_nonprogress_talk,
+    is_stale_boston_globe_talk,
+    is_boston_globe_clipping_investigated,
+    build_boston_globe_stale_guidance,
+    is_location_investigation_exhausted,
+    should_apply_location_exhausted_move,
+    build_location_exhausted_move_hint,
     build_forced_progress_move_action,
     build_forced_progress_action,
     build_context_stagnation_hint,
+    count_investigation_deadlock_streak,
+    is_investigation_deadlock,
     rewrite_human_investigation_to_talk,
     resolve_social_npc_id,
 )
@@ -68,6 +98,9 @@ from ScenarioManager import (
     MOVE_DENY_SYSTEM_LOG,
     STAGNATION_PAUSE_THRESHOLD,
     ScenarioManager,
+    fact_already_in_text,
+    format_handout_ic_block,
+    should_emit_handout_ic,
 )
 
 # ==========================================
@@ -110,6 +143,7 @@ DEFAULT_LLM_API_KEY = "ollama"
 DEFAULT_PL_MODEL = "qwen2.5:14b"
 DEFAULT_KP_MODEL = "qwen2.5:14b"
 DEFAULT_LLM_TIMEOUT = 120.0
+DEFAULT_LLM_MAX_TOKENS = 2048
 
 
 def _get_config_value(key, env_key, default):
@@ -135,6 +169,7 @@ def get_llm_config():
         "kp_model": kp_model,
         "judge_model": _get_config_value("LLM_JUDGE_MODEL", "LLM_JUDGE_MODEL", kp_model),
         "timeout": float(_get_config_value("LLM_TIMEOUT", "LLM_TIMEOUT", str(DEFAULT_LLM_TIMEOUT))),
+        "max_tokens": int(_get_config_value("LLM_MAX_TOKENS", "LLM_MAX_TOKENS", str(DEFAULT_LLM_MAX_TOKENS))),
     }
 
 
@@ -202,6 +237,8 @@ def _is_retryable_llm_error(exc):
         "overloaded",
         "temporarily unavailable",
         "service unavailable",
+        "finish_reason=length",
+        "途切れ",
     )
     return any(keyword in err for keyword in retry_keywords)
 
@@ -234,6 +271,43 @@ def _extract_json_object(text):
     if match:
         return match.group(0)
     return text
+
+
+def _loads_json_lenient(text):
+    """途中切れ JSON を可能な範囲で修復して dict にする。"""
+    raw = _extract_json_object(text)
+    try:
+        data = json.loads(raw)
+        if isinstance(data, dict):
+            return data
+    except json.JSONDecodeError:
+        pass
+    repaired = raw.rstrip()
+    if repaired.endswith(","):
+        repaired = repaired[:-1]
+    quote_count = repaired.count('"') - repaired.count('\\"')
+    if quote_count % 2 == 1:
+        repaired += '"'
+    repaired += "}" * max(0, repaired.count("{") - repaired.count("}"))
+    try:
+        data = json.loads(repaired)
+        if isinstance(data, dict):
+            return data
+    except json.JSONDecodeError:
+        pass
+    return None
+
+
+def _recover_text_field_from_partial_json(raw):
+    """JSON が途切れても `"text"` 値だけ拾う。"""
+    m = re.search(r'"text"\s*:\s*"((?:\\.|[^"\\])*)', str(raw or ""), re.DOTALL)
+    if not m:
+        return ""
+    fragment = m.group(1)
+    try:
+        return json.loads(f'"{fragment}"')
+    except json.JSONDecodeError:
+        return fragment.replace("\\n", "\n").replace('\\"', '"')
 
 
 def _finalize_pl_prompt_for_json(prompt, schema_example):
@@ -862,6 +936,19 @@ SCENARIO_CATALOG = {
 }
 INVESTIGATION_ACTION_IDS = frozenset({"search", "inspect"})
 
+ABSENT_NPC_TALK_BLOCK_LOG = (
+    "【対話ブロック】その人物は現在この場所にいません。"
+    "周囲のオブジェクト（切り抜きファイル等）を調査してください。"
+)
+ABSENT_NPC_TALK_KP_INSTRUCTION = (
+    "その人物は現在この場にいない。"
+    "門前払いや再交渉は不要。探索者を参考資料室の切り抜きファイル調査へ誘導せよ。"
+    "不在の人物との会話を成立させないこと。"
+)
+_NEGOTIATION_SKILL_CANDIDATES = (
+    "説得", "言いくるめ", "威圧", "魅惑", "信用", "心理学",
+)
+
 
 def _infer_san_check_source(action_id="", target="", log_text="", scenario_mgr=None):
     """SANチェックの発生源を action / ログ / フラグから推定する。"""
@@ -1329,19 +1416,36 @@ def _evaluate_object_access_gate(scenario_mgr, char_mgr, *, current_loc, target,
                 scenario_mgr.flags[permission_flag] = True
             return None
 
+    npc_label = "担当者"
+    if permission_npc_id:
+        npc_label = f"`{permission_npc_id}`"
+        if char_mgr:
+            npc_char = (char_mgr.characters or {}).get(permission_npc_id) or {}
+            npc_name = str((npc_char.get("profile") or {}).get("name") or "").strip()
+            if npc_name:
+                npc_label = f"{npc_name}（`{permission_npc_id}`）"
+    skill_hint = (
+        f"閲覧許可が必要です。{npc_label} に対して "
+        "〈説得〉(persuade)、〈威圧〉(intimidate)、〈言いくるめ〉(fast_talk) "
+        "のいずれかで交渉ロールを行ってください。"
+    )
     hint = "担当者と交渉して許可を得る"
     if permission_npc_id:
-        hint = f"`{permission_npc_id}` と交渉して許可を得る"
+        hint = f"{npc_label} と交渉して許可を得る"
     return {
         "blocked": True,
         "log": (
             "【進行ブロック】この対象にはまだアクセスできない。"
             f"{hint}必要がある。"
+            f"{skill_hint}"
         ),
         "kp_instruction": (
-            "アクセス許可条件が未達。許可交渉（説得・信用・言いくるめ等）か"
-            "別ルートへの移動を促せ。"
+            "アクセス許可条件が未達。"
+            "〈説得〉(persuade)／〈威圧〉(intimidate)／〈言いくるめ〉(fast_talk) "
+            "での許可交渉、または別ルートへの移動を促せ。"
+            "オカルト現象や怪異の音を創作して門前払いの雰囲気を出すな。"
         ),
+        "stagnation_pl_hint": skill_hint,
     }
 
 
@@ -1435,6 +1539,8 @@ def _apply_social_progress_rules(
         clear_flags = [str(x) for x in (rule.get("clear_flags") or []) if x]
         for f in clear_flags:
             scenario_mgr.flags[f] = False
+        if hasattr(scenario_mgr, "ensure_flags_synced"):
+            scenario_mgr.ensure_flags_synced()
 
         sys_log = str(rule.get("system_log") or "").strip()
         kp_inst = str(rule.get("kp_instruction") or "").strip()
@@ -1486,6 +1592,28 @@ def _build_scenario_grounding_directive(scenario_mgr=None, current_loc=None):
 - オブジェクトの description / purpose に無い隠し構造（「引き出しの裏」「ヒンジの弱点」等）を勝手に仮定しないこと。
 - 今フォーカスすべき候補: {focus}
 """
+
+
+PL_EXPLORER_MINDSET_DIRECTIVE = """
+【探索者の心得とプレイ姿勢】
+（PLとしてのプレイ基本姿勢。会話禁止などの機械的制限ではない。人間のTRPGプレイヤーと同じ健全なメタ視点で行動を選ぶこと。）
+
+1. 探索者の真の目的：
+   - 探索者の真の目的は「事件の真相を解明し、原因を排除すること」です。
+   - 「特定の資料を100%手に入れること」は単なる手段であり、必須条件ではありません。資料が得られない・交渉が決裂した場合は、速やかに別の調査先へ切り替えるか、直接現地（コービット屋敷等）へ向かって調査・対処を行ってください。
+
+2. プレイヤー（メタ視点）とキャラクターの分離：
+   - キャラクターになりきりつつも、同時に「セッションの展開を前進させるプレイヤー視点」を持って行動を選択してください。
+   - 1〜2回の会話で状況が進展しない場合、キャラクターの感情に固執して雑談（talk）を繰り返してはいけません。積極的に「技能ダイスを振る」か「別ロケーションへ移動する（move）」宣言を行って物語を動かしてください。
+
+3. 不完全な状態での挑戦を恐れない：
+   - TRPGでは、十分な情報が揃わないまま怪異や現地に踏み込むことも、スリリングで正当な攻略です。「手がかりを残したまま次へ進む」ことを失敗と捉えず、堂々と次の行動・場所へ移行してください。
+""".strip()
+
+
+def _build_pl_explorer_mindset_directive():
+    """PL行動決定時のプレイ基本姿勢（メタ視点）。ハード制限ではなく心得として注入する。"""
+    return PL_EXPLORER_MINDSET_DIRECTIVE
 
 
 def _build_pl_roleplay_directive(scenario_mgr=None, current_loc=None):
@@ -1612,7 +1740,8 @@ def _build_pl_scenario_context(scenario_mgr, current_loc):
 
     if current_loc == "altar_room" and _scenario_has_object(scenario_mgr, "glowing_idol", "altar_room"):
         if not scenario_mgr.is_room_entry_san_due(current_loc):
-            lines.append("【状況】祭壇の間への進入時SANは**処理済み**（部屋全体の恐怖は既に正気を試している）。")
+            parts_note = "【状況】祭壇の間への進入時SANは**処理済み**（部屋全体の恐怖は既に正気を試している）。"
+            lines.append(parts_note)
         if flags.get("gate_opened"):
             lines.append("【状況】鉄格子は開放済み。先の闇へ進める。")
         elif flags.get("gate_weakness_found"):
@@ -1626,6 +1755,22 @@ def _build_pl_scenario_context(scenario_mgr, current_loc):
         if _idol_investigation_attempted(scenario_mgr):
             lines.append("【⚠️偶像調査済み】`glowing_idol` への通常 search/inspect はブロック。上記の別ルートを優先せよ。")
 
+    if current_loc == "corbitt_ground_floor":
+        lines.extend(_build_corbitt_ground_floor_focus_lines(scenario_mgr))
+
+    if current_loc == "boston_globe" and flags.get("artie_reference_room_access_granted"):
+        ref = "reference_room_clipping_files"
+        if _scenario_has_object(scenario_mgr, ref, current_loc):
+            if not (
+                scenario_mgr._is_target_investigated(ref)
+                and not scenario_mgr._is_research_reopened(ref)
+            ):
+                lines.append(
+                    "【最優先】参考資料室の許可は取得済み。"
+                    f"`search` / `{ref}`（切り抜きファイル）を調査せよ。"
+                    "不在の保管記録係への talk や、許可済みアーティへの再交渉は不要。"
+                )
+
     recommended = _build_pl_recommended_action(scenario_mgr, current_loc)
     if recommended:
         lines.append(recommended)
@@ -1634,11 +1779,97 @@ def _build_pl_scenario_context(scenario_mgr, current_loc):
     return "【シナリオ状況メモ（システム確定情報・厳守）】\n" + "\n".join(f"- {line}" for line in lines) + "\n"
 
 
+def _corbitt_ground_floor_priority_ids(scenario_mgr):
+    """1階で先に調べるべきオブジェクトID（未調査のみ）。"""
+    ids = []
+    for item in CORBITT_GROUND_FLOOR_FOCUS:
+        oid = item["object_id"]
+        if not _scenario_has_object(scenario_mgr, oid, "corbitt_ground_floor"):
+            continue
+        if scenario_mgr._is_target_investigated(oid) and not scenario_mgr._is_research_reopened(oid):
+            continue
+        ids.append(oid)
+    return ids
+
+
+def _build_corbitt_ground_floor_focus_lines(scenario_mgr):
+    """屋敷1階で雑談へ逃げないよう、調べる対象を明示する。"""
+    lines = [
+        "【最優先・屋敷1階】会話より室内の調査。調べる対象は次の2つ:",
+        "居間のガラクタ・家具（`living_room_clutter` / 別名 `living_room_junk`）",
+        "地下室へのドア（`basement_door`）",
+        "talk の連打は禁止。search / inspect（必要なら break/force）で進め。",
+    ]
+    for item in CORBITT_GROUND_FLOOR_FOCUS:
+        oid = item["object_id"]
+        if not _scenario_has_object(scenario_mgr, oid, "corbitt_ground_floor"):
+            continue
+        name = item["label"]
+        if scenario_mgr._is_target_investigated(oid) and not scenario_mgr._is_research_reopened(oid):
+            lines.append(f"【調査済み】{name}（`{oid}`）は確認済み。別対象へ。")
+        else:
+            alias = item["aliases"][0] if item.get("aliases") else oid
+            extra = f" / 別名 `{alias}`" if alias != oid else ""
+            lines.append(f"【未調査】{name}（`{oid}`{extra}）を search / inspect。")
+    return lines
+
+
+def _build_corbitt_ground_floor_recommended_action(scenario_mgr):
+    """1階の次アクション。居間調査 → 地下室扉の順。"""
+    flags = scenario_mgr.flags or {}
+    clutter = "living_room_clutter"
+    door = "basement_door"
+    if (
+        _scenario_has_object(scenario_mgr, clutter, "corbitt_ground_floor")
+        and not (
+            scenario_mgr._is_target_investigated(clutter)
+            and not scenario_mgr._is_research_reopened(clutter)
+        )
+        and not flags.get("living_room_investigated")
+    ):
+        return (
+            "【推奨次アクション・最優先】action: search / target: living_room_clutter / skill: 目星"
+            "（居間のガラクタ・家具。別名 `living_room_junk`）。"
+            "NPCへの雑談より室内調査を優先。"
+        )
+    if (
+        _scenario_has_object(scenario_mgr, door, "corbitt_ground_floor")
+        and not flags.get("basement_accessible")
+        and not flags.get("basement_door_unlocked")
+    ):
+        return (
+            "【推奨次アクション・最優先】action: search / target: basement_door / skill: 目星"
+            "（または break / force）。地下室へのドアを調べて開けよ。"
+        )
+    return ""
+
+
 def _build_pl_recommended_action(scenario_mgr, current_loc):
     """次に取るべき行動を明示（シナリオ内の実オブジェクトから推奨）。"""
     if not scenario_mgr:
         return ""
     flags = scenario_mgr.flags
+
+    # 調査枯渇: search より解禁済みロケーションへの move を最優先
+    if should_apply_location_exhausted_move(scenario_mgr, current_loc):
+        exits = scenario_mgr.get_available_exits(current_loc) or []
+        by_id = {str(e.get("id") or ""): e for e in exits if e.get("id")}
+        preferred = LOCATION_FORCED_PROGRESS_PREFERENCE.get(current_loc) or ()
+        for dest_id in preferred:
+            if dest_id in by_id:
+                dest = by_id[dest_id]
+                return (
+                    f"【推奨次アクション・最優先】action: move / target: {dest_id}"
+                    f"（{dest.get('name', dest_id)} へ）。"
+                    "この場所の調査はすべて完了。再 search は禁止。"
+                )
+        if exits:
+            dest = exits[0]
+            return (
+                f"【推奨次アクション・最優先】action: move / target: {dest['id']}"
+                f"（{dest.get('name', dest['id'])} へ）。"
+                "この場所の調査はすべて完了。再 search は禁止。"
+            )
 
     if current_loc == "study" and _scenario_has_object(scenario_mgr, "desk", "study"):
         if flags.get("found_button") and not flags.get("button_pushed"):
@@ -1712,6 +1943,19 @@ def _build_pl_recommended_action(scenario_mgr, current_loc):
                 )
 
     if current_loc == "boston_globe":
+        if flags.get("artie_reference_room_access_granted"):
+            ref = "reference_room_clipping_files"
+            if _scenario_has_object(scenario_mgr, ref, "boston_globe"):
+                if not (
+                    scenario_mgr._is_target_investigated(ref)
+                    and not scenario_mgr._is_research_reopened(ref)
+                ):
+                    return (
+                        "【必須アクション・最優先】action: search / target: reference_room_clipping_files"
+                        " / skill: 目星\n"
+                        "許可は取得済み。talk / persuade / ルース探しはすべて無効。"
+                        "今このターンで切り抜きファイルを調査すること。"
+                    )
         if not flags.get("artie_introduced"):
             return (
                 "【推奨次アクション】action: talk / target: globe_receptionist"
@@ -1719,10 +1963,17 @@ def _build_pl_recommended_action(scenario_mgr, current_loc):
                 "アーティ・ウィルモットを呼び出してもらう。対話最優先）"
             )
         return (
-            "【推奨次アクション】action: talk または persuade / target: artie_wilmott"
-            "（まず編集者と会話し、参考資料室の許可を得る。"
-            "無断で資料室オブジェクトを search しない）"
+            "【推奨次アクション】action: persuade / target: artie_wilmott / skill: 説得"
+            "（または intimidate / fast_talk）を**1回だけ**試せ。"
+            "失敗・拒否されたら同じ交渉を繰り返さず、"
+            f"`move` / `central_library` または `move` / `{HOUSE_ENTRY_LOCATION_ID}`"
+            "（コービット屋敷）へ進め。すべての資料を揃える必要はない。"
         )
+
+    if current_loc == "corbitt_ground_floor":
+        rec = _build_corbitt_ground_floor_recommended_action(scenario_mgr)
+        if rec:
+            return rec
 
     # 現在地に未紹介でないNPCがいれば、調査より会話を先に勧める
     npcs_here = (scenario_mgr.get_location_info(current_loc) or {}).get("npcs_present") or []
@@ -1779,13 +2030,34 @@ def _build_introduction_move_nudge(scenario_mgr, current_loc):
 """
 
 
+def _append_stagnation_hint_log(state, hint):
+    """マイルドな膠着ヒントを OOC ログへ1回だけ載せる（行動は強制しない）。"""
+    hint = str(hint or "").strip()
+    if not hint or not state:
+        return
+    text = hint if hint.startswith("[システム]") or hint.startswith("【") else f"[システム] {hint}"
+    logs = state.setdefault("all_events_log", [])
+    for entry in logs[-10:]:
+        existing = str(entry.get("text") or "")
+        meta = entry.get("meta") or {}
+        if meta.get("stagnation_hint") and (existing == text or hint in existing):
+            return
+    logs.append({
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": None,
+        "text": text,
+        "meta": {"stagnation_hint": True, "mild": True},
+    })
+
+
 def _maybe_set_context_stagnation_hint(state, scenario_mgr, state_mgr):
     """膠着中なら、現在ロケーションに応じた具体ヒントをセットする。"""
-    if not state_mgr or not scenario_mgr or not state:
+    if not scenario_mgr or not state:
         return
-    tracker = state_mgr.stagnation_tracker or {}
-    streak = int(tracker.get("streak") or 0)
-    if streak < 1:
+    tracker = (state_mgr.stagnation_tracker or {}) if state_mgr else {}
+    streak = int(tracker.get("streak") or state.get("stagnation_streak") or 0)
+    if streak < STAGNATION_HINT_TURNS:
         return
     current_loc = (
         state.get("current_loc")
@@ -1798,10 +2070,9 @@ def _maybe_set_context_stagnation_hint(state, scenario_mgr, state_mgr):
     hint = build_context_stagnation_hint(scenario_mgr, current_loc)
     if not hint:
         return
+    # PL プロンプトへは場面ヒント、チャットログへはマイルド通知のみ
     state["stagnation_pl_hint"] = hint
-    intervened_at = int(tracker.get("intervened_at_streak") or 0)
-    if intervened_at < streak:
-        state_mgr.mark_stagnation_intervened()
+    _append_stagnation_hint_log(state, STAGNATION_MILD_NOTICE)
 
 
 def _maybe_set_introduction_stagnation_hint(state, scenario_mgr, state_mgr):
@@ -1891,7 +2162,28 @@ _TARGET_ALIAS_TO_ID = {
     "公文書館": "hall_of_records",
     "記録保管所": "hall_of_records",
     "hall_of_records": "hall_of_records",
+    "living_room_junk": "living_room_clutter",
+    "living_room_furniture": "living_room_clutter",
+    "居間のガラクタ": "living_room_clutter",
+    "リビングの散乱した荷物": "living_room_clutter",
+    "地下室へのドア": "basement_door",
+    "地下室への扉": "basement_door",
+    "地下室の扉": "basement_door",
 }
+
+
+CORBITT_GROUND_FLOOR_FOCUS = (
+    {
+        "object_id": "living_room_clutter",
+        "aliases": ("living_room_junk", "living_room_furniture"),
+        "label": "居間のガラクタ・家具",
+    },
+    {
+        "object_id": "basement_door",
+        "aliases": ("basement_door",),
+        "label": "地下室へのドア",
+    },
+)
 
 
 def _alias_maps_to_existing_target(mapped_id, scenario_mgr, current_loc=None, char_mgr=None):
@@ -1934,6 +2226,11 @@ def normalize_action_target(target, scenario_mgr=None, current_loc=None, char_mg
                 return lower
             # 現在地の日本語名との部分一致を優先（別名グローバル辞書より先）
             for obj_id, obj in objects.items():
+                if lower == str(obj_id).lower():
+                    return obj_id
+                aliases = [str(a).lower() for a in (obj.get("aliases") or []) if a]
+                if lower in aliases:
+                    return obj_id
                 obj_name = str(obj.get("name", "") or "")
                 if obj_name and (raw == obj_name or obj_name in raw or raw in obj_name):
                     return obj_id
@@ -2975,10 +3272,51 @@ def evaluate_and_apply_stagnation_intervention(state, managers, *, after_step=No
         return detection
 
     level = resolve_session_intervention_level(state, scenario_mgr)
+    # 強介入（アイデアロール／固定行動）は 6 ターン程度まで遅延し、先にヒントへ落とす
+    streak = int(detection.get("streak") or 0)
+    if level >= InterventionLevel.FORCE and streak < STAGNATION_FORCE_TURNS:
+        level = InterventionLevel.STANDARD
     applied = apply_stagnation_intervention(state, managers, level, detection)
     state_mgr.mark_stagnation_intervened()
     state["last_stagnation_intervention"] = applied
     return {**detection, "intervention": applied}
+
+
+# 日常調査ロケ: オカルトSFXハルシネーションを禁止する
+_MUNDANE_INVESTIGATION_LOCS = frozenset({
+    "boston_globe",
+    "central_library",
+    "hall_of_records",
+    "higher_courts_police_station",
+    "introduction",
+})
+
+
+def _build_kp_mundane_location_directive(scenario_mgr=None, current_loc=None):
+    """新聞社・図書館等の日常調査ロケでは怪異描写を禁止する。"""
+    loc_id = str(
+        current_loc
+        or (getattr(scenario_mgr, "location", "") if scenario_mgr else "")
+        or ""
+    ).strip()
+    if not loc_id or loc_id not in _MUNDANE_INVESTIGATION_LOCS:
+        return ""
+    loc_name = loc_id
+    if scenario_mgr:
+        loc_name = (scenario_mgr.get_location_info(loc_id) or {}).get("name") or loc_id
+    kind = "日常の調査施設"
+    if loc_id == "boston_globe":
+        kind = "現実の新聞社"
+    elif loc_id == "central_library":
+        kind = "現実の図書館"
+    elif loc_id == "hall_of_records":
+        kind = "現実の公文書館"
+    return (
+        f"- 【日常調査ロケーション制約・絶対禁止】現在地は{kind}『{loc_name}』である。"
+        "現時点でオカルト現象（奇怪な音、ささやき声、怪異、不気味な気配、幻視、"
+        "超常的な振動など）を描写することは**絶対禁止**。"
+        "シナリオ未記載の怪異SFXを捏造せず、事務的・日常的な空間として描写せよ。\n"
+    )
 
 
 def _build_kp_narrative_constraints():
@@ -3013,12 +3351,21 @@ PCの体を動かせるのはPL（AIプレイヤー）だけです。KPは世界
 - システムが確定していない発見・移動・ダメージを、既に起きた事実として書くこと
 - システム一覧に無い小道具を「ある」かのように描写すること
 - オブジェクト description に無い「呪文の文字列」「特定の日にしか開かないドア」などを事実として書くこと
+- 新聞社・図書館など日常調査ロケで「奥から不気味な音やささやき声」等のオカルトSFXを付けること
 """
 
 
 def _build_kp_situational_directives(scenario_mgr=None, last_system_result=None, state=None):
     """状況に応じた KP 向け追加制約。"""
-    parts = []
+    parts = [
+        "【表現・視点の常時制約】\n"
+        "- 【表現制約】出力は100%自然な日本語のみを使用すること（英単語やメタニカルな注釈の混入は厳禁）。\n"
+        "- 【視点制約】KPは状況と環境、NPCの反応のみを描写すること。"
+        "PC（プレイヤーキャラクター）の台詞や内面心理を勝手に代弁・決定してはならない。\n"
+        "- 【メタ文禁止】システム内部用語・秘密キー名・フラグ定義文・"
+        "『…と主張する』『secret_』『flags.』『action_id』等をそのまま読み上げるな。"
+        "開示情報は自然な会話・情景に翻訳して伝えよ。\n"
+    ]
     room_state = _build_kp_room_state_directive(scenario_mgr)
     if room_state:
         parts.append(room_state)
@@ -3033,11 +3380,60 @@ def _build_kp_situational_directives(scenario_mgr=None, last_system_result=None,
     lines = []
     if scenario_mgr:
         flags = scenario_mgr.flags
+        loc_for_clip = (
+            (state or {}).get("current_loc")
+            or getattr(scenario_mgr, "location", "")
+            or ""
+        )
+        mundane = _build_kp_mundane_location_directive(scenario_mgr, loc_for_clip)
+        if mundane:
+            lines.append(mundane.rstrip("\n"))
         if flags.get("artie_reference_room_access_granted"):
-            lines.append(
-                "- 【絶対遵守】NPCアーティは既に参考資料室への立ち入りを許可済み。"
-                "アクセス不可・未許可を示唆する描写や台詞を絶対に生成しないこと。"
-            )
+            if is_boston_globe_clipping_investigated(scenario_mgr):
+                lines.append(
+                    "- 【グローブ調査完了】切り抜き調査は済んでいる。"
+                    "アーティ／受付への再交渉・門前払い・ルース呼び出しは禁止。"
+                    "中央図書館・公文書館など次の調査先への移動を自然に促せ。"
+                )
+            elif _clipping_files_search_pending(scenario_mgr, loc_for_clip or "boston_globe"):
+                lines.append(ARTIE_ACCESS_GRANTED_KP_DIRECTIVE)
+            else:
+                lines.append(
+                    "- 【絶対遵守・許可済み】アーティから参考資料室への入室・閲覧許可は**既に降りている**。"
+                    "アーティおよび受付による追加条件要求・別人物（ルース等）への誘導・"
+                    "部外者扱い描写を完全に禁止する。"
+                    "門前払い・『許可が必要』『裁量次第』『手続きが必要』『まだ入れない』"
+                    "『ルース・ブレイクなら教えてくれる』等の描写・台詞は厳禁。"
+                    "資料室の切り抜きファイル（`reference_room_clipping_files`）へ直接案内し、"
+                    "調査を促す描写のみを行うこと。"
+                )
+            # 許可が今ターン付与された直後は、さらに強く search 案内を強制
+            if last_system_result and (
+                "アクセス許可が出た" in str(last_system_result.get("log") or "")
+                or (last_system_result.get("social") or {}).get("access_just_granted")
+            ):
+                lines.append(
+                    "- 【今ターン確定】閲覧許可は本ターンで付与済み。"
+                    "ルース経由の追加許可・門前払いを一切書かず、"
+                    "`reference_room_clipping_files` の調査を即案内すること。"
+                )
+
+        # 中央図書館: 失敗1回で調査終了と誤解させるな
+        if (loc_for_clip or getattr(scenario_mgr, "location", "")) == "central_library":
+            if last_system_result and is_failure_level(int(last_system_result.get("status") or 0)):
+                target = str(last_system_result.get("target") or "")
+                if target in ("newspaper_archives", "local_history_section"):
+                    lines.append(
+                        "- 【図書館・失敗時制約】1回の search 失敗で"
+                        "『もう手がかりはない』『これ以上調べても無駄』と締めるな。"
+                        "プッシュや別技能での再挑戦、未調査オブジェクト、"
+                        "または公文書館（`hall_of_records`）への move を促せ。"
+                    )
+            if not flags.get("found_corbitt_history_all") or not flags.get("found_newspaper_article_1918"):
+                lines.append(
+                    "- 【図書館・進行】未発見の資料がある間は『調査完了』と宣言するな。"
+                    "新聞アーカイブと郷土史の両方を意識し、手詰まりなら公文書館へ誘導せよ。"
+                )
         if (
             flags.get("gate_opened")
             and scenario_mgr.location == "altar_room"
@@ -3093,6 +3489,108 @@ def _build_kp_situational_directives(scenario_mgr=None, last_system_result=None,
     if lines:
         parts.append("【状況別の追加制約】\n" + "\n".join(lines) + "\n")
     return "".join(parts)
+
+
+def _validate_stale_boston_globe_talk(
+    pc_action,
+    *,
+    scenario_mgr=None,
+    current_loc="",
+    char_mgr=None,
+):
+    """受付ループ／アーティ雑談・許可後再交渉ループを即時拒絶する。"""
+    action = str((pc_action or {}).get("action", "wait") or "wait").lower()
+    target = str((pc_action or {}).get("target", "") or "")
+
+    # 許可取得後・調査完了後: フェーズに応じた誘導
+    post_access = _validate_post_access_must_search(
+        pc_action, scenario_mgr=scenario_mgr, current_loc=current_loc,
+    )
+    if not post_access.get("ok"):
+        return post_access
+
+    if not is_stale_boston_globe_talk(
+        action, target,
+        scenario_mgr=scenario_mgr,
+        current_loc=current_loc,
+        char_mgr=char_mgr,
+    ):
+        return {"ok": True}
+
+    guidance = build_boston_globe_stale_guidance(scenario_mgr, current_loc)
+    return {
+        "ok": False,
+        "error": guidance.get("error") or STALE_ARTIE_TALK_REJECT_ERROR,
+        "error_code": guidance.get("error_code") or "stale_artie_talk",
+        "suggested_fix": guidance.get("suggested_fix") or {
+            "action": "persuade",
+            "target": "artie_wilmott",
+            "skill": "説得",
+        },
+        "needs_pl_retry": True,
+    }
+
+
+def _validate_post_access_must_search(
+    pc_action,
+    *,
+    scenario_mgr=None,
+    current_loc="",
+):
+    """許可取得後／調査完了後の会話・wait をフェーズ別に拒否する。"""
+    loc = str(
+        current_loc
+        or (getattr(scenario_mgr, "location", "") if scenario_mgr else "")
+        or ""
+    )
+    if loc != "boston_globe":
+        return {"ok": True}
+
+    action = str((pc_action or {}).get("action", "wait") or "wait").lower()
+    target = str((pc_action or {}).get("target", "") or "")
+    is_socialish = (
+        action in TALK_ACTION_IDS
+        or action in NEGOTIATION_ACTION_IDS
+        or action in ("wait", "none", "")
+    )
+
+    # 調査完了後: 交渉誘導ではなく次ロケへ
+    if is_boston_globe_clipping_investigated(scenario_mgr):
+        if action in ("search", "inspect") and target == "reference_room_clipping_files":
+            return {"ok": True}
+        if is_socialish:
+            guidance = build_boston_globe_stale_guidance(scenario_mgr, loc)
+            return {
+                "ok": False,
+                "error": guidance.get("error") or BOSTON_GLOBE_INVESTIGATION_DONE_HINT,
+                "error_code": guidance.get("error_code") or "globe_investigation_done",
+                "suggested_fix": guidance.get("suggested_fix") or {
+                    "action": "move",
+                    "target": "central_library",
+                },
+                "needs_pl_retry": True,
+            }
+        return {"ok": True}
+
+    if not _clipping_files_search_pending(scenario_mgr, loc):
+        return {"ok": True}
+    if action in ("search", "inspect") and target == "reference_room_clipping_files":
+        return {"ok": True}
+    if action == "move":
+        return {"ok": True}
+    if is_socialish:
+        return {
+            "ok": False,
+            "error": ARTIE_ACCESS_GRANTED_SEARCH_HINT,
+            "error_code": "stale_post_access_social",
+            "suggested_fix": {
+                "action": "search",
+                "target": "reference_room_clipping_files",
+                "skill": "目星",
+            },
+            "needs_pl_retry": True,
+        }
+    return {"ok": True}
 
 
 def _build_pc_display_message(
@@ -3462,12 +3960,21 @@ def default_pl_combat_defense_response():
     })
 
 
-def default_kp_response():
+def default_kp_response(fallback_text=""):
+    fallback = str(fallback_text or "").strip()
+    if fallback:
+        if fallback.startswith("システム:"):
+            fallback = fallback[len("システム:"):].strip()
+        text = fallback
+        if "どうしますか" not in text:
+            text = text.rstrip() + "\nどうしますか？"
+    else:
+        text = "（通信エラー）描写を再構成しています。直前の判定結果に沿って行動を続けてください。どうしますか？"
     return parse_kp_response({
-        "thought": "通信障害のため最低限の進行を行う。",
+        "thought": "通信障害のため、システム確定情報から最低限の進行を行う。",
         "should_speak": True,
         "speak_mode": "system_narration",
-        "text": "（通信エラー）KPの思考が途切れました。しばらく様子を見てください。",
+        "text": text,
     })
 
 
@@ -3480,6 +3987,7 @@ def _call_chat_completion(
 ):
     """OpenAI 互換 chat.completions 呼び出し（指数バックオフ付き）。"""
     client = get_client()
+    cfg = get_llm_config()
     wait_time = 4
     use_json_mode = json_mode
     last_error = None
@@ -3494,12 +4002,20 @@ def _call_chat_completion(
             }
             if use_json_mode:
                 kwargs["response_format"] = {"type": "json_object"}
+            max_tokens = int(cfg.get("max_tokens") or DEFAULT_LLM_MAX_TOKENS)
+            if max_tokens > 0:
+                kwargs["max_tokens"] = max_tokens
 
             response = client.chat.completions.create(**kwargs)
-            content = response.choices[0].message.content
+            choice = response.choices[0]
+            content = choice.message.content
+            finish_reason = str(getattr(choice, "finish_reason", "") or "")
             if content is None:
                 raise ValueError("LLM が空の応答を返しました")
-            return content.strip()
+            content = content.strip()
+            if finish_reason == "length":
+                raise ValueError("LLM 出力が max_tokens で途切れました (finish_reason=length)")
+            return content
 
         except Exception as exc:
             last_error = exc
@@ -3533,10 +4049,67 @@ LUCK_BURN_MAX = 10
 # ==========================================
 # 1. セーブ＆ロード処理 (SaveLoadManager 委譲)
 # ==========================================
+def sync_progress_managers(state_mgr, scenario_mgr, save_data=None):
+    """
+    game_state を進行フラグ・ターン数の Single Source of Truth として接続する。
+    旧セーブ（scenario_manager.flags / turn_counter）からの移行もここで行う。
+    セーブ上の両 flags が存在する場合は内容をマージして一致させる。
+    """
+    if not state_mgr or not scenario_mgr:
+        return
+
+    gs = (save_data or {}).get("game_state") or {}
+    sm = (save_data or {}).get("scenario_manager") or {}
+
+    gs_flags = dict(gs.get("flags") or {})
+    sm_flags = dict(sm.get("flags") or {})
+    if gs_flags or sm_flags:
+        merged = dict(sm_flags)
+        merged.update(gs_flags)  # game_state 優先
+        merged.setdefault("investigated_targets", [])
+        state_mgr.flags = merged
+
+    gs_turn = int(gs.get("turn_count") or 0)
+    sm_turn = int(sm.get("turn_counter") or 0)
+    state_mgr.turn_count = max(gs_turn, sm_turn, int(state_mgr.turn_count or 0))
+
+    scenario_mgr.bind_game_state(state_mgr)
+    if hasattr(scenario_mgr, "ensure_flags_synced"):
+        scenario_mgr.ensure_flags_synced()
+    _reconcile_loaded_stagnation_counters(state_mgr, scenario_mgr)
+
+
+def _reconcile_loaded_stagnation_counters(state_mgr, scenario_mgr):
+    """
+    旧バグ（割り込み時に counter を閾値へ上書き）で膨らんだ膠着カウンタを、
+    tracker の実ストリークへ戻す。
+    """
+    if not scenario_mgr:
+        return
+    tracker = (getattr(state_mgr, "stagnation_tracker", None) or {}) if state_mgr else {}
+    streak = int(tracker.get("streak") or 0)
+    counter = int(getattr(scenario_mgr, "stagnation_counter", 0) or 0)
+    threshold = STAGNATION_PAUSE_THRESHOLD
+    if hasattr(scenario_mgr, "get_max_stagnation_turns"):
+        threshold = scenario_mgr.get_max_stagnation_turns()
+    if counter >= threshold and streak < threshold:
+        scenario_mgr.stagnation_counter = streak
+        if state_mgr and hasattr(state_mgr, "stagnation_tracker"):
+            tracker = dict(state_mgr.stagnation_tracker or {})
+            if int(tracker.get("intervened_at_streak") or 0) > streak:
+                tracker["intervened_at_streak"] = streak
+                state_mgr.stagnation_tracker = tracker
+
+
 def build_save_data(game_state, character_manager, scenario_manager, app_state, scenario_file=None):
     """すべての状態を一つの辞書データとしてまとめる。"""
     for char in character_manager.characters.values():
         character_manager.normalize_character_attributes(char)
+    # セーブ直前に flags を必ず同期（game_state と scenario_manager ミラー一致）
+    if scenario_manager and hasattr(scenario_manager, "bind_game_state"):
+        scenario_manager.bind_game_state(game_state)
+    if scenario_manager and hasattr(scenario_manager, "ensure_flags_synced"):
+        scenario_manager.ensure_flags_synced()
     app_state = dict(app_state or {})
     if scenario_file:
         app_state["scenario_file"] = scenario_file
@@ -3571,29 +4144,6 @@ def generate_save_data(game_state, character_manager, scenario_manager, app_stat
     if not success:
         print(f"[main] セーブ失敗: slot_id={slot_id}")
     return save_data
-
-
-def sync_progress_managers(state_mgr, scenario_mgr, save_data=None):
-    """
-    game_state を進行フラグ・ターン数の Single Source of Truth として接続する。
-    旧セーブ（scenario_manager.flags / turn_counter）からの移行もここで行う。
-    """
-    if not state_mgr or not scenario_mgr:
-        return
-
-    gs = (save_data or {}).get("game_state") or {}
-    sm = (save_data or {}).get("scenario_manager") or {}
-
-    if gs.get("flags"):
-        state_mgr.flags = dict(gs["flags"])
-    elif sm.get("flags"):
-        state_mgr.flags = dict(sm["flags"])
-
-    gs_turn = int(gs.get("turn_count") or 0)
-    sm_turn = int(sm.get("turn_counter") or 0)
-    state_mgr.turn_count = max(gs_turn, sm_turn, int(state_mgr.turn_count or 0))
-
-    scenario_mgr.bind_game_state(state_mgr)
 
 
 def recover_pending_timeline_on_load(
@@ -3973,18 +4523,39 @@ def rebuild_ai_session(all_events_log):
 # ==========================================
 # 3. プロンプト生成
 # ==========================================
-def _format_objects_for_pl(location_info):
+def _format_objects_for_pl(location_info, *, priority_ids=None, exhausted=False, investigated_ids=None):
     """オブジェクトの usable_actions / purpose / description を PL 向けに整形する。"""
     objects = location_info.get("objects", {}) if location_info else {}
     if not objects:
         return ""
 
+    priority_ids = [str(x) for x in (priority_ids or []) if x]
+    priority_set = set(priority_ids)
+    investigated_ids = {str(x) for x in (investigated_ids or set())}
+    items = list(objects.items())
+    if priority_ids:
+        rank = {oid: i for i, oid in enumerate(priority_ids)}
+        items.sort(key=lambda kv: (rank.get(kv[0], 10_000), kv[0]))
+    elif exhausted:
+        # 調査済みを後回しにし、move 誘導を優先
+        items.sort(key=lambda kv: (0 if kv[0] not in investigated_ids else 1, kv[0]))
+
     lines = []
-    for obj_id, obj in objects.items():
-        actions = obj.get("usable_actions", ["search"])
+    for obj_id, obj in items:
+        actions = list(obj.get("usable_actions", ["search"]) or ["search"])
         purpose = obj.get("purpose", "")
         desc = str(obj.get("description", "") or "").strip()
-        line = f"- {obj_id} ({obj.get('name', obj_id)}): アクション [{', '.join(actions)}]"
+        prefix = "【最優先ターゲット】" if obj_id in priority_set else ""
+        if exhausted and obj_id in investigated_ids:
+            actions = [a for a in actions if a not in ("search", "inspect", "read")]
+            if not actions:
+                lines.append(
+                    f"- {obj_id} ({obj.get('name', obj_id)}): "
+                    "【調査済み・再search不可】移動（move）を優先"
+                )
+                continue
+            prefix = "【調査済み・低優先】"
+        line = f"- {prefix}{obj_id} ({obj.get('name', obj_id)}): アクション [{', '.join(actions)}]"
         if obj.get("no_roll") or obj.get("empty_clue") or str(obj.get("clue_value") or "").lower() in (
             "none", "empty", "flavor",
         ):
@@ -3996,10 +4567,450 @@ def _format_objects_for_pl(location_info):
             line += f" / 描写: {short}"
         lines.append(line)
 
-    return (
+    header = (
         "【現在地のオブジェクトと利用可能アクション】\n"
         "※ ここに載っていない物体は世界に存在しません。創作・執着禁止。\n"
-        + "\n".join(lines) + "\n"
+    )
+    if exhausted:
+        header += "※ この場所の調査は完了済み。search より解禁済みロケーションへの move を最優先。\n"
+    return header + "\n".join(lines) + "\n"
+
+
+def _build_pl_unlocked_object_hint(scenario_mgr, current_loc):
+    """ボストン・グローブ進行／調査枯渇に応じた PL 向けヒント。"""
+    if not scenario_mgr:
+        return ""
+    if should_apply_location_exhausted_move(scenario_mgr, current_loc):
+        return build_location_exhausted_move_hint(scenario_mgr, current_loc)
+    flags = scenario_mgr.flags or {}
+    if current_loc != "boston_globe":
+        return ""
+    if flags.get("artie_reference_room_access_granted"):
+        ref = "reference_room_clipping_files"
+        if _scenario_has_object(scenario_mgr, ref, current_loc):
+            if not (
+                scenario_mgr._is_target_investigated(ref)
+                and not scenario_mgr._is_research_reopened(ref)
+            ):
+                return (
+                    f"{ARTIE_ACCESS_GRANTED_SEARCH_HINT}\n"
+                    "【行動制約】このターンの `pc_ic_action` は必ず "
+                    "`action: search` / `target: reference_room_clipping_files` / `skill: 目星`。"
+                    "talk・persuade・wait・不在NPCへの言及は禁止。"
+                )
+        return ""
+    if flags.get("artie_introduced"):
+        return ARTIE_NEGOTIATE_STAGNATION_HINT
+    return ""
+
+
+def _clipping_files_search_pending(scenario_mgr, current_loc=None):
+    """許可取得済みかつ切り抜きファイル未調査か。"""
+    if not scenario_mgr:
+        return False
+    flags = scenario_mgr.flags or {}
+    if not flags.get("artie_reference_room_access_granted"):
+        return False
+    loc = current_loc or getattr(scenario_mgr, "location", "") or ""
+    if loc != "boston_globe":
+        return False
+    ref = "reference_room_clipping_files"
+    if not _scenario_has_object(scenario_mgr, ref, loc):
+        return False
+    if scenario_mgr._is_target_investigated(ref) and not scenario_mgr._is_research_reopened(ref):
+        return False
+    return True
+
+
+def _reset_guard_after_access_granted(state):
+    """
+    artie_reference_room_access_granted が立った直後に
+    consecutive_count をリセットし、同一PL制限で search が潰されないようにする。
+    """
+    if not state:
+        return
+    state["stagnation_pl_hint"] = ARTIE_ACCESS_GRANTED_SEARCH_HINT
+    guard = state.get("autonomous_guard")
+    if isinstance(guard, dict):
+        guard = dict(guard)
+        guard["consecutive_count"] = 0
+        guard["chat_rounds_without_action"] = 0
+        state["autonomous_guard"] = guard
+    else:
+        state["autonomous_guard"] = {
+            "consecutive_speaker": None,
+            "consecutive_count": 0,
+            "chat_rounds_without_action": 0,
+        }
+
+
+def _is_clipping_search_action(action_id, target):
+    return (
+        str(action_id or "").lower() in ("search", "inspect")
+        and str(target or "") == "reference_room_clipping_files"
+    )
+
+
+def _is_progress_command(action_id, target=""):
+    """同一PL制限より優先すべき有効コマンドか。"""
+    action = str(action_id or "").lower()
+    if action in ("wait", "none", ""):
+        return False
+    if action in ("search", "inspect", "read", "move", "push", "climb", "kick", "break", "force"):
+        return True
+    if action in NEGOTIATION_ACTION_IDS:
+        return True
+    if action in TALK_ACTION_IDS and target:
+        return True
+    return False
+
+
+def _should_defer_stagnation_interrupt_for_progress(state, scenario_mgr):
+    """
+    有効な search/move 等が未処理、または許可直後の切り抜き待ちのとき、
+    stagnation_interrupt / 同一PL制限より行動消化を優先する。
+    """
+    if not state:
+        return False
+    # 切り抜き未調査の猶予（既存）
+    if _should_defer_stagnation_interrupt_for_clipping_search(state, scenario_mgr):
+        return True
+    pending = find_any_pending_pl_action(state)
+    if pending:
+        meta = pending.get("meta") or {}
+        if _is_progress_command(meta.get("action_id"), meta.get("target")):
+            return True
+    last = state.get("last_pl_action") or {}
+    if last.get("needs_pl_retry"):
+        return False
+    if _is_progress_command(last.get("action"), last.get("target")):
+        # 直前が有効コマンドなら、同一話者制限で次を潰さない
+        return True
+    return False
+
+
+def _should_defer_stagnation_interrupt_for_clipping_search(state, scenario_mgr):
+    """
+    許可取得後・切り抜き未調査時、有効な search の消化を
+    stagnation_interrupt / 同一PL制限より優先する。
+    """
+    if not state or not scenario_mgr:
+        return False
+    current_loc = state.get("current_loc") or getattr(scenario_mgr, "location", "") or ""
+    if not _clipping_files_search_pending(scenario_mgr, current_loc):
+        return False
+    # 未処理の切り抜き search があれば必ず defer
+    pending = find_any_pending_pl_action(state)
+    if pending:
+        meta = pending.get("meta") or {}
+        if _is_clipping_search_action(meta.get("action_id"), meta.get("target")):
+            return True
+    last = state.get("last_pl_action") or {}
+    if _is_clipping_search_action(last.get("action"), last.get("target")):
+        return True
+    # 許可直後は次の PL ターンで search できるよう割り込みを猶予
+    return True
+
+
+def _count_post_access_non_search_streak(all_events_log):
+    """
+    許可取得ログ以降、切り抜き search 以外の PC 行動が何連続か。
+    """
+    streak = 0
+    for entry in reversed(all_events_log or []):
+        text = str(entry.get("text") or "")
+        meta = entry.get("meta") or {}
+        if "アクセス許可が出た" in text or meta.get("forced_progress_breakout"):
+            break
+        action = str(meta.get("action_id") or "").lower()
+        target = str(meta.get("target") or "")
+        if action in ("search", "inspect") and target == "reference_room_clipping_files":
+            break
+        if meta.get("pc_id") and action:
+            streak += 1
+    return streak
+
+
+def _maybe_force_post_access_search(state, managers, *, pl_id, char_name):
+    """許可取得後に search しないまま一定ターン経過したら、先にヒント、上限で強制 search。"""
+    if not state:
+        return None
+    scenario_mgr = managers[3] if managers and len(managers) > 3 else None
+    current_loc = state.get("current_loc") or getattr(scenario_mgr, "location", "") or ""
+    if not _clipping_files_search_pending(scenario_mgr, current_loc):
+        return None
+    streak = _count_post_access_non_search_streak(state.get("all_events_log") or [])
+    if streak < STAGNATION_HINT_TURNS:
+        return None
+    state["stagnation_pl_hint"] = ARTIE_ACCESS_GRANTED_SEARCH_HINT
+    _append_stagnation_hint_log(state, ARTIE_ACCESS_GRANTED_SEARCH_HINT)
+    if streak < POST_ACCESS_SEARCH_FORCE_TURNS:
+        return None
+    return apply_forced_progress_breakout(
+        state, managers, pl_id=pl_id, char_name=char_name,
+    )
+
+
+def _count_location_exhausted_non_move_streak(all_events_log, current_loc):
+    """調査枯渇後、move 以外の PC 行動が何連続か。"""
+    streak = 0
+    loc = str(current_loc or "")
+    for entry in reversed(all_events_log or []):
+        meta = entry.get("meta") or {}
+        if meta.get("forced_progress_breakout"):
+            break
+        action = str(meta.get("action_id") or "").lower()
+        entry_loc = str(entry.get("location") or "")
+        if entry_loc and entry_loc not in ("all", loc):
+            break
+        if meta.get("pc_id") and action:
+            if action == "move":
+                break
+            streak += 1
+    return streak
+
+
+def _maybe_force_location_exhausted_move(state, managers, *, pl_id, char_name, pending_non_move=False):
+    """調査枯渇ロケで move せず停滞したら強制 move。"""
+    if not state:
+        return None
+    scenario_mgr = managers[3] if managers and len(managers) > 3 else None
+    current_loc = state.get("current_loc") or getattr(scenario_mgr, "location", "") or ""
+    if not should_apply_location_exhausted_move(scenario_mgr, current_loc):
+        return None
+    streak = _count_location_exhausted_non_move_streak(
+        state.get("all_events_log") or [], current_loc,
+    )
+    if pending_non_move:
+        streak += 1
+    hint = build_location_exhausted_move_hint(scenario_mgr, current_loc)
+    if streak < STAGNATION_HINT_TURNS:
+        return None
+    state["stagnation_pl_hint"] = hint
+    _append_stagnation_hint_log(state, hint)
+    if streak < LOCATION_EXHAUSTED_FORCE_TURNS:
+        return None
+    return apply_forced_progress_breakout(
+        state, managers, pl_id=pl_id, char_name=char_name,
+    )
+
+
+def _maybe_force_investigation_deadlock_move(state, managers, *, pl_id, char_name, pending_non_move=False):
+    """失敗・拒否後に同一ロケへ留まり続ける場合、先にマイルドヒント、上限で強制 move。"""
+    if not state:
+        return None
+    scenario_mgr = managers[3] if managers and len(managers) > 3 else None
+    current_loc = state.get("current_loc") or getattr(scenario_mgr, "location", "") or ""
+    if not current_loc or str(current_loc).startswith("corbitt_"):
+        return None
+    if _clipping_files_search_pending(scenario_mgr, current_loc):
+        return None
+    if should_apply_location_exhausted_move(scenario_mgr, current_loc):
+        return None
+    streak = count_investigation_deadlock_streak(
+        state.get("all_events_log") or [], current_loc,
+    )
+    if pending_non_move and streak:
+        streak += 1
+    if streak < STAGNATION_HINT_TURNS:
+        return None
+    state["stagnation_pl_hint"] = INVESTIGATION_BAILOUT_HINT
+    _append_stagnation_hint_log(state, STAGNATION_MILD_NOTICE)
+    if streak < INVESTIGATION_DEADLOCK_FORCE_TURNS:
+        return None
+    return apply_forced_progress_breakout(
+        state, managers, pl_id=pl_id, char_name=char_name,
+    )
+
+
+def _extract_skill_from_system_log(text):
+    """システムログから技能名を抽出する。"""
+    text = str(text or "")
+    m = re.search(r"【技能:([^】]+)】", text)
+    if m:
+        return m.group(1).strip()
+    m = re.search(r"／〈([^〉]+)〉", text)
+    if m:
+        return m.group(1).strip()
+    return ""
+
+
+def _build_negotiate_fail_stagnation_hint(
+    char_mgr=None,
+    pl_id=None,
+    skill_used=None,
+    active_pcs=None,
+    failed_target=None,
+):
+    """交渉失敗時: 高成功率技能・他PCへの交代を優先する動的ヒント。"""
+    if not char_mgr or not pl_id:
+        return ARTIE_NEGOTIATE_ALTERNATE_SKILL_HINT
+
+    failed_skill = str(skill_used or "").strip()
+    if failed_skill and failed_skill not in _NEGOTIATION_SKILL_CANDIDATES:
+        # action id から日本語技能へ寄せる
+        action_to_skill = {
+            "persuade": "説得",
+            "fast_talk": "言いくるめ",
+            "intimidate": "威圧",
+            "charm": "魅惑",
+            "psychology": "心理学",
+        }
+        failed_skill = action_to_skill.get(failed_skill.lower(), failed_skill)
+
+    current_val = int(char_mgr.get_skill(pl_id, failed_skill) or 0) if failed_skill else 0
+    better = []
+    for skill_name in _NEGOTIATION_SKILL_CANDIDATES:
+        if skill_name == failed_skill:
+            continue
+        val = int(char_mgr.get_skill(pl_id, skill_name) or 0)
+        if val > current_val:
+            better.append((skill_name, val))
+    better.sort(key=lambda x: (-x[1], x[0]))
+
+    action_map = {
+        "説得": "persuade",
+        "言いくるめ": "fast_talk",
+        "威圧": "intimidate",
+        "魅惑": "charm",
+        "心理学": "psychology",
+    }
+    lines = [
+        "【システムヒント・低技能連打の抑制】交渉技能での判定に失敗しました。",
+    ]
+    if failed_skill:
+        lines.append(
+            f"〈{failed_skill}〉（成功率 {current_val}%）の連打は避け、"
+            "自身のキャラクターシートでより高い成功率の技能（例: 威圧、言いくるめ）を使うか、"
+            "他のPCに交渉を任せてください。"
+        )
+    else:
+        lines.append(
+            "自身のキャラクターシートでより高い成功率の技能（例: 威圧、言いくるめ）を使うか、"
+            "他のPCに交渉を任せてください。"
+        )
+
+    if better:
+        alt_text = "、".join(f"〈{name}〉({val}%)" for name, val in better[:3])
+        lines.append(f"推奨代替技能: {alt_text}")
+        top_name, top_val = better[0]
+        tgt = failed_target or "（現在地のNPC）"
+        lines.append(
+            f"推奨コマンド: action: {action_map.get(top_name, 'persuade')} / "
+            f"target: {tgt} / skill: {top_name}（成功率 {top_val}%）"
+        )
+    else:
+        lines.append(
+            "〈威圧〉(intimidate) や 〈言いくるめ〉(fast_talk)、別の〈説得〉(persuade) で再挑戦してください。"
+            "代替は最大1回。次に失敗したら情報入手は諦め、`move` で次へ進むこと。"
+        )
+
+    pcs = list(active_pcs or getattr(char_mgr, "active_pc_list", None) or [])
+    handoff = []
+    for other_id in pcs:
+        if other_id == pl_id:
+            continue
+        for skill_name in _NEGOTIATION_SKILL_CANDIDATES:
+            val = int(char_mgr.get_skill(other_id, skill_name) or 0)
+            if val >= max(current_val + 10, 30):
+                handoff.append((other_id, skill_name, val))
+    if handoff:
+        handoff.sort(key=lambda x: (-x[2], x[1], x[0]))
+        oid, sk, val = handoff[0]
+        other_name = char_mgr.get_pc_name(oid, default=str(oid))
+        lines.append(
+            f"他PCへの手番交代を推奨: {other_name} の〈{sk}〉（{val}%）の方が成功率が高い。"
+            "次は交渉を任せ、自身は支援・別アプローチに回ること。"
+            "交代後も失敗したら、情報は諦めて移動せよ。"
+        )
+    lines.append(INVESTIGATION_BAILOUT_HINT)
+    return "\n".join(lines)
+
+
+def _build_pl_identity_directive(char_mgr=None, pl_id=None, active_pcs=None, char_name=None):
+    """マルチPC時の取り違え防止: 自己定義を明示する。"""
+    if not char_mgr or not pl_id:
+        if char_name:
+            return (
+                f"【PCアイデンティティ・絶対遵守】あなたは【PC名: {char_name}】です。"
+                "他PCの名前や設定と絶対に混同しないでください。\n"
+            )
+        return ""
+    pc = char_mgr.get_pc(pl_id) or {}
+    profile = pc.get("profile") or {}
+    pc_name = str(profile.get("name") or char_name or char_mgr.get_pc_name(pl_id) or pl_id)
+    occupation = str(profile.get("occupation") or "探索者")
+    others = []
+    for pid in (active_pcs or getattr(char_mgr, "active_pc_list", None) or []):
+        if pid == pl_id:
+            continue
+        other = char_mgr.get_pc(pid) or {}
+        op = other.get("profile") or {}
+        oname = str(op.get("name") or char_mgr.get_pc_name(pid) or pid)
+        oocc = str(op.get("occupation") or "").strip()
+        others.append(f"{oname}" + (f"（{oocc}）" if oocc else ""))
+    other_text = "、".join(others) if others else "（なし）"
+    return (
+        f"【PCアイデンティティ・絶対遵守】\n"
+        f"あなたは【PC名: {pc_name} / 職業: {occupation}】です。"
+        f"他PC（例: {other_text}）の名前や設定と絶対に混同しないでください。"
+        "自己紹介やロールプレイでは必ず自身の名前と職業を名乗ってください。"
+        "他PCのセリフ・内面・職業を代弁・捏造しないこと。\n"
+    )
+
+
+def _build_pl_skill_spam_guidance(
+    all_events_log, char_mgr=None, pl_id=None, scenario_mgr=None, current_loc=None,
+    min_failures=1, active_pcs=None,
+):
+    """同一交渉技能の連続失敗時、高成功率の代替技能や他PCへの交代を強制推奨する。"""
+    if not char_mgr or not pl_id:
+        return ""
+
+    fail_streak = 0
+    failed_skill = ""
+    failed_target = ""
+    for entry in reversed(all_events_log or []):
+        text = str(entry.get("text", ""))
+        if not text.startswith("システム:"):
+            continue
+        meta = entry.get("meta") or {}
+        skill = _extract_skill_from_system_log(text)
+        if not skill or skill not in _NEGOTIATION_SKILL_CANDIDATES:
+            if fail_streak:
+                break
+            continue
+        if "失敗" not in text:
+            break
+        if not failed_skill:
+            failed_skill = skill
+            failed_target = str(meta.get("target") or "")
+        if skill != failed_skill:
+            break
+        fail_streak += 1
+
+    if fail_streak < min_failures or not failed_skill:
+        return ""
+
+    base = _build_negotiate_fail_stagnation_hint(
+        char_mgr=char_mgr,
+        pl_id=pl_id,
+        skill_used=failed_skill,
+        active_pcs=active_pcs or getattr(char_mgr, "active_pc_list", None),
+        failed_target=failed_target,
+    )
+    streak_note = (
+        f"【システム強制警告・低技能連打の抑制】〈{failed_skill}〉で連続 {fail_streak} 回失敗しています。\n"
+    )
+    unlocked = _build_pl_unlocked_object_hint(scenario_mgr, current_loc)
+    if unlocked:
+        return streak_note + base + "\n" + unlocked.strip() + "\n"
+    if fail_streak >= 2:
+        return streak_note + INVESTIGATION_BAILOUT_HINT + "\n"
+    return (
+        streak_note + base + "\n"
+        "代替技能は最大1回。それがダメなら情報入手は諦め、"
+        f"`move` / `{HOUSE_ENTRY_LOCATION_ID}`（コービット屋敷）または別調査先へ進め。\n"
     )
 
 
@@ -4046,8 +5057,10 @@ def _build_pl_blocked_loop_warning(last_system_result=None, all_events_log=None,
         scenario_mgr, exclude={str(target or "")},
     )
     return f"""
-【最重要・行動拒否の警告】あなたは直前に `{target_disp}` に対して `{action_disp}` を試みましたが、システムおよびKPから「すでに調査し尽くされており、これ以上の発見は絶対にない（無意味である）」と完全に拒否・ブロックされました。
-同じ対象へ同じ調査を繰り返すことは、AIとしての致命的なバグ（無限ループ）とみなされます。現在の思考（OOC）と行動（IC）において、その対象への執着を完全に捨て、未探索の他のオブジェクト（例: {examples}）へ100%視野を切り替えて次の行動を決定してください。一覧に無い物体を創作しないこと。
+【最重要・行動拒否の警告】あなたは直前に `{target_disp}` に対して `{action_disp}` を試みましたが、システムおよびKPから拒否・ブロックされました。
+同じ対象へ同じ調査・交渉を繰り返すことは無限ループです。代替技能は最大1回まで。それがダメなら情報入手は諦め、
+未探索オブジェクト（例: {examples}）か、`move` で別ロケーション／コービット屋敷（`{HOUSE_ENTRY_LOCATION_ID}`）へ切り替えてください。
+すべての資料を集める必要はありません。
 """
 
 
@@ -4058,8 +5071,18 @@ def generate_pl_prompt(
     char_mgr=None, pl_id=None, all_events_log=None,
     stagnation_pl_hint=None,
     force_ic_action=False,
+    active_pcs=None,
 ):
     san_locked = _is_san_check_pending(pending_san_check)
+    identity_directive = _build_pl_identity_directive(
+        char_mgr=char_mgr,
+        pl_id=pl_id,
+        active_pcs=active_pcs or (getattr(char_mgr, "active_pc_list", None) if char_mgr else None),
+        char_name=char_name,
+    )
+    explorer_mindset = (
+        "" if san_locked else (_build_pl_explorer_mindset_directive() + "\n")
+    )
     state_directive = (
         _build_san_interrupt_prompt(
             pending_san_check=pending_san_check,
@@ -4083,33 +5106,90 @@ def generate_pl_prompt(
         )
         if not san_locked else ""
     )
+    skill_spam_guidance = (
+        _build_pl_skill_spam_guidance(
+            all_events_log or [],
+            char_mgr=char_mgr,
+            pl_id=pl_id,
+            scenario_mgr=scenario_mgr,
+            current_loc=current_loc,
+            active_pcs=active_pcs or (getattr(char_mgr, "active_pc_list", None) if char_mgr else None),
+        )
+        if not san_locked else ""
+    )
     scenario_context = _build_pl_scenario_context(scenario_mgr, current_loc) if not san_locked else ""
     phase_summary = _build_pl_phase_summary(scenario_mgr, current_loc) if scenario_mgr and not san_locked else ""
     grounding = (
         _build_scenario_grounding_directive(scenario_mgr, current_loc)
         if scenario_mgr and not san_locked else ""
     )
+    unlocked_object_hint = (
+        _build_pl_unlocked_object_hint(scenario_mgr, current_loc)
+        if not san_locked else ""
+    )
+    if unlocked_object_hint and not san_locked:
+        # 許可取得後の誤った交渉膠着ヒントを上書きし、解禁オブジェクトへ誘導する
+        stagnation_pl_hint = unlocked_object_hint
+    elif skill_spam_guidance and not san_locked:
+        # 低技能連打時は動的アドバイスを stagnation に優先注入
+        stagnation_pl_hint = skill_spam_guidance.strip()
 
     force_ic_block = ""
     if force_ic_action and not san_locked:
-        force_ic_block = (
-            f"{OOC_LOOP_FORCE_ACTION_WARNING}\n"
-            "【強制行動フェーズ・最優先】\n"
-            "- `speak_as` は必ず `\"PC\"` または `\"BOTH\"`（`\"PL\"` のみは禁止）。\n"
-            "- `pl_ooc_chat` は空文字にすること（メタ発言はシステムが破棄する）。\n"
-            "- `pc_ic_action.action` は wait 以外の有効コマンド必須"
-            "（別技能の negotiate/persuade/fast_talk/intimidate/charm、"
-            "オブジェクトの search/inspect、または move）。\n"
-            "- 同じ失敗交渉の繰り返しだけは避け、別手段で現状を打開せよ。\n"
-        )
-        stagnation_pl_hint = OOC_LOOP_FORCE_ACTION_WARNING
+        if unlocked_object_hint and "reference_room_clipping_files" in unlocked_object_hint:
+            force_ic_block = (
+                f"{unlocked_object_hint}\n"
+                "【強制行動フェーズ・最優先】\n"
+                "- `speak_as` は必ず `\"PC\"` または `\"BOTH\"`。\n"
+                "- `pl_ooc_chat` は空文字。\n"
+                "- `pc_ic_action` は必ず `search` / `reference_room_clipping_files` / `目星`。\n"
+                "- talk / persuade / wait / 不在NPCへの言及は禁止。\n"
+            )
+            stagnation_pl_hint = unlocked_object_hint
+        else:
+            force_ic_block = (
+                f"{OOC_LOOP_FORCE_ACTION_WARNING}\n"
+                "【強制行動フェーズ・最優先】\n"
+                "- `speak_as` は必ず `\"PC\"` または `\"BOTH\"`（`\"PL\"` のみは禁止）。\n"
+                "- `pl_ooc_chat` は空文字にすること（メタ発言はシステムが破棄する）。\n"
+                "- `pc_ic_action.action` は wait 以外の有効コマンド必須"
+                "（別技能の negotiate/persuade/fast_talk/intimidate/charm、"
+                "オブジェクトの search/inspect、または move）。\n"
+                "- 同じ失敗交渉の繰り返しだけは避け、別手段で現状を打開せよ。\n"
+            )
+            stagnation_pl_hint = unlocked_object_hint or OOC_LOOP_FORCE_ACTION_WARNING
 
     loc_desc = ""
     if location_info and not san_locked:
         loc_name = location_info.get("name", "")
         if loc_name:
             loc_desc += f"\n【現在地】{loc_name}\n"
-        loc_desc += _format_objects_for_pl(location_info)
+        priority_ids = []
+        exhausted = bool(
+            scenario_mgr and should_apply_location_exhausted_move(scenario_mgr, current_loc)
+        )
+        investigated_ids = set()
+        if scenario_mgr:
+            flags = scenario_mgr.flags or {}
+            investigated_ids = set(flags.get("investigated_targets") or [])
+            for obj_id, obj in (location_info.get("objects") or {}).items():
+                inv_flag = (obj or {}).get("investigated_flag")
+                if inv_flag and flags.get(inv_flag):
+                    investigated_ids.add(obj_id)
+        if (
+            scenario_mgr
+            and (scenario_mgr.flags or {}).get("artie_reference_room_access_granted")
+            and not exhausted
+        ):
+            priority_ids.append("reference_room_clipping_files")
+        if scenario_mgr and current_loc == "corbitt_ground_floor" and not exhausted:
+            priority_ids.extend(_corbitt_ground_floor_priority_ids(scenario_mgr))
+        loc_desc += _format_objects_for_pl(
+            location_info,
+            priority_ids=priority_ids,
+            exhausted=exhausted,
+            investigated_ids=investigated_ids,
+        )
 
     exit_desc = ""
     if available_exits and not san_locked:
@@ -4180,17 +5260,23 @@ def generate_pl_prompt(
 - 場にそぐわない身分詐称・職業の誤用・的外れな権威の振りかざしは、ペナルティ・ダイスの対象になる。
 - 交渉（persuade 等）では、職業に沿った具体的な趣旨を `dialogue` に含めること。
 
-【コミュニケーション最優先（厳守）】
-- このゲームでは**人と話すこと**が最も重要です。受付・依頼人・編集者など【対話可能なNPC】がいる場所では、物を調べる前にまず `talk` してください。
-- 受付デスクや事務机など「人がいる家具」を search/inspect するより、その人本人に話しかけてください。
+【コミュニケーション最優先（初回接触のみ）】
+- 受付・依頼人など【対話可能なNPC】がいる場所では、**最初の接触**は `talk` を優先。
+- 一度失敗・拒否された相手への雑談連打・同技能の再ロールは禁止。代替技能は最大1回。
 - ボストン・グローブの「参考資料室／切り抜きファイル」は**場所への move ではありません**（公文書館 `hall_of_records` とは別物）。
   資料室に入るには受付→アーティ紹介→許可が必要です。セリフで資料室に触れているのに公文書館へ move するのは禁止。
-- dialogue（やりたいこと）と pc_ic_action（実際の action/target）を一致させてください。
+- 許可が取れない／調査が失敗したなら、資料収集に固執せず `move` で次へ進め。
+
+【行き詰まり時の行動選択アルゴリズム（厳守）】
+1. 同一ロケーション・同一対象への交渉／調査が失敗またはアクセス拒否されたら、同じアプローチを繰り返すな。
+2. 他PCが別技能（〈威圧〉intimidate／〈言いくるめ〉fast_talk 等）を試すか、プッシュロール可能なときだけリカバリーを**最大1回**。
+3. それがダメなら情報入手は諦め、別の調査可能な場所へ `move` するか、直接コービット屋敷（`corbitt_exterior` / 別名 `corbitt_house`）へ向かえ。
+4. すべての資料を集める必要はない。現地（屋敷・地下室）に踏み込むことも正当な攻略手段である。
 
 【幸運の消費・プッシュロール（CoC7ルール）】
 - 技能ロール失敗時、差分10以内かつ幸運が足りる場合のみ、別ターンで幸運消費の選択が提示されます。
 - プッシュロール可能時は action: "push_roll" を指定してください。
-- 手がかりが得られず進行が詰まりそうな場合は、温存より幸運消費・プッシュを**積極的に**検討してください。
+- 手がかりが得られず進行が詰まりそうな場合は、温存より幸運消費・プッシュを**1回**検討したうえで、ダメなら移動せよ。
 """
 
     insanity_override = ""
@@ -4207,9 +5293,12 @@ def generate_pl_prompt(
         intro_move_nudge = _build_introduction_move_nudge(scenario_mgr, current_loc)
 
     return f"""
+{identity_directive}
+{explorer_mindset}
 {force_ic_block}
 {insanity_directive}
 {repeat_failure_penalty}
+{skill_spam_guidance}
 {blocked_warning}
 {idol_exhausted_warning}
 {grounding}
@@ -4219,10 +5308,12 @@ def generate_pl_prompt(
 {intro_move_nudge}
 {"" if san_locked or not stagnation_pl_hint else (str(stagnation_pl_hint).strip() + chr(10))}
 あなたは「クトゥルフ神話TRPG」をプレイする存在です。操作キャラクター: {char_name}
+あなたは【PC名: {char_name}】としてのみロールプレイしてください。他PCの名前・職業と混同しないこと。
 
 【多層的な意識（厳守）】
 あなたには **PL（メタ視点のプレイヤー）** としての意識と、**PC（ゲーム内の探索者）** としての意識が同時に存在します。
 まず `thought` で「今どちらの意識で発言・行動すべきか」を内省し、`speak_as` で主体を選んでください。
+行動選択では上記【探索者の心得とプレイ姿勢】を常に意識すること。
 
 ■ PL（プレイヤー発言 / OOC）のトリガー
 - 心理描写、作戦会議、ルールやダイスに関するメタ雑談
@@ -4361,7 +5452,8 @@ def _build_kp_allowed_facts_block(scenario_mgr=None, last_pl_action=None, last_s
         )
     )
     if dice_ok and confirmed:
-        lines.append(f"・【成功時に必ず含める確定手がかり】{confirmed}")
+        lines.append(f"・【成功時に必ず含める確定手がかり／資料本文】{confirmed}")
+        lines.append("・資料がある場合は【資料本文】として原文を省略せず IC 描写に含めること。")
         lines.append(f"・{KP_SUCCESS_FACT_GUARD}")
     elif dice_ok:
         lines.append(f"・{KP_SUCCESS_FACT_GUARD}")
@@ -4549,6 +5641,48 @@ def append_kp_response_to_logs(kp_data, current_loc, all_events_log):
         )
 
 
+def ensure_handout_in_kp_ic(kp_data, confirmed_fact, obj_name=""):
+    """KP IC 本文に資料テキストが無ければ末尾へ原文を挿入する。"""
+    fact = str(confirmed_fact or "").strip()
+    if not fact:
+        return kp_data
+    kp_data = dict(kp_data or {})
+    text = str(kp_data.get("text") or "")
+    if fact_already_in_text(text, fact):
+        return kp_data
+    block = format_handout_ic_block(fact, obj_name)
+    kp_data["text"] = (text.rstrip() + "\n\n" + block).strip() if text else block
+    return kp_data
+
+
+def _inject_handout_into_kp_data(kp_data, scenario_mgr, action=None, result=None, current_loc=""):
+    """調査成功時、シナリオ正本の資料本文を KP IC へ確実に載せる。"""
+    result = result or {}
+    action = action or {}
+    fact = str(
+        result.get("handout_text")
+        or result.get("confirmed_fact")
+        or ""
+    ).strip()
+    if not fact:
+        log = str(result.get("log") or result.get("system_log") or "")
+        if "【確定手がかり】" in log:
+            fact = log.split("【確定手がかり】", 1)[-1].strip()
+    if not fact or not scenario_mgr:
+        return kp_data
+    target = str(result.get("target") or action.get("target") or "").strip()
+    obj = scenario_mgr.get_object_info(current_loc or getattr(scenario_mgr, "location", ""), target) or {}
+    if not should_emit_handout_ic(obj, fact):
+        # 対象不明でも confirmed_fact / handout_text があれば資料として載せる
+        if not result.get("handout_text") and not result.get("handout_ic_block"):
+            return kp_data
+    name = obj.get("name") or target
+    kp_data = ensure_handout_in_kp_ic(kp_data, fact, name)
+    if str(kp_data.get("text") or "").strip():
+        kp_data["should_speak"] = True
+    return kp_data
+
+
 def _is_duplicate_validation_error_log(all_events_log, *, error_code="", pc_id=None, message=""):
     """直近ログに同一 validation_error があれば重複出力を抑止する。"""
     if not error_code:
@@ -4623,7 +5757,7 @@ def apply_pl_response_to_logs(
             pending_san_check=pending_san_check,
             char_mgr=char_mgr,
         )
-        # 移動意図不一致・完了済みKnott対話など → ログにエラーを残し、システム行動は起こさない
+        # 移動意図不一致・完了済みKnott対話・グローブ停滞 talk など → 再選択を促す
         knott_check = validate_completed_knott_talk(
             pc_action,
             scenario_mgr=scenario_mgr,
@@ -4641,6 +5775,24 @@ def apply_pl_response_to_logs(
                 "suggested_fix": knott_check.get("suggested_fix"),
                 "needs_pl_retry": True,
             }
+        if not pc_action.get("needs_pl_retry"):
+            globe_stale = _validate_stale_boston_globe_talk(
+                pc_action,
+                scenario_mgr=scenario_mgr,
+                current_loc=current_loc,
+                char_mgr=char_mgr,
+            )
+            if not globe_stale.get("ok"):
+                pc_action = {
+                    **pc_action,
+                    "action": "wait",
+                    "target": "",
+                    "skill": "",
+                    "validation_error": globe_stale.get("error"),
+                    "validation_error_code": globe_stale.get("error_code"),
+                    "suggested_fix": globe_stale.get("suggested_fix"),
+                    "needs_pl_retry": True,
+                }
         # 強制 IC: wait / 無駄 talk をバリデーションエラーとして拒絶
         if force_ic_action and not pc_action.get("needs_pl_retry"):
             force_check = validate_force_ic_action(
@@ -4784,6 +5936,13 @@ def call_pl_api(
         sheet_block = char_mgr.build_character_sheet_summary(active_pc_id)
         if sheet_block:
             sheet_block = sheet_block + "\n\n"
+        identity = _build_pl_identity_directive(
+            char_mgr=char_mgr,
+            pl_id=active_pc_id,
+            active_pcs=getattr(char_mgr, "active_pc_list", None),
+        )
+        if identity:
+            sheet_block = identity + "\n" + sheet_block
     system_extra = ""
     if discussion_mode:
         system_extra = (
@@ -4809,11 +5968,19 @@ def call_pl_api(
             )
         else:
             system_extra = " 現在SANチェック保留中のため、行動コマンドは出力せずロールプレイのみ行ってください。"
+    mindset_block = ""
+    if (
+        not discussion_mode
+        and not action_locked
+        and json_schema == PL_ACTION_JSON_SCHEMA
+    ):
+        mindset_block = _build_pl_explorer_mindset_directive() + "\n\n"
     messages = [
         {
             "role": "system",
             "content": (
                 sheet_block
+                + mindset_block
                 + "あなたはクトゥルフ神話TRPGのプレイヤーAIです。"
                 "必ず有効な JSON オブジェクトのみを出力してください。"
                 + system_extra
@@ -4857,7 +6024,7 @@ def call_pl_api(
     return default_pl_action_response()
 
 
-def call_kp_api(prompt, max_retries=3):
+def call_kp_api(prompt, max_retries=3, fallback_text=""):
     """KP用のローカル LLM 呼び出し（JSON 多層意識スキーマ）。"""
     cfg = get_llm_config()
     finalized_prompt = _finalize_pl_prompt_for_json(prompt, KP_JSON_SCHEMA)
@@ -4867,27 +6034,57 @@ def call_kp_api(prompt, max_retries=3):
             "content": (
                 "あなたはクトゥルフ神話TRPGのKP AIです。"
                 "システムKPとプレイヤーKPの二重意識を持ち、必ず有効な JSON オブジェクトのみを出力してください。"
+                "text は途中で切らず、情景描写を完結させてから JSON を閉じること。"
             ),
         },
         {"role": "user", "content": finalized_prompt},
     ]
 
-    try:
-        response_text = _call_chat_completion(
-            messages,
-            model=cfg["kp_model"],
-            temperature=0.8,
-            max_retries=max_retries,
-            json_mode=True,
-        )
-        return parse_kp_response(json.loads(_extract_json_object(response_text)))
-    except json.JSONDecodeError as exc:
-        print(f"\n[KP API JSONパースエラー] {exc}")
-    except Exception as exc:
-        print(f"\n[KP API 最終エラー] {exc}")
+    last_raw = ""
+    for attempt in range(max_retries):
+        try:
+            last_raw = _call_chat_completion(
+                messages,
+                model=cfg["kp_model"],
+                temperature=0.8,
+                max_retries=1,
+                json_mode=True,
+            )
+            data = _loads_json_lenient(last_raw)
+            if data is None:
+                recovered = _recover_text_field_from_partial_json(last_raw)
+                if recovered.strip():
+                    print(f"\n[KP] 途切れ JSON から text を復旧（試行 {attempt + 1}）")
+                    return parse_kp_response({
+                        "should_speak": True,
+                        "speak_mode": "system_narration",
+                        "text": recovered,
+                    })
+                raise json.JSONDecodeError("KP JSON を解釈できません", last_raw, 0)
+            parsed = parse_kp_response(data)
+            if parsed.get("should_speak") and not str(parsed.get("text") or "").strip():
+                recovered = _recover_text_field_from_partial_json(last_raw)
+                if recovered.strip():
+                    parsed["text"] = recovered
+            return parsed
+        except json.JSONDecodeError as exc:
+            print(f"\n[KP API JSONパースエラー - 試行 {attempt + 1}/{max_retries}] {exc}")
+        except Exception as exc:
+            print(f"\n[KP API エラー - 試行 {attempt + 1}/{max_retries}] {exc}")
+            if _is_model_not_found_error(exc):
+                break
 
-    print("\n[KP] リトライ上限に達しました。ダミーメッセージを返します。")
-    return default_kp_response()
+    recovered = _recover_text_field_from_partial_json(last_raw)
+    if recovered.strip():
+        print("\n[KP] リトライ後も JSON 不完全のため、復旧した text を使用します。")
+        return parse_kp_response({
+            "should_speak": True,
+            "speak_mode": "system_narration",
+            "text": recovered,
+        })
+
+    print("\n[KP] リトライ上限に達しました。システム確定情報で描写を補います。")
+    return default_kp_response(fallback_text=fallback_text)
 
 # ==========================================
 # 5. システム（裏方）処理 (main.py)
@@ -5164,6 +6361,8 @@ def _build_system_action_result(
         "target": action_target,
         "success_level": int(success_level or 0),
     }
+    if payload and payload.get("stagnation_pl_hint"):
+        result["stagnation_pl_hint"] = payload["stagnation_pl_hint"]
     if payload and payload.get("from_location"):
         result["from_location"] = payload["from_location"]
     if payload and payload.get("invalidate_pending_actions"):
@@ -5175,6 +6374,10 @@ def _build_system_action_result(
         result["dice_success"] = True
     elif payload and payload.get("dice_success"):
         result["dice_success"] = True
+    if payload and payload.get("handout_text"):
+        result["handout_text"] = payload["handout_text"]
+    if payload and payload.get("handout_ic_block"):
+        result["handout_ic_block"] = payload["handout_ic_block"]
     if payload and payload.get("new_phase"):
         result["new_phase"] = payload["new_phase"]
     if payload and payload.get("npc_roleplay"):
@@ -5956,6 +7159,8 @@ def process_system_action(
     push_fail_madness_instruction = ""
     action_id = str(action_id or "wait").lower()
     target = normalize_action_target(target, scenario_mgr, current_loc, char_mgr=char_mgr)
+    if action_id == "move" and scenario_mgr and hasattr(scenario_mgr, "_canonical_move_target"):
+        target = scenario_mgr._canonical_move_target(target, loc_id=current_loc)
     if pending_push_roll:
         pending_push_roll = dict(pending_push_roll)
         if pending_push_roll.get("target"):
@@ -6023,12 +7228,16 @@ def process_system_action(
     )
     if access_block:
         sys_log += str(access_block.get("log", "") or "") + "\n"
+        access_hint = access_block.get("stagnation_pl_hint") or ACCESS_GATE_NEGOTIATE_SKILL_HINT
+        if game_state is not None:
+            game_state["stagnation_pl_hint"] = access_hint
         return _build_system_action_result(
             0,
             sys_log.strip(),
             {
                 "blocked": True,
                 "kp_instruction": access_block.get("kp_instruction", "アクセス条件が未達です。"),
+                "stagnation_pl_hint": access_hint,
             },
             action_id,
             None,
@@ -6045,13 +7254,19 @@ def process_system_action(
         social_mgr = NPCSocialManager(char_mgr)
         npc_id = find_npc_id_by_target(char_mgr, target)
         if not npc_id:
-            sys_log += "【対話】対象のNPCが特定できません。target に名前またはIDを指定してください。\n"
+            # 不在・未定義人物（例: 名前だけ出るルース・ブレイク）への対話を LLM 前に弾く
+            sys_log += f"{ABSENT_NPC_TALK_BLOCK_LOG}\n"
+            redirect_hint = ABSENT_NPC_REDIRECT_SEARCH_HINT
+            if game_state is not None:
+                game_state["stagnation_pl_hint"] = redirect_hint
             return _build_system_action_result(
                 0,
                 sys_log.strip(),
                 {
                     "blocked": True,
-                    "kp_instruction": "対象NPCが不明です。正しい target を指定するよう促してください。",
+                    "absent_npc": True,
+                    "kp_instruction": ABSENT_NPC_TALK_KP_INSTRUCTION,
+                    "stagnation_pl_hint": redirect_hint,
                 },
                 action_id,
                 None,
@@ -6060,27 +7275,24 @@ def process_system_action(
                 roll_type="blocked",
                 action_target=target,
             )
-        # 幽霊NPC遮断: 現在地にいないNPCへの対話を拒否
-        if scenario_mgr and hasattr(scenario_mgr, "is_npc_at_location"):
-            if not scenario_mgr.is_npc_at_location(npc_id, current_loc):
-                # エイリアス解決済みIDでもう一度確認
-                present_ids = set(scenario_mgr.get_npcs_present(current_loc) or [])
+        # 幽霊NPC遮断: 現在地の npcs_present にいないNPCへの対話を拒否
+        if scenario_mgr and hasattr(scenario_mgr, "get_npcs_present"):
+            present_ids = set(scenario_mgr.get_npcs_present(current_loc) or [])
+            if present_ids and not scenario_mgr.is_npc_at_location(npc_id, current_loc):
                 if npc_id not in present_ids and str(target) not in present_ids:
-                    sys_log += (
-                        f"【ロケーション不整合】`{npc_id}` は現在地（`{current_loc}`）にいません。"
-                        "移動前にキューされた対話は破棄されました。"
-                        "現在地のNPC／オブジェクトへ行動してください。\n"
-                    )
+                    sys_log += f"{ABSENT_NPC_TALK_BLOCK_LOG}\n"
+                    redirect_hint = ABSENT_NPC_REDIRECT_SEARCH_HINT
+                    if game_state is not None:
+                        game_state["stagnation_pl_hint"] = redirect_hint
                     return _build_system_action_result(
                         0,
                         sys_log.strip(),
                         {
                             "blocked": True,
                             "ghost_npc": True,
-                            "kp_instruction": (
-                                "移動前ロケーションのNPCとの対話は発生させない。"
-                                "現在地の情景と有効な次アクションのみ描写せよ。"
-                            ),
+                            "absent_npc": True,
+                            "kp_instruction": ABSENT_NPC_TALK_KP_INSTRUCTION,
+                            "stagnation_pl_hint": redirect_hint,
                         },
                         action_id,
                         None,
@@ -6113,6 +7325,84 @@ def process_system_action(
                 roll_type="blocked",
                 action_target=npc_id,
             )
+        # 許可取得後のアーティ／受付への会話・交渉は無効（切り抜き search へ誘導）
+        if (
+            flags.get("artie_reference_room_access_granted")
+            and npc_id in ("artie_wilmott", "globe_receptionist")
+            and _clipping_files_search_pending(scenario_mgr, current_loc)
+        ):
+            sys_log += (
+                "【進行ブロック】参考資料室の許可は取得済みです。"
+                "アーティ／受付との再交渉は不要。"
+                "`search` / `reference_room_clipping_files` を実行してください。\n"
+            )
+            hint = ARTIE_ACCESS_GRANTED_SEARCH_HINT
+            if game_state is not None:
+                game_state["stagnation_pl_hint"] = hint
+            return _build_system_action_result(
+                0,
+                sys_log.strip(),
+                {
+                    "blocked": True,
+                    "post_access_social_blocked": True,
+                    "kp_instruction": (
+                        "【許可済み】門前払いや再交渉を描写するな。"
+                        "切り抜きファイルの調査を自然に促せ。"
+                    ),
+                    "stagnation_pl_hint": hint,
+                },
+                action_id,
+                None,
+                current_loc=current_loc,
+                scenario_mgr=scenario_mgr,
+                roll_type="blocked",
+                action_target=npc_id,
+            )
+        # 受付ループ誘導: 紹介済み後の受付 talk は冪等KP指示を付与（初対面取り次ぎを繰り返さない）
+        reception_followup_kp = ""
+        if (
+            npc_id == "globe_receptionist"
+            and flags.get("artie_introduced")
+            and is_casual_talk(action_id, skill_name)
+        ):
+            reception_followup_kp = (
+                "【冪等】アーティは既に紹介済み。受付の初対面取り次ぎ描写を繰り返すな。"
+                "短く『編集者はすでに呼び出済み／ロビーにいる』と案内し、"
+                "アーティ本人への交渉（persuade / intimidate / fast_talk）を促せ。"
+                "参考資料室は未許可なら調査させないこと。"
+            )
+        # アーティ雑談ループ遮断: 許可未取得かつ対話済みなら talk を拒否（交渉へ誘導）
+        if (
+            npc_id == "artie_wilmott"
+            and flags.get("artie_introduced")
+            and not flags.get("artie_reference_room_access_granted")
+            and is_casual_talk(action_id, skill_name)
+        ):
+            social_preview = NPCSocialManager(char_mgr).ensure_social_session(npc_id)
+            if int(social_preview.get("dialogue_count") or 0) >= 1:
+                guidance = build_boston_globe_stale_guidance(scenario_mgr, current_loc)
+                sys_log += f"{guidance.get('error') or STALE_ARTIE_TALK_REJECT_ERROR}\n"
+                return _build_system_action_result(
+                    0,
+                    sys_log.strip(),
+                    {
+                        "blocked": True,
+                        "stale_artie_talk": True,
+                        "kp_instruction": (
+                            "【進行誘導】現在の進行段階に合った次の行動を促せ。"
+                            "許可未取得なら交渉を、許可済みなら切り抜き search を、"
+                            "調査完了なら他ロケーションへの move を促せ。"
+                            "システム内部文を読み上げるな。"
+                        ),
+                        "stagnation_pl_hint": guidance.get("error"),
+                    },
+                    action_id,
+                    None,
+                    current_loc=current_loc,
+                    scenario_mgr=scenario_mgr,
+                    roll_type="blocked",
+                    action_target=npc_id,
+                )
         if is_casual_talk(action_id, skill_name):
             occupation_rp = judge_occupation_roleplay(
                 char_mgr=char_mgr,
@@ -6180,6 +7470,15 @@ def process_system_action(
         if progress_kp:
             social = dict(social)
             social["kp_instruction"] = (social.get("kp_instruction") or "") + "\n" + progress_kp
+        if reception_followup_kp:
+            social = dict(social)
+            social["kp_instruction"] = (
+                (social.get("kp_instruction") or "") + "\n" + reception_followup_kp
+            )
+            sys_log += (
+                "\n【案内】アーティは既に呼び出済み。"
+                "受付への再確認より、編集者本人への交渉（persuade 等）を優先せよ。"
+            )
 
         # 汎用: 社交成功で access_gate.permission_flag を付与
         if scenario_mgr:
@@ -6198,20 +7497,49 @@ def process_system_action(
                         "これ以降、該当対象の調査が可能。"
                     )
                 social = dict(social)
+                social["access_just_granted"] = True
                 social["kp_instruction"] = (
                     (social.get("kp_instruction") or "")
-                    + "\n【進行】交渉成功でアクセス許可が更新された。"
+                    + "\n【進行・絶対遵守】交渉成功でアクセス許可が更新された。"
                       "以後は同対象を『未許可』として拒絶しないこと。"
+                      "ルース等の追加許可待ち・門前払い描写は禁止。"
+                      "切り抜きファイル（`reference_room_clipping_files`）の"
+                      "search を明確に案内すること。"
                 )
+                if game_state is not None:
+                    _reset_guard_after_access_granted(game_state)
+        social_payload = {
+            "kp_instruction": social.get("kp_instruction", ""),
+            "npc_roleplay": social.get("npc_roleplay"),
+            "social": social,
+            "san_check": {"required": False},
+        }
+        # ボストン・グローブ: 交渉失敗直後は別技能・他PC誘導ヒントを注入（早期移動しない）
+        if (
+            current_loc == "boston_globe"
+            and not social.get("casual")
+            and scenario_mgr
+            and (scenario_mgr.flags or {}).get("artie_introduced")
+            and not (scenario_mgr.flags or {}).get("artie_reference_room_access_granted")
+            and npc_id in ("artie_wilmott", "artie")
+            and is_failure_level(int(social.get("success_level") or 0))
+        ):
+            fail_hint = _build_negotiate_fail_stagnation_hint(
+                char_mgr=char_mgr,
+                pl_id=pl_id,
+                skill_used=(social.get("skill") or skill_name or ""),
+                active_pcs=active_pcs or (
+                    (game_state or {}).get("active_pcs") if game_state else None
+                ) or getattr(char_mgr, "active_pc_list", None),
+                failed_target=npc_id,
+            )
+            social_payload["stagnation_pl_hint"] = fail_hint
+            if game_state is not None:
+                game_state["stagnation_pl_hint"] = fail_hint
         return _build_system_action_result(
             int(social.get("success_level") or 0),
             sys_log.strip(),
-            {
-                "kp_instruction": social.get("kp_instruction", ""),
-                "npc_roleplay": social.get("npc_roleplay"),
-                "social": social,
-                "san_check": {"required": False},
-            },
+            social_payload,
             action_id,
             None,
             current_loc=current_loc,
@@ -6847,12 +8175,21 @@ def apply_location_change_side_effects(state, result, *, scenario_mgr=None, char
 # ==========================================
 # 6. タイムライン駆動型フリーチャットシステム
 # ==========================================
-MAX_AUTONOMOUS_ITERATIONS = 25
-MAX_CONSECUTIVE_SAME_SPEAKER = 2
+# Streamlit は 1 rerun = 1 ティック。PL/System/KP・失敗再試行も消費するため、
+# 25 だと導入〜調査序盤で安全停止してしまう。無進行連続の上限として大きめに取る。
+MAX_AUTONOMOUS_ITERATIONS = 100
+# 同一話者が連続しても、膠着6ターンより先にセッション停止しない。
+# 超過時は手番交代＋マイルド通知のみ（カウンタを閾値へ上書きしない）。
+MAX_CONSECUTIVE_SAME_SPEAKER = 5
 MAX_CHAT_ROUNDS_WITHOUT_PROGRESS = FORCE_IC_ACTION_CHAT_ROUNDS
 MAX_TIMELINE_CHAIN = 8
 
 USER_STOP_LOG_TEXT = "[システム] ユーザーによりセッションが一時停止されました。"
+MAX_ITERATIONS_PAUSE_LOG_TEXT = (
+    "[システム] 自律巡航が安全上限に達したため一時停止しました。"
+    "（場所・進行フラグに変化がないティックが連続したためです。"
+    "「自律巡航を再開」で続行できます。）"
+)
 
 ACTIONS_NEEDING_SYSTEM = frozenset({
     "search", "inspect", "move", "push", "push_roll", "climb", "break", "use", "kick", "force",
@@ -6914,7 +8251,7 @@ def get_chat_rounds_without_action(state=None, guard=None):
 def is_force_ic_action_phase(state=None, state_mgr=None, guard=None):
     """
     OOC膠着の強制 IC 行動フェーズか。
-    chat_rounds >= 3 または stagnation streak > 4 で発火。
+    chat_rounds >= 6 または stagnation streak > 5 で発火。
     """
     if state and state.get("force_ic_action"):
         return True
@@ -6931,7 +8268,12 @@ def ensure_force_ic_action_phase(state, state_mgr=None, guard=None):
     if not is_force_ic_action_phase(state, state_mgr=state_mgr, guard=guard):
         return False
     state["force_ic_action"] = True
-    state["stagnation_pl_hint"] = OOC_LOOP_FORCE_ACTION_WARNING
+    # 許可取得後は search 誘導を優先（汎用 OOC 警告で上書きしない）
+    existing = str(state.get("stagnation_pl_hint") or "")
+    if "reference_room_clipping_files" in existing or "許可は取得済み" in existing:
+        pass
+    else:
+        state["stagnation_pl_hint"] = OOC_LOOP_FORCE_ACTION_WARNING
     logs = state.setdefault("all_events_log", [])
     already = any(
         (entry.get("meta") or {}).get("force_ic_action")
@@ -7506,7 +8848,10 @@ class AutonomousLoopGuard:
         ):
             self.chat_rounds_without_action += 1
         else:
+            # 有効コマンド（search/move/negotiate 等）は同一話者制限をリセットし、
+            # アクション未処理化・次ターン潰れを防ぐ
             self.chat_rounds_without_action = 0
+            self.consecutive_count = 0
 
     def should_break_same_speaker(self):
         return self.consecutive_count > MAX_CONSECUTIVE_SAME_SPEAKER
@@ -7526,10 +8871,10 @@ class AutonomousLoopGuard:
 
 
 def inject_stagnation_interrupt(state, scenario_mgr, char_name, message=None, state_mgr=None):
-    """3往復進展なし時にシステムが割り込む。"""
+    """膠着時のマイルドな OOC 通知。実際の連続ターン数は上書きしない。"""
     default_msg = (
-        "[システム] 探索が停滞しています。別の対象への行動、移動、"
-        "または状況の変化を検討してください。"
+        "[システム] 探索がやや停滞しています。別の対象や場所を試してもよいですが、"
+        "まだ探索者自身で方針を選ぶ余白があります。"
     )
     state["all_events_log"].append({
         "channel": "OOC",
@@ -7538,13 +8883,30 @@ def inject_stagnation_interrupt(state, scenario_mgr, char_name, message=None, st
         "text": message or default_msg,
         "meta": {"stagnation_interrupt": True},
     })
-    scenario_mgr.stagnation_counter = STAGNATION_PAUSE_THRESHOLD
-    if state_mgr and hasattr(state_mgr, "mark_stagnation_intervened"):
-        state_mgr.mark_stagnation_intervened()
-    elif state_mgr is None:
-        # state に紐づく tracker が無い場合でも、ヒントがあれば介入済み扱いに近づける
-        pass
+    # 実ストリークを閾値へ書き換えない（見た目上「6ターン到達」と誤認されるため）
+    actual = 0
+    if state_mgr and getattr(state_mgr, "stagnation_tracker", None):
+        actual = int((state_mgr.stagnation_tracker or {}).get("streak") or 0)
+    if scenario_mgr:
+        actual = max(actual, int(getattr(scenario_mgr, "stagnation_counter", 0) or 0))
+        threshold = scenario_mgr.get_max_stagnation_turns() if hasattr(scenario_mgr, "get_max_stagnation_turns") else STAGNATION_PAUSE_THRESHOLD
+        if actual >= threshold and state_mgr and hasattr(state_mgr, "mark_stagnation_intervened"):
+            state_mgr.mark_stagnation_intervened()
     _maybe_set_introduction_stagnation_hint(state, scenario_mgr, state_mgr)
+
+
+def _handle_same_speaker_soft_yield(state, managers, guard):
+    """
+    同一話者連続時: セッションは止めず、マイルド通知と次PCへの手番交代のみ。
+    膠着カウンタは触らない。
+    """
+    char_mgr, _, state_mgr, _scenario_mgr = managers
+    _append_stagnation_hint_log(state, STAGNATION_MILD_NOTICE)
+    if guard is not None:
+        guard.consecutive_count = 0
+        state["autonomous_guard"] = guard.to_state()
+    if char_mgr and not (state_mgr and getattr(state_mgr, "in_combat", False)):
+        advance_exploration_turn(state, char_mgr, state_mgr)
 
 
 def _maybe_inject_location_loop_warning(state, scenario_mgr):
@@ -7586,6 +8948,56 @@ def finalize_autonomous_pause(state, pause_reason):
     state["stop_requested"] = False
     state["autonomous_paused"] = True
     state["autonomous_pause_reason"] = pause_reason
+    if pause_reason == "max_iterations":
+        logs = state.setdefault("all_events_log", [])
+        if not any(e.get("text") == MAX_ITERATIONS_PAUSE_LOG_TEXT for e in logs[-5:]):
+            logs.append({
+                "channel": "OOC",
+                "location": "all",
+                "secret_to": None,
+                "text": MAX_ITERATIONS_PAUSE_LOG_TEXT,
+                "meta": {"autonomous_pause": True, "pause_reason": "max_iterations"},
+            })
+
+
+def build_autonomous_progress_fingerprint(state, scenario_mgr=None):
+    """場所＋進行フラグ署名。変化があれば『実質進行』とみなす。"""
+    loc = str((state or {}).get("current_loc") or "")
+    if scenario_mgr is not None:
+        loc = str(getattr(scenario_mgr, "location", None) or loc)
+    flags = {}
+    if scenario_mgr is not None:
+        flags = dict(getattr(scenario_mgr, "flags", None) or {})
+    try:
+        from GameStateManager import GameStateManager
+        sig = GameStateManager._progress_signature(flags)
+    except Exception:
+        on_flags = tuple(
+            sorted(k for k, v in flags.items() if k != "investigated_targets" and v is True)
+        )
+        investigated = flags.get("investigated_targets") or []
+        if isinstance(investigated, (list, tuple, set)):
+            inv = tuple(sorted(str(x) for x in investigated))
+        else:
+            inv = (str(investigated),)
+        sig = (on_flags, inv)
+    return (loc, sig)
+
+
+def refresh_autonomous_step_budget_on_progress(state, scenario_mgr=None):
+    """
+    場所・進行フラグが進んだらステップ上限カウントをリセットする。
+    無進行のまま上限に達したときだけ安全停止させる。
+    """
+    if not isinstance(state, dict):
+        return False
+    fp = build_autonomous_progress_fingerprint(state, scenario_mgr)
+    prev = state.get("autonomous_progress_fp")
+    state["autonomous_progress_fp"] = fp
+    if prev is not None and prev != fp:
+        state["autonomous_step_count"] = 0
+        return True
+    return False
 
 
 def normalize_loaded_runtime_state(app_state, *, enforce_half_turn_pause=True):
@@ -7750,8 +9162,19 @@ def step_kp_eval(state, scenario_mgr, system_entry=None):
     else:
         result["san_check"] = {"required": False}
     loc_info = scenario_mgr.get_location_info(current_loc)
+    fallback_text = str(
+        result.get("log")
+        or result.get("system_log")
+        or result.get("confirmed_fact")
+        or result.get("handout_text")
+        or ""
+    )
     kp_data = call_kp_api(
-        generate_kp_prompt(loc_info, action, result, scenario_mgr=scenario_mgr, state=state)
+        generate_kp_prompt(loc_info, action, result, scenario_mgr=scenario_mgr, state=state),
+        fallback_text=fallback_text,
+    )
+    kp_data = _inject_handout_into_kp_data(
+        kp_data, scenario_mgr, action=action, result=result, current_loc=current_loc,
     )
     append_kp_response_to_logs(kp_data, current_loc, state["all_events_log"])
     mark_system_entry_narrated(system_entry or find_last_unnarrated_system_entry(state["all_events_log"]))
@@ -7876,6 +9299,7 @@ def step_pl_turn(state, char_mgr, scenario_mgr, pl_id, char_name, state_mgr=None
         all_events_log=state.get("all_events_log"),
         stagnation_pl_hint=state.get("stagnation_pl_hint"),
         force_ic_action=force_ic,
+        active_pcs=active,
     )
     if party_note:
         pl_prompt = party_note + pl_prompt
@@ -7919,10 +9343,36 @@ def step_pl_turn(state, char_mgr, scenario_mgr, pl_id, char_name, state_mgr=None
 
     def _maybe_force_breakout_for_retry_loop(action):
         count = _record_validation_retry(action)
+        flags = (scenario_mgr.flags if scenario_mgr else None) or {}
+        # ボストン・グローブ許可未取得時は交渉再挑戦の猶予を与え、単発失敗で飛ばさない
+        negotiate_grace = (
+            current_loc == "boston_globe"
+            and flags.get("artie_introduced")
+            and not flags.get("artie_reference_room_access_granted")
+        )
+        threshold = (
+            BOSTON_GLOBE_NEGOTIATE_GRACE_RETRY_COUNT
+            if negotiate_grace
+            else VALIDATION_RETRY_BREAKOUT_COUNT
+        )
+        if (
+            negotiate_grace
+            and count >= 2
+            and count < threshold
+            and (action or {}).get("needs_pl_retry")
+        ):
+            state["stagnation_pl_hint"] = _build_negotiate_fail_stagnation_hint(
+                char_mgr=char_mgr,
+                pl_id=pl_id,
+                skill_used=str((action or {}).get("skill") or ""),
+                active_pcs=state.get("active_pcs") or getattr(char_mgr, "active_pc_list", None),
+                failed_target=str((action or {}).get("target") or "artie_wilmott"),
+            )
+            return None
         if (
             not discussion
             and not san_locked
-            and count >= 2
+            and count >= threshold
             and (action or {}).get("needs_pl_retry")
         ):
             state.setdefault("all_events_log", []).append({
@@ -8058,6 +9508,74 @@ def step_pl_turn(state, char_mgr, scenario_mgr, pl_id, char_name, state_mgr=None
         if forced:
             return forced
 
+    # 許可取得後: search せず wait/無効を一定ターン続けたら強制 search
+    if not discussion and not san_locked:
+        managers = (char_mgr, DiceEngine(), state_mgr, scenario_mgr)
+        action_id = str((pc_action or {}).get("action") or "").lower()
+        target = str((pc_action or {}).get("target") or "")
+        is_clipping_search = (
+            action_id in ("search", "inspect")
+            and target == "reference_room_clipping_files"
+        )
+        if not is_clipping_search:
+            # 現在ターンの無効行動も streak に含めるため仮でログ相当をカウント
+            # （pc_action がまだ last に入る前なので +1 相当を閾値判定に反映）
+            pending_streak = _count_post_access_non_search_streak(
+                state.get("all_events_log") or []
+            )
+            if (
+                _clipping_files_search_pending(scenario_mgr, current_loc)
+                and pending_streak + 1 >= STAGNATION_HINT_TURNS
+            ):
+                state["stagnation_pl_hint"] = ARTIE_ACCESS_GRANTED_SEARCH_HINT
+                _append_stagnation_hint_log(state, ARTIE_ACCESS_GRANTED_SEARCH_HINT)
+            if (
+                _clipping_files_search_pending(scenario_mgr, current_loc)
+                and (
+                    pending_streak + 1 >= POST_ACCESS_SEARCH_FORCE_TURNS
+                    or still_stuck
+                    or action_id in ("wait", "none", "")
+                    or pc_action.get("needs_pl_retry")
+                )
+                and pending_streak >= max(1, POST_ACCESS_SEARCH_FORCE_TURNS - 1)
+            ):
+                state["stagnation_pl_hint"] = ARTIE_ACCESS_GRANTED_SEARCH_HINT
+                forced = apply_forced_progress_breakout(
+                    state, managers, pl_id=pl_id, char_name=char_name,
+                )
+                if forced:
+                    return forced
+
+    # 調査枯渇: 先にヒント、上限ターンで次ロケーションへ強制移動
+    if not discussion and not san_locked:
+        managers = (char_mgr, DiceEngine(), state_mgr, scenario_mgr)
+        action_id = str((pc_action or {}).get("action") or "").lower()
+        if action_id != "move":
+            forced = _maybe_force_location_exhausted_move(
+                state, managers, pl_id=pl_id, char_name=char_name,
+                pending_non_move=True,
+            )
+            if forced:
+                return forced
+        elif should_apply_location_exhausted_move(scenario_mgr, current_loc):
+            state["stagnation_pl_hint"] = build_location_exhausted_move_hint(
+                scenario_mgr, current_loc,
+            )
+
+    # 失敗・拒否後の同一ロケ膠着: 先にマイルドヒント、上限ターンで強制移動
+    if not discussion and not san_locked:
+        managers = (char_mgr, DiceEngine(), state_mgr, scenario_mgr)
+        action_id = str((pc_action or {}).get("action") or "").lower()
+        if action_id != "move":
+            forced = _maybe_force_investigation_deadlock_move(
+                state, managers, pl_id=pl_id, char_name=char_name,
+                pending_non_move=True,
+            )
+            if forced:
+                return forced
+        elif is_investigation_deadlock(state.get("all_events_log") or [], current_loc):
+            state["stagnation_pl_hint"] = INVESTIGATION_BAILOUT_HINT
+
     if force_ic and not is_nonprogress_pl_action(
         pc_action, state.get("pending_san_check"),
         scenario_mgr=scenario_mgr, current_loc=current_loc, char_mgr=char_mgr,
@@ -8068,7 +9586,20 @@ def step_pl_turn(state, char_mgr, scenario_mgr, pl_id, char_name, state_mgr=None
     if not pc_action.get("needs_pl_retry"):
         state["validation_retry_state"] = {}
     if not force_ic:
-        state["stagnation_pl_hint"] = None
+        # 許可後の search 誘導／調査枯渇 move／交渉再挑戦ヒントは保持する
+        hint = str(state.get("stagnation_pl_hint") or "")
+        keep_hint = (
+            "reference_room_clipping_files" in hint
+            or "許可は取得済み" in hint
+            or "調査はすべて完了" in hint
+            or "別交渉技能" in hint
+            or "再挑戦" in hint
+            or "即時撤退" in hint
+            or "コービット屋敷" in hint
+            or "すべての資料を集める必要" in hint
+        )
+        if not keep_hint:
+            state["stagnation_pl_hint"] = None
     return pc_action
 
 
@@ -8205,6 +9736,13 @@ def step_system_process(state, char_mgr, dice_engine, scenario_mgr, state_mgr, p
         dialogue_text=action_data.get("dialogue") or action_data.get("message", ""),
         game_state=state,
     )
+    # 不在NPCブロック等で注入された代替ヒントを保持
+    if result.get("stagnation_pl_hint"):
+        state["stagnation_pl_hint"] = result["stagnation_pl_hint"]
+    elif result.get("blocked") and _clipping_files_search_pending(scenario_mgr, current_loc):
+        if not str(state.get("stagnation_pl_hint") or "").strip():
+            state["stagnation_pl_hint"] = ARTIE_ACCESS_GRANTED_SEARCH_HINT
+
 
     if result.get("luck_decision_required"):
         state["pending_luck_burn"] = result.get("pending_luck_burn")
@@ -8841,6 +10379,8 @@ def run_timeline_loop(
 
     def finish_cycle():
         state["autonomous_step_count"] = state.get("autonomous_step_count", 0) + 1
+        # 場所・進行フラグが進んでいれば上限カウントをリセット（無進行ループだけ安全停止）
+        refresh_autonomous_step_budget_on_progress(state, scenario_mgr)
         state["autonomous_guard"] = guard.to_state()
         if ui_callback:
             ui_callback(state)
@@ -8852,6 +10392,12 @@ def run_timeline_loop(
                 autosave_callback(state)
             return "user_stop"
         return None
+
+    # 巡航開始時の指紋を初期化（最初の進行比較用）
+    if state.get("autonomous_progress_fp") is None:
+        state["autonomous_progress_fp"] = build_autonomous_progress_fingerprint(
+            state, scenario_mgr,
+        )
 
     for _ in range(max_iterations):
         if is_game_cleared(scenario_mgr):
@@ -8867,52 +10413,75 @@ def run_timeline_loop(
             break
 
         if guard.should_break_same_speaker():
-            inject_stagnation_interrupt(state, scenario_mgr, char_name, state_mgr=state_mgr)
-            pause_reason = "speaker_limit"
-            state["autonomous_guard"] = guard.to_state()
-            if ui_callback:
-                ui_callback(state)
-            if autosave_callback:
-                autosave_callback(state)
-            break
-
-        if guard.should_break_stagnation() or guard.should_break_system_stagnation(scenario_mgr):
-            level = resolve_session_intervention_level(state, scenario_mgr)
-            # 介入ポリシーが有効な場合はタイムライン側で処理済み。NONE のみ一時停止する。
-            if level <= InterventionLevel.NONE:
-                inject_stagnation_interrupt(state, scenario_mgr, char_name, state_mgr=state_mgr)
-                pause_reason = "stagnation"
+            if _should_defer_stagnation_interrupt_for_progress(state, scenario_mgr):
+                # 有効コマンド消化を同一PL制限より優先
+                guard.consecutive_count = 0
                 state["autonomous_guard"] = guard.to_state()
+            else:
+                # 旧仕様はここでセッション停止＋膠着カウンタを閾値へ上書きしていた。
+                # 6ターン緩和と矛盾するため、手番交代のみして継続する。
+                _handle_same_speaker_soft_yield(state, managers, guard)
                 if ui_callback:
                     ui_callback(state)
                 if autosave_callback:
                     autosave_callback(state)
-                break
-            # LIGHT以上: OOCループを物理遮断し、強制 IC 行動フェーズへ移行して継続
-            ensure_force_ic_action_phase(state, state_mgr=state_mgr, guard=guard)
-            if scenario_mgr.is_stagnation_pause_level():
-                evaluate_and_apply_stagnation_intervention(
-                    state, managers, after_step="system_process",
-                )
-            # ヒント提示済み（なければ生成）+ chat 上限 → 強制移動ブレイクアウト
-            if get_chat_rounds_without_action(state, guard=guard) >= FORCE_IC_ACTION_CHAT_ROUNDS:
-                if not str(state.get("stagnation_pl_hint") or "").strip():
-                    _maybe_set_context_stagnation_hint(state, scenario_mgr, state_mgr)
-                    if not str(state.get("stagnation_pl_hint") or "").strip():
-                        state["stagnation_pl_hint"] = build_context_stagnation_hint(
-                            scenario_mgr,
-                            state.get("current_loc") or "",
-                            fallback=STAGNATION_STANDARD_PL_HINT,
-                        )
-                forced = apply_forced_progress_breakout(
-                    state, managers, pl_id=pl_id, char_name=char_name,
-                )
-                if forced:
+
+        if guard.should_break_stagnation() or guard.should_break_system_stagnation(scenario_mgr):
+            if _should_defer_stagnation_interrupt_for_progress(state, scenario_mgr):
+                guard.chat_rounds_without_action = 0
+                guard.consecutive_count = 0
+                state["autonomous_guard"] = guard.to_state()
+                if _clipping_files_search_pending(
+                    scenario_mgr, state.get("current_loc") or "",
+                ):
+                    state["stagnation_pl_hint"] = ARTIE_ACCESS_GRANTED_SEARCH_HINT
+                    forced = _maybe_force_post_access_search(
+                        state, managers, pl_id=pl_id, char_name=char_name,
+                    )
+                    if forced:
+                        state["autonomous_guard"] = guard.to_state()
+                        if ui_callback:
+                            ui_callback(state)
+                        if autosave_callback:
+                            autosave_callback(state)
+                        continue
+            else:
+                level = resolve_session_intervention_level(state, scenario_mgr)
+                # 介入ポリシーが有効な場合はタイムライン側で処理済み。NONE のみ一時停止する。
+                if level <= InterventionLevel.NONE:
+                    inject_stagnation_interrupt(state, scenario_mgr, char_name, state_mgr=state_mgr)
+                    pause_reason = "stagnation"
                     state["autonomous_guard"] = guard.to_state()
                     if ui_callback:
                         ui_callback(state)
                     if autosave_callback:
                         autosave_callback(state)
+                    break
+                # LIGHT以上: OOCループを物理遮断し、強制 IC 行動フェーズへ移行して継続
+                ensure_force_ic_action_phase(state, state_mgr=state_mgr, guard=guard)
+                if scenario_mgr.is_stagnation_pause_level():
+                    evaluate_and_apply_stagnation_intervention(
+                        state, managers, after_step="system_process",
+                    )
+                # ヒント提示済み（なければ生成）+ chat 上限 → 強制移動ブレイクアウト
+                if get_chat_rounds_without_action(state, guard=guard) >= FORCE_IC_ACTION_CHAT_ROUNDS:
+                    if not str(state.get("stagnation_pl_hint") or "").strip():
+                        _maybe_set_context_stagnation_hint(state, scenario_mgr, state_mgr)
+                        if not str(state.get("stagnation_pl_hint") or "").strip():
+                            state["stagnation_pl_hint"] = build_context_stagnation_hint(
+                                scenario_mgr,
+                                state.get("current_loc") or "",
+                                fallback=STAGNATION_STANDARD_PL_HINT,
+                            )
+                    forced = apply_forced_progress_breakout(
+                        state, managers, pl_id=pl_id, char_name=char_name,
+                    )
+                    if forced:
+                        state["autonomous_guard"] = guard.to_state()
+                        if ui_callback:
+                            ui_callback(state)
+                        if autosave_callback:
+                            autosave_callback(state)
 
         stop_hit = finish_cycle()
         if stop_hit:
@@ -8924,7 +10493,9 @@ def run_timeline_loop(
             break
 
     else:
-        if max_iterations > 1:
+        # バッチ実行（max_iterations>1）で for を完走した場合のみ。
+        # Streamlit の 1ティック実行（max_iterations=1）では、まだ上限未満なら継続する。
+        if max_iterations > 1 and state.get("autonomous_step_count", 0) >= MAX_AUTONOMOUS_ITERATIONS:
             pause_reason = "max_iterations"
 
     state["autonomous_guard"] = guard.to_state()
@@ -8982,6 +10553,7 @@ def extract_game_state(session_state):
         "autonomous_pause_reason": session_state.get("autonomous_pause_reason"),
         "autonomous_guard": session_state.get("autonomous_guard"),
         "autonomous_step_count": session_state.get("autonomous_step_count", 0),
+        "autonomous_progress_fp": session_state.get("autonomous_progress_fp"),
         "is_running": session_state.get("is_running", False),
         "stop_requested": session_state.get("stop_requested", False),
         "rp_eval_unit_ids": session_state.get("rp_eval_unit_ids", []),
@@ -9029,6 +10601,7 @@ def apply_game_state(session_state, state, scenario_mgr=None):
     session_state.autonomous_pause_reason = state.get("autonomous_pause_reason")
     session_state.autonomous_guard = state.get("autonomous_guard")
     session_state.autonomous_step_count = state.get("autonomous_step_count", 0)
+    session_state.autonomous_progress_fp = state.get("autonomous_progress_fp")
     session_state.is_running = state.get("is_running", False)
     session_state.stop_requested = state.get("stop_requested", False)
     session_state.rp_eval_unit_ids = state.get("rp_eval_unit_ids", [])

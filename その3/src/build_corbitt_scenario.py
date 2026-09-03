@@ -441,7 +441,7 @@ def build_scenario_dict() -> dict:
             "initial_location": meta.get("initial_location", "introduction"),
             "startup_effects": {},
             "intervention_level": meta.get("intervention_level", "light"),
-            "max_stagnation_turns": meta.get("max_stagnation_turns", 4),
+            "max_stagnation_turns": meta.get("max_stagnation_turns", 6),
             "stagnation_hint": meta.get(
                 "stagnation_hint",
                 "住人への聞き込み、屋敷内の別室、書物や痕跡など別の手がかりを当たってみよう。",

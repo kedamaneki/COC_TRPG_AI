@@ -1,5 +1,6 @@
 import streamlit as st
 import json
+import time
 import uuid
 import main
 from SaveLoadManager import SaveLoadManager
@@ -26,6 +27,7 @@ def build_app_state():
         "autonomous_pause_reason": st.session_state.get("autonomous_pause_reason"),
         "autonomous_guard": st.session_state.get("autonomous_guard"),
         "autonomous_step_count": st.session_state.get("autonomous_step_count", 0),
+        "autonomous_progress_fp": st.session_state.get("autonomous_progress_fp"),
         "is_running": st.session_state.get("is_running", False),
         "stop_requested": st.session_state.get("stop_requested", False),
         "pl_id": st.session_state.pl_id,
@@ -74,6 +76,7 @@ def apply_app_state(app_state, scenario_mgr=None):
     st.session_state.autonomous_pause_reason = app_state.get("autonomous_pause_reason")
     st.session_state.autonomous_guard = app_state.get("autonomous_guard")
     st.session_state.autonomous_step_count = app_state.get("autonomous_step_count", 0)
+    st.session_state.autonomous_progress_fp = app_state.get("autonomous_progress_fp")
     st.session_state.is_running = app_state.get("is_running", False)
     st.session_state.stop_requested = app_state.get("stop_requested", False)
     st.session_state.pl_id = app_state.get("pl_id", "pc_01")
@@ -186,6 +189,7 @@ def begin_autonomous_session():
     main.begin_autonomous_runtime(game_state)
     game_state["autonomous_guard"] = None
     game_state["autonomous_step_count"] = 0
+    game_state["autonomous_progress_fp"] = None
     main.apply_game_state(st.session_state, game_state, st.session_state.scenario_mgr)
 
 
@@ -247,10 +251,75 @@ def _has_user_stop_log(all_events_log):
     )
 
 
-def _refresh_chat_log(chat_placeholder, char_mgr=None):
-    """セッションログ欄を最新の all_events_log で差し替える。"""
+def _chat_log_fingerprint(logs=None):
+    """ログ件数と末尾本文。描画スキップ判定用。"""
+    logs = logs if logs is not None else (st.session_state.get("all_events_log") or [])
+    last_text = ""
+    if logs:
+        last_text = str((logs[-1] or {}).get("text") or "")[:240]
+    return (len(logs), last_text)
+
+
+def _ui_progress_fingerprint():
+    """rerun 要否判定用。ログ件数・末尾・場所・巡航状態。"""
+    log_fp = _chat_log_fingerprint()
+    return (
+        log_fp,
+        st.session_state.get("current_loc"),
+        bool(st.session_state.get("is_running")),
+        bool(st.session_state.get("autonomous_paused")),
+        st.session_state.get("autonomous_pause_reason"),
+        st.session_state.get("pl_id"),
+    )
+
+
+def _scroll_chat_log_to_bottom():
+    """新規ログ追加時のみ、末尾付近へスクロールを促す。"""
+    try:
+        import streamlit.components.v1 as components
+        components.html(
+            """
+            <div id="coc-log-bottom-anchor" style="height:1px;overflow:hidden;"></div>
+            <script>
+            (function() {
+              const tryScroll = () => {
+                const doc = window.parent.document;
+                const messages = doc.querySelectorAll('[data-testid="stChatMessage"]');
+                if (messages && messages.length) {
+                  messages[messages.length - 1].scrollIntoView({
+                    behavior: 'instant',
+                    block: 'end'
+                  });
+                  return;
+                }
+                const main = doc.querySelector('section.main')
+                  || doc.querySelector('[data-testid="stAppViewContainer"]');
+                if (main) {
+                  main.scrollTop = main.scrollHeight;
+                }
+              };
+              tryScroll();
+              setTimeout(tryScroll, 50);
+              setTimeout(tryScroll, 200);
+            })();
+            </script>
+            """,
+            height=0,
+        )
+    except Exception:
+        pass
+
+
+def _refresh_chat_log(chat_placeholder, char_mgr=None, *, force=False):
+    """
+    セッションログ欄を最新の all_events_log で差し替える。
+    件数が変わっていない空振りでは DOM を触らない。
+    """
     if chat_placeholder is None:
-        return
+        return False
+    fp = _chat_log_fingerprint()
+    if not force and st.session_state.get("_rendered_chat_log_fp") == fp:
+        return False
     with chat_placeholder.container():
         render_log_chat_messages(
             st.session_state.get("all_events_log", []),
@@ -258,13 +327,16 @@ def _refresh_chat_log(chat_placeholder, char_mgr=None):
             char_mgr=char_mgr or st.session_state.get("char_mgr"),
             active_pcs=st.session_state.get("active_pcs"),
         )
+        _scroll_chat_log_to_bottom()
+    st.session_state["_rendered_chat_log_fp"] = fp
+    return True
 
 
 def run_autonomous_tick(char_mgr, dice_engine, state_mgr, scenario_mgr, chat_placeholder):
     """自律巡航を1サイクルだけ進め、停止フラグをサイクル完結後に評価する。"""
 
     def ui_callback(state):
-        # ステップ完了ごとにログを差し替え、次の LLM 待ち中も発言が見えるようにする
+        # 新しいログが付いたときだけ描画。空振りでは既存 DOM を保持する。
         main.apply_game_state(st.session_state, state, scenario_mgr)
         _refresh_chat_log(chat_placeholder, char_mgr=char_mgr)
 
@@ -294,37 +366,55 @@ def run_autonomous_tick(char_mgr, dice_engine, state_mgr, scenario_mgr, chat_pla
 
 
 def drive_autonomous_session(char_mgr, dice_engine, state_mgr, scenario_mgr, chat_placeholder):
-    """段階 rerun による自律巡航ドライバ。UI スレッドが停止ボタンを受け付けられる隙間を作る。"""
+    """
+    同一スクリプト実行内でティックを継続する。
+    st.rerun() は「ログ件数・末尾・場所などが実際に変わったとき」と
+    停止／クリア／一時停止時のみ。空振りティックではページを作り直さない。
+    """
     if not st.session_state.get("is_running"):
         return
 
     if handle_user_stop_before_tick():
         st.rerun()
+        return
 
     with st.status("🚀 自律セッション進行中...", expanded=True) as status:
-        pause_reason = run_autonomous_tick(
-            char_mgr, dice_engine, state_mgr, scenario_mgr, chat_placeholder
-        )
+        while st.session_state.get("is_running"):
+            if st.session_state.get("stop_requested"):
+                if handle_user_stop_before_tick():
+                    status.update(label="⏸ ユーザーにより一時停止", state="complete")
+                    st.rerun()
+                    return
 
-        if pause_reason == "user_stop":
-            status.update(label="⏸ ユーザーにより一時停止", state="complete")
-            end_autonomous_session("user_stop")
-            st.rerun()
-        elif pause_reason == "game_clear":
-            status.update(label="🎉 シナリオクリア！", state="complete")
-            end_autonomous_session("game_clear")
-            st.rerun()
-        elif pause_reason:
-            status.update(label=f"⏸ 一時停止: {pause_reason}", state="complete")
-            end_autonomous_session(pause_reason)
-            st.rerun()
-        else:
+            fp_before = _ui_progress_fingerprint()
+            pause_reason = run_autonomous_tick(
+                char_mgr, dice_engine, state_mgr, scenario_mgr, chat_placeholder
+            )
+
+            if pause_reason == "user_stop":
+                status.update(label="⏸ ユーザーにより一時停止", state="complete")
+                end_autonomous_session("user_stop")
+                st.rerun()
+                return
+            if pause_reason == "game_clear":
+                status.update(label="🎉 シナリオクリア！", state="complete")
+                end_autonomous_session("game_clear")
+                st.rerun()
+                return
+            if pause_reason:
+                status.update(label=f"⏸ 一時停止: {pause_reason}", state="complete")
+                end_autonomous_session(pause_reason)
+                st.rerun()
+                return
+
             status.update(label="🔄 次の発言を生成中...", state="running")
-
-    # ティック結果を描画したうえで次ランへ進む（連続 rerun でログが飛ばないようにする）
-    _refresh_chat_log(chat_placeholder, char_mgr=char_mgr)
-    if st.session_state.get("is_running"):
-        st.rerun()
+            fp_after = _ui_progress_fingerprint()
+            if fp_after != fp_before:
+                # 新しいログ／状態が出たときだけページを同期する
+                st.rerun()
+                return
+            # 空振りティック: DOM を破棄せず、同一ランで次ティックへ
+            time.sleep(0.25)
 
 
 def render_log_entries(all_events_log, char_name):
@@ -425,6 +515,8 @@ def start_new_game(scenario_file=None):
     st.session_state.autonomous_pause_reason = None
     st.session_state.autonomous_guard = None
     st.session_state.autonomous_step_count = 0
+    st.session_state.autonomous_progress_fp = None
+    st.session_state._rendered_chat_log_fp = None
     st.session_state.is_running = False
     st.session_state.stop_requested = False
     st.session_state.rp_eval_unit_ids = []
@@ -545,6 +637,8 @@ if "game_started" not in st.session_state:
     st.session_state.autonomous_pause_reason = None
     st.session_state.autonomous_guard = None
     st.session_state.autonomous_step_count = 0
+    st.session_state.autonomous_progress_fp = None
+    st.session_state._rendered_chat_log_fp = None
     st.session_state.is_running = False
     st.session_state.stop_requested = False
     st.session_state.current_slot_id = SaveLoadManager.AUTOSAVE_SLOT_ID
@@ -869,8 +963,11 @@ with st.sidebar:
 st.subheader("セッションログ")
 st.caption(f"📍 現在地: {get_location_display(scenario_mgr, current_loc)}")
 
-# empty に差し替えることで、自律巡航中の再描画でもゴースト（薄い二重表示）を出さない
-chat_log_area = st.empty()
+# 固定枠の中で即時描画する。empty を空のまま放置すると LLM 待ち中に DOM が消える。
+chat_log_frame = st.container()
+with chat_log_frame:
+    chat_log_area = st.empty()
+    _refresh_chat_log(chat_log_area, char_mgr=char_mgr, force=True)
 
 st.divider()
 
@@ -888,7 +985,7 @@ elif is_paused and pause_reason:
         "user_stop": "ユーザー操作",
         "stagnation": "会話停滞",
         "speaker_limit": "同一話者連続",
-        "max_iterations": "最大ステップ到達",
+        "max_iterations": "安全上限（無進行が続いたため）",
         "game_clear": "シナリオクリア",
     }
     st.info(f"自律巡航を一時停止しました（理由: {pause_labels.get(pause_reason, pause_reason)}）")
@@ -949,9 +1046,6 @@ if not is_game_clear and not is_running:
             if human_text.strip():
                 handle_human_chat_message(human_text.strip(), human_channel, char_name, current_loc)
                 st.rerun()
-
-# ログ描画は自律巡航の st.rerun() より前に行う（rerun で以降のコードが実行されなくなるため）
-_refresh_chat_log(chat_log_area, char_mgr=char_mgr)
 
 drive_autonomous_session(
     char_mgr, dice_engine, st.session_state.state_mgr, scenario_mgr, chat_log_area

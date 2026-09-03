@@ -1342,7 +1342,7 @@ class GameStateManager:
         *,
         location_id,
         flags,
-        max_stagnation_turns=3,
+        max_stagnation_turns=6,
         last_pl_action=None,
         last_system_result=None,
         chat_only=False,
@@ -1351,12 +1351,12 @@ class GameStateManager:
         """
         タイムライン状況から膠着を検知し、ストリークを更新する。
 
-        条件（連続 max_stagnation_turns ターン）:
+        条件（連続 max_stagnation_turns ターン、既定 6）:
           - 位置が変わっていない
           - 新たなフラグが ON になっていない
           - 同一オブジェクト／同一技能の失敗、または会話のみで未進行
         """
-        max_turns = max(1, int(max_stagnation_turns or 3))
+        max_turns = max(1, int(max_stagnation_turns or 6))
         tracker = self.stagnation_tracker
         progress_sig = self._progress_signature(flags)
         location_id = str(location_id or "")

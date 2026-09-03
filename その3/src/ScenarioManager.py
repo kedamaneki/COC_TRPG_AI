@@ -4,7 +4,13 @@ import re
 from expression_evaluator import SafeExpressionEvaluator, build_scenario_eval_context
 from schema_definition import EventTriggerSchema, compile_trigger_condition, infer_action_type, merge_payload_elements
 from DiceEngine import SuccessLevel, normalize_difficulty
-from ActionValidator import phase_for_location
+from ActionValidator import (
+    phase_for_location,
+    should_apply_location_exhausted_move,
+    LOCATION_EXHAUSTED_RESEARCH_REJECT,
+    HOUSE_ENTRY_LOCATION_ID,
+    HOUSE_MOVE_ALIASES,
+)
 
 
 class ObjectContext:
@@ -43,8 +49,8 @@ GATE_WEAKNESS_FLAG = "gate_weakness_found"
 GATE_OPENED_FLAG = "gate_opened"
 IRON_GATE_PHYSICAL_ACTIONS = frozenset({"break", "push", "kick", "force"})
 ROOM_SAN_CHECKED_FLAG_PREFIX = "room_san_checked_"
-STAGNATION_KP_INJECT_THRESHOLD = 2
-STAGNATION_PAUSE_THRESHOLD = 3
+STAGNATION_KP_INJECT_THRESHOLD = 5
+STAGNATION_PAUSE_THRESHOLD = 6
 MOVE_DENY_SYSTEM_LOG = (
     "[システム] その場所へ進むことはできません。"
     "別のオブジェクトを調査するか、適切な移動先を選択してください。"
@@ -54,6 +60,54 @@ MOVE_DENY_KP_INSTRUCTION = (
     "ナレーションで「そちらには進めない／行く手がない」と明確に描写してください。"
     "調査済みオブジェクトを再度勧めるのではなく、未調査オブジェクトか有効な移動先を提示してください。"
 )
+
+_HANDOUT_NAME_KEYWORDS = (
+    "依頼書", "メモ", "資料", "記事", "切り抜き", "日記", "手紙", "書類", "記録",
+    "ハンドアウト", "新聞", "書簡",
+)
+_HANDOUT_FLAG_MARKERS = (
+    "_read", "_found", "letter", "memo", "handout", "clipping", "newspaper", "diary",
+)
+
+
+def should_emit_handout_ic(obj, fact=""):
+    """資料・ハンドアウト系なら KP IC に本文を載せる対象とみなす。"""
+    fact = str(fact or "").strip()
+    obj = obj or {}
+    if not fact:
+        return False
+    if obj.get("player_handout") or obj.get("handout_text") or obj.get("success_message"):
+        return True
+    if obj.get("empty_clue") or obj.get("no_roll"):
+        return False
+    if obj.get("clue_on_success"):
+        return True
+    flag = str(obj.get("investigated_flag") or "").lower()
+    if any(marker in flag for marker in _HANDOUT_FLAG_MARKERS):
+        return True
+    name = str(obj.get("name") or "")
+    return any(keyword in name for keyword in _HANDOUT_NAME_KEYWORDS)
+
+
+def format_handout_ic_block(fact, obj_name=""):
+    """KP IC に挿入する資料本文ブロック。"""
+    fact = str(fact or "").strip()
+    if not fact:
+        return ""
+    title = f"【資料本文・{obj_name}】" if obj_name else "【資料本文】"
+    return f"{title}\n{fact}"
+
+
+def fact_already_in_text(text, fact, min_len=24):
+    """描写文に資料本文が既に含まれているか。"""
+    text = str(text or "")
+    fact = str(fact or "").strip()
+    if not fact:
+        return True
+    if fact in text:
+        return True
+    snippet = fact[:max(12, int(min_len))]
+    return len(snippet) >= 12 and snippet in text
 
 # 旧スケール判定: 「success_level >= 1」（任意成功）は新スケールでは使わない
 _LEGACY_ANY_SUCCESS_RE = re.compile(r"success_level\s*>=\s*1\b")
@@ -172,8 +226,11 @@ class ScenarioManager:
             for key, value in self._fallback_flags.items():
                 game_state_mgr.flags.setdefault(key, value)
         game_state_mgr.flags.setdefault("investigated_targets", [])
+        # 参照を一本化: fallback も同一 dict 内容のミラーに保つ
+        self._fallback_flags = dict(game_state_mgr.flags)
         if int(game_state_mgr.turn_count or 0) <= 0 and self._fallback_turn_counter > 0:
             game_state_mgr.turn_count = self._fallback_turn_counter
+        self.ensure_flags_synced()
 
     @property
     def turn_counter(self):
@@ -204,6 +261,7 @@ class ScenarioManager:
         value.setdefault("investigated_targets", [])
         if self._game_state is not None:
             self._game_state.flags = value
+            self._fallback_flags = dict(value)
         else:
             self._fallback_flags = value
 
@@ -211,12 +269,19 @@ class ScenarioManager:
         self.turn_counter = self.turn_counter + int(delta or 0)
 
     def export_to_dict(self):
-        """シナリオ進行のうち、シナリオ固有の状態のみ保存（flags/turn は game_state 側）。"""
+        """
+        シナリオ進行状態を保存する。
+        flags / turn_counter は game_state が SSOT だが、セーブ上でも
+        必ずミラーしてロード時の不整合を防ぐ。
+        """
+        self.ensure_flags_synced()
         return {
             "current_phase": self.current_phase,
             "location": self.location,
             "triggered_counts": self.triggered_counts,
             "stagnation_counter": self.stagnation_counter,
+            "flags": dict(self.flags or {}),
+            "turn_counter": int(self.turn_counter or 0),
         }
 
     def load_from_dict(self, data):
@@ -224,13 +289,81 @@ class ScenarioManager:
         self.location = data.get("location", "")
         self.triggered_counts = data.get("triggered_counts", {})
         self.stagnation_counter = data.get("stagnation_counter", 0)
-        # 旧セーブ互換: 未バインド時のみ fallback へ取り込む
+        # ミラー／旧セーブの flags を fallback に取り込み（bind 前の保険）
+        if isinstance(data.get("flags"), dict):
+            merged = dict(self._fallback_flags)
+            merged.update(data["flags"])
+            merged.setdefault("investigated_targets", [])
+            self._fallback_flags = merged
+            if self._game_state is not None:
+                # 既にバインド済みなら game_state へも反映（空の場合は全面置換）
+                if not self._game_state.flags:
+                    self._game_state.flags = dict(merged)
+                else:
+                    for key, value in merged.items():
+                        self._game_state.flags.setdefault(key, value)
+        if "turn_counter" in data:
+            self._fallback_turn_counter = int(data.get("turn_counter") or 0)
+            if self._game_state is not None and int(self._game_state.turn_count or 0) <= 0:
+                self._game_state.turn_count = self._fallback_turn_counter
+        self.ensure_flags_synced()
+
+    def apply_implied_progress_flags(self):
+        """
+        進行フラグの依存関係を補正する（既存 True は壊さない）。
+        例: 屋敷侵入済みなら外観接近済み、ドーリー会話済みなら近隣噂取得済み。
+        """
+        flags = self.flags
+        if not isinstance(flags, dict):
+            return flags
+        loc = str(self.location or "")
+
+        interior_locs = (
+            "corbitt_ground_floor",
+            "corbitt_upper_floor",
+            "corbitt_basement",
+        )
+        if loc in interior_locs or flags.get("in_basement"):
+            flags["corbitt_house_entered"] = True
+        if flags.get("corbitt_house_entered") and not flags.get("exterior_approached"):
+            flags["exterior_approached"] = True
+        if (
+            loc in ("corbitt_exterior",) + interior_locs
+            or int(flags.get("visit_corbitt_exterior") or 0) > 0
+        ):
+            if not flags.get("exterior_approached"):
+                flags["exterior_approached"] = True
+
+        gossip = (
+            flags.get("dolly_talked")
+            or flags.get("dolly_told_chapel_location")
+            or flags.get("dolly_told_sanitarium_location")
+        )
+        if gossip and not flags.get("neighbor_gossip_found"):
+            flags["neighbor_gossip_found"] = True
+        if gossip and not flags.get("dolly_talked"):
+            flags["dolly_talked"] = True
+        # sanitarium_info_found は患者記録の investigated_flag。
+        # ドーリーから場所・噂を聞いただけでは立てない（本調査スキップ防止）。
+        # 場所の認知は dolly_told_sanitarium_location が担う。
+        return flags
+
+    def ensure_flags_synced(self):
+        """game_state.flags と scenario 側参照が同一になるよう強制同期する。"""
         if self._game_state is None:
-            if isinstance(data.get("flags"), dict):
-                self._fallback_flags = dict(data["flags"])
-                self._fallback_flags.setdefault("investigated_targets", [])
-            if "turn_counter" in data:
-                self._fallback_turn_counter = int(data.get("turn_counter") or 0)
+            self._fallback_flags.setdefault("investigated_targets", [])
+            self.apply_implied_progress_flags()
+            return self._fallback_flags
+        if not self._game_state.flags:
+            self._game_state.flags = dict(self._fallback_flags)
+        else:
+            for key, value in self._fallback_flags.items():
+                self._game_state.flags.setdefault(key, value)
+        self._game_state.flags.setdefault("investigated_targets", [])
+        self.apply_implied_progress_flags()
+        # fallback を同一内容のミラーに保つ（export 前の保険）
+        self._fallback_flags = dict(self._game_state.flags)
+        return self._game_state.flags
 
     def _normalize_event_triggers(self):
         """GenericScenarioSchema 形式のトリガーを既存エンジン互換へ正規化する。"""
@@ -314,7 +447,7 @@ class ScenarioManager:
         return effects
 
     def get_max_stagnation_turns(self):
-        """膠着と判定する連続ターン数（デフォルト 3）。"""
+        """膠着と判定する連続ターン数（デフォルト 6）。"""
         raw = self.meta.get("max_stagnation_turns", STAGNATION_PAUSE_THRESHOLD)
         try:
             return max(1, int(raw))
@@ -452,9 +585,35 @@ class ScenarioManager:
     def get_all_location_ids(self):
         return list(self.scenario_data.get("locations", {}).keys())
 
+    def _introduction_complete(self):
+        flags = self.flags or {}
+        return bool(
+            flags.get("talked_with_knott")
+            or flags.get("case_accepted")
+            or flags.get("knott_letter_read")
+        )
+
+    def _canonical_move_target(self, target, loc_id=None):
+        """PL が corbitt_house と書いた移動を、導入後の屋敷外観ロケへ正規化する。"""
+        loc_id = loc_id or self.location
+        t = str(target or "").strip()
+        if t in HOUSE_MOVE_ALIASES and not str(loc_id or "").startswith("corbitt_"):
+            return HOUSE_ENTRY_LOCATION_ID
+        return t
+
     def get_connected_to(self, loc_id=None):
+        loc_id = loc_id or self.location
         loc = self.get_location_info(loc_id)
-        return loc.get("connected_to", [])
+        connected = list(loc.get("connected_to") or [])
+        if (
+            self._introduction_complete()
+            and loc_id
+            and loc_id != HOUSE_ENTRY_LOCATION_ID
+            and not str(loc_id).startswith("corbitt_")
+            and HOUSE_ENTRY_LOCATION_ID not in connected
+        ):
+            connected.append(HOUSE_ENTRY_LOCATION_ID)
+        return connected
 
     def get_available_exits(self, loc_id=None):
         loc_id = loc_id or self.location
@@ -535,6 +694,12 @@ class ScenarioManager:
             return None
         flag_key = (obj or {}).get("investigated_flag")
         if flag_key and self.flags.get(flag_key, False):
+            loc_id = loc_id or self.location
+            if should_apply_location_exhausted_move(self, loc_id):
+                return self._build_blocked_payload(
+                    LOCATION_EXHAUSTED_RESEARCH_REJECT,
+                    "調査は完了済みです。未訪問の解禁ロケーションへの移動（move）を促してください。",
+                )
             reject = (obj or {}).get(
                 "reject_message",
                 "【システムブロック】この対象は既に調査済みです。",
@@ -674,6 +839,7 @@ class ScenarioManager:
             return san_block
 
         if action_id == "move" and target:
+            target = self._canonical_move_target(target, loc_id=loc_id)
             move_check = self._validate_move(target)
             if not move_check.get("allowed"):
                 return self._build_blocked_payload(
@@ -891,6 +1057,11 @@ class ScenarioManager:
             )
             if scenario_reject:
                 return scenario_reject
+            if should_apply_location_exhausted_move(self, loc_id):
+                return self._build_blocked_payload(
+                    LOCATION_EXHAUSTED_RESEARCH_REJECT,
+                    "調査は完了済みです。未訪問の解禁ロケーションへの移動（move）を促してください。",
+                )
             return self._build_blocked_payload(
                 "【システム】この対象はすでに調査し、手がかりを発見済みです。",
                 "同じ対象を再調査しても進展はないことを伝え、別の対象や次の行動へ誘導してください。",
@@ -971,6 +1142,7 @@ class ScenarioManager:
         return merged
 
     def _validate_move(self, target):
+        target = self._canonical_move_target(target)
         if not target:
             return {
                 "allowed": False,
@@ -1075,12 +1247,18 @@ class ScenarioManager:
         """オブジェクトから KP に強制注入すべき確定手がかり文を取得する。"""
         obj = self.get_object_info(loc_id or self.location, target) or {}
         fact = (
-            obj.get("success_message")
+            obj.get("player_handout")
+            or obj.get("handout_text")
+            or obj.get("success_message")
             or obj.get("clue_on_success")
             or obj.get("description")
             or ""
         )
         return str(fact).strip(), obj
+
+    def should_emit_handout_ic(self, obj, fact=""):
+        """資料系オブジェクトなら KP IC に本文を載せる。"""
+        return should_emit_handout_ic(obj, fact)
 
     def _enrich_investigation_success_payload(self, payload, action_id, target, success_level):
         """
@@ -1115,11 +1293,15 @@ class ScenarioManager:
             base = log.strip() or f"{name}の調査に成功した。"
             if "【確定手がかり】" not in base:
                 payload["system_log"] = f"{base}\n【確定手がかり】{fact}"
+        if should_emit_handout_ic(obj, fact):
+            payload["handout_text"] = fact
+            payload["handout_ic_block"] = format_handout_ic_block(fact, name)
         kp = str(payload.get("kp_instruction") or "")
         guard = (
             "【ダイス成功】下記の確定手がかりを必ず描写に含めよ。"
             "「何も見つからなかった」と空振りさせるな。"
             "未記載の怪異・呪文・新事実を創作するな。"
+            "資料・ハンドアウトがある場合は【資料本文】として原文を省略せず IC 描写に含めよ。"
             f"\n確定手がかり: {fact}"
         )
         if "確定手がかり" not in kp:
@@ -1133,6 +1315,9 @@ class ScenarioManager:
 
         for flag_name in payload.get("capture_turn_flags", []):
             self.flags[flag_name] = self.turn_counter
+        if "flag_updates" in payload or payload.get("capture_turn_flags"):
+            if hasattr(self, "ensure_flags_synced"):
+                self.ensure_flags_synced()
 
         if "new_phase" in payload:
             self.current_phase = payload["new_phase"]
@@ -1142,6 +1327,8 @@ class ScenarioManager:
             self.location = new_loc
             visit_key = f"visit_{new_loc}"
             self.flags[visit_key] = self.flags.get(visit_key, 0) + 1
+            if hasattr(self, "ensure_flags_synced"):
+                self.ensure_flags_synced()
 
     def _advance_time_flags(self, action_id, target):
         """ターン経過フラグを更新し、条件成立時のヒントを返す。"""
@@ -1190,6 +1377,7 @@ class ScenarioManager:
         time_hints = self._advance_time_flags(action_id, target)
 
         if action_id == "move":
+            target = self._canonical_move_target(target)
             move_check = self._validate_move(target)
             if not move_check["allowed"]:
                 payload = self._build_blocked_payload(
@@ -1303,6 +1491,7 @@ class ScenarioManager:
             if inv_flag:
                 flag_updates[inv_flag] = True
                 self.flags[inv_flag] = True
+            self.apply_implied_progress_flags()
             self._track_investigated_target(target)
             system_log = (
                 f"{name}の調査に成功した。"
@@ -1314,6 +1503,7 @@ class ScenarioManager:
                     "【ダイス成功】下記の確定手がかりを必ず描写に含めよ。"
                     "「何も見つからなかった」と空振りさせるな。"
                     "未記載の怪異・呪文・新事実を創作するな。"
+                    "資料・ハンドアウトがある場合は【資料本文】として原文を省略せず IC 描写に含めよ。"
                     + (f"\n確定手がかり: {fact}" if fact else f"\n対象 description を要約して伝えよ（`{target}`）。")
                 ),
                 "flag_updates": flag_updates,
@@ -1322,6 +1512,9 @@ class ScenarioManager:
                 "dice_success": True,
                 "san_check": {"required": False},
             }
+            if should_emit_handout_ic(obj, fact):
+                payload["handout_text"] = fact
+                payload["handout_ic_block"] = format_handout_ic_block(fact, name)
             return self._merge_time_hints(payload, time_hints, action_id, target)
 
         payload = {

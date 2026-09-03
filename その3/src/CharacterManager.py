@@ -870,8 +870,9 @@ class CharacterManager:
         if action_guide:
             lines.append(f"推奨行動指針: {action_guide}")
         lines.append(
-            "※ あなたは上記キャラクターとしてのみ発言・技能宣言すること。"
-            "他 PC の代弁や操作は禁止。"
+            f"※ あなたは【PC名: {name} / 職業: {occupation or '探索者'}】としてのみ発言・技能宣言すること。"
+            "他 PC の名前・職業・口調と絶対に混同せず、代弁や操作も禁止。"
+            "自己紹介では必ず自身の名前と職業を名乗ること。"
         )
         return "\n".join(lines)
 
