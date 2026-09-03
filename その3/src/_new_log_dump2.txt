@@ -1,0 +1,89 @@
+META loc=boston_globe step=3 paused=False reason=None running=True
+guard={'consecutive_speaker': 'PL:pc_01', 'consecutive_count': 1, 'chat_rounds_without_action': 0}
+hint=None
+last_pl={"action": "search", "target": "reference_room_clipping_files", "skill": "目星", "message": "「……参考資料室の切り抜きファイル、調べてみよう」", "dialogue": ""}
+last_sys=None
+FLAGS truthy:
+  artie_introduced=True
+  artie_reference_room_access_granted=True
+  case_accepted=True
+  knott_letter_read=True
+  knott_memo_read=True
+  talked_with_knott=True
+  turn_since_last_search=1
+  visit_boston_globe=1
+investigated=[]
+accessed=None
+EVENTS
+[0] ch=OOC loc=all a=None t=None 
+  [システム] セッションを開始します。（シナリオ: 悪霊の家）
+[1] ch=IC loc=introduction a=None t=None 
+  KP: スティーブン・ノット氏はあなたに向けて話しています。机の上には彼からの依頼書とメモが置かれています。また、近くにある事務机も視界に入ります。どうしますか？
+[2] ch=OOC loc=all a=None t=None pc_id=pc_01
+  マクガフィン刑事(PC1)(PL): 会話から始めると、依頼の背景や怪異への理解を深められるだろう。
+[3] ch=IC loc=introduction a=talk t=steven_knott pc_id=pc_01 needs_system=True system_processed=True
+  マクガフィン刑事(PC1): ノット氏、あなたの屋敷で何が起こっているんですか？具体的な出来事を詳しく教えていただけますか？
+[4] ch=IC loc=introduction a=talk t=steven_knott roll_type=social_talk
+  システム: 【対話】マクガフィン刑事 が スティーブン・ノット に話しかけた。（態度: 協力的／判定なし） / 【職業RP判定】刑事としての立場を活かして依頼人との会話を進めている（適切） → ボーナス・ダイス+1 / 【秘密開示】secret_case_brief: 最近相続したコービット屋敷の悪評のせいで賃貸も売却もできず困っている。奇妙な出来事の調査を依頼し、報酬・屋敷の鍵・住所・前払い金25ドルを用意している。 / 【進行】スティーブン・ノット氏との会話により、次の調...
+[5] ch=IC loc=introduction a=None t=None 
+  KP: ノット氏は丁寧な口調で続けます。「この屋敷のことで何か手がかりをつかもうと思いますか？まずはボストン・グローブや図書館といった場所から調べてみてください。」彼は落ち着いた態度ですが、焦りも感じられました。どうしますか？
+[6] ch=IC loc=introduction a=move t=boston_globe pc_id=pc_02 needs_system=True system_processed=True
+  エレノア教授(PC2): ノット氏、この屋敷で具体的にどのような奇妙な出来事が起こっているのでしょうか？調査を始めるために必要な情報を教えていただけますか？
+[7] ch=OOC loc=all a=None t=None pc_id=pc_02
+  [システム] 【アクション自動補正】同一無効行動の反復を検知したため、`move` / `boston_globe` に補正しました。
+[8] ch=IC loc=introduction a=move t=boston_globe roll_type=none
+  システム: 判定なし（自動成功） / 【移動】導入 から ボストン・グローブ へ移動した。 / 【フェーズ遷移】current_phase → `investigation`
+[9] ch=IC loc=boston_globe a=None t=None 
+  KP: 評判の高い日刊新聞社『ボストン・グローブ』に到着しました。ロビーには受付デスクがあり、その周りではジャーナリストや編集者が忙しそうに働いています。奥から聞こえる人波の声と、机上の電話ベルの音が混ざり合っています。あなたはまず、受付で自分が来ている目的を伝えたほうが良さそうですね。 /  / どうしますか？
+[10] ch=IC loc=boston_globe a=talk t=globe_receptionist pc_id=pc_01 needs_system=True system_processed=True
+  マクガフィン刑事(PC1): この受付の女性、アーティ・ウィルモットを呼んでくれないか。
+[11] ch=IC loc=boston_globe a=talk t=globe_receptionist roll_type=social_talk
+  システム: 【対話】マクガフィン刑事 が ボストン・グローブの受付 に話しかけた。（態度: 中立／判定なし） / 【職業RP判定】刑事としての立場を活かして、正式な調査目的で受付に接している（適切） → ボーナス・ダイス+1 / 【秘密開示】secret_call_artie: コービット屋敷や古い記事の照会なら、編集者のアーティ・ウィルモットが担当だ。内線で呼び出せる。資料室へはアーティの許可が必要。 / 【進行】受付が内線で編集者アーティ・ウィルモットを呼び出した。これよ...
+[12] ch=IC loc=boston_globe a=None t=None 
+  KP: ボストン・グローブの受付係は、マクガフィン刑事が正式な調査目的で来社していることを察知した。彼女はてきぱきと内線電話を取って、編集者のアーティ・ウィルモット氏を呼び出した。「アーティさん、刑事さんがコービット屋敷や古い記事の照会についてお話になりたいそうです」と告げると、受付係はマクガフィンに向けて小さく頷いた。「今すぐに来られるそうですね。応接室にお待ちください」。 /  / アーティ氏との対話へと進む手順を想定させつつも、その先の進め方を探索者に委ねる形でナレーシ...
+[13] ch=IC loc=boston_globe a=talk t=artie_wilmott pc_id=pc_02 needs_system=True system_processed=True
+  エレノア教授(PC2): こんにちは、アーティさん。ボストン市警のマクガフィン刑事です。
+[14] ch=IC loc=boston_globe a=talk t=artie_wilmott roll_type=social_talk
+  システム: 【対話】エレノア教授 が アーティ・ウィルモット に話しかけた。（態度: 非協力的／判定なし） / 【職業RP判定】民俗学教授としての知識と丁寧な態度で、資料室への入場を許可を得ようとする合理的な交渉が可能（適切） → ボーナス・ダイス+1 / 【秘密開示】secret_ref_room_gate: 参考資料室は関係者以外立ち入り禁止。許可を出すかどうかは自分の裁量だ、と主張する。
+[15] ch=IC loc=boston_globe a=None t=None 
+  KP: アーティ・ウィルモットは肩をすくめ、「参考資料室なんて、特に興味深い情報がないって思うけどね。」とエレノアに向かって言う。「だから、これは私の裁量で、あなたには公開しないわ。でもね、もし君が教授だということであれば、ちょっとだけ話を聞いてあげるよ。」編集者はあなたをちらりと見つめ、「資料室への入場を許可するかどうかは私次第さ」と告げた。どうしますか？
+[16] ch=IC loc=boston_globe a=persuade t=artie_wilmott pc_id=pc_01 needs_system=True system_processed=True
+  マクガフィン刑事(PC1): アーティさん、コービット屋敷の過去について研究しています。その件で参考資料室に入らせていただけないでしょうか。
+[17] ch=IC loc=boston_globe a=persuade t=artie_wilmott roll_type=social_negotiate
+  システム: 【交渉】マクガフィン刑事 → アーティ・ウィルモット／〈説得〉(10) / 【職業RP判定】刑事としての立場を活かして捜査目的での資料室への入場を説得しようとしている（適切） → ボーナス・ダイス+1 / 態度修正: 非協力的（関係性 B0/P1＋職業RP B1/P0 → 最終ボーナス0／ペナルティ0／難易度regular） / マクガフィン刑事 : 【技能:説得】CC(1d100<=10) ＞ 出目:53 ＞ 失敗 / 判定結果: 失敗 / 【情報】相手は口を閉...
+[18] ch=IC loc=boston_globe a=None t=None 
+  KP: アーティ・ウィルモットはあなたを不審そうに見つめ、肩をすくめて言った。「お前みたいな客には参考資料室への入場なんて許可は出せない。編集部の規則だ。」彼の目の中には警戒と興味が交錯しているように見え、あなたの説得力には全く動じる様子がない。どうしますか？
+[19] ch=IC loc=boston_globe a=search t=reference_room_clipping_files pc_id=pc_02 needs_system=True system_processed=True
+  エレノア教授(PC2): アーティさん、コービット屋敷に関する記事を見せていただけませんか？直接参考資料室に触れることなく、ここにある切り抜きファイルを拝見したいのです。
+[20] ch=IC loc=boston_globe a=search t=reference_room_clipping_files roll_type=blocked
+  システム: 【進行ブロック】この対象にはまだアクセスできない。`artie_wilmott` と交渉して許可を得る必要がある。
+[21] ch=IC loc=boston_globe a=None t=None 
+  KP: 参考資料室に入ろうとしたが、その扉はロックされていて、中には入れないようだ。奥の部屋から聞こえる不気味な音やささやき声が一層それを感じる。 /  / そのため、あなたがこの場所に必要不可欠な情報を入手するためには、まず誰かからアクセス許可を手に入れることが必要だと感じられる。 /  / さて、その前にあなたは何をすべきでしょうか？
+[22] ch=OOC loc=all a=None t=None pc_id=pc_01 error_code=stale_artie_talk validation_error=True
+  [システム] 【システム】アーティとの雑談（talk）だけでは資料室の許可は得られません。〈説得〉（persuade）、〈威圧〉（intimidate）、〈言いくるめ〉（fast_talk）など交渉技能を指定したアクションでダイスロールしてください。
+[23] ch=OOC loc=all a=None t=None pc_id=pc_01
+  マクガフィン刑事(PC1)(PL): アーティの態度を変えるためには、彼が気になる何かを見つけなければ。
+[24] ch=OOC loc=all a=None t=None pc_id=pc_01
+  マクガフィン刑事(PC1)(PL): アーティに何か気になる情報を聞き出すために、捜査員としての知識を活かす必要がある。
+[25] ch=IC loc=boston_globe a=persuade t=artie_wilmott pc_id=pc_01 needs_system=True system_processed=True
+  マクガフィン刑事(PC1): アーティさん、コービット屋敷に関する情報はたくさん持っているとは思いますが、先日市警が捜査で見つけた一件について教えていただけませんか？それはあなたの記事が参考になるかもしれませんよ。
+[26] ch=IC loc=boston_globe a=persuade t=artie_wilmott roll_type=social_negotiate
+  システム: 【交渉】マクガフィン刑事 → アーティ・ウィルモット／〈説得〉(10) / 【職業RP判定】刑事としての立場を活かし、事件捜査の一環として資料室への入場を正当化できる（適切） → ボーナス・ダイス+1 / 態度修正: 非協力的（関係性 B0/P1＋職業RP B1/P0 → 最終ボーナス0／ペナルティ0／難易度regular） / マクガフィン刑事 : 【技能:説得】CC(1d100<=10) ＞ 出目:40 ＞ 失敗 / 判定結果: 失敗 / 【情報】相手は口を閉...
+[27] ch=IC loc=boston_globe a=None t=None 
+  KP: アーティ・ウィルモットは冷たくあなたをにらみ返し、「参考資料室への入室は編集部の決定事項。それに私が拒否権を持っている以上、その判断は私次第だ」と言います。彼の態度は依然として非協力的で、あなたの説得には全く耳を貸そうとしません。「君が何を言っても無駄だよ、刑事さん。ここはボストン・グローブ社の領土なんだ。あっちへ行け！」と彼は叫びます。 /  / どうしますか？
+[28] ch=OOC loc=all a=None t=None pc_id=pc_02
+  エレノア教授(PC2)(PL): アーティを見かけたことがあるのか？それとも、市警が扱った過去の事件と関連性があるのか探るべきか。彼の興味を引く何かを見つけなければ。
+[29] ch=OOC loc=all a=None t=None 
+  [システム] PLは一拍置いて状況を見極めている（時間経過）。
+[30] ch=OOC loc=all a=None t=None 
+  [システム] 膠着を検知しました（連続4ターン / 介入: 標準）。
+[31] ch=OOC loc=all a=None t=None 
+  【システムヒント】アーティから参考資料室の閲覧許可を得るには、単なる雑談（talk）ではなく、〈説得〉（persuade）、〈威圧〉（intimidate）、〈言いくるめ〉（fast_talk）などの交渉技能を指定したアクション・ダイスロールを実行する必要があります。許可が取れない場合は中央図書館（`move` / `central_library`）や公文書館（`hall_of_records`）へ移動してください。
+[32] ch=IC loc=boston_globe a=persuade t=artie_wilmott pc_id=pc_02 needs_system=True system_processed=True
+  エレノア教授(PC2): アーティさん、コービット屋敷に関する情報を得るために他の方法があるかもしれませんね。参考資料室への入室は難しいですが、他の誰かに話を聞くことも考えられますよ。
+[33] ch=IC loc=boston_globe a=persuade t=artie_wilmott roll_type=social_negotiate
+  システム: 【交渉】エレノア教授 → アーティ・ウィルモット／〈説得〉(60) / 【職業RP判定】民俗学教授としての知識と丁寧な態度で説得力があり、資料室への入場を許可を得ようとする姿勢が適切（適切） → ボーナス・ダイス+1 / 態度修正: 非協力的（関係性 B0/P1＋職業RP B1/P0 → 最終ボーナス0／ペナルティ0／難易度regular） / エレノア教授 : 【技能:説得】CC(1d100<=60) ＞ 出目:57 ＞ レギュラー成功 / 判定結果: レギュラ...
+[34] ch=IC loc=boston_globe a=None t=None 
+  KP: アーティ・ウィルモットは少し渋そうにしながらも、エレノア教授の説得を受けて参考資料室へのアクセス許可を出してくれた。彼女が言った通り、保管記録係のルース・ブレイクなら、1878年の火事以前の重要な記録が不完全であることを教えてくれるかもしれない。 /  / どのように行動しますか？
+[35] ch=OOC loc=all a=None t=None pc_id=pc_01 error_code=stale_post_access_social validation_error=True
+  [システム] 【システムヒント・最優先】参考資料室への許可は取得済みです。今すぐ `search` / `reference_room_clipping_files`（切り抜きファイル）を実行してください。アーティ・受付への talk/persuade、不在の保管記録係（ルース等）への執着は禁止です。

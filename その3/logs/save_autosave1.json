@@ -1,0 +1,2386 @@
+{
+  "game_state": {
+    "current_scene_id": "scene_001",
+    "turn_count": 12,
+    "flags": {
+      "case_accepted": true,
+      "knott_letter_read": true,
+      "knott_memo_read": true,
+      "talked_with_knott": true,
+      "artie_introduced": true,
+      "newspaper_info_found": false,
+      "library_info_found": false,
+      "records_info_found": false,
+      "neighbor_gossip_found": false,
+      "dolly_told_chapel_location": true,
+      "dolly_told_sanitarium_location": true,
+      "sanitarium_info_found": false,
+      "chapel_investigated": false,
+      "exterior_approached": false,
+      "corbitt_house_entered": true,
+      "front_door_unlocked": true,
+      "back_door_unlocked": false,
+      "living_room_investigated": false,
+      "ground_floor_haunting_done": false,
+      "basement_accessible": false,
+      "basement_door_unlocked": false,
+      "hidden_passage_found": false,
+      "basement_planks_broken": false,
+      "basement_planks_examined": false,
+      "junk_searched": false,
+      "has_corbitt_knife": false,
+      "trigger_flying_bed": false,
+      "trigger_knife_attack": false,
+      "spare_bedroom_bed_investigated": false,
+      "in_basement": false,
+      "found_corbitt_history_all": false,
+      "hall_of_records_clerk_interacted": false,
+      "higher_courts_records_accessed": true,
+      "corbitt_body_encountered": false,
+      "trigger_corbitt_boss_battle": false,
+      "corbitt_defeated": false,
+      "ruined_altar_investigated": false,
+      "learned_corbitt_weakness": false,
+      "investigated_targets": [
+        "corbitt_house",
+        "police_archives"
+      ],
+      "turn_since_last_search": 1,
+      "visit_boston_globe": 1,
+      "artie_reference_room_access_granted": true,
+      "visit_hall_of_records": 1,
+      "visit_higher_courts_police_station": 1,
+      "visit_the_neighborhood": 1,
+      "dolly_talked": true,
+      "visit_chapel_of_contemplation": 1,
+      "visit_corbitt_exterior": 1,
+      "visit_corbitt_ground_floor": 1
+    },
+    "in_combat": false,
+    "round_number": 0,
+    "turn_order": [],
+    "current_turn_index": 0,
+    "stagnation_tracker": {
+      "location": "corbitt_ground_floor",
+      "progress_signature": [
+        [
+          "artie_introduced",
+          "artie_reference_room_access_granted",
+          "case_accepted",
+          "corbitt_house_entered",
+          "dolly_talked",
+          "dolly_told_chapel_location",
+          "dolly_told_sanitarium_location",
+          "front_door_unlocked",
+          "higher_courts_records_accessed",
+          "knott_letter_read",
+          "knott_memo_read",
+          "talked_with_knott"
+        ],
+        [
+          "corbitt_house",
+          "police_archives"
+        ]
+      ],
+      "repeat_key": [
+        "blocked",
+        "talk",
+        ""
+      ],
+      "streak": 1,
+      "intervened_at_streak": 1,
+      "last_reason": "signature_switch"
+    }
+  },
+  "character_manager": {
+    "characters": {
+      "pc_01": {
+        "profile": {
+          "name": "マクガフィン刑事",
+          "occupation": "刑事",
+          "age": 38,
+          "gender": "男",
+          "personality": "ぶっきらぼうだが正義感が強い。現場勘に自信がある。",
+          "action_guide": "率先して現場を調査し、目星・聞き耳を優先。危険時は仲間を庇う。"
+        },
+        "baseline": {
+          "SAN": 55,
+          "LUCK": 45,
+          "HP": 12,
+          "MP": 11
+        },
+        "attributes": {
+          "STR": 55,
+          "CON": 60,
+          "POW": 55,
+          "DEX": 70,
+          "APP": 50,
+          "SIZ": 60,
+          "INT": 65,
+          "EDU": 60,
+          "SAN": {
+            "current": 55,
+            "max": 99,
+            "session_start": 55,
+            "session_start_san": 55
+          },
+          "HP": {
+            "current": 12,
+            "max": 12
+          },
+          "MP": {
+            "current": 11,
+            "max": 11
+          },
+          "LUCK": 45,
+          "MOV": 8,
+          "BLD": 0,
+          "DB": "0"
+        },
+        "skills": {
+          "目星": 65,
+          "聞き耳": 55,
+          "心理学": 45,
+          "近接戦闘": 55,
+          "射撃（拳銃）": 50,
+          "回避": 35,
+          "威圧": 60,
+          "法律": 40
+        },
+        "weapons": [
+          {
+            "name": "サービス・リボルバー",
+            "skill": "射撃（拳銃）",
+            "damage": "1D10",
+            "apply_damage_bonus": false,
+            "type": "firearm"
+          },
+          {
+            "name": "警棒",
+            "skill": "近接戦闘",
+            "damage": "1D6",
+            "apply_damage_bonus": true
+          }
+        ],
+        "inventory": [],
+        "memo": "ボストン市警のベテラン刑事。不可解な事件の匂いを嗅ぎつけると動き出す。",
+        "states": [],
+        "skill_meta": {},
+        "session_skill_marks": [
+          "目星"
+        ]
+      },
+      "pc_02": {
+        "profile": {
+          "name": "エレノア教授",
+          "occupation": "民俗学教授",
+          "age": 42,
+          "gender": "女",
+          "personality": "冷静で分析的。丁寧語だが芯は強い。",
+          "action_guide": "図書館・歴史・目星で手がかりを集める。単独行動より相談（OOC）を好む。"
+        },
+        "baseline": {
+          "SAN": 70,
+          "LUCK": 50,
+          "HP": 10,
+          "MP": 14
+        },
+        "attributes": {
+          "STR": 40,
+          "CON": 50,
+          "POW": 70,
+          "DEX": 55,
+          "APP": 65,
+          "SIZ": 50,
+          "INT": 80,
+          "EDU": 85,
+          "SAN": {
+            "current": 70,
+            "max": 99,
+            "session_start": 70,
+            "session_start_san": 70
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 14,
+            "max": 14
+          },
+          "LUCK": 50,
+          "MOV": 8,
+          "BLD": 0,
+          "DB": "0"
+        },
+        "skills": {
+          "図書館": 75,
+          "歴史": 70,
+          "目星": 50,
+          "心理学": 55,
+          "説得": 60,
+          "回避": 27,
+          "近接戦闘": 30,
+          "聞き耳": 45
+        },
+        "inventory": [],
+        "memo": "ミスカトニック大学の民俗学教授。古い文献と伝承に詳しい。",
+        "states": [],
+        "skill_meta": {}
+      },
+      "new_investigator": {
+        "profile": {
+          "name": "新たな探索者",
+          "occupation": "ジャーナリスト",
+          "age": 25,
+          "gender": "男"
+        },
+        "baseline": {
+          "SAN": 70,
+          "LUCK": 45,
+          "HP": 12,
+          "MP": 14
+        },
+        "attributes": {
+          "STR": 50,
+          "CON": 60,
+          "POW": 70,
+          "DEX": 65,
+          "APP": 60,
+          "SIZ": 65,
+          "INT": 75,
+          "EDU": 80,
+          "SAN": {
+            "current": 70,
+            "max": 99,
+            "session_start": 70,
+            "session_start_san": 70
+          },
+          "HP": {
+            "current": 12,
+            "max": 12
+          },
+          "MP": {
+            "current": 14,
+            "max": 14
+          },
+          "LUCK": 45,
+          "MOV": 8,
+          "BLD": 0,
+          "DB": "0"
+        },
+        "skills": {
+          "目星": 60,
+          "図書館": 70,
+          "説得": 50,
+          "近接戦闘": 40,
+          "隠密": 50,
+          "回避": 32
+        },
+        "inventory": [],
+        "memo": "好奇心旺盛なジャーナリスト。常にスクープを狙っているが、危険な状況になると真っ先に逃げる。",
+        "states": [],
+        "skill_meta": {}
+      },
+      "steven_knott": {
+        "profile": {
+          "name": "スティーブン・ノット",
+          "is_npc": true,
+          "locations": [
+            "introduction"
+          ]
+        },
+        "attributes": {
+          "STR": 45,
+          "CON": 50,
+          "POW": 55,
+          "DEX": 45,
+          "INT": 60,
+          "APP": 55,
+          "SIZ": 55,
+          "EDU": 70,
+          "SAN": {
+            "current": 55,
+            "max": 99,
+            "session_start": 55,
+            "session_start_san": 55
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 11,
+            "max": 11
+          }
+        },
+        "skills": {
+          "心理学": 40,
+          "信用": 45,
+          "説得": 50,
+          "母国語": 70,
+          "法律": 35
+        },
+        "personality": "丁寧で焦り気味の依頼人。屋敷の悪評に困っており、探索者に協力的。過度なホラー話は避け、実務的に要件を伝える。",
+        "relationship_status": "cooperative",
+        "secrets": {
+          "secret_case_brief": {
+            "content": "最近相続したコービット屋敷の悪評のせいで賃貸も売却もできず困っている。奇妙な出来事の調査を依頼し、報酬・屋敷の鍵・住所・前払い金25ドルを用意している。",
+            "reveal_condition": "True"
+          },
+          "secret_tenant_hint": {
+            "content": "以前の借家人マカリオ一家が不幸に見舞われたため、評判を回復したいと考えている。",
+            "reveal_condition": "dialogue_count >= 2"
+          }
+        },
+        "memo": "悪霊の家・導入の依頼人。対話で talked_with_knott が立つ。",
+        "session_social": {
+          "relationship_status": "cooperative",
+          "revealed_secrets": [
+            "secret_case_brief"
+          ],
+          "dialogue_count": 1
+        }
+      },
+      "globe_receptionist": {
+        "profile": {
+          "name": "ボストン・グローブの受付",
+          "is_npc": true,
+          "locations": [
+            "boston_globe"
+          ],
+          "aliases": [
+            "受付",
+            "受付係",
+            "受付の女性"
+          ]
+        },
+        "attributes": {
+          "STR": 40,
+          "CON": 50,
+          "POW": 50,
+          "DEX": 55,
+          "INT": 55,
+          "APP": 60,
+          "SIZ": 50,
+          "EDU": 55,
+          "SAN": {
+            "current": 50,
+            "max": 99,
+            "session_start": 50,
+            "session_start_san": 50
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 10,
+            "max": 10
+          }
+        },
+        "skills": {
+          "信用": 40,
+          "言いくるめ": 35,
+          "母国語": 65,
+          "心理学": 30
+        },
+        "personality": "てきぱきした受付係。来客には用件を聞き、適切な担当者へ取り次ぐ。無駄話は好まないが無礼ではない。",
+        "relationship_status": "neutral",
+        "secrets": {
+          "secret_call_artie": {
+            "content": "コービット屋敷や古い記事の照会なら、編集者のアーティ・ウィルモットが担当だ。内線で呼び出せる。資料室へはアーティの許可が必要。",
+            "reveal_condition": "True"
+          }
+        },
+        "memo": "ボストン・グローブ受付。対話で artie_introduced が立つ。",
+        "session_social": {
+          "relationship_status": "neutral",
+          "revealed_secrets": [
+            "secret_call_artie"
+          ],
+          "dialogue_count": 1
+        }
+      },
+      "artie_wilmott": {
+        "profile": {
+          "name": "アーティ・ウィルモット",
+          "is_npc": true,
+          "locations": [
+            "boston_globe"
+          ],
+          "require_flag": "artie_introduced",
+          "aliases": [
+            "アーティ",
+            "アーティ氏",
+            "ウィルモット",
+            "編集者アーティ"
+          ]
+        },
+        "attributes": {
+          "STR": 45,
+          "CON": 50,
+          "POW": 55,
+          "DEX": 50,
+          "INT": 65,
+          "APP": 50,
+          "SIZ": 55,
+          "EDU": 70,
+          "SAN": {
+            "current": 55,
+            "max": 99,
+            "session_start": 55,
+            "session_start_san": 55
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 11,
+            "max": 11
+          }
+        },
+        "skills": {
+          "図書館": 50,
+          "歴史": 45,
+          "説得": 40,
+          "信用": 45,
+          "母国語": 70,
+          "心理学": 35
+        },
+        "personality": "小さな権限を振りかざす編集者。資料室への部外者入場を嫌がり、なかなか許可を出さない。社交技能や賄賂、信用で揺さぶれる。",
+        "relationship_status": "uncooperative",
+        "secrets": {
+          "secret_ref_room_gate": {
+            "content": "参考資料室は関係者以外立ち入り禁止。許可を出すかどうかは自分の裁量だ、と主張する。",
+            "reveal_condition": "True"
+          },
+          "secret_ruth_blake": {
+            "content": "保管記録係のルース・ブレイクなら、1878年の火事以前の記録が不完全だと教えてくれるかもしれない。",
+            "reveal_condition": "success_level >= 2 or relationship == 'cooperative'"
+          }
+        },
+        "memo": "ボストン・グローブ編集者。受付紹介（artie_introduced）後に対話可能。",
+        "session_social": {
+          "relationship_status": "cooperative",
+          "revealed_secrets": [
+            "secret_ref_room_gate",
+            "secret_ruth_blake"
+          ],
+          "dialogue_count": 1
+        }
+      },
+      "npc_neighbor_elder": {
+        "profile": {
+          "name": "近所の老人",
+          "is_npc": true,
+          "locations": [
+            "the_neighborhood"
+          ]
+        },
+        "attributes": {
+          "STR": 30,
+          "CON": 40,
+          "POW": 50,
+          "DEX": 30,
+          "INT": 50,
+          "APP": 45,
+          "SIZ": 50,
+          "SAN": {
+            "current": 50,
+            "max": 99,
+            "session_start": 50,
+            "session_start_san": 50
+          },
+          "HP": {
+            "current": 9,
+            "max": 9
+          },
+          "MP": {
+            "current": 10,
+            "max": 10
+          }
+        },
+        "skills": {
+          "心理学": 40,
+          "聞き耳": 50,
+          "目星": 35,
+          "歴史": 45
+        },
+        "personality": "頑固で疑り深い。夜の屋敷から聞こえる奇妙な音を恐れている。",
+        "relationship_status": "uncooperative",
+        "secrets": {
+          "secret_01": {
+            "content": "夜になると、地下から鎖を引きずるような音ときしみ声が聞こえる。",
+            "reveal_condition": "success_level >= 2 and (skill in ['説得', '言いくるめ', '威圧', '魅惑'])"
+          },
+          "secret_02": {
+            "content": "一昨年、屋敷の地下室からうめき声がしたあと、若い夫婦が急に引っ越したという噂がある。",
+            "reveal_condition": "success_level >= 3 and skill in ['説得', '言いくるめ']"
+          }
+        },
+        "memo": "悪霊の家の近所住民。探索者への初期態度は非協力的。",
+        "session_social": {
+          "relationship_status": "uncooperative",
+          "revealed_secrets": [],
+          "dialogue_count": 0
+        }
+      },
+      "npc_guard_01": {
+        "profile": {
+          "name": "警備員のボブ",
+          "is_npc": true
+        },
+        "attributes": {
+          "STR": 60,
+          "CON": 55,
+          "POW": 45,
+          "DEX": 50,
+          "INT": 40,
+          "APP": 40,
+          "SIZ": 55,
+          "SAN": {
+            "current": 50,
+            "max": 99,
+            "session_start": 50,
+            "session_start_san": 50
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 9,
+            "max": 9
+          }
+        },
+        "skills": {
+          "近接戦闘": 60,
+          "威圧": 50,
+          "心理学": 25,
+          "聞き耳": 40,
+          "目星": 35
+        },
+        "personality": "美術館の夜間警備員。すぐ怒り、規則にうるさい。賄賂めいた話には弱い。",
+        "relationship_status": "neutral",
+        "secrets": {
+          "secret_key_location": {
+            "content": "夜間巡視用の合鍵は警備室の引き出しに隠してある。",
+            "reveal_condition": "success_level >= 2 and skill in ['言いくるめ', '説得', '威圧']"
+          }
+        },
+        "memo": "美術館の夜間警備員。すぐ怒る。",
+        "session_social": {
+          "relationship_status": "cooperative",
+          "revealed_secrets": [
+            "secret_key_location"
+          ],
+          "dialogue_count": 5
+        }
+      },
+      "npc_thug": {
+        "profile": {
+          "name": "街のチンピラ",
+          "is_npc": true
+        },
+        "attributes": {
+          "STR": 65,
+          "CON": 55,
+          "POW": 40,
+          "DEX": 55,
+          "INT": 35,
+          "APP": 30,
+          "SIZ": 60,
+          "SAN": {
+            "current": 50,
+            "max": 99,
+            "session_start": 50,
+            "session_start_san": 50
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 8,
+            "max": 8
+          }
+        },
+        "skills": {
+          "近接戦闘": 50,
+          "威圧": 45,
+          "心理学": 15
+        },
+        "personality": "短絡的でガサツ。強い相手には媚び、弱い相手を踏みつける。",
+        "relationship_status": "hostile",
+        "secrets": {
+          "secret_boss_hint": {
+            "content": "近くの古い屋敷で『何か変な仕事』を持ちかけられたが、怖くなって断った。",
+            "reveal_condition": "success_level >= 3 and skill in ['威圧', '言いくるめ']"
+          }
+        },
+        "session_social": {
+          "relationship_status": "hostile",
+          "revealed_secrets": [],
+          "dialogue_count": 0
+        }
+      },
+      "walter_corbitt": {
+        "profile": {
+          "name": "ウォルター・コービット",
+          "subtitle": "アンデッドの悪霊",
+          "is_npc": true,
+          "monster": true
+        },
+        "attributes": {
+          "STR": 90,
+          "CON": 115,
+          "SIZ": 55,
+          "INT": 80,
+          "POW": 90,
+          "DEX": 35,
+          "APP": 5,
+          "EDU": 80,
+          "SAN": {
+            "current": 0,
+            "max": 82,
+            "session_start": 0,
+            "session_start_san": 0
+          },
+          "HP": {
+            "current": 17,
+            "max": 17
+          },
+          "MP": {
+            "current": 18,
+            "max": 18
+          },
+          "MOV": 8,
+          "BLD": 1,
+          "DB": "+1D4",
+          "LUCK": 0
+        },
+        "skills": {
+          "近接戦闘": 50,
+          "回避": 17,
+          "クトゥルフ神話": 17,
+          "威圧": 64,
+          "聞き耳": 60,
+          "手さばき": 30,
+          "隠密": 72
+        },
+        "combat_profile": {
+          "attacks_per_round": 1,
+          "armor_roll": "2D6",
+          "armor_points": null,
+          "armor_source": "肉体の保護（《肉体の保護》呪文・既に発動済み）",
+          "armor_note": "装甲ポイントは受けたダメージ分だけ減少する。非魔術的攻撃のみ軽減。",
+          "mp_recovery": "1ポイント/時間",
+          "sanity_loss_on_sight": "1/1D8",
+          "ignore_spell_san_cost": true
+        },
+        "weapons": [
+          {
+            "id": "corbitt_unarmed",
+            "name": "徒手（パンチ・キック・かぎ爪）",
+            "skill": "近接戦闘",
+            "skill_value": 50,
+            "damage": "1D3",
+            "apply_damage_bonus": true,
+            "special_effect": "claw_infection"
+          },
+          {
+            "id": "corbitt_floating_dagger",
+            "name": "空中に浮かぶ魔法のダガー",
+            "skill": "近接戦闘",
+            "skill_value": 50,
+            "damage": "1D3",
+            "apply_damage_bonus": true,
+            "mp_cost_per_use": 1,
+            "counts_as_round_action": true,
+            "ref_npc": "corbitt_floating_dagger"
+          }
+        ],
+        "special_abilities": {
+          "claw_infection": {
+            "name": "かぎ爪感染",
+            "trigger": "徒手攻撃が1回成功した後",
+            "luck_roll": true,
+            "on_luck_fail": "1日後に意識もうろう→CONロール必須",
+            "on_con_fail": "せん妄1D10日、CONを1D10永久喪失",
+            "on_con_success": "せん妄1D6日、CON喪失なし",
+            "repeat_until": "回復または死亡まで繰り返す。失ったCONは回復しない"
+          }
+        },
+        "spells": [
+          {
+            "name": "支配（独自のバージョン）",
+            "cost_mp": 1,
+            "casting_time_rounds": 1,
+            "target": "屋敷内にいる探索者1名",
+            "resolution": "コービットPOW90 vs 対象POWの対抗ロール",
+            "effect": "勝利時、対象は1D6+1戦闘ラウンドぼんやり状態。テレパシー支配下。自殺はさせられないが殺人・愚行は可能。解除後は記憶なし"
+          },
+          {
+            "name": "肉体の保護",
+            "cost_mp": "可変（1MPにつき装甲1D6）",
+            "casting_time_rounds": 5,
+            "effect": "非魔術的攻撃に対し装甲を付与。ダメージをさえぎるたび装甲が消耗。24時間または使い切るまで継続。補強・再詠唱不可",
+            "pre_cast": true
+          },
+          {
+            "name": "次元をさまようものの召喚／従属",
+            "note": "キーパー判断で使用"
+          }
+        ],
+        "magic_items": [
+          "空中に浮かぶ魔法のダガー"
+        ],
+        "personality": "悪意に満ちたアンデッド。探索者を分断して対立させ、ひどい目に遭わせることに興奮する。神話の知識を何でも欲しがる。",
+        "relationship_status": "hostile",
+        "secrets": {
+          "secret_crypt": {
+            "content": "本体は地下室の納骨堂にあり、遺体を破壊・浄化すれば討伐できる。",
+            "reveal_condition": "False"
+          }
+        },
+        "roleplay_notes": [
+          "悪意に満ち、探索者を分断して対立させようとする",
+          "探索者がひどい目に遭うことに興奮と変質的な楽しみを見いだす",
+          "屋敷に持ち込まれた神話の知識（『エイボンの書』など）を何でも手に入れようとする"
+        ],
+        "keeper_notes": [
+          "記載技能以外もキーパー判断で即興設定可",
+          "マジック・ポイントは1時間に1ポイント回復するのを忘れないこと",
+          "侵入者が屋敷に入ると《肉体の保護》をかける。本体へ直行すればMP回復前に遭遇する可能性あり",
+          "呪文の正気度コストは無視する（コービット正気度0）"
+        ],
+        "memo": "シナリオ「悪霊の家」ラスボス。生ける屍。遺体を破壊・浄化すれば討伐完了。"
+      },
+      "corbitt_floating_dagger": {
+        "profile": {
+          "name": "空中に浮かぶ魔法のダガー",
+          "subtitle": "コービットの魔法の品物",
+          "is_npc": true,
+          "monster": true
+        },
+        "attributes": {
+          "DEX": 70,
+          "SAN": {
+            "current": 0,
+            "max": 99,
+            "session_start": 0,
+            "session_start_san": 0
+          },
+          "HP": {
+            "current": 1,
+            "max": 1
+          },
+          "MP": {
+            "current": 0,
+            "max": 10
+          },
+          "MOV": 0,
+          "DB": "0",
+          "BLD": 0
+        },
+        "skills": {
+          "近接戦闘": 40,
+          "回避": 35
+        },
+        "combat_profile": {
+          "attacks_per_round": 1,
+          "armor_points": 0,
+          "destroy_on_extreme_success": true,
+          "autonomous": true,
+          "note": "コービットが使用する場合は1MP消費・コービットの1行動として数える"
+        },
+        "weapons": [
+          {
+            "name": "ダガー斬りつけ",
+            "skill": "近接戦闘",
+            "skill_value": 40,
+            "damage": "1D4",
+            "apply_damage_bonus": false
+          }
+        ],
+        "memo": "地下室で発見される自律攻撃のナイフ。イクストリーム成功の近接攻撃で無力化可能（キーパー判断）。"
+      },
+      "hall_records_clerk": {
+        "profile": {
+          "name": "公文書館の事務官",
+          "is_npc": true,
+          "locations": [
+            "hall_of_records"
+          ],
+          "aliases": [
+            "事務官",
+            "受付の事務官",
+            "デスクの男",
+            "初老の事務官"
+          ]
+        },
+        "attributes": {
+          "STR": 40,
+          "CON": 45,
+          "POW": 50,
+          "DEX": 40,
+          "INT": 60,
+          "APP": 45,
+          "SIZ": 55,
+          "EDU": 65,
+          "SAN": {
+            "current": 50,
+            "max": 99,
+            "session_start": 50,
+            "session_start_san": 50
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 10,
+            "max": 10
+          }
+        },
+        "skills": {
+          "図書館": 50,
+          "法律": 55,
+          "信用": 40,
+          "母国語": 70,
+          "心理学": 30
+        },
+        "personality": "忙しそうだが実務的な初老の事務官。質問には簡潔に答え、重い犯罪記録と警察記録の所在を案内する。デスクをこじ開けられるのは嫌がる。",
+        "relationship_status": "neutral",
+        "secrets": {
+          "secret_jurisdiction": {
+            "content": "重い犯罪は郡や州、あるいは連邦の裁判所へ送られる。逮捕や押収に関わる市の警官の記録は中央警察署にある。",
+            "reveal_condition": "True"
+          }
+        },
+        "memo": "公文書館事務官。対話で hall_of_records_clerk_interacted が立つ。デスクへの search/inspect は talk へ変換。",
+        "session_social": {
+          "relationship_status": "neutral",
+          "revealed_secrets": [],
+          "dialogue_count": 0
+        }
+      },
+      "dolly_shopkeeper": {
+        "profile": {
+          "name": "ドーリー氏",
+          "is_npc": true,
+          "locations": [
+            "the_neighborhood"
+          ],
+          "aliases": [
+            "ドーリー",
+            "Dolly",
+            "dolly",
+            "店主",
+            "タバコ屋",
+            "新聞屋",
+            "近隣住民"
+          ]
+        },
+        "attributes": {
+          "STR": 45,
+          "CON": 50,
+          "POW": 50,
+          "DEX": 50,
+          "INT": 55,
+          "APP": 50,
+          "SIZ": 55,
+          "EDU": 50,
+          "SAN": {
+            "current": 50,
+            "max": 99,
+            "session_start": 50,
+            "session_start_san": 50
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 10,
+            "max": 10
+          }
+        },
+        "skills": {
+          "信用": 45,
+          "言いくるめ": 50,
+          "説得": 40,
+          "魅惑": 35,
+          "心理学": 35,
+          "母国語": 65
+        },
+        "personality": "タバコや新聞を売る近所の商売人。冗談とうわさ話で人を引きつけるのが上手く、話は大げさになりがち。この地区の事情に詳しい。",
+        "relationship_status": "neutral",
+        "secrets": {
+          "secret_corbitt_house_name": {
+            "content": "あの屋敷は『コービット屋敷』と呼ばれている。",
+            "reveal_condition": "True"
+          },
+          "secret_macario_family": {
+            "content": "マカリオ一家は2年前にコービット屋敷へ引っ越してきた。1年後、父親が事故のあと激しい狂気に陥り、『燃える目をした化け物』について口走っていた。約1か月後、母親も狂気に陥り、夫妻はボストンのロックスベリー・サナトリウムに入院している。子供たちはボルチモアの親戚に引き取られた。",
+            "reveal_condition": "True"
+          },
+          "secret_chapel_location": {
+            "content": "黙想チャペルがあった場所は、ここから2、3ブロック離れた先にある。",
+            "reveal_condition": "True"
+          },
+          "secret_sanitarium_hint": {
+            "content": "マカリオ夫妻はロックスベリー・サナトリウムにいる。ボストンから3〜5kmほどの所だ。",
+            "reveal_condition": "True"
+          }
+        },
+        "memo": "近隣の店主ドーリー。対話で dolly_talked / dolly_told_chapel_location / dolly_told_sanitarium_location が立つ。local_residents への search/inspect は talk へ変換。",
+        "session_social": {
+          "relationship_status": "neutral",
+          "revealed_secrets": [
+            "secret_corbitt_house_name",
+            "secret_macario_family",
+            "secret_chapel_location",
+            "secret_sanitarium_hint"
+          ],
+          "dialogue_count": 1
+        }
+      }
+    },
+    "active_pcs": [
+      "pc_01",
+      "pc_02"
+    ]
+  },
+  "scenario_manager": {
+    "current_phase": "investigation",
+    "location": "corbitt_ground_floor",
+    "triggered_counts": {
+      "higher_courts_police_station__police_archives__success": 1,
+      "corbitt_exterior__corbitt_house__success": 1
+    },
+    "stagnation_counter": 1,
+    "flags": {
+      "case_accepted": true,
+      "knott_letter_read": true,
+      "knott_memo_read": true,
+      "talked_with_knott": true,
+      "artie_introduced": true,
+      "newspaper_info_found": false,
+      "library_info_found": false,
+      "records_info_found": false,
+      "neighbor_gossip_found": false,
+      "dolly_told_chapel_location": true,
+      "dolly_told_sanitarium_location": true,
+      "sanitarium_info_found": false,
+      "chapel_investigated": false,
+      "exterior_approached": false,
+      "corbitt_house_entered": true,
+      "front_door_unlocked": true,
+      "back_door_unlocked": false,
+      "living_room_investigated": false,
+      "ground_floor_haunting_done": false,
+      "basement_accessible": false,
+      "basement_door_unlocked": false,
+      "hidden_passage_found": false,
+      "basement_planks_broken": false,
+      "basement_planks_examined": false,
+      "junk_searched": false,
+      "has_corbitt_knife": false,
+      "trigger_flying_bed": false,
+      "trigger_knife_attack": false,
+      "spare_bedroom_bed_investigated": false,
+      "in_basement": false,
+      "found_corbitt_history_all": false,
+      "hall_of_records_clerk_interacted": false,
+      "higher_courts_records_accessed": true,
+      "corbitt_body_encountered": false,
+      "trigger_corbitt_boss_battle": false,
+      "corbitt_defeated": false,
+      "ruined_altar_investigated": false,
+      "learned_corbitt_weakness": false,
+      "investigated_targets": [
+        "corbitt_house",
+        "police_archives"
+      ],
+      "turn_since_last_search": 1,
+      "visit_boston_globe": 1,
+      "artie_reference_room_access_granted": true,
+      "visit_hall_of_records": 1,
+      "visit_higher_courts_police_station": 1,
+      "visit_the_neighborhood": 1,
+      "dolly_talked": true,
+      "visit_chapel_of_contemplation": 1,
+      "visit_corbitt_exterior": 1,
+      "visit_corbitt_ground_floor": 1
+    },
+    "turn_counter": 12
+  },
+  "app_state": {
+    "all_events_log": [
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] セッションを開始します。（シナリオ: 悪霊の家）"
+      },
+      {
+        "channel": "IC",
+        "location": "introduction",
+        "secret_to": null,
+        "text": "KP: 小さな探偵事務所の一室でも、あるいは馴染みの喫茶店の一角でも、あなたとスティーブン・ノット氏が向かい合っている。彼は最近相続したとある屋敷について悩んでおり、その悪評のため賃貸も売却もできていないと話す。彼の依頼を受けて、あなたは机上の依頼書とメモを目に留める。また、その周囲にある事務机も目に入ってきた。それ以外に、目立った調査対象は見当たらない。どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1)(PL): ノット氏からっとより詳しい情報を引き出そう。彼がメモしたボストン・グローブの過去記事の手がかりを教えてくれるといいね。",
+        "meta": {
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "introduction",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): ノットさん、近隣の住民たちが屋敷について何か話していたそうですね？具体的にはどんなことを話していたんですか？また、そのボストン・グローブの記事についても、もっと詳しく教えていただけませんか？",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "talk",
+          "target": "steven_knott",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "introduction",
+        "secret_to": null,
+        "text": "システム: 【対話】マクガフィン刑事 が スティーブン・ノット に話しかけた。（態度: 協力的／判定なし）\n【職業RP判定】刑事としての立場を活かして、依頼人の不安を聞き出す聞き方をしている（適切） → ボーナス・ダイス+1\n【秘密開示】secret_case_brief: 最近相続したコービット屋敷の悪評のせいで賃貸も売却もできず困っている。奇妙な出来事の調査を依頼し、報酬・屋敷の鍵・住所・前払い金25ドルを用意している。\n【進行】スティーブン・ノット氏との会話により、次の調査先への移動が解禁された。（依頼書・メモも手渡され確認済みとして扱う）",
+        "meta": {
+          "action_id": "talk",
+          "target": "steven_knott",
+          "roll_type": "social_talk",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "introduction",
+        "secret_to": null,
+        "text": "KP: スティーブン・ノット氏はあなたに丁寧な表情で頷き、申し訳なさそうに言葉を続けます。「この依頼書とメモ、そして前払い金を受け取ってください。まずはその屋敷についての情報を集めるべきですね。ボストン・グローブや図書館で調べたり、現地を調査したり、どのような方法でも構いません。何をお手伝いできるか教えてくださいね。」"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "エレノア教授(PC2)(PL): ノット氏からもう少し情報を引き出そう。彼のメモから具体的な記事の内容を教えてもらう。",
+        "meta": {
+          "pc_id": "pc_02"
+        }
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] 膠着が上限に達したため、次の調査先へ強制移動します。（目的地: ボストン・グローブ / `boston_globe`）",
+        "meta": {
+          "forced_progress_breakout": true,
+          "target": "boston_globe",
+          "action": "move"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "introduction",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): ボストン・グローブへ向かう。",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "move",
+          "target": "boston_globe",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true,
+          "forced_by_system": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "introduction",
+        "secret_to": null,
+        "text": "システム: 判定なし（自動成功）\n【移動】導入 から ボストン・グローブ へ移動した。\n【フェーズ遷移】current_phase → `investigation`",
+        "meta": {
+          "action_id": "move",
+          "target": "boston_globe",
+          "roll_type": "none",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "boston_globe",
+        "secret_to": null,
+        "text": "KP: あなたは評判の高い日刊新聞社『ボストン・グローブ』のオフィスに到着しました。ロビーには受付デスクがあり、その奥ではジャーナリストや編集者が日々の業務を行っています。壁際には参考資料室への入り口があり、そのドアには『参考資料室』と書かれたプレートが取り付けられています。まずは受付で用件を伝えて、必要な人間を呼び出してもらうのが一般的な手順です。どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1)(PL): まずは受付の女性に、コービット屋敷に関する古い記事を調べたいと伝えてみよう。",
+        "meta": {
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "boston_globe",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): こんにちは、コービット屋敷に関する古い記事を調べたいのですが、編集者のアーティ・ウィルモットを呼んでもらえませんか？",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "talk",
+          "target": "globe_receptionist",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "boston_globe",
+        "secret_to": null,
+        "text": "システム: 【対話】マクガフィン刑事 が ボストン・グローブの受付 に話しかけた。（態度: 中立／判定なし）\n【職業RP判定】刑事としての立場を活かし、適切な調査を進めている（適切） → ボーナス・ダイス+1\n【秘密開示】secret_call_artie: コービット屋敷や古い記事の照会なら、編集者のアーティ・ウィルモットが担当だ。内線で呼び出せる。資料室へはアーティの許可が必要。\n【進行】受付が内線で編集者アーティ・ウィルモットを呼び出した。これよりアーティ氏と対話・交渉できる。",
+        "meta": {
+          "action_id": "talk",
+          "target": "globe_receptionist",
+          "roll_type": "social_talk",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "boston_globe",
+        "secret_to": null,
+        "text": "KP: 受付の女性が内線電話を取り、数秒間沈黙している後、あなたの話題をアーティ・ウィルモット氏に伝えている。彼女はあなたに軽く頷いてから、内線の向こうで何か言った。そして、受付の電話から「アーティ・ウィルモットさん、マクガフィン刑事が来ています」という声が聞こえてきます。\n\nどうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] 探索が停滞しています。別の対象への行動、移動、または状況の変化を検討してください。",
+        "meta": {
+          "stagnation_interrupt": true
+        }
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] 【システム警告】作戦会議（OOC）の連続上限に達しました。これ以上のメタ発言はブロックされます。現状を打破するため、別の技能（言いくるめ/信用など）を宣言するか、他のオブジェクトの調査、あるいは[図書館]など別のロケーションへの移動アクション（move）を必ずICで実行してください。",
+        "meta": {
+          "force_ic_action": true,
+          "ooc_blocked": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "boston_globe",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): アーティ・ウィルモットさん、コービット屋敷に関する古い記事を調査したいと考えています。何かお手伝いできることがあれば幸いです。",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "persuade",
+          "target": "artie_wilmott",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "boston_globe",
+        "secret_to": null,
+        "text": "システム: 【交渉】エレノア教授 → アーティ・ウィルモット／〈説得〉(60)\n【職業RP判定】民俗学教授としての知識と丁寧な態度で説得力があり、資料へのアクセスを求める正当性をアピールできる（適切） → ボーナス・ダイス+1\n態度修正: 非協力的（関係性 B0/P1＋職業RP B1/P0 → 最終ボーナス0／ペナルティ0／難易度regular）\nエレノア教授 : 【技能:説得】CC(1d100<=60) ＞ 出目:3 ＞ イクストリーム成功\n判定結果: イクストリーム成功\n【関係性変化】非協力的 → 協力的\n【秘密開示】secret_ref_room_gate: 参考資料室は関係者以外立ち入り禁止。許可を出すかどうかは自分の裁量だ、と主張する。\n【秘密開示】secret_ruth_blake: 保管記録係のルース・ブレイクなら、1878年の火事以前の記録が不完全だと教えてくれるかもしれない。\n【進行】交渉の結果、参考資料室の切り抜きファイル（`reference_room_clipping_files`）へのアクセス許可が出た。これ以降、該当対象の調査が可能。",
+        "meta": {
+          "action_id": "persuade",
+          "target": "artie_wilmott",
+          "roll_type": "social_negotiate",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "boston_globe",
+        "secret_to": null,
+        "text": "KP: アーティ・ウィルモットは眉をひそめながらも、頭を縦に振った。「参考資料室へのアクセスは、関係者以外には許可しないルールがあります。でも、あなたは例外、と私に認めました。それでも、誰にも責任転嫁できるわけではありませんよ。」彼は続けて、「ルース・ブレイクは記録係ですが、1878年の大火以前の記録は不完全だと聞いています。彼に聞いてみてはいかがでしょうか。」こう言いながら、彼はあなたの許可証を手渡し、参考資料室への扉を開いた。どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] 【システムヒント・最優先】参考資料室への許可は取得済みです。今すぐ `search` / `reference_room_clipping_files`（切り抜きファイル）を実行してください。アーティ・受付への talk/persuade、不在の保管記録係（ルース等）への執着は禁止です。",
+        "meta": {
+          "validation_error": true,
+          "error_code": "stale_post_access_social",
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "boston_globe",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): ファイルを調べる前に、ルース・ブレイクを探してみよう。",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "move",
+          "target": "hall_of_records",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] 膠着が上限に達したため、次の有効行動を強制実行します。（`search` / `reference_room_clipping_files` / 参考資料室の切り抜きファイル）",
+        "meta": {
+          "forced_progress_breakout": true,
+          "target": "reference_room_clipping_files",
+          "action": "search"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "boston_globe",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): 参考資料室の切り抜きファイルを調べる。",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "search",
+          "target": "reference_room_clipping_files",
+          "skill": "目星",
+          "needs_system": true,
+          "system_processed": true,
+          "forced_by_system": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "boston_globe",
+        "secret_to": null,
+        "text": "システム: マクガフィン刑事 : 【技能:目星】CC(1d100<=65) ＞ 出目:81 ＞ 失敗",
+        "meta": {
+          "action_id": "search",
+          "target": "reference_room_clipping_files",
+          "roll_type": "skill",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "boston_globe",
+        "secret_to": null,
+        "text": "システム: 判定なし（自動成功）\n【移動】ボストン・グローブ から 公文書館 へ移動した。",
+        "meta": {
+          "action_id": "move",
+          "target": "hall_of_records",
+          "roll_type": "none",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "hall_of_records",
+        "secret_to": null,
+        "text": "KP: 探索者は、古びた石造りの建物の中に到着した。内部は薄暗く、埃っぽい紙の匂いが充満している。膨大な量の公文書が棚にぎっしりと並べられ、静寂が支配している。奥には事務官のデスクが見える。どのような調査を始めるか、または誰かと話を始めるか、どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "エレノア教授(PC2)(PL): アーティへの交渉と切り抜きファイルの探索を最優先で進めよう。",
+        "meta": {
+          "pc_id": "pc_02"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "hall_of_records",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): アーティ、先日はお世話になりました。今日は公文書館の切り抜きファイルを調べたいんですが、可能でしょうか？",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "search",
+          "target": "reference_room_clipping_files",
+          "skill": "目星",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "hall_of_records",
+        "secret_to": null,
+        "text": "システム: 【システムブロック】'reference_room_clipping_files' はこの場所に存在しない。",
+        "meta": {
+          "action_id": "search",
+          "target": "reference_room_clipping_files",
+          "roll_type": "blocked",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "hall_of_records",
+        "secret_to": null,
+        "text": "KP: 公文書館のこの部屋には膨大な量の公文書がぎっしりと並んでおり、その中には犯罪裁判所の記録や、事務官のデスク、一般的な公文書などがあります。指定したものはここには存在しないようです。他の調査対象に移りますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1)(PL): アーティとの交渉が失敗した場合、直接調査に移る。",
+        "meta": {
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "hall_of_records",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): あ、そうですね。直接調べても良いのでしょうか？",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "search",
+          "target": "crime_court_records",
+          "skill": "目星",
+          "needs_system": true,
+          "system_processed": true,
+          "invalidated_by_move": true,
+          "invalidated_from": "hall_of_records",
+          "invalidated_to": "higher_courts_police_station"
+        }
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] 膠着が上限に達したため、次の調査先へ強制移動します。（目的地: 上級裁判所、中央警察署 / `higher_courts_police_station`）",
+        "meta": {
+          "forced_progress_breakout": true,
+          "target": "higher_courts_police_station",
+          "action": "move"
+        }
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] ロケーション移動に伴い、旧場所宛ての未処理アクションを1件破棄しました。",
+        "meta": {
+          "pending_actions_invalidated": true,
+          "count": 1,
+          "from": "hall_of_records",
+          "to": "higher_courts_police_station"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "hall_of_records",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): 上級裁判所、中央警察署へ向かう。",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "move",
+          "target": "higher_courts_police_station",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true,
+          "forced_by_system": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "hall_of_records",
+        "secret_to": null,
+        "text": "システム: 判定なし（自動成功）\n【移動】公文書館 から 上級裁判所、中央警察署 へ移動した。",
+        "meta": {
+          "action_id": "move",
+          "target": "higher_courts_police_station",
+          "roll_type": "none",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "KP: 上級裁判所と中央警察署が併設された厳粛な建物が眼前に広がる。ここには多くの重要な記録が保管されており、その閲覧は簡単ではない。事務官の目を避けて必要な情報を得るためには、コネクションや大胆さが求められるだろう。目の前にある保管庫の入り口には、事務官のキム・デブランが控えている。キム・デブランの姿が目につく。どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "エレノア教授(PC2)(PL): まずは事務官との良好な関係を築き、記録へのアクセスを試みる。失敗したら他のアプローチを考える。",
+        "meta": {
+          "pc_id": "pc_02"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): キムさん、以前の事件を調査しているんですが、公式記録に何か情報が残っていないか教えていただけないでしょうか？",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "talk",
+          "target": "kim_deblanc",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "システム: 【対話ブロック】その人物は現在この場所にいません。周囲のオブジェクト（切り抜きファイル等）を調査してください。",
+        "meta": {
+          "action_id": "talk",
+          "target": "kim_deblanc",
+          "roll_type": "blocked",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "KP: キム・デブランは現在ここで見当たらないようだ。しかし、ここで情報を得るための別の手段があるだろう。参考資料室は重要な記録が保管されている場所なので、切り抜きファイルを調査することで新たな手がかりを見つけられる可能性がある。参考資料室へ向かうのはいかがだろうか？また、彼女が戻ってきたときのために、他の方法でアクセスを試みる方法も用意しておいた方が良いかもしれない。どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1)(PL): 事務官に誠実に話しかけて、公式記録へのアクセスを試みる。場合によっては、より効果的な交渉方法を考える。",
+        "meta": {
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): こんにちは、キムさん。先日は大変お世話になりました。また、事件の調査で上級裁判所の公式記録を確認したいと考えているんですが、何か手伝っていただけないでしょうか？",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "persuade",
+          "target": "kim_deblanc",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "システム: 【対話ブロック】その人物は現在この場所にいません。周囲のオブジェクト（切り抜きファイル等）を調査してください。",
+        "meta": {
+          "action_id": "persuade",
+          "target": "kim_deblanc",
+          "roll_type": "blocked",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "KP: 事務官キム・デブランは現在この場所にいない。代わりに、参考資料室の切り抜きファイルを調べることを強く推奨される。この部屋では、貴重な参考資料や切抜き記事が整理されており、探索者が必要とする情報を手に入れる絶好の場所だ。どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "エレノア教授(PC2)(PL): 事務官が不在なら、他の方法で情報を得る。参考資料室からの切り抜きファイルを調査する。",
+        "meta": {
+          "pc_id": "pc_02"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): 参考資料室の切り抜きファイルを調査してみよう。",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "search",
+          "target": "police_archives",
+          "skill": "信用",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "システム: 【対話ブロック】その人物は現在この場所にいません。周囲のオブジェクト（切り抜きファイル等）を調査してください。",
+        "meta": {
+          "action_id": "search",
+          "target": "police_archives",
+          "roll_type": "blocked",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "KP: この場所の重要な記録は、上級裁判所と中央警察署の厳しい規則のもと、厳重に管理されています。必要な情報を得るためには、他の手段を講じる必要があります。担当の事務官は現在ここにはいません。しかし、一見すると見過ごしがちな、参考資料室の切り抜きファイルを見つけることができます。これらは、閲覧手続きを経ずに情報を入手するための、またとない機会です。これらの切り抜きファイルを調べて、必要な情報を得ることを目指しますか？どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1)(PL): 事務官がいないので、参考資料室の切り抜きファイルから情報を得ることを試みる。",
+        "meta": {
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): 参考資料室の切り抜きファイルを調査してみよう。",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "search",
+          "target": "police_archives",
+          "skill": "目星",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "システム: マクガフィン刑事 : 【技能:目星】CC(1d100<=65) ＞ 出目:39 ＞ レギュラー成功\n保管されている記録を注意深く調べ、重要な手がかりを見つけた。\n【確定手がかり】上級裁判所と中央警察署に保管されている、様々な事件や人物に関する公式記録だ。閲覧には厳格な手続きが必要とされ、通常は一般人のアクセスは許可されていない。ここにはプレイヤー資料8に相当する情報が眠っている。正攻法なら〈信用〉で正式な閲覧許可を得られるが、受付を〈言いくるめ〉や〈説得〉で丸め込む、あるいは書庫へ〈隠密〉で忍び込み〈鍵開け〉で施錠を突破するなど、複数の手段でたどり着ける。",
+        "meta": {
+          "action_id": "search",
+          "target": "police_archives",
+          "roll_type": "skill",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "KP: あなたは上級裁判所と中央警察署に保管されている、様々な事件や人物に関する公式記録を注意深く調査し、重要な手がかりを見つけた。これらの記録は閲覧には厳格な手続きが必要とされ、通常は一般人のアクセスは許可されていない。手がかりを見つけたが、これ以上調べても今回の依頼に直接役立つ情報はなさそうだ。どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "エレノア教授(PC2)(PL): 参考資料室の切り抜きファイルを調べてみる。正攻法で手に入らなければ別の方法を考える。",
+        "meta": {
+          "pc_id": "pc_02"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): 「……保管されている記録、調べてみよう」",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "search",
+          "target": "police_archives",
+          "skill": "目星",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "システム: 正面からの閲覧は断られた。だが手はある——〈信用〉で正式な許可を求めるか、受付を〈言いくるめ〉／〈説得〉で丸め込むか、あるいは隙を突いて書庫へ〈隠密〉で忍び込むかだ。別のアプローチを試そう。",
+        "meta": {
+          "action_id": "search",
+          "target": "police_archives",
+          "roll_type": "blocked",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "KP: ここでは直接的な記録へのアクセスは得られなかったが、いくつかの可能性が見えてきた。受付で〈信用〉を試みる、説得力のある言葉で言いくるめる、あるいは一瞬の隙を突いて書庫へ忍び込む——あなたが選ぶべき道はまだ開かれている。ただし、ここに保管されている記録を調べたところ、それ以上の情報は見つからなかった。どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] 【システム検証エラー・行動再選択】テキストが指しているのはロケーションへの移動ではなく、現在地の調査／対話対象です。move ではなく search / inspect / talk を使い、正しい target（オブジェクトIDまたはNPC ID）を指定して再出力してください。 テキスト上の対象候補: `reference_room_clipping_files`。 誤った move target: `higher_courts_police_station`。",
+        "meta": {
+          "validation_error": true,
+          "error_code": "move_non_location_destination",
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1)(PL): 事務官がいないので、他の手立てを考える必要がある。参考資料室へのアクセス許可を得るための別のアプローチや、他の場所への移動も検討してみよう。",
+        "meta": {
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1)(PL): 事務官を説得して参考資料室へのアクセスを得よう。他の方法を考える前に、まずは正攻法で試みることに。",
+        "meta": {
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): キムさん、この事件の調査で貴重な情報が得られるかもしれません。あなたの協力が必要です。",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "persuade",
+          "target": "kim_deblanc",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "システム: 【対話ブロック】その人物は現在この場所にいません。周囲のオブジェクト（切り抜きファイル等）を調査してください。",
+        "meta": {
+          "action_id": "persuade",
+          "target": "kim_deblanc",
+          "roll_type": "blocked",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "KP: キム・デブランは現在この場所にはいないようだ。代わりに、彼女のデスク周辺にある切り抜きファイルがいくつか散乱している。これらの切り抜きファイルには、裁判所や警察署が扱う重要な事件の情報がまとめられているかもしれない。どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "エレノア教授(PC2)(PL): まず事務官のデスクにある情報を調べてみる。次に受付の事務員に参考資料室へのアクセスを説得する。",
+        "meta": {
+          "pc_id": "pc_02"
+        }
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] PLは一拍置いて状況を見極めている（時間経過）。"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] 膠着を検知しました（連続4ターン / 介入: 標準）。",
+        "meta": {
+          "stagnation_intervention": true,
+          "level": 2
+        }
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "【システムヒント】現在の場所での同じ行動の繰り返しは膠着しています。別の技能や対象を試すか、次の調査先へ移動してください。例: `move` / `introduction`（導入） / `move` / `boston_globe`（ボストン・グローブ） / `move` / `central_library`（中央図書館） 【システムヒント・即時撤退】これ以上この場所で情報を得ることは困難です。留まらずに『別の移動可能な場所へ移動する』か、『直接コービット屋敷（`move` / `corbitt_exterior`。別名 `corbitt_house`）へ向かう』行動を選択してください。すべての資料を集める必要はありません。現地に踏み込むことも正当な攻略手段です。",
+        "meta": {
+          "stagnation_hint": true,
+          "location": "higher_courts_police_station"
+        }
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] 【システム警告】作戦会議（OOC）の連続上限に達しました。これ以上のメタ発言はブロックされます。現状を打破するため、別の技能（言いくるめ/信用など）を宣言するか、他のオブジェクトの調査、あるいは[図書館]など別のロケーションへの移動アクション（move）を必ずICで実行してください。",
+        "meta": {
+          "force_ic_action": true,
+          "ooc_blocked": true
+        }
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] 膠着が上限に達したため、次の調査先へ強制移動します。（目的地: 屋敷の近所 / `the_neighborhood`）",
+        "meta": {
+          "forced_progress_breakout": true,
+          "target": "the_neighborhood",
+          "action": "move"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): 屋敷の近所へ向かう。",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "move",
+          "target": "the_neighborhood",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true,
+          "forced_by_system": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "higher_courts_police_station",
+        "secret_to": null,
+        "text": "システム: 判定なし（自動成功）\n【移動】上級裁判所、中央警察署 から 屋敷の近所 へ移動した。",
+        "meta": {
+          "action_id": "move",
+          "target": "the_neighborhood",
+          "roll_type": "none",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "the_neighborhood",
+        "secret_to": null,
+        "text": "KP: 屋敷の近所は、19世紀の時代を感じさせる建築物と、新たに改装された事務所や店舗が混在する異様な雰囲気を醸し出している。戦争以前からこの地域に住んでいた人々の大半はすでに居住を離れており、その空虚さがこの場所を不気味な雰囲気に包んでいる。中央に位置するコービット屋敷は、敷地内の芝生が伸び放題となり、表の窓ガラスは汚れ、何年も放置されているかのように見える。その不気味な外観を保ちつつ、屋敷の前に立つ小さな看板には「売りに出ています」と記されている。近くでは、古びたベンチに腰掛けているように見えるドーリー氏が、あなたをじっと見つめているようだ。どうしますか？"
+      },
+      {
+        "channel": "IC",
+        "location": "the_neighborhood",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): こんにちは、ドーリーさん。この地域について少し聞きたいことがあります。",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "talk",
+          "target": "dolly_shopkeeper",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "the_neighborhood",
+        "secret_to": null,
+        "text": "システム: 【対話】マクガフィン刑事 が ドーリー氏 に話しかけた。（態度: 中立／判定なし）\n【職業RP判定】マクガフィン刑事は職業を活かして、ドーリー氏に聞き込み調査を進めるよう適切にアプローチしている（適切） → ボーナス・ダイス+1\n【秘密開示】secret_corbitt_house_name: あの屋敷は『コービット屋敷』と呼ばれている。\n【秘密開示】secret_macario_family: マカリオ一家は2年前にコービット屋敷へ引っ越してきた。1年後、父親が事故のあと激しい狂気に陥り、『燃える目をした化け物』について口走っていた。約1か月後、母親も狂気に陥り、夫妻はボストンのロックスベリー・サナトリウムに入院している。子供たちはボルチモアの親戚に引き取られた。\n【秘密開示】secret_chapel_location: 黙想チャペルがあった場所は、ここから2、3ブロック離れた先にある。\n【秘密開示】secret_sanitarium_hint: マカリオ夫妻はロックスベリー・サナトリウムにいる。ボストンから3〜5kmほどの所だ。\n【進行】ドーリー氏からコービット屋敷・マカリオ一家・黙想チャペルの場所・ロックスベリー・サナトリウムの話を聞いた。チャペルとサナトリウムへの移動が解禁された。",
+        "meta": {
+          "action_id": "talk",
+          "target": "dolly_shopkeeper",
+          "roll_type": "social_talk",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "the_neighborhood",
+        "secret_to": null,
+        "text": "KP: マカリオ一家とコービット屋敷について、ドーリー氏は大げさな口調で語り始めた。「あの屋敷、コービット屋敷と呼ばれてるのさ。マカリオ一家、2年前に引っ越してきたそうだね。でもね、1年後には父親が何か事故に遭って、頭がぼろぼろになっちゃったそうさ。『燃える目をした化け物』って言ってたらしいよ。母親もその少し後に同じ運命に。結局、ボストンのロックスベリー・サナトリウムへ入院しちゃったんだね。子供たちはボルチモアの親戚に引き取られたらしい。屋敷も何か変な雰囲気になってるよね。近所の人が言ってたんだけど、黙り込んでる場所があるって。ここから2、3ブロック離れたところにあるそうさ。何か感じるものがあったら、その場所も見てみるといいんじゃないか？どう思う？」"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "エレノア教授(PC2)(PL): ドーリー氏から情報を得られたので、次はロックスベリー・サナトリウムや黙想チャペルを調査してみよう。",
+        "meta": {
+          "pc_id": "pc_02"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "the_neighborhood",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): 今後、ロックスベリー・サナトリウムへ向かうことにします。その前に、黙想チャペルについてもう少し聞きたいですね。",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "move",
+          "target": "chapel_of_contemplation",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "the_neighborhood",
+        "secret_to": null,
+        "text": "システム: 判定なし（自動成功）\n【移動】屋敷の近所 から 黙想チャペル へ移動した。",
+        "meta": {
+          "action_id": "move",
+          "target": "chapel_of_contemplation",
+          "roll_type": "none",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "chapel_of_contemplation",
+        "secret_to": null,
+        "text": "KP: 探索者は古い教会の残骸に到着します。曲がりくねった薄汚い通りの突き当たりに建つこの教会は、風雨にさらされて草木が生い茂り、灰色のがれきが自然の石のように見えています。崩れかけた壁の近くには、最近描かれたと思われる白いペンキの記号があります。この記号は3つのYの形をしており、その中央にはじっと見つめているような目が描かれています。探索者がこの記号のそばにいる間、額の中でうずくような感じがし始め、それは頭痛とは少し異なる不快な感覚です。しかし、その場を離れればうずきは止まります。どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1)(PL): ロックスベリー・サナトリウムで得た情報に基づいて、黙想チャペルの地階で何か有用な情報を得られるかもしれない。",
+        "meta": {
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "chapel_of_contemplation",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): 「……朽ちかけた棚、調べてみよう」",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "search",
+          "target": "shelf_with_records",
+          "skill": "図書館",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "chapel_of_contemplation",
+        "secret_to": null,
+        "text": "システム: マクガフィン刑事 : 【技能:図書館】CC(1d100<=20) ＞ 出目:90 ＞ 失敗",
+        "meta": {
+          "action_id": "search",
+          "target": "shelf_with_records",
+          "roll_type": "skill",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1)(PL): yes",
+        "meta": {
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "chapel_of_contemplation",
+        "secret_to": null,
+        "text": "システム: マクガフィン刑事 : 【技能:図書館】CC(1d100<=20) ＞ 出目:90 ＞ 失敗\n【プッシュ見送り】マクガフィン刑事(PL)は再挑戦せず、失敗を確定した。\n特になにも見つからなかった。",
+        "meta": {
+          "action_id": "search",
+          "target": "shelf_with_records",
+          "roll_type": "skill",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "chapel_of_contemplation",
+        "secret_to": null,
+        "text": "KP: 朽ちかけた棚は古い教会の記録類で散乱していて、その中から何か価値ある情報を得ようと探索者は丁寧に調べたが、特に有益な手がかりは何も見つからなかった。棚の中身は既に他の探索者が調べ尽くしたか、もしくは情報が失われてしまっているようだ。どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "エレノア教授(PC2)(PL): 白いペンキの記号が気になります。何か特別な意味があるかもしれません。",
+        "meta": {
+          "pc_id": "pc_02"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "chapel_of_contemplation",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): 「……白いペンキの記号、調べてみよう」",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "search",
+          "target": "white_symbol",
+          "skill": "図書館",
+          "needs_system": true,
+          "system_processed": true,
+          "invalidated_by_move": true,
+          "invalidated_from": "chapel_of_contemplation",
+          "invalidated_to": "corbitt_exterior"
+        }
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] 膠着が上限に達したため、次の調査先へ強制移動します。（目的地: コービット屋敷（外観） / `corbitt_exterior`）",
+        "meta": {
+          "forced_progress_breakout": true,
+          "target": "corbitt_exterior",
+          "action": "move"
+        }
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] ロケーション移動に伴い、旧場所宛ての未処理アクションを1件破棄しました。",
+        "meta": {
+          "pending_actions_invalidated": true,
+          "count": 1,
+          "from": "chapel_of_contemplation",
+          "to": "corbitt_exterior"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "chapel_of_contemplation",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): コービット屋敷（外観）へ向かう。",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "move",
+          "target": "corbitt_exterior",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true,
+          "forced_by_system": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "chapel_of_contemplation",
+        "secret_to": null,
+        "text": "システム: 判定なし（自動成功）\n【移動】黙想チャペル から コービット屋敷（外観） へ移動した。",
+        "meta": {
+          "action_id": "move",
+          "target": "corbitt_exterior",
+          "roll_type": "none",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_exterior",
+        "secret_to": null,
+        "text": "KP: コービット屋敷は、周囲を高層ビルに囲まれた古いれんが造りの建物です。その正面玄関は静かに開かれており、窓からはカーテンが閉じられていて中が見えません。敷地内は草木が伸び放題で、裏庭の半壊した日除け棚が目立ちます。あなたは屋敷の外観を眺めていると、建物がビルの影に隠れて寂しさを感じます。この状況下で、まずどうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1)(PL): ボブに話を聞くことで、屋敷の出入り口に関する有用な情報を得られる可能性がある。ただし、彼が敵対的な態度を取る可能性もあるので、適切なアプローチが必要。",
+        "meta": {
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_exterior",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): ボブさん、このコービット屋敷の玄関は開いているけど、中の鍵はどこで手に入れるんですか？",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "talk",
+          "target": "npc_guard_01",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_exterior",
+        "secret_to": null,
+        "text": "システム: 【対話】マクガフィン刑事 が 警備員のボブ に話しかけた。（態度: 中立／判定なし）\n【職業RP判定】刑事としての立場を活かして、警備員に状況説明を行い、聞き込みを進めている（適切） → ボーナス・ダイス+1",
+        "meta": {
+          "action_id": "talk",
+          "target": "npc_guard_01",
+          "roll_type": "social_talk",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_exterior",
+        "secret_to": null,
+        "text": "KP: ボブは刑事のあなたが美術館の夜間警備員と名乗ったことについて、やや困惑した表情を浮かべる。規則や手続きには厳しい彼だが、あなたの警察肩書きは彼の態度を多少和らげているようだ。「マクガフィンさん、夜間の出入りには規則がありますね。特に、美術品の修復や調査には特別な許可が必要です。」ボブは慎重にあなたを見つめ、「たとえば、美術館の責任者であるアーティ・レムリーという人に許可を得る必要がありますよ。彼の部屋は2階の参考資料室です。しかし、あなたが警察の方なら、彼も協力的になるでしょう。」ボブはそう言って、しかし、アーティとの直接の接触を強く推奨する様子は見せなかった。「どうしますか？」"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "エレノア教授(PC2)(PL): ボブは役立つ情報源のようだ。警察の立場を利用して彼を説得しよう。",
+        "meta": {
+          "pc_id": "pc_02"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_exterior",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): アーティ・レムリーに直接話を聞きに行く前に、警備員のボブからもっと具体的な手順を教えていただけますか？特に、正規の手続きと必要な許可について。",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "persuade",
+          "target": "npc_guard_01",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_exterior",
+        "secret_to": null,
+        "text": "システム: 【交渉】エレノア教授 → 警備員のボブ／〈説得〉(60)\n【職業RP判定】民俗学教授としての立場を活かし、学術的な観点から屋敷の歴史や文化についての調査を申し出ている（適切） → ボーナス・ダイス+1\n態度修正: 中立（関係性 B0/P0＋職業RP B1/P0 → 最終ボーナス1／ペナルティ0／難易度regular）\nエレノア教授 : 【技能:説得】CC(1d100<=60) [ボーナス1個: 10の位(3, 8) -> 採用3] ＞ 出目:37 ＞ レギュラー成功\n判定結果: レギュラー成功\n【関係性変化】中立 → 協力的\n【秘密開示】secret_key_location: 夜間巡視用の合鍵は警備室の引き出しに隠してある。",
+        "meta": {
+          "action_id": "persuade",
+          "target": "npc_guard_01",
+          "roll_type": "social_negotiate",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_exterior",
+        "secret_to": null,
+        "text": "KP: ボブは困惑しつつも、エレノア教授の説得に押し切られ、夜間巡視用の合鍵について明かす。「了解した。ただ、これについては誰にも言わないでね。夜間巡視用の合鍵は警備室の引き出しに隠してある。その引き出しには他にも、緊急用の合鍵が詰まっているからね。注意してほしいんだが、その鍵は絶対に紛失させないように。どうしますか？」"
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_exterior",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): ボブさん、合鍵について教えてくれてありがとうございます。私たちが美術館の夜間の調査を進めるためには、この合鍵が非常に役立つのです。",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "search",
+          "target": "corbitt_house",
+          "skill": "目星",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_exterior",
+        "secret_to": null,
+        "text": "システム: マクガフィン刑事 : 【技能:目星】CC(1d100<=65) ＞ 出目:33 ＞ レギュラー成功\nノット氏から渡された鍵で正面玄関を開けた。差し錠が固いときは力ずくでこじ開け、あるいは目星で見つけた裏口から屋敷の中へ足を踏み入れた。\n【確定手がかり】ノット氏から渡された鍵で正面玄関を開けた。差し錠が固いときは力ずくでこじ開け、あるいは目星で見つけた裏口から屋敷の中へ足を踏み入れた。",
+        "meta": {
+          "action_id": "search",
+          "target": "corbitt_house",
+          "roll_type": "skill",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_exterior",
+        "secret_to": null,
+        "text": "KP: 正面玄関の鍵孔にノット氏から受け取った鍵を差し込むと、わずかに抵抗を感じるが、あなたの目星は成功した。差し錠が固くても力ずくで開けることも可能だが、鍵がきっちりと中に入り、正面玄関の扉が開き始めた。鍵の音と錠の軋む音が、古いれんが造りの建物に静寂を破る。どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "エレノア教授(PC2)(PL): ボブとの交渉結果から、正面玄関の鍵で入ることにした。",
+        "meta": {
+          "pc_id": "pc_02"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_exterior",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): ボブさん、本当にありがとうございました。この鍵で正面玄関から入ることにしました。",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "move",
+          "target": "corbitt_ground_floor",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_exterior",
+        "secret_to": null,
+        "text": "システム: 判定なし（自動成功）\n【移動】コービット屋敷（外観） から コービット屋敷（1階） へ移動した。",
+        "meta": {
+          "action_id": "move",
+          "target": "corbitt_ground_floor",
+          "roll_type": "none",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_ground_floor",
+        "secret_to": null,
+        "text": "KP: 探索者は、古びたコービット屋敷の1階に足を踏み入れる。薄暗く、どこか陰鬱な雰囲気が漂うこの空間は、窓が内側から釘で打ち付けられ、外の光をほとんど通さない。各部屋には生活の痕跡があるものの、全体的に荒廃しており、不気味な静けさが支配している。リビングには散乱した荷物が転がり、物置部屋の食器棚や地下室への扉が目につく。台所のブレーカーボックスや1階の窓も、探索者の視界に入っている。不気味な静寂が、探索者を待っている。どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1)(PL): ボブの協力性を利用して、正面玄関の鍵を手に入れられるだろうか？",
+        "meta": {
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_ground_floor",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): ボブさん、市警から来たエレノア教授です。私たちが調査のためにこの家の正面玄関から入る必要があるんですが、鍵を貸していただけませんか？",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "persuade",
+          "target": "npc_guard_01",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_ground_floor",
+        "secret_to": null,
+        "text": "システム: 【交渉】マクガフィン刑事 → 警備員のボブ／〈説得〉(10)\n【職業RP判定】刑事としての立場を活かして、警備員に対して公式な聞き込みを行っている（適切） → ボーナス・ダイス+1\n態度修正: 協力的（関係性 B1/P0＋職業RP B1/P0 → 最終ボーナス2／ペナルティ0／難易度regular）\nマクガフィン刑事 : 【技能:説得】CC(1d100<=10) [ボーナス2個: 10の位(9, 5, 8) -> 採用5] ＞ 出目:55 ＞ 失敗\n判定結果: 失敗\n【情報】相手は口を閉ざした。新たな情報は得られなかった。",
+        "meta": {
+          "action_id": "persuade",
+          "target": "npc_guard_01",
+          "roll_type": "social_negotiate",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_ground_floor",
+        "secret_to": null,
+        "text": "KP: ボブは困惑した表情で眉をひそめ、あなたの説得に応じようとはしない。彼は規則を厳格に守るタイプのようだ。「すみません、警察さんは忙しいでしょう。ここは美術館の夜間警備員の私がここを守らなければなりません。私に聞かれたこと以上のことは答えられません」。これ以上質問しても得る情報はなさそうだ。どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "エレノア教授(PC2)(PL): 正面玄関の鍵を直接手に入れるのは難しい状況だ。何か別の方法で鍵を手に入れられるか、または直接屋敷内を探索する方法を考えよう。",
+        "meta": {
+          "pc_id": "pc_02"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_ground_floor",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): ボブさん、私たちが調査のために正面玄関から入るのを手伝ってください。別な方法で鍵を手に入れることも考えてみてください。",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "persuade",
+          "target": "npc_guard_01",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_ground_floor",
+        "secret_to": null,
+        "text": "システム: 【交渉】エレノア教授 → 警備員のボブ／〈説得〉(60)\n【職業RP判定】民俗学教授としての立場を活かし、学術的な観点から資料調査の協力を求めている（適切） → ボーナス・ダイス+1\n態度修正: 協力的（関係性 B1/P0＋職業RP B1/P0 → 最終ボーナス2／ペナルティ0／難易度regular）\nエレノア教授 : 【技能:説得】CC(1d100<=60) [ボーナス2個: 10の位(9, 2, 2) -> 採用2] ＞ 出目:23 ＞ ハード成功\n判定結果: ハード成功\n【情報】相手の警戒がわずかに緩んだが、決定的な秘密は出てこなかった。",
+        "meta": {
+          "action_id": "persuade",
+          "target": "npc_guard_01",
+          "roll_type": "social_negotiate",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_ground_floor",
+        "secret_to": null,
+        "text": "KP: 警備員のボブは、教授の説得にうなずき、少しだけ表情を和らげた。「教授、夜間の巡視中に資料室へ行くことは可能ですが、鍵はありますよ。でも、何を調べたいのかを詳しく教えてくれれば、夜間巡視用の合鍵を貸し出すことができます。」「それと、何か手がかりを見つけるためには、もっと詳しい情報を必要とするかもしれませんね。」"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1)(PL): ボブから正面玄関の鍵を直接手に入れるのは難しいようだが、資料室の合鍵を手に入れれば他の鍵を調べる手がかりが得られるかもしれない。",
+        "meta": {
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_ground_floor",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): ボブさん、私たちが調査のために資料室の合鍵を借りたいのです。具体的な調査内容について詳しくお話ししますので、合鍵を貸していただけますか？",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "persuade",
+          "target": "npc_guard_01",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_ground_floor",
+        "secret_to": null,
+        "text": "システム: 【交渉】マクガフィン刑事 → 警備員のボブ／〈説得〉(10)\n【職業RP判定】マクガフィン刑事は職業としての立場を活かし、警察の立場から情報を得ようとしている（適切） → ボーナス・ダイス+1\n態度修正: 協力的（関係性 B1/P0＋職業RP B1/P0 → 最終ボーナス2／ペナルティ0／難易度regular）\nマクガフィン刑事 : 【技能:説得】CC(1d100<=10) [ボーナス2個: 10の位(5, 6, 8) -> 採用5] ＞ 出目:59 ＞ 失敗\n判定結果: 失敗\n【情報】相手は口を閉ざした。新たな情報は得られなかった。",
+        "meta": {
+          "action_id": "persuade",
+          "target": "npc_guard_01",
+          "roll_type": "social_negotiate",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_ground_floor",
+        "secret_to": null,
+        "text": "KP: ボブはあなたの説得を聞いて固い表情を浮かべた。彼は警察からの立場を利用しようとしていることに気づきながら、その言葉には乗らなかった。「これは規則違反です、マクガフィンさん。僕には何の権限もないんです。何かあったら、あそこにいるアートイさんに言えばいいと思います。」とボブは警察官を指差しながら、警備室の方向を示した。「どうしますか？」"
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_ground_floor",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): アートイさん、私たちが調査のために資料室の合鍵を借りたいと思っています。具体的な調査内容について詳しくお話ししますので、合鍵を貸していただけますか？",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "talk",
+          "target": "",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_ground_floor",
+        "secret_to": null,
+        "text": "システム: 【対話ブロック】その人物は現在この場所にいません。周囲のオブジェクト（切り抜きファイル等）を調査してください。",
+        "meta": {
+          "action_id": "talk",
+          "target": "",
+          "roll_type": "blocked",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "corbitt_ground_floor",
+        "secret_to": null,
+        "text": "KP: ここにはあなたが探していた人物はいません。しかし、部屋の中にその人物が置き忘れたと思われる切り抜きファイルが散乱しています。これらを調べてみる価値があるかもしれません。どうしますか？"
+      }
+    ],
+    "last_pl_action": {
+      "action": "search",
+      "target": "hidden_passage",
+      "skill": "目星",
+      "message": "「……地下室への扉、調べてみよう」",
+      "dialogue": ""
+    },
+    "last_system_result": null,
+    "pending_san_check": null,
+    "pending_push_roll": null,
+    "pending_luck_burn": null,
+    "pending_combat_defense": null,
+    "partial_system_log": null,
+    "push_decision_required": false,
+    "timeline_pending": null,
+    "intervention_level": "standard",
+    "kp_style": "collaborative",
+    "stagnation_kp_nudge": null,
+    "stagnation_pl_hint": "【システムヒント】現在の場所での同じ行動の繰り返しは膠着しています。別の技能や対象を試すか、次の調査先へ移動してください。例: `move` / `corbitt_exterior`（正面玄関） / `move` / `corbitt_upper_floor`（2階への階段） 【システムヒント・即時撤退】これ以上この場所で情報を得ることは困難です。留まらずに『別の移動可能な場所へ移動する』か、『直接コービット屋敷（`move` / `corbitt_exterior`。別名 `corbitt_house`）へ向かう』行動を選択してください。すべての資料を集める必要はありません。現地に踏み込むことも正当な攻略手段です。",
+    "force_ic_action": false,
+    "autonomous_paused": false,
+    "autonomous_pause_reason": null,
+    "autonomous_guard": {
+      "consecutive_speaker": "PL:pc_01",
+      "consecutive_count": 1,
+      "chat_rounds_without_action": 0
+    },
+    "autonomous_step_count": 8,
+    "autonomous_progress_fp": [
+      "corbitt_ground_floor",
+      [
+        [
+          "artie_introduced",
+          "artie_reference_room_access_granted",
+          "case_accepted",
+          "corbitt_house_entered",
+          "dolly_talked",
+          "dolly_told_chapel_location",
+          "dolly_told_sanitarium_location",
+          "front_door_unlocked",
+          "higher_courts_records_accessed",
+          "knott_letter_read",
+          "knott_memo_read",
+          "talked_with_knott"
+        ],
+        [
+          "corbitt_house",
+          "police_archives"
+        ]
+      ]
+    ],
+    "is_running": true,
+    "stop_requested": false,
+    "pl_id": "pc_01",
+    "char_name": "マクガフィン刑事",
+    "active_pcs": [
+      "pc_01",
+      "pc_02"
+    ],
+    "active_pc_id": "pc_01",
+    "pl_discussion_mode": false,
+    "pl_discussion_rounds": 0,
+    "current_loc": "corbitt_ground_floor",
+    "scenario_file": "scenario_corbitt.json",
+    "rp_eval_unit_ids": [],
+    "rp_eval_last_summary": {
+      "evaluated": 0,
+      "skipped_already": 0,
+      "skipped_registered": 0,
+      "saved_good": 0,
+      "saved_library": 0,
+      "below_threshold": 0,
+      "errors": 0
+    },
+    "rp_session_id": "378b8063-a7fd-4194-a9c2-35679bc8e480",
+    "rp_library_pending": []
+  },
+  "scenario_file": "scenario_corbitt.json"
+}

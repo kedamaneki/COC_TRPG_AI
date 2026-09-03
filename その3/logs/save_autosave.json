@@ -1,0 +1,1280 @@
+{
+  "game_state": {
+    "current_scene_id": "scene_001",
+    "turn_count": 2,
+    "flags": {
+      "case_accepted": true,
+      "knott_letter_read": true,
+      "knott_memo_read": true,
+      "talked_with_knott": true,
+      "artie_introduced": false,
+      "newspaper_info_found": false,
+      "library_info_found": false,
+      "records_info_found": false,
+      "neighbor_gossip_found": true,
+      "dolly_told_chapel_location": true,
+      "dolly_told_sanitarium_location": true,
+      "sanitarium_info_found": false,
+      "chapel_investigated": false,
+      "exterior_approached": false,
+      "corbitt_house_entered": false,
+      "front_door_unlocked": false,
+      "back_door_unlocked": false,
+      "living_room_investigated": false,
+      "ground_floor_haunting_done": false,
+      "basement_accessible": false,
+      "basement_door_unlocked": false,
+      "hidden_passage_found": false,
+      "basement_planks_broken": false,
+      "basement_planks_examined": false,
+      "junk_searched": false,
+      "has_corbitt_knife": false,
+      "trigger_flying_bed": false,
+      "trigger_knife_attack": false,
+      "spare_bedroom_bed_investigated": false,
+      "in_basement": false,
+      "found_corbitt_history_all": false,
+      "hall_of_records_clerk_interacted": false,
+      "higher_courts_records_accessed": false,
+      "corbitt_body_encountered": false,
+      "trigger_corbitt_boss_battle": false,
+      "corbitt_defeated": false,
+      "ruined_altar_investigated": false,
+      "learned_corbitt_weakness": false,
+      "investigated_targets": [],
+      "turn_since_last_search": 2,
+      "visit_the_neighborhood": 1,
+      "dolly_talked": true,
+      "visit_roxbury_sanitarium": 1
+    },
+    "in_combat": false,
+    "round_number": 0,
+    "turn_order": [],
+    "current_turn_index": 0,
+    "stagnation_tracker": {
+      "location": "roxbury_sanitarium",
+      "progress_signature": [
+        [
+          "case_accepted",
+          "dolly_talked",
+          "dolly_told_chapel_location",
+          "dolly_told_sanitarium_location",
+          "knott_letter_read",
+          "knott_memo_read",
+          "neighbor_gossip_found",
+          "talked_with_knott"
+        ],
+        []
+      ],
+      "repeat_key": [
+        "chat"
+      ],
+      "streak": 2,
+      "intervened_at_streak": 2,
+      "last_reason": "chat_only"
+    }
+  },
+  "character_manager": {
+    "characters": {
+      "pc_01": {
+        "profile": {
+          "name": "マクガフィン刑事",
+          "occupation": "刑事",
+          "age": 38,
+          "gender": "男",
+          "personality": "ぶっきらぼうだが正義感が強い。現場勘に自信がある。",
+          "action_guide": "率先して現場を調査し、目星・聞き耳を優先。危険時は仲間を庇う。"
+        },
+        "baseline": {
+          "SAN": 55,
+          "LUCK": 45,
+          "HP": 12,
+          "MP": 11
+        },
+        "attributes": {
+          "STR": 55,
+          "CON": 60,
+          "POW": 55,
+          "DEX": 70,
+          "APP": 50,
+          "SIZ": 60,
+          "INT": 65,
+          "EDU": 60,
+          "SAN": {
+            "current": 55,
+            "max": 99,
+            "session_start": 55,
+            "session_start_san": 55
+          },
+          "HP": {
+            "current": 12,
+            "max": 12
+          },
+          "MP": {
+            "current": 11,
+            "max": 11
+          },
+          "LUCK": 45,
+          "MOV": 8,
+          "BLD": 0,
+          "DB": "0"
+        },
+        "skills": {
+          "目星": 65,
+          "聞き耳": 55,
+          "心理学": 45,
+          "近接戦闘": 55,
+          "射撃（拳銃）": 50,
+          "回避": 35,
+          "威圧": 60,
+          "法律": 40
+        },
+        "weapons": [
+          {
+            "name": "サービス・リボルバー",
+            "skill": "射撃（拳銃）",
+            "damage": "1D10",
+            "apply_damage_bonus": false,
+            "type": "firearm"
+          },
+          {
+            "name": "警棒",
+            "skill": "近接戦闘",
+            "damage": "1D6",
+            "apply_damage_bonus": true
+          }
+        ],
+        "inventory": [],
+        "memo": "ボストン市警のベテラン刑事。不可解な事件の匂いを嗅ぎつけると動き出す。",
+        "states": [],
+        "skill_meta": {}
+      },
+      "pc_02": {
+        "profile": {
+          "name": "エレノア教授",
+          "occupation": "民俗学教授",
+          "age": 42,
+          "gender": "女",
+          "personality": "冷静で分析的。丁寧語だが芯は強い。",
+          "action_guide": "図書館・歴史・目星で手がかりを集める。単独行動より相談（OOC）を好む。"
+        },
+        "baseline": {
+          "SAN": 70,
+          "LUCK": 50,
+          "HP": 10,
+          "MP": 14
+        },
+        "attributes": {
+          "STR": 40,
+          "CON": 50,
+          "POW": 70,
+          "DEX": 55,
+          "APP": 65,
+          "SIZ": 50,
+          "INT": 80,
+          "EDU": 85,
+          "SAN": {
+            "current": 70,
+            "max": 99,
+            "session_start": 70,
+            "session_start_san": 70
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 14,
+            "max": 14
+          },
+          "LUCK": 50,
+          "MOV": 8,
+          "BLD": 0,
+          "DB": "0"
+        },
+        "skills": {
+          "図書館": 75,
+          "歴史": 70,
+          "目星": 50,
+          "心理学": 55,
+          "説得": 60,
+          "回避": 27,
+          "近接戦闘": 30,
+          "聞き耳": 45
+        },
+        "inventory": [],
+        "memo": "ミスカトニック大学の民俗学教授。古い文献と伝承に詳しい。",
+        "states": [],
+        "skill_meta": {}
+      },
+      "new_investigator": {
+        "profile": {
+          "name": "新たな探索者",
+          "occupation": "ジャーナリスト",
+          "age": 25,
+          "gender": "男"
+        },
+        "baseline": {
+          "SAN": 70,
+          "LUCK": 45,
+          "HP": 12,
+          "MP": 14
+        },
+        "attributes": {
+          "STR": 50,
+          "CON": 60,
+          "POW": 70,
+          "DEX": 65,
+          "APP": 60,
+          "SIZ": 65,
+          "INT": 75,
+          "EDU": 80,
+          "SAN": {
+            "current": 70,
+            "max": 99,
+            "session_start": 70,
+            "session_start_san": 70
+          },
+          "HP": {
+            "current": 12,
+            "max": 12
+          },
+          "MP": {
+            "current": 14,
+            "max": 14
+          },
+          "LUCK": 45,
+          "MOV": 8,
+          "BLD": 0,
+          "DB": "0"
+        },
+        "skills": {
+          "目星": 60,
+          "図書館": 70,
+          "説得": 50,
+          "近接戦闘": 40,
+          "隠密": 50,
+          "回避": 32
+        },
+        "inventory": [],
+        "memo": "好奇心旺盛なジャーナリスト。常にスクープを狙っているが、危険な状況になると真っ先に逃げる。",
+        "states": [],
+        "skill_meta": {}
+      },
+      "steven_knott": {
+        "profile": {
+          "name": "スティーブン・ノット",
+          "is_npc": true,
+          "locations": [
+            "introduction"
+          ]
+        },
+        "attributes": {
+          "STR": 45,
+          "CON": 50,
+          "POW": 55,
+          "DEX": 45,
+          "INT": 60,
+          "APP": 55,
+          "SIZ": 55,
+          "EDU": 70,
+          "SAN": {
+            "current": 55,
+            "max": 99,
+            "session_start": 55,
+            "session_start_san": 55
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 11,
+            "max": 11
+          }
+        },
+        "skills": {
+          "心理学": 40,
+          "信用": 45,
+          "説得": 50,
+          "母国語": 70,
+          "法律": 35
+        },
+        "personality": "丁寧で焦り気味の依頼人。屋敷の悪評に困っており、探索者に協力的。過度なホラー話は避け、実務的に要件を伝える。",
+        "relationship_status": "cooperative",
+        "secrets": {
+          "secret_case_brief": {
+            "content": "最近相続したコービット屋敷の悪評のせいで賃貸も売却もできず困っている。奇妙な出来事の調査を依頼し、報酬・屋敷の鍵・住所・前払い金25ドルを用意している。",
+            "reveal_condition": "True"
+          },
+          "secret_tenant_hint": {
+            "content": "以前の借家人マカリオ一家が不幸に見舞われたため、評判を回復したいと考えている。",
+            "reveal_condition": "dialogue_count >= 2"
+          }
+        },
+        "memo": "悪霊の家・導入の依頼人。対話で talked_with_knott が立つ。",
+        "session_social": {
+          "relationship_status": "cooperative",
+          "revealed_secrets": [
+            "secret_case_brief"
+          ],
+          "dialogue_count": 1
+        }
+      },
+      "globe_receptionist": {
+        "profile": {
+          "name": "ボストン・グローブの受付",
+          "is_npc": true,
+          "locations": [
+            "boston_globe"
+          ],
+          "aliases": [
+            "受付",
+            "受付係",
+            "受付の女性"
+          ]
+        },
+        "attributes": {
+          "STR": 40,
+          "CON": 50,
+          "POW": 50,
+          "DEX": 55,
+          "INT": 55,
+          "APP": 60,
+          "SIZ": 50,
+          "EDU": 55,
+          "SAN": {
+            "current": 50,
+            "max": 99,
+            "session_start": 50,
+            "session_start_san": 50
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 10,
+            "max": 10
+          }
+        },
+        "skills": {
+          "信用": 40,
+          "言いくるめ": 35,
+          "母国語": 65,
+          "心理学": 30
+        },
+        "personality": "てきぱきした受付係。来客には用件を聞き、適切な担当者へ取り次ぐ。無駄話は好まないが無礼ではない。",
+        "relationship_status": "neutral",
+        "secrets": {
+          "secret_call_artie": {
+            "content": "コービット屋敷や古い記事の照会なら、編集者のアーティ・ウィルモットが担当だ。内線で呼び出せる。資料室へはアーティの許可が必要。",
+            "reveal_condition": "True"
+          }
+        },
+        "memo": "ボストン・グローブ受付。対話で artie_introduced が立つ。"
+      },
+      "artie_wilmott": {
+        "profile": {
+          "name": "アーティ・ウィルモット",
+          "is_npc": true,
+          "locations": [
+            "boston_globe"
+          ],
+          "require_flag": "artie_introduced",
+          "aliases": [
+            "アーティ",
+            "アーティ氏",
+            "ウィルモット",
+            "編集者アーティ"
+          ]
+        },
+        "attributes": {
+          "STR": 45,
+          "CON": 50,
+          "POW": 55,
+          "DEX": 50,
+          "INT": 65,
+          "APP": 50,
+          "SIZ": 55,
+          "EDU": 70,
+          "SAN": {
+            "current": 55,
+            "max": 99,
+            "session_start": 55,
+            "session_start_san": 55
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 11,
+            "max": 11
+          }
+        },
+        "skills": {
+          "図書館": 50,
+          "歴史": 45,
+          "説得": 40,
+          "信用": 45,
+          "母国語": 70,
+          "心理学": 35
+        },
+        "personality": "小さな権限を振りかざす編集者。資料室への部外者入場を嫌がり、なかなか許可を出さない。社交技能や賄賂、信用で揺さぶれる。",
+        "relationship_status": "uncooperative",
+        "secrets": {
+          "secret_ref_room_gate": {
+            "content": "参考資料室は関係者以外立ち入り禁止。許可を出すかどうかは自分の裁量だ、と主張する。",
+            "reveal_condition": "True"
+          },
+          "secret_ruth_blake": {
+            "content": "保管記録係のルース・ブレイクなら、1878年の火事以前の記録が不完全だと教えてくれるかもしれない。",
+            "reveal_condition": "success_level >= 2 or relationship == 'cooperative'"
+          }
+        },
+        "memo": "ボストン・グローブ編集者。受付紹介（artie_introduced）後に対話可能。"
+      },
+      "npc_neighbor_elder": {
+        "profile": {
+          "name": "近所の老人",
+          "is_npc": true,
+          "locations": [
+            "the_neighborhood"
+          ]
+        },
+        "attributes": {
+          "STR": 30,
+          "CON": 40,
+          "POW": 50,
+          "DEX": 30,
+          "INT": 50,
+          "APP": 45,
+          "SIZ": 50,
+          "SAN": {
+            "current": 50,
+            "max": 99,
+            "session_start": 50,
+            "session_start_san": 50
+          },
+          "HP": {
+            "current": 9,
+            "max": 9
+          },
+          "MP": {
+            "current": 10,
+            "max": 10
+          }
+        },
+        "skills": {
+          "心理学": 40,
+          "聞き耳": 50,
+          "目星": 35,
+          "歴史": 45
+        },
+        "personality": "頑固で疑り深い。夜の屋敷から聞こえる奇妙な音を恐れている。",
+        "relationship_status": "uncooperative",
+        "secrets": {
+          "secret_01": {
+            "content": "夜になると、地下から鎖を引きずるような音ときしみ声が聞こえる。",
+            "reveal_condition": "success_level >= 2 and (skill in ['説得', '言いくるめ', '威圧', '魅惑'])"
+          },
+          "secret_02": {
+            "content": "一昨年、屋敷の地下室からうめき声がしたあと、若い夫婦が急に引っ越したという噂がある。",
+            "reveal_condition": "success_level >= 3 and skill in ['説得', '言いくるめ']"
+          }
+        },
+        "memo": "悪霊の家の近所住民。探索者への初期態度は非協力的。",
+        "session_social": {
+          "relationship_status": "uncooperative",
+          "revealed_secrets": [],
+          "dialogue_count": 0
+        }
+      },
+      "npc_guard_01": {
+        "profile": {
+          "name": "警備員のボブ",
+          "is_npc": true
+        },
+        "attributes": {
+          "STR": 60,
+          "CON": 55,
+          "POW": 45,
+          "DEX": 50,
+          "INT": 40,
+          "APP": 40,
+          "SIZ": 55,
+          "SAN": {
+            "current": 50,
+            "max": 99,
+            "session_start": 50,
+            "session_start_san": 50
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 9,
+            "max": 9
+          }
+        },
+        "skills": {
+          "近接戦闘": 60,
+          "威圧": 50,
+          "心理学": 25,
+          "聞き耳": 40,
+          "目星": 35
+        },
+        "personality": "美術館の夜間警備員。すぐ怒り、規則にうるさい。賄賂めいた話には弱い。",
+        "relationship_status": "neutral",
+        "secrets": {
+          "secret_key_location": {
+            "content": "夜間巡視用の合鍵は警備室の引き出しに隠してある。",
+            "reveal_condition": "success_level >= 2 and skill in ['言いくるめ', '説得', '威圧']"
+          }
+        },
+        "memo": "美術館の夜間警備員。すぐ怒る。",
+        "session_social": {
+          "relationship_status": "neutral",
+          "revealed_secrets": [],
+          "dialogue_count": 0
+        }
+      },
+      "npc_thug": {
+        "profile": {
+          "name": "街のチンピラ",
+          "is_npc": true
+        },
+        "attributes": {
+          "STR": 65,
+          "CON": 55,
+          "POW": 40,
+          "DEX": 55,
+          "INT": 35,
+          "APP": 30,
+          "SIZ": 60,
+          "SAN": {
+            "current": 50,
+            "max": 99,
+            "session_start": 50,
+            "session_start_san": 50
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 8,
+            "max": 8
+          }
+        },
+        "skills": {
+          "近接戦闘": 50,
+          "威圧": 45,
+          "心理学": 15
+        },
+        "personality": "短絡的でガサツ。強い相手には媚び、弱い相手を踏みつける。",
+        "relationship_status": "hostile",
+        "secrets": {
+          "secret_boss_hint": {
+            "content": "近くの古い屋敷で『何か変な仕事』を持ちかけられたが、怖くなって断った。",
+            "reveal_condition": "success_level >= 3 and skill in ['威圧', '言いくるめ']"
+          }
+        },
+        "session_social": {
+          "relationship_status": "hostile",
+          "revealed_secrets": [],
+          "dialogue_count": 0
+        }
+      },
+      "walter_corbitt": {
+        "profile": {
+          "name": "ウォルター・コービット",
+          "subtitle": "アンデッドの悪霊",
+          "is_npc": true,
+          "monster": true
+        },
+        "attributes": {
+          "STR": 90,
+          "CON": 115,
+          "SIZ": 55,
+          "INT": 80,
+          "POW": 90,
+          "DEX": 35,
+          "APP": 5,
+          "EDU": 80,
+          "SAN": {
+            "current": 0,
+            "max": 82,
+            "session_start": 0,
+            "session_start_san": 0
+          },
+          "HP": {
+            "current": 17,
+            "max": 17
+          },
+          "MP": {
+            "current": 18,
+            "max": 18
+          },
+          "MOV": 8,
+          "BLD": 1,
+          "DB": "+1D4",
+          "LUCK": 0
+        },
+        "skills": {
+          "近接戦闘": 50,
+          "回避": 17,
+          "クトゥルフ神話": 17,
+          "威圧": 64,
+          "聞き耳": 60,
+          "手さばき": 30,
+          "隠密": 72
+        },
+        "combat_profile": {
+          "attacks_per_round": 1,
+          "armor_roll": "2D6",
+          "armor_points": null,
+          "armor_source": "肉体の保護（《肉体の保護》呪文・既に発動済み）",
+          "armor_note": "装甲ポイントは受けたダメージ分だけ減少する。非魔術的攻撃のみ軽減。",
+          "mp_recovery": "1ポイント/時間",
+          "sanity_loss_on_sight": "1/1D8",
+          "ignore_spell_san_cost": true
+        },
+        "weapons": [
+          {
+            "id": "corbitt_unarmed",
+            "name": "徒手（パンチ・キック・かぎ爪）",
+            "skill": "近接戦闘",
+            "skill_value": 50,
+            "damage": "1D3",
+            "apply_damage_bonus": true,
+            "special_effect": "claw_infection"
+          },
+          {
+            "id": "corbitt_floating_dagger",
+            "name": "空中に浮かぶ魔法のダガー",
+            "skill": "近接戦闘",
+            "skill_value": 50,
+            "damage": "1D3",
+            "apply_damage_bonus": true,
+            "mp_cost_per_use": 1,
+            "counts_as_round_action": true,
+            "ref_npc": "corbitt_floating_dagger"
+          }
+        ],
+        "special_abilities": {
+          "claw_infection": {
+            "name": "かぎ爪感染",
+            "trigger": "徒手攻撃が1回成功した後",
+            "luck_roll": true,
+            "on_luck_fail": "1日後に意識もうろう→CONロール必須",
+            "on_con_fail": "せん妄1D10日、CONを1D10永久喪失",
+            "on_con_success": "せん妄1D6日、CON喪失なし",
+            "repeat_until": "回復または死亡まで繰り返す。失ったCONは回復しない"
+          }
+        },
+        "spells": [
+          {
+            "name": "支配（独自のバージョン）",
+            "cost_mp": 1,
+            "casting_time_rounds": 1,
+            "target": "屋敷内にいる探索者1名",
+            "resolution": "コービットPOW90 vs 対象POWの対抗ロール",
+            "effect": "勝利時、対象は1D6+1戦闘ラウンドぼんやり状態。テレパシー支配下。自殺はさせられないが殺人・愚行は可能。解除後は記憶なし"
+          },
+          {
+            "name": "肉体の保護",
+            "cost_mp": "可変（1MPにつき装甲1D6）",
+            "casting_time_rounds": 5,
+            "effect": "非魔術的攻撃に対し装甲を付与。ダメージをさえぎるたび装甲が消耗。24時間または使い切るまで継続。補強・再詠唱不可",
+            "pre_cast": true
+          },
+          {
+            "name": "次元をさまようものの召喚／従属",
+            "note": "キーパー判断で使用"
+          }
+        ],
+        "magic_items": [
+          "空中に浮かぶ魔法のダガー"
+        ],
+        "personality": "悪意に満ちたアンデッド。探索者を分断して対立させ、ひどい目に遭わせることに興奮する。神話の知識を何でも欲しがる。",
+        "relationship_status": "hostile",
+        "secrets": {
+          "secret_crypt": {
+            "content": "本体は地下室の納骨堂にあり、遺体を破壊・浄化すれば討伐できる。",
+            "reveal_condition": "False"
+          }
+        },
+        "roleplay_notes": [
+          "悪意に満ち、探索者を分断して対立させようとする",
+          "探索者がひどい目に遭うことに興奮と変質的な楽しみを見いだす",
+          "屋敷に持ち込まれた神話の知識（『エイボンの書』など）を何でも手に入れようとする"
+        ],
+        "keeper_notes": [
+          "記載技能以外もキーパー判断で即興設定可",
+          "マジック・ポイントは1時間に1ポイント回復するのを忘れないこと",
+          "侵入者が屋敷に入ると《肉体の保護》をかける。本体へ直行すればMP回復前に遭遇する可能性あり",
+          "呪文の正気度コストは無視する（コービット正気度0）"
+        ],
+        "memo": "シナリオ「悪霊の家」ラスボス。生ける屍。遺体を破壊・浄化すれば討伐完了。"
+      },
+      "corbitt_floating_dagger": {
+        "profile": {
+          "name": "空中に浮かぶ魔法のダガー",
+          "subtitle": "コービットの魔法の品物",
+          "is_npc": true,
+          "monster": true
+        },
+        "attributes": {
+          "DEX": 70,
+          "SAN": {
+            "current": 0,
+            "max": 99,
+            "session_start": 0,
+            "session_start_san": 0
+          },
+          "HP": {
+            "current": 1,
+            "max": 1
+          },
+          "MP": {
+            "current": 0,
+            "max": 10
+          },
+          "MOV": 0,
+          "DB": "0",
+          "BLD": 0
+        },
+        "skills": {
+          "近接戦闘": 40,
+          "回避": 35
+        },
+        "combat_profile": {
+          "attacks_per_round": 1,
+          "armor_points": 0,
+          "destroy_on_extreme_success": true,
+          "autonomous": true,
+          "note": "コービットが使用する場合は1MP消費・コービットの1行動として数える"
+        },
+        "weapons": [
+          {
+            "name": "ダガー斬りつけ",
+            "skill": "近接戦闘",
+            "skill_value": 40,
+            "damage": "1D4",
+            "apply_damage_bonus": false
+          }
+        ],
+        "memo": "地下室で発見される自律攻撃のナイフ。イクストリーム成功の近接攻撃で無力化可能（キーパー判断）。"
+      },
+      "hall_records_clerk": {
+        "profile": {
+          "name": "公文書館の事務官",
+          "is_npc": true,
+          "locations": [
+            "hall_of_records"
+          ],
+          "aliases": [
+            "事務官",
+            "受付の事務官",
+            "デスクの男",
+            "初老の事務官"
+          ]
+        },
+        "attributes": {
+          "STR": 40,
+          "CON": 45,
+          "POW": 50,
+          "DEX": 40,
+          "INT": 60,
+          "APP": 45,
+          "SIZ": 55,
+          "EDU": 65,
+          "SAN": {
+            "current": 50,
+            "max": 99,
+            "session_start": 50,
+            "session_start_san": 50
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 10,
+            "max": 10
+          }
+        },
+        "skills": {
+          "図書館": 50,
+          "法律": 55,
+          "信用": 40,
+          "母国語": 70,
+          "心理学": 30
+        },
+        "personality": "忙しそうだが実務的な初老の事務官。質問には簡潔に答え、重い犯罪記録と警察記録の所在を案内する。デスクをこじ開けられるのは嫌がる。",
+        "relationship_status": "neutral",
+        "secrets": {
+          "secret_jurisdiction": {
+            "content": "重い犯罪は郡や州、あるいは連邦の裁判所へ送られる。逮捕や押収に関わる市の警官の記録は中央警察署にある。",
+            "reveal_condition": "True"
+          }
+        },
+        "memo": "公文書館事務官。対話で hall_of_records_clerk_interacted が立つ。デスクへの search/inspect は talk へ変換。"
+      },
+      "dolly_shopkeeper": {
+        "profile": {
+          "name": "ドーリー氏",
+          "is_npc": true,
+          "locations": [
+            "the_neighborhood"
+          ],
+          "aliases": [
+            "ドーリー",
+            "Dolly",
+            "dolly",
+            "店主",
+            "タバコ屋",
+            "新聞屋",
+            "近隣住民"
+          ]
+        },
+        "attributes": {
+          "STR": 45,
+          "CON": 50,
+          "POW": 50,
+          "DEX": 50,
+          "INT": 55,
+          "APP": 50,
+          "SIZ": 55,
+          "EDU": 50,
+          "SAN": {
+            "current": 50,
+            "max": 99,
+            "session_start": 50,
+            "session_start_san": 50
+          },
+          "HP": {
+            "current": 10,
+            "max": 10
+          },
+          "MP": {
+            "current": 10,
+            "max": 10
+          }
+        },
+        "skills": {
+          "信用": 45,
+          "言いくるめ": 50,
+          "説得": 40,
+          "魅惑": 35,
+          "心理学": 35,
+          "母国語": 65
+        },
+        "personality": "タバコや新聞を売る近所の商売人。冗談とうわさ話で人を引きつけるのが上手く、話は大げさになりがち。この地区の事情に詳しい。",
+        "relationship_status": "neutral",
+        "secrets": {
+          "secret_corbitt_house_name": {
+            "content": "あの屋敷は『コービット屋敷』と呼ばれている。",
+            "reveal_condition": "True"
+          },
+          "secret_macario_family": {
+            "content": "マカリオ一家は2年前にコービット屋敷へ引っ越してきた。1年後、父親が事故のあと激しい狂気に陥り、『燃える目をした化け物』について口走っていた。約1か月後、母親も狂気に陥り、夫妻はボストンのロックスベリー・サナトリウムに入院している。子供たちはボルチモアの親戚に引き取られた。",
+            "reveal_condition": "True"
+          },
+          "secret_chapel_location": {
+            "content": "黙想チャペルがあった場所は、ここから2、3ブロック離れた先にある。",
+            "reveal_condition": "True"
+          },
+          "secret_sanitarium_hint": {
+            "content": "マカリオ夫妻はロックスベリー・サナトリウムにいる。ボストンから3〜5kmほどの所だ。",
+            "reveal_condition": "True"
+          }
+        },
+        "memo": "近隣の店主ドーリー。対話で dolly_talked / dolly_told_chapel_location / dolly_told_sanitarium_location が立つ。local_residents への search/inspect は talk へ変換。",
+        "session_social": {
+          "relationship_status": "neutral",
+          "revealed_secrets": [
+            "secret_corbitt_house_name",
+            "secret_macario_family",
+            "secret_chapel_location",
+            "secret_sanitarium_hint"
+          ],
+          "dialogue_count": 2
+        }
+      }
+    },
+    "active_pcs": [
+      "pc_01",
+      "pc_02"
+    ]
+  },
+  "scenario_manager": {
+    "current_phase": "investigation",
+    "location": "roxbury_sanitarium",
+    "triggered_counts": {},
+    "stagnation_counter": 2,
+    "flags": {
+      "case_accepted": true,
+      "knott_letter_read": true,
+      "knott_memo_read": true,
+      "talked_with_knott": true,
+      "artie_introduced": false,
+      "newspaper_info_found": false,
+      "library_info_found": false,
+      "records_info_found": false,
+      "neighbor_gossip_found": true,
+      "dolly_told_chapel_location": true,
+      "dolly_told_sanitarium_location": true,
+      "sanitarium_info_found": false,
+      "chapel_investigated": false,
+      "exterior_approached": false,
+      "corbitt_house_entered": false,
+      "front_door_unlocked": false,
+      "back_door_unlocked": false,
+      "living_room_investigated": false,
+      "ground_floor_haunting_done": false,
+      "basement_accessible": false,
+      "basement_door_unlocked": false,
+      "hidden_passage_found": false,
+      "basement_planks_broken": false,
+      "basement_planks_examined": false,
+      "junk_searched": false,
+      "has_corbitt_knife": false,
+      "trigger_flying_bed": false,
+      "trigger_knife_attack": false,
+      "spare_bedroom_bed_investigated": false,
+      "in_basement": false,
+      "found_corbitt_history_all": false,
+      "hall_of_records_clerk_interacted": false,
+      "higher_courts_records_accessed": false,
+      "corbitt_body_encountered": false,
+      "trigger_corbitt_boss_battle": false,
+      "corbitt_defeated": false,
+      "ruined_altar_investigated": false,
+      "learned_corbitt_weakness": false,
+      "investigated_targets": [],
+      "turn_since_last_search": 2,
+      "visit_the_neighborhood": 1,
+      "dolly_talked": true,
+      "visit_roxbury_sanitarium": 1
+    },
+    "turn_counter": 2
+  },
+  "app_state": {
+    "all_events_log": [
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "[システム] セッションを開始します。（シナリオ: 悪霊の家）"
+      },
+      {
+        "channel": "IC",
+        "location": "introduction",
+        "secret_to": null,
+        "text": "KP: あなたはスティーブン・ノット氏と対面している。机の上には、彼から受け取った依頼書とメモが置かれているのが見える。また、その近くには事務机もある。これらが現在の調査の中心となる。周囲は静かで落ち着いた雰囲気だ。あなたはこの情報をどう使うべきか、ノット氏の話をどう進めればよいか考えている。何から手をつけるべきだろうか？どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1)(PL): ノット氏のメモで新たなアプローチを探そう。",
+        "meta": {
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "introduction",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): ノットさん、このメモについて詳しく教えていただけますか？特に『奇妙な音』や『不気味な影』について、具体的な話を聞いたり、何か記事を見つけたりしたことはありますか？",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "talk",
+          "target": "steven_knott",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "introduction",
+        "secret_to": null,
+        "text": "システム: 【対話】マクガフィン刑事 が スティーブン・ノット に話しかけた。（態度: 協力的／判定なし）\n【職業RP判定】刑事としての立場を活かし、依頼人との会話を実務的に進めている（適切） → ボーナス・ダイス+1\n【秘密開示】secret_case_brief: 最近相続したコービット屋敷の悪評のせいで賃貸も売却もできず困っている。奇妙な出来事の調査を依頼し、報酬・屋敷の鍵・住所・前払い金25ドルを用意している。\n【進行】スティーブン・ノット氏との会話により、次の調査先への移動が解禁された。（依頼書・メモも手渡され確認済みとして扱う）",
+        "meta": {
+          "action_id": "talk",
+          "target": "steven_knott",
+          "roll_type": "social_talk",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "introduction",
+        "secret_to": null,
+        "text": "KP: スティーブン・ノット氏は再度、あなたの目をじっと見つめ、丁寧な口調で続けた。「その通りです。この屋敷のことを詳しく調査してもらいたいのです。具体的な出来事は、近所の人々の証言を聞くか、あるいはその場で調査してもらうと良いでしょう。ボストン・グローブや図書館へも足を運んで、過去の記事や文献を探してみてください。何か重要なヒントが隠されているかもしれませんね。」\n\nどうしますか？"
+      },
+      {
+        "channel": "IC",
+        "location": "introduction",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): 近所の人々に話を聞くか、現地の屋敷へ向かって調査を始めるべきですね。",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "move",
+          "target": "the_neighborhood",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "introduction",
+        "secret_to": null,
+        "text": "システム: 判定なし（自動成功）\n【移動】導入 から 屋敷の近所 へ移動した。\n【フェーズ遷移】current_phase → `investigation`",
+        "meta": {
+          "action_id": "move",
+          "target": "the_neighborhood",
+          "roll_type": "none",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "the_neighborhood",
+        "secret_to": null,
+        "text": "KP: 探索者は、街の一角に立つ古いコービット屋敷へと足を進めました。この地域は第一次世界大戦以前から住んでいた人々がほとんどが引っ越したか亡くなっているため、19世紀の家屋は新しい事務所や店舗に改装されています。しかし、コービット屋敷だけは異質に、表庭が雑草で伸び放題となっています。現在売りに出されている唯一の個人住宅であり、周囲の新築の事務所や店と対照的に、その古い建物は不気味な雰囲気を醸し出しています。近くにはドーリー氏の姿が見え、こちらを覗き込んでいるようにも見えます。\n\nどうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1)(PL): まずはドーリー氏に近づいて、彼から情報を引き出そう。",
+        "meta": {
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "the_neighborhood",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): ドーリーさん、このコービット屋敷について何か詳しいことは知っていますか？",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "talk",
+          "target": "dolly_shopkeeper",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "the_neighborhood",
+        "secret_to": null,
+        "text": "システム: 【対話】マクガフィン刑事 が ドーリー氏 に話しかけた。（態度: 中立／判定なし）\n【職業RP判定】マクガフィン刑事は職業を活かして聞き込みを行い、ドーリー氏との雑談を通じて地域の情報を得ようとしている（適切） → ボーナス・ダイス+1\n【秘密開示】secret_corbitt_house_name: あの屋敷は『コービット屋敷』と呼ばれている。\n【秘密開示】secret_macario_family: マカリオ一家は2年前にコービット屋敷へ引っ越してきた。1年後、父親が事故のあと激しい狂気に陥り、『燃える目をした化け物』について口走っていた。約1か月後、母親も狂気に陥り、夫妻はボストンのロックスベリー・サナトリウムに入院している。子供たちはボルチモアの親戚に引き取られた。\n【秘密開示】secret_chapel_location: 黙想チャペルがあった場所は、ここから2、3ブロック離れた先にある。\n【秘密開示】secret_sanitarium_hint: マカリオ夫妻はロックスベリー・サナトリウムにいる。ボストンから3〜5kmほどの所だ。\n【進行】ドーリー氏からコービット屋敷・マカリオ一家・黙想チャペルの場所・ロックスベリー・サナトリウムの話を聞いた。チャペルとサナトリウムへの移動が解禁された。",
+        "meta": {
+          "action_id": "talk",
+          "target": "dolly_shopkeeper",
+          "roll_type": "social_talk",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "the_neighborhood",
+        "secret_to": null,
+        "text": "KP: あなたはドーリー氏と話しながら、地区の雑多な情報に耳を傾けていた。タバコや新聞を売る店の前で、彼は手元の商品を弄りながら、コービット屋敷とマカリオ一家の近況について冗談交じりに語り出した。「ああ、その屋敷、コービット屋敷と呼ばれてるんだけどね。マカリオさんたち、2年前に引っ越してきたって。でもね、1年後に父親が事故起こしたんだよ。それから、父親は『燃える目をした化け物』って何でも口走って、大騒ぎになったらしい。母親もその後、同じ様な状態になったらしく、結局ボストンのロックスベリー・サナトリウムに連れて行かれたんだって。子供たちはボルチモアに連れて行かれたってさ。」"
+      },
+      {
+        "channel": "IC",
+        "location": "the_neighborhood",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): ドーリーさん、このコービット屋敷について何か詳しいことは知っていますか？",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "talk",
+          "target": "dolly_shopkeeper",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "the_neighborhood",
+        "secret_to": null,
+        "text": "システム: 【対話】エレノア教授 が ドーリー氏 に話しかけた。（態度: 中立／判定なし）\n【職業RP判定】民俗学教授としての知識と丁寧な態度で、地域の事情通であるNPCとの会話を上手く進めている（適切） → ボーナス・ダイス+1\n【進行】ドーリー氏からコービット屋敷・マカリオ一家・黙想チャペルの場所・ロックスベリー・サナトリウムの話を聞いた。チャペルとサナトリウムへの移動が解禁された。",
+        "meta": {
+          "action_id": "talk",
+          "target": "dolly_shopkeeper",
+          "roll_type": "social_talk",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "the_neighborhood",
+        "secret_to": null,
+        "text": "KP: 「教授、最近の話題といえば、この地区で一番騒がれているのは、コービット屋敷の一件ですね。マカリオ一家が引っ越してきた当初は、皆、新しい家族が来るのを歓迎してたけど、その後の出来事は、もう全然違ったものになりました。親父さんが大事故を経験した後、異様な狂気に陥って、『目が燃える化け物』について話してたとか。母さんもそんなに長くは続かなかったみたいで、二人ともロックスベリー・サナトリウムにいちゃいますね。子供たちはボルチモアの親戚に引き取られて、今では誰もコービット屋敷には近づかないって言ってるけど、本当のことは誰も知らないですね。」\n\nどうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1)(PL): マカリオ一家の近況とロックスベリー・サナトリウム、そして黙想チャペルの情報を得られた。次はこれらの場所を訪ねるべきだろう。",
+        "meta": {
+          "pc_id": "pc_01"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "the_neighborhood",
+        "secret_to": null,
+        "text": "マクガフィン刑事(PC1): ありがとうございました、ドーリーさん。マカリオ一家の様子が知りたかったんです。次はあのロックスベリー・サナトリウムに行きたいと思っています。何か情報がありましたら、是非教えてください。",
+        "meta": {
+          "pc_id": "pc_01",
+          "action_id": "move",
+          "target": "roxbury_sanitarium",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "the_neighborhood",
+        "secret_to": null,
+        "text": "システム: 判定なし（自動成功）\n【移動】屋敷の近所 から ロックスベリー・サナトリウム へ移動した。",
+        "meta": {
+          "action_id": "move",
+          "target": "roxbury_sanitarium",
+          "roll_type": "none",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "roxbury_sanitarium",
+        "secret_to": null,
+        "text": "KP: あなたはロックスベリー・サナトリウムに到着した。静寂と重苦しい雰囲気が漂う中、患者記録が置かれた棚や、ヴィットリオ・マカリオとガブリエラ・マカリオに関する情報が目につく。何を調査し始めるか、誰かと話し始めるか、どうしますか？"
+      },
+      {
+        "channel": "OOC",
+        "location": "all",
+        "secret_to": null,
+        "text": "エレノア教授(PC2)(PL): ガブリエラさんから得られる情報はまだ得られていない。マカリオ夫妻や屋敷の悪霊について語ってもらおう。",
+        "meta": {
+          "pc_id": "pc_02"
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "roxbury_sanitarium",
+        "secret_to": null,
+        "text": "エレノア教授(PC2): ガブリエラさん、お元気ですか？ここでの生活はいかがですか？",
+        "meta": {
+          "pc_id": "pc_02",
+          "action_id": "talk",
+          "target": "gabriella_macario",
+          "skill": "",
+          "needs_system": true,
+          "system_processed": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "roxbury_sanitarium",
+        "secret_to": null,
+        "text": "システム: 【対話ブロック】その人物は現在この場所にいません。周囲のオブジェクト（切り抜きファイル等）を調査してください。",
+        "meta": {
+          "action_id": "talk",
+          "target": "gabriella_macario",
+          "roll_type": "blocked",
+          "kp_narrated": true
+        }
+      },
+      {
+        "channel": "IC",
+        "location": "roxbury_sanitarium",
+        "secret_to": null,
+        "text": "KP: ガブリエラ・マカリオは現在、他の場所にいてこちらで会うことは難しいと告げた。彼女がいない間、あなたの周囲を見渡すと、壁に掛けられた切り抜きファイルが目につく。彼女が言った悪霊の正体や、ヴィットリオとガブリエラの過去に関する情報を得る手がかりがあるかもしれない。切り抜きファイルを調査するべきだろう。どうしますか？"
+      }
+    ],
+    "last_pl_action": {
+      "action": "search",
+      "target": "patient_records",
+      "skill": "図書館",
+      "message": "「……患者記録・カルテ、調べてみよう」",
+      "dialogue": ""
+    },
+    "last_system_result": null,
+    "pending_san_check": null,
+    "pending_push_roll": null,
+    "pending_luck_burn": null,
+    "pending_combat_defense": null,
+    "partial_system_log": null,
+    "push_decision_required": false,
+    "timeline_pending": null,
+    "intervention_level": "standard",
+    "kp_style": "collaborative",
+    "stagnation_kp_nudge": null,
+    "stagnation_pl_hint": "【システムヒント】現在の場所での同じ行動の繰り返しは膠着しています。別の技能や対象を試すか、次の調査先へ移動してください。例: `move` / `corbitt_exterior`（コービット屋敷（外観）） 【システムヒント・即時撤退】これ以上この場所で情報を得ることは困難です。留まらずに『別の移動可能な場所へ移動する』か、『直接コービット屋敷（`move` / `corbitt_exterior`。別名 `corbitt_house`）へ向かう』行動を選択してください。すべての資料を集める必要はありません。現地に踏み込むことも正当な攻略手段です。",
+    "force_ic_action": false,
+    "autonomous_paused": false,
+    "autonomous_pause_reason": null,
+    "autonomous_guard": {
+      "consecutive_speaker": "PL:pc_01",
+      "consecutive_count": 1,
+      "chat_rounds_without_action": 0
+    },
+    "autonomous_step_count": 100,
+    "autonomous_progress_fp": [
+      "roxbury_sanitarium",
+      [
+        [
+          "case_accepted",
+          "dolly_talked",
+          "dolly_told_chapel_location",
+          "dolly_told_sanitarium_location",
+          "knott_letter_read",
+          "knott_memo_read",
+          "neighbor_gossip_found",
+          "talked_with_knott"
+        ],
+        []
+      ]
+    ],
+    "is_running": true,
+    "stop_requested": false,
+    "pl_id": "pc_01",
+    "char_name": "マクガフィン刑事",
+    "active_pcs": [
+      "pc_01",
+      "pc_02"
+    ],
+    "active_pc_id": "pc_01",
+    "pl_discussion_mode": false,
+    "pl_discussion_rounds": 0,
+    "current_loc": "roxbury_sanitarium",
+    "scenario_file": "scenario_corbitt.json",
+    "rp_eval_unit_ids": [],
+    "rp_eval_last_summary": {
+      "evaluated": 0,
+      "skipped_already": 0,
+      "skipped_registered": 0,
+      "saved_good": 0,
+      "saved_library": 0,
+      "below_threshold": 0,
+      "errors": 0
+    },
+    "rp_session_id": "b8b312da-d37d-4a4e-80de-466efd4a98b5",
+    "rp_library_pending": []
+  },
+  "scenario_file": "scenario_corbitt.json"
+}

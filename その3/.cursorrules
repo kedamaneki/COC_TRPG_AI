@@ -1,0 +1,26 @@
+# Project Rules: Git Operations & Commit Guidelines
+
+When performing Git operations, generating commit messages, or suggesting terminal commands, strictly follow these rules:
+
+## 1. Commit Message Standard
+- Use **Conventional Commits** format: `<type>(<scope>): <short summary>`
+  - Types: `feat`, `fix`, `refactor`, `docs`, `style`, `test`, `chore`
+  - Example: `feat(main): add validation for ghost NPC talk actions`
+- Write the summary line in clear, concise Japanese.
+- Do not combine unrelated changes into a single commit; split them logically into clean, separate commits.
+
+## 2. Branch & Workflow Strategy
+- Use branch naming prefixes: `feature/`, `fix/`, `refactor/`
+- Examples: `feature/stagnation-handler`, `fix/npc-alias-resolution`
+
+## 3. Safety & Validation Guardrails
+- **NEVER** push directly to `main` or `master` without clean test passes, and **NEVER** force push (`git push -f`).
+- Always check `git status` or untracked files before committing to prevent pushing sensitive files (`.env`) or large autosave logs (`save_autosave*.json`).
+
+## 4. Automation Output Style
+- Execute Git commands directly via Composer, or output them in copyable code blocks while explaining each step briefly.
+
+## Remote Repository Rules
+- Always verify `git remote -v` to confirm the target is `origin` before pushing.
+- When pushing to a new branch for the first time, use `git push -u origin <branch-name>`.
+- **NEVER** force push (`git push -f`) to standard branches (`main`, `master`, `develop`).
