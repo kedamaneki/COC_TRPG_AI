@@ -1,0 +1,122 @@
+{
+  "line_001": {
+    "audio_mode": "VOICE",
+    "cache_hit": true,
+    "cache_key": "d84703f1c5add78002111b632c4cc7075ea355fc1f4c0c910af290ffb975aaa8",
+    "cache_path": "cache/voice/voicevox/d84703f1c5add78002111b632c4cc7075ea355fc1f4c0c910af290ffb975aaa8.wav",
+    "duration_sec": 3.317333,
+    "engine": "VOICEVOX",
+    "engine_version": "0.19.1",
+    "project_path": "audio/line_001.wav",
+    "sha256": "28fa7f4935acc145b95c7e2ccd3b80d5058edb8ca8322e93f079d61cb317cad2",
+    "voice_profile_id": "m1_vv_kp"
+  },
+  "line_002": {
+    "audio_mode": "VOICE",
+    "cache_hit": true,
+    "cache_key": "6f0127d506d814e97573619e48d6243347f6cd2f9680f0c0a361f99cefff7a2d",
+    "cache_path": "cache/voice/voicevox/6f0127d506d814e97573619e48d6243347f6cd2f9680f0c0a361f99cefff7a2d.wav",
+    "duration_sec": 5.333333,
+    "engine": "VOICEVOX",
+    "engine_version": "0.19.1",
+    "project_path": "audio/line_002.wav",
+    "sha256": "dba3f7a1b2dc117877a4b70069007e3381d65dedc63bbfedf7598cec874b866f",
+    "voice_profile_id": "m1_vv_kp"
+  },
+  "line_003": {
+    "audio_mode": "VOICE",
+    "cache_hit": true,
+    "cache_key": "73a66f893f4806b10f1fd6f5e6647ee56779f0ad17be0461286bc71da07992ae",
+    "cache_path": "cache/voice/voicevox/73a66f893f4806b10f1fd6f5e6647ee56779f0ad17be0461286bc71da07992ae.wav",
+    "duration_sec": 5.898667,
+    "engine": "VOICEVOX",
+    "engine_version": "0.19.1",
+    "project_path": "audio/line_003.wav",
+    "sha256": "d98b01c92a1a0aba7b59d604f858b94586a6b3ce4317bb942b4275662452428d",
+    "voice_profile_id": "m1_vv_kp"
+  },
+  "line_004": {
+    "audio_mode": "VOICE",
+    "cache_hit": true,
+    "cache_key": "e4c29a806b2b2af03ae10fc139298803522aa3e20d0fce4cb69eb777ff202488",
+    "cache_path": "cache/voice/voicevox/e4c29a806b2b2af03ae10fc139298803522aa3e20d0fce4cb69eb777ff202488.wav",
+    "duration_sec": 6.026667,
+    "engine": "VOICEVOX",
+    "engine_version": "0.19.1",
+    "project_path": "audio/line_004.wav",
+    "sha256": "39ce7fc301ae80a7528bf6df13e3f9274f0365b9a6a26147f0b15f4d2f7c17b7",
+    "voice_profile_id": "m1_vv_kp"
+  },
+  "line_005": {
+    "audio_mode": "VOICE",
+    "cache_hit": true,
+    "cache_key": "9b2f72b846f92d262271091088d9102632ca2578c1ec3e3713471d5305de6934",
+    "cache_path": "cache/voice/voicevox/9b2f72b846f92d262271091088d9102632ca2578c1ec3e3713471d5305de6934.wav",
+    "duration_sec": 5.557333,
+    "engine": "VOICEVOX",
+    "engine_version": "0.19.1",
+    "project_path": "audio/line_005.wav",
+    "sha256": "271f0f7062056485a01a9a08d8a5fbe73a397d16eb10427778302acca763279e",
+    "voice_profile_id": "m1_vv_kp"
+  },
+  "line_006": {
+    "audio_mode": "VOICE",
+    "cache_hit": true,
+    "cache_key": "0132a0ca7958c6c5176ee352f763a97650da2699d63cae3a85cd0eaa09e5f5f5",
+    "cache_path": "cache/voice/voicevox/0132a0ca7958c6c5176ee352f763a97650da2699d63cae3a85cd0eaa09e5f5f5.wav",
+    "duration_sec": 2.464,
+    "engine": "VOICEVOX",
+    "engine_version": "0.19.1",
+    "project_path": "audio/line_006.wav",
+    "sha256": "322446f0e6c4cab16505b3a2dafd0422baef2fb96fafb0b87f487c6af29a6f59",
+    "voice_profile_id": "m1_vv_kp"
+  },
+  "line_007": {
+    "audio_mode": "VOICE",
+    "cache_hit": true,
+    "cache_key": "e1ca3279f076293a4619372c7e3773056eda693290387bb962d58ad3921de2c5",
+    "cache_path": "cache/voice/aquestalk/e1ca3279f076293a4619372c7e3773056eda693290387bb962d58ad3921de2c5.wav",
+    "duration_sec": 5.03525,
+    "engine": "AQUESTALK",
+    "engine_version": "YMM4 bundled AquesTalk f1",
+    "project_path": "audio/line_007.wav",
+    "sha256": "aec3399dae5145717078b6c50a9e3376ebab0b1f42e31cdc8c5e16b10541363b",
+    "voice_profile_id": "m1_aq_f1"
+  },
+  "line_008": {
+    "audio_mode": "VOICE",
+    "cache_hit": true,
+    "cache_key": "bfd68fab3de149114794595000dbf26c212031397b9e1705f04ff53aa5779e15",
+    "cache_path": "cache/voice/aquestalk/bfd68fab3de149114794595000dbf26c212031397b9e1705f04ff53aa5779e15.wav",
+    "duration_sec": 3.5495,
+    "engine": "AQUESTALK",
+    "engine_version": "YMM4 bundled AquesTalk f1",
+    "project_path": "audio/line_008.wav",
+    "sha256": "9364d50f2aacc735d32e1caeea32dbebeac13b2a1d0161e805d864ec7726b187",
+    "voice_profile_id": "m1_aq_f1"
+  },
+  "line_009": {
+    "audio_mode": "VOICE",
+    "cache_hit": true,
+    "cache_key": "7f359df0bf9d216dd035b4b1ba0635d985947293cdf40371ecc45c9fca9722ca",
+    "cache_path": "cache/voice/voicevox/7f359df0bf9d216dd035b4b1ba0635d985947293cdf40371ecc45c9fca9722ca.wav",
+    "duration_sec": 2.336,
+    "engine": "VOICEVOX",
+    "engine_version": "0.19.1",
+    "project_path": "audio/line_009.wav",
+    "sha256": "f5b1a0788623ca1d73dcbc687b0055b0570e3468dec7be963a1077e87806e80e",
+    "voice_profile_id": "m1_vv_kp"
+  },
+  "line_010": {
+    "audio_mode": "VOICE",
+    "cache_hit": true,
+    "cache_key": "91040de8cfa44af28bff3af459c07c511b84d104e02202b54e69f2565215dd93",
+    "cache_path": "cache/voice/voicevox/91040de8cfa44af28bff3af459c07c511b84d104e02202b54e69f2565215dd93.wav",
+    "duration_sec": 5.365333,
+    "engine": "VOICEVOX",
+    "engine_version": "0.19.1",
+    "project_path": "audio/line_010.wav",
+    "sha256": "b79fd0b46b1b5bc5c118d855ce76b77056886642807ac4777ae9c133fbdc4760",
+    "voice_profile_id": "m1_vv_kp"
+  }
+}

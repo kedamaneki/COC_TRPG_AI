@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "checks": {
+    "door_examine_consistent": true,
+    "wall_examine_consistent": true,
+    "mandatory_san_dispatched": true,
+    "opposed_roll_complete": true,
+    "knife_lifecycle_valid": true,
+    "final_narrative_grounded": true,
+    "san_snapshot_excluded": true,
+    "normalizer_no_contradiction": true
+  },
+  "metrics": {
+    "NARRATIVE_STATE_CONTRADICTION": 0,
+    "ROLL_CONTRACT_INCOMPLETE": 0,
+    "MANDATORY_SAN_EFFECT_DROPPED": 0,
+    "SAN_SNAPSHOT_MISCLASSIFIED_AS_CHECK": 0,
+    "NORMALIZATION_SOURCE_CONTRADICTION": 0,
+    "OBJECT_STATE_INVALID_TRANSITION": 0,
+    "OBJECT_NARRATIVE_STATE_CONTRADICTION": 0,
+    "UNGROUNDED_NARRATIVE_OPTION": 0
+  }
+}

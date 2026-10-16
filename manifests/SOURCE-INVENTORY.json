@@ -1,0 +1,254 @@
+{
+  "generated_at": "2026-10-16T15:11:34.525483+00:00",
+  "policy": {
+    "existing_sources_mutated": false,
+    "raw_runs_copied": false,
+    "do_not_adopt_copied": false
+  },
+  "candidates": [
+    {
+      "logical_component": "core",
+      "absolute_path": "F:\\制作物\\その3",
+      "machine": "RENPC",
+      "role": "accepted production root; canonical copy is filtered",
+      "candidate_status": "CANONICAL_CANDIDATE",
+      "exists": true,
+      "important_file_hashes": {
+        "F:\\制作物\\その3\\src\\main.py": {
+          "sha256": "8cf1403ec36a9bf8f931429c4a3e172d2ecb5361decc08d28c96c480fc7393c6",
+          "size": 739418,
+          "last_modified": "2026-10-14T16:41:24.151544+00:00"
+        },
+        "F:\\制作物\\その3\\src\\ProgressDirectorV2.py": {
+          "sha256": "e039fc71a736e48fbe4d73025b4212ea43ff1ca0988ada59cd9f4bab4e5632bc",
+          "size": 34699,
+          "last_modified": "2026-10-14T16:41:24.325339+00:00"
+        },
+        "F:\\制作物\\その3\\src\\EvaluationCheckpoint.py": {
+          "sha256": "1b9898872e6bdff805b6bedf3a029f22c6fb9dcda4543aae43206b2536966236",
+          "size": 32392,
+          "last_modified": "2026-10-14T03:56:48.740999+00:00"
+        },
+        "F:\\制作物\\その3\\src\\EventIdentity.py": {
+          "sha256": "eaff160f37fda8114d5579fdce7f9ba032a3dccd96adff41de7bd8df264d9d4a",
+          "size": 2128,
+          "last_modified": "2026-10-14T03:51:14.351136+00:00"
+        },
+        "F:\\制作物\\その3\\src\\run_investigation_evaluation.py": {
+          "sha256": "fc154f987605982e8663eba81374110580d5de5ebb14f2cb7e4e9d8914c41ab3",
+          "size": 38065,
+          "last_modified": "2026-10-14T03:50:47.596945+00:00"
+        },
+        "F:\\制作物\\その3\\src\\scenario_corbitt.json": {
+          "sha256": "b6f0559ffca677b57bc3a69c16991bb24c483d30256cb6dfd30fc938ebd84ed7",
+          "size": 164868,
+          "last_modified": "2026-10-12T11:12:51.497885+00:00"
+        },
+        "F:\\制作物\\その3\\src\\pcs.json": {
+          "sha256": "f47bb03ff6406c228dd7c88f94c597d6e28785b47c6e0afe1322b7596c31c3dd",
+          "size": 5354,
+          "last_modified": "2026-10-15T03:39:27.422270+00:00"
+        },
+        "F:\\制作物\\その3\\src\\npcs.json": {
+          "sha256": "3c795e6098f97ae8e6240b9ed2412428ab332c91c30a1cb45b846d2f4628377c",
+          "size": 25783,
+          "last_modified": "2026-10-15T03:39:27.424535+00:00"
+        }
+      },
+      "file_count": 148477,
+      "total_size": 6073314316,
+      "last_modified": "2026-10-15T04:06:09.504548+00:00",
+      "scan_errors": [
+        "[WinError 5] アクセスが拒否されました。: 'F:\\\\制作物\\\\その3\\\\evaluation-v2\\\\_night_guard_narrow_acl_probe'",
+        "[WinError 5] アクセスが拒否されました。: 'F:\\\\制作物\\\\その3\\\\handoff\\\\CORBITT_LONGRUN_ITERATION2_V2_001_CYCLE33\\\\video-production-agent-analysis\\\\.pytest_cache'",
+        "[WinError 5] アクセスが拒否されました。: 'F:\\\\制作物\\\\その3\\\\runtime-isolation-candidate\\\\.pytest_cache'"
+      ]
+    },
+    {
+      "logical_component": "core_source",
+      "absolute_path": "F:\\制作物\\その3\\src",
+      "machine": "RENPC",
+      "role": "accepted production and 582+23 suite",
+      "candidate_status": "CANONICAL_CANDIDATE",
+      "exists": true,
+      "important_file_hashes": {
+        "F:\\制作物\\その3\\src\\main.py": {
+          "sha256": "8cf1403ec36a9bf8f931429c4a3e172d2ecb5361decc08d28c96c480fc7393c6",
+          "size": 739418,
+          "last_modified": "2026-10-14T16:41:24.151544+00:00"
+        },
+        "F:\\制作物\\その3\\src\\ProgressDirectorV2.py": {
+          "sha256": "e039fc71a736e48fbe4d73025b4212ea43ff1ca0988ada59cd9f4bab4e5632bc",
+          "size": 34699,
+          "last_modified": "2026-10-14T16:41:24.325339+00:00"
+        },
+        "F:\\制作物\\その3\\src\\EvaluationCheckpoint.py": {
+          "sha256": "1b9898872e6bdff805b6bedf3a029f22c6fb9dcda4543aae43206b2536966236",
+          "size": 32392,
+          "last_modified": "2026-10-14T03:56:48.740999+00:00"
+        },
+        "F:\\制作物\\その3\\src\\EventIdentity.py": {
+          "sha256": "eaff160f37fda8114d5579fdce7f9ba032a3dccd96adff41de7bd8df264d9d4a",
+          "size": 2128,
+          "last_modified": "2026-10-14T03:51:14.351136+00:00"
+        },
+        "F:\\制作物\\その3\\src\\run_investigation_evaluation.py": {
+          "sha256": "fc154f987605982e8663eba81374110580d5de5ebb14f2cb7e4e9d8914c41ab3",
+          "size": 38065,
+          "last_modified": "2026-10-14T03:50:47.596945+00:00"
+        },
+        "F:\\制作物\\その3\\src\\scenario_corbitt.json": {
+          "sha256": "b6f0559ffca677b57bc3a69c16991bb24c483d30256cb6dfd30fc938ebd84ed7",
+          "size": 164868,
+          "last_modified": "2026-10-12T11:12:51.497885+00:00"
+        },
+        "F:\\制作物\\その3\\src\\pcs.json": {
+          "sha256": "f47bb03ff6406c228dd7c88f94c597d6e28785b47c6e0afe1322b7596c31c3dd",
+          "size": 5354,
+          "last_modified": "2026-10-15T03:39:27.422270+00:00"
+        },
+        "F:\\制作物\\その3\\src\\npcs.json": {
+          "sha256": "3c795e6098f97ae8e6240b9ed2412428ab332c91c30a1cb45b846d2f4628377c",
+          "size": 25783,
+          "last_modified": "2026-10-15T03:39:27.424535+00:00"
+        }
+      },
+      "file_count": 14193,
+      "total_size": 405646996,
+      "last_modified": "2026-10-15T03:52:58.524919+00:00",
+      "scan_errors": []
+    },
+    {
+      "logical_component": "video",
+      "absolute_path": "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-04\\referenced-chatgpt-conversation-this-is-an\\video-production-agent",
+      "machine": "RENPC",
+      "role": "accepted Simple Move production and 208 suite",
+      "candidate_status": "CANONICAL_CANDIDATE",
+      "exists": true,
+      "important_file_hashes": {
+        "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-04\\referenced-chatgpt-conversation-this-is-an\\video-production-agent\\src\\video_agent\\normalizer\\session.py": {
+          "sha256": "954d3ec1ccdd2b54f377436f1fdb9bf07bac431487bcbaf51072385c8e3d88ca",
+          "size": 32595,
+          "last_modified": "2026-10-14T17:40:19.688331+00:00"
+        },
+        "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-04\\referenced-chatgpt-conversation-this-is-an\\video-production-agent\\src\\video_agent\\pipeline.py": {
+          "sha256": "0d1d34468f4501a6fbaa8a0240c6ecac385f4191e27b1a6e94f4c862f2bd5045",
+          "size": 2460,
+          "last_modified": "2026-10-14T16:42:05.155385+00:00"
+        },
+        "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-04\\referenced-chatgpt-conversation-this-is-an\\video-production-agent\\tools\\audit_longrun_formal_v2.py": {
+          "sha256": "858b33c80d73c940ca2c8e9e6c5b63d34bb6e792e29307ed438fc2169f86608e",
+          "size": 39574,
+          "last_modified": "2026-10-14T16:42:16.068216+00:00"
+        },
+        "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-04\\referenced-chatgpt-conversation-this-is-an\\video-production-agent\\tests\\test_simple_move_bijection.py": {
+          "sha256": "e02bef8a7987142f8435fb1e5845c34f00d50fd69600aa94c4c0f569f9b25c1d",
+          "size": 9059,
+          "last_modified": "2026-10-14T17:40:19.857926+00:00"
+        }
+      },
+      "file_count": 5431,
+      "total_size": 876066152,
+      "last_modified": "2026-10-14T18:06:25.659238+00:00",
+      "scan_errors": []
+    },
+    {
+      "logical_component": "night_guard",
+      "absolute_path": "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-15\\referenced-chatgpt-conversation-this-is-an\\outputs",
+      "machine": "RENPC",
+      "role": "accepted night guard files only",
+      "candidate_status": "CANONICAL_CANDIDATE",
+      "exists": true,
+      "important_file_hashes": {
+        "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-15\\referenced-chatgpt-conversation-this-is-an\\outputs\\night_guard.py": {
+          "sha256": "375cb519be6dcda8594815c9d1821fb94c83b7eb797bf53779e1efd66a457a9b",
+          "size": 34236,
+          "last_modified": "2026-10-14T18:06:01.474085+00:00"
+        },
+        "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-15\\referenced-chatgpt-conversation-this-is-an\\outputs\\test_night_guard.py": {
+          "sha256": "237719db1099ab6f3318f2a48f8d20c8f892bdf1f63fbf3b77b8687f9026d670",
+          "size": 5055,
+          "last_modified": "2026-10-14T17:27:30.663971+00:00"
+        },
+        "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-15\\referenced-chatgpt-conversation-this-is-an\\outputs\\test_night_guard_adapters.py": {
+          "sha256": "a25d0ca6fe83628c3ce4c0a6cd44e36b194587a969cd414bfcdbd51700c51a51",
+          "size": 2053,
+          "last_modified": "2026-10-14T18:00:29.634003+00:00"
+        }
+      },
+      "file_count": 410,
+      "total_size": 40626022,
+      "last_modified": "2026-10-14T18:07:10.485255+00:00",
+      "scan_errors": []
+    },
+    {
+      "logical_component": "acceptance_receipts",
+      "absolute_path": "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-15\\referenced-chatgpt-conversation-this-is-an\\outputs\\acceptance",
+      "machine": "RENPC",
+      "role": "main-PC acceptance evidence",
+      "candidate_status": "REFERENCE",
+      "exists": true,
+      "important_file_hashes": {},
+      "file_count": 55,
+      "total_size": 3258721,
+      "last_modified": "2026-10-14T17:43:51.608404+00:00",
+      "scan_errors": []
+    },
+    {
+      "logical_component": "runtime_transfer",
+      "absolute_path": "F:\\制作物\\その3\\transfer-to-main-pc-2026-10-15",
+      "machine": "RENPC",
+      "role": "classification-controlled transfer package",
+      "candidate_status": "TRANSFER_CANDIDATE",
+      "exists": true,
+      "important_file_hashes": {},
+      "file_count": 21,
+      "total_size": 66919,
+      "last_modified": "2026-10-15T04:06:09.504548+00:00",
+      "scan_errors": []
+    },
+    {
+      "logical_component": "runtime_isolation_loose",
+      "absolute_path": "F:\\制作物\\その3\\runtime-isolation-candidate",
+      "machine": "RENPC",
+      "role": "not adopted; transfer package is authoritative",
+      "candidate_status": "UNKNOWN",
+      "exists": true,
+      "important_file_hashes": {},
+      "file_count": 9,
+      "total_size": 54518,
+      "last_modified": "2026-10-15T04:05:03.530411+00:00",
+      "scan_errors": [
+        "[WinError 5] アクセスが拒否されました。: 'F:\\\\制作物\\\\その3\\\\runtime-isolation-candidate\\\\.pytest_cache'"
+      ]
+    },
+    {
+      "logical_component": "historical_runs",
+      "absolute_path": "F:\\制作物\\その3\\evaluation-v2",
+      "machine": "RENPC",
+      "role": "external artifacts only; never copied into Git",
+      "candidate_status": "HISTORICAL",
+      "exists": true,
+      "important_file_hashes": {},
+      "file_count": 3413,
+      "total_size": 1853776252,
+      "last_modified": "2026-10-14T18:04:34.890550+00:00",
+      "scan_errors": [
+        "[WinError 5] アクセスが拒否されました。: 'F:\\\\制作物\\\\その3\\\\evaluation-v2\\\\_night_guard_narrow_acl_probe'"
+      ]
+    },
+    {
+      "logical_component": "mismatched_video_work",
+      "absolute_path": "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-15\\referenced-chatgpt-conversation-this-is-an\\work\\video",
+      "machine": "RENPC",
+      "role": "identity mismatch; do not adopt",
+      "candidate_status": "REJECTED",
+      "exists": true,
+      "important_file_hashes": {},
+      "file_count": 153,
+      "total_size": 1437048,
+      "last_modified": "2026-10-14T17:28:00.562746+00:00",
+      "scan_errors": []
+    }
+  ]
+}

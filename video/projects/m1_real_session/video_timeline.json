@@ -1,0 +1,172 @@
+{
+  "clips": [
+    {
+      "actual_voice_profile_id": "m1_aq_f1",
+      "background_asset_id": "m1_background_fallback",
+      "clip_id": "clip_001",
+      "duration_sec": 5.508,
+      "event_type": "ACTION_DECLARATION",
+      "expected_voice_profile_id": "m1_aq_f1",
+      "overlay": null,
+      "portrait_asset_ids": [
+        "m1_portrait_aquestalk"
+      ],
+      "presentation_mode": "VOICED",
+      "source_event_ids": [
+        "norm:session:000161",
+        "session_log:000161"
+      ],
+      "source_script_line_id": null,
+      "speaker_id": "pc_01",
+      "speaker_name": "マクガフィン刑事",
+      "speech_chunk": null,
+      "start_sec": 0.0,
+      "subtitle_profile_id": "subtitle_reimu",
+      "subtitle_text": "マクガフィン刑事(PC1): 散乱した家具や荷物を手がかりの可能性を探ってみる。",
+      "voice_engine": "AQUESTALK",
+      "voice_file": "audio/line_001.wav"
+    },
+    {
+      "actual_voice_profile_id": "m1_aq_f1",
+      "background_asset_id": "m1_background_fallback",
+      "clip_id": "clip_002",
+      "duration_sec": 10.207,
+      "event_type": "DICE_RESULT",
+      "expected_voice_profile_id": "m1_aq_f1",
+      "overlay": {
+        "result": "失敗",
+        "roll": 93,
+        "skill_name": "目星",
+        "target_value": 65,
+        "type": "SKILL_CHECK"
+      },
+      "portrait_asset_ids": [
+        "m1_portrait_aquestalk"
+      ],
+      "presentation_mode": "VOICED",
+      "source_event_ids": [
+        "norm:session:000162",
+        "session_log:000162"
+      ],
+      "source_script_line_id": null,
+      "speaker_id": "pc_01",
+      "speaker_name": "マクガフィン刑事",
+      "speech_chunk": null,
+      "start_sec": 5.508,
+      "subtitle_profile_id": "subtitle_reimu",
+      "subtitle_text": "システム: マクガフィン刑事 : 【技能:目星】CC(1d100<=65) 難易度:hard(目標<=32) ＞ 出目:93 ＞ 失敗",
+      "voice_engine": "AQUESTALK",
+      "voice_file": "audio/line_002.wav"
+    },
+    {
+      "actual_voice_profile_id": "m1_vv_kp",
+      "background_asset_id": "m1_background_fallback",
+      "clip_id": "clip_003",
+      "duration_sec": 14.537,
+      "event_type": "KP_DESCRIPTION",
+      "expected_voice_profile_id": "m1_vv_kp",
+      "overlay": null,
+      "portrait_asset_ids": [],
+      "presentation_mode": "VOICED",
+      "source_event_ids": [
+        "norm:session:000165",
+        "session_log:000165"
+      ],
+      "source_script_line_id": null,
+      "speaker_id": "kp",
+      "speaker_name": "KP",
+      "speech_chunk": null,
+      "start_sec": 15.715,
+      "subtitle_profile_id": "subtitle_kp",
+      "subtitle_text": "KP: リビングルームに散乱している家具や荷物を細かく調べたが、これ以上の手がかりを見つけ出すことはできなかったようだ。壁や床に目を細めて探しても、不気味な染みや引きずられた跡といった痕跡は見つけることができない。これ以上調べても時間が無駄になりそうだ。どうしますか？",
+      "voice_engine": "VOICEVOX",
+      "voice_file": "audio/line_003.wav"
+    },
+    {
+      "actual_voice_profile_id": "m1_vv_pc2",
+      "background_asset_id": "m1_background_fallback",
+      "clip_id": "clip_004",
+      "duration_sec": 6.046,
+      "event_type": "ACTION_DECLARATION",
+      "expected_voice_profile_id": "m1_vv_pc2",
+      "overlay": null,
+      "portrait_asset_ids": [
+        "m1_portrait_voicevox"
+      ],
+      "presentation_mode": "VOICED",
+      "source_event_ids": [
+        "norm:session:000166",
+        "session_log:000166"
+      ],
+      "source_script_line_id": null,
+      "speaker_id": "pc_02",
+      "speaker_name": "エレノア教授",
+      "speech_chunk": null,
+      "start_sec": 30.252,
+      "subtitle_profile_id": "subtitle_marisa",
+      "subtitle_text": "エレノア教授(PC2): 地下室の扉を見つめ、その周りを詳しく調べる。",
+      "voice_engine": "VOICEVOX",
+      "voice_file": "audio/line_004.wav"
+    },
+    {
+      "actual_voice_profile_id": "m1_vv_pc2",
+      "background_asset_id": "m1_background_fallback",
+      "clip_id": "clip_005",
+      "duration_sec": 8.937,
+      "event_type": "DICE_RESULT",
+      "expected_voice_profile_id": "m1_vv_pc2",
+      "overlay": {
+        "result": "失敗",
+        "roll": 95,
+        "skill_name": "目星",
+        "target_value": 50,
+        "type": "SKILL_CHECK"
+      },
+      "portrait_asset_ids": [
+        "m1_portrait_voicevox"
+      ],
+      "presentation_mode": "VOICED",
+      "source_event_ids": [
+        "norm:session:000167",
+        "session_log:000167"
+      ],
+      "source_script_line_id": null,
+      "speaker_id": "pc_02",
+      "speaker_name": "エレノア教授",
+      "speech_chunk": null,
+      "start_sec": 36.298,
+      "subtitle_profile_id": "subtitle_marisa",
+      "subtitle_text": "システム: エレノア教授 : 【技能:目星】CC(1d100<=50) ＞ 出目:95 ＞ 失敗",
+      "voice_engine": "VOICEVOX",
+      "voice_file": "audio/line_005.wav"
+    },
+    {
+      "actual_voice_profile_id": "m1_vv_pc2",
+      "background_asset_id": "m1_background_fallback",
+      "clip_id": "clip_006",
+      "duration_sec": 10.131,
+      "event_type": "DIALOGUE",
+      "expected_voice_profile_id": "m1_vv_pc2",
+      "overlay": null,
+      "portrait_asset_ids": [
+        "m1_portrait_voicevox"
+      ],
+      "presentation_mode": "VOICED",
+      "source_event_ids": [
+        "norm:session:000169",
+        "session_log:000169"
+      ],
+      "source_script_line_id": null,
+      "speaker_id": "pc_02",
+      "speaker_name": "エレノア教授",
+      "speech_chunk": null,
+      "start_sec": 45.235,
+      "subtitle_profile_id": "subtitle_marisa",
+      "subtitle_text": "エレノア教授(PC2)(PL): 【プッシュ方針】地下室の扉の周りの細かい痕跡を探し、時間をかけて丁寧に調べ直す。",
+      "voice_engine": "VOICEVOX",
+      "voice_file": "audio/line_006.wav"
+    }
+  ],
+  "duration_sec": 55.366,
+  "timeline_version": "0.1"
+}

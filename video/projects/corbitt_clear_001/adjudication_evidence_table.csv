@@ -1,0 +1,71 @@
+﻿check_id,record_role,scene,turn,actor,check_type,target,skill_or_stat,target_value,roll,raw_result,modifier,final_result,source_complete,normalized_complete,presentation_present,m3_rendered,presentation_accuracy,classification,severity,recommended_fix_layer,missing_evidence
+norm:unified:000013,unified_skill_record,,14,pc_01,SKILL_CHECK,reference_room_clipping_files,目星,,,HARD_SUCCESS,null,HARD_SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000016,unified_skill_record,scene_001,17,pc_01,SKILL_CHECK,reference_room_clipping_files,目星,,,HARD_SUCCESS,null,HARD_SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000023,unified_skill_record,,24,pc_01,SKILL_CHECK,local_history_section,目星,,,HARD_SUCCESS,null,HARD_SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000026,unified_skill_record,scene_001,27,pc_01,SKILL_CHECK,local_history_section,目星,,,HARD_SUCCESS,null,HARD_SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000037,unified_skill_record,,38,pc_02,SKILL_CHECK,patient_records,医学,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000040,unified_skill_record,scene_001,41,pc_02,SKILL_CHECK,patient_records,目星,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000056,unified_skill_record,,57,pc_02,SKILL_CHECK,front_door,目星,,,HARD_SUCCESS,null,HARD_SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000059,unified_skill_record,scene_001,60,pc_02,SKILL_CHECK,front_door,目星,,,HARD_SUCCESS,null,HARD_SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000067,unified_skill_record,,68,pc_02,SKILL_CHECK,exterior_windows,目星,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000070,unified_skill_record,scene_001,71,pc_02,SKILL_CHECK,exterior_windows,目星,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000083,unified_skill_record,,84,pc_02,SKILL_CHECK,corbitt_house_exterior_view,目星,,,HARD_SUCCESS,null,HARD_SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000086,unified_skill_record,scene_001,87,pc_02,SKILL_CHECK,corbitt_house_exterior_view,目星,,,HARD_SUCCESS,null,HARD_SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000096,unified_skill_record,,97,pc_02,SKILL_CHECK,corbitt_house,STR,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000099,unified_skill_record,scene_001,100,pc_02,SKILL_CHECK,corbitt_house,,,,SUCCESS,null,SUCCESS,False,False,True,False,MISMATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000117,unified_skill_record,scene_001,118,pc_01,SKILL_CHECK,living_room_clutter,目星,,,EXTREME_OR_CRITICAL,null,EXTREME_OR_CRITICAL,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000124,unified_skill_record,,125,pc_01,SKILL_CHECK,living_room_clutter,目星,,,HARD_SUCCESS,null,HARD_SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000127,unified_skill_record,scene_001,128,pc_01,SKILL_CHECK,living_room_clutter,目星,,,HARD_SUCCESS,null,HARD_SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000132,unified_skill_record,scene_001,133,pc_01,SKILL_CHECK,basement_door,目星,,,EXTREME_OR_CRITICAL,null,EXTREME_OR_CRITICAL,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000140,unified_skill_record,scene_001,141,pc_01,SKILL_CHECK,spare_bedroom_bed,目星,,,EXTREME_OR_CRITICAL,null,EXTREME_OR_CRITICAL,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000145,unified_skill_record,,146,pc_02,SKILL_CHECK,bathroom_bathtub,目星,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000148,unified_skill_record,scene_001,149,pc_02,SKILL_CHECK,bathroom_bathtub,目星,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000156,unified_skill_record,,157,pc_02,SKILL_CHECK,master_bedroom_bookshelf,目星,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000159,unified_skill_record,scene_001,160,pc_02,SKILL_CHECK,master_bedroom_bookshelf,目星,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000176,unified_skill_record,,177,pc_01,SKILL_CHECK,basement_door,STR,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000179,unified_skill_record,scene_001,180,pc_01,SKILL_CHECK,basement_door,,,,SUCCESS,null,SUCCESS,False,False,True,False,MISMATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000199,unified_skill_record,,200,pc_01,SKILL_CHECK,spare_bedroom_bed,目星,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000202,unified_skill_record,scene_001,203,pc_01,SKILL_CHECK,spare_bedroom_bed,目星,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000216,unified_skill_record,,217,pc_01,SKILL_CHECK,storage_room1_cupboard,目星,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000219,unified_skill_record,scene_001,220,pc_01,SKILL_CHECK,storage_room1_cupboard,目星,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000227,unified_skill_record,scene_001,228,pc_02,SKILL_CHECK,kitchen_breaker_box,目星,,,EXTREME_OR_CRITICAL,null,EXTREME_OR_CRITICAL,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000237,unified_skill_record,,238,pc_01,SKILL_CHECK,wall_planks,STR,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000240,unified_skill_record,scene_001,241,pc_01,SKILL_CHECK,wall_planks,目星,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000256,unified_skill_record,,257,pc_02,SKILL_CHECK,scattered_junk,目星,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000259,unified_skill_record,scene_001,260,pc_02,SKILL_CHECK,scattered_junk,目星,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:unified:000285,unified_skill_record,,286,pc_01,SKILL_CHECK,corbitt_body,目星,,,SUCCESS,null,SUCCESS,False,False,True,False,MATCH,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll""]"
+norm:session:000028,session_result_record,,,pc_01,DICE_RESULT,artie_wilmott,説得,10,25,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000032,session_result_record,,,pc_02,DICE_RESULT,artie_wilmott,説得,60,40,レギュラー成功,null,レギュラー成功,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000037,session_result_record,,,pc_01,DICE_RESULT,reference_room_clipping_files,目星,65,29,ハード成功,null,ハード成功,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000051,session_result_record,,,pc_01,DICE_RESULT,local_history_section,目星,65,29,ハード成功,null,ハード成功,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000070,session_result_record,,,pc_02,DICE_RESULT,patient_records,,,,,null,,False,False,True,False,NOT_APPLICABLE,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll"", ""result""]"
+norm:session:000074,session_result_record,,,pc_01,DICE_RESULT,gabriella_macario,目星,65,82,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000090,session_result_record,,,pc_01,DICE_RESULT,front_door,目星,65,80,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000096,session_result_record,,,pc_02,DICE_RESULT,front_door,目星,50,13,ハード成功,null,ハード成功,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000103,session_result_record,,,pc_02,DICE_RESULT,exterior_windows,目星,50,27,レギュラー成功,null,レギュラー成功,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000116,session_result_record,,,pc_02,DICE_RESULT,corbitt_house_exterior_view,目星,50,12,ハード成功,null,ハード成功,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000128,session_result_record,,,pc_01,DICE_RESULT,corbitt_house,目星,65,96,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000137,session_result_record,,,pc_02,DICE_RESULT,corbitt_house,,,,,null,,False,False,True,False,NOT_APPLICABLE,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll"", ""result""]"
+norm:session:000162,session_result_record,,,pc_01,DICE_RESULT,living_room_clutter,目星,65,93,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000164,session_result_record,,,pc_01,DICE_RESULT,living_room_clutter,目星,65,93,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000167,session_result_record,,,pc_02,DICE_RESULT,basement_door,目星,50,95,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000174,session_result_record,,,pc_01,DICE_RESULT,living_room_clutter,目星,65,24,ハード成功,null,ハード成功,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000181,session_result_record,,,pc_01,DICE_RESULT,basement_door,目星,65,89,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000183,session_result_record,,,pc_01,DICE_RESULT,basement_door,目星,65,89,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000193,session_result_record,,,pc_02,DICE_RESULT,master_bedroom_bookshelf,目星,50,77,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000201,session_result_record,,,pc_01,DICE_RESULT,spare_bedroom_bed,目星,65,98,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000203,session_result_record,,,pc_01,DICE_RESULT,spare_bedroom_bed,目星,65,98,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000207,session_result_record,,,pc_02,DICE_RESULT,bathroom_bathtub,目星,50,44,レギュラー成功,null,レギュラー成功,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000214,session_result_record,,,pc_02,DICE_RESULT,master_bedroom_bookshelf,目星,50,28,レギュラー成功,null,レギュラー成功,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000220,session_result_record,,,pc_02,DICE_RESULT,spare_bedroom_bed,目星,50,62,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000243,session_result_record,,,pc_01,DICE_RESULT,basement_door,,,,,null,,False,False,True,False,NOT_APPLICABLE,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll"", ""result""]"
+norm:session:000272,session_result_record,,,pc_01,DICE_RESULT,spare_bedroom_bed,目星,65,44,レギュラー成功,null,レギュラー成功,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000288,session_result_record,,,pc_01,DICE_RESULT,storage_room1_cupboard,目星,65,42,レギュラー成功,null,レギュラー成功,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000298,session_result_record,,,pc_02,DICE_RESULT,kitchen_breaker_box,目星,50,98,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000300,session_result_record,,,pc_02,DICE_RESULT,kitchen_breaker_box,目星,50,98,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000309,session_result_record,,,pc_02,DICE_RESULT,corbitt_knife,目星,50,59,失敗,null,失敗,True,True,True,True,MATCH,COMPLETE,INFO,None,[]
+norm:session:000311,session_result_record,,,pc_02,DICE_RESULT,corbitt_knife,目星,50,59,失敗,"{""type"": ""LUCK_SPEND"", ""amount"": 9}",REGULAR_SUCCESS,True,False,True,True,M3_CORRECTED_FROM_EXPLICIT_L1_TEXT,NORMALIZATION_GAP,MAJOR,Normalizer,[]
+norm:session:000315,session_result_record,,,pc_01,DICE_RESULT,wall_planks,,,,,null,,False,False,True,False,NOT_APPLICABLE,SOURCE_LOGGING_GAP,MAJOR,TRPG Logging,"[""target_value"", ""roll"", ""result""]"
+norm:session:000325,session_result_record,,,pc_02,DICE_RESULT,scattered_junk,目星,50,97,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000335,session_result_record,,,pc_02,DICE_RESULT,scattered_junk,目星,50,29,レギュラー成功,null,レギュラー成功,True,True,True,False,MATCH,COMPLETE,INFO,None,[]
+norm:session:000369,session_result_record,,,pc_02,DICE_RESULT,corbitt_body,目星,50,67,失敗,null,失敗,True,True,True,False,MATCH,COMPLETE,INFO,None,[]

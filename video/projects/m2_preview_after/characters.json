@@ -1,0 +1,34 @@
+[
+  {
+    "character_id": "kp",
+    "display_name": "KP",
+    "portrait_asset_id": null,
+    "role": "KP",
+    "subtitle_profile_id": "subtitle_kp",
+    "voice_profile_id": "m1_vv_kp"
+  },
+  {
+    "character_id": "pc_01",
+    "display_name": "マクガフィン刑事",
+    "portrait_asset_id": "m1_portrait_aquestalk",
+    "role": "PC",
+    "subtitle_profile_id": "subtitle_reimu",
+    "voice_profile_id": "m1_aq_f1"
+  },
+  {
+    "character_id": "pc_02",
+    "display_name": "エレノア教授",
+    "portrait_asset_id": "m1_portrait_voicevox",
+    "role": "PC",
+    "subtitle_profile_id": "subtitle_marisa",
+    "voice_profile_id": "m1_vv_pc2"
+  },
+  {
+    "character_id": "system",
+    "display_name": "SYSTEM",
+    "portrait_asset_id": null,
+    "role": "SYSTEM",
+    "subtitle_profile_id": "subtitle_kp",
+    "voice_profile_id": null
+  }
+]

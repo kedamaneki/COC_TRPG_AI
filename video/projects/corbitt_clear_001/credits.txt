@@ -1,0 +1,7 @@
+bg_neutral_user: UNKNOWN / user-provided:nc321164_シンプル同系色モロッカン柄背景【紫】（1920×1080）.png / license=UNKNOWN
+bgm_investigation_user: UNKNOWN / user-provided:Recollections.mp3 / license=UNKNOWN
+dialogue_frame_user: UNKNOWN / user-provided:nc86017_【素材】セリフ枠.png / license=UNKNOWN
+portrait_pc01_kitsune_reimu: UNKNOWN / user-provided:200.png / license=UNKNOWN
+portrait_pc02_kitsune_marisa: UNKNOWN / user-provided:200.png / license=UNKNOWN
+se_dice_user: UNKNOWN / user-provided:データ解析.mp3 / license=UNKNOWN
+se_san_user: UNKNOWN / user-provided:心臓の鼓動1.mp3 / license=UNKNOWN

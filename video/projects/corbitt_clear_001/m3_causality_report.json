@@ -1,0 +1,299 @@
+{
+  "chains": [
+    {
+      "action": [
+        "scene_048_script_008"
+      ],
+      "cause": [
+        "scene_048_script_005",
+        "scene_048_script_006",
+        "scene_048_script_007"
+      ],
+      "chain_id": "chain_knife_encounter",
+      "consequence": [],
+      "coverage_status": "PARTIAL",
+      "result": [
+        "scene_048_script_008"
+      ],
+      "setup": [
+        "scene_048_script_007",
+        "scene_048_script_009"
+      ],
+      "source_event_ids": [
+        "norm:session:000311",
+        "session_log:000311",
+        "norm:session:000312",
+        "session_log:000312",
+        "norm:session:000313",
+        "session_log:000313"
+      ],
+      "source_gap_ids": [
+        "knife_attack_resolution_missing"
+      ]
+    },
+    {
+      "action": [
+        "scene_052_script_004"
+      ],
+      "cause": [
+        "scene_052_script_001",
+        "scene_052_script_002"
+      ],
+      "chain_id": "chain_final_battle",
+      "consequence": [
+        "narrative_final_battle_consequence"
+      ],
+      "coverage_status": "FULL",
+      "result": [
+        "narrative_final_battle_resolution"
+      ],
+      "setup": [
+        "scene_052_script_001",
+        "scene_052_script_002"
+      ],
+      "source_event_ids": [
+        "norm:unified:000280",
+        "norm:unified:000281",
+        "norm:unified:000288",
+        "norm:unified:000289",
+        "norm:unified:000291",
+        "norm:unified:000292",
+        "norm:unified:000293"
+      ],
+      "source_gap_ids": []
+    }
+  ],
+  "checks": {
+    "COMBAT_END_CONTEXT_VISIBLE": {
+      "detail": [
+        "narrative_final_battle_resolution",
+        "narrative_final_battle_consequence"
+      ],
+      "status": "PASS"
+    },
+    "COMBAT_START_CONTEXT_VISIBLE": {
+      "detail": [
+        "scene_052_script_001",
+        "scene_052_script_002"
+      ],
+      "status": "PASS"
+    },
+    "ENDING_CAUSE_VISIBLE": {
+      "detail": [
+        "narrative_final_battle_resolution",
+        "narrative_final_battle_consequence"
+      ],
+      "status": "PASS"
+    },
+    "SAN_CAUSE_VISIBLE": {
+      "detail": {
+        "reorder": {
+          "after_script_line_id": "scene_048_script_007",
+          "before_script_line_id": "scene_048_script_008",
+          "original_order": 9,
+          "presentation_order": 7.5,
+          "reorder_reason": "WORLD_EVENT_BEFORE_SAN",
+          "scene_id": "scene_048",
+          "script_line_id": "scene_048_script_009"
+        },
+        "san_script_line_id": "scene_048_script_008",
+        "visible_cause": "scene_048_script_009"
+      },
+      "status": "PASS"
+    }
+  },
+  "hashes": {
+    "edited_script_sha256": "79bfc1d59e732e219006d04a8ac62b0d845ba5253d1f9a8de4ac8b461d3f47c0",
+    "normalized_session_sha256": "02c30843753501b5718e0d1d03320489f13aeb958ee8fcb6a5c625bb07fedb1f"
+  },
+  "local_reorders": [
+    {
+      "after_script_line_id": "scene_048_script_007",
+      "before_script_line_id": "scene_048_script_008",
+      "original_order": 9,
+      "presentation_order": 7.5,
+      "reorder_reason": "WORLD_EVENT_BEFORE_SAN",
+      "scene_id": "scene_048",
+      "script_line_id": "scene_048_script_009"
+    }
+  ],
+  "orphan_system_responses": [
+    {
+      "classification": "UNRESOLVED",
+      "reason": "ORPHAN_SYSTEM_RESPONSE_CONTRADICTS_DECLINE_RESULT",
+      "response": "yes",
+      "script_line_id": "scene_037_script_005",
+      "source_event_ids": [
+        "norm:session:000163",
+        "session_log:000163"
+      ]
+    },
+    {
+      "classification": "UNRESOLVED",
+      "reason": "ORPHAN_SYSTEM_RESPONSE_CONTRADICTS_DECLINE_RESULT",
+      "response": "yes",
+      "script_line_id": "scene_037_script_024",
+      "source_event_ids": [
+        "norm:session:000182",
+        "session_log:000182"
+      ]
+    },
+    {
+      "classification": "UNRESOLVED",
+      "reason": "ORPHAN_SYSTEM_RESPONSE_CONTRADICTS_DECLINE_RESULT",
+      "response": "yes",
+      "script_line_id": "scene_038_script_013",
+      "source_event_ids": [
+        "norm:session:000202",
+        "session_log:000202"
+      ]
+    },
+    {
+      "classification": "UNRESOLVED",
+      "reason": "ORPHAN_SYSTEM_RESPONSE_CONTRADICTS_DECLINE_RESULT",
+      "response": "yes",
+      "script_line_id": "scene_047_script_015",
+      "source_event_ids": [
+        "norm:session:000299",
+        "session_log:000299"
+      ]
+    }
+  ],
+  "publishability": "BLOCKED_SOURCE_GAPS",
+  "publishable": false,
+  "short_response_audit": [
+    {
+      "classification": "TABLETOP_INTERACTION_RESPONSE",
+      "reason": "EXPLICIT_FOLLOWUP_FACT",
+      "response": "yes",
+      "script_line_id": "scene_032_script_010",
+      "source_event_ids": [
+        "norm:session:000075",
+        "session_log:000075"
+      ]
+    },
+    {
+      "classification": "TABLETOP_INTERACTION_RESPONSE",
+      "reason": "EXPLICIT_FOLLOWUP_FACT",
+      "response": "yes",
+      "script_line_id": "scene_034_script_005",
+      "source_event_ids": [
+        "norm:session:000091",
+        "session_log:000091"
+      ]
+    },
+    {
+      "classification": "TABLETOP_INTERACTION_RESPONSE",
+      "reason": "EXPLICIT_FOLLOWUP_FACT",
+      "response": "yes",
+      "script_line_id": "scene_036_script_005",
+      "source_event_ids": [
+        "norm:session:000129",
+        "session_log:000129"
+      ]
+    },
+    {
+      "classification": "UNRESOLVED",
+      "reason": "ORPHAN_SYSTEM_RESPONSE_CONTRADICTS_DECLINE_RESULT",
+      "response": "yes",
+      "script_line_id": "scene_037_script_005",
+      "source_event_ids": [
+        "norm:session:000163",
+        "session_log:000163"
+      ]
+    },
+    {
+      "classification": "TABLETOP_INTERACTION_RESPONSE",
+      "reason": "EXPLICIT_FOLLOWUP_FACT",
+      "response": "yes",
+      "script_line_id": "scene_037_script_010",
+      "source_event_ids": [
+        "norm:session:000168",
+        "session_log:000168"
+      ]
+    },
+    {
+      "classification": "UNRESOLVED",
+      "reason": "ORPHAN_SYSTEM_RESPONSE_CONTRADICTS_DECLINE_RESULT",
+      "response": "yes",
+      "script_line_id": "scene_037_script_024",
+      "source_event_ids": [
+        "norm:session:000182",
+        "session_log:000182"
+      ]
+    },
+    {
+      "classification": "TABLETOP_INTERACTION_RESPONSE",
+      "reason": "EXPLICIT_FOLLOWUP_FACT",
+      "response": "yes",
+      "script_line_id": "scene_038_script_006",
+      "source_event_ids": [
+        "norm:session:000194",
+        "session_log:000194"
+      ]
+    },
+    {
+      "classification": "UNRESOLVED",
+      "reason": "ORPHAN_SYSTEM_RESPONSE_CONTRADICTS_DECLINE_RESULT",
+      "response": "yes",
+      "script_line_id": "scene_038_script_013",
+      "source_event_ids": [
+        "norm:session:000202",
+        "session_log:000202"
+      ]
+    },
+    {
+      "classification": "TABLETOP_INTERACTION_RESPONSE",
+      "reason": "EXPLICIT_FOLLOWUP_FACT",
+      "response": "yes",
+      "script_line_id": "scene_038_script_031",
+      "source_event_ids": [
+        "norm:session:000221",
+        "session_log:000221"
+      ]
+    },
+    {
+      "classification": "UNRESOLVED",
+      "reason": "ORPHAN_SYSTEM_RESPONSE_CONTRADICTS_DECLINE_RESULT",
+      "response": "yes",
+      "script_line_id": "scene_047_script_015",
+      "source_event_ids": [
+        "norm:session:000299",
+        "session_log:000299"
+      ]
+    },
+    {
+      "classification": "TABLETOP_INTERACTION_RESPONSE",
+      "reason": "EXPLICIT_FOLLOWUP_FACT",
+      "response": "yes",
+      "script_line_id": "scene_048_script_006",
+      "source_event_ids": [
+        "norm:session:000310",
+        "session_log:000310"
+      ]
+    },
+    {
+      "classification": "TABLETOP_INTERACTION_RESPONSE",
+      "reason": "EXPLICIT_FOLLOWUP_FACT",
+      "response": "yes",
+      "script_line_id": "scene_048_script_022",
+      "source_event_ids": [
+        "norm:session:000326",
+        "session_log:000326"
+      ]
+    },
+    {
+      "classification": "TABLETOP_INTERACTION_RESPONSE",
+      "reason": "EXPLICIT_FOLLOWUP_FACT",
+      "response": "yes",
+      "script_line_id": "scene_051_script_007",
+      "source_event_ids": [
+        "norm:session:000370",
+        "session_log:000370"
+      ]
+    }
+  ],
+  "status": "PASS",
+  "technical_internal_suppressed": 31,
+  "world_event_filter_misclassification_count": 0
+}

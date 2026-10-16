@@ -1,0 +1,29 @@
+{
+  "source_files": [
+    {
+      "kind": "unified-event-log.json",
+      "path": "F:\\制作物\\その3\\evaluation-v2\\seed_2101_goal_completion_sync_fix\\unified-event-log.json",
+      "sha256": "b538c1c7933c92de31b8efcf4da5d74b7d4cc8ba581bccd8b1cbe46bd48fd6cd"
+    },
+    {
+      "kind": "session-log.json",
+      "path": "F:\\制作物\\その3\\evaluation-v2\\seed_2101_goal_completion_sync_fix\\session-log.json",
+      "sha256": "aeca3d572ad19de28eb898155e1a72645f416e7568e8a8aeb3a199f2297ef6d5"
+    },
+    {
+      "kind": "result.json",
+      "path": "F:\\制作物\\その3\\evaluation-v2\\seed_2101_goal_completion_sync_fix\\result.json",
+      "sha256": "9d631cc5e70da4c5912619513cfc6adbc016b829703c6b4152d818c35c714be0"
+    },
+    {
+      "kind": "pcs.json",
+      "path": "F:\\制作物\\その3\\evaluation-v2\\seed_2101_goal_completion_sync_fix\\checkpoints\\cycle_000029\\runtime_data\\pcs.json",
+      "sha256": "5154c7f444a51ab9977f0d8206383103cf370fc74814937a24f713157ff6157c"
+    },
+    {
+      "kind": "npcs.json",
+      "path": "F:\\制作物\\その3\\evaluation-v2\\seed_2101_goal_completion_sync_fix\\checkpoints\\cycle_000029\\runtime_data\\npcs.json",
+      "sha256": "658801ab9795cb07f39be41867a285fe32abeaba9cdc9791a757fadca8fca6ba"
+    }
+  ]
+}

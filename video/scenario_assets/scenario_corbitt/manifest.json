@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1",
+  "scenario_id": "scenario_corbitt.json",
+  "backgrounds": [],
+  "npc_portraits": [],
+  "ui": [],
+  "bgm": [],
+  "se": [],
+  "npc_fallback_priority": ["SCENARIO_ASSET", "GENERIC_MOB", "SILHOUETTE", "NO_PORTRAIT"],
+  "generic_mob_tags": ["adult_male", "adult_female", "elderly", "child", "police", "doctor", "worker", "unknown"],
+  "bgm_tags": ["CALM", "INVESTIGATION", "TENSION", "HORROR", "COMBAT", "CLIMAX", "ENDING"],
+  "se_tags": ["DICE", "CRITICAL", "FUMBLE", "DOOR", "HIT", "DAMAGE", "TRANSITION"]
+}

@@ -1,0 +1,18 @@
+﻿[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: S,Yu Gothic,46,&H00FFFFFF,&H00FFFFFF,&H00181818,&H80000000,-1,0,0,0,100,100,0,0,1,2,0,5,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:05.00,S,,0,0,0,,{\an5\pos(960,155)\1c&H00F0F4F4\3c&H00302A25\bord2.25}KP 長文: 古いナイフは静寂を破り、\N探索者の手を振りほどいて宙に浮かび上がった。
+Dialogue: 0,0:00:00.00,0:00:05.00,S,,0,0,0,,{\an5\pos(960,285)\1c&H003030FF\3c&H00FFFFFF\bord2}霊夢 長文: 地下室へ続く扉を調べ、慎重に周囲の気配を確かめます。
+Dialogue: 0,0:00:00.00,0:00:05.00,S,,0,0,0,,{\an5\pos(960,415)\1c&H0040F0FF\3c&H00202020\bord4}魔理沙 長文: 幸運を9ポイント消費して、この判定を成功扱いにするぜ。
+Dialogue: 0,0:00:00.00,0:00:05.00,S,,0,0,0,,{\an5\pos(960,545)\1c&H003030FF\3c&H00FFFFFF\bord2}赤系名前  マクガフィン刑事
+Dialogue: 0,0:00:00.00,0:00:05.00,S,,0,0,0,,{\an5\pos(960,655)\1c&H0040F0FF\3c&H00202020\bord4}黄色系名前  エレノア教授／魔理沙
+Dialogue: 0,0:00:00.00,0:00:05.00,S,,0,0,0,,{\an5\pos(960,775)\1c&H00F0F4F4\3c&H00302A25\bord2.25}句読点: 『本当に開けますか？』――はい、慎重に開けます！
+Dialogue: 0,0:00:00.00,0:00:05.00,S,,0,0,0,,{\an5\pos(960,905)\1c&H00F0F4F4\3c&H00302A25\bord2.25}複合文: 視線を逸らさず錆びついた魔法のダガーを睨みつける。

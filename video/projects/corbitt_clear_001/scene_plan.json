@@ -1,0 +1,1481 @@
+{
+  "part_boundary_candidates": [
+    {
+      "after_scene_id": "scene_031",
+      "estimated_sec": 928.1,
+      "reason": "SCENE_COMPLETION_AND_MAJOR_TRANSITION"
+    },
+    {
+      "after_scene_id": "scene_035",
+      "estimated_sec": 1508.9,
+      "reason": "SCENE_COMPLETION_AND_MAJOR_TRANSITION"
+    },
+    {
+      "after_scene_id": "scene_039",
+      "estimated_sec": 2330.6,
+      "reason": "SCENE_COMPLETION_AND_MAJOR_TRANSITION"
+    },
+    {
+      "after_scene_id": "scene_047",
+      "estimated_sec": 2893.5,
+      "reason": "SCENE_COMPLETION_AND_MAJOR_TRANSITION"
+    },
+    {
+      "after_scene_id": "scene_052",
+      "estimated_sec": 3536.9,
+      "reason": "SCENE_COMPLETION_AND_MAJOR_TRANSITION"
+    }
+  ],
+  "scenes": [
+    {
+      "end_event_id": "norm:unified:000004",
+      "importance": 1.0,
+      "location_id": "introduction",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_001",
+      "scene_type": "INTRO",
+      "source_event_ids": [
+        "norm:unified:000000",
+        "norm:unified:000001",
+        "norm:unified:000002",
+        "norm:unified:000003",
+        "norm:unified:000004"
+      ],
+      "start_event_id": "norm:unified:000000"
+    },
+    {
+      "end_event_id": "norm:unified:000017",
+      "importance": 1.0,
+      "location_id": "introduction",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_002",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:unified:000005",
+        "norm:unified:000006",
+        "norm:unified:000007",
+        "norm:unified:000008",
+        "norm:unified:000009",
+        "norm:unified:000010",
+        "norm:unified:000011",
+        "norm:unified:000012",
+        "norm:unified:000013",
+        "norm:unified:000014",
+        "norm:unified:000015",
+        "norm:unified:000016",
+        "norm:unified:000017"
+      ],
+      "start_event_id": "norm:unified:000005"
+    },
+    {
+      "end_event_id": "norm:unified:000028",
+      "importance": 1.0,
+      "location_id": "boston_globe",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_003",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:unified:000018",
+        "norm:unified:000019",
+        "norm:unified:000020",
+        "norm:unified:000021",
+        "norm:unified:000022",
+        "norm:unified:000023",
+        "norm:unified:000024",
+        "norm:unified:000025",
+        "norm:unified:000026",
+        "norm:unified:000027",
+        "norm:unified:000028"
+      ],
+      "start_event_id": "norm:unified:000018"
+    },
+    {
+      "end_event_id": "norm:unified:000031",
+      "importance": 1.0,
+      "location_id": "central_library",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_004",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:unified:000029",
+        "norm:unified:000030",
+        "norm:unified:000031"
+      ],
+      "start_event_id": "norm:unified:000029"
+    },
+    {
+      "end_event_id": "norm:unified:000046",
+      "importance": 1.0,
+      "location_id": "the_neighborhood",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_005",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:unified:000032",
+        "norm:unified:000033",
+        "norm:unified:000034",
+        "norm:unified:000035",
+        "norm:unified:000036",
+        "norm:unified:000037",
+        "norm:unified:000038",
+        "norm:unified:000039",
+        "norm:unified:000040",
+        "norm:unified:000041",
+        "norm:unified:000042",
+        "norm:unified:000043",
+        "norm:unified:000044",
+        "norm:unified:000045",
+        "norm:unified:000046"
+      ],
+      "start_event_id": "norm:unified:000032"
+    },
+    {
+      "end_event_id": "norm:unified:000048",
+      "importance": 0.425,
+      "location_id": "roxbury_sanitarium",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_006",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:unified:000047",
+        "norm:unified:000048"
+      ],
+      "start_event_id": "norm:unified:000047"
+    },
+    {
+      "end_event_id": "norm:unified:000077",
+      "importance": 1.0,
+      "location_id": "the_neighborhood",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_007",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:unified:000049",
+        "norm:unified:000050",
+        "norm:unified:000051",
+        "norm:unified:000052",
+        "norm:unified:000053",
+        "norm:unified:000054",
+        "norm:unified:000055",
+        "norm:unified:000056",
+        "norm:unified:000057",
+        "norm:unified:000058",
+        "norm:unified:000059",
+        "norm:unified:000060",
+        "norm:unified:000061",
+        "norm:unified:000062",
+        "norm:unified:000063",
+        "norm:unified:000064",
+        "norm:unified:000065",
+        "norm:unified:000066",
+        "norm:unified:000067",
+        "norm:unified:000068",
+        "norm:unified:000069",
+        "norm:unified:000070",
+        "norm:unified:000071",
+        "norm:unified:000072",
+        "norm:unified:000073",
+        "norm:unified:000074",
+        "norm:unified:000075",
+        "norm:unified:000076",
+        "norm:unified:000077"
+      ],
+      "start_event_id": "norm:unified:000049"
+    },
+    {
+      "end_event_id": "norm:unified:000090",
+      "importance": 1.0,
+      "location_id": "corbitt_exterior",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_008",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:unified:000078",
+        "norm:unified:000079",
+        "norm:unified:000080",
+        "norm:unified:000081",
+        "norm:unified:000082",
+        "norm:unified:000083",
+        "norm:unified:000084",
+        "norm:unified:000085",
+        "norm:unified:000086",
+        "norm:unified:000087",
+        "norm:unified:000088",
+        "norm:unified:000089",
+        "norm:unified:000090"
+      ],
+      "start_event_id": "norm:unified:000078"
+    },
+    {
+      "end_event_id": "norm:unified:000114",
+      "importance": 1.0,
+      "location_id": "the_neighborhood",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_009",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:unified:000091",
+        "norm:unified:000092",
+        "norm:unified:000093",
+        "norm:unified:000094",
+        "norm:unified:000095",
+        "norm:unified:000096",
+        "norm:unified:000097",
+        "norm:unified:000098",
+        "norm:unified:000099",
+        "norm:unified:000100",
+        "norm:unified:000101",
+        "norm:unified:000102",
+        "norm:unified:000103",
+        "norm:unified:000104",
+        "norm:unified:000105",
+        "norm:unified:000106",
+        "norm:unified:000107",
+        "norm:unified:000108",
+        "norm:unified:000109",
+        "norm:unified:000110",
+        "norm:unified:000111",
+        "norm:unified:000112",
+        "norm:unified:000113",
+        "norm:unified:000114"
+      ],
+      "start_event_id": "norm:unified:000091"
+    },
+    {
+      "end_event_id": "norm:unified:000133",
+      "importance": 1.0,
+      "location_id": "corbitt_exterior",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_010",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:unified:000115",
+        "norm:unified:000116",
+        "norm:unified:000117",
+        "norm:unified:000118",
+        "norm:unified:000119",
+        "norm:unified:000120",
+        "norm:unified:000121",
+        "norm:unified:000122",
+        "norm:unified:000123",
+        "norm:unified:000124",
+        "norm:unified:000125",
+        "norm:unified:000126",
+        "norm:unified:000127",
+        "norm:unified:000128",
+        "norm:unified:000129",
+        "norm:unified:000130",
+        "norm:unified:000131",
+        "norm:unified:000132",
+        "norm:unified:000133"
+      ],
+      "start_event_id": "norm:unified:000115"
+    },
+    {
+      "end_event_id": "norm:unified:000168",
+      "importance": 1.0,
+      "location_id": "corbitt_ground_floor",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_011",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:unified:000134",
+        "norm:unified:000135",
+        "norm:unified:000136",
+        "norm:unified:000137",
+        "norm:unified:000138",
+        "norm:unified:000139",
+        "norm:unified:000140",
+        "norm:unified:000141",
+        "norm:unified:000142",
+        "norm:unified:000143",
+        "norm:unified:000144",
+        "norm:unified:000145",
+        "norm:unified:000146",
+        "norm:unified:000147",
+        "norm:unified:000148",
+        "norm:unified:000149",
+        "norm:unified:000150",
+        "norm:unified:000151",
+        "norm:unified:000152",
+        "norm:unified:000153",
+        "norm:unified:000154",
+        "norm:unified:000155",
+        "norm:unified:000156",
+        "norm:unified:000157",
+        "norm:unified:000158",
+        "norm:unified:000159",
+        "norm:unified:000160",
+        "norm:unified:000161",
+        "norm:unified:000162",
+        "norm:unified:000163",
+        "norm:unified:000164",
+        "norm:unified:000165",
+        "norm:unified:000166",
+        "norm:unified:000167",
+        "norm:unified:000168"
+      ],
+      "start_event_id": "norm:unified:000134"
+    },
+    {
+      "end_event_id": "norm:unified:000170",
+      "importance": 0.425,
+      "location_id": "corbitt_upper_floor",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_012",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:unified:000169",
+        "norm:unified:000170"
+      ],
+      "start_event_id": "norm:unified:000169"
+    },
+    {
+      "end_event_id": "norm:unified:000172",
+      "importance": 0.425,
+      "location_id": "corbitt_ground_floor",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_013",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:unified:000171",
+        "norm:unified:000172"
+      ],
+      "start_event_id": "norm:unified:000171"
+    },
+    {
+      "end_event_id": "norm:unified:000180",
+      "importance": 1.0,
+      "location_id": "corbitt_upper_floor",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_014",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:unified:000173",
+        "norm:unified:000174",
+        "norm:unified:000175",
+        "norm:unified:000176",
+        "norm:unified:000177",
+        "norm:unified:000178",
+        "norm:unified:000179",
+        "norm:unified:000180"
+      ],
+      "start_event_id": "norm:unified:000173"
+    },
+    {
+      "end_event_id": "norm:unified:000182",
+      "importance": 0.425,
+      "location_id": "corbitt_ground_floor",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_015",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:unified:000181",
+        "norm:unified:000182"
+      ],
+      "start_event_id": "norm:unified:000181"
+    },
+    {
+      "end_event_id": "norm:unified:000184",
+      "importance": 0.425,
+      "location_id": "corbitt_upper_floor",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_016",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:unified:000183",
+        "norm:unified:000184"
+      ],
+      "start_event_id": "norm:unified:000183"
+    },
+    {
+      "end_event_id": "norm:unified:000189",
+      "importance": 0.5,
+      "location_id": "corbitt_ground_floor",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_017",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:unified:000185",
+        "norm:unified:000186",
+        "norm:unified:000187",
+        "norm:unified:000188",
+        "norm:unified:000189"
+      ],
+      "start_event_id": "norm:unified:000185"
+    },
+    {
+      "end_event_id": "norm:unified:000193",
+      "importance": 1.0,
+      "location_id": "corbitt_upper_floor",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_018",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:unified:000190",
+        "norm:unified:000191",
+        "norm:unified:000192",
+        "norm:unified:000193"
+      ],
+      "start_event_id": "norm:unified:000190"
+    },
+    {
+      "end_event_id": "norm:unified:000210",
+      "importance": 1.0,
+      "location_id": "corbitt_ground_floor",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_019",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:unified:000194",
+        "norm:unified:000195",
+        "norm:unified:000196",
+        "norm:unified:000197",
+        "norm:unified:000198",
+        "norm:unified:000199",
+        "norm:unified:000200",
+        "norm:unified:000201",
+        "norm:unified:000202",
+        "norm:unified:000203",
+        "norm:unified:000204",
+        "norm:unified:000205",
+        "norm:unified:000206",
+        "norm:unified:000207",
+        "norm:unified:000208",
+        "norm:unified:000209",
+        "norm:unified:000210"
+      ],
+      "start_event_id": "norm:unified:000194"
+    },
+    {
+      "end_event_id": "norm:unified:000228",
+      "importance": 1.0,
+      "location_id": "corbitt_upper_floor",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_020",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:unified:000211",
+        "norm:unified:000212",
+        "norm:unified:000213",
+        "norm:unified:000214",
+        "norm:unified:000215",
+        "norm:unified:000216",
+        "norm:unified:000217",
+        "norm:unified:000218",
+        "norm:unified:000219",
+        "norm:unified:000220",
+        "norm:unified:000221",
+        "norm:unified:000222",
+        "norm:unified:000223",
+        "norm:unified:000224",
+        "norm:unified:000225",
+        "norm:unified:000226",
+        "norm:unified:000227",
+        "norm:unified:000228"
+      ],
+      "start_event_id": "norm:unified:000211"
+    },
+    {
+      "end_event_id": "norm:unified:000263",
+      "importance": 1.0,
+      "location_id": "corbitt_ground_floor",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_021",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:unified:000229",
+        "norm:unified:000230",
+        "norm:unified:000231",
+        "norm:unified:000232",
+        "norm:unified:000233",
+        "norm:unified:000234",
+        "norm:unified:000235",
+        "norm:unified:000236",
+        "norm:unified:000237",
+        "norm:unified:000238",
+        "norm:unified:000239",
+        "norm:unified:000240",
+        "norm:unified:000241",
+        "norm:unified:000242",
+        "norm:unified:000243",
+        "norm:unified:000244",
+        "norm:unified:000245",
+        "norm:unified:000246",
+        "norm:unified:000247",
+        "norm:unified:000248",
+        "norm:unified:000249",
+        "norm:unified:000250",
+        "norm:unified:000251",
+        "norm:unified:000252",
+        "norm:unified:000253",
+        "norm:unified:000254",
+        "norm:unified:000255",
+        "norm:unified:000256",
+        "norm:unified:000257",
+        "norm:unified:000258",
+        "norm:unified:000259",
+        "norm:unified:000260",
+        "norm:unified:000261",
+        "norm:unified:000262",
+        "norm:unified:000263"
+      ],
+      "start_event_id": "norm:unified:000229"
+    },
+    {
+      "end_event_id": "norm:unified:000268",
+      "importance": 0.5,
+      "location_id": "corbitt_basement",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_022",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:unified:000264",
+        "norm:unified:000265",
+        "norm:unified:000266",
+        "norm:unified:000267",
+        "norm:unified:000268"
+      ],
+      "start_event_id": "norm:unified:000264"
+    },
+    {
+      "end_event_id": "norm:unified:000275",
+      "importance": 1.0,
+      "location_id": "corbitt_ground_floor",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_023",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:unified:000269",
+        "norm:unified:000270",
+        "norm:unified:000271",
+        "norm:unified:000272",
+        "norm:unified:000273",
+        "norm:unified:000274",
+        "norm:unified:000275"
+      ],
+      "start_event_id": "norm:unified:000269"
+    },
+    {
+      "end_event_id": "norm:unified:000279",
+      "importance": 0.475,
+      "location_id": "corbitt_basement",
+      "participants": [
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_024",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:unified:000276",
+        "norm:unified:000277",
+        "norm:unified:000278",
+        "norm:unified:000279"
+      ],
+      "start_event_id": "norm:unified:000276"
+    },
+    {
+      "end_event_id": "norm:unified:000291",
+      "importance": 1.0,
+      "location_id": "corbitt_basement_room2",
+      "participants": [
+        "pc_01"
+      ],
+      "scene_id": "scene_025",
+      "scene_type": "COMBAT",
+      "source_event_ids": [
+        "norm:unified:000280",
+        "norm:unified:000281",
+        "norm:unified:000282",
+        "norm:unified:000283",
+        "norm:unified:000284",
+        "norm:unified:000285",
+        "norm:unified:000286",
+        "norm:unified:000287",
+        "norm:unified:000288",
+        "norm:unified:000289",
+        "norm:unified:000290",
+        "norm:unified:000291"
+      ],
+      "start_event_id": "norm:unified:000280"
+    },
+    {
+      "end_event_id": "norm:unified:000292",
+      "importance": 1.0,
+      "location_id": null,
+      "participants": [],
+      "scene_id": "scene_026",
+      "scene_type": "ENDING",
+      "source_event_ids": [
+        "norm:unified:000292"
+      ],
+      "start_event_id": "norm:unified:000292"
+    },
+    {
+      "end_event_id": "norm:unified:000293",
+      "importance": 1.0,
+      "location_id": null,
+      "participants": [],
+      "scene_id": "scene_027",
+      "scene_type": "COMBAT",
+      "source_event_ids": [
+        "norm:unified:000293"
+      ],
+      "start_event_id": "norm:unified:000293"
+    },
+    {
+      "end_event_id": "norm:session:000020",
+      "importance": 0.2,
+      "location_id": "corbitt_basement_room2",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02",
+        "system"
+      ],
+      "scene_id": "scene_028",
+      "scene_type": "ROLEPLAY",
+      "source_event_ids": [
+        "norm:unified:000294",
+        "norm:session:000000",
+        "norm:session:000001",
+        "norm:session:000002",
+        "norm:session:000003",
+        "norm:session:000004",
+        "norm:session:000005",
+        "norm:session:000006",
+        "norm:session:000007",
+        "norm:session:000008",
+        "norm:session:000009",
+        "norm:session:000010",
+        "norm:session:000011",
+        "norm:session:000012",
+        "norm:session:000013",
+        "norm:session:000014",
+        "norm:session:000015",
+        "norm:session:000016",
+        "norm:session:000017",
+        "norm:session:000018",
+        "norm:session:000019",
+        "norm:session:000020"
+      ],
+      "start_event_id": "norm:unified:000294"
+    },
+    {
+      "end_event_id": "norm:session:000045",
+      "importance": 0.68,
+      "location_id": "introduction",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02",
+        "system"
+      ],
+      "scene_id": "scene_029",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:session:000021",
+        "norm:session:000022",
+        "norm:session:000023",
+        "norm:session:000024",
+        "norm:session:000025",
+        "norm:session:000026",
+        "norm:session:000027",
+        "norm:session:000028",
+        "norm:session:000029",
+        "norm:session:000030",
+        "norm:session:000031",
+        "norm:session:000032",
+        "norm:session:000033",
+        "norm:session:000034",
+        "norm:session:000035",
+        "norm:session:000036",
+        "norm:session:000037",
+        "norm:session:000038",
+        "norm:session:000039",
+        "norm:session:000040",
+        "norm:session:000041",
+        "norm:session:000042",
+        "norm:session:000043",
+        "norm:session:000044",
+        "norm:session:000045"
+      ],
+      "start_event_id": "norm:session:000021"
+    },
+    {
+      "end_event_id": "norm:session:000058",
+      "importance": 0.662,
+      "location_id": "boston_globe",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02",
+        "system"
+      ],
+      "scene_id": "scene_030",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:session:000046",
+        "norm:session:000047",
+        "norm:session:000048",
+        "norm:session:000049",
+        "norm:session:000050",
+        "norm:session:000051",
+        "norm:session:000052",
+        "norm:session:000053",
+        "norm:session:000054",
+        "norm:session:000055",
+        "norm:session:000056",
+        "norm:session:000057",
+        "norm:session:000058"
+      ],
+      "start_event_id": "norm:session:000046"
+    },
+    {
+      "end_event_id": "norm:session:000065",
+      "importance": 0.55,
+      "location_id": "central_library",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_031",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:session:000059",
+        "norm:session:000060",
+        "norm:session:000061",
+        "norm:session:000062",
+        "norm:session:000063",
+        "norm:session:000064",
+        "norm:session:000065"
+      ],
+      "start_event_id": "norm:session:000059"
+    },
+    {
+      "end_event_id": "norm:session:000083",
+      "importance": 0.7,
+      "location_id": "the_neighborhood",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02",
+        "system"
+      ],
+      "scene_id": "scene_032",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:session:000066",
+        "norm:session:000067",
+        "norm:session:000068",
+        "norm:session:000069",
+        "norm:session:000070",
+        "norm:session:000071",
+        "norm:session:000072",
+        "norm:session:000073",
+        "norm:session:000074",
+        "norm:session:000075",
+        "norm:session:000076",
+        "norm:session:000077",
+        "norm:session:000078",
+        "norm:session:000079",
+        "norm:session:000080",
+        "norm:session:000081",
+        "norm:session:000082",
+        "norm:session:000083"
+      ],
+      "start_event_id": "norm:session:000066"
+    },
+    {
+      "end_event_id": "norm:session:000086",
+      "importance": 0.45,
+      "location_id": "roxbury_sanitarium",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_033",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:session:000084",
+        "norm:session:000085",
+        "norm:session:000086"
+      ],
+      "start_event_id": "norm:session:000084"
+    },
+    {
+      "end_event_id": "norm:session:000112",
+      "importance": 0.662,
+      "location_id": "the_neighborhood",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_034",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:session:000087",
+        "norm:session:000088",
+        "norm:session:000089",
+        "norm:session:000090",
+        "norm:session:000091",
+        "norm:session:000092",
+        "norm:session:000093",
+        "norm:session:000094",
+        "norm:session:000095",
+        "norm:session:000096",
+        "norm:session:000097",
+        "norm:session:000098",
+        "norm:session:000099",
+        "norm:session:000100",
+        "norm:session:000101",
+        "norm:session:000102",
+        "norm:session:000103",
+        "norm:session:000104",
+        "norm:session:000105",
+        "norm:session:000106",
+        "norm:session:000107",
+        "norm:session:000108",
+        "norm:session:000109",
+        "norm:session:000110",
+        "norm:session:000111",
+        "norm:session:000112"
+      ],
+      "start_event_id": "norm:session:000087"
+    },
+    {
+      "end_event_id": "norm:session:000122",
+      "importance": 0.8,
+      "location_id": "corbitt_exterior",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02",
+        "system"
+      ],
+      "scene_id": "scene_035",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:session:000113",
+        "norm:session:000114",
+        "norm:session:000115",
+        "norm:session:000116",
+        "norm:session:000117",
+        "norm:session:000118",
+        "norm:session:000119",
+        "norm:session:000120",
+        "norm:session:000121",
+        "norm:session:000122"
+      ],
+      "start_event_id": "norm:session:000113"
+    },
+    {
+      "end_event_id": "norm:session:000158",
+      "importance": 0.45,
+      "location_id": "the_neighborhood",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02",
+        "system"
+      ],
+      "scene_id": "scene_036",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:session:000123",
+        "norm:session:000124",
+        "norm:session:000125",
+        "norm:session:000126",
+        "norm:session:000127",
+        "norm:session:000128",
+        "norm:session:000129",
+        "norm:session:000130",
+        "norm:session:000131",
+        "norm:session:000132",
+        "norm:session:000133",
+        "norm:session:000134",
+        "norm:session:000135",
+        "norm:session:000136",
+        "norm:session:000137",
+        "norm:session:000138",
+        "norm:session:000139",
+        "norm:session:000140",
+        "norm:session:000141",
+        "norm:session:000142",
+        "norm:session:000143",
+        "norm:session:000144",
+        "norm:session:000145",
+        "norm:session:000146",
+        "norm:session:000147",
+        "norm:session:000148",
+        "norm:session:000149",
+        "norm:session:000150",
+        "norm:session:000151",
+        "norm:session:000152",
+        "norm:session:000153",
+        "norm:session:000154",
+        "norm:session:000155",
+        "norm:session:000156",
+        "norm:session:000157",
+        "norm:session:000158"
+      ],
+      "start_event_id": "norm:session:000123"
+    },
+    {
+      "end_event_id": "norm:session:000186",
+      "importance": 0.95,
+      "location_id": "corbitt_exterior",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02",
+        "system"
+      ],
+      "scene_id": "scene_037",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:session:000159",
+        "norm:session:000160",
+        "norm:session:000161",
+        "norm:session:000162",
+        "norm:session:000163",
+        "norm:session:000164",
+        "norm:session:000165",
+        "norm:session:000166",
+        "norm:session:000167",
+        "norm:session:000168",
+        "norm:session:000169",
+        "norm:session:000170",
+        "norm:session:000171",
+        "norm:session:000172",
+        "norm:session:000173",
+        "norm:session:000174",
+        "norm:session:000175",
+        "norm:session:000176",
+        "norm:session:000177",
+        "norm:session:000178",
+        "norm:session:000179",
+        "norm:session:000180",
+        "norm:session:000181",
+        "norm:session:000182",
+        "norm:session:000183",
+        "norm:session:000184",
+        "norm:session:000185",
+        "norm:session:000186"
+      ],
+      "start_event_id": "norm:session:000159"
+    },
+    {
+      "end_event_id": "norm:session:000230",
+      "importance": 0.677,
+      "location_id": "corbitt_ground_floor",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02",
+        "system"
+      ],
+      "scene_id": "scene_038",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:session:000187",
+        "norm:session:000188",
+        "norm:session:000189",
+        "norm:session:000190",
+        "norm:session:000191",
+        "norm:session:000192",
+        "norm:session:000193",
+        "norm:session:000194",
+        "norm:session:000195",
+        "norm:session:000196",
+        "norm:session:000197",
+        "norm:session:000198",
+        "norm:session:000199",
+        "norm:session:000200",
+        "norm:session:000201",
+        "norm:session:000202",
+        "norm:session:000203",
+        "norm:session:000204",
+        "norm:session:000205",
+        "norm:session:000206",
+        "norm:session:000207",
+        "norm:session:000208",
+        "norm:session:000209",
+        "norm:session:000210",
+        "norm:session:000211",
+        "norm:session:000212",
+        "norm:session:000213",
+        "norm:session:000214",
+        "norm:session:000215",
+        "norm:session:000216",
+        "norm:session:000217",
+        "norm:session:000218",
+        "norm:session:000219",
+        "norm:session:000220",
+        "norm:session:000221",
+        "norm:session:000222",
+        "norm:session:000223",
+        "norm:session:000224",
+        "norm:session:000225",
+        "norm:session:000226",
+        "norm:session:000227",
+        "norm:session:000228",
+        "norm:session:000229",
+        "norm:session:000230"
+      ],
+      "start_event_id": "norm:session:000187"
+    },
+    {
+      "end_event_id": "norm:session:000233",
+      "importance": 0.45,
+      "location_id": "corbitt_upper_floor",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_039",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:session:000231",
+        "norm:session:000232",
+        "norm:session:000233"
+      ],
+      "start_event_id": "norm:session:000231"
+    },
+    {
+      "end_event_id": "norm:session:000236",
+      "importance": 0.45,
+      "location_id": "corbitt_ground_floor",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_040",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:session:000234",
+        "norm:session:000235",
+        "norm:session:000236"
+      ],
+      "start_event_id": "norm:session:000234"
+    },
+    {
+      "end_event_id": "norm:session:000243",
+      "importance": 0.925,
+      "location_id": "corbitt_upper_floor",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_041",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:session:000237",
+        "norm:session:000238",
+        "norm:session:000239",
+        "norm:session:000240",
+        "norm:session:000241",
+        "norm:session:000242",
+        "norm:session:000243"
+      ],
+      "start_event_id": "norm:session:000237"
+    },
+    {
+      "end_event_id": "norm:session:000247",
+      "importance": 0.475,
+      "location_id": "corbitt_ground_floor",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_042",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:session:000244",
+        "norm:session:000245",
+        "norm:session:000246",
+        "norm:session:000247"
+      ],
+      "start_event_id": "norm:session:000244"
+    },
+    {
+      "end_event_id": "norm:session:000251",
+      "importance": 0.475,
+      "location_id": "corbitt_upper_floor",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_043",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:session:000248",
+        "norm:session:000249",
+        "norm:session:000250",
+        "norm:session:000251"
+      ],
+      "start_event_id": "norm:session:000248"
+    },
+    {
+      "end_event_id": "norm:session:000262",
+      "importance": 0.473,
+      "location_id": "corbitt_ground_floor",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02",
+        "system"
+      ],
+      "scene_id": "scene_044",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:session:000252",
+        "norm:session:000253",
+        "norm:session:000254",
+        "norm:session:000255",
+        "norm:session:000256",
+        "norm:session:000257",
+        "norm:session:000258",
+        "norm:session:000259",
+        "norm:session:000260",
+        "norm:session:000261",
+        "norm:session:000262"
+      ],
+      "start_event_id": "norm:session:000252"
+    },
+    {
+      "end_event_id": "norm:session:000268",
+      "importance": 0.525,
+      "location_id": "corbitt_upper_floor",
+      "participants": [
+        "kp",
+        "pc_02",
+        "system"
+      ],
+      "scene_id": "scene_045",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:session:000263",
+        "norm:session:000264",
+        "norm:session:000265",
+        "norm:session:000266",
+        "norm:session:000267",
+        "norm:session:000268"
+      ],
+      "start_event_id": "norm:session:000263"
+    },
+    {
+      "end_event_id": "norm:session:000284",
+      "importance": 0.575,
+      "location_id": "corbitt_ground_floor",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02",
+        "system"
+      ],
+      "scene_id": "scene_046",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:session:000269",
+        "norm:session:000270",
+        "norm:session:000271",
+        "norm:session:000272",
+        "norm:session:000273",
+        "norm:session:000274",
+        "norm:session:000275",
+        "norm:session:000276",
+        "norm:session:000277",
+        "norm:session:000278",
+        "norm:session:000279",
+        "norm:session:000280",
+        "norm:session:000281",
+        "norm:session:000282",
+        "norm:session:000283",
+        "norm:session:000284"
+      ],
+      "start_event_id": "norm:session:000269"
+    },
+    {
+      "end_event_id": "norm:session:000304",
+      "importance": 0.8,
+      "location_id": "corbitt_upper_floor",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02",
+        "system"
+      ],
+      "scene_id": "scene_047",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:session:000285",
+        "norm:session:000286",
+        "norm:session:000287",
+        "norm:session:000288",
+        "norm:session:000289",
+        "norm:session:000290",
+        "norm:session:000291",
+        "norm:session:000292",
+        "norm:session:000293",
+        "norm:session:000294",
+        "norm:session:000295",
+        "norm:session:000296",
+        "norm:session:000297",
+        "norm:session:000298",
+        "norm:session:000299",
+        "norm:session:000300",
+        "norm:session:000301",
+        "norm:session:000302",
+        "norm:session:000303",
+        "norm:session:000304"
+      ],
+      "start_event_id": "norm:session:000285"
+    },
+    {
+      "end_event_id": "norm:session:000342",
+      "importance": 0.753,
+      "location_id": "corbitt_ground_floor",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02",
+        "system"
+      ],
+      "scene_id": "scene_048",
+      "scene_type": "SAN_SEQUENCE",
+      "source_event_ids": [
+        "norm:session:000305",
+        "norm:session:000306",
+        "norm:session:000307",
+        "norm:session:000308",
+        "norm:session:000309",
+        "norm:session:000310",
+        "norm:session:000311",
+        "norm:session:000312",
+        "norm:session:000313",
+        "norm:session:000314",
+        "norm:session:000315",
+        "norm:session:000316",
+        "norm:session:000317",
+        "norm:session:000318",
+        "norm:session:000319",
+        "norm:session:000320",
+        "norm:session:000321",
+        "norm:session:000322",
+        "norm:session:000323",
+        "norm:session:000324",
+        "norm:session:000325",
+        "norm:session:000326",
+        "norm:session:000327",
+        "norm:session:000328",
+        "norm:session:000329",
+        "norm:session:000330",
+        "norm:session:000331",
+        "norm:session:000332",
+        "norm:session:000333",
+        "norm:session:000334",
+        "norm:session:000335",
+        "norm:session:000336",
+        "norm:session:000337",
+        "norm:session:000338",
+        "norm:session:000339",
+        "norm:session:000340",
+        "norm:session:000341",
+        "norm:session:000342"
+      ],
+      "start_event_id": "norm:session:000305"
+    },
+    {
+      "end_event_id": "norm:session:000349",
+      "importance": 0.55,
+      "location_id": "corbitt_basement",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_049",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:session:000343",
+        "norm:session:000344",
+        "norm:session:000345",
+        "norm:session:000346",
+        "norm:session:000347",
+        "norm:session:000348",
+        "norm:session:000349"
+      ],
+      "start_event_id": "norm:session:000343"
+    },
+    {
+      "end_event_id": "norm:session:000362",
+      "importance": 0.431,
+      "location_id": "corbitt_ground_floor",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_050",
+      "scene_type": "TRAVEL",
+      "source_event_ids": [
+        "norm:session:000350",
+        "norm:session:000351",
+        "norm:session:000352",
+        "norm:session:000353",
+        "norm:session:000354",
+        "norm:session:000355",
+        "norm:session:000356",
+        "norm:session:000357",
+        "norm:session:000358",
+        "norm:session:000359",
+        "norm:session:000360",
+        "norm:session:000361",
+        "norm:session:000362"
+      ],
+      "start_event_id": "norm:session:000350"
+    },
+    {
+      "end_event_id": "norm:session:000375",
+      "importance": 0.662,
+      "location_id": "corbitt_basement",
+      "participants": [
+        "kp",
+        "pc_01",
+        "pc_02"
+      ],
+      "scene_id": "scene_051",
+      "scene_type": "SKILL_SEQUENCE",
+      "source_event_ids": [
+        "norm:session:000363",
+        "norm:session:000364",
+        "norm:session:000365",
+        "norm:session:000366",
+        "norm:session:000367",
+        "norm:session:000368",
+        "norm:session:000369",
+        "norm:session:000370",
+        "norm:session:000371",
+        "norm:session:000372",
+        "norm:session:000373",
+        "norm:session:000374",
+        "norm:session:000375"
+      ],
+      "start_event_id": "norm:session:000363"
+    },
+    {
+      "end_event_id": "norm:session:000381",
+      "importance": 1.0,
+      "location_id": "corbitt_basement_room2",
+      "participants": [
+        "kp",
+        "pc_01",
+        "system"
+      ],
+      "scene_id": "scene_052",
+      "scene_type": "COMBAT",
+      "source_event_ids": [
+        "norm:session:000376",
+        "norm:session:000377",
+        "norm:session:000378",
+        "norm:session:000379",
+        "norm:session:000380",
+        "norm:session:000381"
+      ],
+      "start_event_id": "norm:session:000376"
+    },
+    {
+      "end_event_id": "norm:session:000382",
+      "importance": 1.0,
+      "location_id": "corbitt_basement_room2",
+      "participants": [
+        "pc_01"
+      ],
+      "scene_id": "scene_053",
+      "scene_type": "ENDING",
+      "source_event_ids": [
+        "norm:session:000382"
+      ],
+      "start_event_id": "norm:session:000382"
+    }
+  ],
+  "schema_version": "0.1"
+}

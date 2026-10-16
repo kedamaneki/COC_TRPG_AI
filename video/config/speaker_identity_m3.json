@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "players": [
+    {
+      "player_id": "player_reimu",
+      "display_name": "霊夢",
+      "voice_profile_id": "m1_aq_f1",
+      "portrait_profile_id": "kitsune_reimu_old",
+      "subtitle_profile_id": "subtitle_reimu"
+    },
+    {
+      "player_id": "player_marisa",
+      "display_name": "魔理沙",
+      "voice_profile_id": "aq_marisa_default",
+      "portrait_profile_id": "kitsune_marisa_old",
+      "subtitle_profile_id": "subtitle_marisa"
+    }
+  ],
+  "pcs": [
+    {
+      "pc_id": "pc_01",
+      "display_name": "マクガフィン刑事",
+      "controlled_by_player_id": "player_reimu",
+      "voice_profile_id": "m1_aq_f1",
+      "portrait_profile_id": "kitsune_reimu_old",
+      "subtitle_profile_id": "subtitle_reimu"
+    },
+    {
+      "pc_id": "pc_02",
+      "display_name": "エレノア教授",
+      "controlled_by_player_id": "player_marisa",
+      "voice_profile_id": "aq_marisa_default",
+      "portrait_profile_id": "kitsune_marisa_old",
+      "subtitle_profile_id": "subtitle_marisa"
+    }
+  ]
+}

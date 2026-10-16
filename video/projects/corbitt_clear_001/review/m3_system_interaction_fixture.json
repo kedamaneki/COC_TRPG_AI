@@ -1,0 +1,218 @@
+{
+  "cases": [
+    {
+      "actual_presentation_as": [
+        "KP",
+        "PL"
+      ],
+      "actual_text": [
+        "プッシュしますか？",
+        "Yes"
+      ],
+      "expected_presentation_as": [
+        "KP",
+        "PL"
+      ],
+      "expected_text": [
+        "プッシュしますか？",
+        "Yes"
+      ],
+      "name": "Push Yes",
+      "pass": true,
+      "report": {
+        "ambiguous_pairs": 0,
+        "pairs": [
+          {
+            "classification": "TABLETOP_INTERACTION",
+            "grounding": "EXPLICIT_SYSTEM_PROMPT",
+            "interaction_type": "PUSH_CONFIRMATION",
+            "prompt_script_line_id": "r__system_prompt",
+            "response_script_line_id": "r",
+            "system_interaction_id": "si_001"
+          }
+        ],
+        "pl_voice_fallback_count": 0,
+        "prompt_response_pairs": 1,
+        "tabletop_interactions_detected": 1,
+        "tabletop_interactions_presented": 1,
+        "technical_interactions_hidden": 0,
+        "ungrounded_kp_prompt_count": 0,
+        "warnings": []
+      }
+    },
+    {
+      "actual_presentation_as": [
+        "KP",
+        "PL"
+      ],
+      "actual_text": [
+        "再試行しますか？",
+        "No"
+      ],
+      "expected_presentation_as": [
+        "KP",
+        "PL"
+      ],
+      "expected_text": [
+        "再試行しますか？",
+        "No"
+      ],
+      "name": "Retry No",
+      "pass": true,
+      "report": {
+        "ambiguous_pairs": 0,
+        "pairs": [
+          {
+            "classification": "TABLETOP_INTERACTION",
+            "grounding": "EXPLICIT_SYSTEM_PROMPT",
+            "interaction_type": "RETRY_CONFIRMATION",
+            "prompt_script_line_id": "r__system_prompt",
+            "response_script_line_id": "r",
+            "system_interaction_id": "si_001"
+          }
+        ],
+        "pl_voice_fallback_count": 0,
+        "prompt_response_pairs": 1,
+        "tabletop_interactions_detected": 1,
+        "tabletop_interactions_presented": 1,
+        "technical_interactions_hidden": 0,
+        "ungrounded_kp_prompt_count": 0,
+        "warnings": []
+      }
+    },
+    {
+      "actual_presentation_as": [],
+      "actual_text": [],
+      "expected_presentation_as": [],
+      "expected_text": [],
+      "name": "Technical checkpoint",
+      "pass": true,
+      "report": {
+        "ambiguous_pairs": 0,
+        "pairs": [],
+        "pl_voice_fallback_count": 0,
+        "prompt_response_pairs": 0,
+        "tabletop_interactions_detected": 0,
+        "tabletop_interactions_presented": 0,
+        "technical_interactions_hidden": 1,
+        "ungrounded_kp_prompt_count": 0,
+        "warnings": []
+      }
+    },
+    {
+      "actual_presentation_as": [
+        null,
+        null
+      ],
+      "actual_text": [
+        "一緒に来ますか？",
+        "はい"
+      ],
+      "expected_presentation_as": [
+        null,
+        null
+      ],
+      "expected_text": [
+        "一緒に来ますか？",
+        "はい"
+      ],
+      "name": "NPC dialogue",
+      "pass": true,
+      "report": {
+        "ambiguous_pairs": 0,
+        "pairs": [],
+        "pl_voice_fallback_count": 0,
+        "prompt_response_pairs": 0,
+        "tabletop_interactions_detected": 0,
+        "tabletop_interactions_presented": 0,
+        "technical_interactions_hidden": 0,
+        "ungrounded_kp_prompt_count": 0,
+        "warnings": []
+      }
+    },
+    {
+      "actual_presentation_as": [
+        null,
+        null
+      ],
+      "actual_text": [
+        "本当に開けますか？",
+        "はい"
+      ],
+      "expected_presentation_as": [
+        null,
+        null
+      ],
+      "expected_text": [
+        "本当に開けますか？",
+        "はい"
+      ],
+      "name": "KP dialogue",
+      "pass": true,
+      "report": {
+        "ambiguous_pairs": 0,
+        "pairs": [],
+        "pl_voice_fallback_count": 0,
+        "prompt_response_pairs": 0,
+        "tabletop_interactions_detected": 0,
+        "tabletop_interactions_presented": 0,
+        "technical_interactions_hidden": 0,
+        "ungrounded_kp_prompt_count": 0,
+        "warnings": []
+      }
+    },
+    {
+      "actual_presentation_as": [
+        null
+      ],
+      "actual_text": [
+        "Yes"
+      ],
+      "expected_presentation_as": [
+        null
+      ],
+      "expected_text": [
+        "Yes"
+      ],
+      "name": "Ambiguous",
+      "pass": true,
+      "report": {
+        "ambiguous_pairs": 1,
+        "pairs": [],
+        "pl_voice_fallback_count": 0,
+        "prompt_response_pairs": 0,
+        "tabletop_interactions_detected": 0,
+        "tabletop_interactions_presented": 0,
+        "technical_interactions_hidden": 0,
+        "ungrounded_kp_prompt_count": 0,
+        "warnings": [
+          {
+            "code": "AMBIGUOUS_SYSTEM_INTERACTION",
+            "script_line_id": "u"
+          }
+        ]
+      }
+    }
+  ],
+  "fixture_version": "0.1",
+  "observed_preview": {
+    "ambiguous_pairs": 0,
+    "pairs": [
+      {
+        "classification": "TABLETOP_INTERACTION",
+        "grounding": "FOLLOWUP_EXPLICIT_LUCK_SPEND",
+        "interaction_type": "ACTION_CONFIRMATION",
+        "prompt_script_line_id": "scene_048_script_006__system_prompt",
+        "response_script_line_id": "scene_048_script_006",
+        "system_interaction_id": "si_001"
+      }
+    ],
+    "pl_voice_fallback_count": 0,
+    "prompt_response_pairs": 1,
+    "tabletop_interactions_detected": 1,
+    "tabletop_interactions_presented": 1,
+    "technical_interactions_hidden": 0,
+    "ungrounded_kp_prompt_count": 0,
+    "warnings": []
+  }
+}

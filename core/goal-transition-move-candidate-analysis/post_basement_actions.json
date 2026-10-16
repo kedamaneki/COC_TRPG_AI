@@ -1,0 +1,473 @@
+{
+  "count": 22,
+  "category_counts": {
+    "investigate": 13,
+    "re-enter_basement": 7,
+    "wait": 2
+  },
+  "progressing_actions": 0,
+  "actions": [
+    {
+      "ordinal": 1,
+      "cycle": 30,
+      "game_turn": 76,
+      "event_id": "evt_000278_7b0a98cd323e79c2c5a0",
+      "event_sequence": 278,
+      "actor": "pc_01",
+      "action": "search",
+      "target": "cult_diary",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 21,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 2,
+      "cycle": 30,
+      "game_turn": 77,
+      "event_id": "evt_000280_d9863a5e5f87bc6d531c",
+      "event_sequence": 280,
+      "actor": "pc_02",
+      "action": "break",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "SYSTEM_FORCED",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 22,
+      "category": "re-enter_basement",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 3,
+      "cycle": 30,
+      "game_turn": 78,
+      "event_id": "evt_000283_0f176581e5a1b762329f",
+      "event_sequence": 283,
+      "actor": "pc_02",
+      "action": "search",
+      "target": "chapel_ruins",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 23,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 4,
+      "cycle": 31,
+      "game_turn": 79,
+      "event_id": "evt_000285_ebb18168a1cb0e28c54b",
+      "event_sequence": 285,
+      "actor": "pc_01",
+      "action": "break",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 24,
+      "category": "re-enter_basement",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 5,
+      "cycle": 31,
+      "game_turn": 80,
+      "event_id": "evt_000287_5c2e63e817867ca59801",
+      "event_sequence": 287,
+      "actor": "pc_02",
+      "action": "break",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 25,
+      "category": "re-enter_basement",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 6,
+      "cycle": 31,
+      "game_turn": 81,
+      "event_id": "evt_000289_e5f5609776055cf322a6",
+      "event_sequence": 289,
+      "actor": "pc_01",
+      "action": "break",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "SYSTEM_FORCED",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 26,
+      "category": "re-enter_basement",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 7,
+      "cycle": 31,
+      "game_turn": 82,
+      "event_id": "evt_000292_82a7ef6e76608d3cd531",
+      "event_sequence": 292,
+      "actor": "pc_02",
+      "action": "search",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 27,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 8,
+      "cycle": 32,
+      "game_turn": 83,
+      "event_id": "evt_000295_995897909fbb1d2adb38",
+      "event_sequence": 295,
+      "actor": "pc_01",
+      "action": "search",
+      "target": "chapel_ruins",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 28,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 9,
+      "cycle": 32,
+      "game_turn": 84,
+      "event_id": "evt_000298_5fcda3edf2b4b65222a4",
+      "event_sequence": 298,
+      "actor": "pc_02",
+      "action": "search",
+      "target": "skeletons_in_robes",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 29,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 10,
+      "cycle": 32,
+      "game_turn": 85,
+      "event_id": "evt_000300_e932ea48aced070ad8d0",
+      "event_sequence": 300,
+      "actor": "pc_01",
+      "action": "break",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "SYSTEM_FORCED",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 30,
+      "category": "re-enter_basement",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 11,
+      "cycle": 32,
+      "game_turn": 86,
+      "event_id": "evt_000303_8b8ebfeb80e49f573a49",
+      "event_sequence": 303,
+      "actor": "pc_01",
+      "action": "search",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 31,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 12,
+      "cycle": 32,
+      "game_turn": 87,
+      "event_id": "evt_000306_1c97bad307cd9edc2478",
+      "event_sequence": 306,
+      "actor": "pc_02",
+      "action": "search",
+      "target": "chapel_secret_cellar",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 32,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 13,
+      "cycle": 33,
+      "game_turn": 88,
+      "event_id": "evt_000309_559fb483a58f978f2885",
+      "event_sequence": 309,
+      "actor": "pc_01",
+      "action": "search",
+      "target": "shelf_with_records",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 33,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 14,
+      "cycle": 33,
+      "game_turn": 89,
+      "event_id": "evt_000312_7fc00acd88d7eac1d93f",
+      "event_sequence": 312,
+      "actor": "pc_02",
+      "action": "search",
+      "target": "skeletons_in_robes",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 34,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 15,
+      "cycle": 33,
+      "game_turn": 90,
+      "event_id": "evt_000315_5d277f065242f7b3e57b",
+      "event_sequence": 315,
+      "actor": "pc_01",
+      "action": "search",
+      "target": "white_symbol",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 35,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 16,
+      "cycle": 33,
+      "game_turn": 91,
+      "event_id": "evt_000317_ff4d0ba19b35eab0706c",
+      "event_sequence": 317,
+      "actor": "pc_02",
+      "action": "break",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "SYSTEM_FORCED",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 36,
+      "category": "re-enter_basement",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 17,
+      "cycle": 33,
+      "game_turn": 92,
+      "event_id": "evt_000320_0b819e4cb936dbd8919d",
+      "event_sequence": 320,
+      "actor": "pc_02",
+      "action": "search",
+      "target": "shelf_with_records",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 37,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 18,
+      "cycle": 34,
+      "game_turn": 93,
+      "event_id": "evt_000323_b6baa2cfe20f54e0da0c",
+      "event_sequence": 323,
+      "actor": "pc_01",
+      "action": "search",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 38,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 19,
+      "cycle": 34,
+      "game_turn": 94,
+      "event_id": "evt_000325_5b76bac33db80c9bcd1a",
+      "event_sequence": 325,
+      "actor": "pc_02",
+      "action": "break",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 39,
+      "category": "re-enter_basement",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 20,
+      "cycle": 34,
+      "game_turn": null,
+      "event_id": "evt_000326_54e21b1c5a9657d0bbe2",
+      "event_sequence": 326,
+      "actor": "pc_01",
+      "action": "wait",
+      "target": "",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 40,
+      "category": "wait",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 21,
+      "cycle": 35,
+      "game_turn": 95,
+      "event_id": "evt_000329_23ca7a874a7a61e852ef",
+      "event_sequence": 329,
+      "actor": "pc_01",
+      "action": "search",
+      "target": "shelf_with_records",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 41,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 22,
+      "cycle": 35,
+      "game_turn": null,
+      "event_id": "evt_000330_c9aa5c6b155523a0a2f7",
+      "event_sequence": 330,
+      "actor": "pc_02",
+      "action": "wait",
+      "target": "",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 42,
+      "category": "wait",
+      "expected_transition_relevance": "none"
+    }
+  ]
+}

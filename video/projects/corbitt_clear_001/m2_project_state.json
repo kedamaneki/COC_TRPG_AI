@@ -1,0 +1,13 @@
+{
+  "completed_steps": [
+    "protected",
+    "scenes",
+    "edit_plan",
+    "script",
+    "continuity",
+    "qa",
+    "review",
+    "preview"
+  ],
+  "status": "COMPLETED"
+}

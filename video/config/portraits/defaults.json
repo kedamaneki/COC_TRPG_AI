@@ -1,0 +1,32 @@
+[
+  {
+    "portrait_profile_id": "portrait_reimu_kitune_legacy",
+    "source_type": "ASSET_PACK_REFERENCE",
+    "asset_pack": "kitune_yukkuri_legacy",
+    "character": "霊夢",
+    "default_expression": "normal",
+    "supported_expressions": ["normal", "happy", "angry", "sad", "surprised", "scared", "thinking"],
+    "blink_supported": false,
+    "mouth_supported": false
+  },
+  {
+    "portrait_profile_id": "portrait_marisa_kitune_legacy",
+    "source_type": "ASSET_PACK_REFERENCE",
+    "asset_pack": "kitune_yukkuri_legacy",
+    "character": "魔理沙",
+    "default_expression": "normal",
+    "supported_expressions": ["normal", "happy", "angry", "sad", "surprised", "scared", "thinking"],
+    "blink_supported": false,
+    "mouth_supported": false
+  },
+  {
+    "portrait_profile_id": "NONE",
+    "source_type": "NONE",
+    "asset_pack": null,
+    "character": null,
+    "default_expression": null,
+    "supported_expressions": [],
+    "blink_supported": false,
+    "mouth_supported": false
+  }
+]

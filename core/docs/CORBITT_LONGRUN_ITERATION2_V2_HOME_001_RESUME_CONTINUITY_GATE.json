@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-14T00:13:52.6744852+09:00",
+  "session_id": "CORBITT_LONGRUN_ITERATION2_V2_HOME_001",
+  "resume_from": "CHECKPOINT_CYCLE_000039",
+  "compatible_migration": "SPECIAL_OBJECTIVE_COMBAT_CONTRACT_FIX_V1",
+  "process_identity": {
+    "pid": 6732,
+    "same_process_continuation": true,
+    "resume_count": 1
+  },
+  "checked_cycles": [
+    40,
+    41
+  ],
+  "continuity": "PASS",
+  "duplicate_events": 0,
+  "missing_events": 0,
+  "double_execution": 0,
+  "double_commit": 0,
+  "checkpoint_continuity": "PASS",
+  "segment_merge": {
+    "status": "PASS",
+    "phase": "LIVE_PRECOMMIT_VALIDATION",
+    "basis": [
+      "checkpoint 39 unified prefix preserved in checkpoint 40",
+      "checkpoint 40 unified prefix preserved in checkpoint 41",
+      "event offsets 367 -> 372 -> 376",
+      "new event sequence 368-376 contiguous"
+    ],
+    "final_runner_merge_pending": true
+  },
+  "session_log_append": {
+    "status": "PASS",
+    "counts": [
+      483,
+      493,
+      498
+    ],
+    "prefix_preserved": true
+  },
+  "unified_log_append": {
+    "status": "PASS",
+    "counts": [
+      367,
+      372,
+      376
+    ],
+    "prefix_preserved": true
+  },
+  "migration_validation": {
+    "status": "PASS",
+    "reasons": []
+  },
+  "runtime_exception": 0,
+  "pending_action_boundary": {
+    "cycle39_pending": "96ba325c-93d4-47b4-83e4-85c780e0d66a",
+    "cycle39_last_processed": "96ba325c-93d4-47b4-83e4-85c780e0d66a",
+    "old_action_reexecuted": 0
+  },
+  "special_objective": {
+    "formal_cycles_40_41_event_count": 0,
+    "separate_corbitt_body_destroyed_event_count": 0,
+    "contract_validation": "PASS_BY_MIGRATION_AND_ISOLATED_REPRO",
+    "formal_run_observation": "PENDING_EVENT_OCCURRENCE"
+  },
+  "checkpoint_hashes": {
+    "cycle40_manifest": "5b4bcccb51f6f230903e8b9eaa9805fcda54c0860c088031685cebb148a8dc0f",
+    "cycle41_manifest": "c53d1067d2ca329c5c7599d797c343153436f92a6e71d0c1dde864ab40871b7f"
+  },
+  "video_source_eligible": false
+}

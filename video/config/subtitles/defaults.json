@@ -1,0 +1,51 @@
+[
+  {
+    "subtitle_profile_id": "subtitle_reimu",
+    "font_family": "たぬき油性マジック",
+    "font_size": 52,
+    "text_color": "#FF3030",
+    "alignment": "center",
+    "line_height": 1.0,
+    "letter_spacing": 0,
+    "opacity": 1.0,
+    "position_y": null,
+    "name_outline_color": "#FFFFFF",
+    "name_outline_width": 2.5,
+    "outlines": [
+      {"width": 2, "color": "#FFFFFF"},
+      {"width": 4.5, "color": "#800000"}
+    ]
+  },
+  {
+    "subtitle_profile_id": "subtitle_marisa",
+    "font_family": "たぬき油性マジック",
+    "font_size": 52,
+    "text_color": "#FFF040",
+    "alignment": "center",
+    "line_height": 1.0,
+    "letter_spacing": 0,
+    "opacity": 1.0,
+    "position_y": null,
+    "name_outline_color": "#181818",
+    "name_outline_width": 2.5,
+    "outlines": [
+      {"width": 4, "color": "#202020"}
+    ]
+  },
+  {
+    "subtitle_profile_id": "subtitle_kp",
+    "font_family": "たぬき油性マジック",
+    "font_size": 52,
+    "text_color": "#F4F4F0",
+    "alignment": "center",
+    "line_height": 1.0,
+    "letter_spacing": 0,
+    "opacity": 1.0,
+    "position_y": null,
+    "name_outline_color": "#181818",
+    "name_outline_width": 2.5,
+    "outlines": [
+      {"width": 2.25, "color": "#252A30"}
+    ]
+  }
+]

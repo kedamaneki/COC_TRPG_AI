@@ -1,0 +1,22 @@
+{
+  "active_suspicious_audio_burst_count": 0,
+  "blank_timeline_voice_reference_count": 0,
+  "final_battle_blank_voice_reference_count": 0,
+  "final_battle_known_windows_result": "NO_WHITESPACE_VOICE_SOURCE",
+  "final_battle_suspicious_audio_burst_count": 0,
+  "knife_known_window_result": "NO_WHITESPACE_VOICE_SOURCE",
+  "known_bad_fixture_detected": true,
+  "known_bad_fixture_measurements": [
+    {
+      "duration_sec": 0.149333,
+      "high_frequency_ratio": 0.4262,
+      "path": "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-04\\referenced-chatgpt-conversation-this-is-an\\video-production-agent\\tests\\fixtures\\known_bad_blank_voice.wav",
+      "peak": 26029.0,
+      "rms": 8447.98,
+      "zero_crossing_rate": 0.2251
+    }
+  ],
+  "null_presentation_clip_count": 0,
+  "orphaned_invalid_voice_cache_policy": "ORPHANED_INVALID_VOICE_CACHE_NOT_REFERENCED",
+  "whitespace_voice_asset_count": 0
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "fixture": {
+    "unified_summary_count": 3,
+    "social_check_count": 2,
+    "location_change_count": 1,
+    "formal_event_count": 5,
+    "ROLL_CONTRACT_INCOMPLETE_fixture": 0,
+    "NORMALIZATION_SOURCE_CONTRADICTION_fixture": 0,
+    "lifecycle_misclassification": 0,
+    "traceability": 1.0,
+    "traceability_findings": 0,
+    "dropped_events": 0,
+    "legacy_text_parse": 0
+  },
+  "auditor_contract": {
+    "valid_roll_findings": 0,
+    "invalid_roll_findings": 1,
+    "valid_no_roll_findings": 0,
+    "invalid_no_roll_findings": 1
+  },
+  "segment": {
+    "segment_count": 2,
+    "event_count": 4,
+    "duplicate_events_removed": 0,
+    "missing_events": 0,
+    "extra_events": 0,
+    "unexpected_events": 0,
+    "raw_event_count": 4,
+    "segment_event_count": 4,
+    "covered_event_count": 4,
+    "missing_event_ids": [],
+    "duplicate_event_ids": 0,
+    "unexpected_event_ids": [],
+    "coverage_ratio": 1.0,
+    "issues": [],
+    "status": "PASS",
+    "final_metrics": null
+  }
+}

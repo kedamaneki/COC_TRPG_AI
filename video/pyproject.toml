@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "video-production-agent"
+version = "0.1.0"
+description = "Deterministic TRPG session normalization foundation"
+requires-python = ">=3.11"
+
+[project.scripts]
+video-agent = "video_agent.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

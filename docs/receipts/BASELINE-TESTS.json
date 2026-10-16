@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "runtime_isolation_included": false,
+  "core": {
+    "passed": 582,
+    "subtests_passed": 23,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "video": {
+    "passed": 208,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "auditor": {
+    "passed": 24,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "night_guard": {
+    "passed": 49,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "simple_move": {
+    "status": "PASS",
+    "normalizer_sha256": "954d3ec1ccdd2b54f377436f1fdb9bf07bac431487bcbaf51072385c8e3d88ca",
+    "fixture_sha256": "e02bef8a7987142f8435fb1e5845c34f00d50fd69600aa94c4c0f569f9b25c1d"
+  },
+  "v3_readonly_receipt": "docs/receipts/V3-READONLY-REANALYSIS.json",
+  "video_test_execution_note": "Executed from SHA-identical accepted ASCII-path source because OpenCV on Windows cannot read the canonical Japanese absolute path.",
+  "night_guard_test_execution_note": "Executed from SHA-identical accepted original placement because baseline controller resolves adapters relative to its original root; canonical path adaptation is feature-branch work."
+}

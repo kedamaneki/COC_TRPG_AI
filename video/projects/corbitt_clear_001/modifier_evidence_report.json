@@ -1,0 +1,35 @@
+{
+  "audit_status": "GAPS_FOUND",
+  "luck_spend_count": 1,
+  "orphan_modifier_count": 0,
+  "modifiers": [
+    {
+      "modifier_id": "luck_spend_session_000311",
+      "source_event_ids": [
+        "session_log:000309",
+        "session_log:000311",
+        "norm:session:000309",
+        "norm:session:000311"
+      ],
+      "transaction_id": "a4c901d3-1733-4c37-9535-afa47884efe1",
+      "linkage": "Explicit duplicated roll tuple (目星 target 50, roll 59) and target corbitt_knife; final log omits transaction_id.",
+      "original_target": 50,
+      "original_roll": 59,
+      "raw_result": "FAILURE",
+      "luck_spent": 9,
+      "final_result": "REGULAR_SUCCESS",
+      "final_target_or_effective_margin": 9,
+      "luck_before": 50,
+      "luck_after": 41,
+      "normalized_raw_result": "失敗",
+      "normalized_modifier": null,
+      "normalized_final_result": null,
+      "m2_presentation_result": "失敗",
+      "m3_presentation_result": "SUCCESS",
+      "classification": "NORMALIZATION_GAP",
+      "severity": "MAJOR",
+      "recommended_fix_layer": "Normalizer / structured source logging",
+      "presentation_note": "Iteration 6 displays raw failure, Luck -9, and final success using explicit L1 text; M2 base overlay alone still says failure."
+    }
+  ]
+}

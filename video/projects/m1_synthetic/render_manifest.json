@@ -1,0 +1,26 @@
+{
+  "asset_warnings": [
+    "FALLBACK_BACKGROUND_USED",
+    "NON_PUBLISHABLE_ASSET_USED"
+  ],
+  "duration_sec": 34.636,
+  "engines": {
+    "AquesTalk": [
+      "YMM4 bundled AquesTalk f1"
+    ],
+    "FFmpeg": "ffmpeg version N-124026-g96f82f4fbb-20260417 Copyright (c) 2000-2026 the FFmpeg developers",
+    "Python": "3.12.10",
+    "VOICEVOX": [
+      "0.19.1"
+    ]
+  },
+  "fixture_type": "synthetic",
+  "manifest_version": "0.1",
+  "output": "output/m1_synthetic.mp4",
+  "output_sha256": "e7a3aee4016b198bb734839448399751deab84cb92f8481eaf93d80b9322def2",
+  "project": "m1_synthetic",
+  "publishable": false,
+  "qa_status": "PASS",
+  "source_line_count": 6,
+  "timeline_sha256": "5976c3b9e04d0b7bc39bef0b6e37d40d055b5575e87260f8e9d0b5fa1e51726e"
+}

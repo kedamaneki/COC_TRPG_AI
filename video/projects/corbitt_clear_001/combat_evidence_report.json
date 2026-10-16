@@ -1,0 +1,200 @@
+{
+  "audit_status": "GAPS_FOUND",
+  "knife_combat": {
+    "combat_start_intended": true,
+    "combat_start_logged": false,
+    "attacker": "corbitt_floating_dagger",
+    "target": "pc_02 / エレノア教授",
+    "action": "attack is narrated only",
+    "attack_roll": null,
+    "defense_or_evade": null,
+    "damage_roll": null,
+    "hp_change": null,
+    "combat_end": null,
+    "trigger_source_event_id": "evt_000233_bf4199391d793e604605",
+    "classification": "SOURCE_GAMEPLAY_GAP",
+    "severity": "CRITICAL",
+    "recommended_fix_layer": "TRPG Core"
+  },
+  "final_battle": {
+    "combat_id": "combat-71-2483",
+    "combat_start": "PRESENT",
+    "important_action": {
+      "actor": "pc_01",
+      "action": "break",
+      "target": "corbitt_body"
+    },
+    "check": "SPECIAL_OBJECTIVE / scenario_condition; no attack roll recorded",
+    "result": "scenario_condition resolved",
+    "corpse_destruction": "PRESENT_AS_STRUCTURED_SPECIAL_OBJECTIVE",
+    "special_objective": "PRESENT",
+    "combat_end": "PRESENT",
+    "attack_roll": null,
+    "defense_or_evade": null,
+    "damage_roll": null,
+    "hp_change": {
+      "before": 12,
+      "after": 12
+    },
+    "source_event_ids": [
+      "norm:unified:000280",
+      "norm:unified:000281",
+      "norm:unified:000288",
+      "norm:unified:000289",
+      "norm:unified:000291",
+      "norm:unified:000293",
+      "norm:session:000376"
+    ],
+    "l1_structured_complete_for_special_objective": true,
+    "l1_human_narrative": false,
+    "l2_complete": true,
+    "m3_presentation": "COMPLETE_CONSERVATIVE_NARRATIVE",
+    "classification": "SOURCE_NARRATIVE_GAP",
+    "severity": "MINOR",
+    "recommended_fix_layer": "TRPG Logging / narrative source",
+    "note": "This was not a normal attack exchange. The source resolves the battle as one special objective; no missing attack dice are inferred."
+  },
+  "normalized_combat_event_count": 7,
+  "normalized_combat_events": [
+    {
+      "event_id": "norm:unified:000280",
+      "event_type": "COMBAT_START",
+      "actor": "pc_01",
+      "combat": {
+        "action": "",
+        "attacker": "pc_01",
+        "combat_id": "combat-71-2483",
+        "damage": null,
+        "hp_after": null,
+        "hp_before": null,
+        "roll": null,
+        "target": ""
+      },
+      "action": null,
+      "source_event_ids": [
+        "evt_000281_8ba6d10a737f77975b2f"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000281",
+      "event_type": "COMBAT_ACTION",
+      "actor": "pc_01",
+      "combat": {
+        "action": "",
+        "attacker": "pc_01",
+        "combat_id": "combat-71-2483",
+        "damage": null,
+        "hp_after": null,
+        "hp_before": null,
+        "roll": null,
+        "target": ""
+      },
+      "action": null,
+      "source_event_ids": [
+        "evt_000282_cde686fb7e82a9724287"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000288",
+      "event_type": "COMBAT_ACTION",
+      "actor": "pc_01",
+      "combat": {
+        "action": "wait",
+        "attacker": "pc_01",
+        "combat_id": "combat-71-2483",
+        "damage": null,
+        "hp_after": null,
+        "hp_before": null,
+        "roll": null,
+        "target": ""
+      },
+      "action": {
+        "action_id": "wait",
+        "origin": "AUTONOMOUS",
+        "target": ""
+      },
+      "source_event_ids": [
+        "evt_000289_de53dde8a875ebfb2806"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000289",
+      "event_type": "COMBAT_ACTION",
+      "actor": "pc_01",
+      "combat": {
+        "action": "break",
+        "attacker": "pc_01",
+        "combat_id": "combat-71-2483",
+        "damage": null,
+        "hp_after": null,
+        "hp_before": 12,
+        "roll": null,
+        "target": "corbitt_body"
+      },
+      "action": {
+        "action_id": "break",
+        "origin": "SYSTEM_GUIDED",
+        "target": "corbitt_body"
+      },
+      "source_event_ids": [
+        "evt_000290_94c30ba218b1bfe6810f"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000291",
+      "event_type": "COMBAT_ACTION",
+      "actor": "pc_01",
+      "combat": {
+        "action": "break",
+        "attacker": "pc_01",
+        "combat_id": "combat-71-2483",
+        "damage": null,
+        "hp_after": 12,
+        "hp_before": 12,
+        "roll": null,
+        "target": "corbitt_body"
+      },
+      "action": {
+        "action_id": "break",
+        "origin": "SYSTEM_GUIDED",
+        "target": "corbitt_body"
+      },
+      "source_event_ids": [
+        "evt_000292_d539367cd59484b48533"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000293",
+      "event_type": "COMBAT_END",
+      "actor": null,
+      "combat": {
+        "action": "",
+        "attacker": "",
+        "combat_id": "combat-71-2483",
+        "damage": null,
+        "hp_after": null,
+        "hp_before": null,
+        "roll": null,
+        "target": ""
+      },
+      "action": null,
+      "source_event_ids": [
+        "evt_000294_02a4b8ee1d4dc9a43904"
+      ]
+    },
+    {
+      "event_id": "norm:session:000376",
+      "event_type": "COMBAT_START",
+      "actor": "pc_01",
+      "combat": null,
+      "action": {
+        "action_id": "search",
+        "origin": null,
+        "target": "corbitt_body"
+      },
+      "source_event_ids": [
+        "session_log:000376"
+      ]
+    }
+  ]
+}

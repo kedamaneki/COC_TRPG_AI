@@ -1,0 +1,35 @@
+{
+  "contradictions": [
+    {
+      "classification": "SOURCE_STATE_INCONSISTENCY",
+      "contradiction_id": "knife_rediscovery_state_inconsistency",
+      "detail": "正体判明・襲撃後に操作不能となり、その後もう一度発見される。",
+      "resolution": "HUMAN_REVIEW_REQUIRED",
+      "script_line_ids": [
+        "scene_048_script_007",
+        "scene_048_script_017",
+        "scene_048_script_030"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "classification": "SOURCE_CONTRADICTION",
+      "contradiction_id": "basement_door_open_closed",
+      "detail": "SYSTEMは地下室の扉が開いたと記録し、直後のKPは閉じたままと説明する。",
+      "resolution": "HUMAN_REVIEW_REQUIRED",
+      "script_line_ids": [
+        "scene_047_script_007",
+        "scene_047_script_008"
+      ],
+      "severity": "CRITICAL",
+      "source_event_ids": [
+        "norm:session:000291",
+        "session_log:000291",
+        "norm:session:000292",
+        "session_log:000292"
+      ]
+    }
+  ],
+  "critical_count": 2,
+  "publishable": false
+}

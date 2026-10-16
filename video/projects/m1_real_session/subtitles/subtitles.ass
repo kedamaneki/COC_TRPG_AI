@@ -1,0 +1,45 @@
+﻿[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Name,Noto Sans JP,38,&H00FFFFFF,&H00FFFFFF,&H00101010,&H50000000,-1,0,0,0,100,100,0,0,1,2,0,5,0,0,0,1
+Style: BodyOuter,Noto Sans JP,52,&HFFFFFFFF,&HFFFFFFFF,&H00101010,&H50000000,-1,0,0,0,100,100,0,0,1,4.5,0,5,0,0,0,1
+Style: BodyInner,Noto Sans JP,52,&HFFFFFFFF,&HFFFFFFFF,&H00FFFFFF,&H50000000,-1,0,0,0,100,100,0,0,1,2,0,5,0,0,0,1
+Style: Body,Noto Sans JP,52,&H00FFFFFF,&H00FFFFFF,&H00000000,&H50000000,-1,0,0,0,100,100,0,0,1,0,0,5,0,0,0,1
+Style: Dice,Noto Sans JP,54,&H0000FFFF,&H0000FFFF,&H00101010,&H70000000,-1,0,0,0,100,100,0,0,3,3,0,8,80,80,70,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 3,0:00:00.00,0:00:05.51,Name,,0,0,0,,{\an5\pos(320,720)\fs38\1c&H003030FF}マクガフィン刑事
+Dialogue: 0,0:00:00.00,0:00:05.51,BodyOuter,,0,0,0,,{\an5\pos(960,900)\fs52\bord4.5\3c&H00000080}マクガフィン刑事(PC1): 散乱した家具や荷物を手がかりの\N可能性を探ってみる。
+Dialogue: 1,0:00:00.00,0:00:05.51,BodyInner,,0,0,0,,{\an5\pos(960,900)\fs52\bord2.0\3c&H00FFFFFF}マクガフィン刑事(PC1): 散乱した家具や荷物を手がかりの\N可能性を探ってみる。
+Dialogue: 2,0:00:00.00,0:00:05.51,Body,,0,0,0,,{\an5\pos(960,900)\fs52\bord0\1c&H003030FF}マクガフィン刑事(PC1): 散乱した家具や荷物を手がかりの\N可能性を探ってみる。
+Dialogue: 3,0:00:05.51,0:00:15.72,Name,,0,0,0,,{\an5\pos(320,720)\fs38\1c&H003030FF}マクガフィン刑事
+Dialogue: 0,0:00:05.51,0:00:15.72,BodyOuter,,0,0,0,,{\an5\pos(960,900)\fs52\bord4.5\3c&H00000080}システム: マクガフィン刑事 : 【技能:目星】CC(1d1\N00<=65) 難易度:hard(目標<=32) ＞ 出目:\N93 ＞ 失敗
+Dialogue: 1,0:00:05.51,0:00:15.72,BodyInner,,0,0,0,,{\an5\pos(960,900)\fs52\bord2.0\3c&H00FFFFFF}システム: マクガフィン刑事 : 【技能:目星】CC(1d1\N00<=65) 難易度:hard(目標<=32) ＞ 出目:\N93 ＞ 失敗
+Dialogue: 2,0:00:05.51,0:00:15.72,Body,,0,0,0,,{\an5\pos(960,900)\fs52\bord0\1c&H003030FF}システム: マクガフィン刑事 : 【技能:目星】CC(1d1\N00<=65) 難易度:hard(目標<=32) ＞ 出目:\N93 ＞ 失敗
+Dialogue: 4,0:00:05.51,0:00:15.72,Dice,,0,0,0,,目星 65  /  1D100 → 93  /  失敗
+Dialogue: 3,0:00:15.72,0:00:30.25,Name,,0,0,0,,{\an5\pos(320,720)\fs38\1c&H00FFFFFF}KP
+Dialogue: 0,0:00:15.72,0:00:22.98,BodyOuter,,0,0,0,,{\an5\pos(960,900)\fs46\bord4.0\3c&H00000000}KP: リビングルームに散乱している家具や荷物を細かく調べた\Nが、これ以上の手がかりを見つけ出すことはできなかったようだ。\N壁や床に目を細めて探しても、不気味な染みや引きずられた跡とい
+Dialogue: 1,0:00:15.72,0:00:22.98,BodyInner,,0,0,0,,{\an5\pos(960,900)\fs46\bord0.0\3c&H00FFFFFF}KP: リビングルームに散乱している家具や荷物を細かく調べた\Nが、これ以上の手がかりを見つけ出すことはできなかったようだ。\N壁や床に目を細めて探しても、不気味な染みや引きずられた跡とい
+Dialogue: 2,0:00:15.72,0:00:22.98,Body,,0,0,0,,{\an5\pos(960,900)\fs46\bord0\1c&H00FFFFFF}KP: リビングルームに散乱している家具や荷物を細かく調べた\Nが、これ以上の手がかりを見つけ出すことはできなかったようだ。\N壁や床に目を細めて探しても、不気味な染みや引きずられた跡とい
+Dialogue: 0,0:00:22.98,0:00:30.25,BodyOuter,,0,0,0,,{\an5\pos(960,900)\fs46\bord4.0\3c&H00000000}った痕跡は見つけることができない。これ以上調べても時間が無駄\Nになりそうだ。どうしますか？
+Dialogue: 1,0:00:22.98,0:00:30.25,BodyInner,,0,0,0,,{\an5\pos(960,900)\fs46\bord0.0\3c&H00FFFFFF}った痕跡は見つけることができない。これ以上調べても時間が無駄\Nになりそうだ。どうしますか？
+Dialogue: 2,0:00:22.98,0:00:30.25,Body,,0,0,0,,{\an5\pos(960,900)\fs46\bord0\1c&H00FFFFFF}った痕跡は見つけることができない。これ以上調べても時間が無駄\Nになりそうだ。どうしますか？
+Dialogue: 3,0:00:30.25,0:00:36.30,Name,,0,0,0,,{\an5\pos(320,720)\fs38\1c&H0040F0FF}エレノア教授
+Dialogue: 0,0:00:30.25,0:00:36.30,BodyOuter,,0,0,0,,{\an5\pos(960,900)\fs52\bord4.5\3c&H00202020}エレノア教授(PC2): 地下室の扉を見つめ、その周りを詳し\Nく調べる。
+Dialogue: 1,0:00:30.25,0:00:36.30,BodyInner,,0,0,0,,{\an5\pos(960,900)\fs52\bord2.0\3c&H00FFFFFF}エレノア教授(PC2): 地下室の扉を見つめ、その周りを詳し\Nく調べる。
+Dialogue: 2,0:00:30.25,0:00:36.30,Body,,0,0,0,,{\an5\pos(960,900)\fs52\bord0\1c&H0040F0FF}エレノア教授(PC2): 地下室の扉を見つめ、その周りを詳し\Nく調べる。
+Dialogue: 3,0:00:36.30,0:00:45.24,Name,,0,0,0,,{\an5\pos(320,720)\fs38\1c&H0040F0FF}エレノア教授
+Dialogue: 0,0:00:36.30,0:00:45.24,BodyOuter,,0,0,0,,{\an5\pos(960,900)\fs52\bord4.5\3c&H00202020}システム: エレノア教授 : 【技能:目星】CC(1d100\N<=50) ＞ 出目:95 ＞ 失敗
+Dialogue: 1,0:00:36.30,0:00:45.24,BodyInner,,0,0,0,,{\an5\pos(960,900)\fs52\bord2.0\3c&H00FFFFFF}システム: エレノア教授 : 【技能:目星】CC(1d100\N<=50) ＞ 出目:95 ＞ 失敗
+Dialogue: 2,0:00:36.30,0:00:45.24,Body,,0,0,0,,{\an5\pos(960,900)\fs52\bord0\1c&H0040F0FF}システム: エレノア教授 : 【技能:目星】CC(1d100\N<=50) ＞ 出目:95 ＞ 失敗
+Dialogue: 4,0:00:36.30,0:00:45.24,Dice,,0,0,0,,目星 50  /  1D100 → 95  /  失敗
+Dialogue: 3,0:00:45.24,0:00:55.37,Name,,0,0,0,,{\an5\pos(320,720)\fs38\1c&H0040F0FF}エレノア教授
+Dialogue: 0,0:00:45.24,0:00:55.37,BodyOuter,,0,0,0,,{\an5\pos(960,900)\fs52\bord4.5\3c&H00202020}エレノア教授(PC2)(PL): 【プッシュ方針】地下室の扉\Nの周りの細かい痕跡を探し、時間をかけて丁寧に調べ直す。
+Dialogue: 1,0:00:45.24,0:00:55.37,BodyInner,,0,0,0,,{\an5\pos(960,900)\fs52\bord2.0\3c&H00FFFFFF}エレノア教授(PC2)(PL): 【プッシュ方針】地下室の扉\Nの周りの細かい痕跡を探し、時間をかけて丁寧に調べ直す。
+Dialogue: 2,0:00:45.24,0:00:55.37,Body,,0,0,0,,{\an5\pos(960,900)\fs52\bord0\1c&H0040F0FF}エレノア教授(PC2)(PL): 【プッシュ方針】地下室の扉\Nの周りの細かい痕跡を探し、時間をかけて丁寧に調べ直す。

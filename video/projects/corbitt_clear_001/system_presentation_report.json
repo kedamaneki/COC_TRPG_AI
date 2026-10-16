@@ -1,0 +1,146 @@
+{
+  "decisions": [
+    {
+      "allowed": true,
+      "event_type": "KP_DESCRIPTION",
+      "is_system": false,
+      "presentation_type": null,
+      "reason": "NOT_SYSTEM",
+      "script_line_id": "scene_047_script_017"
+    },
+    {
+      "allowed": true,
+      "event_type": "DIALOGUE",
+      "is_system": false,
+      "presentation_type": null,
+      "reason": "NOT_SYSTEM",
+      "script_line_id": "scene_047_script_018"
+    },
+    {
+      "allowed": true,
+      "event_type": "ACTION_DECLARATION",
+      "is_system": false,
+      "presentation_type": null,
+      "reason": "NOT_SYSTEM",
+      "script_line_id": "scene_047_script_019"
+    },
+    {
+      "allowed": false,
+      "event_type": "LOCATION_CHANGE",
+      "is_system": true,
+      "presentation_type": "LOCATION_CHANGE",
+      "reason": "NOT_IN_PRESENTATION_WHITELIST",
+      "script_line_id": "scene_048_script_001"
+    },
+    {
+      "allowed": true,
+      "event_type": "KP_DESCRIPTION",
+      "is_system": false,
+      "presentation_type": null,
+      "reason": "NOT_SYSTEM",
+      "script_line_id": "scene_048_script_002"
+    },
+    {
+      "allowed": true,
+      "event_type": "DIALOGUE",
+      "is_system": false,
+      "presentation_type": null,
+      "reason": "NOT_SYSTEM",
+      "script_line_id": "scene_048_script_003"
+    },
+    {
+      "allowed": true,
+      "event_type": "ACTION_DECLARATION",
+      "is_system": false,
+      "presentation_type": null,
+      "reason": "NOT_SYSTEM",
+      "script_line_id": "scene_048_script_004"
+    },
+    {
+      "allowed": true,
+      "event_type": "DICE_RESULT",
+      "is_system": true,
+      "presentation_type": "SKILL_RESULT",
+      "reason": "WHITELIST_EVENT",
+      "script_line_id": "scene_048_script_005"
+    },
+    {
+      "allowed": true,
+      "event_type": "SYSTEM_INTERACTION_PROMPT",
+      "is_system": false,
+      "presentation_type": null,
+      "reason": "NOT_SYSTEM",
+      "script_line_id": "scene_048_script_006__system_prompt"
+    },
+    {
+      "allowed": true,
+      "event_type": "DIALOGUE",
+      "is_system": false,
+      "presentation_type": null,
+      "reason": "NOT_SYSTEM",
+      "script_line_id": "scene_048_script_006"
+    },
+    {
+      "allowed": true,
+      "event_type": "DICE_RESULT",
+      "is_system": true,
+      "presentation_type": "SKILL_RESULT",
+      "reason": "WHITELIST_EVENT",
+      "script_line_id": "scene_048_script_007"
+    },
+    {
+      "allowed": true,
+      "event_type": "KP_DESCRIPTION",
+      "is_system": false,
+      "presentation_type": null,
+      "reason": "NOT_SYSTEM",
+      "script_line_id": "scene_048_script_009"
+    },
+    {
+      "allowed": true,
+      "event_type": "SAN_LOSS",
+      "is_system": true,
+      "presentation_type": "SAN_CHANGE",
+      "reason": "WHITELIST_EVENT",
+      "script_line_id": "scene_048_script_008"
+    },
+    {
+      "allowed": true,
+      "event_type": "ACTION_DECLARATION",
+      "is_system": false,
+      "presentation_type": null,
+      "reason": "NOT_SYSTEM",
+      "script_line_id": "scene_048_script_010"
+    },
+    {
+      "allowed": false,
+      "event_type": "DICE_RESULT",
+      "is_system": true,
+      "presentation_type": "DICE_RESULT",
+      "reason": "WHITELIST_REQUIRES_STRUCTURED_OVERLAY",
+      "script_line_id": "scene_048_script_011"
+    },
+    {
+      "allowed": true,
+      "event_type": "KP_DESCRIPTION",
+      "is_system": false,
+      "presentation_type": null,
+      "reason": "NOT_SYSTEM",
+      "script_line_id": "scene_048_script_012"
+    },
+    {
+      "allowed": true,
+      "event_type": "ACTION_DECLARATION",
+      "is_system": false,
+      "presentation_type": null,
+      "reason": "NOT_SYSTEM",
+      "script_line_id": "scene_048_script_013"
+    }
+  ],
+  "displayed_system_types": [
+    "SAN_CHANGE",
+    "SKILL_RESULT"
+  ],
+  "policy": "WHITELIST",
+  "removed_count": 2
+}

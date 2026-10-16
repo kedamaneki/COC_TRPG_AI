@@ -1,0 +1,13 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "video_codec": "libopenh264",
+  "normal_gap_sec": 0.35,
+  "ffmpeg_path": "C:/Users/ri4re/Desktop/YMM4/YukkuriMovieMaker_v4/Resources/bin/x64/ffmpeg/ffmpeg.exe",
+  "ffprobe_path": "C:/Users/ri4re/Desktop/YMM4/YukkuriMovieMaker_v4/Resources/bin/x64/ffmpeg/ffprobe.exe",
+  "font_path": "C:/Windows/Fonts/NotoSansJP-VF.ttf",
+  "aquestalk_dll_root": "C:/Users/ri4re/Desktop/YMM4/YukkuriMovieMaker_v4/Resources/AquesTalk",
+  "csc_path": "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe",
+  "voicevox_url": "http://127.0.0.1:50021"
+}

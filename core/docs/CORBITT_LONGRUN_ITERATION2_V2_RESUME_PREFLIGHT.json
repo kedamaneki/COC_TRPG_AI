@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "session_id": "CORBITT_LONGRUN_ITERATION2_V2_001",
+  "resume_from": "CHECKPOINT_CYCLE_000033",
+  "preflight_status": "FAIL",
+  "block_reason": "SECONDARY_UNREACHABLE",
+  "full_long_raw_run": "BLOCKED_INFRA",
+  "video_source_eligible": false,
+  "raw_run_modified": false,
+  "current_cycle": 33,
+  "current_turn": 93,
+  "current_resume_count": 0,
+  "primary": {
+    "url": "http://127.0.0.1:11434",
+    "reachable": true,
+    "model_identity": "PASS",
+    "model": "qwen2.5:14b",
+    "family": "qwen2",
+    "parameter_size": "14.8B",
+    "parameter_count": 14770033664,
+    "quantization": "Q4_K_M",
+    "format": "gguf"
+  },
+  "secondary": {
+    "url": "http://172.22.25.121:11434",
+    "reachable": false,
+    "http_version": "FAIL",
+    "tcp_11434": "FAIL",
+    "ping": "FAIL",
+    "model_identity": "NOT_VERIFIED"
+  },
+  "routing": {
+    "PL": "PRIMARY",
+    "KP": "PRIMARY",
+    "JUDGE": "SECONDARY"
+  },
+  "execution_profile": "SCHOOL_DUAL_PC",
+  "secondary_failure_policy": "FAIL_CLOSED",
+  "handoff_integrity": {
+    "files_checked": 421,
+    "missing_files": 0,
+    "sha256_mismatches": 0,
+    "length_mismatches": 0,
+    "status": "PASS"
+  },
+  "checkpoint": {
+    "id": "CHECKPOINT_CYCLE_000033",
+    "readable": true,
+    "complete_marker": true,
+    "cycle": 33,
+    "turn": 93,
+    "event_log_offset": 350,
+    "status": "PASS"
+  },
+  "input_identity": "PASS",
+  "core_identity": "PASS",
+  "continuity": "NOT_RUN",
+  "normalizer": "NOT_RUN",
+  "auditor_v2": "NOT_RUN",
+  "legacy_comparison": "NOT_RUN",
+  "formal_gate": "NOT_RUN"
+}

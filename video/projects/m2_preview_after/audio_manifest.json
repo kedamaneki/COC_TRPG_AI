@@ -1,0 +1,68 @@
+{
+  "line_001": {
+    "cache_hit": true,
+    "cache_key": "1a0ffb611157937d571ee36e002054d767c6255cffb3bc4950ade296eb7238dd",
+    "cache_path": "cache/voice/aquestalk/1a0ffb611157937d571ee36e002054d767c6255cffb3bc4950ade296eb7238dd.wav",
+    "duration_sec": 3.66725,
+    "engine": "AQUESTALK",
+    "engine_version": "YMM4 bundled AquesTalk f1",
+    "project_path": "audio/line_001.wav",
+    "sha256": "5781fdbd49f0eb0d21e7cf9d0efa04ed70c2f735b0e19bb5898828776557ac9b",
+    "voice_profile_id": "m1_aq_f1"
+  },
+  "line_002": {
+    "cache_hit": true,
+    "cache_key": null,
+    "cache_path": null,
+    "duration_sec": 3.0,
+    "engine": "NONE",
+    "engine_version": "intentional presentation silence",
+    "project_path": "audio/line_002.wav",
+    "sha256": "5cffdd4793d2c7986a33d893ef9f6e29f84420b47f145c3669ecc971581941e7",
+    "voice_profile_id": null
+  },
+  "line_003": {
+    "cache_hit": true,
+    "cache_key": "98b010393a54991d3a7529a09a29ee9133b34bc751b09a5364ac7bf91f50fc18",
+    "cache_path": "cache/voice/voicevox/98b010393a54991d3a7529a09a29ee9133b34bc751b09a5364ac7bf91f50fc18.wav",
+    "duration_sec": 13.418667,
+    "engine": "VOICEVOX",
+    "engine_version": "0.19.1",
+    "project_path": "audio/line_003.wav",
+    "sha256": "6d5e378c4a8c989e6cd019e3ac59f6cb23995ed6d0bbb379208852505119fb7c",
+    "voice_profile_id": "m1_vv_kp"
+  },
+  "line_004": {
+    "cache_hit": true,
+    "cache_key": "8a3cb712dd544a3b46ca53d4deae61777fc7fba8cdab1f773d292b2f7dcfe85a",
+    "cache_path": "cache/voice/voicevox/8a3cb712dd544a3b46ca53d4deae61777fc7fba8cdab1f773d292b2f7dcfe85a.wav",
+    "duration_sec": 3.530667,
+    "engine": "VOICEVOX",
+    "engine_version": "0.19.1",
+    "project_path": "audio/line_004.wav",
+    "sha256": "89e9e1d2ce1950ba8e99d7e76c430fb6ade35032206dce638bb3f724fa25cf6b",
+    "voice_profile_id": "m1_vv_pc2"
+  },
+  "line_005": {
+    "cache_hit": true,
+    "cache_key": null,
+    "cache_path": null,
+    "duration_sec": 3.0,
+    "engine": "NONE",
+    "engine_version": "intentional presentation silence",
+    "project_path": "audio/line_005.wav",
+    "sha256": "5cffdd4793d2c7986a33d893ef9f6e29f84420b47f145c3669ecc971581941e7",
+    "voice_profile_id": null
+  },
+  "line_006": {
+    "cache_hit": true,
+    "cache_key": "35e1c9eb45a0f24a93bada27be01e2ce99f8bc91f10c5d5de6f68b314fe00e31",
+    "cache_path": "cache/voice/voicevox/35e1c9eb45a0f24a93bada27be01e2ce99f8bc91f10c5d5de6f68b314fe00e31.wav",
+    "duration_sec": 6.592,
+    "engine": "VOICEVOX",
+    "engine_version": "0.19.1",
+    "project_path": "audio/line_006.wav",
+    "sha256": "15d99bb68fecf1c35f7db1eb2ddebbeb25b8d21f8ca13a9bc90795eb50f9dcfd",
+    "voice_profile_id": "m1_vv_pc2"
+  }
+}

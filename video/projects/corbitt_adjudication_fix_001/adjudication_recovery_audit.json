@@ -1,0 +1,24 @@
+{
+  "session_id": "corbitt_adjudication_fix_001",
+  "acceptance_session_kind": "OFFLINE_DETERMINISTIC_CONTRACT_SESSION",
+  "source_contradiction_count": 0,
+  "normalization_gap_count": 0,
+  "combat_without_termination_count": 0,
+  "normalization_source_contradiction_count": 0,
+  "rolled_check_count": 7,
+  "rolled_check_incomplete_count": 0,
+  "san_complete": true,
+  "luck_complete": true,
+  "wall_narrative_state_consistent": true,
+  "knife_combat_lifecycle_complete": true,
+  "final_battle_special_objective_preserved": true,
+  "legacy_text_parse_count": 0,
+  "critical_findings": [],
+  "result": "PASS",
+  "details": {
+    "incomplete_roll_event_ids": [],
+    "incomplete_san_event_ids": [],
+    "incomplete_luck_event_ids": [],
+    "normalization_contradictions": []
+  }
+}

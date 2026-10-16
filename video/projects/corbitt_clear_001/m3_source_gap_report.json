@@ -1,0 +1,26 @@
+{
+  "critical_count": 1,
+  "gaps": [
+    {
+      "classification": "SOURCE_GAMEPLAY_GAP",
+      "detail": "ナイフ襲撃後のattack/evade/damage/combat_endがsourceに存在しない。",
+      "gap_id": "knife_attack_resolution_missing",
+      "severity": "CRITICAL",
+      "source_event_ids": [
+        "norm:unified:000232"
+      ],
+      "video_agent_action": "REPORT_ONLY"
+    },
+    {
+      "classification": "TRPG_CORE_SAN_LOSS_SCHEMA_BUG",
+      "detail": "単一値1D4が失敗時損失として解釈されず、既定1d3へフォールバックする上流問題。",
+      "gap_id": "trpg_core_san_loss_schema_bug",
+      "severity": "HIGH",
+      "source_event_ids": [
+        "norm:session:000312"
+      ],
+      "video_agent_action": "REPORT_ONLY"
+    }
+  ],
+  "publishable": false
+}

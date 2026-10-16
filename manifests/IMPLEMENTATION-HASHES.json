@@ -1,0 +1,62 @@
+{
+  "core_main": {
+    "path": "core/src/main.py",
+    "sha256": "8cf1403ec36a9bf8f931429c4a3e172d2ecb5361decc08d28c96c480fc7393c6",
+    "size": 739418
+  },
+  "progress_director_v2": {
+    "path": "core/src/ProgressDirectorV2.py",
+    "sha256": "e039fc71a736e48fbe4d73025b4212ea43ff1ca0988ada59cd9f4bab4e5632bc",
+    "size": 34699
+  },
+  "evaluation_checkpoint": {
+    "path": "core/src/EvaluationCheckpoint.py",
+    "sha256": "1b9898872e6bdff805b6bedf3a029f22c6fb9dcda4543aae43206b2536966236",
+    "size": 32392
+  },
+  "event_identity": {
+    "path": "core/src/EventIdentity.py",
+    "sha256": "eaff160f37fda8114d5579fdce7f9ba032a3dccd96adff41de7bd8df264d9d4a",
+    "size": 2128
+  },
+  "run_investigation_evaluation": {
+    "path": "core/src/run_investigation_evaluation.py",
+    "sha256": "fc154f987605982e8663eba81374110580d5de5ebb14f2cb7e4e9d8914c41ab3",
+    "size": 38065
+  },
+  "scenario": {
+    "path": "core/src/scenario_corbitt.json",
+    "sha256": "b6f0559ffca677b57bc3a69c16991bb24c483d30256cb6dfd30fc938ebd84ed7",
+    "size": 164868
+  },
+  "pc": {
+    "path": "core/src/pcs.json",
+    "sha256": "f47bb03ff6406c228dd7c88f94c597d6e28785b47c6e0afe1322b7596c31c3dd",
+    "size": 5354
+  },
+  "npc": {
+    "path": "core/src/npcs.json",
+    "sha256": "3c795e6098f97ae8e6240b9ed2412428ab332c91c30a1cb45b846d2f4628377c",
+    "size": 25783
+  },
+  "normalizer": {
+    "path": "video/src/video_agent/normalizer/session.py",
+    "sha256": "954d3ec1ccdd2b54f377436f1fdb9bf07bac431487bcbaf51072385c8e3d88ca",
+    "size": 32595
+  },
+  "video_pipeline": {
+    "path": "video/src/video_agent/pipeline.py",
+    "sha256": "0d1d34468f4501a6fbaa8a0240c6ecac385f4191e27b1a6e94f4c862f2bd5045",
+    "size": 2460
+  },
+  "auditor": {
+    "path": "tools/auditor/audit_longrun_formal_v2.py",
+    "sha256": "858b33c80d73c940ca2c8e9e6c5b63d34bb6e792e29307ed438fc2169f86608e",
+    "size": 39574
+  },
+  "night_guard": {
+    "path": "tools/night_guard/night_guard.py",
+    "sha256": "375cb519be6dcda8594815c9d1821fb94c83b7eb797bf53779e1efd66a457a9b",
+    "size": 34236
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "expected_flow": [
+    "失敗",
+    "幸運 9消費",
+    "成功扱い"
+  ],
+  "fixture": {
+    "final_result": "SUCCESS",
+    "modification": {
+      "amount": 9,
+      "type": "LUCK_SPEND"
+    },
+    "raw_result": "FAILURE",
+    "roll": 59,
+    "skill": "目星",
+    "target": 50
+  },
+  "observed_changes": [
+    {
+      "final_result": "SUCCESS",
+      "grounding": "EXPLICIT_LUCK_SPEND_IN_SOURCE",
+      "modification": {
+        "amount": 9,
+        "type": "LUCK_SPEND"
+      },
+      "raw_result": "FAILURE",
+      "script_line_id": "scene_048_script_007"
+    }
+  ],
+  "pass": true
+}

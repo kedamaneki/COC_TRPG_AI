@@ -1,0 +1,44 @@
+[
+  {
+    "voice_profile_id": "m1_aq_f1",
+    "engine": "AQUESTALK",
+    "voice_type": "f1",
+    "reading_speed": 110,
+    "pitch_playback": 100,
+    "volume": 100,
+    "pan": 0,
+    "post_silence_sec": 0.15,
+    "version": "YMM4 bundled AquesTalk f1"
+  },
+  {
+    "voice_profile_id": "aq_marisa_default",
+    "engine": "AQUESTALK",
+    "voice_type": "f2",
+    "reading_speed": 105,
+    "pitch_playback": 100,
+    "volume": 100,
+    "pan": 0,
+    "post_silence_sec": 0.15,
+    "version": "YMM4 bundled AquesTalk f2"
+  },
+  {
+    "voice_profile_id": "m1_vv_pc2",
+    "engine": "VOICEVOX",
+    "speaker_uuid": "388f246b-8c41-4ac1-8e2d-5d79f3ff56d9",
+    "style_id": 3,
+    "speed_scale": 1.22,
+    "pitch_scale": 0.0,
+    "intonation_scale": 1.0,
+    "volume_scale": 1.0
+  },
+  {
+    "voice_profile_id": "m1_vv_kp",
+    "engine": "VOICEVOX",
+    "speaker_uuid": "c30dc15a-0992-4f8d-8bb8-ad3b314e6a6f",
+    "style_id": 11,
+    "speed_scale": 1.28,
+    "pitch_scale": -0.03,
+    "intonation_scale": 0.9,
+    "volume_scale": 1.0
+  }
+]

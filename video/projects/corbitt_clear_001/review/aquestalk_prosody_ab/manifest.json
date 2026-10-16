@@ -1,0 +1,146 @@
+{
+  "processing": {
+    "agent_candidate": "One natural utterance/sentence per AquesTalk invocation; comma remains inside the WAV",
+    "agent_current": "Iteration 2 punctuation/length subdivision followed by WAV concat",
+    "pitch_playback": "100%; no pitch shift or time stretch",
+    "post_processing": "none in fixture WAVs",
+    "reference_yymm4": "Direct output from the exact AquesTalk.dll bundled with the installed YMM4, same voice type and reading speed"
+  },
+  "reference_limitation": "YMM4 frontend text analysis/export is not reproduced; human YMM4 export remains required for a frontend-level comparison.",
+  "reference_scope": "YMM4_BUNDLED_AQUESTALK_ENGINE_DIRECT",
+  "samples": [
+    {
+      "current_parts": 2,
+      "files": {
+        "agent_candidate": "reimu/agent_candidate/01.wav",
+        "agent_current": "reimu/agent_current/01.wav",
+        "reference_yymm4": "reimu/reference_yymm4/01.wav"
+      },
+      "index": 1,
+      "phonetic_input": "りびんぐるうむときっちんのちょおさがすすまないので、つぎのてがかりおみつけるためにちかしつおちょおさしてみるのもよさそお",
+      "pitch_playback": 100,
+      "reading_speed": 110,
+      "sha256": {
+        "agent_candidate": "f6c7b8971746c3edd3775d237ad537ebf1e7fb2e0e78235c93f2eeb72dcc468c",
+        "agent_current": "b997ee595ecadc1604fff5f0ea2b30b17c3edf18cfd6526568718c443edaa73a",
+        "reference_yymm4": "f6c7b8971746c3edd3775d237ad537ebf1e7fb2e0e78235c93f2eeb72dcc468c"
+      },
+      "source_script_line_id": "scene_047_script_018",
+      "source_text": "リビングルームとキッチンの調査が進まないので、次の手がかりを見つけるために地下室を調査してみるのも良さそう。",
+      "speaker_id": "pc_01",
+      "speaker_label": "reimu",
+      "voice_type": "f1"
+    },
+    {
+      "current_parts": 1,
+      "files": {
+        "agent_candidate": "reimu/agent_candidate/02.wav",
+        "agent_current": "reimu/agent_current/02.wav",
+        "reference_yymm4": "reimu/reference_yymm4/02.wav"
+      },
+      "index": 2,
+      "phonetic_input": "ちかしつえのとびらえむかう",
+      "pitch_playback": 100,
+      "reading_speed": 110,
+      "sha256": {
+        "agent_candidate": "5191cdce19c996ce30027c86dc15b2ff7fafbcf6556aa276577fd1b10fea8735",
+        "agent_current": "5191cdce19c996ce30027c86dc15b2ff7fafbcf6556aa276577fd1b10fea8735",
+        "reference_yymm4": "5191cdce19c996ce30027c86dc15b2ff7fafbcf6556aa276577fd1b10fea8735"
+      },
+      "source_script_line_id": "scene_047_script_019",
+      "source_text": "地下室への扉へ向かう。",
+      "speaker_id": "pc_01",
+      "speaker_label": "reimu",
+      "voice_type": "f1"
+    },
+    {
+      "current_parts": 1,
+      "files": {
+        "agent_candidate": "reimu/agent_candidate/03.wav",
+        "agent_current": "reimu/agent_current/03.wav",
+        "reference_yymm4": "reimu/reference_yymm4/03.wav"
+      },
+      "index": 3,
+      "phonetic_input": "まずかべのいたからしらべてみよお",
+      "pitch_playback": 100,
+      "reading_speed": 110,
+      "sha256": {
+        "agent_candidate": "689e9d9f5c63dae4a38bf287062c3c16ad41846f51040ef2fe53db92079147ab",
+        "agent_current": "689e9d9f5c63dae4a38bf287062c3c16ad41846f51040ef2fe53db92079147ab",
+        "reference_yymm4": "689e9d9f5c63dae4a38bf287062c3c16ad41846f51040ef2fe53db92079147ab"
+      },
+      "source_script_line_id": "scene_048_script_010",
+      "source_text": "まず壁の板から調べてみよう。",
+      "speaker_id": "pc_01",
+      "speaker_label": "reimu",
+      "voice_type": "f1"
+    },
+    {
+      "current_parts": 2,
+      "files": {
+        "agent_candidate": "marisa/agent_candidate/01.wav",
+        "agent_current": "marisa/agent_current/01.wav",
+        "reference_yymm4": "marisa/reference_yymm4/01.wav"
+      },
+      "index": 1,
+      "phonetic_input": "こおびっとのないふとかべのいたのどちらおしらべるべきかまよっています、どちらがてがかりになりそおかはんだんしてください",
+      "pitch_playback": 100,
+      "reading_speed": 105,
+      "sha256": {
+        "agent_candidate": "f3eca1eca8d267d9f6070b22bee999520d1c2894a85068a0a1331bb9310563a8",
+        "agent_current": "ae366e64b06de29ef68595ae1c28e66d8eb326956b9503928c30ad57d46b16af",
+        "reference_yymm4": "f3eca1eca8d267d9f6070b22bee999520d1c2894a85068a0a1331bb9310563a8"
+      },
+      "source_script_line_id": "scene_048_script_003",
+      "source_text": "コービットのナイフと壁の板のどちらを調べるべきか迷っています。どちらが手がかりになりそうか判断してください。",
+      "speaker_id": "pc_02",
+      "speaker_label": "marisa",
+      "voice_type": "f2"
+    },
+    {
+      "current_parts": 1,
+      "files": {
+        "agent_candidate": "marisa/agent_candidate/02.wav",
+        "agent_current": "marisa/agent_current/02.wav",
+        "reference_yymm4": "marisa/reference_yymm4/02.wav"
+      },
+      "index": 2,
+      "phonetic_input": "まずわこおびっとのないふからしらべてみよお",
+      "pitch_playback": 100,
+      "reading_speed": 105,
+      "sha256": {
+        "agent_candidate": "453aa6f56de79f9f33d0dc97cd75040b37003296d70a88c03334109aefe94ea8",
+        "agent_current": "453aa6f56de79f9f33d0dc97cd75040b37003296d70a88c03334109aefe94ea8",
+        "reference_yymm4": "453aa6f56de79f9f33d0dc97cd75040b37003296d70a88c03334109aefe94ea8"
+      },
+      "source_script_line_id": "scene_048_script_004",
+      "source_text": "まずはコービットのナイフから調べてみよう。",
+      "speaker_id": "pc_02",
+      "speaker_label": "marisa",
+      "voice_type": "f2"
+    },
+    {
+      "current_parts": 1,
+      "files": {
+        "agent_candidate": "marisa/agent_candidate/03.wav",
+        "agent_current": "marisa/agent_current/03.wav",
+        "reference_yymm4": "marisa/reference_yymm4/03.wav"
+      },
+      "index": 3,
+      "phonetic_input": "かべのいたからなにかてがかりがないかしらべてみよお",
+      "pitch_playback": 100,
+      "reading_speed": 105,
+      "sha256": {
+        "agent_candidate": "4fe6fc622315a3f2434e5d502b8562d748dce11df7c232e34436d39ecdf21d47",
+        "agent_current": "4fe6fc622315a3f2434e5d502b8562d748dce11df7c232e34436d39ecdf21d47",
+        "reference_yymm4": "4fe6fc622315a3f2434e5d502b8562d748dce11df7c232e34436d39ecdf21d47"
+      },
+      "source_script_line_id": "scene_048_script_013",
+      "source_text": "壁の板から何か手がかりがないか調べてみよう。",
+      "speaker_id": "pc_02",
+      "speaker_label": "marisa",
+      "voice_type": "f2"
+    }
+  ],
+  "schema_version": "0.1"
+}

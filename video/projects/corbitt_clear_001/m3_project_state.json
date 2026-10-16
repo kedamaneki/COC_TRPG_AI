@@ -1,0 +1,17 @@
+{
+  "completed_steps": [
+    "assets",
+    "visual_plan",
+    "voice",
+    "audio_mix",
+    "timeline",
+    "render",
+    "qa"
+  ],
+  "phase_decisions": [
+    "M3_PRESENTATION_NEEDS_ITERATION",
+    "M3_ASSET_INPUT_REQUIRED",
+    "M3_LICENSE_REVIEW_REQUIRED"
+  ],
+  "status": "HUMAN_REVIEW_REQUIRED"
+}

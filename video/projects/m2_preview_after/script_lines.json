@@ -1,0 +1,124 @@
+[
+  {
+    "dice": {
+      "result": null,
+      "roll": null,
+      "skill_name": "目星",
+      "target_value": null
+    },
+    "event_type": "ACTION_DECLARATION",
+    "fixed_duration_sec": 3.0,
+    "line_id": "line_001",
+    "portrait_asset_id": "m1_portrait_aquestalk",
+    "presentation_mode": "VOICED",
+    "source_event_ids": [
+      "norm:session:000161",
+      "session_log:000161"
+    ],
+    "speaker_id": "pc_01",
+    "subtitle_profile_id": "subtitle_reimu",
+    "text": "散乱した家具や荷物を手がかりの可能性を探ってみる。",
+    "voice_profile_id": "m1_aq_f1",
+    "voice_text": "ちらんしたかぐやにもつを、てがかりのかのーせーをさぐってみる。"
+  },
+  {
+    "dice": {
+      "result": "失敗",
+      "roll": 93,
+      "skill_name": "目星",
+      "target_value": 65
+    },
+    "event_type": "DICE_RESULT",
+    "fixed_duration_sec": 3.0,
+    "line_id": "line_002",
+    "portrait_asset_id": "m1_portrait_aquestalk",
+    "presentation_mode": "OVERLAY_ONLY",
+    "source_event_ids": [
+      "norm:session:000162",
+      "session_log:000162"
+    ],
+    "speaker_id": "pc_01",
+    "subtitle_profile_id": "subtitle_reimu",
+    "text": "システム: マクガフィン刑事 : 【技能:目星】CC(1d100<=65) 難易度:hard(目標<=32) ＞ 出目:93 ＞ 失敗",
+    "voice_profile_id": "m1_aq_f1",
+    "voice_text": null
+  },
+  {
+    "dice": null,
+    "event_type": "KP_DESCRIPTION",
+    "fixed_duration_sec": 3.0,
+    "line_id": "line_003",
+    "portrait_asset_id": null,
+    "presentation_mode": "VOICED",
+    "source_event_ids": [
+      "norm:session:000165",
+      "session_log:000165"
+    ],
+    "speaker_id": "kp",
+    "subtitle_profile_id": "subtitle_kp",
+    "text": "リビングルームに散乱している家具や荷物を細かく調べたが、これ以上の手がかりを見つけ出すことはできなかったようだ。壁や床に目を細めて探しても、不気味な染みや引きずられた跡といった痕跡は見つけることができない。これ以上調べても時間が無駄になりそうだ。どうしますか？",
+    "voice_profile_id": "m1_vv_kp",
+    "voice_text": "リビングルームに散乱している家具や荷物を細かく調べたが、これ以上の手がかりを見つけ出すことはできなかったようだ。壁や床に目を細めて探しても、不気味な染みや引きずられた跡といった痕跡は見つけることができない。これ以上調べても時間が無駄になりそうだ。どうしますか？"
+  },
+  {
+    "dice": {
+      "result": null,
+      "roll": null,
+      "skill_name": "目星",
+      "target_value": null
+    },
+    "event_type": "ACTION_DECLARATION",
+    "fixed_duration_sec": 3.0,
+    "line_id": "line_004",
+    "portrait_asset_id": "m1_portrait_voicevox",
+    "presentation_mode": "VOICED",
+    "source_event_ids": [
+      "norm:session:000166",
+      "session_log:000166"
+    ],
+    "speaker_id": "pc_02",
+    "subtitle_profile_id": "subtitle_marisa",
+    "text": "地下室の扉を見つめ、その周りを詳しく調べる。",
+    "voice_profile_id": "m1_vv_pc2",
+    "voice_text": "地下室の扉を見つめ、その周りを詳しく調べる。"
+  },
+  {
+    "dice": {
+      "result": "失敗",
+      "roll": 95,
+      "skill_name": "目星",
+      "target_value": 50
+    },
+    "event_type": "DICE_RESULT",
+    "fixed_duration_sec": 3.0,
+    "line_id": "line_005",
+    "portrait_asset_id": "m1_portrait_voicevox",
+    "presentation_mode": "OVERLAY_ONLY",
+    "source_event_ids": [
+      "norm:session:000167",
+      "session_log:000167"
+    ],
+    "speaker_id": "pc_02",
+    "subtitle_profile_id": "subtitle_marisa",
+    "text": "システム: エレノア教授 : 【技能:目星】CC(1d100<=50) ＞ 出目:95 ＞ 失敗",
+    "voice_profile_id": "m1_vv_pc2",
+    "voice_text": null
+  },
+  {
+    "dice": null,
+    "event_type": "DIALOGUE",
+    "fixed_duration_sec": 3.0,
+    "line_id": "line_006",
+    "portrait_asset_id": "m1_portrait_voicevox",
+    "presentation_mode": "VOICED",
+    "source_event_ids": [
+      "norm:session:000169",
+      "session_log:000169"
+    ],
+    "speaker_id": "pc_02",
+    "subtitle_profile_id": "subtitle_marisa",
+    "text": "【プッシュ方針】地下室の扉の周りの細かい痕跡を探し、時間をかけて丁寧に調べ直す。",
+    "voice_profile_id": "m1_vv_pc2",
+    "voice_text": "【プッシュ方針】地下室の扉の周りの細かい痕跡を探し、時間をかけて丁寧に調べ直す。"
+  }
+]

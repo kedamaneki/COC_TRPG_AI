@@ -1,0 +1,1741 @@
+{
+  "session_id": "CORBITT_LONGRUN_ITERATION2_V2_HOME_001",
+  "findings_total": 122,
+  "unique_evidence_subjects": 111,
+  "unique_adjudications_with_explicit_id": 62,
+  "unique_roll_subjects": 61,
+  "unique_no_roll_subjects": 50,
+  "finding_counts": {
+    "by_mode": {
+      "ROLL": 61,
+      "NO_ROLL": 61
+    },
+    "by_layer": {
+      "raw": 73,
+      "normalized_unified": 42,
+      "normalized_session": 7
+    },
+    "by_domain": {
+      "investigation": 32,
+      "combat": 21,
+      "special": 2,
+      "other": 66,
+      "Luck": 1
+    },
+    "by_mode_layer": {
+      "ROLL|raw": 23,
+      "NO_ROLL|raw": 50,
+      "ROLL|normalized_unified": 31,
+      "NO_ROLL|normalized_unified": 11,
+      "ROLL|normalized_session": 7
+    },
+    "by_mode_domain": {
+      "ROLL|investigation": 32,
+      "NO_ROLL|combat": 21,
+      "NO_ROLL|special": 2,
+      "NO_ROLL|other": 38,
+      "ROLL|other": 28,
+      "ROLL|Luck": 1
+    }
+  },
+  "unique_subject_counts": {
+    "by_mode": {
+      "ROLL": 61,
+      "NO_ROLL": 50
+    },
+    "by_domain": {
+      "investigation": 32,
+      "combat": 11,
+      "special": 1,
+      "other": 66,
+      "Luck": 1
+    }
+  },
+  "subjects": [
+    {
+      "key": "adj_74f51ca778554d40a60925dd93ecd86f",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "raw_result",
+        "roll",
+        "target_value"
+      ]
+    },
+    {
+      "key": "combat_event_000343",
+      "mode": "NO_ROLL",
+      "domains": [
+        "combat"
+      ],
+      "layers": [
+        "normalized_unified",
+        "raw"
+      ],
+      "finding_count": 2,
+      "missing": [
+        "adjudication_id",
+        "final_result",
+        "reason"
+      ]
+    },
+    {
+      "key": "combat_event_000344",
+      "mode": "NO_ROLL",
+      "domains": [
+        "combat"
+      ],
+      "layers": [
+        "normalized_unified",
+        "raw"
+      ],
+      "finding_count": 2,
+      "missing": [
+        "adjudication_id",
+        "final_result",
+        "reason"
+      ]
+    },
+    {
+      "key": "combat_event_000351",
+      "mode": "NO_ROLL",
+      "domains": [
+        "combat"
+      ],
+      "layers": [
+        "normalized_unified",
+        "raw"
+      ],
+      "finding_count": 2,
+      "missing": [
+        "adjudication_id",
+        "final_result",
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_8139be8045824ab6bdbbcf8d1a392119",
+      "mode": "NO_ROLL",
+      "domains": [
+        "combat"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "final_result",
+        "reason"
+      ]
+    },
+    {
+      "key": "combat_event_000355",
+      "mode": "NO_ROLL",
+      "domains": [
+        "combat"
+      ],
+      "layers": [
+        "normalized_unified",
+        "raw"
+      ],
+      "finding_count": 2,
+      "missing": [
+        "adjudication_id",
+        "final_result",
+        "reason"
+      ]
+    },
+    {
+      "key": "combat_event_000356",
+      "mode": "NO_ROLL",
+      "domains": [
+        "combat"
+      ],
+      "layers": [
+        "normalized_unified",
+        "raw"
+      ],
+      "finding_count": 2,
+      "missing": [
+        "adjudication_id",
+        "final_result",
+        "reason"
+      ]
+    },
+    {
+      "key": "combat_event_000357",
+      "mode": "NO_ROLL",
+      "domains": [
+        "combat"
+      ],
+      "layers": [
+        "normalized_unified",
+        "raw"
+      ],
+      "finding_count": 2,
+      "missing": [
+        "adjudication_id",
+        "final_result",
+        "reason"
+      ]
+    },
+    {
+      "key": "combat_event_000409",
+      "mode": "NO_ROLL",
+      "domains": [
+        "combat"
+      ],
+      "layers": [
+        "normalized_unified",
+        "raw"
+      ],
+      "finding_count": 2,
+      "missing": [
+        "adjudication_id",
+        "final_result",
+        "reason"
+      ]
+    },
+    {
+      "key": "combat_event_000410",
+      "mode": "NO_ROLL",
+      "domains": [
+        "combat"
+      ],
+      "layers": [
+        "normalized_unified",
+        "raw"
+      ],
+      "finding_count": 2,
+      "missing": [
+        "adjudication_id",
+        "final_result",
+        "reason"
+      ]
+    },
+    {
+      "key": "combat_event_000417",
+      "mode": "NO_ROLL",
+      "domains": [
+        "combat"
+      ],
+      "layers": [
+        "normalized_unified",
+        "raw"
+      ],
+      "finding_count": 2,
+      "missing": [
+        "adjudication_id",
+        "final_result",
+        "reason"
+      ]
+    },
+    {
+      "key": "combat_event_000418",
+      "mode": "NO_ROLL",
+      "domains": [
+        "special"
+      ],
+      "layers": [
+        "normalized_unified",
+        "raw"
+      ],
+      "finding_count": 2,
+      "missing": [
+        "adjudication_id",
+        "final_result",
+        "reason"
+      ]
+    },
+    {
+      "key": "combat_event_000424",
+      "mode": "NO_ROLL",
+      "domains": [
+        "combat"
+      ],
+      "layers": [
+        "normalized_unified",
+        "raw"
+      ],
+      "finding_count": 2,
+      "missing": [
+        "adjudication_id",
+        "final_result",
+        "reason"
+      ]
+    },
+    {
+      "key": "evt_000008_3485034065821ca7c559",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "evt_000023_6a4eb7dd9a39b81d7aa3",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000047_26f30142110fd9b584b1",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "evt_000057_b0cf424391d080b036ef",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "evt_000065_ea8ef79bc7995c6bafee",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "evt_000086_d43ac6aeed332142c12c",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "evt_000096_36370adf1d16802706c9",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "evt_000107_aa81e81c7f3e2848a21b",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "evt_000118_7092650ad3703c37ef27",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "evt_000123_54fd9753ccb3647c8df8",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000137_9d95fa3b08cc4c37662c",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000139_1bc0a1881cef5e8e63c9",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000154_d211208d72c3e0a9f847",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "evt_000156_17bfeebe38b6c1849550",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000177_1aa38b893e1061b48689",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "evt_000190_56162cc2a74f3c2a98f2",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "evt_000204_048c76c64ab05e5cc79d",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "evt_000219_3afb199e9c9dde923197",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000221_e318e84bab74dfc587ee",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000226_6c44b94ad0bb9d8ed4c4",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000231_bee271997821db47f077",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000236_65125b79b5b5629ad4ce",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000240_fe7d744e46870142038d",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000248_44ee7ee7aaf94c64aa45",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "evt_000266_1c3d63a31128f45a5e9b",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000277_757363d36bdca945b580",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "evt_000290_f54018406f35cdc50e01",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000312_3227e5d22aaab2fbaeea",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000330_f5a804148ac3ba9c4eee",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000363_805974db2c7a67fb310b",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "evt_000396_60fa71f0f3b4e993138a",
+      "mode": "ROLL",
+      "domains": [
+        "investigation"
+      ],
+      "layers": [
+        "normalized_unified"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "adj_a8e179eadeed4b3b8c3ac0d8d5093060",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "session_log:000046",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "normalized_session"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "session_log:000051",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "normalized_session"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "adj_2e3ffbe0ac244f31a0bb77074c5dfb0c",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_3994cafb54c24829a325cd4008663272",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_01a98ecb66044016a4b88be842e2a647",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier"
+      ]
+    },
+    {
+      "key": "session_log:000090",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "normalized_session"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "actor",
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "session_log:000092",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "normalized_session"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "adj_027bea5b74dd4754b171d4743e215777",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_d7c1b6acc46e4921aabf5ee8c54533fd",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_2b3968388c334adfbf42cc50cea5fce7",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "actor",
+        "modifier",
+        "skill",
+        "target"
+      ]
+    },
+    {
+      "key": "adj_dbb55d9620c440c39587ea2904419094",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_4fa68206b1dd47fe8aa28a6e0e13f338",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_bf652796b7e443e4b3de57ef8b73b4be",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "adj_6c711d33dc4a47ba8ac03552cb6fd3f9",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "adj_9b696339bc6641da9951dc8679060111",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier"
+      ]
+    },
+    {
+      "key": "session_log:000171",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "normalized_session"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "adj_8241600477874540aa1b78385e7eaa38",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "adj_559c08e3ecce49d4840153e371ec5a93",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier"
+      ]
+    },
+    {
+      "key": "adj_48f4725ef2264270b646faa6f7008ddd",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_b229532986e3403c926538bef4878c7e",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier"
+      ]
+    },
+    {
+      "key": "adj_7fc1e5442c264b5ea33e0e2a96e32ac3",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier"
+      ]
+    },
+    {
+      "key": "session_log:000217",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "normalized_session"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "actor",
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "session_log:000219",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "normalized_session"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "adjudication_id",
+        "modifier"
+      ]
+    },
+    {
+      "key": "adj_4262dff177f443f19e5c93a4210569f9",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_6ad6277cccd24047b9236ca6c3a4513d",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_2f8b7e80597643d8b9ecfb7d823db7d6",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_0ae57ad049cb40258d48cf98292d473d",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_4ef9ff14136541e6b8f1c4b70cf24b6e",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_a4cfb596f8b74c538bc58f91e4d56025",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "adj_8696de679d5e43babe458b60c34d2320",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "adj_ac0a6f2f26874647b08325991aff3cb5",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "adj_6b80c5012e8749bb900e7defe9bb2686",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "adj_3e93582f91a043ebb5789ac04e89a6ff",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "adj_b9a23fb5fa6c471d86d4cfa925d90058",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier"
+      ]
+    },
+    {
+      "key": "adj_e247e3f4670a4645ae2429ad70e23a59",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "adj_667dc541f71d432594a3e86153011de6",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "actor",
+        "modifier",
+        "skill",
+        "target"
+      ]
+    },
+    {
+      "key": "adj_5ef90f8fddc946b5ad406e1425264332",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_c0b009c554854561ac39a20e6874bb4a",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_40b0e8398f5949e792a9110ab421aaff",
+      "mode": "ROLL",
+      "domains": [
+        "Luck"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier"
+      ]
+    },
+    {
+      "key": "adj_04cf9693df7e4fc4818cc245103205a8",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_2c0d144068bd49e78a4884f747d6e627",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_86763d1036d348839e98a49ca09349dc",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_3e9579a216324eed9b4b3cf052ed973f",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_8a2e9685f4dd472baaeacb77eae04401",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_971a06db592647eea3023a8e19a202bf",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_98cc6e54272840de8899b121de85d273",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "adj_3b378cc0fdd04c71aa3e0601089970fe",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_c523ada3651143c6b191aa43f2095725",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_6c9f68c2757e4cd7b093e7a46728f3cb",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_d3386476cca64fd68eecaa5657d8d66c",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_f18756051724461ba61c287aff8a4936",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_364511f789f1487788df2fd5e513d2f6",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_1de3d7fcd14641c28caa81af5af1b15f",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_ecca760e4c2f44ceb091b39031d22caf",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_9b9864f21b104ba4852c419324de0fde",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier",
+        "skill"
+      ]
+    },
+    {
+      "key": "adj_cdc87debb1ec41dca93b098b7bc4dbea",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_add2a9857c3d4dbea6e62e12f8947c4e",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_16bdbf9b716a49f6bcabe35dcf76f82b",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_d14f530907a046dca36857ff5ece32d1",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_3cf243f7e00a4d4baa2097aba4075f02",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_0ece6121c3af4ccd8d219ef653b7ceee",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_6a866e811b6148c7b39f9be44ca10b8a",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_22d29937b9764c8f9680ad0094640984",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_57c386b04abe4ec69f2b8c90b743b40c",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier"
+      ]
+    },
+    {
+      "key": "adj_08802a5cf5b0409f932662cd4c3b6fdc",
+      "mode": "NO_ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "reason"
+      ]
+    },
+    {
+      "key": "adj_0697d4d6f17c4708b847f51ff16ac7c8",
+      "mode": "ROLL",
+      "domains": [
+        "other"
+      ],
+      "layers": [
+        "raw"
+      ],
+      "finding_count": 1,
+      "missing": [
+        "modifier"
+      ]
+    }
+  ],
+  "remediation_classification": {
+    "normalizer_mapping_resolvable": {
+      "finding_count": 20,
+      "definition": "raw structured source contains every missing value or an explicit modifier field, so deterministic mapping is possible"
+    },
+    "raw_source_evidence_insufficient": {
+      "finding_count": 79,
+      "definition": "41 ROLL findings lack authoritative source fields and 38 actual NO_ROLL move findings lack a formal reason; values must not be inferred"
+    },
+    "semantic_ambiguity": {
+      "finding_count": 23,
+      "definition": "23 audit findings arise from 12 combat lifecycle/selection events mislabeled as NO_ROLL adjudications"
+    }
+  },
+  "post_fix_staging": {
+    "roll_contract_incomplete": 113,
+    "normalization_source_contradiction": 0,
+    "traceability": 1.0,
+    "formal_status": "NEEDS_ITERATION",
+    "video_source_eligible": false,
+    "note": "HOME_001 raw evidence is immutable; historic gaps remain and are not repaired by inference"
+  }
+}

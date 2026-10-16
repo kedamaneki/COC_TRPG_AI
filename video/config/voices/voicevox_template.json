@@ -1,0 +1,10 @@
+{
+  "voice_profile_id": "voicevox_unassigned",
+  "engine": "VOICEVOX",
+  "speaker_uuid": null,
+  "style_id": null,
+  "speed_scale": null,
+  "pitch_scale": null,
+  "intonation_scale": null,
+  "volume_scale": null
+}

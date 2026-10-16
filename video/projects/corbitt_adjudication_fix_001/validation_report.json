@@ -1,0 +1,12 @@
+{
+  "errors": [],
+  "status": "PASS",
+  "warnings": [
+    {
+      "code": "UNKNOWN_ASSET_LICENSE",
+      "level": "WARNING",
+      "message": "portrait_pack_kitune_legacy_reference",
+      "path": "assets[0]"
+    }
+  ]
+}

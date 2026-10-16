@@ -1,0 +1,13 @@
+{
+  "fixture_type": "real_session",
+  "normalized_session": "projects/corbitt_clear_001/normalized_session.json",
+  "background_asset_id": "m1_background_fallback",
+  "event_lines": [
+    {"event_id":"norm:session:000161","voice_text":"マクガフィンけいじ。ちらんしたかぐやにもつを、てがかりのかのーせーをさぐってみる。","voice_profile_id":"m1_aq_f1","subtitle_profile_id":"subtitle_reimu","portrait_asset_id":"m1_portrait_aquestalk"},
+    {"event_id":"norm:session:000162","voice_text":"システム。マクガフィンけいじ。ぎのー、めぼし。もくひょーち、ろくじゅーご。こんなん。さんじゅーに。でめ、きゅーじゅーさん。しっぱい。","voice_profile_id":"m1_aq_f1","subtitle_profile_id":"subtitle_reimu","portrait_asset_id":"m1_portrait_aquestalk"},
+    {"event_id":"norm:session:000165","voice_profile_id":"m1_vv_kp","subtitle_profile_id":"subtitle_kp","portrait_asset_id":null},
+    {"event_id":"norm:session:000166","voice_profile_id":"m1_vv_pc2","subtitle_profile_id":"subtitle_marisa","portrait_asset_id":"m1_portrait_voicevox"},
+    {"event_id":"norm:session:000167","voice_profile_id":"m1_vv_pc2","subtitle_profile_id":"subtitle_marisa","portrait_asset_id":"m1_portrait_voicevox"},
+    {"event_id":"norm:session:000169","voice_profile_id":"m1_vv_pc2","subtitle_profile_id":"subtitle_marisa","portrait_asset_id":"m1_portrait_voicevox"}
+  ]
+}

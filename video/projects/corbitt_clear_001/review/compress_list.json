@@ -1,0 +1,66 @@
+[
+  {
+    "change_reasons": [],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "COMPRESS",
+    "edited_text": "【システム】追加の確認は可能ですが、依頼の核心情報は既に得ています。次は `move` / `boston_globe` への移動を検討してください。",
+    "original_text": "【システム】追加の確認は可能ですが、依頼の核心情報は既に得ています。次は `move` / `boston_globe` への移動を検討してください。",
+    "output_script_line_id": "scene_028_script_007",
+    "presentation_mode": "VOICED",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_028",
+    "source_event_id": "norm:session:000007",
+    "text_treatment": "COMPRESSED"
+  },
+  {
+    "change_reasons": [
+      "DUPLICATE_PHRASE",
+      "COMPRESSION"
+    ],
+    "compress_into": "scene_028_script_007",
+    "confidence": 1.0,
+    "content_decision": "COMPRESS",
+    "edited_text": "【システム】追加の確認は可能ですが、依頼の核心情報は既に得ています。次は `move` / `boston_globe` への移動を検討してください。",
+    "original_text": "【システム】追加の確認は可能ですが、依頼の核心情報は既に得ています。次は `move` / `boston_globe` への移動を検討してください。",
+    "output_script_line_id": "scene_028_script_007",
+    "presentation_mode": "VOICED",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_028",
+    "source_event_id": "norm:session:000015",
+    "text_treatment": "COMPRESSED"
+  },
+  {
+    "change_reasons": [
+      "SYSTEM_METADATA_REMOVED"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "COMPRESS",
+    "edited_text": "システム: 【Action Availability】窓は固く固定されている。〈目星〉で緩い箇所を探すか、〈STR〉で板を外す手もある。\n【再確認・確定手がかり】飾り気のない窓はカーテンが閉められ、内側から釘で打ち付けられている。〈目星〉で釘の緩い箇所や、裏庭側の弱い窓枠を見つければ、板を外して侵入できる可能性がある。\n【進行指示】新規手がかりはない。別の未調査対象か移動を選べ。\n【Action Availability】窓は固く固定されている。〈目星〉で緩い箇所を探すか、〈STR〉で板を外す手もある。\n【再確認・確定手がかり】飾り気のない窓はカーテンが閉められ、内側から釘で打ち付けられている。〈目星〉で釘の緩い箇所や、裏庭側の弱い窓枠を見つければ、板を外して侵入できる可能性がある。\n【進行指示】新規手がかりはない。別の未調査対象か移動を選べ。",
+    "original_text": "システム: 【Action Availability】窓は固く固定されている。〈目星〉で緩い箇所を探すか、〈STR〉で板を外す手もある。\n【再確認・確定手がかり】飾り気のない窓はカーテンが閉められ、内側から釘で打ち付けられている。〈目星〉で釘の緩い箇所や、裏庭側の弱い窓枠を見つければ、板を外して侵入できる可能性がある。\n【進行指示】新規手がかりはない。別の未調査対象か移動を選べ。\n【Action Availability】窓は固く固定されている。〈目星〉で緩い箇所を探すか、〈STR〉で板を外す手もある。\n【再確認・確定手がかり】飾り気のない窓はカーテンが閉められ、内側から釘で打ち付けられている。〈目星〉で釘の緩い箇所や、裏庭側の弱い窓枠を見つければ、板を外して侵入できる可能性がある。\n【進行指示】新規手がかりはない。別の未調査対象か移動を選べ。",
+    "output_script_line_id": "scene_036_script_013",
+    "presentation_mode": "SUBTITLE_ONLY",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_036",
+    "source_event_id": "norm:session:000138",
+    "text_treatment": "COMPRESSED"
+  },
+  {
+    "change_reasons": [
+      "DUPLICATE_PHRASE",
+      "COMPRESSION"
+    ],
+    "compress_into": "scene_036_script_013",
+    "confidence": 1.0,
+    "content_decision": "COMPRESS",
+    "edited_text": "システム: 【Action Availability】窓は固く固定されている。〈目星〉で緩い箇所を探すか、〈STR〉で板を外す手もある。\n【再確認・確定手がかり】飾り気のない窓はカーテンが閉められ、内側から釘で打ち付けられている。〈目星〉で釘の緩い箇所や、裏庭側の弱い窓枠を見つければ、板を外して侵入できる可能性がある。\n【進行指示】新規手がかりはない。別の未調査対象か移動を選べ。\n【Action Availability】窓は固く固定されている。〈目星〉で緩い箇所を探すか、〈STR〉で板を外す手もある。\n【再確認・確定手がかり】飾り気のない窓はカーテンが閉められ、内側から釘で打ち付けられている。〈目星〉で釘の緩い箇所や、裏庭側の弱い窓枠を見つければ、板を外して侵入できる可能性がある。\n【進行指示】新規手がかりはない。別の未調査対象か移動を選べ。",
+    "original_text": "システム: 【Action Availability】窓は固く固定されている。〈目星〉で緩い箇所を探すか、〈STR〉で板を外す手もある。\n【再確認・確定手がかり】飾り気のない窓はカーテンが閉められ、内側から釘で打ち付けられている。〈目星〉で釘の緩い箇所や、裏庭側の弱い窓枠を見つければ、板を外して侵入できる可能性がある。\n【進行指示】新規手がかりはない。別の未調査対象か移動を選べ。\n【Action Availability】窓は固く固定されている。〈目星〉で緩い箇所を探すか、〈STR〉で板を外す手もある。\n【再確認・確定手がかり】飾り気のない窓はカーテンが閉められ、内側から釘で打ち付けられている。〈目星〉で釘の緩い箇所や、裏庭側の弱い窓枠を見つければ、板を外して侵入できる可能性がある。\n【進行指示】新規手がかりはない。別の未調査対象か移動を選べ。",
+    "output_script_line_id": "scene_036_script_013",
+    "presentation_mode": "SUBTITLE_ONLY",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_036",
+    "source_event_id": "norm:session:000144",
+    "text_treatment": "COMPRESSED"
+  }
+]

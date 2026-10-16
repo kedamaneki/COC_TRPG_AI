@@ -1,0 +1,146 @@
+{
+  "assets": [
+    {
+      "asset_id": "portrait_pc01_kitsune_reimu",
+      "commercial_use": null,
+      "creator": "UNKNOWN",
+      "credit_required": null,
+      "credit_text": null,
+      "file_path": "projects/corbitt_clear_001/scenario_assets/corbitt/portraits/pc_01_normal.png",
+      "license": "UNKNOWN",
+      "sha256": "a316dc9a1d2fda67e330603d7380fdb43925578eb879698f57aabcf344f3750b",
+      "source": "user-provided:200.png",
+      "status": "UNKNOWN",
+      "tags": [
+        "PORTRAIT",
+        "PC_01",
+        "NORMAL",
+        "HEAD_ONLY"
+      ],
+      "type": "PORTRAIT"
+    },
+    {
+      "asset_id": "portrait_pc02_kitsune_marisa",
+      "commercial_use": null,
+      "creator": "UNKNOWN",
+      "credit_required": null,
+      "credit_text": null,
+      "file_path": "projects/corbitt_clear_001/scenario_assets/corbitt/portraits/pc_02_normal.png",
+      "license": "UNKNOWN",
+      "sha256": "e1319f93613240001eb8fbf25088f784d22e1a7393d17c4ed21727693bf19475",
+      "source": "user-provided:200.png",
+      "status": "UNKNOWN",
+      "tags": [
+        "PORTRAIT",
+        "PC_02",
+        "NORMAL",
+        "HEAD_ONLY"
+      ],
+      "type": "PORTRAIT"
+    },
+    {
+      "asset_id": "bg_neutral_user",
+      "commercial_use": null,
+      "creator": "UNKNOWN",
+      "credit_required": null,
+      "credit_text": null,
+      "file_path": "projects/corbitt_clear_001/scenario_assets/corbitt/backgrounds/neutral.png",
+      "license": "UNKNOWN",
+      "sha256": "c6c60752e0e40c2c751710b6d01191bbc603d01fc19fa25ecc6925cc584f6ed6",
+      "source": "user-provided:nc321164_シンプル同系色モロッカン柄背景【紫】（1920×1080）.png",
+      "status": "UNKNOWN",
+      "tags": [
+        "BACKGROUND",
+        "NEUTRAL",
+        "FALLBACK"
+      ],
+      "type": "BACKGROUND"
+    },
+    {
+      "asset_id": "dialogue_frame_user",
+      "commercial_use": null,
+      "creator": "UNKNOWN",
+      "credit_required": null,
+      "credit_text": null,
+      "file_path": "projects/corbitt_clear_001/scenario_assets/corbitt/ui/dialogue_frame.png",
+      "license": "UNKNOWN",
+      "sha256": "50130744bdd78b693d66e9d9e45f5f69ae5cf87858e71240e09e595b0746657c",
+      "source": "user-provided:nc86017_【素材】セリフ枠.png",
+      "status": "UNKNOWN",
+      "tags": [
+        "UI",
+        "DIALOGUE_FRAME"
+      ],
+      "type": "UI"
+    },
+    {
+      "asset_id": "bgm_investigation_user",
+      "commercial_use": null,
+      "creator": "UNKNOWN",
+      "credit_required": null,
+      "credit_text": null,
+      "file_path": "projects/corbitt_clear_001/scenario_assets/corbitt/audio/bgm_investigation.mp3",
+      "license": "UNKNOWN",
+      "sha256": "3c352540f206ff163fb3339e8f5d6b02196f60a1c4f8f01eef30e771fea44885",
+      "source": "user-provided:Recollections.mp3",
+      "status": "UNKNOWN",
+      "tags": [
+        "BGM",
+        "INVESTIGATION"
+      ],
+      "type": "BGM"
+    },
+    {
+      "asset_id": "se_dice_user",
+      "commercial_use": null,
+      "creator": "UNKNOWN",
+      "credit_required": null,
+      "credit_text": null,
+      "file_path": "projects/corbitt_clear_001/scenario_assets/corbitt/audio/se_dice.mp3",
+      "license": "UNKNOWN",
+      "sha256": "ac3bf5cb6a69b8bcfec94dba5ae20556c31d7a0943667596290bf4155f639a87",
+      "source": "user-provided:データ解析.mp3",
+      "status": "UNKNOWN",
+      "tags": [
+        "SE",
+        "DICE"
+      ],
+      "type": "SE"
+    },
+    {
+      "asset_id": "se_san_user",
+      "commercial_use": null,
+      "creator": "UNKNOWN",
+      "credit_required": null,
+      "credit_text": null,
+      "file_path": "projects/corbitt_clear_001/scenario_assets/corbitt/audio/se_san.mp3",
+      "license": "UNKNOWN",
+      "sha256": "1a14457ff9c50271badbbb9f58b84e1d688c82aaa184ce5fba944b72a00a3e8d",
+      "source": "user-provided:心臓の鼓動1.mp3",
+      "status": "UNKNOWN",
+      "tags": [
+        "SE",
+        "SAN"
+      ],
+      "type": "SE"
+    },
+    {
+      "asset_id": "se_transition_user",
+      "commercial_use": null,
+      "creator": "UNKNOWN",
+      "credit_required": null,
+      "credit_text": null,
+      "file_path": "projects/corbitt_clear_001/scenario_assets/corbitt/audio/se_transition.mp3",
+      "license": "UNKNOWN",
+      "sha256": "bccd846d58d03c110c8f9042d259d441bbc74e219dd77ecace6fb3b0e1598727",
+      "source": "user-provided:シーン切り替え1.mp3",
+      "status": "UNKNOWN",
+      "tags": [
+        "SE",
+        "TRANSITION"
+      ],
+      "type": "SE"
+    }
+  ],
+  "schema_version": "0.1"
+}

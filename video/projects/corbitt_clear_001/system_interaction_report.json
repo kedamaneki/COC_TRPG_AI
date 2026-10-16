@@ -1,0 +1,20 @@
+{
+  "ambiguous_pairs": 0,
+  "pairs": [
+    {
+      "classification": "TABLETOP_INTERACTION",
+      "grounding": "FOLLOWUP_EXPLICIT_LUCK_SPEND",
+      "interaction_type": "ACTION_CONFIRMATION",
+      "prompt_script_line_id": "scene_048_script_006__system_prompt",
+      "response_script_line_id": "scene_048_script_006",
+      "system_interaction_id": "si_001"
+    }
+  ],
+  "pl_voice_fallback_count": 0,
+  "prompt_response_pairs": 1,
+  "tabletop_interactions_detected": 1,
+  "tabletop_interactions_presented": 1,
+  "technical_interactions_hidden": 0,
+  "ungrounded_kp_prompt_count": 0,
+  "warnings": []
+}

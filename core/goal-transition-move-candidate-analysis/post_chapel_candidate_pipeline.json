@@ -1,0 +1,214 @@
+[
+  {
+    "cycle": 30,
+    "game_turn": 78,
+    "raw_candidate_creation": [
+      {
+        "action": "search",
+        "target": "skeletons_in_robes",
+        "skill": "",
+        "reason": "unseen_target"
+      },
+      {
+        "action": "search",
+        "target": "shelf_with_records",
+        "skill": "",
+        "reason": "unseen_target"
+      },
+      {
+        "action": "search",
+        "target": "cult_diary",
+        "skill": "",
+        "reason": "unseen_target"
+      }
+    ],
+    "goal_based_expansion": [],
+    "transition_candidate_creation": "SKIPPED: location_objective_status=ACTIVE",
+    "scenario_route_resolution": {
+      "chapel_exit": "AVAILABLE: the_neighborhood",
+      "invoked_by_pipeline": false
+    },
+    "availability_filtering": {
+      "available": [],
+      "blocked": [
+        {
+          "action": "search",
+          "target": "skeletons_in_robes",
+          "skill": "",
+          "reason": "unseen_target",
+          "availability_status": "BLOCKED",
+          "availability_context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+          "availability_reason": "BLOCKED_STATE_CONFLICT",
+          "availability_snapshot": {
+            "status": "BLOCKED",
+            "reason_code": "BLOCKED_STATE_CONFLICT",
+            "reason_detail": "【システムブロック】ローブをまとった骸骨（`skeletons_in_robes`）は今は操作できない。チャペル地階の対象だ。まずもろくなった床板（`rotting_floorboards`）を調べたうえで、`break` / `force` / `climb` で地階へ降りよ。",
+            "required_preconditions": [],
+            "context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+            "actor": "pc_02",
+            "action": "search",
+            "target": "skeletons_in_robes",
+            "location": "chapel_of_contemplation",
+            "source": "fixture",
+            "scenario_runtime_conflict": false,
+            "scenario_id": "",
+            "no_roll": false
+          }
+        },
+        {
+          "action": "search",
+          "target": "shelf_with_records",
+          "skill": "",
+          "reason": "unseen_target",
+          "availability_status": "BLOCKED",
+          "availability_context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+          "availability_reason": "BLOCKED_STATE_CONFLICT",
+          "availability_snapshot": {
+            "status": "BLOCKED",
+            "reason_code": "BLOCKED_STATE_CONFLICT",
+            "reason_detail": "【システムブロック】朽ちかけた棚（`shelf_with_records`）は今は操作できない。チャペル地階の対象だ。まずもろくなった床板（`rotting_floorboards`）を調べたうえで、`break` / `force` / `climb` で地階へ降りよ。",
+            "required_preconditions": [],
+            "context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+            "actor": "pc_02",
+            "action": "search",
+            "target": "shelf_with_records",
+            "location": "chapel_of_contemplation",
+            "source": "fixture",
+            "scenario_runtime_conflict": false,
+            "scenario_id": "",
+            "no_roll": false
+          }
+        },
+        {
+          "action": "search",
+          "target": "cult_diary",
+          "skill": "",
+          "reason": "unseen_target",
+          "availability_status": "BLOCKED",
+          "availability_context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+          "availability_reason": "BLOCKED_STATE_CONFLICT",
+          "availability_snapshot": {
+            "status": "BLOCKED",
+            "reason_code": "BLOCKED_STATE_CONFLICT",
+            "reason_detail": "【システムブロック】カルトの日誌（`cult_diary`）は今は操作できない。条件フラグ `found_diary` が未達のため操作できない。",
+            "required_preconditions": [],
+            "context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+            "actor": "pc_02",
+            "action": "search",
+            "target": "cult_diary",
+            "location": "chapel_of_contemplation",
+            "source": "fixture",
+            "scenario_runtime_conflict": false,
+            "scenario_id": "",
+            "no_roll": false
+          }
+        }
+      ]
+    },
+    "final_candidate_list": [],
+    "llm_visible_candidate_list": [],
+    "move_classification": "NOT_CREATED",
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE"
+  },
+  {
+    "cycle": 31,
+    "game_turn": 82,
+    "raw_candidate_creation": "not persisted",
+    "goal_based_expansion": [],
+    "transition_candidate_creation": "SKIPPED: location_objective_status=ACTIVE",
+    "scenario_route_resolution": {
+      "chapel_exit": "AVAILABLE: the_neighborhood",
+      "invoked_by_pipeline": false
+    },
+    "availability_filtering": {
+      "available": [],
+      "blocked": "not retained after second filtering pass"
+    },
+    "final_candidate_list": [],
+    "llm_visible_candidate_list": [],
+    "move_classification": "NOT_CREATED",
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE"
+  },
+  {
+    "cycle": 32,
+    "game_turn": 87,
+    "raw_candidate_creation": "not persisted",
+    "goal_based_expansion": [],
+    "transition_candidate_creation": "SKIPPED: location_objective_status=ACTIVE",
+    "scenario_route_resolution": {
+      "chapel_exit": "AVAILABLE: the_neighborhood",
+      "invoked_by_pipeline": false
+    },
+    "availability_filtering": {
+      "available": [],
+      "blocked": "not retained after second filtering pass"
+    },
+    "final_candidate_list": [],
+    "llm_visible_candidate_list": [],
+    "move_classification": "NOT_CREATED",
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE"
+  },
+  {
+    "cycle": 33,
+    "game_turn": 92,
+    "raw_candidate_creation": "not persisted",
+    "goal_based_expansion": [],
+    "transition_candidate_creation": "SKIPPED: location_objective_status=ACTIVE",
+    "scenario_route_resolution": {
+      "chapel_exit": "AVAILABLE: the_neighborhood",
+      "invoked_by_pipeline": false
+    },
+    "availability_filtering": {
+      "available": [],
+      "blocked": "not retained after second filtering pass"
+    },
+    "final_candidate_list": [],
+    "llm_visible_candidate_list": [],
+    "move_classification": "NOT_CREATED",
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE"
+  },
+  {
+    "cycle": 34,
+    "game_turn": 94,
+    "raw_candidate_creation": "not persisted",
+    "goal_based_expansion": [],
+    "transition_candidate_creation": "SKIPPED: location_objective_status=ACTIVE",
+    "scenario_route_resolution": {
+      "chapel_exit": "AVAILABLE: the_neighborhood",
+      "invoked_by_pipeline": false
+    },
+    "availability_filtering": {
+      "available": [],
+      "blocked": "not retained after second filtering pass"
+    },
+    "final_candidate_list": [],
+    "llm_visible_candidate_list": [],
+    "move_classification": "NOT_CREATED",
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE"
+  },
+  {
+    "cycle": 35,
+    "game_turn": 95,
+    "raw_candidate_creation": "not persisted",
+    "goal_based_expansion": [],
+    "transition_candidate_creation": "SKIPPED: location_objective_status=ACTIVE",
+    "scenario_route_resolution": {
+      "chapel_exit": "AVAILABLE: the_neighborhood",
+      "invoked_by_pipeline": false
+    },
+    "availability_filtering": {
+      "available": [],
+      "blocked": "not retained after second filtering pass"
+    },
+    "final_candidate_list": [],
+    "llm_visible_candidate_list": [],
+    "move_classification": "NOT_CREATED",
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE"
+  }
+]

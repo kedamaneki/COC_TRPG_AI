@@ -1,0 +1,73 @@
+{
+  "audit_status": "GAPS_FOUND",
+  "gaps": [
+    {
+      "gap_id": "wall_board_str_evidence_contradiction",
+      "classification": "SOURCE_CONTRADICTION",
+      "severity": "CRITICAL",
+      "recommended_fix_layer": [
+        "TRPG Core",
+        "TRPG Logging",
+        "Scenario Data"
+      ],
+      "detail": "STR roll_required/result claims have no roll or target, the first transaction narrates destruction while state remains false, and a later no-roll push performs the actual false→true state change."
+    },
+    {
+      "gap_id": "knife_combat_resolution_missing",
+      "classification": "SOURCE_GAMEPLAY_GAP",
+      "severity": "CRITICAL",
+      "recommended_fix_layer": "TRPG Core",
+      "detail": "Knife combat_start is intended by scenario data, but no combat start, attack, defense, damage, HP change, or combat end is executed/logged."
+    },
+    {
+      "gap_id": "san_fields_dropped_by_normalizer",
+      "classification": "NORMALIZATION_GAP",
+      "severity": "MAJOR",
+      "recommended_fix_layer": "Normalizer",
+      "detail": "L1 text has SAN target/current 70, roll 40, success, and loss 0; all L2 SAN fields are null, causing placeholder overlay values."
+    },
+    {
+      "gap_id": "san_single_formula_fallback",
+      "classification": "SOURCE_GAMEPLAY_GAP",
+      "subtype": "TRPG_CORE_SAN_LOSS_SCHEMA_BUG",
+      "severity": "MAJOR",
+      "recommended_fix_layer": "TRPG Core",
+      "detail": "The knife encounter supplies value=1D4, but the resolver only honors slash-form values and otherwise defaults failure to 1d3. The executed check succeeded, so this session did not expose a wrong SAN total."
+    },
+    {
+      "gap_id": "luck_modifier_not_structured",
+      "classification": "NORMALIZATION_GAP",
+      "severity": "MAJOR",
+      "recommended_fix_layer": "Normalizer / structured source logging",
+      "detail": "L1 text explicitly changes failure to regular success with Luck 9, while L2 retains only the raw failure and no modifier relation."
+    },
+    {
+      "gap_id": "unified_skill_numeric_evidence_missing",
+      "classification": "SOURCE_LOGGING_GAP",
+      "severity": "MAJOR",
+      "recommended_fix_layer": "TRPG Logging",
+      "detail": "All 35 normalized SKILL_CHECK records sourced from Unified Event Log lack a numeric roll and target threshold; many can only be supplemented by separate session-log records."
+    },
+    {
+      "gap_id": "final_battle_human_narrative_missing_at_source",
+      "classification": "SOURCE_NARRATIVE_GAP",
+      "severity": "MINOR",
+      "recommended_fix_layer": "TRPG Logging / narrative source",
+      "detail": "The special-objective lifecycle is structured, but the source provides no human-readable action/result narration. M3 currently supplies conservative grounded narration."
+    }
+  ],
+  "severity_summary": {
+    "CRITICAL": 2,
+    "MAJOR": 4,
+    "MINOR": 1
+  },
+  "classification_summary": {
+    "SOURCE_CONTRADICTION": 1,
+    "SOURCE_GAMEPLAY_GAP": 2,
+    "NORMALIZATION_GAP": 2,
+    "SOURCE_LOGGING_GAP": 1,
+    "SOURCE_NARRATIVE_GAP": 1
+  },
+  "presentation_gap_count": 0,
+  "note": "No primary PRESENTATION_GAP was found for the representative SAN case: the placeholders originate from null normalized fields."
+}

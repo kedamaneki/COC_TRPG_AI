@@ -1,0 +1,87 @@
+[
+  {
+    "dice": null,
+    "event_type": "KP_DESCRIPTION",
+    "line_id": "line_001",
+    "portrait_asset_id": null,
+    "source_event_ids": [
+      "synthetic:001"
+    ],
+    "speaker_id": "kp",
+    "subtitle_profile_id": "subtitle_kp",
+    "text": "KP: 古い屋敷の地下室から、規則正しく何かを叩く音が聞こえる。扉には新しい引っかき傷が残っている。",
+    "voice_profile_id": "m1_vv_kp"
+  },
+  {
+    "dice": null,
+    "event_type": "ACTION_DECLARATION",
+    "line_id": "line_002",
+    "portrait_asset_id": "m1_portrait_aquestalk",
+    "source_event_ids": [
+      "synthetic:002"
+    ],
+    "speaker_id": "pc_01",
+    "subtitle_profile_id": "subtitle_reimu",
+    "text": "マクガフィン刑事: 音の正体を確かめる。扉の周りを慎重に調べよう。",
+    "voice_profile_id": "m1_aq_f1",
+    "voice_text": "おとのしょーたいをたしかめる。とびらのまわりをしんちょーにしらべよー。"
+  },
+  {
+    "dice": null,
+    "event_type": "DIALOGUE",
+    "line_id": "line_003",
+    "portrait_asset_id": "m1_portrait_voicevox",
+    "source_event_ids": [
+      "synthetic:003"
+    ],
+    "speaker_id": "pc_02",
+    "subtitle_profile_id": "subtitle_marisa",
+    "text": "エレノア教授: 傷の深さを見れば、いつ付いたものか推測できるかもしれません。",
+    "voice_profile_id": "m1_vv_pc2"
+  },
+  {
+    "dice": {
+      "result": "成功",
+      "roll": 42,
+      "skill_name": "目星",
+      "target_value": 70
+    },
+    "event_type": "DICE_RESULT",
+    "line_id": "line_004",
+    "portrait_asset_id": "m1_portrait_aquestalk",
+    "source_event_ids": [
+      "synthetic:004"
+    ],
+    "speaker_id": "pc_01",
+    "subtitle_profile_id": "subtitle_reimu",
+    "text": "システム: 【技能:目星】1D100 → 42。目標値70、成功。",
+    "voice_profile_id": "m1_aq_f1",
+    "voice_text": "ぎのー、めぼし。ひゃくめんだいす、よんじゅーに。もくひょーち、ななじゅー。せーこー。"
+  },
+  {
+    "dice": null,
+    "event_type": "KP_DESCRIPTION",
+    "line_id": "line_005",
+    "portrait_asset_id": null,
+    "source_event_ids": [
+      "synthetic:005"
+    ],
+    "speaker_id": "kp",
+    "subtitle_profile_id": "subtitle_kp",
+    "text": "KP: 傷は内側から付けられている。しかも、その奥で叩く音がぴたりと止まった。",
+    "voice_profile_id": "m1_vv_kp"
+  },
+  {
+    "dice": null,
+    "event_type": "DIALOGUE",
+    "line_id": "line_006",
+    "portrait_asset_id": "m1_portrait_voicevox",
+    "source_event_ids": [
+      "synthetic:006"
+    ],
+    "speaker_id": "pc_02",
+    "subtitle_profile_id": "subtitle_marisa",
+    "text": "エレノア教授: 誰かがこちらの気配に気づいたようです。今は扉を開けない方がいいでしょう。",
+    "voice_profile_id": "m1_vv_pc2"
+  }
+]

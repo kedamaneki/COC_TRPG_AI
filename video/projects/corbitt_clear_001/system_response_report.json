@@ -1,0 +1,25 @@
+{
+  "candidates": [
+    {
+      "action": "HIDE",
+      "confidence": "HIGH",
+      "evidence": [
+        "ADJACENT_SYSTEM_EVENT_BEFORE",
+        "ADJACENT_SYSTEM_EVENT_AFTER"
+      ],
+      "is_system_response": true,
+      "normalized_response": "yes",
+      "script_line_id": "scene_048_script_006",
+      "source_event_ids": [
+        "norm:session:000310",
+        "session_log:000310"
+      ]
+    }
+  ],
+  "false_positive_count": 0,
+  "system_response_candidates": 1,
+  "system_response_leak_count": 0,
+  "system_responses_hidden": 1,
+  "system_responses_overlay_only": 0,
+  "system_responses_subtitle_only": 0
+}

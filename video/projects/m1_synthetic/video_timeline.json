@@ -1,0 +1,158 @@
+{
+  "clips": [
+    {
+      "actual_voice_profile_id": "m1_vv_kp",
+      "background_asset_id": "m1_background_fallback",
+      "clip_id": "clip_001",
+      "duration_sec": 6.547,
+      "event_type": "KP_DESCRIPTION",
+      "expected_voice_profile_id": "m1_vv_kp",
+      "overlay": null,
+      "portrait_asset_ids": [],
+      "presentation_mode": "VOICED",
+      "source_event_ids": [
+        "synthetic:001"
+      ],
+      "source_script_line_id": null,
+      "speaker_id": "kp",
+      "speaker_name": "KP",
+      "speech_chunk": null,
+      "start_sec": 0.0,
+      "subtitle_profile_id": "subtitle_kp",
+      "subtitle_text": "KP: 古い屋敷の地下室から、規則正しく何かを叩く音が聞こえる。扉には新しい引っかき傷が残っている。",
+      "voice_engine": "VOICEVOX",
+      "voice_file": "audio/line_001.wav"
+    },
+    {
+      "actual_voice_profile_id": "m1_aq_f1",
+      "background_asset_id": "m1_background_fallback",
+      "clip_id": "clip_002",
+      "duration_sec": 4.334,
+      "event_type": "ACTION_DECLARATION",
+      "expected_voice_profile_id": "m1_aq_f1",
+      "overlay": null,
+      "portrait_asset_ids": [
+        "m1_portrait_aquestalk"
+      ],
+      "presentation_mode": "VOICED",
+      "source_event_ids": [
+        "synthetic:002"
+      ],
+      "source_script_line_id": null,
+      "speaker_id": "pc_01",
+      "speaker_name": "マクガフィン刑事",
+      "speech_chunk": null,
+      "start_sec": 6.547,
+      "subtitle_profile_id": "subtitle_reimu",
+      "subtitle_text": "マクガフィン刑事: 音の正体を確かめる。扉の周りを慎重に調べよう。",
+      "voice_engine": "AQUESTALK",
+      "voice_file": "audio/line_002.wav"
+    },
+    {
+      "actual_voice_profile_id": "m1_vv_pc2",
+      "background_asset_id": "m1_background_fallback",
+      "clip_id": "clip_003",
+      "duration_sec": 5.737,
+      "event_type": "DIALOGUE",
+      "expected_voice_profile_id": "m1_vv_pc2",
+      "overlay": null,
+      "portrait_asset_ids": [
+        "m1_portrait_voicevox"
+      ],
+      "presentation_mode": "VOICED",
+      "source_event_ids": [
+        "synthetic:003"
+      ],
+      "source_script_line_id": null,
+      "speaker_id": "pc_02",
+      "speaker_name": "エレノア教授",
+      "speech_chunk": null,
+      "start_sec": 10.881,
+      "subtitle_profile_id": "subtitle_marisa",
+      "subtitle_text": "エレノア教授: 傷の深さを見れば、いつ付いたものか推測できるかもしれません。",
+      "voice_engine": "VOICEVOX",
+      "voice_file": "audio/line_003.wav"
+    },
+    {
+      "actual_voice_profile_id": "m1_aq_f1",
+      "background_asset_id": "m1_background_fallback",
+      "clip_id": "clip_004",
+      "duration_sec": 6.428,
+      "event_type": "DICE_RESULT",
+      "expected_voice_profile_id": "m1_aq_f1",
+      "overlay": {
+        "result": "成功",
+        "roll": 42,
+        "skill_name": "目星",
+        "target_value": 70,
+        "type": "SKILL_CHECK"
+      },
+      "portrait_asset_ids": [
+        "m1_portrait_aquestalk"
+      ],
+      "presentation_mode": "VOICED",
+      "source_event_ids": [
+        "synthetic:004"
+      ],
+      "source_script_line_id": null,
+      "speaker_id": "pc_01",
+      "speaker_name": "マクガフィン刑事",
+      "speech_chunk": null,
+      "start_sec": 16.618,
+      "subtitle_profile_id": "subtitle_reimu",
+      "subtitle_text": "システム: 【技能:目星】1D100 → 42。目標値70、成功。",
+      "voice_engine": "AQUESTALK",
+      "voice_file": "audio/line_004.wav"
+    },
+    {
+      "actual_voice_profile_id": "m1_vv_kp",
+      "background_asset_id": "m1_background_fallback",
+      "clip_id": "clip_005",
+      "duration_sec": 5.107,
+      "event_type": "KP_DESCRIPTION",
+      "expected_voice_profile_id": "m1_vv_kp",
+      "overlay": null,
+      "portrait_asset_ids": [],
+      "presentation_mode": "VOICED",
+      "source_event_ids": [
+        "synthetic:005"
+      ],
+      "source_script_line_id": null,
+      "speaker_id": "kp",
+      "speaker_name": "KP",
+      "speech_chunk": null,
+      "start_sec": 23.046,
+      "subtitle_profile_id": "subtitle_kp",
+      "subtitle_text": "KP: 傷は内側から付けられている。しかも、その奥で叩く音がぴたりと止まった。",
+      "voice_engine": "VOICEVOX",
+      "voice_file": "audio/line_005.wav"
+    },
+    {
+      "actual_voice_profile_id": "m1_vv_pc2",
+      "background_asset_id": "m1_background_fallback",
+      "clip_id": "clip_006",
+      "duration_sec": 6.483,
+      "event_type": "DIALOGUE",
+      "expected_voice_profile_id": "m1_vv_pc2",
+      "overlay": null,
+      "portrait_asset_ids": [
+        "m1_portrait_voicevox"
+      ],
+      "presentation_mode": "VOICED",
+      "source_event_ids": [
+        "synthetic:006"
+      ],
+      "source_script_line_id": null,
+      "speaker_id": "pc_02",
+      "speaker_name": "エレノア教授",
+      "speech_chunk": null,
+      "start_sec": 28.153,
+      "subtitle_profile_id": "subtitle_marisa",
+      "subtitle_text": "エレノア教授: 誰かがこちらの気配に気づいたようです。今は扉を開けない方がいいでしょう。",
+      "voice_engine": "VOICEVOX",
+      "voice_file": "audio/line_006.wav"
+    }
+  ],
+  "duration_sec": 34.636,
+  "timeline_version": "0.1"
+}

@@ -1,0 +1,15 @@
+{
+  "broken_combat_context": [],
+  "broken_ending_context": [],
+  "metadata": {
+    "model": "deterministic_continuity_v1",
+    "prompt_version": "continuity_qa_prompt_v1",
+    "provider": "local"
+  },
+  "missing_clue_origin": [],
+  "missing_context": [],
+  "missing_item_origin": [],
+  "orphan_reference": [],
+  "status": "PASS",
+  "unexplained_location_change": []
+}

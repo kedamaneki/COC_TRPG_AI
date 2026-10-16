@@ -1,0 +1,11 @@
+{
+  "completed_steps": [
+    "script",
+    "voice",
+    "timeline",
+    "render",
+    "qa"
+  ],
+  "error": null,
+  "status": "COMPLETED"
+}

@@ -1,0 +1,52 @@
+{
+  "session_id": "CORBITT_LONGRUN_ITERATION2_V2_HOME_001",
+  "partial": true,
+  "checkpoint_id": "CHECKPOINT_CYCLE_000039",
+  "cycle": 39,
+  "turn": 98,
+  "total_calls": 240,
+  "success": 240,
+  "errors": 0,
+  "retry_count": 0,
+  "primary_calls": 240,
+  "secondary_calls": 0,
+  "fallback_from_secondary": 0,
+  "roles": {
+    "PL": {
+      "calls": 134,
+      "success": 134,
+      "errors": 0,
+      "prompt_tokens": 278268,
+      "completion_tokens": 20628,
+      "wall_seconds": 3512.189308,
+      "retries": 0,
+      "primary": 134,
+      "secondary": 0,
+      "fallbacks": 0
+    },
+    "KP": {
+      "calls": 101,
+      "success": 101,
+      "errors": 0,
+      "prompt_tokens": 319400,
+      "completion_tokens": 18368,
+      "wall_seconds": 3435.336116,
+      "retries": 0,
+      "primary": 101,
+      "secondary": 0,
+      "fallbacks": 0
+    },
+    "JUDGE": {
+      "calls": 5,
+      "success": 5,
+      "errors": 0,
+      "prompt_tokens": 4169,
+      "completion_tokens": 430,
+      "wall_seconds": 63.126737,
+      "retries": 0,
+      "primary": 5,
+      "secondary": 0,
+      "fallbacks": 0
+    }
+  }
+}

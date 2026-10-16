@@ -1,0 +1,35 @@
+[
+  {
+    "voice_profile_id": "aq_reimu_default",
+    "engine": "AQUESTALK",
+    "voice_type": "f1",
+    "reading_speed": 100,
+    "pitch_playback": 100,
+    "volume": 100,
+    "pan": 0,
+    "post_silence_sec": 0.15,
+    "version": null
+  },
+  {
+    "voice_profile_id": "aq_marisa_default",
+    "engine": "AQUESTALK",
+    "voice_type": "f2",
+    "reading_speed": 105,
+    "pitch_playback": 100,
+    "volume": 100,
+    "pan": 0,
+    "post_silence_sec": 0.15,
+    "version": null
+  },
+  {
+    "voice_profile_id": "voice_none",
+    "engine": "NONE",
+    "voice_type": null,
+    "reading_speed": null,
+    "pitch_playback": null,
+    "volume": null,
+    "pan": null,
+    "post_silence_sec": null,
+    "version": null
+  }
+]

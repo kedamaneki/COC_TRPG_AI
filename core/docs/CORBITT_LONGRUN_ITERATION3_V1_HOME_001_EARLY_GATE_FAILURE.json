@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "session_id": "CORBITT_LONGRUN_ITERATION3_V1_HOME_001",
+  "status": "NEEDS_ITERATION",
+  "checkpoint": "CHECKPOINT_CYCLE_000005",
+  "cycle": 5,
+  "turn": 7,
+  "resume_count": 0,
+  "migration": null,
+  "preflight": {
+    "core_tests": "570 + 23 subtests PASS",
+    "video_tests": "186 PASS",
+    "ollama": "PASS",
+    "input_identity": "PASS",
+    "home_001_hash": "24/24 PASS"
+  },
+  "early_gate": {
+    "raw_unified_events": 40,
+    "raw_roll_contract_records": 6,
+    "raw_contract_validator_errors": 0,
+    "normalized_events": 92,
+    "normalizer_validation": "PASS",
+    "traceability": 1.0,
+    "formal_roll_contract_findings": 6,
+    "lifecycle_misclassification": 0,
+    "segment_count": 5,
+    "segment_missing": 40,
+    "segment_duplicate": 0,
+    "segment_coverage": 0.0
+  },
+  "root_causes": [
+    {
+      "id": "SEGMENT_ID_ASSIGNMENT_ORDER",
+      "detail": "durable segment is written before checkpoint serialization assigns event_id values, so merged segment rows do not match the checkpoint raw stream IDs"
+    },
+    {
+      "id": "NORMALIZER_INFERRED_ROLL_WITHOUT_ADJUDICATION",
+      "detail": "three unified summary events with dice_used=true are inferred as ROLL without adjudication_id"
+    },
+    {
+      "id": "SOCIAL_ROLL_LOGGING_GAP",
+      "detail": "two session-log social checks contain dice evidence but no adjudication_id"
+    },
+    {
+      "id": "NO_ROLL_REASON_GAP",
+      "detail": "one move LOCATION_CHANGE is normalized as NO_ROLL but has no structured resolution reason"
+    }
+  ],
+  "formal_normalizer": "EARLY_GATE_STAGING_ONLY",
+  "formal_auditor_v2": "NOT_RUN_RUN_INCOMPLETE",
+  "legacy_comparison": "NOT_RUN_RUN_INCOMPLETE",
+  "full_long_autonomous_reevaluation": "NEEDS_ITERATION",
+  "video_source_eligible": false,
+  "next_full_long_allowed": false,
+  "automatic_fix": false,
+  "automatic_rerun": false
+}

@@ -1,0 +1,14 @@
+{
+  "provider": "local",
+  "model": "deterministic_rule_editor_v1",
+  "prompt_version": "replay_editor_prompt_v1",
+  "continuity_prompt_version": "continuity_qa_prompt_v1",
+  "temperature": 0,
+  "over_compression_cut_threshold": 0.8,
+  "under_editing_cut_threshold": 0.05,
+  "safe_default": {
+    "content_decision": "KEEP",
+    "presentation_mode": "VOICED",
+    "text_treatment": "VERBATIM"
+  }
+}

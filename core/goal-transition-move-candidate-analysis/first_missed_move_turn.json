@@ -1,0 +1,455 @@
+{
+  "cycle": 30,
+  "game_turn": 76,
+  "event_id": "evt_000278_7b0a98cd323e79c2c5a0",
+  "first_post_chapel_completion_event": "evt_000275_895b1d6981e57f540c6f",
+  "current_location": "chapel_of_contemplation",
+  "scene": "scene_001",
+  "active_goal": "悪霊の家を完了する",
+  "subgoal": [
+    "corbitt_basement_room2__corbitt_body__defeat"
+  ],
+  "remaining_requirements": [
+    "flag:corbitt_body_encountered=true",
+    "location:corbitt_basement_room2",
+    "action:break/force/attack/use/push/kick/corbitt_body"
+  ],
+  "completed_goals": [
+    "flag:corbitt_defeated=false",
+    "flag:learned_corbitt_weakness=false"
+  ],
+  "action_phase": "DISCOVER",
+  "raw_candidates": [
+    {
+      "action": "search",
+      "target": "skeletons_in_robes",
+      "skill": "",
+      "reason": "unseen_target"
+    },
+    {
+      "action": "search",
+      "target": "shelf_with_records",
+      "skill": "",
+      "reason": "unseen_target"
+    },
+    {
+      "action": "search",
+      "target": "cult_diary",
+      "skill": "",
+      "reason": "unseen_target"
+    }
+  ],
+  "filtered_candidates": [
+    {
+      "action": "search",
+      "target": "skeletons_in_robes",
+      "skill": "",
+      "reason": "unseen_target",
+      "availability_status": "BLOCKED",
+      "availability_context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+      "availability_reason": "BLOCKED_STATE_CONFLICT",
+      "availability_snapshot": {
+        "status": "BLOCKED",
+        "reason_code": "BLOCKED_STATE_CONFLICT",
+        "reason_detail": "【システムブロック】ローブをまとった骸骨（`skeletons_in_robes`）は今は操作できない。チャペル地階の対象だ。まずもろくなった床板（`rotting_floorboards`）を調べたうえで、`break` / `force` / `climb` で地階へ降りよ。",
+        "required_preconditions": [],
+        "context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+        "actor": "pc_02",
+        "action": "search",
+        "target": "skeletons_in_robes",
+        "location": "chapel_of_contemplation",
+        "source": "fixture",
+        "scenario_runtime_conflict": false,
+        "scenario_id": "",
+        "no_roll": false
+      }
+    },
+    {
+      "action": "search",
+      "target": "shelf_with_records",
+      "skill": "",
+      "reason": "unseen_target",
+      "availability_status": "BLOCKED",
+      "availability_context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+      "availability_reason": "BLOCKED_STATE_CONFLICT",
+      "availability_snapshot": {
+        "status": "BLOCKED",
+        "reason_code": "BLOCKED_STATE_CONFLICT",
+        "reason_detail": "【システムブロック】朽ちかけた棚（`shelf_with_records`）は今は操作できない。チャペル地階の対象だ。まずもろくなった床板（`rotting_floorboards`）を調べたうえで、`break` / `force` / `climb` で地階へ降りよ。",
+        "required_preconditions": [],
+        "context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+        "actor": "pc_02",
+        "action": "search",
+        "target": "shelf_with_records",
+        "location": "chapel_of_contemplation",
+        "source": "fixture",
+        "scenario_runtime_conflict": false,
+        "scenario_id": "",
+        "no_roll": false
+      }
+    },
+    {
+      "action": "search",
+      "target": "cult_diary",
+      "skill": "",
+      "reason": "unseen_target",
+      "availability_status": "BLOCKED",
+      "availability_context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+      "availability_reason": "BLOCKED_STATE_CONFLICT",
+      "availability_snapshot": {
+        "status": "BLOCKED",
+        "reason_code": "BLOCKED_STATE_CONFLICT",
+        "reason_detail": "【システムブロック】カルトの日誌（`cult_diary`）は今は操作できない。条件フラグ `found_diary` が未達のため操作できない。",
+        "required_preconditions": [],
+        "context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+        "actor": "pc_02",
+        "action": "search",
+        "target": "cult_diary",
+        "location": "chapel_of_contemplation",
+        "source": "fixture",
+        "scenario_runtime_conflict": false,
+        "scenario_id": "",
+        "no_roll": false
+      }
+    }
+  ],
+  "final_candidates": [],
+  "scenario_flags": {
+    "artie_introduced": false,
+    "back_door_unlocked": false,
+    "basement_accessible": false,
+    "basement_door_examined": false,
+    "basement_door_unlocked": false,
+    "basement_planks_broken": false,
+    "basement_planks_examined": false,
+    "case_accepted": true,
+    "chapel_cellar_entered": false,
+    "chapel_investigated": true,
+    "corbitt_body_encountered": false,
+    "corbitt_defeated": false,
+    "corbitt_house_entered": false,
+    "corbitt_house_examined": false,
+    "corbitt_house_observed": true,
+    "dolly_talked": true,
+    "dolly_told_chapel_location": true,
+    "dolly_told_sanitarium_location": true,
+    "exterior_approached": true,
+    "floorboards_examined": true,
+    "found_corbitt_history_all": true,
+    "found_newspaper_article_1918": true,
+    "front_door_unlocked": false,
+    "gabriella_interviewed": true,
+    "ground_floor_haunting_done": false,
+    "hall_of_records_clerk_interacted": true,
+    "has_corbitt_knife": false,
+    "hidden_passage_found": false,
+    "higher_courts_records_accessed": true,
+    "in_basement": false,
+    "investigated_targets": [
+      "chapel_secret_cellar",
+      "corbitt_house_exterior_view",
+      "gabriella_macario",
+      "local_history_section",
+      "newspaper_archives",
+      "patient_records",
+      "police_archives",
+      "rotting_floorboards",
+      "vittorio_macario",
+      "white_symbol"
+    ],
+    "junk_searched": false,
+    "kim_deblanc_interacted": true,
+    "knott_letter_read": true,
+    "knott_memo_read": true,
+    "learned_corbitt_weakness": false,
+    "library_info_found": false,
+    "living_room_investigated": false,
+    "neighbor_gossip_found": true,
+    "newspaper_info_found": false,
+    "records_info_found": false,
+    "ruined_altar_investigated": false,
+    "sanitarium_info_found": true,
+    "spare_bedroom_bed_investigated": false,
+    "symbol_investigated": true,
+    "talked_with_knott": true,
+    "trigger_corbitt_boss_battle": false,
+    "trigger_flying_bed": false,
+    "trigger_knife_attack": false,
+    "turn_since_last_search": 0,
+    "visit_central_library": 1,
+    "visit_chapel_of_contemplation": 1,
+    "visit_corbitt_exterior": 1,
+    "visit_hall_of_records": 2,
+    "visit_higher_courts_police_station": 2,
+    "visit_roxbury_sanitarium": 4,
+    "visit_the_neighborhood": 5,
+    "vittorio_interviewed": true
+  },
+  "route_state": {
+    "source": "chapel_of_contemplation",
+    "available_exits": [
+      {
+        "id": "the_neighborhood",
+        "name": "通りへ戻る"
+      }
+    ],
+    "shortest_next_to_the_neighborhood": "the_neighborhood",
+    "shortest_next_to_corbitt_exterior": "the_neighborhood",
+    "shortest_next_to_corbitt_basement_room2": "",
+    "route_classification": "IMMEDIATE_EXIT_ROUTE_AVAILABLE",
+    "deep_goal_route_note": "The route to corbitt_basement_room2 is currently unresolved because house-entry gates make the final destination unreachable in the current graph."
+  },
+  "stall_level": "S4",
+  "stall_count_before_action": 20,
+  "recent_actions": [
+    [
+      "push",
+      "rotting_floorboards"
+    ],
+    [
+      "search",
+      "chapel_ruins"
+    ],
+    [
+      "push",
+      "rotting_floorboards"
+    ],
+    [
+      "search",
+      "chapel_ruins"
+    ],
+    [
+      "push",
+      "rotting_floorboards"
+    ],
+    [
+      "search",
+      "cult_diary"
+    ],
+    [
+      "break",
+      "rotting_floorboards"
+    ],
+    [
+      "search",
+      "chapel_ruins"
+    ]
+  ],
+  "missed_move": {
+    "action": "move",
+    "target": "the_neighborhood"
+  },
+  "move_classification": "NOT_CREATED",
+  "next_10_actions": [
+    {
+      "ordinal": 1,
+      "cycle": 30,
+      "game_turn": 76,
+      "event_id": "evt_000278_7b0a98cd323e79c2c5a0",
+      "event_sequence": 278,
+      "actor": "pc_01",
+      "action": "search",
+      "target": "cult_diary",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 21,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 2,
+      "cycle": 30,
+      "game_turn": 77,
+      "event_id": "evt_000280_d9863a5e5f87bc6d531c",
+      "event_sequence": 280,
+      "actor": "pc_02",
+      "action": "break",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "SYSTEM_FORCED",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 22,
+      "category": "re-enter_basement",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 3,
+      "cycle": 30,
+      "game_turn": 78,
+      "event_id": "evt_000283_0f176581e5a1b762329f",
+      "event_sequence": 283,
+      "actor": "pc_02",
+      "action": "search",
+      "target": "chapel_ruins",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 23,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 4,
+      "cycle": 31,
+      "game_turn": 79,
+      "event_id": "evt_000285_ebb18168a1cb0e28c54b",
+      "event_sequence": 285,
+      "actor": "pc_01",
+      "action": "break",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 24,
+      "category": "re-enter_basement",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 5,
+      "cycle": 31,
+      "game_turn": 80,
+      "event_id": "evt_000287_5c2e63e817867ca59801",
+      "event_sequence": 287,
+      "actor": "pc_02",
+      "action": "break",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 25,
+      "category": "re-enter_basement",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 6,
+      "cycle": 31,
+      "game_turn": 81,
+      "event_id": "evt_000289_e5f5609776055cf322a6",
+      "event_sequence": 289,
+      "actor": "pc_01",
+      "action": "break",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "SYSTEM_FORCED",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 26,
+      "category": "re-enter_basement",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 7,
+      "cycle": 31,
+      "game_turn": 82,
+      "event_id": "evt_000292_82a7ef6e76608d3cd531",
+      "event_sequence": 292,
+      "actor": "pc_02",
+      "action": "search",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 27,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 8,
+      "cycle": 32,
+      "game_turn": 83,
+      "event_id": "evt_000295_995897909fbb1d2adb38",
+      "event_sequence": 295,
+      "actor": "pc_01",
+      "action": "search",
+      "target": "chapel_ruins",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 28,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 9,
+      "cycle": 32,
+      "game_turn": 84,
+      "event_id": "evt_000298_5fcda3edf2b4b65222a4",
+      "event_sequence": 298,
+      "actor": "pc_02",
+      "action": "search",
+      "target": "skeletons_in_robes",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "AUTONOMOUS",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 29,
+      "category": "investigate",
+      "expected_transition_relevance": "none"
+    },
+    {
+      "ordinal": 10,
+      "cycle": 32,
+      "game_turn": 85,
+      "event_id": "evt_000300_e932ea48aced070ad8d0",
+      "event_sequence": 300,
+      "actor": "pc_01",
+      "action": "break",
+      "target": "rotting_floorboards",
+      "goal": "悪霊の家を完了する",
+      "phase": "DISCOVER",
+      "candidate_pool": "no persisted move; director final pool empty",
+      "action_origin": "SYSTEM_FORCED",
+      "progress": 0,
+      "progress_reason": [
+        "no_scenario_progress"
+      ],
+      "stall_count": 30,
+      "category": "re-enter_basement",
+      "expected_transition_relevance": "none"
+    }
+  ]
+}

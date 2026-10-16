@@ -1,0 +1,25 @@
+{
+  "asset_sources": {
+    "portrait_pc_01": "E:/素材/旧きつね式ゆっくり立ち絵素材/れいむ/全/200.png",
+    "portrait_pc_02": "E:/素材/旧きつね式ゆっくり立ち絵素材/まりさ/全/200.png",
+    "background_neutral": "E:/素材/背景素材/nc321164_シンプル同系色モロッカン柄背景【紫】（1920×1080）.png",
+    "dialogue_frame": "E:/素材/背景素材/nc86017_【素材】セリフ枠.png",
+    "bgm_investigation": "E:/素材/BGM素材/Recollections.mp3",
+    "se_dice": "E:/素材/効果音素材/データ解析.mp3",
+    "se_san": "E:/素材/効果音素材/心臓の鼓動1.mp3",
+    "se_transition": "E:/素材/効果音素材/シーン切り替え1.mp3"
+  },
+  "preview": {
+    "start_script_line_id": "scene_047_script_017",
+    "end_script_line_id": "scene_048_script_013"
+  },
+  "layout_config": "config/presentation_layout_m3.json",
+  "mix": {
+    "voice_lufs": -20,
+    "bgm_gain_db": -24,
+    "duck_gain_db": -9,
+    "se_gain_db": -18,
+    "fade_sec": 0.6,
+    "limiter": 0.95
+  }
+}

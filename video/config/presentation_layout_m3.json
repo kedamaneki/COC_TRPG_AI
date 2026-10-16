@@ -1,0 +1,29 @@
+{
+  "canvas": {"width": 1920, "height": 1080},
+  "dialogue_frame": {"asset_id": "dialogue_frame_user", "x": 160, "y": 670, "width": 1600, "height": 375},
+  "speaker_name_region": {"x": 205, "y": 682, "width": 520, "height": 72, "alignment": "left"},
+  "dialogue_text_region": {"x": 210, "y": 770, "width": 1500, "height": 250, "alignment": "center"},
+  "head_portrait_left_region": {"x": 40, "y": 330, "width": 380, "height": 320, "anchor": "center", "max_face_width": 320, "max_face_height": 280, "safe_margin": 20, "speaker_side": "left"},
+  "head_portrait_right_region": {"x": 1500, "y": 330, "width": 380, "height": 320, "anchor": "center", "max_face_width": 320, "max_face_height": 280, "safe_margin": 20, "speaker_side": "right"},
+  "dice_san_overlay_region": {"x": 560, "y": 55, "width": 800, "height": 170, "alignment": "center"},
+  "forbidden_overlaps": [
+    ["head_portrait_left_region", "dialogue_frame"],
+    ["head_portrait_right_region", "dialogue_frame"],
+    ["head_portrait_left_region", "dialogue_text_region"],
+    ["head_portrait_right_region", "dialogue_text_region"],
+    ["head_portrait_left_region", "dice_san_overlay_region"],
+    ["head_portrait_right_region", "dice_san_overlay_region"],
+    ["speaker_name_region", "dialogue_text_region"]
+  ],
+  "name_font_size": 38,
+  "dialogue_font_size": 52,
+  "long_text_font_size": 46,
+  "inner_outline_width": 2.0,
+  "outer_outline_width": 4.5,
+  "pagination": {"characters_per_line": 30, "lines_per_page": 3},
+  "readability_limits": {
+    "minimum_font_size": 44,
+    "maximum_inner_outline_ratio": 0.08,
+    "maximum_outer_outline_ratio": 0.12
+  }
+}

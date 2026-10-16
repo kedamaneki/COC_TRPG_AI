@@ -1,0 +1,52 @@
+# Python and local environments
+.venv/
+venv/
+**/__pycache__/
+**/.pytest_cache/
+**/*.py[cod]
+.codex-testdeps/
+
+# Secrets and machine-local configuration
+.env
+.env.*
+!.env.example
+**/.streamlit/secrets.toml
+**/.local/
+
+# Generated state
+temp/
+tmp/
+cache/
+logs/
+outputs/
+staging/
+**/.test-tmp/
+**/.tmp-tests/
+evaluation-v2/
+raw-runs/
+checkpoints/
+
+# Generated media. Small deterministic assets are explicitly retained.
+video/projects/**/*.wav
+video/projects/**/*.mp3
+video/projects/**/*.mp4
+video/projects/**/*.png
+video/projects/**/*.jpg
+video/projects/**/*.jpeg
+*.wav
+*.mp3
+*.mp4
+!video/assets/**/*.wav
+!video/assets/**/*.mp3
+!video/assets/**/*.png
+!video/assets/**/*.jpg
+!video/assets/**/*.jpeg
+
+# Generated Core data
+core/src/replay_log.json
+core/src/save_*.json
+core/src/trpg_save_data.json
+core/src/datasets/session_metrics.jsonl
+
+# Accepted small regression fixture
+!core/src/save_autosave.json

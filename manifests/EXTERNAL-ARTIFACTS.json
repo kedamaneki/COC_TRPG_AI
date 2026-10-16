@@ -1,0 +1,154 @@
+[
+  {
+    "logical_name": "corbitt_adjudication_fix_001",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_adjudication_fix_001",
+    "sha256": null,
+    "size": 206050,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 6
+  },
+  {
+    "logical_name": "CORBITT_DUAL_PC_ROUTING_FIXTURE_001",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_DUAL_PC_ROUTING_FIXTURE_001",
+    "sha256": null,
+    "size": 6831,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 3
+  },
+  {
+    "logical_name": "CORBITT_DUAL_PC_ROUTING_MINI_001",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_DUAL_PC_ROUTING_MINI_001",
+    "sha256": null,
+    "size": 34581709,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 82
+  },
+  {
+    "logical_name": "CORBITT_HOME_001_CYCLE40_CONTRACT_REPRO",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_HOME_001_CYCLE40_CONTRACT_REPRO",
+    "sha256": null,
+    "size": 29940549,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 62
+  },
+  {
+    "logical_name": "corbitt_iteration2_deterministic_001",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_iteration2_deterministic_001",
+    "sha256": null,
+    "size": 10888,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 2
+  },
+  {
+    "logical_name": "corbitt_iteration2_mini_001",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_iteration2_mini_001",
+    "sha256": null,
+    "size": 16499889,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 41
+  },
+  {
+    "logical_name": "corbitt_iteration2_mini_002",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_iteration2_mini_002",
+    "sha256": null,
+    "size": 11285783,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 25
+  },
+  {
+    "logical_name": "corbitt_iteration2_mini_003",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_iteration2_mini_003",
+    "sha256": null,
+    "size": 34744009,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 80
+  },
+  {
+    "logical_name": "CORBITT_LONGRUN_ITERATION2_V2_001",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION2_V2_001",
+    "sha256": null,
+    "size": 217293822,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 421
+  },
+  {
+    "logical_name": "CORBITT_LONGRUN_ITERATION2_V2_HOME_001",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION2_V2_HOME_001",
+    "sha256": null,
+    "size": 313810197,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 580
+  },
+  {
+    "logical_name": "CORBITT_LONGRUN_ITERATION3_V1_HOME_001",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V1_HOME_001",
+    "sha256": null,
+    "size": 34774668,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 101
+  },
+  {
+    "logical_name": "CORBITT_LONGRUN_ITERATION3_V2_HOME_001",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V2_HOME_001",
+    "sha256": null,
+    "size": 34714342,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 97
+  },
+  {
+    "logical_name": "CORBITT_LONGRUN_ITERATION3_V3_HOME_001",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V3_HOME_001",
+    "sha256": null,
+    "size": 34642722,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 97
+  },
+  {
+    "logical_name": "corbitt_longrun_post_adjudication_fix_001",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_longrun_post_adjudication_fix_001",
+    "sha256": null,
+    "size": 218832590,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 388
+  },
+  {
+    "logical_name": "formal_evidence_contract_deterministic_001",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\formal_evidence_contract_deterministic_001",
+    "sha256": null,
+    "size": 1039,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 1
+  },
+  {
+    "logical_name": "seed_2101",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\seed_2101",
+    "sha256": null,
+    "size": 462176724,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 683
+  },
+  {
+    "logical_name": "seed_2101_action_availability_fix",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\seed_2101_action_availability_fix",
+    "sha256": null,
+    "size": 224827611,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 407
+  },
+  {
+    "logical_name": "seed_2101_goal_completion_sync_fix",
+    "absolute_or_relative_external_path": "F:\\制作物\\その3\\evaluation-v2\\seed_2101_goal_completion_sync_fix",
+    "sha256": null,
+    "size": 185426826,
+    "role": "historical_raw_or_evaluation",
+    "file_count": 336
+  },
+  {
+    "logical_name": "video_project_generated_media",
+    "absolute_or_relative_external_path": "video/projects",
+    "sha256": "7a50b6a6d006b9139ab32efb8001ad54af2a8126ddc5c517ebfa75bb09954cb4",
+    "size": 222045419,
+    "role": "ignored_test_and_review_artifacts",
+    "file_count": 344
+  }
+]

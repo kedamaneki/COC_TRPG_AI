@@ -1,0 +1,1426 @@
+{
+  "events": [
+    {
+      "action": {
+        "action_id": "break",
+        "origin": null,
+        "target": "basement_planks"
+      },
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_wall_001",
+      "combat": null,
+      "cycle": null,
+      "dice": {
+        "automatic_result": null,
+        "critical": null,
+        "final_result": null,
+        "fumble": null,
+        "raw_result": null,
+        "resolution_mode": "NO_ROLL",
+        "result": null,
+        "result_level": null,
+        "roll": null,
+        "skill_name": null,
+        "target_value": null
+      },
+      "event_id": "norm:unified:000000",
+      "event_type": "SYSTEM_INTERNAL",
+      "interaction_id": "",
+      "location": {
+        "display_name": "コービット屋敷（地階・物置部屋）",
+        "location_id": "corbitt_basement"
+      },
+      "metadata": {
+        "source_index": 0,
+        "source_payload": {
+          "actor": "pc_01",
+          "adjudication_id": "adj_wall_001",
+          "cause_event_ids": [],
+          "event_id": "wall_action",
+          "event_type": "ACTION_DECLARATION",
+          "final_result": null,
+          "interaction_id": "",
+          "location": "corbitt_basement",
+          "modifier": null,
+          "raw_result": null,
+          "resolution_mode": "NO_ROLL",
+          "result_event_ids": [
+            "wall_roll"
+          ],
+          "roll": null,
+          "selected_action": "break",
+          "skill_or_stat": "",
+          "state_after": {},
+          "state_before": {},
+          "target": "basement_planks",
+          "target_value": null,
+          "transaction_id": "txn_wall_001",
+          "turn_id": 1
+        },
+        "source_stream": "unified_event_log"
+      },
+      "modifier": null,
+      "san": null,
+      "scene_id": null,
+      "source_event_ids": [
+        "wall_action"
+      ],
+      "speaker_id": "pc_01",
+      "state_changes": {},
+      "text": null,
+      "timestamp_or_order": 0,
+      "turn": 1
+    },
+    {
+      "action": null,
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_wall_001",
+      "combat": null,
+      "cycle": null,
+      "dice": {
+        "automatic_result": null,
+        "critical": null,
+        "final_result": "REGULAR_SUCCESS",
+        "fumble": null,
+        "raw_result": "REGULAR_SUCCESS",
+        "resolution_mode": "ROLL",
+        "result": null,
+        "result_level": 2,
+        "roll": 42,
+        "skill_name": "STR",
+        "target_value": 50
+      },
+      "event_id": "norm:unified:000001",
+      "event_type": "SKILL_CHECK",
+      "interaction_id": "",
+      "location": {
+        "display_name": "コービット屋敷（地階・物置部屋）",
+        "location_id": "corbitt_basement"
+      },
+      "metadata": {
+        "source_index": 1,
+        "source_payload": {
+          "actor": "pc_01",
+          "adjudication_id": "adj_wall_001",
+          "cause_event_ids": [
+            "wall_action"
+          ],
+          "event_id": "wall_roll",
+          "event_type": "INVESTIGATION_ROLLED",
+          "final_result": "REGULAR_SUCCESS",
+          "interaction_id": "",
+          "location": "corbitt_basement",
+          "modifier": null,
+          "raw_result": "REGULAR_SUCCESS",
+          "resolution_mode": "ROLL",
+          "result_event_ids": [
+            "wall_world"
+          ],
+          "result_level": 2,
+          "roll": 42,
+          "skill": "STR",
+          "skill_or_stat": "STR",
+          "state_after": {
+            "basement_planks_broken": true
+          },
+          "state_before": {
+            "basement_planks_broken": false
+          },
+          "target": "basement_planks",
+          "target_value": 50,
+          "transaction_id": "txn_wall_001",
+          "turn_id": 2
+        },
+        "source_stream": "unified_event_log"
+      },
+      "modifier": null,
+      "san": null,
+      "scene_id": null,
+      "source_event_ids": [
+        "wall_roll"
+      ],
+      "speaker_id": "pc_01",
+      "state_changes": {},
+      "text": null,
+      "timestamp_or_order": 1,
+      "turn": 2
+    },
+    {
+      "action": null,
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_wall_001",
+      "combat": null,
+      "cycle": null,
+      "dice": {
+        "automatic_result": null,
+        "critical": null,
+        "final_result": "REGULAR_SUCCESS",
+        "fumble": null,
+        "raw_result": null,
+        "resolution_mode": "NO_ROLL",
+        "result": null,
+        "result_level": null,
+        "roll": null,
+        "skill_name": null,
+        "target_value": null
+      },
+      "event_id": "norm:unified:000002",
+      "event_type": "SYSTEM_INTERNAL",
+      "interaction_id": "",
+      "location": {
+        "display_name": "コービット屋敷（地階・物置部屋）",
+        "location_id": "corbitt_basement"
+      },
+      "metadata": {
+        "source_index": 2,
+        "source_payload": {
+          "actor": "pc_01",
+          "adjudication_id": "adj_wall_001",
+          "cause_event_ids": [
+            "wall_roll"
+          ],
+          "event_id": "wall_world",
+          "event_type": "WORLD_EVENT",
+          "final_result": "REGULAR_SUCCESS",
+          "human_readable_description": "板を破壊し、奥の部屋への通路を開けた。",
+          "interaction_id": "",
+          "location": "corbitt_basement",
+          "modifier": null,
+          "raw_result": null,
+          "resolution_mode": "NO_ROLL",
+          "result_event_ids": [],
+          "roll": null,
+          "skill_or_stat": "",
+          "state_after": {
+            "basement_planks_broken": true
+          },
+          "state_before": {
+            "basement_planks_broken": false
+          },
+          "target": "basement_planks",
+          "target_value": null,
+          "transaction_id": "txn_wall_001",
+          "turn_id": 3,
+          "world_fact": {
+            "event": "BASEMENT_PLANKS_BROKEN"
+          }
+        },
+        "source_stream": "unified_event_log"
+      },
+      "modifier": null,
+      "san": null,
+      "scene_id": null,
+      "source_event_ids": [
+        "wall_world"
+      ],
+      "speaker_id": "pc_01",
+      "state_changes": {},
+      "text": null,
+      "timestamp_or_order": 2,
+      "turn": 3
+    },
+    {
+      "action": null,
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_san_001",
+      "combat": null,
+      "cycle": null,
+      "dice": {
+        "automatic_result": null,
+        "critical": null,
+        "final_result": "REGULAR_SUCCESS",
+        "fumble": null,
+        "raw_result": "REGULAR_SUCCESS",
+        "resolution_mode": "ROLL",
+        "result": null,
+        "result_level": 2,
+        "roll": 40,
+        "skill_name": null,
+        "target_value": 70
+      },
+      "event_id": "norm:unified:000003",
+      "event_type": "SYSTEM_INTERNAL",
+      "interaction_id": "",
+      "location": {
+        "display_name": "コービット屋敷（地階・物置部屋）",
+        "location_id": "corbitt_basement"
+      },
+      "metadata": {
+        "source_index": 3,
+        "source_payload": {
+          "actor": "pc_01",
+          "adjudication_id": "adj_san_001",
+          "cause_event_ids": [],
+          "event_id": "san_roll",
+          "event_type": "SAN_CHECK",
+          "final_result": "REGULAR_SUCCESS",
+          "interaction_id": "",
+          "location": "corbitt_basement",
+          "modifier": null,
+          "raw_result": "REGULAR_SUCCESS",
+          "resolution_mode": "ROLL",
+          "result_event_ids": [],
+          "result_level": 2,
+          "roll": 40,
+          "san": {
+            "after": 70,
+            "before": 70,
+            "failure_loss_formula": "1D4",
+            "loss": 0,
+            "resolved_loss_formula": "0",
+            "result": "SUCCESS",
+            "roll": 40,
+            "success_loss_formula": "0",
+            "target": 70,
+            "trigger_event_id": "knife_encounter"
+          },
+          "skill_or_stat": "SAN",
+          "state_after": {},
+          "state_before": {},
+          "target": "corbitt_knife",
+          "target_value": 70,
+          "transaction_id": "txn_knife_001",
+          "turn_id": 4
+        },
+        "source_stream": "unified_event_log"
+      },
+      "modifier": null,
+      "san": {
+        "after": 70,
+        "before": 70,
+        "derived_from_legacy_text": false,
+        "failure_loss_formula": "1D4",
+        "loss": 0,
+        "normalization_source": "STRUCTURED",
+        "resolved_loss_formula": "0",
+        "result": "SUCCESS",
+        "roll": 40,
+        "san_after": 70,
+        "san_before": 70,
+        "san_loss": 0,
+        "success_loss_formula": "0",
+        "target": 70,
+        "trigger_event_id": "knife_encounter"
+      },
+      "scene_id": null,
+      "source_event_ids": [
+        "san_roll"
+      ],
+      "speaker_id": "pc_01",
+      "state_changes": {},
+      "text": null,
+      "timestamp_or_order": 3,
+      "turn": 4
+    },
+    {
+      "action": null,
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_luck_001",
+      "combat": null,
+      "cycle": null,
+      "dice": {
+        "automatic_result": null,
+        "critical": null,
+        "final_result": "REGULAR_SUCCESS",
+        "fumble": null,
+        "raw_result": "FAILURE",
+        "resolution_mode": "ROLL",
+        "result": null,
+        "result_level": 1,
+        "roll": 59,
+        "skill_name": "目星",
+        "target_value": 50
+      },
+      "event_id": "norm:unified:000004",
+      "event_type": "SKILL_CHECK",
+      "interaction_id": "",
+      "location": {
+        "display_name": "コービット屋敷（地階・物置部屋）",
+        "location_id": "corbitt_basement"
+      },
+      "metadata": {
+        "source_index": 4,
+        "source_payload": {
+          "actor": "pc_01",
+          "adjudication_id": "adj_luck_001",
+          "cause_event_ids": [],
+          "event_id": "luck_roll",
+          "event_type": "INVESTIGATION_ROLLED",
+          "final_result": "REGULAR_SUCCESS",
+          "interaction_id": "",
+          "location": "corbitt_basement",
+          "modifier": {
+            "amount": 9,
+            "resource_after": 41,
+            "resource_before": 50,
+            "type": "LUCK_SPEND"
+          },
+          "raw_result": "FAILURE",
+          "resolution_mode": "ROLL",
+          "result_event_ids": [],
+          "result_level": 1,
+          "roll": 59,
+          "skill": "目星",
+          "skill_or_stat": "目星",
+          "state_after": {},
+          "state_before": {},
+          "target": "corbitt_knife",
+          "target_value": 50,
+          "transaction_id": "txn_luck_001",
+          "turn_id": 5
+        },
+        "source_stream": "unified_event_log"
+      },
+      "modifier": {
+        "amount": 9,
+        "resource_after": 41,
+        "resource_before": 50,
+        "type": "LUCK_SPEND"
+      },
+      "san": null,
+      "scene_id": null,
+      "source_event_ids": [
+        "luck_roll"
+      ],
+      "speaker_id": "pc_01",
+      "state_changes": {},
+      "text": null,
+      "timestamp_or_order": 4,
+      "turn": 5
+    },
+    {
+      "action": null,
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_knife_trigger",
+      "combat": null,
+      "cycle": null,
+      "dice": {
+        "automatic_result": null,
+        "critical": null,
+        "final_result": null,
+        "fumble": null,
+        "raw_result": null,
+        "resolution_mode": "NO_ROLL",
+        "result": null,
+        "result_level": null,
+        "roll": null,
+        "skill_name": null,
+        "target_value": null
+      },
+      "event_id": "norm:unified:000005",
+      "event_type": "SYSTEM_INTERNAL",
+      "interaction_id": "",
+      "location": {
+        "display_name": "コービット屋敷（地階・物置部屋）",
+        "location_id": "corbitt_basement"
+      },
+      "metadata": {
+        "source_index": 5,
+        "source_payload": {
+          "actor": "pc_01",
+          "adjudication_id": "adj_knife_trigger",
+          "cause_event_ids": [],
+          "event_id": "knife_encounter",
+          "event_type": "WORLD_EVENT",
+          "final_result": null,
+          "human_readable_description": "ナイフが宙に浮き、探索者へ襲いかかった。",
+          "interaction_id": "",
+          "location": "corbitt_basement",
+          "modifier": null,
+          "raw_result": null,
+          "resolution_mode": "NO_ROLL",
+          "result_event_ids": [
+            "knife_combat_start"
+          ],
+          "roll": null,
+          "skill_or_stat": "",
+          "state_after": {},
+          "state_before": {},
+          "target": "corbitt_knife",
+          "target_value": null,
+          "transaction_id": "txn_knife_001",
+          "turn_id": 6,
+          "world_fact": {
+            "event": "CORBITT_DAGGER_ANIMATED"
+          }
+        },
+        "source_stream": "unified_event_log"
+      },
+      "modifier": null,
+      "san": null,
+      "scene_id": null,
+      "source_event_ids": [
+        "knife_encounter"
+      ],
+      "speaker_id": "pc_01",
+      "state_changes": {},
+      "text": null,
+      "timestamp_or_order": 5,
+      "turn": 6
+    },
+    {
+      "action": null,
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_knife_start",
+      "combat": {
+        "action": null,
+        "attacker": "pc_01",
+        "combat_id": "combat_knife_001",
+        "damage": null,
+        "hp_after": null,
+        "hp_before": null,
+        "roll": null,
+        "target": "corbitt_floating_dagger"
+      },
+      "cycle": null,
+      "dice": {
+        "automatic_result": null,
+        "critical": null,
+        "final_result": null,
+        "fumble": null,
+        "raw_result": null,
+        "resolution_mode": "NO_ROLL",
+        "result": null,
+        "result_level": null,
+        "roll": null,
+        "skill_name": null,
+        "target_value": null
+      },
+      "event_id": "norm:unified:000006",
+      "event_type": "COMBAT_START",
+      "interaction_id": "",
+      "location": {
+        "display_name": "コービット屋敷（地階・物置部屋）",
+        "location_id": "corbitt_basement"
+      },
+      "metadata": {
+        "source_index": 6,
+        "source_payload": {
+          "actor": "pc_01",
+          "adjudication_id": "adj_knife_start",
+          "cause_event_ids": [],
+          "combat_goal": "ENEMY_DEFEATED",
+          "combat_id": "combat_knife_001",
+          "event_id": "knife_combat_start",
+          "event_type": "COMBAT_STARTED",
+          "final_result": null,
+          "interaction_id": "",
+          "location": "corbitt_basement",
+          "modifier": null,
+          "participants": [
+            "pc_01",
+            "corbitt_floating_dagger"
+          ],
+          "raw_result": null,
+          "resolution_mode": "NO_ROLL",
+          "result_event_ids": [],
+          "roll": null,
+          "skill_or_stat": "",
+          "state_after": {},
+          "state_before": {},
+          "target": "corbitt_floating_dagger",
+          "target_value": null,
+          "transaction_id": "txn_knife_start",
+          "trigger_event_id": "knife_encounter",
+          "turn_id": 7
+        },
+        "source_stream": "unified_event_log"
+      },
+      "modifier": null,
+      "san": null,
+      "scene_id": null,
+      "source_event_ids": [
+        "knife_combat_start"
+      ],
+      "speaker_id": "pc_01",
+      "state_changes": {},
+      "text": null,
+      "timestamp_or_order": 6,
+      "turn": 7
+    },
+    {
+      "action": {
+        "action_id": "attack",
+        "origin": null,
+        "target": "corbitt_floating_dagger"
+      },
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_knife_attack",
+      "combat": {
+        "action": "attack",
+        "attacker": "pc_01",
+        "combat_id": "combat_knife_001",
+        "damage": null,
+        "hp_after": null,
+        "hp_before": null,
+        "roll": null,
+        "target": "corbitt_floating_dagger"
+      },
+      "cycle": null,
+      "dice": {
+        "automatic_result": null,
+        "critical": null,
+        "final_result": null,
+        "fumble": null,
+        "raw_result": null,
+        "resolution_mode": "NO_ROLL",
+        "result": null,
+        "result_level": null,
+        "roll": null,
+        "skill_name": "近接戦闘",
+        "target_value": null
+      },
+      "event_id": "norm:unified:000007",
+      "event_type": "COMBAT_ACTION",
+      "interaction_id": "",
+      "location": {
+        "display_name": "コービット屋敷（地階・物置部屋）",
+        "location_id": "corbitt_basement"
+      },
+      "metadata": {
+        "source_index": 7,
+        "source_payload": {
+          "action_category": "ATTACK",
+          "actor": "pc_01",
+          "adjudication_id": "adj_knife_attack",
+          "cause_event_ids": [],
+          "combat_id": "combat_knife_001",
+          "event_id": "knife_attack_selected",
+          "event_type": "COMBAT_ACTION_SELECTED",
+          "final_result": null,
+          "interaction_id": "",
+          "location": "corbitt_basement",
+          "modifier": null,
+          "raw_result": null,
+          "resolution_mode": "NO_ROLL",
+          "result_event_ids": [
+            "knife_attack_resolved"
+          ],
+          "roll": null,
+          "selected_action": "attack",
+          "skill": "近接戦闘",
+          "skill_or_stat": "",
+          "state_after": {},
+          "state_before": {},
+          "target": "corbitt_floating_dagger",
+          "target_value": null,
+          "transaction_id": "txn_knife_attack",
+          "turn_id": 8
+        },
+        "source_stream": "unified_event_log"
+      },
+      "modifier": null,
+      "san": null,
+      "scene_id": null,
+      "source_event_ids": [
+        "knife_attack_selected"
+      ],
+      "speaker_id": "pc_01",
+      "state_changes": {},
+      "text": null,
+      "timestamp_or_order": 7,
+      "turn": 8
+    },
+    {
+      "action": {
+        "action_id": "attack",
+        "origin": null,
+        "target": "corbitt_floating_dagger"
+      },
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_knife_attack",
+      "combat": {
+        "action": "attack",
+        "attacker": "pc_01",
+        "combat_id": "combat_knife_001",
+        "damage": 2,
+        "hp_after": 0,
+        "hp_before": 1,
+        "roll": 18,
+        "target": "corbitt_floating_dagger"
+      },
+      "cycle": null,
+      "dice": {
+        "automatic_result": null,
+        "critical": null,
+        "final_result": "HIT",
+        "fumble": null,
+        "raw_result": "HARD_SUCCESS",
+        "resolution_mode": "ROLL",
+        "result": null,
+        "result_level": null,
+        "roll": 18,
+        "skill_name": "近接戦闘",
+        "target_value": 55
+      },
+      "event_id": "norm:unified:000008",
+      "event_type": "COMBAT_ACTION",
+      "interaction_id": "",
+      "location": {
+        "display_name": "コービット屋敷（地階・物置部屋）",
+        "location_id": "corbitt_basement"
+      },
+      "metadata": {
+        "source_index": 8,
+        "source_payload": {
+          "HP_after": 0,
+          "HP_before": 1,
+          "action_category": "ATTACK",
+          "actor": "pc_01",
+          "actual_damage": 2,
+          "adjudication_id": "adj_knife_attack",
+          "cause_event_ids": [
+            "knife_attack_selected"
+          ],
+          "combat_id": "combat_knife_001",
+          "damage": 2,
+          "damage_formula": "1D3",
+          "damage_roll": "1D3=2",
+          "defense_roll": 72,
+          "defense_target_value": 35,
+          "defense_type": "dodge",
+          "event_id": "knife_attack_resolved",
+          "event_type": "COMBAT_ACTION_RESOLVED",
+          "final_result": "HIT",
+          "interaction_id": "",
+          "location": "corbitt_basement",
+          "modifier": null,
+          "raw_result": "HARD_SUCCESS",
+          "resolution_mode": "ROLL",
+          "result_event_ids": [
+            "knife_incapacitated"
+          ],
+          "roll": 18,
+          "selected_action": "attack",
+          "skill": "近接戦闘",
+          "skill_or_stat": "",
+          "state_after": {},
+          "state_before": {},
+          "target": "corbitt_floating_dagger",
+          "target_value": 55,
+          "transaction_id": "txn_knife_attack",
+          "turn_id": 9
+        },
+        "source_stream": "unified_event_log"
+      },
+      "modifier": null,
+      "san": null,
+      "scene_id": null,
+      "source_event_ids": [
+        "knife_attack_resolved"
+      ],
+      "speaker_id": "pc_01",
+      "state_changes": {},
+      "text": null,
+      "timestamp_or_order": 8,
+      "turn": 9
+    },
+    {
+      "action": null,
+      "actor_id": "corbitt_floating_dagger",
+      "adjudication_id": "adj_knife_attack",
+      "combat": {
+        "action": null,
+        "attacker": "corbitt_floating_dagger",
+        "combat_id": "combat_knife_001",
+        "damage": null,
+        "hp_after": 0,
+        "hp_before": 1,
+        "roll": null,
+        "target": "pc_01"
+      },
+      "cycle": null,
+      "dice": {
+        "automatic_result": null,
+        "critical": null,
+        "final_result": null,
+        "fumble": null,
+        "raw_result": null,
+        "resolution_mode": "NO_ROLL",
+        "result": null,
+        "result_level": null,
+        "roll": null,
+        "skill_name": null,
+        "target_value": null
+      },
+      "event_id": "norm:unified:000009",
+      "event_type": "SYSTEM_INTERNAL",
+      "interaction_id": "",
+      "location": {
+        "display_name": "コービット屋敷（地階・物置部屋）",
+        "location_id": "corbitt_basement"
+      },
+      "metadata": {
+        "source_index": 9,
+        "source_payload": {
+          "HP_after": 0,
+          "HP_before": 1,
+          "actor": "corbitt_floating_dagger",
+          "adjudication_id": "adj_knife_attack",
+          "cause_event_ids": [
+            "knife_attack_resolved"
+          ],
+          "combat_id": "combat_knife_001",
+          "event_id": "knife_incapacitated",
+          "event_type": "COMBATANT_INCAPACITATED",
+          "final_result": null,
+          "interaction_id": "",
+          "location": "corbitt_basement",
+          "modifier": null,
+          "raw_result": null,
+          "resolution_mode": "NO_ROLL",
+          "result_event_ids": [
+            "knife_combat_end"
+          ],
+          "roll": null,
+          "skill_or_stat": "",
+          "state_after": {},
+          "state_before": {},
+          "target": "pc_01",
+          "target_value": null,
+          "transaction_id": "txn_knife_attack",
+          "turn_id": 10
+        },
+        "source_stream": "unified_event_log"
+      },
+      "modifier": null,
+      "san": null,
+      "scene_id": null,
+      "source_event_ids": [
+        "knife_incapacitated"
+      ],
+      "speaker_id": "corbitt_floating_dagger",
+      "state_changes": {},
+      "text": null,
+      "timestamp_or_order": 9,
+      "turn": 10
+    },
+    {
+      "action": null,
+      "actor_id": "system",
+      "adjudication_id": "adj_knife_attack",
+      "combat": {
+        "action": null,
+        "attacker": "system",
+        "combat_id": "combat_knife_001",
+        "damage": null,
+        "hp_after": null,
+        "hp_before": null,
+        "roll": null,
+        "target": "corbitt_floating_dagger"
+      },
+      "cycle": null,
+      "dice": {
+        "automatic_result": null,
+        "critical": null,
+        "final_result": null,
+        "fumble": null,
+        "raw_result": null,
+        "resolution_mode": "NO_ROLL",
+        "result": null,
+        "result_level": null,
+        "roll": null,
+        "skill_name": null,
+        "target_value": null
+      },
+      "event_id": "norm:unified:000010",
+      "event_type": "COMBAT_END",
+      "interaction_id": "",
+      "location": {
+        "display_name": "コービット屋敷（地階・物置部屋）",
+        "location_id": "corbitt_basement"
+      },
+      "metadata": {
+        "source_index": 10,
+        "source_payload": {
+          "actor": "system",
+          "adjudication_id": "adj_knife_attack",
+          "cause_event_ids": [
+            "knife_incapacitated"
+          ],
+          "combat_end_condition": "enemies_incapacitated",
+          "combat_id": "combat_knife_001",
+          "event_id": "knife_combat_end",
+          "event_type": "COMBAT_ENDED",
+          "final_result": null,
+          "interaction_id": "",
+          "location": "corbitt_basement",
+          "modifier": null,
+          "raw_result": null,
+          "resolution_mode": "NO_ROLL",
+          "result_event_ids": [],
+          "roll": null,
+          "skill_or_stat": "",
+          "state_after": {},
+          "state_before": {},
+          "target": "corbitt_floating_dagger",
+          "target_value": null,
+          "transaction_id": "txn_knife_attack",
+          "turn_id": 11
+        },
+        "source_stream": "unified_event_log"
+      },
+      "modifier": null,
+      "san": null,
+      "scene_id": null,
+      "source_event_ids": [
+        "knife_combat_end"
+      ],
+      "speaker_id": "system",
+      "state_changes": {},
+      "text": null,
+      "timestamp_or_order": 10,
+      "turn": 11
+    },
+    {
+      "action": {
+        "action_id": "break",
+        "origin": null,
+        "target": "corbitt_body"
+      },
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_final_001",
+      "combat": {
+        "action": "break",
+        "attacker": "pc_01",
+        "combat_id": "combat_final_001",
+        "damage": null,
+        "hp_after": null,
+        "hp_before": null,
+        "roll": null,
+        "target": "corbitt_body"
+      },
+      "cycle": null,
+      "dice": {
+        "automatic_result": null,
+        "critical": null,
+        "final_result": "SPECIAL_OBJECTIVE_COMPLETED",
+        "fumble": null,
+        "raw_result": null,
+        "resolution_mode": "NO_ROLL",
+        "result": null,
+        "result_level": null,
+        "roll": null,
+        "skill_name": null,
+        "target_value": null
+      },
+      "event_id": "norm:unified:000011",
+      "event_type": "COMBAT_ACTION",
+      "interaction_id": "",
+      "location": {
+        "display_name": "地下の古い集会所跡",
+        "location_id": "corbitt_basement_room3"
+      },
+      "metadata": {
+        "source_index": 11,
+        "source_payload": {
+          "action_category": "SPECIAL",
+          "actor": "pc_01",
+          "adjudication_id": "adj_final_001",
+          "cause_event_ids": [],
+          "combat_id": "combat_final_001",
+          "event_id": "final_special",
+          "event_type": "COMBAT_ACTION_RESOLVED",
+          "final_result": "SPECIAL_OBJECTIVE_COMPLETED",
+          "human_readable_description": "コービットの遺体が破壊され、屋敷の呪いが解けた。",
+          "interaction_id": "",
+          "location": "corbitt_basement_room3",
+          "modifier": null,
+          "raw_result": null,
+          "resolution_mode": "NO_ROLL",
+          "result_event_ids": [],
+          "roll": null,
+          "selected_action": "break",
+          "skill_or_stat": "",
+          "state_after": {
+            "corbitt_defeated": true
+          },
+          "state_before": {
+            "corbitt_defeated": false
+          },
+          "target": "corbitt_body",
+          "target_value": null,
+          "transaction_id": "txn_final_001",
+          "turn_id": 12,
+          "world_fact": {
+            "event": "CORBITT_BODY_DESTROYED"
+          }
+        },
+        "source_stream": "unified_event_log"
+      },
+      "modifier": null,
+      "san": null,
+      "scene_id": null,
+      "source_event_ids": [
+        "final_special"
+      ],
+      "speaker_id": "pc_01",
+      "state_changes": {},
+      "text": null,
+      "timestamp_or_order": 11,
+      "turn": 12
+    },
+    {
+      "action": {
+        "action_id": "break",
+        "origin": null,
+        "target": "basement_planks"
+      },
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_wall_001",
+      "combat": null,
+      "cycle": null,
+      "dice": {
+        "automatic_result": null,
+        "critical": null,
+        "final_result": "REGULAR_SUCCESS",
+        "fumble": null,
+        "raw_result": "REGULAR_SUCCESS",
+        "resolution_mode": "ROLL",
+        "result": null,
+        "result_level": null,
+        "roll": 42,
+        "skill_name": null,
+        "target_value": 50
+      },
+      "event_id": "norm:session:000000",
+      "event_type": "ACTION_DECLARATION",
+      "interaction_id": null,
+      "location": {
+        "display_name": "コービット屋敷（地階・物置部屋）",
+        "location_id": "corbitt_basement"
+      },
+      "metadata": {
+        "channel": "IC",
+        "secret_to": null,
+        "source_index": 0,
+        "source_payload": {
+          "channel": "IC",
+          "location": "corbitt_basement",
+          "meta": {
+            "action_id": "break",
+            "actor_id": "pc_01",
+            "adjudication_id": "adj_wall_001",
+            "event_id": "session_wall",
+            "final_result": "REGULAR_SUCCESS",
+            "raw_result": "REGULAR_SUCCESS",
+            "resolution_mode": "ROLL",
+            "roll": 42,
+            "roll_type": "opposed_str",
+            "skill_or_stat": "STR",
+            "state_after": {
+              "basement_planks_broken": true
+            },
+            "state_before": {
+              "basement_planks_broken": false
+            },
+            "target": "basement_planks",
+            "target_value": 50,
+            "transaction_id": "txn_wall_001"
+          },
+          "secret_to": null,
+          "text": "システム: 【STR対抗】判定に成功。板を破壊し、奥の部屋への通路を開けた。"
+        },
+        "source_stream": "session_log"
+      },
+      "modifier": null,
+      "san": null,
+      "scene_id": null,
+      "source_event_ids": [
+        "session_wall"
+      ],
+      "speaker_id": "pc_01",
+      "state_changes": {},
+      "text": "システム: 【STR対抗】判定に成功。板を破壊し、奥の部屋への通路を開けた。",
+      "timestamp_or_order": 12,
+      "turn": null
+    },
+    {
+      "action": null,
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_san_001",
+      "combat": null,
+      "cycle": null,
+      "dice": {
+        "automatic_result": null,
+        "critical": null,
+        "final_result": "REGULAR_SUCCESS",
+        "fumble": null,
+        "raw_result": "REGULAR_SUCCESS",
+        "resolution_mode": "ROLL",
+        "result": null,
+        "result_level": null,
+        "roll": 40,
+        "skill_name": null,
+        "target_value": 70
+      },
+      "event_id": "norm:session:000001",
+      "event_type": "SAN_LOSS",
+      "interaction_id": null,
+      "location": {
+        "display_name": "コービット屋敷（地階・物置部屋）",
+        "location_id": "corbitt_basement"
+      },
+      "metadata": {
+        "channel": "IC",
+        "secret_to": null,
+        "source_index": 1,
+        "source_payload": {
+          "channel": "IC",
+          "location": "corbitt_basement",
+          "meta": {
+            "actor_id": "pc_01",
+            "adjudication_id": "adj_san_001",
+            "event_id": "session_san",
+            "final_result": "REGULAR_SUCCESS",
+            "raw_result": "REGULAR_SUCCESS",
+            "resolution_mode": "ROLL",
+            "roll": 40,
+            "roll_type": "san",
+            "san": {
+              "after": 70,
+              "before": 70,
+              "failure_loss_formula": "1D4",
+              "loss": 0,
+              "resolved_loss_formula": "0",
+              "result": "SUCCESS",
+              "roll": 40,
+              "success_loss_formula": "0",
+              "target": 70,
+              "trigger_event_id": "knife_encounter"
+            },
+            "skill_or_stat": "SAN",
+            "target_value": 70,
+            "transaction_id": "txn_knife_001"
+          },
+          "secret_to": null,
+          "text": "システム: 【SANチェック】1d100 ＞ 40 ＞ 成功（現在値:70）。正気度が 0 減少した。"
+        },
+        "source_stream": "session_log"
+      },
+      "modifier": null,
+      "san": {
+        "after": 70,
+        "before": 70,
+        "derived_from_legacy_text": false,
+        "failure_loss_formula": "1D4",
+        "loss": 0,
+        "normalization_source": "STRUCTURED",
+        "resolved_loss_formula": "0",
+        "result": "SUCCESS",
+        "roll": 40,
+        "san_after": 70,
+        "san_before": 70,
+        "san_loss": 0,
+        "success_loss_formula": "0",
+        "target": 70,
+        "trigger_event_id": "knife_encounter"
+      },
+      "scene_id": null,
+      "source_event_ids": [
+        "session_san"
+      ],
+      "speaker_id": "pc_01",
+      "state_changes": {},
+      "text": "システム: 【SANチェック】1d100 ＞ 40 ＞ 成功（現在値:70）。正気度が 0 減少した。",
+      "timestamp_or_order": 13,
+      "turn": null
+    },
+    {
+      "action": null,
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_luck_001",
+      "combat": null,
+      "cycle": null,
+      "dice": {
+        "automatic_result": null,
+        "critical": null,
+        "final_result": "REGULAR_SUCCESS",
+        "fumble": null,
+        "raw_result": "FAILURE",
+        "resolution_mode": "ROLL",
+        "result": null,
+        "result_level": null,
+        "roll": 59,
+        "skill_name": null,
+        "target_value": 50
+      },
+      "event_id": "norm:session:000002",
+      "event_type": "DICE_RESULT",
+      "interaction_id": null,
+      "location": {
+        "display_name": "コービット屋敷（地階・物置部屋）",
+        "location_id": "corbitt_basement"
+      },
+      "metadata": {
+        "channel": "IC",
+        "secret_to": null,
+        "source_index": 2,
+        "source_payload": {
+          "channel": "IC",
+          "location": "corbitt_basement",
+          "meta": {
+            "actor_id": "pc_01",
+            "adjudication_id": "adj_luck_001",
+            "event_id": "session_luck",
+            "final_result": "REGULAR_SUCCESS",
+            "modifier": {
+              "amount": 9,
+              "resource_after": 41,
+              "resource_before": 50,
+              "type": "LUCK_SPEND"
+            },
+            "raw_result": "FAILURE",
+            "roll": 59,
+            "roll_type": "skill",
+            "skill_or_stat": "目星",
+            "target_value": 50,
+            "transaction_id": "txn_luck_001"
+          },
+          "secret_to": null,
+          "text": "システム: 目星50、出目59で失敗。幸運を9消費し、レギュラー成功へ変更（幸運50→41）。"
+        },
+        "source_stream": "session_log"
+      },
+      "modifier": {
+        "amount": 9,
+        "resource_after": 41,
+        "resource_before": 50,
+        "type": "LUCK_SPEND"
+      },
+      "san": null,
+      "scene_id": null,
+      "source_event_ids": [
+        "session_luck"
+      ],
+      "speaker_id": "pc_01",
+      "state_changes": {},
+      "text": "システム: 目星50、出目59で失敗。幸運を9消費し、レギュラー成功へ変更（幸運50→41）。",
+      "timestamp_or_order": 14,
+      "turn": null
+    },
+    {
+      "action": {
+        "action_id": "attack",
+        "origin": null,
+        "target": "corbitt_floating_dagger"
+      },
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_knife_attack",
+      "combat": null,
+      "cycle": null,
+      "dice": {
+        "final_result": "HIT",
+        "raw_result": "HARD_SUCCESS",
+        "roll": 18,
+        "skill_name": "近接戦闘",
+        "target_value": 55
+      },
+      "event_id": "norm:session:000003",
+      "event_type": "DICE_RESULT",
+      "interaction_id": null,
+      "location": {
+        "display_name": "コービット屋敷（地階・物置部屋）",
+        "location_id": "corbitt_basement"
+      },
+      "metadata": {
+        "channel": "IC",
+        "secret_to": null,
+        "source_index": 3,
+        "source_payload": {
+          "channel": "IC",
+          "location": "corbitt_basement",
+          "meta": {
+            "action_id": "attack",
+            "actor_id": "pc_01",
+            "adjudication_id": "adj_knife_attack",
+            "event_id": "session_knife_end",
+            "roll_type": "combat",
+            "target": "corbitt_floating_dagger",
+            "transaction_id": "txn_knife_attack"
+          },
+          "secret_to": null,
+          "text": "システム: ナイフを無力化し、戦闘が終了した。"
+        },
+        "source_stream": "session_log"
+      },
+      "modifier": null,
+      "san": null,
+      "scene_id": null,
+      "source_event_ids": [
+        "session_knife_end"
+      ],
+      "speaker_id": "pc_01",
+      "state_changes": {},
+      "text": "システム: ナイフを無力化し、戦闘が終了した。",
+      "timestamp_or_order": 15,
+      "turn": null
+    }
+  ],
+  "metadata": {
+    "completed": true,
+    "conversion_warnings": [],
+    "cycles": 12,
+    "phase": "acceptance_contract",
+    "seed": 20261012,
+    "source_kind": "trpg_evaluation_v2",
+    "turns": 4
+  },
+  "participants": [
+    {
+      "character_id": "kp",
+      "display_name": "KP",
+      "participant_id": "kp",
+      "role": "KP",
+      "source_actor_id": null
+    },
+    {
+      "character_id": "system",
+      "display_name": "システム",
+      "participant_id": "system",
+      "role": "SYSTEM",
+      "source_actor_id": null
+    },
+    {
+      "character_id": "new_investigator",
+      "display_name": "新たな探索者",
+      "participant_id": "new_investigator",
+      "role": "PC",
+      "source_actor_id": "new_investigator"
+    },
+    {
+      "character_id": "pc_01",
+      "display_name": "マクガフィン刑事",
+      "participant_id": "pc_01",
+      "role": "PC",
+      "source_actor_id": "pc_01"
+    },
+    {
+      "character_id": "pc_02",
+      "display_name": "エレノア教授",
+      "participant_id": "pc_02",
+      "role": "PC",
+      "source_actor_id": "pc_02"
+    },
+    {
+      "character_id": "artie_wilmott",
+      "display_name": "アーティ・ウィルモット",
+      "participant_id": "artie_wilmott",
+      "role": "NPC",
+      "source_actor_id": "artie_wilmott"
+    },
+    {
+      "character_id": "corbitt_floating_dagger",
+      "display_name": "空中に浮かぶ魔法のダガー",
+      "participant_id": "corbitt_floating_dagger",
+      "role": "NPC",
+      "source_actor_id": "corbitt_floating_dagger"
+    },
+    {
+      "character_id": "dolly_shopkeeper",
+      "display_name": "ドーリー氏",
+      "participant_id": "dolly_shopkeeper",
+      "role": "NPC",
+      "source_actor_id": "dolly_shopkeeper"
+    },
+    {
+      "character_id": "globe_receptionist",
+      "display_name": "ボストン・グローブの受付",
+      "participant_id": "globe_receptionist",
+      "role": "NPC",
+      "source_actor_id": "globe_receptionist"
+    },
+    {
+      "character_id": "hall_records_clerk",
+      "display_name": "公文書館の事務官",
+      "participant_id": "hall_records_clerk",
+      "role": "NPC",
+      "source_actor_id": "hall_records_clerk"
+    },
+    {
+      "character_id": "kim_deblanc",
+      "display_name": "キム・デブラン",
+      "participant_id": "kim_deblanc",
+      "role": "NPC",
+      "source_actor_id": "kim_deblanc"
+    },
+    {
+      "character_id": "npc_guard_01",
+      "display_name": "警備員のボブ",
+      "participant_id": "npc_guard_01",
+      "role": "NPC",
+      "source_actor_id": "npc_guard_01"
+    },
+    {
+      "character_id": "npc_neighbor_elder",
+      "display_name": "近所の老人",
+      "participant_id": "npc_neighbor_elder",
+      "role": "NPC",
+      "source_actor_id": "npc_neighbor_elder"
+    },
+    {
+      "character_id": "npc_thug",
+      "display_name": "街のチンピラ",
+      "participant_id": "npc_thug",
+      "role": "NPC",
+      "source_actor_id": "npc_thug"
+    },
+    {
+      "character_id": "steven_knott",
+      "display_name": "スティーブン・ノット",
+      "participant_id": "steven_knott",
+      "role": "NPC",
+      "source_actor_id": "steven_knott"
+    },
+    {
+      "character_id": "walter_corbitt",
+      "display_name": "ウォルター・コービット",
+      "participant_id": "walter_corbitt",
+      "role": "NPC",
+      "source_actor_id": "walter_corbitt"
+    }
+  ],
+  "provenance": {
+    "source_event_count": 16,
+    "source_files": [
+      {
+        "kind": "unified-event-log.json",
+        "path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_adjudication_fix_001\\unified-event-log.json",
+        "sha256": "12d7c56f5c44b1f617bee5b4594e01970a38c469775aa6e89a43ace3ba7d2c29"
+      },
+      {
+        "kind": "session-log.json",
+        "path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_adjudication_fix_001\\session-log.json",
+        "sha256": "865574830ace70014c693e00719ad7965f810fc0a8665c2a54c593c801426ec4"
+      },
+      {
+        "kind": "result.json",
+        "path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_adjudication_fix_001\\result.json",
+        "sha256": "f4e0d92ca9d6fc2e14175aa7ff804c9f2d0116afa0e5ea7f5dc1f1b8516bd61a"
+      },
+      {
+        "kind": "pcs.json",
+        "path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_adjudication_fix_001\\checkpoints\\cycle_0001\\runtime_data\\pcs.json",
+        "sha256": "8b04641837d36786b541e2c3bbccead7b4ff025135b18765383c6e446861215e"
+      },
+      {
+        "kind": "npcs.json",
+        "path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_adjudication_fix_001\\checkpoints\\cycle_0001\\runtime_data\\npcs.json",
+        "sha256": "3c795e6098f97ae8e6240b9ed2412428ab332c91c30a1cb45b846d2f4628377c"
+      }
+    ],
+    "source_root": "F:\\制作物\\その3\\evaluation-v2\\corbitt_adjudication_fix_001",
+    "source_stream_counts": {
+      "session_log": 4,
+      "unified_event_log": 12
+    }
+  },
+  "scenario": {
+    "scenario_id": "scenario_corbitt.json",
+    "scenario_title": "悪霊の家",
+    "source": "trpg_evaluation_v2",
+    "version": null
+  },
+  "schema_version": "0.1",
+  "session_id": "corbitt_adjudication_fix_001"
+}

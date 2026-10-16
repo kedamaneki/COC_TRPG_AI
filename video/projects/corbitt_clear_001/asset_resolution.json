@@ -1,0 +1,111 @@
+{
+  "license_gate": {
+    "blocked_assets": [],
+    "local_preview_allowed": true,
+    "noncommercial_assets": [],
+    "publishable": false,
+    "review_ready": true,
+    "unknown_assets": [
+      "portrait_pc01_kitsune_reimu",
+      "portrait_pc02_kitsune_marisa",
+      "bg_neutral_user",
+      "dialogue_frame_user",
+      "bgm_investigation_user",
+      "se_dice_user",
+      "se_san_user"
+    ],
+    "warnings": [
+      "NON_PUBLISHABLE_ASSET_USED"
+    ]
+  },
+  "missing": [
+    {
+      "fallback_asset_id": "bg_neutral_user",
+      "location_id": "boston_globe",
+      "preferred_source": "scenario_specific",
+      "status": "USER_INPUT_REQUIRED",
+      "type": "background"
+    },
+    {
+      "fallback_asset_id": "bg_neutral_user",
+      "location_id": "central_library",
+      "preferred_source": "scenario_specific",
+      "status": "USER_INPUT_REQUIRED",
+      "type": "background"
+    },
+    {
+      "fallback_asset_id": "bg_neutral_user",
+      "location_id": "corbitt_basement",
+      "preferred_source": "scenario_specific",
+      "status": "USER_INPUT_REQUIRED",
+      "type": "background"
+    },
+    {
+      "fallback_asset_id": "bg_neutral_user",
+      "location_id": "corbitt_basement_room2",
+      "preferred_source": "scenario_specific",
+      "status": "USER_INPUT_REQUIRED",
+      "type": "background"
+    },
+    {
+      "fallback_asset_id": "bg_neutral_user",
+      "location_id": "corbitt_exterior",
+      "preferred_source": "scenario_specific",
+      "status": "USER_INPUT_REQUIRED",
+      "type": "background"
+    },
+    {
+      "fallback_asset_id": "bg_neutral_user",
+      "location_id": "corbitt_ground_floor",
+      "preferred_source": "scenario_specific",
+      "status": "USER_INPUT_REQUIRED",
+      "type": "background"
+    },
+    {
+      "fallback_asset_id": "bg_neutral_user",
+      "location_id": "corbitt_upper_floor",
+      "preferred_source": "scenario_specific",
+      "status": "USER_INPUT_REQUIRED",
+      "type": "background"
+    },
+    {
+      "fallback_asset_id": "bg_neutral_user",
+      "location_id": "introduction",
+      "preferred_source": "scenario_specific",
+      "status": "USER_INPUT_REQUIRED",
+      "type": "background"
+    },
+    {
+      "fallback_asset_id": "bg_neutral_user",
+      "location_id": "roxbury_sanitarium",
+      "preferred_source": "scenario_specific",
+      "status": "USER_INPUT_REQUIRED",
+      "type": "background"
+    },
+    {
+      "fallback_asset_id": "bg_neutral_user",
+      "location_id": "the_neighborhood",
+      "preferred_source": "scenario_specific",
+      "status": "USER_INPUT_REQUIRED",
+      "type": "background"
+    },
+    {
+      "character": "pc_02",
+      "fallback_asset_id": "portrait_pc02_kitsune_marisa",
+      "preferred_source": "licensed_voice_character_or_original_pc",
+      "status": "USER_INPUT_REQUIRED",
+      "type": "portrait"
+    }
+  ],
+  "publishability": "LOCAL_PREVIEW",
+  "resolved_count": 7,
+  "used_asset_ids": [
+    "bg_neutral_user",
+    "bgm_investigation_user",
+    "dialogue_frame_user",
+    "portrait_pc01_kitsune_reimu",
+    "portrait_pc02_kitsune_marisa",
+    "se_dice_user",
+    "se_san_user"
+  ]
+}

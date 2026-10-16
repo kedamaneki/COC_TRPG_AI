@@ -1,0 +1,110 @@
+[
+  {
+    "cycle": 30,
+    "game_turn": 78,
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE",
+    "target_statuses": {
+      "chapel_ruins": "EXHAUSTED",
+      "chapel_secret_cellar": "EXHAUSTED",
+      "cult_diary": "UNSEEN",
+      "grimoire_book_of_eibon": "UNSEEN",
+      "rotting_floorboards": "EXHAUSTED",
+      "shelf_with_records": "UNSEEN",
+      "skeletons_in_robes": "UNSEEN",
+      "white_symbol": "EXHAUSTED"
+    },
+    "candidate_count": 0,
+    "transition_classification": "NEVER_ENTERED_TRANSITION"
+  },
+  {
+    "cycle": 31,
+    "game_turn": 82,
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE",
+    "target_statuses": {
+      "chapel_ruins": "EXHAUSTED",
+      "chapel_secret_cellar": "EXHAUSTED",
+      "cult_diary": "UNSEEN",
+      "grimoire_book_of_eibon": "UNSEEN",
+      "rotting_floorboards": "EXHAUSTED",
+      "shelf_with_records": "UNSEEN",
+      "skeletons_in_robes": "UNSEEN",
+      "white_symbol": "EXHAUSTED"
+    },
+    "candidate_count": 0,
+    "transition_classification": "NEVER_ENTERED_TRANSITION"
+  },
+  {
+    "cycle": 32,
+    "game_turn": 87,
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE",
+    "target_statuses": {
+      "chapel_ruins": "EXHAUSTED",
+      "chapel_secret_cellar": "EXHAUSTED",
+      "cult_diary": "UNSEEN",
+      "grimoire_book_of_eibon": "UNSEEN",
+      "rotting_floorboards": "EXHAUSTED",
+      "shelf_with_records": "UNSEEN",
+      "skeletons_in_robes": "UNSEEN",
+      "white_symbol": "EXHAUSTED"
+    },
+    "candidate_count": 0,
+    "transition_classification": "NEVER_ENTERED_TRANSITION"
+  },
+  {
+    "cycle": 33,
+    "game_turn": 92,
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE",
+    "target_statuses": {
+      "chapel_ruins": "EXHAUSTED",
+      "chapel_secret_cellar": "EXHAUSTED",
+      "cult_diary": "UNSEEN",
+      "grimoire_book_of_eibon": "UNSEEN",
+      "rotting_floorboards": "EXHAUSTED",
+      "shelf_with_records": "UNSEEN",
+      "skeletons_in_robes": "UNSEEN",
+      "white_symbol": "EXHAUSTED"
+    },
+    "candidate_count": 0,
+    "transition_classification": "NEVER_ENTERED_TRANSITION"
+  },
+  {
+    "cycle": 34,
+    "game_turn": 94,
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE",
+    "target_statuses": {
+      "chapel_ruins": "EXHAUSTED",
+      "chapel_secret_cellar": "EXHAUSTED",
+      "cult_diary": "UNSEEN",
+      "grimoire_book_of_eibon": "UNSEEN",
+      "rotting_floorboards": "EXHAUSTED",
+      "shelf_with_records": "UNSEEN",
+      "skeletons_in_robes": "UNSEEN",
+      "white_symbol": "EXHAUSTED"
+    },
+    "candidate_count": 0,
+    "transition_classification": "NEVER_ENTERED_TRANSITION"
+  },
+  {
+    "cycle": 35,
+    "game_turn": 95,
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE",
+    "target_statuses": {
+      "chapel_ruins": "EXHAUSTED",
+      "chapel_secret_cellar": "EXHAUSTED",
+      "cult_diary": "UNSEEN",
+      "grimoire_book_of_eibon": "UNSEEN",
+      "rotting_floorboards": "EXHAUSTED",
+      "shelf_with_records": "UNSEEN",
+      "skeletons_in_robes": "UNSEEN",
+      "white_symbol": "EXHAUSTED"
+    },
+    "candidate_count": 0,
+    "transition_classification": "NEVER_ENTERED_TRANSITION"
+  }
+]

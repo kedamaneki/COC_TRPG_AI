@@ -1,0 +1,34 @@
+﻿[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Name,Noto Sans JP,42,&H00FFFFFF,&H00FFFFFF,&H00101010,&H50000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,250,1
+Style: BodyOuter,Noto Sans JP,64,&HFFFFFFFF,&HFFFFFFFF,&H00101010,&H50000000,-1,0,0,0,100,100,0,0,1,10,0,2,100,100,70,1
+Style: BodyInner,Noto Sans JP,64,&HFFFFFFFF,&HFFFFFFFF,&H00FFFFFF,&H50000000,-1,0,0,0,100,100,0,0,1,5,0,2,100,100,70,1
+Style: Body,Noto Sans JP,64,&H00FFFFFF,&H00FFFFFF,&H00000000,&H50000000,-1,0,0,0,100,100,0,0,1,0,0,2,100,100,70,1
+Style: Dice,Noto Sans JP,54,&H0000FFFF,&H0000FFFF,&H00101010,&H70000000,-1,0,0,0,100,100,0,0,3,3,0,8,80,80,70,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 3,0:00:00.00,0:00:04.02,Name,,0,0,0,,{\pos(960,700)}マクガフィン刑事
+Dialogue: 0,0:00:00.00,0:00:04.02,BodyOuter,,0,0,0,,散乱した家具や荷物を手がかりの可能性を探ってみる。
+Dialogue: 1,0:00:00.00,0:00:04.02,BodyInner,,0,0,0,,散乱した家具や荷物を手がかりの可能性を探ってみる。
+Dialogue: 2,0:00:00.00,0:00:04.02,Body,,0,0,0,,{\1c&H003030FF}散乱した家具や荷物を手がかりの可能性を探ってみる。
+Dialogue: 4,0:00:04.02,0:00:07.37,Dice,,0,0,0,,目星 65  /  1D100 → 93  /  失敗
+Dialogue: 3,0:00:07.37,0:00:21.14,Name,,0,0,0,,{\pos(960,700)}KP
+Dialogue: 0,0:00:07.37,0:00:21.14,BodyOuter,,0,0,0,,{\fs48}リビングルームに散乱している家具や荷物を細かく調べたが、これ以上の手\Nがかりを見つけ出すことはできなかったようだ。壁や床に目を細めて探して\Nも、不気味な染みや引きずられた跡といった痕跡は見つけることができない\N。これ以上調べても時間が無駄になりそうだ。どうしますか？
+Dialogue: 1,0:00:07.37,0:00:21.14,BodyInner,,0,0,0,,{\fs48}リビングルームに散乱している家具や荷物を細かく調べたが、これ以上の手\Nがかりを見つけ出すことはできなかったようだ。壁や床に目を細めて探して\Nも、不気味な染みや引きずられた跡といった痕跡は見つけることができない\N。これ以上調べても時間が無駄になりそうだ。どうしますか？
+Dialogue: 2,0:00:07.37,0:00:21.14,Body,,0,0,0,,{\1c&H00FFFFFF}{\fs48}リビングルームに散乱している家具や荷物を細かく調べたが、これ以上の手\Nがかりを見つけ出すことはできなかったようだ。壁や床に目を細めて探して\Nも、不気味な染みや引きずられた跡といった痕跡は見つけることができない\N。これ以上調べても時間が無駄になりそうだ。どうしますか？
+Dialogue: 3,0:00:21.14,0:00:25.02,Name,,0,0,0,,{\pos(960,700)}エレノア教授
+Dialogue: 0,0:00:21.14,0:00:25.02,BodyOuter,,0,0,0,,地下室の扉を見つめ、その周りを詳しく調べる。
+Dialogue: 1,0:00:21.14,0:00:25.02,BodyInner,,0,0,0,,地下室の扉を見つめ、その周りを詳しく調べる。
+Dialogue: 2,0:00:21.14,0:00:25.02,Body,,0,0,0,,{\1c&H0040F0FF}地下室の扉を見つめ、その周りを詳しく調べる。
+Dialogue: 4,0:00:25.02,0:00:28.37,Dice,,0,0,0,,目星 50  /  1D100 → 95  /  失敗
+Dialogue: 3,0:00:28.37,0:00:35.31,Name,,0,0,0,,{\pos(960,700)}エレノア教授
+Dialogue: 0,0:00:28.37,0:00:35.31,BodyOuter,,0,0,0,,【プッシュ方針】地下室の扉の周りの細かい痕跡を探し、時間をかけて丁寧\Nに調べ直す。
+Dialogue: 1,0:00:28.37,0:00:35.31,BodyInner,,0,0,0,,【プッシュ方針】地下室の扉の周りの細かい痕跡を探し、時間をかけて丁寧\Nに調べ直す。
+Dialogue: 2,0:00:28.37,0:00:35.31,Body,,0,0,0,,{\1c&H0040F0FF}【プッシュ方針】地下室の扉の周りの細かい痕跡を探し、時間をかけて丁寧\Nに調べ直す。

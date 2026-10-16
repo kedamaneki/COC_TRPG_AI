@@ -1,0 +1,20 @@
+{
+  "buses": {
+    "bgm": {
+      "duck_gain_db": -9,
+      "duck_trigger": "speech_active",
+      "fade_sec": 0.6,
+      "gain_db": -24
+    },
+    "se": {
+      "gain_db": -18,
+      "sparse": true
+    },
+    "voice": {
+      "priority": 1,
+      "target_lufs": -20
+    }
+  },
+  "limiter": 0.95,
+  "schema_version": "0.1"
+}

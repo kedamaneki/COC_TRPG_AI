@@ -1,0 +1,94 @@
+{
+  "checks": [
+    {
+      "detail": 678,
+      "name": "all_events_accounted",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "unsupported_source_zero",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "source_provenance_100_percent",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "protected_event_loss_zero",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "system_attribution_clean",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "dialogue_attribution",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "ungrounded_generated_dialogue_zero",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "broken_combat_context": [],
+        "broken_ending_context": [],
+        "metadata": {
+          "model": "deterministic_continuity_v1",
+          "prompt_version": "continuity_qa_prompt_v1",
+          "provider": "local"
+        },
+        "missing_clue_origin": [],
+        "missing_context": [],
+        "missing_item_origin": [],
+        "orphan_reference": [],
+        "status": "PASS",
+        "unexplained_location_change": []
+      },
+      "name": "continuity_major_errors_zero",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "ending_preserved",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "combat_context_preserved",
+      "status": "PASS"
+    }
+  ],
+  "metrics": {
+    "cut_rate": 0.3702,
+    "nearby_repetition_pairs": [
+      [
+        "scene_039_script_001",
+        "scene_041_script_001"
+      ],
+      [
+        "scene_040_script_001",
+        "scene_042_script_001"
+      ],
+      [
+        "scene_041_script_001",
+        "scene_043_script_001"
+      ],
+      [
+        "scene_042_script_001",
+        "scene_044_script_001"
+      ]
+    ],
+    "self_name_prefix_remaining": 0
+  },
+  "status": "PASS",
+  "warnings": [
+    "NEARBY_REPETITION_REMAINS"
+  ]
+}

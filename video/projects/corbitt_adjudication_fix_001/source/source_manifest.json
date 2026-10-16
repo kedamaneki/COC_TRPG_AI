@@ -1,0 +1,29 @@
+{
+  "source_files": [
+    {
+      "kind": "unified-event-log.json",
+      "path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_adjudication_fix_001\\unified-event-log.json",
+      "sha256": "12d7c56f5c44b1f617bee5b4594e01970a38c469775aa6e89a43ace3ba7d2c29"
+    },
+    {
+      "kind": "session-log.json",
+      "path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_adjudication_fix_001\\session-log.json",
+      "sha256": "865574830ace70014c693e00719ad7965f810fc0a8665c2a54c593c801426ec4"
+    },
+    {
+      "kind": "result.json",
+      "path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_adjudication_fix_001\\result.json",
+      "sha256": "f4e0d92ca9d6fc2e14175aa7ff804c9f2d0116afa0e5ea7f5dc1f1b8516bd61a"
+    },
+    {
+      "kind": "pcs.json",
+      "path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_adjudication_fix_001\\checkpoints\\cycle_0001\\runtime_data\\pcs.json",
+      "sha256": "8b04641837d36786b541e2c3bbccead7b4ff025135b18765383c6e446861215e"
+    },
+    {
+      "kind": "npcs.json",
+      "path": "F:\\制作物\\その3\\evaluation-v2\\corbitt_adjudication_fix_001\\checkpoints\\cycle_0001\\runtime_data\\npcs.json",
+      "sha256": "3c795e6098f97ae8e6240b9ed2412428ab332c91c30a1cb45b846d2f4628377c"
+    }
+  ]
+}

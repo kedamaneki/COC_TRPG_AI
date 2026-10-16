@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-15T00:08:46.7288892+09:00",
+  "FULL_VIDEO_AGENT_CHECKOUT": "COMPLETE",
+  "VIDEO_AGENT_TESTS_COLLECTED": 189,
+  "VIDEO_AGENT_TESTS_PASS": 189,
+  "VIDEO_AGENT_TESTS_FAIL": 0,
+  "FULL_VIDEO_AGENT_186_REGRESSION": "PASS",
+  "CORE_TESTS": 579,
+  "CORE_SUBTESTS": 23,
+  "CORE_FAIL": 0,
+  "EARLY_GATE_EVIDENCE_FIX": "PASS",
+  "EVENT_ID_LIFECYCLE_FIX": "PASS",
+  "SEGMENT_COVERAGE_FIX": "PASS",
+  "ROLL_CONTRACT_INCOMPLETE_fixture": 0,
+  "NORMALIZATION_SOURCE_CONTRADICTION_fixture": 0,
+  "lifecycle_misclassification": 0,
+  "segment_missing": 0,
+  "segment_duplicate": 0,
+  "segment_unexpected": 0,
+  "segment_coverage": 1.0,
+  "traceability": 1.0,
+  "dropped_events": 0,
+  "legacy_text_parse": 0,
+  "FORMAL_AUDITOR_FIXTURES": "PASS",
+  "AUDITOR_CONTRACT": {
+    "valid_roll_findings": 0,
+    "invalid_roll_findings": 1,
+    "valid_no_roll_findings": 0,
+    "invalid_no_roll_findings": 1
+  },
+  "SPECIAL_OBJECTIVE_UNKNOWN_PROTECTION": "PASS",
+  "focused_tests": {
+    "core_evidence_checkpoint": 29,
+    "video_evidence_normalizer_auditor": 33,
+    "special_objective_unknown": 5,
+    "auditor_early_gate": 22
+  },
+  "implementation_identity": {
+    "school_expected": {
+      "formal_evidence": "74b97f04d9acd235b3662f82295c5e997227901ff73e8c9eb4e93560244a050e",
+      "checkpoint_segment": "1b9898872e6bdff805b6bedf3a029f22c6fb9dcda4543aae43206b2536966236",
+      "normalizer": "a33ac9bc8d6b18d8465abb145c35e39a0c8eabdcc2674570b30dc771d4fa9b30",
+      "auditor": "bd5444dcd67f9e90c12f2723e7f307efce96456d1802ee345ed05c1ab46bb90e"
+    },
+    "current": {
+      "formal_evidence": "74b97f04d9acd235b3662f82295c5e997227901ff73e8c9eb4e93560244a050e",
+      "checkpoint_segment": "1b9898872e6bdff805b6bedf3a029f22c6fb9dcda4543aae43206b2536966236",
+      "normalizer": "13c68e527a95aa012d5c6ff1152f6e13edf64732f6fa8249dfdbd11b874e156c",
+      "auditor": "bd5444dcd67f9e90c12f2723e7f307efce96456d1802ee345ed05c1ab46bb90e",
+      "early_fixture": "2a3495f98de92e922e1a584ad6712900c8bf94c0853f9fefb741b339604054a5"
+    },
+    "comparison": {
+      "formal_evidence": "MATCH",
+      "checkpoint_segment": "MATCH",
+      "auditor": "MATCH",
+      "normalizer": "DIFF_EXPECTED_COMPLETE_CHECKOUT",
+      "normalizer_difference_reason": "学校の縮小bundleにないbase_target/final_target、roll_result/effect_result/objective_outcome、structured source priority、adjudication phase propagationを保持し、dice_used単独抑止と明示legacy text互換を併存させたため"
+    }
+  },
+  "frozen_runs": {
+    "CORBITT_LONGRUN_ITERATION2_V2_HOME_001": "24/24 HASH PASS",
+    "CORBITT_LONGRUN_ITERATION3_V1_HOME_001": "100/100 HASH PASS",
+    "school_run": "NOT_RESUMED_NOT_OUTPUT_TARGET"
+  },
+  "NEXT_FULL_LONG_ALLOWED": true,
+  "VIDEO_SOURCE_ELIGIBLE": false,
+  "next_run_constraints": {
+    "new_session_id": true,
+    "cycle": 0,
+    "resume_count": 0,
+    "migration": null,
+    "early_gate_required": true
+  },
+  "full_long_started": false
+}

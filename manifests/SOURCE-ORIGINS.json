@@ -1,0 +1,26 @@
+[
+  {
+    "component": "core",
+    "source_path": "F:\\制作物\\その3",
+    "canonical_path": "core",
+    "role": "accepted_production"
+  },
+  {
+    "component": "video",
+    "source_path": "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-04\\referenced-chatgpt-conversation-this-is-an\\video-production-agent",
+    "canonical_path": "video",
+    "role": "accepted_production"
+  },
+  {
+    "component": "auditor",
+    "source_path": "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-04\\referenced-chatgpt-conversation-this-is-an\\video-production-agent\\tools\\audit_longrun_formal_v2.py",
+    "canonical_path": "tools/auditor/audit_longrun_formal_v2.py",
+    "role": "accepted_production"
+  },
+  {
+    "component": "night_guard",
+    "source_path": "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-15\\referenced-chatgpt-conversation-this-is-an\\outputs\\night_guard.py",
+    "canonical_path": "tools/night_guard/night_guard.py",
+    "role": "accepted_production"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "character_id": "preset_reimu",
+    "display_name": "霊夢",
+    "role": "PC",
+    "voice_profile_id": "aq_reimu_default",
+    "subtitle_profile_id": "subtitle_reimu",
+    "portrait_profile_id": "portrait_reimu_kitune_legacy"
+  },
+  {
+    "character_id": "preset_marisa",
+    "display_name": "魔理沙",
+    "role": "PC",
+    "voice_profile_id": "aq_marisa_default",
+    "subtitle_profile_id": "subtitle_marisa",
+    "portrait_profile_id": "portrait_marisa_kitune_legacy"
+  },
+  {
+    "character_id": "kp_default",
+    "display_name": "KP",
+    "role": "KP",
+    "voice_profile_id": "voice_none",
+    "subtitle_profile_id": "subtitle_kp",
+    "portrait_profile_id": "NONE"
+  }
+]

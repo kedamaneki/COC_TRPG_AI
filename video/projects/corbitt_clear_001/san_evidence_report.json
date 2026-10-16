@@ -1,0 +1,67 @@
+{
+  "audit_status": "GAPS_FOUND",
+  "san_check_count": 1,
+  "checks": [
+    {
+      "check_id": "norm:session:000312",
+      "source_event_ids": [
+        "session_log:000312"
+      ],
+      "actor": "pc_02 / エレノア教授",
+      "trigger_event": "corbitt_knife encounter; trigger_knife_attack false→true",
+      "trigger_source_event_id": "evt_000233_bf4199391d793e604605",
+      "san_before": 70,
+      "san_roll": 40,
+      "san_target": 70,
+      "san_result": "成功",
+      "loss_rule_success": "0",
+      "loss_rule_failure": "1D4 (runtime encounter payload)",
+      "runtime_resolved_failure_formula": "1d3 fallback when value is a single formula",
+      "actual_roll_formula": "0 (success branch)",
+      "actual_loss": 0,
+      "san_after": 70,
+      "state_value_basis": "L1 text explicitly says current=70 and loss=0; checkpoint also records current SAN 70.",
+      "l1_complete": true,
+      "l2_structured_values": null,
+      "l2_complete": false,
+      "presentation_present": true,
+      "presentation_overlay": {
+        "after": null,
+        "before": null,
+        "loss": null,
+        "result": null,
+        "type": "SAN"
+      },
+      "overlay_placeholders": [
+        "null",
+        "null",
+        "null",
+        "null"
+      ],
+      "classification": "NORMALIZATION_GAP",
+      "severity": "MAJOR",
+      "recommended_fix_layer": "Normalizer",
+      "causality": {
+        "trigger": "PRESENT",
+        "san_check": "PRESENT_IN_L1_TEXT",
+        "san_result": "PRESENT_IN_L1_TEXT",
+        "san_change": "PRESENT (0 loss)"
+      }
+    }
+  ],
+  "schema_bug": {
+    "issue_id": "TRPG_CORE_SAN_LOSS_SCHEMA_BUG",
+    "scenario_schema_value": "1D4",
+    "runtime_payload_source": "build_corbitt_scenario.py corbitt_knife encounter",
+    "runtime_resolver_behavior": "A slash-form value is honored. A single value is ignored on failure and fail_loss defaults to 1d3.",
+    "actual_session_impact": "Not observable because this check succeeded and lost 0 SAN.",
+    "classification": "SOURCE_GAMEPLAY_GAP",
+    "severity": "MAJOR",
+    "recommended_fix_layer": "TRPG Core",
+    "evidence_files": [
+      "F:\\制作物\\その3\\evaluation-v2\\seed_2101_goal_completion_sync_fix\\checkpoints\\cycle_000029\\runtime_data\\datasets\\corbitt_house.json",
+      "F:\\制作物\\その3\\src\\build_corbitt_scenario.py:486",
+      "F:\\制作物\\その3\\src\\main.py:2299"
+    ]
+  }
+}

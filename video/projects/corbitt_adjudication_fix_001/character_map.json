@@ -1,0 +1,61 @@
+{
+  "mappings": [
+    {
+      "character_profile_id": null,
+      "source_actor_id": "new_investigator"
+    },
+    {
+      "character_profile_id": null,
+      "source_actor_id": "pc_01"
+    },
+    {
+      "character_profile_id": null,
+      "source_actor_id": "pc_02"
+    },
+    {
+      "character_profile_id": null,
+      "source_actor_id": "artie_wilmott"
+    },
+    {
+      "character_profile_id": null,
+      "source_actor_id": "corbitt_floating_dagger"
+    },
+    {
+      "character_profile_id": null,
+      "source_actor_id": "dolly_shopkeeper"
+    },
+    {
+      "character_profile_id": null,
+      "source_actor_id": "globe_receptionist"
+    },
+    {
+      "character_profile_id": null,
+      "source_actor_id": "hall_records_clerk"
+    },
+    {
+      "character_profile_id": null,
+      "source_actor_id": "kim_deblanc"
+    },
+    {
+      "character_profile_id": null,
+      "source_actor_id": "npc_guard_01"
+    },
+    {
+      "character_profile_id": null,
+      "source_actor_id": "npc_neighbor_elder"
+    },
+    {
+      "character_profile_id": null,
+      "source_actor_id": "npc_thug"
+    },
+    {
+      "character_profile_id": null,
+      "source_actor_id": "steven_knott"
+    },
+    {
+      "character_profile_id": null,
+      "source_actor_id": "walter_corbitt"
+    }
+  ],
+  "schema_version": "0.1"
+}

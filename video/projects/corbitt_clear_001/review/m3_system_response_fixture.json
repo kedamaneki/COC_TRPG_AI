@@ -1,0 +1,83 @@
+{
+  "cases": [
+    {
+      "actual": {
+        "action": "HIDE",
+        "confidence": "HIGH",
+        "evidence": [
+          "ADJACENT_EXPLICIT_SYSTEM_PROMPT",
+          "ADJACENT_SYSTEM_EVENT_BEFORE"
+        ],
+        "is_system_response": true,
+        "normalized_response": "yes"
+      },
+      "expected_action": "HIDE",
+      "name": "SYSTEM Push Yes",
+      "pass": true
+    },
+    {
+      "actual": {
+        "action": "HIDE",
+        "confidence": "HIGH",
+        "evidence": [
+          "ADJACENT_EXPLICIT_SYSTEM_PROMPT",
+          "ADJACENT_SYSTEM_EVENT_BEFORE"
+        ],
+        "is_system_response": true,
+        "normalized_response": "no"
+      },
+      "expected_action": "HIDE",
+      "name": "SYSTEM Push No",
+      "pass": true
+    },
+    {
+      "actual": {
+        "action": "KEEP",
+        "confidence": "LOW",
+        "evidence": [],
+        "is_system_response": false
+      },
+      "expected_action": "KEEP",
+      "name": "NPC conversation",
+      "pass": true
+    },
+    {
+      "actual": {
+        "action": "KEEP",
+        "confidence": "LOW",
+        "evidence": [],
+        "is_system_response": false
+      },
+      "expected_action": "KEEP",
+      "name": "KP conversation",
+      "pass": true
+    }
+  ],
+  "false_positive_count": 0,
+  "fixture_version": "0.1",
+  "observed_preview": {
+    "candidates": [
+      {
+        "action": "HIDE",
+        "confidence": "HIGH",
+        "evidence": [
+          "ADJACENT_SYSTEM_EVENT_BEFORE",
+          "ADJACENT_SYSTEM_EVENT_AFTER"
+        ],
+        "is_system_response": true,
+        "normalized_response": "yes",
+        "script_line_id": "scene_048_script_006",
+        "source_event_ids": [
+          "norm:session:000310",
+          "session_log:000310"
+        ]
+      }
+    ],
+    "false_positive_count": 0,
+    "system_response_candidates": 1,
+    "system_response_leak_count": 0,
+    "system_responses_hidden": 1,
+    "system_responses_overlay_only": 0,
+    "system_responses_subtitle_only": 0
+  }
+}

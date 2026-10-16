@@ -1,0 +1,308 @@
+{
+  "fixture_id": "CYCLE30_POST_CHAPEL_BASEMENT_EXIT",
+  "derived_from": "F:\\制作物\\その3\\evaluation-v2\\seed_2101_action_availability_fix\\checkpoints\\cycle_000030",
+  "source_checkpoint_unchanged": true,
+  "cycle": 30,
+  "game_turn": 78,
+  "first_post_chapel_completion_event": "evt_000275_895b1d6981e57f540c6f",
+  "current_location": "chapel_of_contemplation",
+  "current_phase": "investigation",
+  "scene_state": {
+    "scene_id": "scene_001",
+    "scene_objective": null,
+    "scene_completion": null,
+    "scene_next_transition": null,
+    "scene_lock": null,
+    "note": "checkpoint stores only scene_001 id; no scene-local objective/lock state exists"
+  },
+  "combat": {
+    "state": "INACTIVE",
+    "in_combat": false,
+    "queue": []
+  },
+  "pending_state": {
+    "pending_action_id": null,
+    "pending_decision": null,
+    "pending_push_roll": null,
+    "pending_san_check": null,
+    "timeline_pending": null,
+    "normalization_note": "analysis fixture clears the checkpoint boundary pending_action_id only; the source checkpoint is not modified"
+  },
+  "active_actor": "pc_02",
+  "active_pc_id": "pc_02",
+  "active_pcs": [
+    "pc_01",
+    "pc_02"
+  ],
+  "pc_state": {
+    "pc_01": {
+      "name": "マクガフィン刑事",
+      "hp": {
+        "current": 12,
+        "max": 12
+      },
+      "san": {
+        "current": 55,
+        "max": 99,
+        "session_start": 55,
+        "session_start_san": 55
+      },
+      "luck": 45,
+      "states": [],
+      "investigated_targets": [
+        "newspaper_archives",
+        "police_archives",
+        "corbitt_house_exterior_view",
+        "chapel_secret_cellar"
+      ],
+      "known_knowledge_ids": [
+        "secret:steven_knott:secret_case_brief",
+        "secret:steven_knott:secret_tenant_hint",
+        "object:newspaper_archives",
+        "secret:hall_records_clerk:secret_jurisdiction",
+        "object:police_archives",
+        "secret:dolly_shopkeeper:secret_corbitt_house_name",
+        "secret:dolly_shopkeeper:secret_macario_family",
+        "secret:dolly_shopkeeper:secret_chapel_location",
+        "secret:dolly_shopkeeper:secret_sanitarium_hint",
+        "object:corbitt_house_exterior_view",
+        "object:chapel_secret_cellar"
+      ]
+    },
+    "pc_02": {
+      "name": "エレノア教授",
+      "hp": {
+        "current": 10,
+        "max": 10
+      },
+      "san": {
+        "current": 70,
+        "max": 99,
+        "session_start": 70,
+        "session_start_san": 70
+      },
+      "luck": 50,
+      "states": [],
+      "investigated_targets": [
+        "local_history_section",
+        "patient_records",
+        "vittorio_macario",
+        "gabriella_macario",
+        "white_symbol",
+        "rotting_floorboards"
+      ],
+      "known_knowledge_ids": [
+        "secret:steven_knott:secret_case_brief",
+        "secret:steven_knott:secret_tenant_hint",
+        "object:local_history_section",
+        "secret:hall_records_clerk:secret_jurisdiction",
+        "secret:dolly_shopkeeper:secret_corbitt_house_name",
+        "secret:dolly_shopkeeper:secret_macario_family",
+        "secret:dolly_shopkeeper:secret_chapel_location",
+        "secret:dolly_shopkeeper:secret_sanitarium_hint",
+        "object:patient_records",
+        "object:vittorio_macario",
+        "object:gabriella_macario",
+        "object:white_symbol",
+        "object:rotting_floorboards"
+      ]
+    }
+  },
+  "flags": {
+    "artie_introduced": false,
+    "back_door_unlocked": false,
+    "basement_accessible": false,
+    "basement_door_examined": false,
+    "basement_door_unlocked": false,
+    "basement_planks_broken": false,
+    "basement_planks_examined": false,
+    "case_accepted": true,
+    "chapel_cellar_entered": false,
+    "chapel_investigated": true,
+    "corbitt_body_encountered": false,
+    "corbitt_defeated": false,
+    "corbitt_house_entered": false,
+    "corbitt_house_examined": false,
+    "corbitt_house_observed": true,
+    "dolly_talked": true,
+    "dolly_told_chapel_location": true,
+    "dolly_told_sanitarium_location": true,
+    "exterior_approached": true,
+    "floorboards_examined": true,
+    "found_corbitt_history_all": true,
+    "found_newspaper_article_1918": true,
+    "front_door_unlocked": false,
+    "gabriella_interviewed": true,
+    "ground_floor_haunting_done": false,
+    "hall_of_records_clerk_interacted": true,
+    "has_corbitt_knife": false,
+    "hidden_passage_found": false,
+    "higher_courts_records_accessed": true,
+    "in_basement": false,
+    "investigated_targets": [
+      "chapel_secret_cellar",
+      "corbitt_house_exterior_view",
+      "gabriella_macario",
+      "local_history_section",
+      "newspaper_archives",
+      "patient_records",
+      "police_archives",
+      "rotting_floorboards",
+      "vittorio_macario",
+      "white_symbol"
+    ],
+    "junk_searched": false,
+    "kim_deblanc_interacted": true,
+    "knott_letter_read": true,
+    "knott_memo_read": true,
+    "learned_corbitt_weakness": false,
+    "library_info_found": false,
+    "living_room_investigated": false,
+    "neighbor_gossip_found": true,
+    "newspaper_info_found": false,
+    "records_info_found": false,
+    "ruined_altar_investigated": false,
+    "sanitarium_info_found": true,
+    "spare_bedroom_bed_investigated": false,
+    "symbol_investigated": true,
+    "talked_with_knott": true,
+    "trigger_corbitt_boss_battle": false,
+    "trigger_flying_bed": false,
+    "trigger_knife_attack": false,
+    "turn_since_last_search": 0,
+    "visit_central_library": 1,
+    "visit_chapel_of_contemplation": 1,
+    "visit_corbitt_exterior": 1,
+    "visit_hall_of_records": 2,
+    "visit_higher_courts_police_station": 2,
+    "visit_roxbury_sanitarium": 4,
+    "visit_the_neighborhood": 5,
+    "vittorio_interviewed": true
+  },
+  "goal_state": {
+    "active_goal": "悪霊の家を完了する",
+    "active_subgoal": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "completed_goals": [
+      "flag:corbitt_defeated=false",
+      "flag:learned_corbitt_weakness=false"
+    ],
+    "remaining_requirements": [
+      "flag:corbitt_body_encountered=true",
+      "location:corbitt_basement_room2",
+      "action:break/force/attack/use/push/kick/corbitt_body"
+    ],
+    "blocked_requirements": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "next_goal_candidate": [],
+    "goal_transition_event": null,
+    "transition_reason": "global terminal goal remains active",
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE"
+  },
+  "director_target_statuses": {
+    "chapel_ruins": "EXHAUSTED",
+    "chapel_secret_cellar": "EXHAUSTED",
+    "cult_diary": "UNSEEN",
+    "grimoire_book_of_eibon": "UNSEEN",
+    "rotting_floorboards": "EXHAUSTED",
+    "shelf_with_records": "UNSEEN",
+    "skeletons_in_robes": "UNSEEN",
+    "white_symbol": "EXHAUSTED"
+  },
+  "director_stall": {
+    "intervention_level": "S4",
+    "max_no_progress_streak": 23,
+    "max_roundtrip_count": 0,
+    "no_progress_streak": 23,
+    "recent_actions": [
+      [
+        "push",
+        "rotting_floorboards"
+      ],
+      [
+        "search",
+        "chapel_ruins"
+      ],
+      [
+        "push",
+        "rotting_floorboards"
+      ],
+      [
+        "search",
+        "chapel_ruins"
+      ],
+      [
+        "push",
+        "rotting_floorboards"
+      ],
+      [
+        "search",
+        "cult_diary"
+      ],
+      [
+        "break",
+        "rotting_floorboards"
+      ],
+      [
+        "search",
+        "chapel_ruins"
+      ]
+    ],
+    "recent_failed_actions": [
+      [
+        "push",
+        "rotting_floorboards"
+      ],
+      [
+        "search",
+        "chapel_ruins"
+      ],
+      [
+        "push",
+        "rotting_floorboards"
+      ],
+      [
+        "search",
+        "chapel_ruins"
+      ],
+      [
+        "push",
+        "rotting_floorboards"
+      ],
+      [
+        "search",
+        "cult_diary"
+      ],
+      [
+        "break",
+        "rotting_floorboards"
+      ],
+      [
+        "search",
+        "chapel_ruins"
+      ]
+    ],
+    "recent_locations": [
+      "chapel_of_contemplation",
+      "chapel_of_contemplation",
+      "chapel_of_contemplation",
+      "chapel_of_contemplation",
+      "chapel_of_contemplation",
+      "chapel_of_contemplation",
+      "chapel_of_contemplation",
+      "chapel_of_contemplation",
+      "chapel_of_contemplation",
+      "chapel_of_contemplation"
+    ],
+    "roundtrip_count": 0,
+    "s4_override_used": true,
+    "same_action_streak": 1,
+    "signals": [
+      "consecutive_no_progress",
+      "known_failed_action_reselected"
+    ]
+  }
+}

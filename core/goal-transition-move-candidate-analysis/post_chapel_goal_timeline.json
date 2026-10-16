@@ -1,0 +1,373 @@
+[
+  {
+    "cycle": 25,
+    "game_turn": 57,
+    "location": "chapel_of_contemplation",
+    "scene": "scene_001",
+    "active_goal": "悪霊の家を完了する",
+    "active_subgoal": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "completed_goals": [
+      "flag:corbitt_defeated=false",
+      "flag:learned_corbitt_weakness=false"
+    ],
+    "remaining_requirements": [
+      "flag:corbitt_body_encountered=true",
+      "location:corbitt_basement_room2",
+      "action:break/force/attack/use/push/kick/corbitt_body"
+    ],
+    "blocked_requirements": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "next_goal_candidate": [],
+    "goal_transition_event": null,
+    "transition_reason": "global terminal goal remains active",
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE"
+  },
+  {
+    "cycle": 26,
+    "game_turn": 58,
+    "location": "chapel_of_contemplation",
+    "scene": "scene_001",
+    "active_goal": "悪霊の家を完了する",
+    "active_subgoal": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "completed_goals": [
+      "flag:corbitt_defeated=false",
+      "flag:learned_corbitt_weakness=false"
+    ],
+    "remaining_requirements": [
+      "flag:corbitt_body_encountered=true",
+      "location:corbitt_basement_room2",
+      "action:break/force/attack/use/push/kick/corbitt_body"
+    ],
+    "blocked_requirements": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "next_goal_candidate": [],
+    "goal_transition_event": null,
+    "transition_reason": "global terminal goal remains active",
+    "action_phase": "EXECUTE",
+    "location_objective_status": "ACTIVE"
+  },
+  {
+    "cycle": 27,
+    "game_turn": 60,
+    "location": "chapel_of_contemplation",
+    "scene": "scene_001",
+    "active_goal": "悪霊の家を完了する",
+    "active_subgoal": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "completed_goals": [
+      "flag:corbitt_defeated=false",
+      "flag:learned_corbitt_weakness=false"
+    ],
+    "remaining_requirements": [
+      "flag:corbitt_body_encountered=true",
+      "location:corbitt_basement_room2",
+      "action:break/force/attack/use/push/kick/corbitt_body"
+    ],
+    "blocked_requirements": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "next_goal_candidate": [],
+    "goal_transition_event": null,
+    "transition_reason": "global terminal goal remains active",
+    "action_phase": "EXECUTE",
+    "location_objective_status": "ACTIVE"
+  },
+  {
+    "cycle": 28,
+    "game_turn": 65,
+    "location": "chapel_of_contemplation",
+    "scene": "scene_001",
+    "active_goal": "悪霊の家を完了する",
+    "active_subgoal": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "completed_goals": [
+      "flag:corbitt_defeated=false",
+      "flag:learned_corbitt_weakness=false"
+    ],
+    "remaining_requirements": [
+      "flag:corbitt_body_encountered=true",
+      "location:corbitt_basement_room2",
+      "action:break/force/attack/use/push/kick/corbitt_body"
+    ],
+    "blocked_requirements": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "next_goal_candidate": [
+      {
+        "action": "push",
+        "availability_context_version": "action:chapel_of_contemplation:de520ae146d89a1f",
+        "availability_reason": "SCENARIO_ACTION_OVERRIDE",
+        "availability_snapshot": {
+          "action": "push",
+          "actor": "pc_02",
+          "context_version": "action:chapel_of_contemplation:de520ae146d89a1f",
+          "location": "chapel_of_contemplation",
+          "reason_code": "SCENARIO_ACTION_OVERRIDE",
+          "reason_detail": "A specific active scenario event permits the action despite a coarse object guard.",
+          "required_preconditions": [],
+          "runtime_guard": "requires_flag:!in_basement",
+          "scenario_condition": "action_id in ['climb', 'break', 'force', 'push'] and target == 'rotting_floorboards' and location == 'chapel_of_contemplation' and flags.in_basement == true and success_level >= 2",
+          "scenario_event_id": "chapel_of_contemplation__rotting_floorboards__climb_out_success",
+          "scenario_id": "",
+          "scenario_runtime_conflict": true,
+          "source": "forced",
+          "status": "AVAILABLE",
+          "target": "rotting_floorboards"
+        },
+        "availability_status": "AVAILABLE",
+        "event_id": "chapel_of_contemplation__rotting_floorboards__climb_out_success",
+        "reason": "state_change_after_investigation",
+        "skill": "",
+        "target": "rotting_floorboards"
+      },
+      {
+        "action": "search",
+        "availability_context_version": "action:chapel_of_contemplation:de520ae146d89a1f",
+        "availability_reason": "AVAILABLE",
+        "availability_snapshot": {
+          "action": "search",
+          "actor": "pc_02",
+          "context_version": "action:chapel_of_contemplation:de520ae146d89a1f",
+          "location": "chapel_of_contemplation",
+          "reason_code": "AVAILABLE",
+          "reason_detail": "",
+          "required_preconditions": [],
+          "scenario_id": "",
+          "scenario_runtime_conflict": false,
+          "source": "forced",
+          "status": "AVAILABLE",
+          "target": "skeletons_in_robes"
+        },
+        "availability_status": "AVAILABLE",
+        "reason": "unseen_target",
+        "skill": "",
+        "target": "skeletons_in_robes"
+      },
+      {
+        "action": "search",
+        "availability_context_version": "action:chapel_of_contemplation:de520ae146d89a1f",
+        "availability_reason": "AVAILABLE",
+        "availability_snapshot": {
+          "action": "search",
+          "actor": "pc_02",
+          "context_version": "action:chapel_of_contemplation:de520ae146d89a1f",
+          "location": "chapel_of_contemplation",
+          "reason_code": "AVAILABLE",
+          "reason_detail": "",
+          "required_preconditions": [],
+          "scenario_id": "",
+          "scenario_runtime_conflict": false,
+          "source": "forced",
+          "status": "AVAILABLE",
+          "target": "shelf_with_records"
+        },
+        "availability_status": "AVAILABLE",
+        "reason": "unseen_target",
+        "skill": "",
+        "target": "shelf_with_records"
+      }
+    ],
+    "goal_transition_event": null,
+    "transition_reason": "global terminal goal remains active",
+    "action_phase": "EXECUTE",
+    "location_objective_status": "ACTIVE"
+  },
+  {
+    "cycle": 29,
+    "game_turn": 71,
+    "location": "chapel_of_contemplation",
+    "scene": "scene_001",
+    "active_goal": "悪霊の家を完了する",
+    "active_subgoal": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "completed_goals": [
+      "flag:corbitt_defeated=false",
+      "flag:learned_corbitt_weakness=false"
+    ],
+    "remaining_requirements": [
+      "flag:corbitt_body_encountered=true",
+      "location:corbitt_basement_room2",
+      "action:break/force/attack/use/push/kick/corbitt_body"
+    ],
+    "blocked_requirements": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "next_goal_candidate": [],
+    "goal_transition_event": null,
+    "transition_reason": "global terminal goal remains active",
+    "action_phase": "EXECUTE",
+    "location_objective_status": "ACTIVE"
+  },
+  {
+    "cycle": 30,
+    "game_turn": 78,
+    "location": "chapel_of_contemplation",
+    "scene": "scene_001",
+    "active_goal": "悪霊の家を完了する",
+    "active_subgoal": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "completed_goals": [
+      "flag:corbitt_defeated=false",
+      "flag:learned_corbitt_weakness=false"
+    ],
+    "remaining_requirements": [
+      "flag:corbitt_body_encountered=true",
+      "location:corbitt_basement_room2",
+      "action:break/force/attack/use/push/kick/corbitt_body"
+    ],
+    "blocked_requirements": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "next_goal_candidate": [],
+    "goal_transition_event": null,
+    "transition_reason": "global terminal goal remains active",
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE"
+  },
+  {
+    "cycle": 31,
+    "game_turn": 82,
+    "location": "chapel_of_contemplation",
+    "scene": "scene_001",
+    "active_goal": "悪霊の家を完了する",
+    "active_subgoal": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "completed_goals": [
+      "flag:corbitt_defeated=false",
+      "flag:learned_corbitt_weakness=false"
+    ],
+    "remaining_requirements": [
+      "flag:corbitt_body_encountered=true",
+      "location:corbitt_basement_room2",
+      "action:break/force/attack/use/push/kick/corbitt_body"
+    ],
+    "blocked_requirements": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "next_goal_candidate": [],
+    "goal_transition_event": null,
+    "transition_reason": "global terminal goal remains active",
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE"
+  },
+  {
+    "cycle": 32,
+    "game_turn": 87,
+    "location": "chapel_of_contemplation",
+    "scene": "scene_001",
+    "active_goal": "悪霊の家を完了する",
+    "active_subgoal": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "completed_goals": [
+      "flag:corbitt_defeated=false",
+      "flag:learned_corbitt_weakness=false"
+    ],
+    "remaining_requirements": [
+      "flag:corbitt_body_encountered=true",
+      "location:corbitt_basement_room2",
+      "action:break/force/attack/use/push/kick/corbitt_body"
+    ],
+    "blocked_requirements": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "next_goal_candidate": [],
+    "goal_transition_event": null,
+    "transition_reason": "global terminal goal remains active",
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE"
+  },
+  {
+    "cycle": 33,
+    "game_turn": 92,
+    "location": "chapel_of_contemplation",
+    "scene": "scene_001",
+    "active_goal": "悪霊の家を完了する",
+    "active_subgoal": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "completed_goals": [
+      "flag:corbitt_defeated=false",
+      "flag:learned_corbitt_weakness=false"
+    ],
+    "remaining_requirements": [
+      "flag:corbitt_body_encountered=true",
+      "location:corbitt_basement_room2",
+      "action:break/force/attack/use/push/kick/corbitt_body"
+    ],
+    "blocked_requirements": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "next_goal_candidate": [],
+    "goal_transition_event": null,
+    "transition_reason": "global terminal goal remains active",
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE"
+  },
+  {
+    "cycle": 34,
+    "game_turn": 94,
+    "location": "chapel_of_contemplation",
+    "scene": "scene_001",
+    "active_goal": "悪霊の家を完了する",
+    "active_subgoal": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "completed_goals": [
+      "flag:corbitt_defeated=false",
+      "flag:learned_corbitt_weakness=false"
+    ],
+    "remaining_requirements": [
+      "flag:corbitt_body_encountered=true",
+      "location:corbitt_basement_room2",
+      "action:break/force/attack/use/push/kick/corbitt_body"
+    ],
+    "blocked_requirements": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "next_goal_candidate": [],
+    "goal_transition_event": null,
+    "transition_reason": "global terminal goal remains active",
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE"
+  },
+  {
+    "cycle": 35,
+    "game_turn": 95,
+    "location": "chapel_of_contemplation",
+    "scene": "scene_001",
+    "active_goal": "悪霊の家を完了する",
+    "active_subgoal": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "completed_goals": [
+      "flag:corbitt_defeated=false",
+      "flag:learned_corbitt_weakness=false"
+    ],
+    "remaining_requirements": [
+      "flag:corbitt_body_encountered=true",
+      "location:corbitt_basement_room2",
+      "action:break/force/attack/use/push/kick/corbitt_body"
+    ],
+    "blocked_requirements": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "next_goal_candidate": [],
+    "goal_transition_event": null,
+    "transition_reason": "global terminal goal remains active",
+    "action_phase": "DISCOVER",
+    "location_objective_status": "ACTIVE"
+  }
+]

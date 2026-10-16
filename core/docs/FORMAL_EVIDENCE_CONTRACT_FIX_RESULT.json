@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "formal_evidence_contract_fix": "PASS",
+  "normalizer_contradiction_fix": "PASS",
+  "segment_artifact_completeness_fix": "PASS",
+  "next_full_long_allowed": true,
+  "video_source_eligible": false,
+  "home_001": {
+    "raw_original_modified": false,
+    "hash_files_checked": 24,
+    "hash_mismatches": 0,
+    "original_roll_contract_findings": 122,
+    "original_unique_evidence_subjects": 111,
+    "original_explicit_adjudication_ids": 62,
+    "staging_roll_contract_findings": 113,
+    "staging_normalization_source_contradictions": 0,
+    "staging_traceability": 1.0,
+    "formal_status": "NEEDS_ITERATION"
+  },
+  "classification": {
+    "normalizer_mapping_resolvable": 20,
+    "raw_source_evidence_insufficient": 79,
+    "semantic_ambiguity": 23
+  },
+  "tests": {
+    "core_passed": 570,
+    "core_subtests_passed": 23,
+    "video_agent_passed": 186,
+    "formal_auditor_fixture_passed": 19,
+    "deterministic_roll_contract_incomplete": 0,
+    "deterministic_normalization_source_contradiction": 0,
+    "deterministic_traceability": 1.0,
+    "segment_missing": 0,
+    "segment_duplicate": 0,
+    "segment_coverage": 1.0
+  },
+  "next_run_contract": {
+    "new_session_id_required": true,
+    "start_cycle": 0,
+    "resume_count": 0,
+    "migration": null,
+    "resume_home_001": false
+  }
+}

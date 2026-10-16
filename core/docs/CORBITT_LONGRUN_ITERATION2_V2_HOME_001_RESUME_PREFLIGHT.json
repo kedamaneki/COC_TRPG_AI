@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-14T00:08:11.2114548+09:00",
+  "session_id": "CORBITT_LONGRUN_ITERATION2_V2_HOME_001",
+  "resume_from": "CHECKPOINT_CYCLE_000039",
+  "compatible_migration": "SPECIAL_OBJECTIVE_COMBAT_CONTRACT_FIX_V1",
+  "status": "PASS",
+  "ollama": {
+    "reachable": true,
+    "model": "qwen2.5:14b",
+    "family": "qwen2",
+    "parameter_size": "14.8B",
+    "quantization": "Q4_K_M",
+    "format": "gguf"
+  },
+  "topology": {
+    "execution_profile": "SINGLE_PC",
+    "PL": "PRIMARY",
+    "KP": "PRIMARY",
+    "JUDGE": "PRIMARY",
+    "secondary_explicit": false,
+    "secondary_calls_expected": 0,
+    "secondary_failure_policy": "FAIL_CLOSED"
+  },
+  "input_identity": {
+    "status": "PASS",
+    "scenario": "EXACT",
+    "npcs": "EXACT",
+    "pcs": "DERIVED_DECLARED",
+    "transform_id": "INIT_GAME_SYSTEM_V1"
+  },
+  "checkpoint": {
+    "id": "CHECKPOINT_CYCLE_000039",
+    "cycle": 39,
+    "turn": 98,
+    "resume_count": 0,
+    "event_log_offset": 367,
+    "manifest_sha256": "92e27cf08a13efc7b70c74730718f279804ba8bcb8395b62c66675ac8289c263",
+    "state_sha256": "1e3996deba91ab6d5e56c2a80f3af0d94c1fe3a13b9e5527a287fd3f4d3e31a1",
+    "complete_sha256": "a4560dad97965a360af33b36e94217085b784af69687c2a16ce422181fdcbcf6"
+  },
+  "frozen_failure_ledger": {
+    "file_count": 484,
+    "matched": 484,
+    "mismatched": 0,
+    "status": "PASS"
+  },
+  "migration_validation": {
+    "status": "PASS",
+    "reasons": [],
+    "from_source_hash": "0becb4ace78706764bf5a99d98d9520b0359f1d5a4feb9efe79f5e0e846f7723",
+    "to_source_hash": "3de5164d6ec3a1b576487d48474d9a96e7f6dcbb616c042d83e7e8d45eed1514",
+    "protected_source_hash": "0a169103531f54137f430b59abd8242c626ed47716c510e13b256762a3a37124",
+    "from_prompt_hash": "081564fd14d65f1cc26d5b140c8dd2bfd56a1d75c26a481891f78c7e802c329a",
+    "to_prompt_hash": "4006cf12fa835b5a843c4b8f541ce6df01df352d968f5f2b6b6be9f9a8a270d6",
+    "allowed_changed_files": [
+      "CombatProgression.py",
+      "main.py"
+    ]
+  },
+  "append_targets": {
+    "session_log": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION2_V2_HOME_001\\session-log.json",
+    "unified_event_log": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION2_V2_HOME_001\\unified-event-log.json",
+    "llm_metrics": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION2_V2_HOME_001\\llm_call_metrics.jsonl",
+    "checkpoints": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION2_V2_HOME_001\\checkpoints",
+    "result": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION2_V2_HOME_001\\result.json"
+  },
+  "baseline": {
+    "session_events": 483,
+    "unified_events": 367,
+    "llm_calls": 240
+  },
+  "video_source_eligible": false
+}

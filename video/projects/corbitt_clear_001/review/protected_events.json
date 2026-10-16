@@ -1,0 +1,4322 @@
+{
+  "dependencies": [
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000001",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000000"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000006",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000005"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000007",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000006"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000010",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000008"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000015",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000014"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000018",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000016"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000020",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000018"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000025",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000024"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000027",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000026"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000030",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000029"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000032",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000030"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000034",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000032"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000039",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000038"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000042",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000040"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000049",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000047"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000051",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000049"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000058",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000057"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000062",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000059"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000069",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000068"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000073",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000070"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000080",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000078"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000085",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000084"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000089",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000086"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000093",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000091"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000098",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000097"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000102",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000099"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000113",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000110"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000117",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000115"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000126",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000125"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000130",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000127"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000135",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000134"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000147",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000146"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000151",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000148"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000158",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000157"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000162",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000159"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000171",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000169"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000173",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000171"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000175",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000173"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000178",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000177"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000181",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000179"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000183",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000181"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000185",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000183"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000186",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000185"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000192",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000190"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000194",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000192"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000196",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000194"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000201",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000200"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000203",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000202"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000213",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000211"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000218",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000217"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000222",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000219"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000232",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000229"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000234",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000232"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000239",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000238"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000243",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000240"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000258",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000257"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000262",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000259"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000267",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000264"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000272",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000269"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000276",
+      "origin": "DETERMINISTIC",
+      "relation": "STATE_CHANGE_CONTEXT",
+      "source_event_id": "norm:unified:000274"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000278",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:unified:000276"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000281",
+      "origin": "DETERMINISTIC",
+      "relation": "COMBAT_CONTEXT",
+      "source_event_id": "norm:unified:000280"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:unified:000287",
+      "origin": "DETERMINISTIC",
+      "relation": "CLUE_CONTEXT",
+      "source_event_id": "norm:unified:000286"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000022",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000021"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000047",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000046"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000060",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000059"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000067",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000066"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000085",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000084"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000088",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000087"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000114",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000113"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000124",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000123"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000160",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000159"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000188",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000187"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000232",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000231"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000235",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000234"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000238",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000237"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000245",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000244"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000249",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000248"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000253",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000252"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000264",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000263"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000270",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000269"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000286",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000285"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000306",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000305"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000344",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000343"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000351",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000350"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000364",
+      "origin": "DETERMINISTIC",
+      "relation": "LOCATION_CONTEXT",
+      "source_event_id": "norm:session:000363"
+    },
+    {
+      "confidence": 0.8,
+      "dependent_event_id": "norm:session:000378",
+      "origin": "DETERMINISTIC",
+      "relation": "COMBAT_CONTEXT",
+      "source_event_id": "norm:session:000376"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "norm:unified:000000",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:case_accepted,knott_letter_read,knott_memo_read,talked_with_knott"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000001",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000002",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000003",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000004",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000005",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000006",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:artie_introduced"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000007",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000008",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:artie_reference_room_access_granted"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000009",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000010",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000011",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000012",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000013",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000014",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000015",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000016",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:accessed_clipping_files,investigated_targets"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000017",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000018",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000019",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000020",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000021",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000022",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000023",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000024",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000025",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000026",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:found_corbitt_history_all,investigated_targets"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000027",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000028",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000029",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000030",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:dolly_talked,dolly_told_chapel_location,dolly_told_sanitarium_location,neighbor_gossip_found"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000031",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000032",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000033",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000034",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000035",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000036",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000037",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000038",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000039",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000040",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:investigated_targets,sanitarium_info_found"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000041",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000042",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000043",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000044",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000045",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000046",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000047",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000048",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000049",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE",
+        "SCENARIO_STATE_CHANGE:exterior_approached"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000050",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000051",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000052",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000053",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000054",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000055",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000056",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000057",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000058",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000059",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:front_door_investigated,investigated_targets"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000060",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000061",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000062",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000063",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000064",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000065",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000066",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000067",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000068",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000069",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000070",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:ground_floor_windows_investigated,investigated_targets"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000071",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000072",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000073",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000074",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000075",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000076",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000077",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000078",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000079",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000080",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000081",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000082",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000083",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000084",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000085",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000086",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:corbitt_house_observed,investigated_targets"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000087",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000088",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000089",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000090",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000091",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000092",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000093",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000094",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000095",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000096",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000097",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000098",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000099",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:corbitt_house_examined,investigated_targets"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000100",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000101",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000102",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000103",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000104",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000105",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000106",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000107",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000108",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000109",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000110",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:corbitt_house_entered,front_door_unlocked"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000111",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000112",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000113",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000114",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000115",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000116",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000117",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000118",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000119",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000120",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000121",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000122",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000123",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000124",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000125",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000126",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000127",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:investigated_targets,living_room_investigated"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000128",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000129",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000130",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000131",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000132",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000133",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000134",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000135",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000136",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000137",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000138",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000139",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000140",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000141",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000142",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000143",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000144",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000145",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000146",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000147",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000148",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:bathroom_bathtub_investigated,investigated_targets"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000149",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000150",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000151",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000152",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000153",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000154",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000155",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000156",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000157",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000158",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000159",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:investigated_targets,master_bedroom_bookshelf_investigated"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000160",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000161",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000162",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000163",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000164",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000165",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000166",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000167",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000168",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000169",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000170",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000171",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000172",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000173",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000174",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000175",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000176",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000177",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000178",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000179",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:basement_door_examined,investigated_targets"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000180",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000181",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000182",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000183",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000184",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000185",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000186",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000187",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000188",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000189",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000190",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000191",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000192",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:basement_accessible,basement_door_unlocked,hidden_passage_found"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000193",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000194",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000195",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000196",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000197",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000198",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000199",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000200",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000201",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000202",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:investigated_targets,spare_bedroom_bed_investigated,trigger_flying_bed"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000203",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000204",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000205",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000206",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000207",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000208",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000209",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000210",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000211",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000212",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000213",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000214",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000215",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000216",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000217",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000218",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000219",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:corbitt_diaries_found,investigated_targets"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000220",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000221",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000222",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000223",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000224",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000225",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000226",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000227",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000228",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000229",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000230",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000231",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000232",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:has_corbitt_knife,investigated_targets,trigger_knife_attack"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000233",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000234",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000235",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000236",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000237",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000238",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000239",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000240",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:basement_planks_examined,investigated_targets"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000241",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000242",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000243",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000244",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000245",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000246",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000247",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000248",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000249",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000250",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000251",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000252",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000253",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000254",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000255",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000256",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000257",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000258",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000259",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:investigated_targets,junk_searched"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000260",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000261",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000262",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000263",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000264",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000265",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000266",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000267",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000268",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000269",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000270",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000271",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000272",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000273",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000274",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:basement_planks_broken"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000275",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000276",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000277",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000278",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000279",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000280",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "COMBAT_START"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000281",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "COMBAT_ACTION"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000282",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000283",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000284",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000285",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SKILL_CHECK"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000286",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000287",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000288",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "COMBAT_ACTION"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000289",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "COMBAT_ACTION"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000290",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:unified:000291",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "COMBAT_ACTION"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000292",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "ENDING"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000293",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "COMBAT_END"
+      ]
+    },
+    {
+      "event_id": "norm:unified:000294",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000000",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000001",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000002",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000003",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000004",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000005",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000006",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000007",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000008",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000009",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000010",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000011",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000012",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000013",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000014",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000015",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000016",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000017",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000018",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000019",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000020",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000021",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000022",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000023",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000024",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000025",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000026",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000027",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000028",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000029",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000030",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000031",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000032",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000033",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000034",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000035",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000036",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000037",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000038",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000039",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000040",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000041",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000042",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000043",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000044",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000045",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000046",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000047",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000048",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000049",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000050",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000051",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000052",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000053",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000054",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000055",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000056",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000057",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000058",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000059",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000060",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000061",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000062",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000063",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000064",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000065",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000066",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000067",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000068",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000069",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000070",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000071",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000072",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000073",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000074",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000075",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000076",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000077",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000078",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000079",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000080",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000081",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000082",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000083",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000084",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000085",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000086",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000087",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000088",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000089",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000090",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000091",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000092",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000093",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000094",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000095",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000096",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000097",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000098",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000099",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000100",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000101",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000102",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000103",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000104",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000105",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000106",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000107",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000108",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000109",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000110",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000111",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000112",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000113",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000114",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000115",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000116",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000117",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000118",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000119",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000120",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000121",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000122",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000123",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000124",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000125",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000126",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000127",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000128",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000129",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000130",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000131",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000132",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000133",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000134",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000135",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000136",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000137",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000138",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000139",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000140",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000141",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000142",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000143",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000144",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000145",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000146",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000147",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000148",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000149",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000150",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000151",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000152",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000153",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000154",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000155",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000156",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000157",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000158",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000159",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000160",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000161",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000162",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000163",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000164",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000165",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000166",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000167",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000168",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000169",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000170",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000171",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000172",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000173",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000174",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000175",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000176",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000177",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000178",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000179",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000180",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000181",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000182",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000183",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000184",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000185",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000186",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000187",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000188",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000189",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000190",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000191",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000192",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000193",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000194",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000195",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000196",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000197",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000198",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000199",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000200",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000201",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000202",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000203",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000204",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000205",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000206",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000207",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000208",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000209",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000210",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000211",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000212",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000213",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000214",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000215",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000216",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000217",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000218",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000219",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000220",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000221",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000222",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000223",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000224",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000225",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000226",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000227",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000228",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000229",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000230",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000231",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000232",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000233",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000234",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000235",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000236",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000237",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000238",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000239",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000240",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000241",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000242",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000243",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000244",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000245",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000246",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000247",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000248",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000249",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000250",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000251",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000252",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000253",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000254",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000255",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000256",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000257",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000258",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000259",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000260",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000261",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000262",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000263",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000264",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000265",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000266",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000267",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000268",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000269",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000270",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000271",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000272",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000273",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000274",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000275",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000276",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000277",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000278",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000279",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000280",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000281",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000282",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000283",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000284",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000285",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000286",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000287",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000288",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000289",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000290",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000291",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000292",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000293",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000294",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000295",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000296",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000297",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000298",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000299",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000300",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000301",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000302",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000303",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000304",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000305",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000306",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000307",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000308",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000309",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000310",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000311",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000312",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "SAN_LOSS"
+      ]
+    },
+    {
+      "event_id": "norm:session:000313",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000314",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000315",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000316",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000317",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000318",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000319",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000320",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000321",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000322",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000323",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000324",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000325",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000326",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000327",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000328",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000329",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000330",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000331",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000332",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000333",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000334",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000335",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000336",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000337",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000338",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000339",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000340",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000341",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000342",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000343",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000344",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000345",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000346",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000347",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000348",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000349",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000350",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000351",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000352",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000353",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000354",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000355",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000356",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000357",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000358",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000359",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000360",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000361",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000362",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000363",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "LOCATION_CHANGE"
+      ]
+    },
+    {
+      "event_id": "norm:session:000364",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000365",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000366",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000367",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000368",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000369",
+      "level": "SOFT_PROTECTED",
+      "reasons": [
+        "DICE_RESULT"
+      ]
+    },
+    {
+      "event_id": "norm:session:000370",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000371",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000372",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000373",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000374",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000375",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000376",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "COMBAT_START"
+      ]
+    },
+    {
+      "event_id": "norm:session:000377",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000378",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000379",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000380",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000381",
+      "level": "NORMAL",
+      "reasons": []
+    },
+    {
+      "event_id": "norm:session:000382",
+      "level": "HARD_PROTECTED",
+      "reasons": [
+        "ENDING"
+      ]
+    }
+  ],
+  "schema_version": "0.1"
+}

@@ -1,0 +1,48 @@
+{
+  "legacy_artifacts_immutable": true,
+  "original_normalized_session_sha256": "02C30843753501B5718E0D1D03320489F13AEB958EE8FCB6A5C625BB07FEDB1F",
+  "original_edited_script_sha256": "79BFC1D59E732E219006D04A8AC62B0D845BA5253D1F9A8DE4AC8B461D3F47C0",
+  "v2_normalized_session_sha256": "B70F9946525EBA3E5532FD38D8ABD9844783A285870C8ABCFB8482D955027EDE",
+  "san": {
+    "event_id": "norm:session:000312",
+    "old": null,
+    "new": {
+      "before": 70,
+      "target": 70,
+      "roll": 40,
+      "result": "SUCCESS",
+      "loss": 0,
+      "after": 70,
+      "normalization_source": "LEGACY_TEXT_PARSE",
+      "derived_from_legacy_text": true
+    }
+  },
+  "luck": {
+    "event_id": "norm:session:000311",
+    "old": {
+      "roll": 59,
+      "target_value": 50,
+      "raw_result": null,
+      "final_result": null,
+      "modifier": null
+    },
+    "new": {
+      "roll": 59,
+      "target_value": 50,
+      "raw_result": "FAILURE",
+      "final_result": "REGULAR_SUCCESS",
+      "modifier": {
+        "type": "LUCK_SPEND",
+        "amount": 9,
+        "resource_before": 50,
+        "resource_after": 41,
+        "normalization_source": "LEGACY_TEXT_PARSE",
+        "derived_from_legacy_text": true
+      }
+    }
+  },
+  "not_recovered": [
+    "The contradictory legacy wall adjudication was not rewritten.",
+    "The missing legacy knife combat lifecycle was not invented."
+  ]
+}

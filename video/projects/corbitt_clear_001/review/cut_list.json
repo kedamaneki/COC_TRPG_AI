@@ -1,0 +1,4018 @@
+[
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_001",
+    "source_event_id": "norm:unified:000001",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_001",
+    "source_event_id": "norm:unified:000002",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_001",
+    "source_event_id": "norm:unified:000003",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_001",
+    "source_event_id": "norm:unified:000004",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_002",
+    "source_event_id": "norm:unified:000007",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_002",
+    "source_event_id": "norm:unified:000009",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_002",
+    "source_event_id": "norm:unified:000010",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_002",
+    "source_event_id": "norm:unified:000011",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_002",
+    "source_event_id": "norm:unified:000012",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_002",
+    "source_event_id": "norm:unified:000015",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_002",
+    "source_event_id": "norm:unified:000017",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_003",
+    "source_event_id": "norm:unified:000019",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_003",
+    "source_event_id": "norm:unified:000020",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_003",
+    "source_event_id": "norm:unified:000021",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_003",
+    "source_event_id": "norm:unified:000022",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_003",
+    "source_event_id": "norm:unified:000025",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_003",
+    "source_event_id": "norm:unified:000027",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_003",
+    "source_event_id": "norm:unified:000028",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_004",
+    "source_event_id": "norm:unified:000031",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_005",
+    "source_event_id": "norm:unified:000033",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_005",
+    "source_event_id": "norm:unified:000034",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_005",
+    "source_event_id": "norm:unified:000035",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_005",
+    "source_event_id": "norm:unified:000036",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_005",
+    "source_event_id": "norm:unified:000039",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_005",
+    "source_event_id": "norm:unified:000041",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_005",
+    "source_event_id": "norm:unified:000042",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_005",
+    "source_event_id": "norm:unified:000043",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_005",
+    "source_event_id": "norm:unified:000044",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_005",
+    "source_event_id": "norm:unified:000045",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_005",
+    "source_event_id": "norm:unified:000046",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_006",
+    "source_event_id": "norm:unified:000048",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000050",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000051",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000052",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000053",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000054",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000055",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000058",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000060",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000061",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000062",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000063",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000064",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000065",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000066",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000069",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000071",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000072",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000073",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000074",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000075",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000076",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_007",
+    "source_event_id": "norm:unified:000077",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_008",
+    "source_event_id": "norm:unified:000079",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_008",
+    "source_event_id": "norm:unified:000080",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_008",
+    "source_event_id": "norm:unified:000081",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_008",
+    "source_event_id": "norm:unified:000082",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_008",
+    "source_event_id": "norm:unified:000085",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_008",
+    "source_event_id": "norm:unified:000087",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_008",
+    "source_event_id": "norm:unified:000088",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_008",
+    "source_event_id": "norm:unified:000089",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_008",
+    "source_event_id": "norm:unified:000090",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000092",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000093",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000094",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000095",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000098",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000100",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000101",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000102",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000103",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000104",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000105",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000106",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000107",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000108",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000109",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000111",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000112",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000113",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_009",
+    "source_event_id": "norm:unified:000114",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_010",
+    "source_event_id": "norm:unified:000116",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_010",
+    "source_event_id": "norm:unified:000118",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_010",
+    "source_event_id": "norm:unified:000119",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_010",
+    "source_event_id": "norm:unified:000120",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_010",
+    "source_event_id": "norm:unified:000121",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_010",
+    "source_event_id": "norm:unified:000122",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_010",
+    "source_event_id": "norm:unified:000123",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_010",
+    "source_event_id": "norm:unified:000126",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_010",
+    "source_event_id": "norm:unified:000128",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_010",
+    "source_event_id": "norm:unified:000129",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_010",
+    "source_event_id": "norm:unified:000130",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_010",
+    "source_event_id": "norm:unified:000131",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_010",
+    "source_event_id": "norm:unified:000133",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000135",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000136",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000137",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000138",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000139",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000141",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000142",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000143",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000144",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000147",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000149",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000150",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000151",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000152",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000153",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000154",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000155",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000158",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000160",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000161",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000162",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000163",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000164",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000165",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000166",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000167",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_011",
+    "source_event_id": "norm:unified:000168",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_012",
+    "source_event_id": "norm:unified:000170",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_013",
+    "source_event_id": "norm:unified:000172",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_014",
+    "source_event_id": "norm:unified:000174",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_014",
+    "source_event_id": "norm:unified:000175",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_014",
+    "source_event_id": "norm:unified:000178",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_014",
+    "source_event_id": "norm:unified:000180",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_015",
+    "source_event_id": "norm:unified:000182",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_016",
+    "source_event_id": "norm:unified:000184",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_017",
+    "source_event_id": "norm:unified:000186",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_017",
+    "source_event_id": "norm:unified:000187",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_017",
+    "source_event_id": "norm:unified:000188",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_017",
+    "source_event_id": "norm:unified:000189",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_018",
+    "source_event_id": "norm:unified:000191",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_018",
+    "source_event_id": "norm:unified:000193",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_019",
+    "source_event_id": "norm:unified:000195",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_019",
+    "source_event_id": "norm:unified:000196",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_019",
+    "source_event_id": "norm:unified:000197",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_019",
+    "source_event_id": "norm:unified:000198",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_019",
+    "source_event_id": "norm:unified:000201",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_019",
+    "source_event_id": "norm:unified:000203",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_019",
+    "source_event_id": "norm:unified:000204",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_019",
+    "source_event_id": "norm:unified:000205",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_019",
+    "source_event_id": "norm:unified:000206",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_019",
+    "source_event_id": "norm:unified:000207",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_019",
+    "source_event_id": "norm:unified:000208",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_019",
+    "source_event_id": "norm:unified:000209",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_019",
+    "source_event_id": "norm:unified:000210",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_020",
+    "source_event_id": "norm:unified:000212",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_020",
+    "source_event_id": "norm:unified:000213",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_020",
+    "source_event_id": "norm:unified:000214",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_020",
+    "source_event_id": "norm:unified:000215",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_020",
+    "source_event_id": "norm:unified:000218",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_020",
+    "source_event_id": "norm:unified:000220",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_020",
+    "source_event_id": "norm:unified:000221",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_020",
+    "source_event_id": "norm:unified:000222",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_020",
+    "source_event_id": "norm:unified:000223",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_020",
+    "source_event_id": "norm:unified:000224",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_020",
+    "source_event_id": "norm:unified:000225",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_020",
+    "source_event_id": "norm:unified:000226",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_020",
+    "source_event_id": "norm:unified:000228",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000230",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000231",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000233",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000234",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000235",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000236",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000239",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000241",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000242",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000243",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000244",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000245",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000246",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000247",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000248",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000249",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000250",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000251",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000252",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000253",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000254",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000255",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000258",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000260",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000261",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000262",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_021",
+    "source_event_id": "norm:unified:000263",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_022",
+    "source_event_id": "norm:unified:000265",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_022",
+    "source_event_id": "norm:unified:000266",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_022",
+    "source_event_id": "norm:unified:000267",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_022",
+    "source_event_id": "norm:unified:000268",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_023",
+    "source_event_id": "norm:unified:000270",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_023",
+    "source_event_id": "norm:unified:000271",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_023",
+    "source_event_id": "norm:unified:000272",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_023",
+    "source_event_id": "norm:unified:000273",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_023",
+    "source_event_id": "norm:unified:000275",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_024",
+    "source_event_id": "norm:unified:000277",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_024",
+    "source_event_id": "norm:unified:000278",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_024",
+    "source_event_id": "norm:unified:000279",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_025",
+    "source_event_id": "norm:unified:000282",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_025",
+    "source_event_id": "norm:unified:000283",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_025",
+    "source_event_id": "norm:unified:000284",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "NON_VIEWER_TELEMETRY"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_025",
+    "source_event_id": "norm:unified:000287",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_025",
+    "source_event_id": "norm:unified:000290",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": null,
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_028",
+    "source_event_id": "norm:unified:000294",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 評価セッションを開始します。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_028",
+    "source_event_id": "norm:session:000000",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【システム警告】作戦会議（OOC）の連続上限に達しました。これ以上のメタ発言はブロックされます。現状を打破するため、別の技能（言いくるめ/信用など）を宣言するか、他のオブジェクトの調査、あるいは[図書館]など別のロケーションへの移動アクション（move）を必ずICで実行してください。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_028",
+    "source_event_id": "norm:session:000018",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 膠着が上限に達したため、次の調査先へ強制移動します。（目的地: ボストン・グローブ / `boston_globe`）",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_028",
+    "source_event_id": "norm:session:000019",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【システム検証エラー・人物取り違え】現在操作中の探索者の名前・職業と矛盾する自己紹介／自己扱いです。他PCの身分を名乗らず、自身の設定で再出力してください。他PCへの呼びかけや協力自体は問題ありません。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_029",
+    "source_event_id": "norm:session:000023",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "【システム通知】進行に少し時間がかかっています。同じ手段にこだわらず、別の対象・技能・場所を試しても構いません。焦って結論を急ぐ必要はありません。探索者自身の判断で次の一手を選んでください。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_029",
+    "source_event_id": "norm:session:000031",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【システム検証エラー・行動再選択】テキストが指しているのはロケーションへの移動ではなく、現在地の調査／対話対象です。move ではなく search / inspect / talk を使い、正しい target（オブジェクトIDまたはNPC ID）を指定して再出力してください。 テキスト上の対象候補: `reference_room_clipping_files`。 誤った move target: `reference_room_clipping_files`。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_029",
+    "source_event_id": "norm:session:000034",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【システム検証エラー・行動再選択】テキストが指しているのはロケーションへの移動ではなく、現在地の調査／対話対象です。move ではなく search / inspect / talk を使い、正しい target（オブジェクトIDまたはNPC ID）を指定して再出力してください。 テキスト上の対象候補: `reference_room_clipping_files`。 誤った move target: `reference_room_clipping_files`。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_029",
+    "source_event_id": "norm:session:000039",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "【システムヒント】この場所での調査はすべて完了しました。新しい場所へ移動（`move`）してください。例: `move` / `central_library`（中央図書館） / `move` / `hall_of_records`（公文書館） / `move` / `corbitt_exterior`（コービット屋敷（外観））。すべての資料を集める必要はありません。直接コービット屋敷（`corbitt_exterior`）へ向かっても構いません。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_029",
+    "source_event_id": "norm:session:000042",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 膠着が上限に達したため、次の調査先へ強制移動します。（目的地: 中央図書館 / `central_library`）",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_029",
+    "source_event_id": "norm:session:000043",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] ロケーション移動に伴い、旧場所宛ての未処理アクションを1件破棄しました。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_029",
+    "source_event_id": "norm:session:000044",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【システム検証エラー・行動再選択】その人物は現在この場所にいません。現在地にいる NPC へ正しい target で talk するか、周囲のオブジェクトを search / inspect してください。 【対話ブロック】その人物は現在この場所にいません。次の候補から行動を選び直してください: 新聞アーカイブ（`newspaper_archives`）を調査、郷土史資料（`local_history_section`）を調査、`move` / `hall_of_records`（公文書館）、`move` / `higher_courts_police_station`（上級裁判所、中央警察署）、`move` / `the_neighborhood`（屋敷の近所）、`move` / `corbitt_exterior`（コービット屋敷（外観））。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_030",
+    "source_event_id": "norm:session:000048",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【システム検証エラー・行動再選択】その人物は現在この場所にいません。現在地にいる NPC へ正しい target で talk するか、周囲のオブジェクトを search / inspect してください。 【対話ブロック】その人物は現在この場所にいません。次の候補から行動を選び直してください: 新聞アーカイブ（`newspaper_archives`）を調査、`move` / `hall_of_records`（公文書館）、`move` / `higher_courts_police_station`（上級裁判所、中央警察署）、`move` / `the_neighborhood`（屋敷の近所）、`move` / `corbitt_exterior`（コービット屋敷（外観））。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_030",
+    "source_event_id": "norm:session:000053",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【システム検証エラー・人物取り違え】現在操作中の探索者の名前・職業と矛盾する自己紹介／自己扱いです。他PCの身分を名乗らず、自身の設定で再出力してください。他PCへの呼びかけや協力自体は問題ありません。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_030",
+    "source_event_id": "norm:session:000056",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "エレノア教授(PC2)(PL): （再生成上限のため今回は不採用。次の手番で行動を再選択する）",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_030",
+    "source_event_id": "norm:session:000057",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "【システム通知】進行に少し時間がかかっています。同じ手段にこだわらず、別の対象・技能・場所を試しても構いません。焦って結論を急ぐ必要はありません。探索者自身の判断で次の一手を選んでください。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_032",
+    "source_event_id": "norm:session:000080",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "【システムヒント】この場所での調査はすべて完了しました。新しい場所へ移動（`move`）してください。例: `move` / `corbitt_exterior`（コービット屋敷の外観へ） / `move` / `boston_globe`（ボストン・グローブ）。すべての資料を集める必要はありません。直接コービット屋敷（`corbitt_exterior`）へ向かっても構いません。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_035",
+    "source_event_id": "norm:session:000119",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【システム検証エラー・行動再選択】move アクションの target が空です。別の場所へ行くなら、解放済みロケーションの ID を target に指定してください。今いる場所の物体を調べるなら action は search / inspect です。 推奨: action=`search` target=`corbitt_house`。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_036",
+    "source_event_id": "norm:session:000125",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【アクション自動補正】元の意図: `move` / `corbitt_exterior_back`。理由: move_missing_target。補正後: `search` / `corbitt_house`。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_036",
+    "source_event_id": "norm:session:000127",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[Session Director v2] 消化済み対象または行動フェーズ不一致を検出し、最優先候補へ誘導します。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_036",
+    "source_event_id": "norm:session:000136",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "【システム通知】進行に少し時間がかかっています。同じ手段にこだわらず、別の対象・技能・場所を試しても構いません。焦って結論を急ぐ必要はありません。探索者自身の判断で次の一手を選んでください。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_036",
+    "source_event_id": "norm:session:000145",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[Session Director v2] 消化済み対象または行動フェーズ不一致を検出し、最優先候補へ誘導します。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_036",
+    "source_event_id": "norm:session:000150",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "【システムヒント】この場所での調査はすべて完了しました。新しい場所へ移動（`move`）してください。例: `move` / `corbitt_ground_floor`（正面玄関から屋敷に入る）。すべての資料を集める必要はありません。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_036",
+    "source_event_id": "norm:session:000155",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 膠着が上限に達したため、次の調査先へ強制移動します。（目的地: コービット屋敷（1階） / `corbitt_ground_floor`）",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_036",
+    "source_event_id": "norm:session:000156",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] ロケーション移動に伴い、旧場所宛ての未処理アクションを1件破棄しました。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_036",
+    "source_event_id": "norm:session:000157",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【システム検証エラー・行動再選択】move アクションの target が空です。別の場所へ行くなら、解放済みロケーションの ID を target に指定してください。今いる場所の物体を調べるなら action は search / inspect です。 推奨: action=`search` target=`master_bedroom_bookshelf`。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_038",
+    "source_event_id": "norm:session:000189",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "マクガフィン刑事(PC1)(PL): （再生成上限のため今回は不採用。次の手番で行動を再選択する）",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_038",
+    "source_event_id": "norm:session:000191",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "【システム通知】進行に少し時間がかかっています。同じ手段にこだわらず、別の対象・技能・場所を試しても構いません。焦って結論を急ぐ必要はありません。探索者自身の判断で次の一手を選んでください。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_038",
+    "source_event_id": "norm:session:000199",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【システム検証エラー・行動再選択】セリフ／OOCで示した移動希望先と、コマンドの move target が一致していません。dialogue / pl_ooc_chat の目的地と `pc_ic_action.target` を一致させて、行動JSONを出し直してください。テキストは現在地での調査・聞き込みを示しています。 誤った move target: `corbitt_ground_floor`。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_038",
+    "source_event_id": "norm:session:000205",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "【システム通知】進行に少し時間がかかっています。同じ手段にこだわらず、別の対象・技能・場所を試しても構いません。焦って結論を急ぐ必要はありません。探索者自身の判断で次の一手を選んでください。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_038",
+    "source_event_id": "norm:session:000228",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[Session Director v2] S3候補が選ばれなかったため、S4として最優先候補を実行します。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_041",
+    "source_event_id": "norm:session:000242",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【システム検証エラー・行動再選択】セリフ／OOCで示した移動希望先と、コマンドの move target が一致していません。dialogue / pl_ooc_chat の目的地と `pc_ic_action.target` を一致させて、行動JSONを出し直してください。 テキスト上の目的地: コービット屋敷（地階・物置部屋） / コマンド target: `corbitt_upper_floor`。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_043",
+    "source_event_id": "norm:session:000250",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【システム検証エラー・行動再選択】move アクションの target が空です。別の場所へ行くなら、解放済みロケーションの ID を target に指定してください。今いる場所の物体を調べるなら action は search / inspect です。 推奨: action=`search` target=`spare_bedroom_bed`。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_044",
+    "source_event_id": "norm:session:000256",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【システム検証エラー・行動再選択】セリフ／OOCで示した移動希望先と、コマンドの move target が一致していません。dialogue / pl_ooc_chat の目的地と `pc_ic_action.target` を一致させて、行動JSONを出し直してください。テキストは現在地での調査・聞き込みを示しています。 誤った move target: `corbitt_ground_floor`。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_044",
+    "source_event_id": "norm:session:000257",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "エレノア教授(PC2)(PL): （再生成上限のため今回は不採用。次の手番で行動を再選択する）",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_044",
+    "source_event_id": "norm:session:000258",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "【システム通知】進行に少し時間がかかっています。同じ手段にこだわらず、別の対象・技能・場所を試しても構いません。焦って結論を急ぐ必要はありません。探索者自身の判断で次の一手を選んでください。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_044",
+    "source_event_id": "norm:session:000259",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【システム警告】作戦会議（OOC）の連続上限に達しました。これ以上のメタ発言はブロックされます。現状を打破するため、別の技能（言いくるめ/信用など）を宣言するか、他のオブジェクトの調査、あるいは[図書館]など別のロケーションへの移動アクション（move）を必ずICで実行してください。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_044",
+    "source_event_id": "norm:session:000260",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 膠着が上限に達したため、次の調査先へ強制移動します。（目的地: コービット屋敷（1階） / `corbitt_ground_floor`）",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_044",
+    "source_event_id": "norm:session:000261",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[Session Director v2] S3候補が選ばれなかったため、S4として最優先候補を実行します。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_045",
+    "source_event_id": "norm:session:000267",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【解釈ログ】曖昧な発言を実行命令として解釈する前に確認を要求しました。 proposed_target=corbitt_ground_floor",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_046",
+    "source_event_id": "norm:session:000274",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "【システム通知】進行に少し時間がかかっています。同じ手段にこだわらず、別の対象・技能・場所を試しても構いません。焦って結論を急ぐ必要はありません。探索者自身の判断で次の一手を選んでください。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_046",
+    "source_event_id": "norm:session:000281",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "【システム通知】進行に少し時間がかかっています。同じ手段にこだわらず、別の対象・技能・場所を試しても構いません。焦って結論を急ぐ必要はありません。探索者自身の判断で次の一手を選んでください。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_047",
+    "source_event_id": "norm:session:000301",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "【システム通知】進行に少し時間がかかっています。同じ手段にこだわらず、別の対象・技能・場所を試しても構いません。焦って結論を急ぐ必要はありません。探索者自身の判断で次の一手を選んでください。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_048",
+    "source_event_id": "norm:session:000329",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[Session Director v2] 消化済み対象または行動フェーズ不一致を検出し、最優先候補へ誘導します。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_050",
+    "source_event_id": "norm:session:000358",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "[システム] 【システム検証エラー・行動再選択】セリフ／OOCで示した移動希望先と、コマンドの move target が一致していません。dialogue / pl_ooc_chat の目的地と `pc_ic_action.target` を一致させて、行動JSONを出し直してください。 テキスト上の目的地: コービット屋敷（地階・物置部屋） / コマンド target: `corbitt_basement_room3`。",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_051",
+    "source_event_id": "norm:session:000365",
+    "text_treatment": "NONE"
+  },
+  {
+    "change_reasons": [
+      "TECHNICAL_LOG"
+    ],
+    "compress_into": null,
+    "confidence": 1.0,
+    "content_decision": "CUT",
+    "edited_text": null,
+    "original_text": "システム: 【戦闘行動拒否】normal_action_forbidden_during_combat",
+    "output_script_line_id": null,
+    "presentation_mode": "NONE",
+    "protection_level": "NORMAL",
+    "scene_id": "scene_052",
+    "source_event_id": "norm:session:000377",
+    "text_treatment": "NONE"
+  }
+]

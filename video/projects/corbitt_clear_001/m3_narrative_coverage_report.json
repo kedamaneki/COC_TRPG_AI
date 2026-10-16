@@ -1,0 +1,1388 @@
+{
+  "PROTECTED_NARRATIVE_COVERAGE": "PASS",
+  "UNGROUNDED_WORLD_EVENT_NARRATIVE": 0,
+  "full_count": 45,
+  "full_scene_count": 53,
+  "hard_protected_count": 45,
+  "invalid_event_ids": [],
+  "items": [
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000000",
+      "event_type": "ACTION_DECLARATION",
+      "presentation_ids": [
+        "scene_028_script_003",
+        "scene_028_script_004",
+        "scene_028_script_006",
+        "scene_028_script_008",
+        "scene_028_script_011",
+        "scene_028_script_012",
+        "scene_028_script_014",
+        "scene_028_script_015"
+      ],
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:case_accepted,knott_letter_read,knott_memo_read,talked_with_knott"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000006",
+      "event_type": "ACTION_DECLARATION",
+      "presentation_ids": [
+        "scene_029_script_003",
+        "scene_029_script_004"
+      ],
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:artie_introduced"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000008",
+      "event_type": "ACTION_DECLARATION",
+      "presentation_ids": [
+        "scene_029_script_006",
+        "scene_029_script_007",
+        "scene_029_script_009",
+        "scene_029_script_010",
+        "scene_029_script_016"
+      ],
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:artie_reference_room_access_granted"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000014",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_029_script_013",
+        "scene_029_script_014"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000016",
+      "event_type": "SKILL_CHECK",
+      "presentation_ids": [
+        "scene_029_script_013",
+        "scene_029_script_014"
+      ],
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:accessed_clipping_files,investigated_targets"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000024",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_030_script_004",
+        "scene_030_script_005"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000026",
+      "event_type": "SKILL_CHECK",
+      "presentation_ids": [
+        "scene_030_script_004",
+        "scene_030_script_005"
+      ],
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:found_corbitt_history_all,investigated_targets"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000030",
+      "event_type": "ACTION_DECLARATION",
+      "presentation_ids": [
+        "scene_031_script_003",
+        "scene_031_script_004"
+      ],
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:dolly_talked,dolly_told_chapel_location,dolly_told_sanitarium_location,neighbor_gossip_found"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000038",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_032_script_004",
+        "scene_032_script_005",
+        "scene_032_script_014",
+        "scene_032_script_015"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000040",
+      "event_type": "SKILL_CHECK",
+      "presentation_ids": [
+        "scene_032_script_004",
+        "scene_032_script_005",
+        "scene_032_script_014",
+        "scene_032_script_015"
+      ],
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:investigated_targets,sanitarium_info_found"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000049",
+      "event_type": "LOCATION_CHANGE",
+      "presentation_ids": [
+        "scene_033_script_003",
+        "scene_034_script_001",
+        "scene_035_script_009",
+        "scene_036_script_001"
+      ],
+      "reasons": [
+        "LOCATION_CHANGE",
+        "SCENARIO_STATE_CHANGE:exterior_approached"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000057",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_034_script_003",
+        "scene_034_script_004",
+        "scene_034_script_007",
+        "scene_034_script_009",
+        "scene_034_script_010",
+        "scene_034_script_012",
+        "scene_034_script_013",
+        "scene_036_script_021",
+        "scene_036_script_024",
+        "scene_036_script_026"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000059",
+      "event_type": "SKILL_CHECK",
+      "presentation_ids": [
+        "scene_034_script_003",
+        "scene_034_script_004",
+        "scene_034_script_007",
+        "scene_034_script_009",
+        "scene_034_script_010",
+        "scene_034_script_012",
+        "scene_034_script_013",
+        "scene_036_script_021",
+        "scene_036_script_024",
+        "scene_036_script_026"
+      ],
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:front_door_investigated,investigated_targets"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000068",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_034_script_016",
+        "scene_034_script_017",
+        "scene_034_script_020",
+        "scene_034_script_021",
+        "scene_034_script_023",
+        "scene_034_script_024",
+        "scene_036_script_010",
+        "scene_036_script_013",
+        "scene_036_script_015",
+        "scene_036_script_016",
+        "scene_036_script_018"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000070",
+      "event_type": "SKILL_CHECK",
+      "presentation_ids": [
+        "scene_034_script_016",
+        "scene_034_script_017",
+        "scene_034_script_020",
+        "scene_034_script_021",
+        "scene_034_script_023",
+        "scene_034_script_024",
+        "scene_036_script_010",
+        "scene_036_script_013",
+        "scene_036_script_015",
+        "scene_036_script_016",
+        "scene_036_script_018"
+      ],
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:ground_floor_windows_investigated,investigated_targets"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000084",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_035_script_003",
+        "scene_035_script_004",
+        "scene_035_script_006",
+        "scene_035_script_007"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000086",
+      "event_type": "SKILL_CHECK",
+      "presentation_ids": [
+        "scene_035_script_003",
+        "scene_035_script_004",
+        "scene_035_script_006",
+        "scene_035_script_007"
+      ],
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:corbitt_house_observed,investigated_targets"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000097",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_036_script_003",
+        "scene_036_script_004",
+        "scene_036_script_007",
+        "scene_036_script_011",
+        "scene_036_script_012",
+        "scene_036_script_022",
+        "scene_036_script_023"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000099",
+      "event_type": "SKILL_CHECK",
+      "presentation_ids": [
+        "scene_036_script_003",
+        "scene_036_script_004",
+        "scene_036_script_007",
+        "scene_036_script_011",
+        "scene_036_script_012",
+        "scene_036_script_022",
+        "scene_036_script_023"
+      ],
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:corbitt_house_examined,investigated_targets"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000110",
+      "event_type": "ACTION_DECLARATION",
+      "presentation_ids": [
+        "scene_036_script_003",
+        "scene_036_script_004",
+        "scene_036_script_007",
+        "scene_036_script_011",
+        "scene_036_script_012",
+        "scene_036_script_022",
+        "scene_036_script_023"
+      ],
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:corbitt_house_entered,front_door_unlocked"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000125",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_037_script_003",
+        "scene_037_script_004",
+        "scene_037_script_006",
+        "scene_037_script_015",
+        "scene_037_script_016",
+        "scene_037_script_018",
+        "scene_037_script_019",
+        "scene_047_script_010",
+        "scene_047_script_011",
+        "scene_049_script_004",
+        "scene_049_script_005"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000127",
+      "event_type": "SKILL_CHECK",
+      "presentation_ids": [
+        "scene_037_script_003",
+        "scene_037_script_004",
+        "scene_037_script_006",
+        "scene_037_script_015",
+        "scene_037_script_016",
+        "scene_037_script_018",
+        "scene_037_script_019",
+        "scene_047_script_010",
+        "scene_047_script_011",
+        "scene_049_script_004",
+        "scene_049_script_005"
+      ],
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:investigated_targets,living_room_investigated"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000146",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_038_script_016",
+        "scene_038_script_017",
+        "scene_038_script_019",
+        "scene_038_script_020",
+        "scene_038_script_036",
+        "scene_038_script_037",
+        "scene_046_script_010",
+        "scene_046_script_011"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000148",
+      "event_type": "SKILL_CHECK",
+      "presentation_ids": [
+        "scene_038_script_016",
+        "scene_038_script_017",
+        "scene_038_script_019",
+        "scene_038_script_020",
+        "scene_038_script_036",
+        "scene_038_script_037",
+        "scene_046_script_010",
+        "scene_046_script_011"
+      ],
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:bathroom_bathtub_investigated,investigated_targets"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000157",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_038_script_004",
+        "scene_038_script_005",
+        "scene_038_script_008",
+        "scene_038_script_023",
+        "scene_038_script_024",
+        "scene_038_script_026",
+        "scene_038_script_027"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000159",
+      "event_type": "SKILL_CHECK",
+      "presentation_ids": [
+        "scene_038_script_004",
+        "scene_038_script_005",
+        "scene_038_script_008",
+        "scene_038_script_023",
+        "scene_038_script_024",
+        "scene_038_script_026",
+        "scene_038_script_027"
+      ],
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:investigated_targets,master_bedroom_bookshelf_investigated"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000177",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_037_script_008",
+        "scene_037_script_009",
+        "scene_037_script_012",
+        "scene_037_script_022",
+        "scene_037_script_023",
+        "scene_037_script_025",
+        "scene_041_script_005",
+        "scene_041_script_006",
+        "scene_045_script_004",
+        "scene_045_script_005",
+        "scene_047_script_006",
+        "scene_047_script_007"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000179",
+      "event_type": "SKILL_CHECK",
+      "presentation_ids": [
+        "scene_037_script_008",
+        "scene_037_script_009",
+        "scene_037_script_012",
+        "scene_037_script_022",
+        "scene_037_script_023",
+        "scene_037_script_025",
+        "scene_041_script_005",
+        "scene_041_script_006",
+        "scene_045_script_004",
+        "scene_045_script_005",
+        "scene_047_script_006",
+        "scene_047_script_007"
+      ],
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:basement_door_examined,investigated_targets"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000192",
+      "event_type": "ACTION_DECLARATION",
+      "presentation_ids": [
+        "scene_037_script_008",
+        "scene_037_script_009",
+        "scene_037_script_012",
+        "scene_037_script_022",
+        "scene_037_script_023",
+        "scene_037_script_025",
+        "scene_041_script_005",
+        "scene_041_script_006",
+        "scene_045_script_004",
+        "scene_045_script_005",
+        "scene_047_script_006",
+        "scene_047_script_007"
+      ],
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:basement_accessible,basement_door_unlocked,hidden_passage_found"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000200",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_038_script_011",
+        "scene_038_script_012",
+        "scene_038_script_014",
+        "scene_038_script_029",
+        "scene_038_script_030",
+        "scene_038_script_033",
+        "scene_046_script_003",
+        "scene_046_script_004",
+        "scene_046_script_007",
+        "scene_046_script_008"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000202",
+      "event_type": "SKILL_CHECK",
+      "presentation_ids": [
+        "scene_038_script_011",
+        "scene_038_script_012",
+        "scene_038_script_014",
+        "scene_038_script_029",
+        "scene_038_script_030",
+        "scene_038_script_033",
+        "scene_046_script_003",
+        "scene_046_script_004",
+        "scene_046_script_007",
+        "scene_046_script_008"
+      ],
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:investigated_targets,spare_bedroom_bed_investigated,trigger_flying_bed"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000217",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_047_script_003",
+        "scene_047_script_004"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000219",
+      "event_type": "SKILL_CHECK",
+      "presentation_ids": [
+        "scene_047_script_003",
+        "scene_047_script_004"
+      ],
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:corbitt_diaries_found,investigated_targets"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000232",
+      "event_type": "ACTION_DECLARATION",
+      "presentation_ids": [
+        "scene_048_script_004",
+        "scene_048_script_005",
+        "scene_048_script_007",
+        "scene_048_script_016",
+        "scene_048_script_017"
+      ],
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:has_corbitt_knife,investigated_targets,trigger_knife_attack"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000238",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_048_script_010",
+        "scene_048_script_011",
+        "scene_048_script_013",
+        "scene_048_script_014",
+        "scene_048_script_026",
+        "scene_048_script_027",
+        "scene_050_script_004",
+        "scene_050_script_005"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000240",
+      "event_type": "SKILL_CHECK",
+      "presentation_ids": [
+        "scene_048_script_010",
+        "scene_048_script_011",
+        "scene_048_script_013",
+        "scene_048_script_014",
+        "scene_048_script_026",
+        "scene_048_script_027",
+        "scene_050_script_004",
+        "scene_050_script_005"
+      ],
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:basement_planks_examined,investigated_targets"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000257",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_048_script_020",
+        "scene_048_script_021",
+        "scene_048_script_024",
+        "scene_048_script_029",
+        "scene_048_script_030",
+        "scene_048_script_033",
+        "scene_048_script_034"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000259",
+      "event_type": "SKILL_CHECK",
+      "presentation_ids": [
+        "scene_048_script_020",
+        "scene_048_script_021",
+        "scene_048_script_024",
+        "scene_048_script_029",
+        "scene_048_script_030",
+        "scene_048_script_033",
+        "scene_048_script_034"
+      ],
+      "reasons": [
+        "SKILL_CHECK",
+        "SCENARIO_STATE_CHANGE:investigated_targets,junk_searched"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000274",
+      "event_type": "ACTION_DECLARATION",
+      "presentation_ids": [
+        "scene_050_script_008",
+        "scene_050_script_009"
+      ],
+      "reasons": [
+        "SCENARIO_STATE_CHANGE:basement_planks_broken"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000280",
+      "event_type": "COMBAT_START",
+      "presentation_ids": [
+        "scene_052_script_001",
+        "scene_052_script_002"
+      ],
+      "reasons": [
+        "COMBAT_START"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000286",
+      "event_type": "CLUE_FOUND",
+      "presentation_ids": [
+        "scene_051_script_005",
+        "scene_051_script_006",
+        "scene_051_script_009",
+        "scene_051_script_012",
+        "scene_052_script_001",
+        "scene_052_script_004",
+        "scene_053_script_001",
+        "narrative_final_battle_resolution",
+        "narrative_final_battle_consequence"
+      ],
+      "reasons": [
+        "CLUE_FOUND"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000292",
+      "event_type": "ENDING",
+      "presentation_ids": [
+        "narrative_final_battle_consequence"
+      ],
+      "reasons": [
+        "ENDING"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:unified:000293",
+      "event_type": "COMBAT_END",
+      "presentation_ids": [
+        "narrative_final_battle_consequence"
+      ],
+      "reasons": [
+        "COMBAT_END"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:session:000376",
+      "event_type": "COMBAT_START",
+      "presentation_ids": [
+        "scene_052_script_001"
+      ],
+      "reasons": [
+        "COMBAT_START"
+      ]
+    },
+    {
+      "CONTEXT_PRESENT": true,
+      "PRESENTATION_PRESENT": true,
+      "STRUCTURED_EVENT_PRESENT": true,
+      "coverage_status": "FULL",
+      "event_id": "norm:session:000382",
+      "event_type": "ENDING",
+      "presentation_ids": [
+        "scene_053_script_001",
+        "narrative_final_battle_resolution",
+        "narrative_final_battle_consequence"
+      ],
+      "reasons": [
+        "ENDING"
+      ]
+    }
+  ],
+  "missing_count": 0,
+  "partial_count": 0,
+  "scene_reports": [
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_001",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_002",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_003",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_004",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_005",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_006",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_007",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_008",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_009",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_010",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_011",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_012",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_013",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_014",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_015",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_016",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_017",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_018",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_019",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_020",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_021",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_022",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_023",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_024",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_025",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_026",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_027",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_028",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_029",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_030",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_031",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_032",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_033",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_034",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_035",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_036",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_037",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_038",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_039",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_040",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_041",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_042",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_043",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_044",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_045",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_046",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [
+        "basement_door_open_closed"
+      ],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_047",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [
+        "knife_rediscovery_state_inconsistency"
+      ],
+      "missing_result": [
+        "knife_attack_resolution"
+      ],
+      "missing_setup": [
+        "knife_attack_resolution"
+      ],
+      "narrative_coverage": "FULL",
+      "reorders": [
+        {
+          "after_script_line_id": "scene_048_script_007",
+          "before_script_line_id": "scene_048_script_008",
+          "original_order": 9,
+          "presentation_order": 7.5,
+          "reorder_reason": "WORLD_EVENT_BEFORE_SAN",
+          "scene_id": "scene_048",
+          "script_line_id": "scene_048_script_009"
+        }
+      ],
+      "scene_id": "scene_048",
+      "source_gaps": [
+        "knife_attack_resolution_missing"
+      ]
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_049",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_050",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_051",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_052",
+      "source_gaps": []
+    },
+    {
+      "contradictions": [],
+      "missing_result": [],
+      "missing_setup": [],
+      "narrative_coverage": "FULL",
+      "reorders": [],
+      "scene_id": "scene_053",
+      "source_gaps": []
+    }
+  ],
+  "source_insufficient_count": 0,
+  "status": "PASS"
+}

@@ -1,0 +1,266 @@
+{
+  "checks": [
+    {
+      "detail": null,
+      "name": "mp4_exists",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "ffprobe_readable",
+      "status": "PASS"
+    },
+    {
+      "detail": 34.642667,
+      "name": "duration_30_to_60_sec",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        1920,
+        1080
+      ],
+      "name": "resolution_1920x1080",
+      "status": "PASS"
+    },
+    {
+      "detail": "30/1",
+      "name": "fps_30",
+      "status": "PASS"
+    },
+    {
+      "detail": "h264",
+      "name": "video_stream",
+      "status": "PASS"
+    },
+    {
+      "detail": "aac",
+      "name": "audio_stream",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "wav_missing_zero",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "subtitle_missing_zero",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        "m1_background_fallback",
+        "m1_portrait_aquestalk",
+        "m1_portrait_voicevox"
+      ],
+      "name": "unresolved_asset_zero",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "asset_missing_zero",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "subtitle_overflow_zero",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "timeline_overlap_zero",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "VOICE_PROFILE_MISMATCH",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "speech_chunk_subtitle_sync",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "subtitle_readability_config",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        "AQUESTALK",
+        "VOICEVOX"
+      ],
+      "name": "mixed_voice_engines",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "speaker_mapping",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "provenance",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "silent_voice_zero",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "AQUESTALK": -19.45,
+        "VOICEVOX": -21.38
+      },
+      "name": "loudness_measured",
+      "status": "PASS"
+    },
+    {
+      "detail": "qa\\frame_sample.png",
+      "name": "black_frame_check",
+      "status": "PASS"
+    }
+  ],
+  "probe": {
+    "format": {
+      "bit_rate": "242424",
+      "duration": "34.642667",
+      "filename": "projects\\m1_synthetic\\output\\m1_synthetic.mp4",
+      "format_long_name": "QuickTime / MOV",
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "nb_streams": 2,
+      "probe_score": 100,
+      "size": "1049780",
+      "start_time": "0.000000",
+      "tags": {
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf62.13.102",
+        "major_brand": "isom",
+        "minor_version": "512"
+      }
+    },
+    "streams": [
+      {
+        "avg_frame_rate": "30/1",
+        "bit_rate": "92114",
+        "bits_per_raw_sample": "8",
+        "chroma_location": "left",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "codec_name": "h264",
+        "codec_tag": "0x31637661",
+        "codec_tag_string": "avc1",
+        "codec_type": "video",
+        "coded_height": 1080,
+        "coded_width": 1920,
+        "disposition": {
+          "attached_pic": 0,
+          "captions": 0,
+          "clean_effects": 0,
+          "comment": 0,
+          "default": 1,
+          "dependent": 0,
+          "descriptions": 0,
+          "dub": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "karaoke": 0,
+          "lyrics": 0,
+          "metadata": 0,
+          "multilayer": 0,
+          "non_diegetic": 0,
+          "original": 0,
+          "still_image": 0,
+          "timed_thumbnails": 0,
+          "visual_impaired": 0
+        },
+        "duration": "34.633333",
+        "duration_ts": 531968,
+        "extradata_size": 30,
+        "field_order": "progressive",
+        "has_b_frames": 0,
+        "height": 1080,
+        "id": "0x1",
+        "index": 0,
+        "is_avc": "true",
+        "level": 40,
+        "mime_codec_string": "avc1.42c028",
+        "nal_length_size": "4",
+        "nb_frames": "1039",
+        "pix_fmt": "yuv420p",
+        "profile": "Constrained Baseline",
+        "r_frame_rate": "30/1",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "tags": {
+          "encoder": "Lavc62.29.101 libopenh264",
+          "handler_name": "VideoHandler",
+          "language": "und"
+        },
+        "time_base": "1/15360",
+        "width": 1920
+      },
+      {
+        "avg_frame_rate": "0/0",
+        "bit_rate": "143098",
+        "bits_per_sample": 0,
+        "channel_layout": "mono",
+        "channels": 1,
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "codec_name": "aac",
+        "codec_tag": "0x6134706d",
+        "codec_tag_string": "mp4a",
+        "codec_type": "audio",
+        "disposition": {
+          "attached_pic": 0,
+          "captions": 0,
+          "clean_effects": 0,
+          "comment": 0,
+          "default": 1,
+          "dependent": 0,
+          "descriptions": 0,
+          "dub": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "karaoke": 0,
+          "lyrics": 0,
+          "metadata": 0,
+          "multilayer": 0,
+          "non_diegetic": 0,
+          "original": 0,
+          "still_image": 0,
+          "timed_thumbnails": 0,
+          "visual_impaired": 0
+        },
+        "duration": "34.642667",
+        "duration_ts": 1662848,
+        "extradata_size": 5,
+        "id": "0x2",
+        "index": 1,
+        "initial_padding": 0,
+        "mime_codec_string": "mp4a.40.2",
+        "nb_frames": "1631",
+        "profile": "LC",
+        "r_frame_rate": "0/0",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "tags": {
+          "handler_name": "SoundHandler",
+          "language": "und"
+        },
+        "time_base": "1/48000"
+      }
+    ]
+  },
+  "status": "PASS",
+  "warnings": [
+    "FALLBACK_BACKGROUND_USED",
+    "NON_PUBLISHABLE_ASSET_USED"
+  ]
+}

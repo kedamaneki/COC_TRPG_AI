@@ -1,0 +1,10 @@
+{
+  "conversion_warnings": [],
+  "deterministic_content_sha256": "cd3f99f74bf56763a2a933b3ffc0ad40e81ae36e0cd1c8030e5262bf4f868fb4",
+  "dropped_events": 0,
+  "normalized_events": 678,
+  "source_events": 678,
+  "source_traceability_rate": 1.0,
+  "source_traceable_events": 678,
+  "unknown_speakers": 0
+}

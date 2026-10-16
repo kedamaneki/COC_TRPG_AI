@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-14T00:32:47.4151575+09:00",
+  "session_id": "CORBITT_LONGRUN_ITERATION2_V2_HOME_001",
+  "resume_from": "CHECKPOINT_CYCLE_000039",
+  "compatible_migration": "SPECIAL_OBJECTIVE_COMBAT_CONTRACT_FIX_V1",
+  "resume_count": 1,
+  "resume_preflight": "PASS",
+  "migration_validation": "PASS",
+  "continuity": {
+    "status": "PASS",
+    "duplicate_events": 0,
+    "missing_events_in_full_raw_stream": 0,
+    "double_execution": 0,
+    "double_commit": 0,
+    "checkpoint_continuity": "PASS",
+    "session_log_append": "PASS",
+    "unified_log_append": "PASS",
+    "segment_merge_runner_status": "PASS",
+    "segment_coverage_missing_raw_events": 367,
+    "segment_coverage_note": "Pre-failure Cycle 1-39 segment artifact was never committed; final merged artifact contains one resume event plus 57 post-resume raw events. Full unified log has all 424 raw events and was used by Normalizer."
+  },
+  "migration_boundary": {
+    "segment_1": "Cycle 1-39 / pre-fix Core",
+    "migration": "SPECIAL_OBJECTIVE_COMBAT_CONTRACT_FIX_V1",
+    "pre_fix_source_hash": "0becb4ace78706764bf5a99d98d9520b0359f1d5a4feb9efe79f5e0e846f7723",
+    "post_fix_source_hash": "3de5164d6ec3a1b576487d48474d9a96e7f6dcbb616c042d83e7e8d45eed1514",
+    "protected_source_hash": "0a169103531f54137f430b59abd8242c626ed47716c510e13b256762a3a37124",
+    "segment_2": "Cycle 40-46 / post-fix compatible Core"
+  },
+  "raw_run": {
+    "status": "COMPLETED_UNAUDITED",
+    "completed": true,
+    "phase": "clear",
+    "cycle": 46,
+    "turn": 111,
+    "final_checkpoint": "CHECKPOINT_CYCLE_000046",
+    "corbitt_defeated": true,
+    "combat_state": "INACTIVE",
+    "combat_ended": 2,
+    "human_intervention": 0,
+    "llm_calls": 279,
+    "successful_calls": 279,
+    "errors": 0,
+    "retries": 0,
+    "fallbacks": 0,
+    "secondary_calls": 0,
+    "raw_hash_verification": "24/24 PASS"
+  },
+  "special_objective": {
+    "accepted": 1,
+    "adjudication_id": "adj_fb2dfaaa593140dba7b4a00e2ffebf49",
+    "state_mutation_count": 1,
+    "sequence": [
+      "COMBAT_ACTION_RESOLVED",
+      "SPECIAL_OBJECTIVE_COMPLETED",
+      "COMBAT_ENDING",
+      "COMBAT_ENDED"
+    ],
+    "world_fact": "CORBITT_BODY_DESTROYED",
+    "separate_corbitt_body_destroyed_event_count": 0
+  },
+  "normalizer": {
+    "status": "PASS",
+    "events": 977,
+    "source_events": 977,
+    "dropped_events": 0,
+    "traceability": 1.0,
+    "validation": "PASS",
+    "legacy_text_parse": 0,
+    "special_objective_provenance": "PASS",
+    "normalization_source_contradiction": 3,
+    "output": "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-04\\referenced-chatgpt-conversation-this-is-an\\video-production-agent\\formal-analysis\\CORBITT_LONGRUN_ITERATION2_V2_HOME_001\\normalizer-output"
+  },
+  "auditor_v2": {
+    "implementation_sha256": "8499ba51693e6b0f52dc94c2a19b4ef2243c9b819d2d66d0c789ce8bafd3f902",
+    "status": "NEEDS_ITERATION",
+    "critical": 61,
+    "major": 64,
+    "minor": 0,
+    "findings": 125,
+    "traceability": 1.0,
+    "categories": {
+      "SOURCE_CONTRADICTION": 0,
+      "NORMALIZATION_GAP": 0,
+      "ROLL_CONTRACT_INCOMPLETE": 122,
+      "COMBAT_WITHOUT_TERMINATION": 0,
+      "NORMALIZATION_SOURCE_CONTRADICTION": 3,
+      "MANDATORY_SAN_EFFECT_DROPPED": 0,
+      "SAN_SNAPSHOT_MISCLASSIFIED_AS_CHECK": 0,
+      "OBJECT_STATE_INVALID_TRANSITION": 0,
+      "OBJECT_NARRATIVE_STATE_CONTRADICTION": 0,
+      "UNGROUNDED_NARRATIVE_OPTION": 0
+    },
+    "output": "C:\\Users\\ri4re\\Documents\\Codex\\2026-10-04\\referenced-chatgpt-conversation-this-is-an\\video-production-agent\\formal-analysis\\CORBITT_LONGRUN_ITERATION2_V2_HOME_001\\auditor-output-v2"
+  },
+  "legacy_comparison": {
+    "status": "COMPLETED",
+    "comparable_caveat": "Auditor versions and classification strictness differ; absolute finding counts are not directly comparable.",
+    "corbitt_clear_001": {
+      "completed": true,
+      "critical": 2,
+      "major": 4,
+      "combat_without_termination": 1,
+      "wall_contradiction": true,
+      "knife_combat_complete": false,
+      "traceability": 1.0
+    },
+    "CORBITT_LONGRUN_POST_ADJUDICATION_FIX_001": {
+      "completed": true,
+      "critical": 4,
+      "major": 5,
+      "combat_without_termination": 0,
+      "normalization_source_contradictions": 22,
+      "rolled_check_incomplete": 9,
+      "traceability": 1.0
+    },
+    "CORBITT_LONGRUN_ITERATION2_V2_HOME_001": {
+      "completed": true,
+      "critical": 61,
+      "major": 64,
+      "combat_without_termination": 0,
+      "normalization_source_contradictions": 3,
+      "roll_contract_incomplete": 122,
+      "traceability": 1.0
+    },
+    "CORBITT_LONGRUN_ITERATION2_V2_001": {
+      "status": "PAUSED_FOR_PC_HANDOFF",
+      "cycle": 33,
+      "turn": 93,
+      "final_comparison": "NOT_COMPARABLE_FINAL"
+    },
+    "assessment": "Gameplay completion, combat lifecycle, source contradiction, SAN/Object checks improved. Formal ROLL/NO_ROLL evidence contract remains blocking."
+  },
+  "formal_gate": {
+    "scenario_completed": true,
+    "goal_completion_synchronized": true,
+    "human_intervention_zero": true,
+    "critical_zero": false,
+    "major_zero": false,
+    "source_contradiction_zero": true,
+    "normalization_gap_zero": true,
+    "roll_contract_incomplete_zero": false,
+    "combat_without_termination_zero": true,
+    "normalization_source_contradiction_zero": false,
+    "mandatory_san_effect_dropped_zero": true,
+    "san_snapshot_misclassified_as_check_zero": true,
+    "object_state_invalid_transition_zero": true,
+    "object_narrative_state_contradiction_zero": true,
+    "ungrounded_narrative_option_zero": true,
+    "legacy_text_parse_zero": true,
+    "traceability_one": true,
+    "input_identity_pass": true
+  },
+  "full_long_autonomous_reevaluation_v2_home": "NEEDS_ITERATION",
+  "video_source_eligible": false
+}

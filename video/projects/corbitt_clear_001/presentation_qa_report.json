@@ -1,0 +1,586 @@
+{
+  "checks": [
+    {
+      "detail": null,
+      "name": "output_exists",
+      "status": "PASS"
+    },
+    {
+      "detail": 115.866667,
+      "name": "duration_60_to_180_sec",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "resolution_1920x1080",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "audio_stream",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "missing_voice_zero",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        "bg_neutral_user",
+        "bgm_investigation_user",
+        "dialogue_frame_user",
+        "portrait_pc01_kitsune_reimu",
+        "portrait_pc02_kitsune_marisa",
+        "se_dice_user",
+        "se_san_user"
+      ],
+      "name": "asset_resolution",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "asset_files_exist",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "subtitle_overflow_zero",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "dice_overlay_present",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "san_overlay_present",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "bgm_present",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "se_present",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "ducking_configured",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "VOICE_PROFILE_MISMATCH",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "subtitle_readability_config",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "KP_SUBTITLE_CONTRAST",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "SPEAKER_NAME_CONTRAST",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "displayed_system_types": [
+          "SAN_CHANGE",
+          "SKILL_RESULT"
+        ],
+        "leaked": [],
+        "removed_count": 2
+      },
+      "name": "SYSTEM_PRESENTATION_WHITELIST",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "expected": 1,
+        "presented": 1
+      },
+      "name": "TABLETOP_SYSTEM_INTERACTION_PRESENTED",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "SYSTEM_INTERACTION_PAIRING_VALID",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "TECHNICAL_SYSTEM_INTERACTION_HIDDEN",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "SYSTEM_RESPONSE_CONTEXT_VISIBLE",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "PL_PC_IDENTITY_VALID",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "UNGROUNDED_KP_PROMPT",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "cases": [
+          {
+            "actual_presentation_as": [
+              "KP",
+              "PL"
+            ],
+            "actual_text": [
+              "プッシュしますか？",
+              "Yes"
+            ],
+            "expected_presentation_as": [
+              "KP",
+              "PL"
+            ],
+            "expected_text": [
+              "プッシュしますか？",
+              "Yes"
+            ],
+            "name": "Push Yes",
+            "pass": true,
+            "report": {
+              "ambiguous_pairs": 0,
+              "pairs": [
+                {
+                  "classification": "TABLETOP_INTERACTION",
+                  "grounding": "EXPLICIT_SYSTEM_PROMPT",
+                  "interaction_type": "PUSH_CONFIRMATION",
+                  "prompt_script_line_id": "r__system_prompt",
+                  "response_script_line_id": "r",
+                  "system_interaction_id": "si_001"
+                }
+              ],
+              "pl_voice_fallback_count": 0,
+              "prompt_response_pairs": 1,
+              "tabletop_interactions_detected": 1,
+              "tabletop_interactions_presented": 1,
+              "technical_interactions_hidden": 0,
+              "ungrounded_kp_prompt_count": 0,
+              "warnings": []
+            }
+          },
+          {
+            "actual_presentation_as": [
+              "KP",
+              "PL"
+            ],
+            "actual_text": [
+              "再試行しますか？",
+              "No"
+            ],
+            "expected_presentation_as": [
+              "KP",
+              "PL"
+            ],
+            "expected_text": [
+              "再試行しますか？",
+              "No"
+            ],
+            "name": "Retry No",
+            "pass": true,
+            "report": {
+              "ambiguous_pairs": 0,
+              "pairs": [
+                {
+                  "classification": "TABLETOP_INTERACTION",
+                  "grounding": "EXPLICIT_SYSTEM_PROMPT",
+                  "interaction_type": "RETRY_CONFIRMATION",
+                  "prompt_script_line_id": "r__system_prompt",
+                  "response_script_line_id": "r",
+                  "system_interaction_id": "si_001"
+                }
+              ],
+              "pl_voice_fallback_count": 0,
+              "prompt_response_pairs": 1,
+              "tabletop_interactions_detected": 1,
+              "tabletop_interactions_presented": 1,
+              "technical_interactions_hidden": 0,
+              "ungrounded_kp_prompt_count": 0,
+              "warnings": []
+            }
+          },
+          {
+            "actual_presentation_as": [],
+            "actual_text": [],
+            "expected_presentation_as": [],
+            "expected_text": [],
+            "name": "Technical checkpoint",
+            "pass": true,
+            "report": {
+              "ambiguous_pairs": 0,
+              "pairs": [],
+              "pl_voice_fallback_count": 0,
+              "prompt_response_pairs": 0,
+              "tabletop_interactions_detected": 0,
+              "tabletop_interactions_presented": 0,
+              "technical_interactions_hidden": 1,
+              "ungrounded_kp_prompt_count": 0,
+              "warnings": []
+            }
+          },
+          {
+            "actual_presentation_as": [
+              null,
+              null
+            ],
+            "actual_text": [
+              "一緒に来ますか？",
+              "はい"
+            ],
+            "expected_presentation_as": [
+              null,
+              null
+            ],
+            "expected_text": [
+              "一緒に来ますか？",
+              "はい"
+            ],
+            "name": "NPC dialogue",
+            "pass": true,
+            "report": {
+              "ambiguous_pairs": 0,
+              "pairs": [],
+              "pl_voice_fallback_count": 0,
+              "prompt_response_pairs": 0,
+              "tabletop_interactions_detected": 0,
+              "tabletop_interactions_presented": 0,
+              "technical_interactions_hidden": 0,
+              "ungrounded_kp_prompt_count": 0,
+              "warnings": []
+            }
+          },
+          {
+            "actual_presentation_as": [
+              null,
+              null
+            ],
+            "actual_text": [
+              "本当に開けますか？",
+              "はい"
+            ],
+            "expected_presentation_as": [
+              null,
+              null
+            ],
+            "expected_text": [
+              "本当に開けますか？",
+              "はい"
+            ],
+            "name": "KP dialogue",
+            "pass": true,
+            "report": {
+              "ambiguous_pairs": 0,
+              "pairs": [],
+              "pl_voice_fallback_count": 0,
+              "prompt_response_pairs": 0,
+              "tabletop_interactions_detected": 0,
+              "tabletop_interactions_presented": 0,
+              "technical_interactions_hidden": 0,
+              "ungrounded_kp_prompt_count": 0,
+              "warnings": []
+            }
+          },
+          {
+            "actual_presentation_as": [
+              null
+            ],
+            "actual_text": [
+              "Yes"
+            ],
+            "expected_presentation_as": [
+              null
+            ],
+            "expected_text": [
+              "Yes"
+            ],
+            "name": "Ambiguous",
+            "pass": true,
+            "report": {
+              "ambiguous_pairs": 1,
+              "pairs": [],
+              "pl_voice_fallback_count": 0,
+              "prompt_response_pairs": 0,
+              "tabletop_interactions_detected": 0,
+              "tabletop_interactions_presented": 0,
+              "technical_interactions_hidden": 0,
+              "ungrounded_kp_prompt_count": 0,
+              "warnings": [
+                {
+                  "code": "AMBIGUOUS_SYSTEM_INTERACTION",
+                  "script_line_id": "u"
+                }
+              ]
+            }
+          }
+        ],
+        "fixture_version": "0.1",
+        "observed_preview": {
+          "ambiguous_pairs": 0,
+          "pairs": [
+            {
+              "classification": "TABLETOP_INTERACTION",
+              "grounding": "FOLLOWUP_EXPLICIT_LUCK_SPEND",
+              "interaction_type": "ACTION_CONFIRMATION",
+              "prompt_script_line_id": "scene_048_script_006__system_prompt",
+              "response_script_line_id": "scene_048_script_006",
+              "system_interaction_id": "si_001"
+            }
+          ],
+          "pl_voice_fallback_count": 0,
+          "prompt_response_pairs": 1,
+          "tabletop_interactions_detected": 1,
+          "tabletop_interactions_presented": 1,
+          "technical_interactions_hidden": 0,
+          "ungrounded_kp_prompt_count": 0,
+          "warnings": []
+        }
+      },
+      "name": "SYSTEM_INTERACTION_FIXTURES",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "full_count": 45,
+        "hard_protected_count": 45,
+        "invalid_event_ids": [],
+        "source_insufficient_count": 0
+      },
+      "name": "PROTECTED_NARRATIVE_COVERAGE",
+      "status": "PASS"
+    },
+    {
+      "detail": 0,
+      "name": "UNGROUNDED_WORLD_EVENT_NARRATIVE",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "reorder": {
+          "after_script_line_id": "scene_048_script_007",
+          "before_script_line_id": "scene_048_script_008",
+          "original_order": 9,
+          "presentation_order": 7.5,
+          "reorder_reason": "WORLD_EVENT_BEFORE_SAN",
+          "scene_id": "scene_048",
+          "script_line_id": "scene_048_script_009"
+        },
+        "san_script_line_id": "scene_048_script_008",
+        "visible_cause": "scene_048_script_009"
+      },
+      "name": "SAN_CAUSE_VISIBLE",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        "scene_052_script_001",
+        "scene_052_script_002"
+      ],
+      "name": "COMBAT_START_CONTEXT_VISIBLE",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        "narrative_final_battle_resolution",
+        "narrative_final_battle_consequence"
+      ],
+      "name": "COMBAT_END_CONTEXT_VISIBLE",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        "narrative_final_battle_resolution",
+        "narrative_final_battle_consequence"
+      ],
+      "name": "ENDING_CAUSE_VISIBLE",
+      "status": "PASS"
+    },
+    {
+      "detail": 0,
+      "name": "WORLD_EVENT_FILTER_PRESERVED",
+      "status": "PASS"
+    },
+    {
+      "detail": 53,
+      "name": "NARRATIVE_FULL_53_SCENE_AUDIT",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "critical_count": 1,
+        "gap_count": 2
+      },
+      "name": "NARRATIVE_SOURCE_GAPS_REPORTED",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "contradiction_count": 2,
+        "critical_count": 2
+      },
+      "name": "NARRATIVE_CONTRADICTIONS_REPORTED",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "actual": {
+          "edited_script_sha256": "79bfc1d59e732e219006d04a8ac62b0d845ba5253d1f9a8de4ac8b461d3f47c0",
+          "normalized_session_sha256": "02c30843753501b5718e0d1d03320489f13aeb958ee8fcb6a5c625bb07fedb1f"
+        },
+        "expected": {
+          "edited_script_sha256": "79bfc1d59e732e219006d04a8ac62b0d845ba5253d1f9a8de4ac8b461d3f47c0",
+          "normalized_session_sha256": "02c30843753501b5718e0d1d03320489f13aeb958ee8fcb6a5c625bb07fedb1f"
+        }
+      },
+      "name": "NARRATIVE_INPUT_HASHES_UNCHANGED",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "SPEAKER_IDENTITY_RESOLUTION",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "PL_PC_DISPLAY_NAME_RESOLUTION",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "layout_safe_areas",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "HEAD_ONLY_DIALOGUE_OVERLAP",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "speech_chunk_subtitle_sync",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "max_sec": 0.12,
+        "measurements": [
+          {
+            "from_clip_id": "clip_011",
+            "next_wav_leading_sec": 0.0274,
+            "source_script_line_id": "scene_048_script_003",
+            "speaker_id": "pc_02",
+            "timeline_gap_sec": 0.0,
+            "timeline_padding_sec": 0.0,
+            "to_clip_id": "clip_012",
+            "total_internal_silence_sec": 0.0592,
+            "wav_trailing_sec": 0.0318
+          }
+        ],
+        "required_aquestalk_speakers": [
+          "pc_01",
+          "pc_02"
+        ],
+        "speakers_with_internal_boundaries": [
+          "pc_02"
+        ]
+      },
+      "name": "aquestalk_internal_gap",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "AQUESTALK_NO_WORD_LEVEL_SPLIT",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "frontend_reference_pending": true,
+        "reference_scope": "YMM4_BUNDLED_AQUESTALK_ENGINE_DIRECT",
+        "sample_counts": {
+          "marisa": 3,
+          "reimu": 3
+        }
+      },
+      "name": "AQUESTALK_PROSODY_AB_FIXTURE",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "WHITESPACE_VOICE_ASSET_COUNT",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "BLANK_TIMELINE_VOICE_REFERENCE",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "NULL_PRESENTATION_CLIP",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "FINAL_RESULT_MATCHES_GAME_STATE",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "DISPLAY_RESULT_MISMATCH",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "WORD_INTERNAL_LINE_BREAK",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "active_timeline_count": 0,
+        "known_bad_fixture_detected": true
+      },
+      "name": "SUSPICIOUS_AUDIO_BURST",
+      "status": "PASS"
+    },
+    {
+      "detail": -1.5,
+      "name": "audio_clipping_zero",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "black_frame_zero",
+      "status": "PASS"
+    }
+  ],
+  "duration_sec": 115.866667,
+  "human_review": "PENDING",
+  "max_volume_db": -1.5,
+  "publishability": "BLOCKED_SOURCE_GAPS",
+  "publishable": false,
+  "status": "PASS",
+  "warnings": [
+    "NON_PUBLISHABLE_ASSET_USED"
+  ]
+}

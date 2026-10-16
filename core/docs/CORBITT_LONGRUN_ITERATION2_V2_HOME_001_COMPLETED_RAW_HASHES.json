@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-14T00:29:15.6492241+09:00",
+  "session_id": "CORBITT_LONGRUN_ITERATION2_V2_HOME_001",
+  "run_state": "COMPLETED_UNAUDITED",
+  "cycle": 46,
+  "turn": 111,
+  "resume_count": 1,
+  "compatible_migration": "SPECIAL_OBJECTIVE_COMBAT_CONTRACT_FIX_V1",
+  "final_checkpoint": "CHECKPOINT_CYCLE_000046",
+  "video_source_eligible": false,
+  "file_count": 24,
+  "files": [
+    {
+      "path": "result.json",
+      "sha256": "d99e46b228d40e1058e46c1f4e2b9938861d298ede814593ce607fa943eab386",
+      "length": 14796
+    },
+    {
+      "path": "session-log.json",
+      "sha256": "245ee36191e0dbea7b456e3bebe892aa9ffab43f61428b9bf788e0c6f38a3df3",
+      "length": 454312
+    },
+    {
+      "path": "unified-event-log.json",
+      "sha256": "e04158251b9347eebd6ca493ea2c2444557f3458da0a5aa6f9ce7a653f837daa",
+      "length": 1883581
+    },
+    {
+      "path": "input_manifest.json",
+      "sha256": "b93c42d70a7f3d1419f8fb2012e14dc2065dfb52cd9bc5430b13ed387995a5c3",
+      "length": 1640
+    },
+    {
+      "path": "run_identity.json",
+      "sha256": "36f5043a8642da47eeef2919da8801d99b0261adb63b4474523eaf1771de9e7c",
+      "length": 2282
+    },
+    {
+      "path": "raw_run_status.json",
+      "sha256": "55822b67a85606c641a006b00c572931cc9ff99699d0da2e85679f7f1857f1ee",
+      "length": 1278
+    },
+    {
+      "path": "llm_call_metrics.jsonl",
+      "sha256": "adb07185be68b4cac4cae2fec5c2d89b2cbe727a933745943fa82ccdf4ac1567",
+      "length": 265559
+    },
+    {
+      "path": "llm_performance_summary.json",
+      "sha256": "1ba179c4448f372082a5f07c9b948580cdc0fda2410cfc9416d38b9f24024f21",
+      "length": 3483
+    },
+    {
+      "path": "resume-validation.json",
+      "sha256": "94d989d9f877931923de9fc31ec175d1e7413bbdef89fdd30d5491e4944f17ce",
+      "length": 777
+    },
+    {
+      "path": "merged\\evaluation.json",
+      "sha256": "3a01587fdacdb8355b3b9d4e6083dcb41cb3b7be70c46be7b796fa80ffe6cfa6",
+      "length": 5431
+    },
+    {
+      "path": "merged\\events.jsonl",
+      "sha256": "3936118e15ca1226fd077a0153f1f12680fefd0bb1818dc8ea56495502cc8cb4",
+      "length": 215325
+    },
+    {
+      "path": "segments\\segment_001\\segment.json",
+      "sha256": "009bfb29cc4b133af19af9838c06a7356129d08759601325d5034a7e77ae9cff",
+      "length": 307608
+    },
+    {
+      "path": "checkpoints\\cycle_000046\\COMPLETE",
+      "sha256": "6960e2581e809decb81cf0f5b819342abcfef33a53309b373f18326117360a2d",
+      "length": 25
+    },
+    {
+      "path": "checkpoints\\cycle_000046\\manifest.json",
+      "sha256": "1089e0a5f909e1101eada20a30eb76eb29ed134eb0c74ebf96a29e8175fe721b",
+      "length": 3538
+    },
+    {
+      "path": "checkpoints\\cycle_000046\\runtime_data\\datasets\\corbitt_house.json",
+      "sha256": "699773662a65e82e5507d711ac40338799b24467dd61a7df0bf30c13c043324d",
+      "length": 70050
+    },
+    {
+      "path": "checkpoints\\cycle_000046\\runtime_data\\datasets\\decision_cases_index.json",
+      "sha256": "8036f693ee537507738318c389b73b212c978d8b51b25e1a6fdc51917151a2dd",
+      "length": 137477
+    },
+    {
+      "path": "checkpoints\\cycle_000046\\runtime_data\\datasets\\decision_cases.jsonl",
+      "sha256": "4875f17d64f7ddd8d555970177e5f3badfaba751deaf270a64c5213f1bbc6c0b",
+      "length": 4077346
+    },
+    {
+      "path": "checkpoints\\cycle_000046\\runtime_data\\datasets\\my_scenario.json",
+      "sha256": "548999a7543f55348d0f0fb090bc4121e638924a24245dd8e785af787595775c",
+      "length": 1446
+    },
+    {
+      "path": "checkpoints\\cycle_000046\\runtime_data\\datasets\\rp_library.json",
+      "sha256": "4b7466d9a1db3542f21926df62fda14f17f727163da3194f15c75e10c5fa9a57",
+      "length": 3212
+    },
+    {
+      "path": "checkpoints\\cycle_000046\\runtime_data\\datasets\\session_metrics.jsonl",
+      "sha256": "8d186fbf374ef7eacb0a9176783ae2d0c7b60acc37ceee9ea2b5238aeb20d161",
+      "length": 1415030
+    },
+    {
+      "path": "checkpoints\\cycle_000046\\runtime_data\\npcs.json",
+      "sha256": "3a82d3566e4ff67f981e9499535412bf255d753818a0f9e0379b993972474273",
+      "length": 25858
+    },
+    {
+      "path": "checkpoints\\cycle_000046\\runtime_data\\pcs.json",
+      "sha256": "7e637cec668b2cf6345f52d882eb7257d4692a4fa8010fd5993bba3781caaf89",
+      "length": 5354
+    },
+    {
+      "path": "checkpoints\\cycle_000046\\runtime_data\\scenario_corbitt.json",
+      "sha256": "b6f0559ffca677b57bc3a69c16991bb24c483d30256cb6dfd30fc938ebd84ed7",
+      "length": 164868
+    },
+    {
+      "path": "checkpoints\\cycle_000046\\state.json",
+      "sha256": "d77dfec6b497ff5dff4966b6a438c267448791bf4e05dc9de4f2c8618883b6d1",
+      "length": 1852747
+    }
+  ]
+}

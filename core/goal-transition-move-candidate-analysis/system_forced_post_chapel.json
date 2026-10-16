@@ -1,0 +1,183 @@
+{
+  "all_system_forced_count": 9,
+  "post_basement_exit_count": 4,
+  "events": [
+    {
+      "cycle": 12,
+      "game_turn": null,
+      "checkpoint_turn": 28,
+      "event_id": "evt_000110_392249b577c025b21d8e",
+      "actor": "pc_01",
+      "chosen_action": "search",
+      "target": "corbitt_house_exterior_view",
+      "candidate_source": "S4 forced progress pool",
+      "current_goal": "悪霊の家を完了する",
+      "action_phase": "TRANSITION",
+      "progress_result": 2,
+      "move_candidate_present": false,
+      "reason": [],
+      "classification": "MOVE_NOT_IN_POOL",
+      "post_basement_exit": false
+    },
+    {
+      "cycle": 21,
+      "game_turn": 42,
+      "checkpoint_turn": 46,
+      "event_id": "evt_000177_26b96d30460a32b42e6d",
+      "actor": "pc_01",
+      "chosen_action": "break",
+      "target": "rotting_floorboards",
+      "candidate_source": "S4 forced progress pool",
+      "current_goal": "悪霊の家を完了する",
+      "action_phase": "DISCOVER",
+      "progress_result": 0,
+      "move_candidate_present": false,
+      "reason": [
+        "consecutive_no_progress",
+        "known_failed_action_reselected"
+      ],
+      "classification": "MOVE_NOT_IN_POOL",
+      "post_basement_exit": false
+    },
+    {
+      "cycle": 22,
+      "game_turn": 47,
+      "checkpoint_turn": 51,
+      "event_id": "evt_000191_e00806c0d3260732af58",
+      "actor": "pc_01",
+      "chosen_action": "break",
+      "target": "rotting_floorboards",
+      "candidate_source": "S4 forced progress pool",
+      "current_goal": "悪霊の家を完了する",
+      "action_phase": "DISCOVER",
+      "progress_result": 0,
+      "move_candidate_present": false,
+      "reason": [
+        "consecutive_no_progress",
+        "known_failed_action_reselected"
+      ],
+      "classification": "MOVE_NOT_IN_POOL",
+      "post_basement_exit": false
+    },
+    {
+      "cycle": 25,
+      "game_turn": 55,
+      "checkpoint_turn": 57,
+      "event_id": "evt_000214_303057d662f9a246dd09",
+      "actor": "pc_02",
+      "chosen_action": "break",
+      "target": "rotting_floorboards",
+      "candidate_source": "S4 forced progress pool",
+      "current_goal": "悪霊の家を完了する",
+      "action_phase": "DISCOVER",
+      "progress_result": 0,
+      "move_candidate_present": false,
+      "reason": [
+        "consecutive_no_progress",
+        "known_failed_action_reselected"
+      ],
+      "classification": "MOVE_NOT_IN_POOL",
+      "post_basement_exit": false
+    },
+    {
+      "cycle": 29,
+      "game_turn": 66,
+      "checkpoint_turn": 71,
+      "event_id": "evt_000248_61e5f9a2c2d6c055e9e0",
+      "actor": "pc_02",
+      "chosen_action": "push",
+      "target": "rotting_floorboards",
+      "candidate_source": "S4 forced progress pool",
+      "current_goal": "悪霊の家を完了する",
+      "action_phase": "EXECUTE",
+      "progress_result": 0,
+      "move_candidate_present": false,
+      "reason": [
+        "consecutive_no_progress",
+        "known_failed_action_reselected"
+      ],
+      "classification": "MOVE_NOT_IN_POOL",
+      "post_basement_exit": false
+    },
+    {
+      "cycle": 30,
+      "game_turn": 77,
+      "checkpoint_turn": 78,
+      "event_id": "evt_000280_d9863a5e5f87bc6d531c",
+      "actor": "pc_02",
+      "chosen_action": "break",
+      "target": "rotting_floorboards",
+      "candidate_source": "S4 forced progress pool",
+      "current_goal": "悪霊の家を完了する",
+      "action_phase": "DISCOVER",
+      "progress_result": 0,
+      "move_candidate_present": false,
+      "reason": [
+        "consecutive_no_progress"
+      ],
+      "classification": "MOVE_NOT_IN_POOL",
+      "post_basement_exit": true
+    },
+    {
+      "cycle": 31,
+      "game_turn": 81,
+      "checkpoint_turn": 82,
+      "event_id": "evt_000289_e5f5609776055cf322a6",
+      "actor": "pc_01",
+      "chosen_action": "break",
+      "target": "rotting_floorboards",
+      "candidate_source": "S4 forced progress pool",
+      "current_goal": "悪霊の家を完了する",
+      "action_phase": "DISCOVER",
+      "progress_result": 0,
+      "move_candidate_present": false,
+      "reason": [
+        "consecutive_no_progress",
+        "repeated_action",
+        "known_failed_action_reselected"
+      ],
+      "classification": "MOVE_NOT_IN_POOL",
+      "post_basement_exit": true
+    },
+    {
+      "cycle": 32,
+      "game_turn": 85,
+      "checkpoint_turn": 87,
+      "event_id": "evt_000300_e932ea48aced070ad8d0",
+      "actor": "pc_01",
+      "chosen_action": "break",
+      "target": "rotting_floorboards",
+      "candidate_source": "S4 forced progress pool",
+      "current_goal": "悪霊の家を完了する",
+      "action_phase": "DISCOVER",
+      "progress_result": 0,
+      "move_candidate_present": false,
+      "reason": [
+        "consecutive_no_progress",
+        "known_failed_action_reselected"
+      ],
+      "classification": "MOVE_NOT_IN_POOL",
+      "post_basement_exit": true
+    },
+    {
+      "cycle": 33,
+      "game_turn": 91,
+      "checkpoint_turn": 92,
+      "event_id": "evt_000317_ff4d0ba19b35eab0706c",
+      "actor": "pc_02",
+      "chosen_action": "break",
+      "target": "rotting_floorboards",
+      "candidate_source": "S4 forced progress pool",
+      "current_goal": "悪霊の家を完了する",
+      "action_phase": "DISCOVER",
+      "progress_result": 0,
+      "move_candidate_present": false,
+      "reason": [
+        "consecutive_no_progress",
+        "known_failed_action_reselected"
+      ],
+      "classification": "MOVE_NOT_IN_POOL",
+      "post_basement_exit": true
+    }
+  ]
+}

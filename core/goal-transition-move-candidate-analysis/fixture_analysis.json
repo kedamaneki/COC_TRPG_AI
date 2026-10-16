@@ -1,0 +1,277 @@
+{
+  "llm_called": false,
+  "product_code_modified": false,
+  "checkpoint_modified": false,
+  "A_goal_manager_next_objective": {
+    "current_goal": "悪霊の家を完了する",
+    "terminal_event_id": "corbitt_basement_room2__corbitt_body__defeat",
+    "subgoals": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "remaining_requirements": [
+      "flag:corbitt_body_encountered=true",
+      "location:corbitt_basement_room2",
+      "action:break/force/attack/use/push/kick/corbitt_body"
+    ],
+    "blocked_requirements": [
+      "corbitt_basement_room2__corbitt_body__defeat"
+    ],
+    "candidate_next_actions": [],
+    "classification": "GOAL_TRANSITIONED_CORRECTLY",
+    "note": "The architecture uses one global terminal goal; it already targets Corbitt defeat, not a chapel goal."
+  },
+  "B_action_phase": {
+    "actual": "DISCOVER",
+    "location_objective_status": "ACTIVE",
+    "classification": "NEVER_ENTERED_TRANSITION"
+  },
+  "C_raw_candidate": {
+    "goal_candidate": [],
+    "state_change_candidates": [],
+    "unseen_information_candidates": [
+      {
+        "action": "search",
+        "target": "skeletons_in_robes",
+        "skill": "",
+        "reason": "unseen_target"
+      },
+      {
+        "action": "search",
+        "target": "shelf_with_records",
+        "skill": "",
+        "reason": "unseen_target"
+      },
+      {
+        "action": "search",
+        "target": "cult_diary",
+        "skill": "",
+        "reason": "unseen_target"
+      },
+      {
+        "action": "search",
+        "target": "grimoire_book_of_eibon",
+        "skill": "",
+        "reason": "unseen_target"
+      }
+    ],
+    "transition_candidates_if_location_complete": [
+      {
+        "action": "move",
+        "target": "the_neighborhood",
+        "skill": "",
+        "reason": "location_objective_complete"
+      }
+    ],
+    "actual_capped_raw_candidates": [
+      {
+        "action": "search",
+        "target": "skeletons_in_robes",
+        "skill": "",
+        "reason": "unseen_target"
+      },
+      {
+        "action": "search",
+        "target": "shelf_with_records",
+        "skill": "",
+        "reason": "unseen_target"
+      },
+      {
+        "action": "search",
+        "target": "cult_diary",
+        "skill": "",
+        "reason": "unseen_target"
+      }
+    ]
+  },
+  "D_final_candidate": {
+    "available": [],
+    "blocked": [
+      {
+        "action": "search",
+        "target": "skeletons_in_robes",
+        "skill": "",
+        "reason": "unseen_target",
+        "availability_status": "BLOCKED",
+        "availability_context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+        "availability_reason": "BLOCKED_STATE_CONFLICT",
+        "availability_snapshot": {
+          "status": "BLOCKED",
+          "reason_code": "BLOCKED_STATE_CONFLICT",
+          "reason_detail": "【システムブロック】ローブをまとった骸骨（`skeletons_in_robes`）は今は操作できない。チャペル地階の対象だ。まずもろくなった床板（`rotting_floorboards`）を調べたうえで、`break` / `force` / `climb` で地階へ降りよ。",
+          "required_preconditions": [],
+          "context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+          "actor": "pc_02",
+          "action": "search",
+          "target": "skeletons_in_robes",
+          "location": "chapel_of_contemplation",
+          "source": "fixture",
+          "scenario_runtime_conflict": false,
+          "scenario_id": "",
+          "no_roll": false
+        }
+      },
+      {
+        "action": "search",
+        "target": "shelf_with_records",
+        "skill": "",
+        "reason": "unseen_target",
+        "availability_status": "BLOCKED",
+        "availability_context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+        "availability_reason": "BLOCKED_STATE_CONFLICT",
+        "availability_snapshot": {
+          "status": "BLOCKED",
+          "reason_code": "BLOCKED_STATE_CONFLICT",
+          "reason_detail": "【システムブロック】朽ちかけた棚（`shelf_with_records`）は今は操作できない。チャペル地階の対象だ。まずもろくなった床板（`rotting_floorboards`）を調べたうえで、`break` / `force` / `climb` で地階へ降りよ。",
+          "required_preconditions": [],
+          "context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+          "actor": "pc_02",
+          "action": "search",
+          "target": "shelf_with_records",
+          "location": "chapel_of_contemplation",
+          "source": "fixture",
+          "scenario_runtime_conflict": false,
+          "scenario_id": "",
+          "no_roll": false
+        }
+      },
+      {
+        "action": "search",
+        "target": "cult_diary",
+        "skill": "",
+        "reason": "unseen_target",
+        "availability_status": "BLOCKED",
+        "availability_context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+        "availability_reason": "BLOCKED_STATE_CONFLICT",
+        "availability_snapshot": {
+          "status": "BLOCKED",
+          "reason_code": "BLOCKED_STATE_CONFLICT",
+          "reason_detail": "【システムブロック】カルトの日誌（`cult_diary`）は今は操作できない。条件フラグ `found_diary` が未達のため操作できない。",
+          "required_preconditions": [],
+          "context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+          "actor": "pc_02",
+          "action": "search",
+          "target": "cult_diary",
+          "location": "chapel_of_contemplation",
+          "source": "fixture",
+          "scenario_runtime_conflict": false,
+          "scenario_id": "",
+          "no_roll": false
+        }
+      }
+    ]
+  },
+  "object_requirements": {
+    "chapel_secret_cellar": {
+      "requires_flag": null,
+      "requirement_met": true,
+      "derived_status": "EXHAUSTED",
+      "classification": "ALREADY_COMPLETED"
+    },
+    "chapel_ruins": {
+      "requires_flag": null,
+      "requirement_met": true,
+      "derived_status": "EXHAUSTED",
+      "classification": "ALREADY_COMPLETED"
+    },
+    "white_symbol": {
+      "requires_flag": "!in_basement",
+      "requirement_met": true,
+      "derived_status": "EXHAUSTED",
+      "classification": "ALREADY_COMPLETED"
+    },
+    "rotting_floorboards": {
+      "requires_flag": "!in_basement",
+      "requirement_met": true,
+      "derived_status": "EXHAUSTED",
+      "classification": "ALREADY_COMPLETED"
+    },
+    "skeletons_in_robes": {
+      "requires_flag": "in_basement",
+      "requirement_met": false,
+      "derived_status": "UNSEEN",
+      "classification": "UNAVAILABLE"
+    },
+    "shelf_with_records": {
+      "requires_flag": "in_basement",
+      "requirement_met": false,
+      "derived_status": "UNSEEN",
+      "classification": "UNAVAILABLE"
+    },
+    "cult_diary": {
+      "requires_flag": "found_diary",
+      "requirement_met": false,
+      "derived_status": "UNSEEN",
+      "classification": "UNAVAILABLE"
+    },
+    "grimoire_book_of_eibon": {
+      "requires_flag": "found_grimoire",
+      "requirement_met": false,
+      "derived_status": "UNSEEN",
+      "classification": "UNAVAILABLE"
+    }
+  },
+  "route_state": {
+    "source": "chapel_of_contemplation",
+    "available_exits": [
+      {
+        "id": "the_neighborhood",
+        "name": "通りへ戻る"
+      }
+    ],
+    "shortest_next_to_the_neighborhood": "the_neighborhood",
+    "shortest_next_to_corbitt_exterior": "the_neighborhood",
+    "shortest_next_to_corbitt_basement_room2": "",
+    "route_classification": "IMMEDIATE_EXIT_ROUTE_AVAILABLE",
+    "deep_goal_route_note": "The route to corbitt_basement_room2 is currently unresolved because house-entry gates make the final destination unreachable in the current graph."
+  },
+  "diagnostic_counterfactual": {
+    "method": "Treat unmet requires_flag targets as UNAVAILABLE for location completion only",
+    "target_statuses": {
+      "chapel_secret_cellar": "EXHAUSTED",
+      "chapel_ruins": "EXHAUSTED",
+      "white_symbol": "EXHAUSTED",
+      "rotting_floorboards": "EXHAUSTED",
+      "skeletons_in_robes": "UNAVAILABLE",
+      "shelf_with_records": "UNAVAILABLE",
+      "cult_diary": "UNAVAILABLE",
+      "grimoire_book_of_eibon": "UNAVAILABLE"
+    },
+    "location_objective_status": "EXHAUSTED",
+    "raw_candidates": [
+      {
+        "action": "move",
+        "target": "the_neighborhood",
+        "skill": "",
+        "reason": "location_objective_complete"
+      }
+    ],
+    "final_candidates": [
+      {
+        "action": "move",
+        "target": "the_neighborhood",
+        "skill": "",
+        "reason": "location_objective_complete",
+        "availability_status": "AVAILABLE",
+        "availability_context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+        "availability_reason": "AVAILABLE",
+        "availability_snapshot": {
+          "status": "AVAILABLE",
+          "reason_code": "AVAILABLE",
+          "reason_detail": "",
+          "required_preconditions": [],
+          "context_version": "action:chapel_of_contemplation:9a3b9c151f7dc0ac",
+          "actor": "pc_02",
+          "action": "move",
+          "target": "the_neighborhood",
+          "location": "chapel_of_contemplation",
+          "source": "fixture_counterfactual",
+          "scenario_runtime_conflict": false,
+          "scenario_id": ""
+        }
+      }
+    ],
+    "action_phase": "TRANSITION",
+    "proves": "When unavailable targets stop keeping the location ACTIVE, move/the_neighborhood is created and survives availability filtering."
+  },
+  "root_cause_classification": "GOAL_COMPLETION_DETECTION_ROOT_CAUSE"
+}

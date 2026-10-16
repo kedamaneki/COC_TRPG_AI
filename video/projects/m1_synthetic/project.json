@@ -1,0 +1,12 @@
+{
+  "fixture_type": "synthetic",
+  "background_asset_id": "m1_background_fallback",
+  "lines": [
+    {"source_event_ids":["synthetic:001"],"speaker_id":"kp","text":"KP: 古い屋敷の地下室から、規則正しく何かを叩く音が聞こえる。扉には新しい引っかき傷が残っている。","voice_profile_id":"m1_vv_kp","subtitle_profile_id":"subtitle_kp","portrait_asset_id":null,"event_type":"KP_DESCRIPTION","dice":null},
+    {"source_event_ids":["synthetic:002"],"speaker_id":"pc_01","text":"マクガフィン刑事: 音の正体を確かめる。扉の周りを慎重に調べよう。","voice_text":"おとのしょーたいをたしかめる。とびらのまわりをしんちょーにしらべよー。","voice_profile_id":"m1_aq_f1","subtitle_profile_id":"subtitle_reimu","portrait_asset_id":"m1_portrait_aquestalk","event_type":"ACTION_DECLARATION","dice":null},
+    {"source_event_ids":["synthetic:003"],"speaker_id":"pc_02","text":"エレノア教授: 傷の深さを見れば、いつ付いたものか推測できるかもしれません。","voice_profile_id":"m1_vv_pc2","subtitle_profile_id":"subtitle_marisa","portrait_asset_id":"m1_portrait_voicevox","event_type":"DIALOGUE","dice":null},
+    {"source_event_ids":["synthetic:004"],"speaker_id":"pc_01","text":"システム: 【技能:目星】1D100 → 42。目標値70、成功。","voice_text":"ぎのー、めぼし。ひゃくめんだいす、よんじゅーに。もくひょーち、ななじゅー。せーこー。","voice_profile_id":"m1_aq_f1","subtitle_profile_id":"subtitle_reimu","portrait_asset_id":"m1_portrait_aquestalk","event_type":"DICE_RESULT","dice":{"skill_name":"目星","target_value":70,"roll":42,"result":"成功"}},
+    {"source_event_ids":["synthetic:005"],"speaker_id":"kp","text":"KP: 傷は内側から付けられている。しかも、その奥で叩く音がぴたりと止まった。","voice_profile_id":"m1_vv_kp","subtitle_profile_id":"subtitle_kp","portrait_asset_id":null,"event_type":"KP_DESCRIPTION","dice":null},
+    {"source_event_ids":["synthetic:006"],"speaker_id":"pc_02","text":"エレノア教授: 誰かがこちらの気配に気づいたようです。今は扉を開けない方がいいでしょう。","voice_profile_id":"m1_vv_pc2","subtitle_profile_id":"subtitle_marisa","portrait_asset_id":"m1_portrait_voicevox","event_type":"DIALOGUE","dice":null}
+  ]
+}

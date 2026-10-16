@@ -1,0 +1,386 @@
+{
+  "schema_version": "0.1",
+  "session_id": "corbitt_iteration2_deterministic_001",
+  "scenario": {
+    "scenario_id": "scenario_corbitt.json",
+    "scenario_title": "悪霊の家",
+    "source": "trpg_evaluation_v2",
+    "version": null
+  },
+  "participants": [
+    {
+      "participant_id": "kp",
+      "display_name": "KP",
+      "role": "KP",
+      "character_id": "kp",
+      "source_actor_id": null
+    },
+    {
+      "participant_id": "system",
+      "display_name": "システム",
+      "role": "SYSTEM",
+      "character_id": "system",
+      "source_actor_id": null
+    },
+    {
+      "participant_id": "pc_01",
+      "display_name": "探索者",
+      "role": "PC",
+      "character_id": "pc_01",
+      "source_actor_id": "pc_01"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "norm:unified:000000",
+      "source_event_ids": [
+        "roll_numeric"
+      ],
+      "cycle": null,
+      "turn": null,
+      "timestamp_or_order": 0,
+      "scene_id": null,
+      "location": {
+        "location_id": null,
+        "display_name": null
+      },
+      "speaker_id": "pc_01",
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_roll",
+      "interaction_id": null,
+      "event_type": "SKILL_CHECK",
+      "text": null,
+      "action": null,
+      "dice": {
+        "skill_name": null,
+        "target_value": 50,
+        "roll": 20,
+        "result": null,
+        "resolution_mode": "ROLL",
+        "result_level": "HARD_SUCCESS",
+        "raw_result": "HARD_SUCCESS",
+        "final_result": "HARD_SUCCESS",
+        "automatic_result": null,
+        "critical": null,
+        "fumble": null
+      },
+      "modifier": null,
+      "san": null,
+      "combat": null,
+      "state_changes": {},
+      "metadata": {
+        "source_stream": "unified_event_log",
+        "source_index": 0,
+        "source_payload": {
+          "event_id": "roll_numeric",
+          "event_type": "INVESTIGATION_ROLLED",
+          "adjudication_id": "adj_roll",
+          "actor": "pc_01",
+          "resolution_mode": "ROLL",
+          "target_value": 50,
+          "roll": 20,
+          "result_level": 3,
+          "raw_result": 3,
+          "final_result": 3
+        }
+      }
+    },
+    {
+      "event_id": "norm:unified:000001",
+      "source_event_ids": [
+        "roll_text"
+      ],
+      "cycle": null,
+      "turn": null,
+      "timestamp_or_order": 1,
+      "scene_id": null,
+      "location": {
+        "location_id": null,
+        "display_name": null
+      },
+      "speaker_id": "pc_01",
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_roll",
+      "interaction_id": null,
+      "event_type": "SCENARIO_EVENT",
+      "text": null,
+      "action": null,
+      "dice": {
+        "skill_name": null,
+        "target_value": 50,
+        "roll": 20,
+        "result": null,
+        "resolution_mode": "ROLL",
+        "result_level": "HARD_SUCCESS",
+        "raw_result": "HARD_SUCCESS",
+        "final_result": "HARD_SUCCESS",
+        "automatic_result": null,
+        "critical": null,
+        "fumble": null
+      },
+      "modifier": null,
+      "san": null,
+      "combat": null,
+      "state_changes": {},
+      "metadata": {
+        "source_stream": "unified_event_log",
+        "source_index": 1,
+        "source_payload": {
+          "event_id": "roll_text",
+          "event_type": "SKILL_CHECK",
+          "adjudication_id": "adj_roll",
+          "actor": "pc_01",
+          "resolution_mode": "ROLL",
+          "target_value": 50,
+          "roll": 20,
+          "result_level": "ハード成功",
+          "raw_result": "HARD_SUCCESS",
+          "final_result": "ハード成功"
+        }
+      }
+    },
+    {
+      "event_id": "norm:unified:000002",
+      "source_event_ids": [
+        "luck_pre"
+      ],
+      "cycle": null,
+      "turn": null,
+      "timestamp_or_order": 2,
+      "scene_id": null,
+      "location": {
+        "location_id": null,
+        "display_name": null
+      },
+      "speaker_id": "pc_01",
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_luck",
+      "interaction_id": null,
+      "event_type": "SKILL_CHECK",
+      "text": null,
+      "action": null,
+      "dice": {
+        "skill_name": null,
+        "target_value": 50,
+        "roll": 59,
+        "result": null,
+        "resolution_mode": "ROLL",
+        "result_level": null,
+        "raw_result": "FAILURE",
+        "final_result": "REGULAR_SUCCESS",
+        "automatic_result": null,
+        "critical": null,
+        "fumble": null
+      },
+      "modifier": {
+        "amount": 9,
+        "type": "LUCK_SPEND"
+      },
+      "san": null,
+      "combat": null,
+      "state_changes": {},
+      "metadata": {
+        "source_stream": "unified_event_log",
+        "source_index": 2,
+        "source_payload": {
+          "event_id": "luck_pre",
+          "event_type": "INVESTIGATION_ROLLED",
+          "adjudication_id": "adj_luck",
+          "actor": "pc_01",
+          "resolution_mode": "ROLL",
+          "target_value": 50,
+          "roll": 59,
+          "raw_result": "FAILURE",
+          "final_result": "FAILURE"
+        }
+      }
+    },
+    {
+      "event_id": "norm:unified:000003",
+      "source_event_ids": [
+        "luck_post"
+      ],
+      "cycle": null,
+      "turn": null,
+      "timestamp_or_order": 3,
+      "scene_id": null,
+      "location": {
+        "location_id": null,
+        "display_name": null
+      },
+      "speaker_id": "pc_01",
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_luck",
+      "interaction_id": null,
+      "event_type": "SCENARIO_EVENT",
+      "text": null,
+      "action": null,
+      "dice": {
+        "skill_name": null,
+        "target_value": 50,
+        "roll": 59,
+        "result": null,
+        "resolution_mode": "ROLL",
+        "result_level": null,
+        "raw_result": "FAILURE",
+        "final_result": "REGULAR_SUCCESS",
+        "automatic_result": null,
+        "critical": null,
+        "fumble": null
+      },
+      "modifier": {
+        "type": "LUCK_SPEND",
+        "amount": 9
+      },
+      "san": null,
+      "combat": null,
+      "state_changes": {},
+      "metadata": {
+        "source_stream": "unified_event_log",
+        "source_index": 3,
+        "source_payload": {
+          "event_id": "luck_post",
+          "event_type": "SKILL_CHECK",
+          "adjudication_id": "adj_luck",
+          "actor": "pc_01",
+          "resolution_mode": "ROLL",
+          "target_value": 50,
+          "roll": 59,
+          "raw_result": "FAILURE",
+          "final_result": "REGULAR_SUCCESS",
+          "modifier": {
+            "type": "LUCK_SPEND",
+            "amount": 9
+          }
+        }
+      }
+    },
+    {
+      "event_id": "norm:unified:000004",
+      "source_event_ids": [
+        "combat_snapshot"
+      ],
+      "cycle": null,
+      "turn": null,
+      "timestamp_or_order": 4,
+      "scene_id": null,
+      "location": {
+        "location_id": null,
+        "display_name": null
+      },
+      "speaker_id": "pc_01",
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_combat",
+      "interaction_id": null,
+      "event_type": "COMBAT_ACTION",
+      "text": null,
+      "action": null,
+      "dice": null,
+      "modifier": null,
+      "san": null,
+      "combat": {
+        "combat_id": "combat_1",
+        "attacker": "pc_01",
+        "target": null,
+        "action": null,
+        "roll": null,
+        "damage": null,
+        "hp_before": null,
+        "hp_after": null
+      },
+      "state_changes": {},
+      "metadata": {
+        "source_stream": "unified_event_log",
+        "source_index": 4,
+        "source_payload": {
+          "event_id": "combat_snapshot",
+          "event_type": "COMBAT_ACTION_RESOLVED",
+          "adjudication_id": "adj_combat",
+          "actor": "pc_01",
+          "combat_id": "combat_1",
+          "SAN_before": 70,
+          "SAN_after": 70
+        }
+      }
+    },
+    {
+      "event_id": "norm:unified:000005",
+      "source_event_ids": [
+        "san_result"
+      ],
+      "cycle": null,
+      "turn": null,
+      "timestamp_or_order": 5,
+      "scene_id": null,
+      "location": {
+        "location_id": null,
+        "display_name": null
+      },
+      "speaker_id": "pc_01",
+      "actor_id": "pc_01",
+      "adjudication_id": "adj_san",
+      "interaction_id": null,
+      "event_type": "SYSTEM_INTERNAL",
+      "text": null,
+      "action": null,
+      "dice": null,
+      "modifier": null,
+      "san": {
+        "san_before": 70,
+        "san_after": 70,
+        "san_loss": 0,
+        "before": 70,
+        "target": 70,
+        "roll": 40,
+        "result": "SUCCESS",
+        "loss": 0,
+        "after": 70,
+        "success_loss_formula": null,
+        "failure_loss_formula": null,
+        "resolved_loss_formula": null,
+        "trigger_event_id": null,
+        "normalization_source": "STRUCTURED",
+        "derived_from_legacy_text": false
+      },
+      "combat": null,
+      "state_changes": {},
+      "metadata": {
+        "source_stream": "unified_event_log",
+        "source_index": 5,
+        "source_payload": {
+          "event_id": "san_result",
+          "event_type": "SAN_RESULT",
+          "adjudication_id": "adj_san",
+          "actor": "pc_01",
+          "san": {
+            "kind": "ADJUDICATION",
+            "before": 70,
+            "target": 70,
+            "roll": 40,
+            "result": "SUCCESS",
+            "loss": 0,
+            "after": 70
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "source_kind": "trpg_evaluation_v2",
+    "seed": null,
+    "completed": null,
+    "phase": null,
+    "turns": null,
+    "cycles": null,
+    "conversion_warnings": []
+  },
+  "provenance": {
+    "source_root": "iteration2_fixture",
+    "source_files": [],
+    "source_event_count": 6,
+    "source_stream_counts": {
+      "unified_event_log": 6,
+      "session_log": 0
+    }
+  }
+}

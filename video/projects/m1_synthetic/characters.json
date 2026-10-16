@@ -1,0 +1,5 @@
+[
+  {"character_id":"kp","display_name":"KP","role":"KP","voice_profile_id":"m1_vv_kp","subtitle_profile_id":"subtitle_kp","portrait_asset_id":null},
+  {"character_id":"pc_01","display_name":"マクガフィン刑事","role":"PC","voice_profile_id":"m1_aq_f1","subtitle_profile_id":"subtitle_reimu","portrait_asset_id":"m1_portrait_aquestalk"},
+  {"character_id":"pc_02","display_name":"エレノア教授","role":"PC","voice_profile_id":"m1_vv_pc2","subtitle_profile_id":"subtitle_marisa","portrait_asset_id":"m1_portrait_voicevox"}
+]
