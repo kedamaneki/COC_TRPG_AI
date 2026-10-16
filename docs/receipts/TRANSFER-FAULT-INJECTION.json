@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-15T13:05:00.4987304+09:00",
+  "pytest_result": "11 passed",
+  "tests": [
+    {
+      "artifact": "ADOPT_CANDIDATE/runtime-isolation-candidate/test_runtime_boundary.py",
+      "expected_stop": "SUBPROCESS_DENIED_UNKNOWN",
+      "actual_stop": "SUBPROCESS_DENIED_UNKNOWN",
+      "result": "PASS",
+      "test_name": "unknown_subprocess"
+    },
+    {
+      "artifact": "ADOPT_CANDIDATE/runtime-isolation-candidate/test_runtime_boundary.py",
+      "expected_stop": "NETWORK_DENIED",
+      "actual_stop": "NETWORK_DENIED",
+      "result": "PASS",
+      "test_name": "external_network"
+    },
+    {
+      "artifact": "ADOPT_CANDIDATE/runtime-isolation-candidate/test_runtime_boundary.py",
+      "expected_stop": "PAID_API_BLOCKED",
+      "actual_stop": "PAID_API_BLOCKED",
+      "result": "PASS",
+      "test_name": "paid_api"
+    },
+    {
+      "artifact": "ADOPT_CANDIDATE/runtime-isolation-candidate/test_runtime_boundary.py",
+      "expected_stop": "WRITE_DENIED",
+      "actual_stop": "WRITE_DENIED",
+      "result": "PASS",
+      "test_name": "old_run_write"
+    },
+    {
+      "artifact": "ADOPT_CANDIDATE/runtime-isolation-candidate/test_runtime_boundary.py",
+      "expected_stop": "MODEL_IDENTITY_MISMATCH",
+      "actual_stop": "MODEL_IDENTITY_MISMATCH",
+      "result": "PASS",
+      "test_name": "model_mismatch"
+    },
+    {
+      "artifact": "ADOPT_CANDIDATE/runtime-isolation-candidate/test_runtime_boundary.py",
+      "expected_stop": "IMPLEMENTATION_IDENTITY_MISMATCH",
+      "actual_stop": "IMPLEMENTATION_IDENTITY_MISMATCH",
+      "result": "PASS",
+      "test_name": "implementation_drift"
+    },
+    {
+      "artifact": "ADOPT_CANDIDATE/runtime-isolation-candidate/test_runtime_boundary.py",
+      "expected_stop": "STOP_RUNTIME_ERROR",
+      "actual_stop": "STOP_RUNTIME_ERROR",
+      "result": "PASS",
+      "test_name": "runtime_exception"
+    },
+    {
+      "artifact": "ADOPT_CANDIDATE/runtime-isolation-candidate/test_runtime_boundary.py",
+      "expected_stop": "INPUT_IDENTITY_GATE_FAILED",
+      "actual_stop": "INPUT_IDENTITY_GATE_FAILED",
+      "result": "PASS",
+      "test_name": "identity_failure"
+    },
+    {
+      "artifact": "ADOPT_CANDIDATE/runtime-isolation-candidate/test_runtime_boundary.py",
+      "expected_stop": "REGRESSION_GATE_FAILED",
+      "actual_stop": "REGRESSION_GATE_FAILED",
+      "result": "PASS",
+      "test_name": "regression_failure"
+    }
+  ]
+}

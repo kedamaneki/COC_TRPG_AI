@@ -225,16 +225,18 @@ class Controller:
         self.record('COMPLETE')
 
 
-ROOT = Path(__file__).resolve().parents[1]
-CORE = (Path('F:/') / ''.join(chr(value) for value in (0x5236, 0x4f5c, 0x7269))
-        / ''.join(chr(value) for value in (0x305d, 0x306e, 0x33)))
-VIDEO = Path(r'C:\Users\ri4re\Documents\Codex\2026-10-04\referenced-chatgpt-conversation-this-is-an\video-production-agent')
-CORE_PYTHON = CORE / '.venv-resume-local/Scripts/python.exe'
-VIDEO_PYTHON = VIDEO / '.venv-tools/Scripts/python.exe'
-NETWORK_GUARD = ROOT / 'work/network_guard'
-ACCEPTED = ROOT / 'work/acceptance/video'
-SESSION_ID = 'CORBITT_LONGRUN_ITERATION3_V4_HOME_001'
-RAW = CORE / 'evaluation-v2' / SESSION_ID
+REPO_ROOT = Path(__file__).resolve().parents[2]
+ROOT = REPO_ROOT
+RUN_ROOT = (Path('F:/') / ''.join(chr(value) for value in (0x5236, 0x4f5c, 0x7269))
+            / ''.join(chr(value) for value in (0x305d, 0x306e, 0x33)))
+CORE = REPO_ROOT / 'core'
+VIDEO = REPO_ROOT / 'video'
+CORE_PYTHON = RUN_ROOT / '.venv-resume-local/Scripts/python.exe'
+VIDEO_PYTHON = Path(r'C:\Users\ri4re\Documents\Codex\2026-10-04\referenced-chatgpt-conversation-this-is-an\video-production-agent\.venv-tools\Scripts\python.exe')
+NETWORK_GUARD = REPO_ROOT / 'tools/runtime_isolation'
+ACCEPTED = VIDEO
+SESSION_ID = 'CORBITT_LONGRUN_ITERATION3_V5_HOME_001'
+RAW = RUN_ROOT / 'evaluation-v2' / SESSION_ID
 LEGACY = VIDEO / 'projects/corbitt_clear_001'
 OLD_RUN_NAMES = (
     'CORBITT_LONGRUN_ITERATION2_V2_HOME_001',
@@ -243,7 +245,6 @@ OLD_RUN_NAMES = (
     'CORBITT_LONGRUN_ITERATION3_V3_HOME_001',
     'CORBITT_LONGRUN_ITERATION2_V2_001',
 )
-
 
 def utcnow():
     return datetime.now(timezone.utc).isoformat()
@@ -291,7 +292,7 @@ class NetworkGuardAdapter:
             'PYTHONDONTWRITEBYTECODE': '1',
             'PYTHONPATH': os.pathsep.join(filter(None, (str(NETWORK_GUARD), str(CORE / 'src'), prior))),
             'CORBITT_PROTECTED_ROOTS': os.pathsep.join(
-                str(CORE / 'evaluation-v2' / name) for name in OLD_RUN_NAMES
+                str(RUN_ROOT / 'evaluation-v2' / name) for name in OLD_RUN_NAMES
             ),
         })
         return env
@@ -329,7 +330,7 @@ class OldRunWriteGuard:
 
     def __init__(self, roots):
         self.roots = [Path(os.path.abspath(root)) for root in roots]
-        intended = Path(os.path.abspath(CORE / 'evaluation-v2'))
+        intended = Path(os.path.abspath(RUN_ROOT / 'evaluation-v2'))
         if any(root.parent != intended or not root.is_dir() for root in self.roots):
             raise Stop('OLD_RUN_PATH_INVALID')
 
@@ -573,6 +574,38 @@ class LegacyComparisonAdapter:
         return result
 
 
+def git_repository_identity():
+    def run(*args):
+        return subprocess.run(['git', '-C', str(REPO_ROOT), *args], capture_output=True, text=True, check=True).stdout.strip()
+    commit = run('rev-parse', 'HEAD')
+    branch = run('branch', '--show-current')
+    tags = [line for line in run('tag', '--points-at', 'HEAD').splitlines() if line]
+    dirty = bool(run('status', '--porcelain'))
+    return {'git_commit': commit, 'git_branch': branch, 'git_tags': tags, 'git_dirty': dirty}
+
+
+def formal_run_identity(model, implementation):
+    git_info = git_repository_identity()
+    if git_info['git_dirty'] or git_info['git_branch'] != 'main' or 'v5-preflight-accepted' not in git_info['git_tags']:
+        raise Stop('GIT_IDENTITY_NOT_ACCEPTED')
+    return {
+        'session_id': SESSION_ID,
+        'machine_identity': os.environ.get('COMPUTERNAME'),
+        **git_info,
+        'core_hash': implementation['files'][str(CORE / 'src/main.py')],
+        'normalizer_hash': implementation['files'][str(VIDEO / 'src/video_agent/normalizer/session.py')],
+        'auditor_hash': implementation['files'][str(VIDEO / 'tools/audit_longrun_formal_v2.py')],
+        'night_guard_hash': digest(Path(__file__)),
+        'scenario_hash': implementation['files'][str(CORE / 'src/scenario_corbitt.json')],
+        'pc_hash': implementation['files'][str(CORE / 'src/pcs.json')],
+        'npc_hash': implementation['files'][str(CORE / 'src/npcs.json')],
+        'prompt_hash': implementation['files'][str(CORE / 'src/run_investigation_evaluation.py')],
+        'ollama_model_identity': model,
+        'routing': {'PL': 'PRIMARY', 'KP': 'PRIMARY', 'JUDGE': 'PRIMARY'},
+        'cycle': 0, 'resume_count': 0, 'migration': None,
+    }
+
+
 def implementation_identity():
     paths = [CORE / 'src/main.py', CORE / 'src/ProgressDirectorV2.py',
              CORE / 'src/EvaluationCheckpoint.py', CORE / 'src/EventIdentity.py',
@@ -635,7 +668,7 @@ def cli(argv=None):
     model = network.model_identity()
     receipts = TestAdapter().verify_receipts(ROOT / 'outputs/production-deploy')
     identities = implementation_identity()
-    old_roots = [CORE / 'evaluation-v2' / name for name in OLD_RUN_NAMES]
+    old_roots = [RUN_ROOT / 'evaluation-v2' / name for name in OLD_RUN_NAMES]
     if not all(path.is_dir() for path in old_roots):
         raise Stop('OLD_RUN_MISSING')
     old_guard = OldRunWriteGuard(old_roots).apply()
@@ -651,13 +684,14 @@ def cli(argv=None):
            'NETWORK_RESTRICTION': 'PASS', 'PAID_API_BLOCK': 'PASS',
            'UNATTENDED_ADAPTERS_CONNECTED': 'PASS', 'UNATTENDED_LOOP_ENABLED': args.mode == 'execute',
            'NEXT_FULL_LONG_ALLOWED': args.mode == 'execute', 'VIDEO_SOURCE_ELIGIBLE': False,
-           'model': model, 'identity': identities, 'regression_receipts': receipts,
+           'model': model, 'identity': identities, 'git': git_repository_identity(), 'regression_receipts': receipts,
            'old_run_guard': old_guard, 'faults': faults}
     write_json(output / 'dry_run_receipt.json', dry)
     if args.mode == 'dry-run':
         print(json.dumps(dry, ensure_ascii=False, indent=2))
         return 0
 
+    run_identity = formal_run_identity(model, identities)
     controller = Controller(output / 'journal')
     controller.state = 'READY'
     controller.next_allowed = True
@@ -669,9 +703,10 @@ def cli(argv=None):
     process, stream, command = launcher.launch(RAW, output / 'raw_run.log')
     write_json(output / 'launch_receipt.json', {'session_id': SESSION_ID, 'command': command,
         'cycle': 0, 'resume_count': 0, 'migration': None, 'started_at': utcnow(),
-        'NEXT_FULL_LONG_ALLOWED': False, 'VIDEO_SOURCE_ELIGIBLE': False})
+        'NEXT_FULL_LONG_ALLOWED': False, 'VIDEO_SOURCE_ELIGIBLE': False, 'run_identity': run_identity})
     try:
         waiting = monitor.wait_for_gate(process, RAW)
+        write_json(RAW / 'run_identity.json', run_identity)
         report = EarlyGateAdapter().run(RAW, output / 'early_gate_staging')
         if not controller.early_gate(report, cycle=waiting['cycle'], identity=identities['aggregate']):
             write_json(RAW / 'EARLY_GATE_ABORT.json', {'reason': 'EARLY_GATE_FAIL', 'report': report})

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "persistent_session_created": false,
+  "session_id": "DRY_RUN_TEMP_SESSION",
+  "checks": {
+    "PYTHON_EXECUTABLE": "PASS",
+    "PLATFORM_SYSTEM_QUERY": "PASS",
+    "STREAMLIT_IMPORT": "PASS",
+    "CORE_IMPORT": "PASS",
+    "CONFIG": "PASS",
+    "INPUT_IDENTITY": "PASS",
+    "CORE_CONSTRUCTOR": "PASS",
+    "SESSION_PREFLIGHT": "PASS",
+    "CYCLE0_PREFLIGHT": "PASS",
+    "OLLAMA_HEALTH": "PASS",
+    "MODEL_IDENTITY": "PASS",
+    "OLLAMA_GENERATION_PROBE": "PASS",
+    "RUN_IDENTITY": "PASS",
+    "OUTPUT_PREFLIGHT": "PASS"
+  },
+  "detail": {
+    "input_hashes": {
+      "main": "8cf1403ec36a9bf8f931429c4a3e172d2ecb5361decc08d28c96c480fc7393c6",
+      "scenario": "b6f0559ffca677b57bc3a69c16991bb24c483d30256cb6dfd30fc938ebd84ed7",
+      "pcs": "f47bb03ff6406c228dd7c88f94c597d6e28785b47c6e0afe1322b7596c31c3dd",
+      "npcs": "3c795e6098f97ae8e6240b9ed2412428ab332c91c30a1cb45b846d2f4628377c"
+    },
+    "model": {
+      "name": "qwen2.5:14b",
+      "family": "qwen2",
+      "parameter_size": "14.8B",
+      "quantization": "Q4_K_M",
+      "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6"
+    },
+    "generation_response": "OK"
+  },
+  "subprocess_audit": "C:\\Users\\ri4re\\Documents\\Codex\\canonical-v5-startup-dry-run-6\\runtime_audit.jsonl"
+}

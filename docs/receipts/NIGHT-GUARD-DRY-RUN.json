@@ -1,0 +1,92 @@
+{
+  "DRY_RUN": "PASS",
+  "FAULT_INJECTION": "PASS",
+  "OLD_RUN_WRITE_PROTECTION": "PASS",
+  "NETWORK_RESTRICTION": "PASS",
+  "PAID_API_BLOCK": "PASS",
+  "UNATTENDED_ADAPTERS_CONNECTED": "PASS",
+  "UNATTENDED_LOOP_ENABLED": false,
+  "NEXT_FULL_LONG_ALLOWED": false,
+  "VIDEO_SOURCE_ELIGIBLE": false,
+  "model": {
+    "name": "qwen2.5:14b",
+    "family": "qwen2",
+    "parameter_size": "14.8B",
+    "quantization": "Q4_K_M",
+    "format": "gguf",
+    "version": "0.40.4"
+  },
+  "identity": {
+    "aggregate": "a305c2244fb14854edc94974db500cd1f5c17d778f940541c0f5effd951e163b",
+    "files": {
+      "F:\\制作物\\その3\\corbitt-trpg-system\\core\\src\\main.py": "8cf1403ec36a9bf8f931429c4a3e172d2ecb5361decc08d28c96c480fc7393c6",
+      "F:\\制作物\\その3\\corbitt-trpg-system\\core\\src\\ProgressDirectorV2.py": "e039fc71a736e48fbe4d73025b4212ea43ff1ca0988ada59cd9f4bab4e5632bc",
+      "F:\\制作物\\その3\\corbitt-trpg-system\\core\\src\\EvaluationCheckpoint.py": "1b9898872e6bdff805b6bedf3a029f22c6fb9dcda4543aae43206b2536966236",
+      "F:\\制作物\\その3\\corbitt-trpg-system\\core\\src\\EventIdentity.py": "eaff160f37fda8114d5579fdce7f9ba032a3dccd96adff41de7bd8df264d9d4a",
+      "F:\\制作物\\その3\\corbitt-trpg-system\\core\\src\\run_investigation_evaluation.py": "fc154f987605982e8663eba81374110580d5de5ebb14f2cb7e4e9d8914c41ab3",
+      "F:\\制作物\\その3\\corbitt-trpg-system\\core\\src\\scenario_corbitt.json": "b6f0559ffca677b57bc3a69c16991bb24c483d30256cb6dfd30fc938ebd84ed7",
+      "F:\\制作物\\その3\\corbitt-trpg-system\\core\\src\\pcs.json": "f47bb03ff6406c228dd7c88f94c597d6e28785b47c6e0afe1322b7596c31c3dd",
+      "F:\\制作物\\その3\\corbitt-trpg-system\\core\\src\\npcs.json": "3c795e6098f97ae8e6240b9ed2412428ab332c91c30a1cb45b846d2f4628377c",
+      "F:\\制作物\\その3\\corbitt-trpg-system\\video\\src\\video_agent\\normalizer\\session.py": "954d3ec1ccdd2b54f377436f1fdb9bf07bac431487bcbaf51072385c8e3d88ca",
+      "F:\\制作物\\その3\\corbitt-trpg-system\\video\\src\\video_agent\\pipeline.py": "0d1d34468f4501a6fbaa8a0240c6ecac385f4191e27b1a6e94f4c862f2bd5045",
+      "F:\\制作物\\その3\\corbitt-trpg-system\\video\\tools\\audit_longrun_formal_v2.py": "858b33c80d73c940ca2c8e9e6c5b63d34bb6e792e29307ed438fc2169f86608e"
+    }
+  },
+  "git": {
+    "git_commit": "755ddb3c4eac5dbb9880e4f064887892ff9aacce",
+    "git_branch": "feature/runtime-isolation-v5",
+    "git_tags": [
+      "pre-runtime-isolation-v5"
+    ],
+    "git_dirty": true
+  },
+  "regression_receipts": {
+    "core_full.log": {
+      "sha256": "d45bddf78d89eb1ece871d67f69ea1819d4b328c0560dfb22d01854e690265f3",
+      "markers": [
+        "582 passed",
+        "23 subtests passed"
+      ]
+    },
+    "video_full.log": {
+      "sha256": "9f720cdecce4f1078a8a77e7683f8ab7ef9bb36a30b6a9d310b82a4437883eb8",
+      "markers": [
+        "208 passed"
+      ]
+    },
+    "auditor_24.log": {
+      "sha256": "2a1db22afeb4308f73d5969088b8a513111626041ed8a0f3f99200de8fd1f751",
+      "markers": [
+        "24 passed"
+      ]
+    }
+  },
+  "old_run_guard": {
+    "status": "PASS",
+    "protected": [
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION2_V2_HOME_001",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V1_HOME_001",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V2_HOME_001",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V3_HOME_001",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION2_V2_001"
+    ],
+    "modes": {
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION2_V2_HOME_001": "ACL_WD_AD",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V1_HOME_001": "ACL_WD_AD",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V2_HOME_001": "ACL_WD_AD",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V3_HOME_001": "ACL_WD_AD",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION2_V2_001": "READONLY_FILES_PLUS_PROCESS_BOUNDARY"
+    },
+    "content_hashes_unchanged": true
+  },
+  "faults": {
+    "regression_fail": "PASS",
+    "old_run_write": "PASS",
+    "external_network": "PASS",
+    "paid_api": "PASS",
+    "runtime_error": "PASS",
+    "early_gate_fail": "PASS",
+    "same_cause_three": "PASS",
+    "max_three_repairs": "PASS"
+  }
+}

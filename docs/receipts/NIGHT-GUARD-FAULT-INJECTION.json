@@ -1,0 +1,10 @@
+{
+  "regression_fail": "PASS",
+  "old_run_write": "PASS",
+  "external_network": "PASS",
+  "paid_api": "PASS",
+  "runtime_error": "PASS",
+  "early_gate_fail": "PASS",
+  "same_cause_three": "PASS",
+  "max_three_repairs": "PASS"
+}

@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "raw_manifest_hashes": "96/96",
+  "raw_before_after_equal": true,
+  "normalized_location_change_events": 4,
+  "failed_requirements": {},
+  "metrics": {
+    "schema_version": 1,
+    "session_id": "CORBITT_LONGRUN_ITERATION3_V3_HOME_001",
+    "cycle": 5,
+    "turn": 7,
+    "resume_count": 0,
+    "migration": null,
+    "formal_verdict": "NOT_ISSUED_RUN_INCOMPLETE",
+    "ROLL_CONTRACT_INCOMPLETE": 0,
+    "NORMALIZATION_SOURCE_CONTRADICTION": 0,
+    "lifecycle_misclassification": 0,
+    "movement_adjudications": 0,
+    "linked_location_changes": 0,
+    "simple_unified_location_changes": 4,
+    "session_location_counterparts": 0,
+    "normalized_location_change_events": 4,
+    "duplicate_lifecycle_events": 0,
+    "event_id_missing": 0,
+    "raw_offset_missing": 0,
+    "traceability": 1.0,
+    "traceability_findings": 0,
+    "dropped_events": 0,
+    "legacy_text_parse": 0,
+    "normalizer_validation": "PASS",
+    "segment_raw": 32,
+    "segment_covered": 32,
+    "segment_missing": 0,
+    "segment_duplicate": 0,
+    "segment_unexpected": 0,
+    "segment_coverage": 1.0,
+    "LLM_calls": 31,
+    "LLM_errors": 0,
+    "LLM_retries": 0,
+    "LLM_runtime_fallbacks": 0,
+    "Input_Identity": "PASS",
+    "runtime_error": 0,
+    "VIDEO_SOURCE_ELIGIBLE": false,
+    "failed_requirements": {},
+    "EARLY_GATE": "PASS"
+  },
+  "provenance": {
+    "normalized_events": 78,
+    "source_events": 82,
+    "source_traceable_events": 78,
+    "source_traceability_rate": 1.0,
+    "unknown_speakers": 0,
+    "dropped_events": 0,
+    "conversion_warnings": [],
+    "deterministic_content_sha256": "1fb47af6dd0c8536083ba46b97fd1e264f3fab08fe56351506fa46c7352b7de3"
+  },
+  "validation": {
+    "status": "PASS",
+    "errors": [],
+    "warnings": [
+      {
+        "level": "WARNING",
+        "code": "UNKNOWN_ASSET_LICENSE",
+        "path": "assets[0]",
+        "message": "portrait_pack_kitune_legacy_reference"
+      }
+    ]
+  },
+  "formal_verdict": "NOT_ISSUED_RUN_INCOMPLETE",
+  "VIDEO_SOURCE_ELIGIBLE": false
+}

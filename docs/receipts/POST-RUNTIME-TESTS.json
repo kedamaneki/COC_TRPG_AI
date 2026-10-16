@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "runtime_isolation_included": true,
+  "core": {
+    "passed": 582,
+    "subtests_passed": 23,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "log": "outputs/production-deploy/core_full.log",
+    "sha256": "d45bddf78d89eb1ece871d67f69ea1819d4b328c0560dfb22d01854e690265f3"
+  },
+  "video": {
+    "passed": 208,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "execution": "physical ASCII-path copy of canonical video tree",
+    "log": "outputs/production-deploy/video_full.log",
+    "sha256": "9f720cdecce4f1078a8a77e7683f8ab7ef9bb36a30b6a9d310b82a4437883eb8"
+  },
+  "auditor": {
+    "passed": 24,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "log": "outputs/production-deploy/auditor_24.log",
+    "sha256": "2a1db22afeb4308f73d5969088b8a513111626041ed8a0f3f99200de8fd1f751"
+  },
+  "night_guard_and_runtime_boundary": {
+    "passed": 60,
+    "night_guard": 49,
+    "runtime_fault_boundary": 11,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "log": "outputs/production-deploy/night_guard_full.log",
+    "sha256": "c2545ff2c146763770c9e495f3b547b7c43ec5fd38e2dc8b38b3a07f50a9ce7c"
+  }
+}

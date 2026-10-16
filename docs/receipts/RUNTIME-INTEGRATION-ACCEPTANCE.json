@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-17T00:35:27.204204+09:00",
+  "status": "PASS",
+  "baseline_commit": "755ddb3c4eac5dbb9880e4f064887892ff9aacce",
+  "baseline_tag": "pre-runtime-isolation-v5",
+  "branch": "feature/runtime-isolation-v5",
+  "transfer_checksums": {
+    "verified": 20,
+    "failed": 0
+  },
+  "selective_merge": {
+    "ADOPT_CANDIDATE": [
+      "runtime-isolation-candidate/runtime_boundary.py",
+      "runtime-isolation-candidate/startup_dry_run.py",
+      "runtime-isolation-candidate/test_runtime_boundary.py",
+      "runtime-isolation-candidate/README.md"
+    ],
+    "main_pc_accepted_guard": "tools/runtime_isolation/sitecustomize.py",
+    "DO_NOT_ADOPT_integrated": []
+  },
+  "protected_production_diff": [],
+  "startup_dry_run": {
+    "status": "PASS",
+    "persistent_session_created": false,
+    "checks": {
+      "PYTHON_EXECUTABLE": "PASS",
+      "PLATFORM_SYSTEM_QUERY": "PASS",
+      "STREAMLIT_IMPORT": "PASS",
+      "CORE_IMPORT": "PASS",
+      "CONFIG": "PASS",
+      "INPUT_IDENTITY": "PASS",
+      "CORE_CONSTRUCTOR": "PASS",
+      "SESSION_PREFLIGHT": "PASS",
+      "CYCLE0_PREFLIGHT": "PASS",
+      "OLLAMA_HEALTH": "PASS",
+      "MODEL_IDENTITY": "PASS",
+      "OLLAMA_GENERATION_PROBE": "PASS",
+      "RUN_IDENTITY": "PASS",
+      "OUTPUT_PREFLIGHT": "PASS"
+    },
+    "model": {
+      "name": "qwen2.5:14b",
+      "family": "qwen2",
+      "parameter_size": "14.8B",
+      "quantization": "Q4_K_M",
+      "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6"
+    },
+    "audit": {
+      "rows": 6,
+      "subprocess_allowed": 0,
+      "subprocess_denied": 0,
+      "network_allowed": 6,
+      "network_denied": 0
+    }
+  },
+  "fault_injection": {
+    "carried_runtime_boundary": 11,
+    "night_guard": {
+      "regression_fail": "PASS",
+      "old_run_write": "PASS",
+      "external_network": "PASS",
+      "paid_api": "PASS",
+      "runtime_error": "PASS",
+      "early_gate_fail": "PASS",
+      "same_cause_three": "PASS",
+      "max_three_repairs": "PASS"
+    },
+    "status": "PASS"
+  },
+  "regression": {
+    "status": "PASS",
+    "runtime_isolation_included": true,
+    "core": {
+      "passed": 582,
+      "subtests_passed": 23,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "log": "outputs/production-deploy/core_full.log",
+      "sha256": "d45bddf78d89eb1ece871d67f69ea1819d4b328c0560dfb22d01854e690265f3"
+    },
+    "video": {
+      "passed": 208,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "execution": "physical ASCII-path copy of canonical video tree",
+      "log": "outputs/production-deploy/video_full.log",
+      "sha256": "9f720cdecce4f1078a8a77e7683f8ab7ef9bb36a30b6a9d310b82a4437883eb8"
+    },
+    "auditor": {
+      "passed": 24,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "log": "outputs/production-deploy/auditor_24.log",
+      "sha256": "2a1db22afeb4308f73d5969088b8a513111626041ed8a0f3f99200de8fd1f751"
+    },
+    "night_guard_and_runtime_boundary": {
+      "passed": 60,
+      "night_guard": 49,
+      "runtime_fault_boundary": 11,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "log": "outputs/production-deploy/night_guard_full.log",
+      "sha256": "c2545ff2c146763770c9e495f3b547b7c43ec5fd38e2dc8b38b3a07f50a9ce7c"
+    }
+  },
+  "v3_readonly": {
+    "status": "PASS",
+    "raw_manifest_hashes": "96/96",
+    "raw_before_after_equal": true,
+    "duplicate_lifecycle_events": 0,
+    "traceability": 1.0,
+    "segment_coverage": 1.0
+  },
+  "old_run_write_protection": {
+    "status": "PASS",
+    "protected": [
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION2_V2_HOME_001",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V1_HOME_001",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V2_HOME_001",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V3_HOME_001",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION2_V2_001"
+    ],
+    "modes": {
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION2_V2_HOME_001": "ACL_WD_AD",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V1_HOME_001": "ACL_WD_AD",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V2_HOME_001": "ACL_WD_AD",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V3_HOME_001": "ACL_WD_AD",
+      "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION2_V2_001": "READONLY_FILES_PLUS_PROCESS_BOUNDARY"
+    },
+    "content_hashes_unchanged": true
+  },
+  "FULL_LONG_STARTED": false,
+  "VIDEO_SOURCE_ELIGIBLE": false,
+  "V5_START_ALLOWED": true,
+  "activation_condition": "main + v5-preflight-accepted tag + clean worktree; verified after merge"
+}

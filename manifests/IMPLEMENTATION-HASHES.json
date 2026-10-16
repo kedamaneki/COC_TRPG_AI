@@ -56,7 +56,27 @@
   },
   "night_guard": {
     "path": "tools/night_guard/night_guard.py",
-    "sha256": "375cb519be6dcda8594815c9d1821fb94c83b7eb797bf53779e1efd66a457a9b",
-    "size": 34236
+    "sha256": "ae624e9ce62af2d0c9f5b36227adf9871d8a7d1aef21cabd3102c225761c5c69",
+    "size": 36208
+  },
+  "runtime_boundary": {
+    "path": "tools/runtime_isolation/runtime_boundary.py",
+    "sha256": "d6eceff43d2bdb3b241d3393bee00a473ea24dbf31146827236f9d092b720667",
+    "size": 10057
+  },
+  "startup_dry_run": {
+    "path": "tools/runtime_isolation/startup_dry_run.py",
+    "sha256": "c247c87c31b702f1648e9e02f4521c1cccaaff37dc2bdb7044820fa3f0c512fa",
+    "size": 6016
+  },
+  "network_and_old_run_guard": {
+    "path": "tools/runtime_isolation/sitecustomize.py",
+    "sha256": "473c97a36a96df2a9351a89213b4f184b14e05efda44bfc3642cfac68978e3ac",
+    "size": 1914
+  },
+  "runtime_boundary_tests": {
+    "path": "tests/unattended/test_runtime_boundary.py",
+    "sha256": "79a4638e1b909407063f8764a9d8465252362729cd729e0822fecf815b8cf33f",
+    "size": 3905
   }
 }
