@@ -79,6 +79,7 @@ from CharacterManager import (
     knowledge_id_for_secret,
     object_has_private_clue_content,
 )
+from SkillRegistry import resolve_roll_target
 from CoCRules import (
     DECISION_OPTION_ACCEPT,
     DECISION_OPTION_PUSH,
@@ -9990,7 +9991,7 @@ def apply_session_end_rewards(char_mgr, pl_id, pause_reason=None):
 def _apply_skill_roll_outcome(
     dice_result, char_mgr, pl_id, target, skill_name, action_id,
     skill_modifier, skill_bonus, skill_penalty,
-    *, in_combat=False, required_difficulty="regular",
+    *, in_combat=False, required_difficulty="regular", mark_success=True,
 ):
     """技能ロール結果から success_level と保留状態を決定する。"""
     is_fail = (
@@ -10014,7 +10015,7 @@ def _apply_skill_roll_outcome(
             fail_level=fail_level,
             allow_push=allow_push,
         )
-    if skill_name:
+    if skill_name and mark_success:
         char_mgr.mark_skill_success(pl_id, skill_name)
     return dice_result.get("success_level", int(SuccessLevel.REGULAR_SUCCESS)), None, None
 
@@ -10441,6 +10442,12 @@ def _lookup_skill_value(char_mgr, char_id, skill_name):
             if v > 0:
                 return v, k
     return 0, skill
+
+
+def _resolve_authoritative_roll_value(char_mgr, char_id, identifier):
+    """Resolve a scenario-selected roll identifier without guessing defaults."""
+    resolved = resolve_roll_target(char_mgr, char_id, identifier)
+    return resolved.get("value") or 0, resolved
 
 
 def _resolve_combat_attacker_skill(char_mgr, attacker_id, skill_name="", weapon=None, *, prefer_firearm=False):
@@ -12215,7 +12222,9 @@ def process_system_action(
             skill_penalty = pending_push_roll.get("penalty_dice", 0)
             push_difficulty = pending_push_roll.get("required_difficulty", action_difficulty)
 
-            skill_value = char_mgr.get_skill(pl_id, skill_name)
+            skill_value, roll_identity = _resolve_authoritative_roll_value(
+                char_mgr, pl_id, skill_name,
+            )
             dice_result = dice_engine.execute_push_roll(
                 char_name,
                 skill_name,
@@ -12224,6 +12233,7 @@ def process_system_action(
                 bonus_dice=skill_bonus,
                 penalty_dice=skill_penalty,
                 required_difficulty=push_difficulty,
+                allow_zero=roll_identity.get("legal_zero", False),
             )
             if sys_log:
                 sys_log += "\n"
@@ -12278,7 +12288,11 @@ def process_system_action(
 
             new_pending_push_roll = None
             roll_type = "skill"
-            if is_success_level(success_level) and skill_name:
+            if (
+                is_success_level(success_level)
+                and skill_name
+                and roll_identity.get("kind") == "SKILL"
+            ):
                 char_mgr.mark_skill_success(pl_id, skill_name)
 
     elif not dice_skipped and required_check and required_check.get("type") == "luck":
@@ -12330,7 +12344,9 @@ def process_system_action(
         engine_judgment_meta["resolved_skill"] = skill_name
         engine_judgment_meta["difficulty"] = action_difficulty
 
-        skill_value = char_mgr.get_skill(pl_id, skill_name)
+        skill_value, roll_identity = _resolve_authoritative_roll_value(
+            char_mgr, pl_id, skill_name,
+        )
         dice_result = dice_engine.execute_skill_roll(
             char_name,
             skill_name,
@@ -12339,6 +12355,7 @@ def process_system_action(
             bonus_dice=skill_bonus,
             penalty_dice=skill_penalty,
             required_difficulty=action_difficulty,
+            allow_zero=roll_identity.get("legal_zero", False),
         )
         if sys_log:
             sys_log += "\n"
@@ -12349,6 +12366,7 @@ def process_system_action(
             skill_modifier, skill_bonus, skill_penalty,
             in_combat=in_combat,
             required_difficulty=action_difficulty,
+            mark_success=roll_identity.get("kind") == "SKILL",
         )
         if is_success_level(success_level) and state_mgr and skill_name == "応急手当":
             fa = state_mgr.process_first_aid(pl_id, within_hour=(required_check or {}).get("within_hour", True))
@@ -12377,7 +12395,9 @@ def process_system_action(
             )
 
     elif not dice_skipped and skill_name and action_id in INVESTIGATION_ACTION_IDS:
-        skill_value = char_mgr.get_skill(pl_id, skill_name)
+        skill_value, roll_identity = _resolve_authoritative_roll_value(
+            char_mgr, pl_id, skill_name,
+        )
         dice_result = dice_engine.execute_skill_roll(
             char_name,
             skill_name,
@@ -12386,6 +12406,7 @@ def process_system_action(
             bonus_dice=skill_bonus,
             penalty_dice=skill_penalty,
             required_difficulty=action_difficulty,
+            allow_zero=roll_identity.get("legal_zero", False),
         )
         if sys_log:
             sys_log += "\n"
@@ -12396,6 +12417,7 @@ def process_system_action(
             skill_modifier, skill_bonus, skill_penalty,
             in_combat=in_combat,
             required_difficulty=action_difficulty,
+            mark_success=roll_identity.get("kind") == "SKILL",
         )
         if is_success_level(success_level) and state_mgr and skill_name == "応急手当":
             fa = state_mgr.process_first_aid(pl_id, within_hour=(required_check or {}).get("within_hour", True))

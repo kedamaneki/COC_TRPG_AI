@@ -303,8 +303,9 @@ class DiceEngine:
         bonus_dice=0,
         penalty_dice=0,
         required_difficulty="regular",
+        allow_zero=False,
     ):
-        if skill_value <= 0:
+        if skill_value < 0 or (skill_value == 0 and not allow_zero):
             return {
                 "status": "error",
                 "message": f"{char_name} は {skill_name} を持っていません（または0です）。",
@@ -330,9 +331,10 @@ class DiceEngine:
         bonus_dice=0,
         penalty_dice=0,
         required_difficulty="regular",
+        allow_zero=False,
     ):
         """プッシュロール。失敗時は is_push_fail=True。"""
-        if skill_value <= 0:
+        if skill_value < 0 or (skill_value == 0 and not allow_zero):
             return {
                 "status": "error",
                 "message": f"{char_name} は {skill_name} をプッシュできません（技能0）。",
