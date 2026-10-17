@@ -1,0 +1,41 @@
+{
+  "source_session": "CORBITT_LONGRUN_ITERATION3_V6_HOME_001",
+  "source_checkpoint": "cycle_000060",
+  "current_location": "chapel_of_contemplation",
+  "current_phase": "investigation",
+  "flags": {
+    "chapel_cellar_entered": true,
+    "in_basement": false,
+    "floorboards_examined": true,
+    "chapel_investigated": true,
+    "symbol_investigated": true,
+    "shelf_searched": true,
+    "skeletons_examined": true,
+    "investigated_targets": [
+      "chapel_secret_cellar",
+      "rotting_floorboards",
+      "shelf_with_records",
+      "skeletons_in_robes",
+      "white_symbol"
+    ]
+  },
+  "stall": {
+    "no_progress_streak": 90,
+    "intervention_level": "S4",
+    "s4_override_used": false,
+    "recent_locations": [
+      "chapel_of_contemplation",
+      "chapel_of_contemplation"
+    ]
+  },
+  "expected_pre_patch": {
+    "location_objective_status": "EXHAUSTED",
+    "action_phase": "TRANSITION",
+    "candidate_next_actions": []
+  },
+  "expected_post_patch": {
+    "action": "climb",
+    "target": "rotting_floorboards",
+    "reason": "reachable_frontier_event_override"
+  }
+}

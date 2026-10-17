@@ -145,7 +145,16 @@ def _event_state_change_candidates(scenario_mgr, location, target_statuses):
         event_location = location_match.group(1) if location_match else ""
         if not target or event_location != location:
             continue
-        if target_statuses.get(target) != "INVESTIGATED":
+        target_status = target_statuses.get(target)
+        info = scenario_mgr.get_location_info(location) if scenario_mgr else {}
+        obj = ((info or {}).get("objects") or {}).get(target) or {}
+        investigated = set(flags.get("investigated_targets") or [])
+        investigated_flag = str(obj.get("investigated_flag") or "")
+        has_investigation_evidence = (
+            target in investigated
+            or bool(investigated_flag and flags.get(investigated_flag))
+        )
+        if target_status != "INVESTIGATED" and not has_investigation_evidence:
             continue
         action_match = _ACTION_IN_RE.search(condition)
         actions = _QUOTED_RE.findall(action_match.group(1)) if action_match else _ACTION_EQ_RE.findall(condition)
@@ -166,7 +175,11 @@ def _event_state_change_candidates(scenario_mgr, location, target_statuses):
         if not pending_effect:
             continue
         ordered = [x for x in _STATE_ACTION_ORDER if x in actions]
-        action = (ordered or actions)[0]
+        # When an explicit event is the only reachable frontier through a coarse
+        # object guard, preserve the scenario author's first declared verb.  This
+        # keeps recovery aligned with the event contract (for example, climb out)
+        # rather than substituting a generic state-changing verb.
+        action = actions[0] if target_status != "INVESTIGATED" else (ordered or actions)[0]
         key = (action, target)
         if key in seen:
             continue
@@ -175,7 +188,11 @@ def _event_state_change_candidates(scenario_mgr, location, target_statuses):
             "action": action,
             "target": target,
             "skill": "",
-            "reason": "state_change_after_investigation",
+            "reason": (
+                "state_change_after_investigation"
+                if target_status == "INVESTIGATED"
+                else "reachable_frontier_event_override"
+            ),
             "event_id": str(event.get("event_id") or ""),
         })
     return candidates
