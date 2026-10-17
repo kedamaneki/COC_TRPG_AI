@@ -32,6 +32,7 @@ SPECIAL_OBJECTIVE_EVENT_TYPE = "SPECIAL_OBJECTIVE_COMPLETED"
 COMBAT_RESOLUTION_EVENTS = {
     "COMBAT_ACTION_RESOLVED", "ESCAPE_ATTEMPT", "SPECIAL_OBJECTIVE_COMPLETED",
 }
+PURE_COMBAT_LIFECYCLE_EVENTS = {"COMBAT_STARTED", "COMBAT_ENDING", "COMBAT_ENDED"}
 
 NORMAL_ACTIONS_FORBIDDEN_IN_COMBAT = {
     "search", "inspect", "read", "talk", "persuade", "fast_talk",
@@ -293,6 +294,21 @@ def append_combat_event(state, event_type: str, *, state_mgr=None, **fields):
     action_origin = fields.pop("action_origin", "AUTONOMOUS")
     resolution_mode = fields.pop("resolution_mode", None)
     explicit_resolution_mode = resolution_mode is not None
+    if event_type in PURE_COMBAT_LIFECYCLE_EVENTS:
+        contaminated = [
+            key for key in (
+                "adjudication_id", "skill", "skill_or_stat", "target_value",
+                "roll", "raw_result", "final_result", "modifier", "resolution_reason",
+            )
+            if fields.get(key) not in (None, "", {})
+        ]
+        if explicit_resolution_mode:
+            contaminated.insert(0, "resolution_mode")
+        if contaminated:
+            raise ValueError(
+                f"combat lifecycle event {event_type} contains resolution fields: "
+                + ", ".join(dict.fromkeys(contaminated))
+            )
     if event_type not in COMBAT_RESOLUTION_EVENTS:
         resolution_mode = None
     elif not resolution_mode and fields.get("roll") is not None:
@@ -316,6 +332,7 @@ def append_combat_event(state, event_type: str, *, state_mgr=None, **fields):
         "event_type": event_type,
         "event_id": fields.pop("event_id", None),
         "adjudication_id": fields.pop("adjudication_id", ""),
+        "cause_adjudication_id": fields.pop("cause_adjudication_id", ""),
         "parent_adjudication_id": fields.pop("parent_adjudication_id", None),
         "interaction_id": fields.pop("interaction_id", ""),
         "combat_id": fields.pop("combat_id", "") or getattr(state_mgr, "combat_id", ""),

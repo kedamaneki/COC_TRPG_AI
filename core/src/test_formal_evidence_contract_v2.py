@@ -28,8 +28,12 @@ def test_roll_and_no_roll_known_good_and_bad():
 
 def test_non_resolution_events_do_not_masquerade_as_no_roll():
     state = {"unified_event_log": []}
-    row = append_combat_event(state, "COMBAT_STARTED", resolution_mode="NO_ROLL")
+    with pytest.raises(ValueError, match="combat lifecycle event COMBAT_STARTED"):
+        append_combat_event(state, "COMBAT_STARTED", resolution_mode="NO_ROLL")
+    row = append_combat_event(state, "COMBAT_STARTED", cause_adjudication_id="adj_cause")
     assert row["resolution_mode"] is None
+    assert row["adjudication_id"] == ""
+    assert row["cause_adjudication_id"] == "adj_cause"
     ctx = {"investigation_id": "i", "actor_id": "pc", "target_id": "desk", "roll_required": True}
     row = append_investigation_event(state, "INVESTIGATION_DECLARED", ctx)
     assert "resolution_mode" not in row

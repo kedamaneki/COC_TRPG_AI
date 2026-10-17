@@ -2062,8 +2062,9 @@ def _maybe_auto_resolve_san_check_after_action(
     append_system_log_entry(
         state["all_events_log"], state["current_loc"], san_result.get("log", ""),
         action_id="wait",
-        target="",
+        target=san_result.get("target_id") or pl_id,
         roll_type=san_result.get("roll_type", "san_check"),
+        actor_id=san_result.get("actor_id") or pl_id,
         adjudication=san_result,
     )
     return _merge_action_and_san_results(action_result, san_result)
@@ -7220,8 +7221,18 @@ def _append_result_log_with_knowledge(
             only_public = bool(result.get("knowledge_grants")) and not private_grants
             if not only_public:
                 secret_to = [actor]
+    log_text = str(result.get("log", "") or "")
+    lifecycle_marker = next(
+        (marker for marker in ("【戦闘開始】", "【戦闘終了】") if marker in log_text),
+        None,
+    )
+    adjudication_text = log_text
+    lifecycle_text = ""
+    if lifecycle_marker:
+        adjudication_text, lifecycle_tail = log_text.split(lifecycle_marker, 1)
+        lifecycle_text = f"{lifecycle_marker}{lifecycle_tail}".strip()
     append_system_log_entry(
-        state["all_events_log"], current_loc, result.get("log", ""),
+        state["all_events_log"], current_loc, adjudication_text,
         action_id=action_id or result.get("action_id", ""),
         target=target or result.get("target", ""),
         roll_type=roll_type or result.get("roll_type", ""),
@@ -7233,6 +7244,17 @@ def _append_result_log_with_knowledge(
         adjudication=result,
         interaction_id=result.get("interaction_id", ""),
     )
+    if lifecycle_text:
+        lifecycle_action = "combat_start" if lifecycle_marker == "【戦闘開始】" else "combat_end"
+        append_system_log_entry(
+            state["all_events_log"], current_loc, lifecycle_text,
+            action_id=lifecycle_action,
+            target=target or result.get("target", ""),
+            roll_type="combat_lifecycle",
+            transaction_id=transaction_id,
+            actor_id=actor or "",
+            cause_adjudication_id=result.get("adjudication_id", ""),
+        )
     return applied
 
 
@@ -10045,7 +10067,7 @@ def _sanitize_combined_system_log(dice_log, payload_log, roll_type=""):
 def append_system_log_entry(
     all_events_log, current_loc, log_text, action_id="", target="", roll_type="",
     *, transaction_id="", actor_id="", decision_owner_id="", secret_to=None,
-    knowledge_ids=None, adjudication=None, interaction_id="",
+    knowledge_ids=None, adjudication=None, interaction_id="", cause_adjudication_id="",
 ):
     """システムログを IC チャンネルに1エントリとして追記する。
 
@@ -10054,6 +10076,12 @@ def append_system_log_entry(
     text = (log_text or "").strip()
     if not text:
         return
+    roll_markers = ("CC(1d100<=", "【SANチェック】", "【STR対抗", "【対抗ロール")
+    if any(marker in text for marker in roll_markers) and not adjudication:
+        from AdjudicationEvidence import EvidenceContractError
+        raise EvidenceContractError(
+            "Session ROLL log requires authoritative adjudication evidence"
+        )
     entry = {
         "channel": "IC",
         "location": current_loc,
@@ -10088,6 +10116,27 @@ def append_system_log_entry(
         ):
             if key in adjudication:
                 meta[key] = copy.deepcopy(adjudication.get(key))
+        if str(meta.get("resolution_mode") or "").upper() == "ROLL":
+            from AdjudicationEvidence import validate_evidence
+            validate_evidence(meta)
+            required_session_fields = {
+                "actor_id": actor_id or adjudication.get("actor_id"),
+                "target": target or adjudication.get("target_id"),
+                "skill_or_stat": meta.get("skill_or_stat"),
+            }
+            missing = [
+                name for name, value in required_session_fields.items()
+                if value is None or (isinstance(value, str) and not value.strip())
+            ]
+            if missing:
+                from AdjudicationEvidence import EvidenceContractError
+                raise EvidenceContractError(
+                    "incomplete Session ROLL evidence: " + ", ".join(missing)
+                )
+            meta["actor_id"] = required_session_fields["actor_id"]
+            meta["target"] = required_session_fields["target"]
+    if cause_adjudication_id:
+        meta["cause_adjudication_id"] = cause_adjudication_id
     if interaction_id:
         meta["interaction_id"] = interaction_id
     entry["meta"] = meta
@@ -10332,9 +10381,7 @@ def _apply_combat_payload_effects(
                 game_state, "COMBAT_ENDING", state_mgr=state_mgr,
                 combat_end_condition="scenario_condition",
                 effect="scenario combat_end payload accepted",
-                adjudication_id=payload_adjudication_id,
-                resolution_mode=str(payload.get("resolution_mode") or "NO_ROLL"),
-                resolution_reason=payload_resolution_reason or "SPECIAL_OBJECTIVE_CONDITION",
+                cause_adjudication_id=payload_adjudication_id,
             )
         state_mgr.end_combat("scenario_condition")
         if game_state is not None:
@@ -10344,9 +10391,7 @@ def _apply_combat_payload_effects(
                 position_before=current_loc or getattr(state_mgr, "combat_location_id", ""),
                 position_after=current_loc or getattr(state_mgr, "combat_location_id", ""),
                 effect="normal progression may resume",
-                adjudication_id=payload_adjudication_id,
-                resolution_mode=str(payload.get("resolution_mode") or "NO_ROLL"),
-                resolution_reason=payload_resolution_reason or "SPECIAL_OBJECTIVE_CONDITION",
+                cause_adjudication_id=payload_adjudication_id,
             )
         lines.append("【戦闘終了】戦闘が終結した。")
 
@@ -10388,7 +10433,7 @@ def _apply_combat_payload_effects(
                     actor=state_mgr.get_current_actor() or "",
                     target=",".join(enemies),
                     combat_goal=state_mgr.combat_goal,
-                    resolution_mode="NO_ROLL",
+                    cause_adjudication_id=payload_adjudication_id,
                     position_before=current_loc,
                     position_after=current_loc,
                     trigger_event_id=str(combat_start.get("trigger_event_id") or ""),
@@ -11118,12 +11163,17 @@ def resolve_luck_burn_decision(
             action_target=target,
             decision_owner_id=pl_id,
         )
-        return _attach_adjudication_evidence(
+        result = _attach_adjudication_evidence(
             result, adjudication_id=adjudication_id,
             actor_id=pl_id, target_id=target, skill_or_stat=skill_name,
             dice_result=roll_evidence, resolution_mode="ROLL",
             raw_result=fail_level, final_result=fail_level,
         )
+        if result.get("pending_push_roll"):
+            result["pending_push_roll"].update(
+                copy.deepcopy(result.get("adjudication") or {})
+            )
+        return result
 
     scenario_mgr.location = current_loc
     payload = scenario_mgr.process_action(effective_action_id, target, fail_level)
@@ -11160,7 +11210,7 @@ def resolve_push_decline(
 
     scenario_mgr.location = current_loc
     payload = scenario_mgr.process_action(effective_action_id, target, fail_level)
-    return _build_system_action_result(
+    result = _build_system_action_result(
         fail_level,
         sys_log,
         payload,
@@ -11171,6 +11221,20 @@ def resolve_push_decline(
         roll_type="skill",
         action_target=target,
     )
+    evidence = {
+        key: copy.deepcopy(pending_push_roll.get(key))
+        for key in _ADJUDICATION_RESULT_FIELDS
+        if key in pending_push_roll
+    }
+    evidence.update({
+        "actor_id": pending_push_roll.get("actor_id") or pl_id,
+        "target_id": pending_push_roll.get("target_id") or target,
+    })
+    from AdjudicationEvidence import validate_evidence
+    validate_evidence(evidence)
+    result.update(evidence)
+    result["adjudication"] = copy.deepcopy(evidence)
+    return result
 
 
 # ★ 引数に `state_mgr` を追加
@@ -11967,7 +12031,7 @@ def process_system_action(
             adjudication_id=adjudication_id,
             parent_adjudication_id=parent_adjudication_id,
             actor_id=pl_id,
-            target_id=target,
+            target_id=target or pl_id,
             skill_or_stat="SAN",
             dice_result={
                 "roll": roll_val,
@@ -12539,7 +12603,9 @@ def process_system_action(
             dice_result=dice_result, resolution_mode="ROLL",
         )
         if pending_result.get("pending_push_roll"):
-            pending_result["pending_push_roll"]["adjudication_id"] = adjudication_id
+            pending_result["pending_push_roll"].update(
+                copy.deepcopy(pending_result.get("adjudication") or {})
+            )
         return pending_result
 
     scenario_mgr.location = current_loc
@@ -15067,8 +15133,10 @@ def step_system_resolve_san(state, char_mgr, dice_engine, scenario_mgr, state_mg
     append_system_log_entry(
         state["all_events_log"], state["current_loc"], san_result.get("log", ""),
         action_id="wait",
-        target="",
+        target=san_result.get("target_id") or pl_id,
         roll_type=san_result.get("roll_type", "san_check"),
+        actor_id=san_result.get("actor_id") or pl_id,
+        adjudication=san_result,
     )
     state["last_system_result"] = san_result
     return san_result
@@ -15313,10 +15381,13 @@ def step_luck_decision(state, char_mgr, dice_engine, scenario_mgr, state_mgr, pl
             luck_cost=None,
         )
         sync_timeline_pending_phase(state)
-        append_system_log_entry(
-            state["all_events_log"], current_loc, result["log"],
+        _append_result_log_with_knowledge(
+            state, result,
+            current_loc=current_loc,
+            char_mgr=char_mgr,
+            pl_id=result.get("actor_id") or pl_id,
             action_id=result.get("action_id", pending.get("original_action", "")),
-            target=result.get("target", pending.get("target", "")),
+            target=result.get("target_id") or result.get("target", pending.get("target", "")),
             roll_type=result.get("roll_type", "skill"),
         )
         state["last_system_result"] = result
@@ -15387,10 +15458,13 @@ def step_push_decision(state, char_mgr, dice_engine, scenario_mgr, state_mgr, pl
         state["push_decision_required"] = False
         clear_pending_decision(state)
         apply_system_roll_state_updates(state, result)
-        append_system_log_entry(
-            state["all_events_log"], state["current_loc"], result["log"],
+        _append_result_log_with_knowledge(
+            state, result,
+            current_loc=state["current_loc"],
+            char_mgr=char_mgr,
+            pl_id=result.get("actor_id") or pl_id,
             action_id=result.get("action_id", pending.get("original_action", "")),
-            target=result.get("target", pending.get("target", "")),
+            target=result.get("target_id") or result.get("target", pending.get("target", "")),
             roll_type=result.get("roll_type", "skill"),
         )
         result = _maybe_auto_resolve_san_check_after_action(
@@ -15790,12 +15864,12 @@ def step_combat_defense(state, char_mgr, dice_engine, scenario_mgr, state_mgr, p
     if not state_mgr.in_combat:
         append_combat_event(
             state, "COMBAT_ENDING", state_mgr=state_mgr,
-            adjudication_id=result["adjudication_id"],
+            cause_adjudication_id=result["adjudication_id"],
             combat_end_condition=getattr(state_mgr, "combat_end_reason", "resolved"),
         )
         append_combat_event(
             state, "COMBAT_ENDED", state_mgr=state_mgr,
-            adjudication_id=result["adjudication_id"],
+            cause_adjudication_id=result["adjudication_id"],
             combat_end_condition=getattr(state_mgr, "combat_end_reason", "resolved"),
             position_before=current_loc, position_after=current_loc,
             effect="normal progression may resume",

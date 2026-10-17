@@ -720,6 +720,13 @@ def record_unified_turn(state, scenario_mgr, state_mgr=None, char_mgr=None, *, r
 
     dice = (result or {}).get("dice") or {}
     source_evidence = (result or {}).get("adjudication") or {}
+    canonical_roll_identifier = str(
+        source_evidence.get("canonical_identifier")
+        or source_evidence.get("skill_or_stat")
+        or (result or {}).get("canonical_identifier")
+        or (result or {}).get("skill_or_stat")
+        or ""
+    ).strip()
     location_changed = (
         selected_action == "move"
         or before.get("location") != after.get("location")
@@ -740,7 +747,13 @@ def record_unified_turn(state, scenario_mgr, state_mgr=None, char_mgr=None, *, r
         "target": target,
         "action_origin": origin,
         "dice_used": bool(dice or (result or {}).get("roll_type") in {"skill", "opposed_str", "luck"}),
-        "skill": action.get("skill") or (result or {}).get("skill") or "",
+        "skill": (
+            canonical_roll_identifier
+            if str(source_evidence.get("resolution_mode") or "").upper() == "ROLL"
+            else action.get("skill") or (result or {}).get("skill") or ""
+        ),
+        "canonical_identifier": canonical_roll_identifier or None,
+        "requested_roll_identifier": action.get("skill") or (result or {}).get("requested_roll_identifier") or "",
         "target_value": dice.get("target_value") or (result or {}).get("target_value"),
         "roll": dice.get("roll") or (result or {}).get("roll"),
         "result": (result or {}).get("status"),

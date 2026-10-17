@@ -642,6 +642,18 @@ class TestLuckAndPushRecovery(unittest.TestCase):
             "desk", "目星", "search", 0, 0, 0,
             failed_success_level=int(SuccessLevel.FAILURE),
         )
+        pending.update({
+            "adjudication_id": "adj-decline",
+            "resolution_mode": "ROLL",
+            "skill_or_stat": "目星",
+            "target_value": 50,
+            "roll": 65,
+            "raw_result": "FAILURE",
+            "final_result": "FAILURE",
+            "modifier": {"type": "NONE"},
+            "actor_id": "inv1",
+            "target_id": "desk",
+        })
         result = game_main.resolve_push_decline(
             "inv1", "調査員", pending, "room", self.scenario, "失敗ログ",
         )
