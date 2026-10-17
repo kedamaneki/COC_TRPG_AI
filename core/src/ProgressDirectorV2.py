@@ -753,6 +753,8 @@ def record_unified_turn(state, scenario_mgr, state_mgr=None, char_mgr=None, *, r
         "human_intervention": origin in {HUMAN_GUIDED, HUMAN_FORCED},
         "transaction_id": txn,
     }
+    if location_changed:
+        event["lifecycle_relation_id"] = (result or {}).get("lifecycle_relation_id")
     if location_changed and source_evidence:
         adjudication_event = copy.deepcopy(event)
         adjudication_event["event_type"] = "MOVE_ACTION_RESOLVED"

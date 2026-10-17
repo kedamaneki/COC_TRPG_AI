@@ -1459,6 +1459,22 @@ def new_action_transaction_id():
     return str(uuid.uuid4())
 
 
+def ensure_lifecycle_relation_id(result, *, transaction_id=""):
+    """Stamp one producer-owned identity on both location-change records."""
+    if not isinstance(result, dict):
+        return result
+    if not (result.get("location_changed") or result.get("new_location")):
+        return result
+    existing = str(result.get("lifecycle_relation_id") or "").strip()
+    if existing:
+        return result
+    tid = str(transaction_id or result.get("transaction_id") or "").strip()
+    result["lifecycle_relation_id"] = (
+        f"lifecycle_tx_{tid}" if tid else f"lifecycle_{uuid.uuid4().hex}"
+    )
+    return result
+
+
 def ensure_settled_nonprogress_event_id(pc_action, *, event_kind=""):
     """
     OOC / 検証拒否など「SYSTEMに行かない確定イベント」へ一意IDを付与する。
@@ -10058,7 +10074,7 @@ def append_system_log_entry(
             "state_before", "state_after", "cause_event_ids", "result_event_ids",
             "trigger_event_id", "world_fact", "human_readable_description",
             "opposed_roll", "resolution_reason", "narrative_fact_tags",
-            "object_state_updates",
+            "object_state_updates", "lifecycle_relation_id",
         ):
             if key in adjudication:
                 meta[key] = copy.deepcopy(adjudication.get(key))
@@ -12816,6 +12832,7 @@ def apply_forced_progress_breakout(state, managers, *, pl_id, char_name):
         state_mgr=state_mgr,
         game_state=state,
     )
+    result = ensure_lifecycle_relation_id(result)
     append_system_log_entry(
         state["all_events_log"],
         current_loc,
@@ -12823,6 +12840,8 @@ def apply_forced_progress_breakout(state, managers, *, pl_id, char_name):
         action_id=action_id,
         target=dest,
         roll_type=result.get("roll_type", action_id),
+        adjudication=result,
+        actor_id=pl_id,
     )
     # process_system_action(game_state=) で current_loc / キュー破棄済み。保険で再同期。
     apply_location_change_side_effects(
@@ -14078,6 +14097,12 @@ def commit_system_resolution(state, result, *, current_loc, action_data=None, ha
     タスク2: Commit と同時に last_processed_action_id を更新する。
     """
     action_data = action_data or {}
+    relation_transaction_id = (
+        transaction_id or action_data.get("transaction_id") or state.get("pending_action_id")
+    )
+    result = ensure_lifecycle_relation_id(
+        result, transaction_id=relation_transaction_id,
+    )
     apply_system_roll_state_updates(state, result, had_san_pending=had_san_pending)
 
     actor_for_knowledge = (
@@ -14094,7 +14119,7 @@ def commit_system_resolution(state, result, *, current_loc, action_data=None, ha
         action_id=result.get("action_id", action_data.get("action", "")),
         target=result.get("target", action_data.get("target", "")),
         roll_type=result.get("roll_type", ""),
-        transaction_id=transaction_id or action_data.get("transaction_id") or state.get("pending_action_id"),
+        transaction_id=relation_transaction_id,
     )
 
     # The result is now committed and knowledge grants have been applied, so

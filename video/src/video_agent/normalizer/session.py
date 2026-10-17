@@ -319,6 +319,7 @@ def _normalize_unified(record, index, names):
         "actor_id": str(actor) if actor else None,
         "adjudication_id": record.get("adjudication_id"),
         "cause_adjudication_id": record.get("cause_adjudication_id"),
+        "lifecycle_relation_id": record.get("lifecycle_relation_id"),
         "interaction_id": record.get("interaction_id"),
         "event_type": _unified_type(record),
         "text": record.get("text"),
@@ -391,6 +392,7 @@ def _normalize_session_event(record, index, base_order, names, name_to_id):
         "actor_id": str(meta.get("actor_id")) if meta.get("actor_id") else None,
         "adjudication_id": meta.get("adjudication_id"),
         "cause_adjudication_id": meta.get("cause_adjudication_id"),
+        "lifecycle_relation_id": meta.get("lifecycle_relation_id"),
         "interaction_id": meta.get("interaction_id"),
         "event_type": _session_type(text, meta, speaker),
         "text": text,
@@ -450,12 +452,7 @@ def _separate_location_lifecycle(event):
 
 
 def _dedupe_simple_moves(events):
-    """Pair complete, ordered display streams; never infer adjudication evidence.
-
-    Old forced moves lack transaction/actor ids. Only a complete bijection of
-    structured transitions and display rows is accepted, with matching ids
-    wherever either side supplies one. Partial/ambiguous streams stay visible.
-    """
+    """Pair lifecycle authority/display records by explicit identity first."""
     def simple(event):
         payload = event['metadata']['source_payload']
         meta = payload.get('meta', payload)
@@ -465,31 +462,11 @@ def _dedupe_simple_moves(events):
                 and not meta.get('resolution_mode')
                 and not event.get('dice'))
 
-    unified = [e for e in events if simple(e) and e['metadata']['source_stream'] == 'unified_event_log']
-    session = [e for e in events if simple(e) and e['metadata']['source_stream'] == 'session_log']
-    # This relation contract applies only to explicit structured lifecycles.
-    # Legacy inferred movement remains untouched, never silently merged or
-    # promoted to evidence that it does not contain.
-    if any(e['metadata']['source_payload'].get('event_type') != 'LOCATION_CHANGE'
-           for e in unified):
-        return events
-    if unified and session:
-        for rows in (unified, session):
-            transactions = []
-            for row in rows:
-                payload = row['metadata']['source_payload']
-                transactions.append((payload.get('meta') or payload).get('transaction_id') or '')
-            explicit = [value for value in transactions if value]
-            if len(explicit) != len(set(explicit)):
-                raise ValueError('DEDUP_DUPLICATE_TRANSACTION_ID: simple move correspondence is not unique')
-            if transactions.count('') > 1:
-                raise ValueError('DEDUP_AMBIGUOUS: multiple unkeyed simple moves')
-    if not unified or len(unified) != len(session):
-        return events
-    pairs = []
-    seen_transactions = set()
-    unkeyed = 0
-    for u, s in zip(unified, session):
+    def value(event, key):
+        payload = event['metadata']['source_payload']
+        return (payload.get('meta') or payload).get(key)
+
+    def compatible(u, s):
         up, sp = u['metadata']['source_payload'], s['metadata']['source_payload']
         sm = sp.get('meta') or {}
         before = (up.get('state_before') or {}).get('location')
@@ -499,27 +476,86 @@ def _dedupe_simple_moves(events):
                 or not before or not after or before == after
                 or before != up.get('location') or before != sp.get('location')
                 or after != up.get('target') or after != sm.get('target')):
-            return events
-        ut, st = up.get('transaction_id') or '', sm.get('transaction_id') or ''
-        if ut != st or (ut and ut in seen_transactions):
-            return events
-        if ut:
-            seen_transactions.add(ut)
-        elif not (up.get('forced_action') is True and sm.get('kp_narrated') is False):
-            return events
-        else:
-            unkeyed += 1
-            if unkeyed > 1:
-                return events
-        # An actor may be absent on historical forced display rows, but may
-        # never disagree with the structured authority.
+            return False
         if sm.get('actor_id') and sm['actor_id'] != up.get('actor'):
-            return events
+            return False
         if not up.get('event_id') or up.get('raw_event_offset') is None:
-            return events
-        pairs.append((u, s, 'transaction_id' if ut else 'complete_ordered_transition_bijection'))
-    if unkeyed and not seen_transactions:
+            return False
+        return True
+
+    unified = [e for e in events if simple(e) and e['metadata']['source_stream'] == 'unified_event_log']
+    session = [e for e in events if simple(e) and e['metadata']['source_stream'] == 'session_log']
+    # Inferred legacy rows are not authoritative lifecycle records.
+    if any(e['metadata']['source_payload'].get('event_type') != 'LOCATION_CHANGE' for e in unified):
         return events
+
+    pairs = []
+    used_u, used_s = set(), set()
+
+    def pair_by_unique_key(key, method):
+        um, sm = {}, {}
+        for index, row in enumerate(unified):
+            if index in used_u or (key == 'transaction_id' and value(row, 'lifecycle_relation_id')):
+                continue
+            token = str(value(row, key) or '')
+            if token:
+                if token in um:
+                    raise ValueError(f'DEDUP_AMBIGUOUS: duplicate Unified {key}')
+                um[token] = index
+        for index, row in enumerate(session):
+            if index in used_s or (key == 'transaction_id' and value(row, 'lifecycle_relation_id')):
+                continue
+            token = str(value(row, key) or '')
+            if token:
+                if token in sm:
+                    raise ValueError(f'DEDUP_AMBIGUOUS: duplicate Session {key}')
+                sm[token] = index
+        for token in sorted(set(um) & set(sm), key=lambda item: um[item]):
+            ui, si = um[token], sm[token]
+            if ui in used_u or si in used_s:
+                raise ValueError(f'DEDUP_AMBIGUOUS: overlapping {key} relation')
+            if not compatible(unified[ui], session[si]):
+                raise ValueError(f'DEDUP_RELATION_CONTRADICTION: {key}={token}')
+            pairs.append((unified[ui], session[si], method))
+            used_u.add(ui)
+            used_s.add(si)
+
+    # Producer relation is authoritative.
+    pair_by_unique_key('lifecycle_relation_id', 'lifecycle_relation_id')
+
+    # Historical structured Simple Move streams are accepted only as a full,
+    # ordered bijection.  One bad/missing row disables the whole legacy merge.
+    remaining_u = [(i, row) for i, row in enumerate(unified) if i not in used_u]
+    remaining_s = [(i, row) for i, row in enumerate(session) if i not in used_s]
+    if remaining_u or remaining_s:
+        if sum(not value(row, 'transaction_id') for _, row in remaining_u) > 1 or sum(
+            not value(row, 'transaction_id') for _, row in remaining_s
+        ) > 1:
+            raise ValueError('DEDUP_AMBIGUOUS: multiple unkeyed simple moves')
+        if len(remaining_u) != len(remaining_s):
+            return events
+        u_transactions = [str(value(row, 'transaction_id') or '') for _, row in remaining_u]
+        s_transactions = [str(value(row, 'transaction_id') or '') for _, row in remaining_s]
+        for transactions in (u_transactions, s_transactions):
+            explicit = [token for token in transactions if token]
+            if len(explicit) != len(set(explicit)):
+                raise ValueError('DEDUP_DUPLICATE_TRANSACTION_ID: simple move correspondence is not unique')
+            if transactions.count('') > 1:
+                raise ValueError('DEDUP_AMBIGUOUS: multiple unkeyed simple moves')
+        legacy_pairs = []
+        for (ui, u), (si, s), ut, st in zip(
+            remaining_u, remaining_s, u_transactions, s_transactions,
+        ):
+            if ut != st or not compatible(u, s):
+                return events
+            if not ut and u['metadata']['source_payload'].get('forced_action') is not True:
+                return events
+            legacy_pairs.append((u, s, 'transaction_id' if ut else 'narrow_forced_transition_compatibility'))
+        # Do not accept a stream consisting only of an unkeyed heuristic pair.
+        if legacy_pairs and not any(u_transactions):
+            return events
+        pairs.extend(legacy_pairs)
+
     removed = set()
     for u, s, method in pairs:
         u['source_event_ids'] = list(dict.fromkeys(u['source_event_ids'] + s['source_event_ids']))

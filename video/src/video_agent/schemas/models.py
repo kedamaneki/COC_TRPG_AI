@@ -25,6 +25,7 @@ def empty_event(event_id, source_ids, order):
         "actor_id": None,
         "adjudication_id": None,
         "cause_adjudication_id": None,
+        "lifecycle_relation_id": None,
         "interaction_id": None,
         "event_type": "UNKNOWN",
         "text": None,
