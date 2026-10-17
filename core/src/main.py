@@ -1459,19 +1459,28 @@ def new_action_transaction_id():
     return str(uuid.uuid4())
 
 
-def ensure_lifecycle_relation_id(result, *, transaction_id=""):
-    """Stamp one producer-owned identity on both location-change records."""
+def ensure_lifecycle_relation_id(result, *, transaction_id="", actor_id=""):
+    """Freeze producer-owned relation and actor identities for a location change."""
     if not isinstance(result, dict):
         return result
     if not (result.get("location_changed") or result.get("new_location")):
         return result
+    resolved_actor = str(
+        result.get("lifecycle_actor_id") or actor_id or result.get("actor_id") or ""
+    ).strip()
+    if not resolved_actor:
+        raise ValueError("location change requires producer-owned lifecycle_actor_id")
+    existing_actor = str(result.get("lifecycle_actor_id") or "").strip()
+    if existing_actor and actor_id and existing_actor != str(actor_id).strip():
+        raise ValueError("lifecycle actor identity changed after resolution")
+    result["lifecycle_actor_id"] = resolved_actor
+
     existing = str(result.get("lifecycle_relation_id") or "").strip()
-    if existing:
-        return result
-    tid = str(transaction_id or result.get("transaction_id") or "").strip()
-    result["lifecycle_relation_id"] = (
-        f"lifecycle_tx_{tid}" if tid else f"lifecycle_{uuid.uuid4().hex}"
-    )
+    if not existing:
+        tid = str(transaction_id or result.get("transaction_id") or "").strip()
+        result["lifecycle_relation_id"] = (
+            f"lifecycle_tx_{tid}" if tid else f"lifecycle_{uuid.uuid4().hex}"
+        )
     return result
 
 
@@ -10074,7 +10083,7 @@ def append_system_log_entry(
             "state_before", "state_after", "cause_event_ids", "result_event_ids",
             "trigger_event_id", "world_fact", "human_readable_description",
             "opposed_roll", "resolution_reason", "narrative_fact_tags",
-            "object_state_updates", "lifecycle_relation_id",
+            "object_state_updates", "lifecycle_relation_id", "lifecycle_actor_id",
         ):
             if key in adjudication:
                 meta[key] = copy.deepcopy(adjudication.get(key))
@@ -12832,7 +12841,7 @@ def apply_forced_progress_breakout(state, managers, *, pl_id, char_name):
         state_mgr=state_mgr,
         game_state=state,
     )
-    result = ensure_lifecycle_relation_id(result)
+    result = ensure_lifecycle_relation_id(result, actor_id=pl_id)
     append_system_log_entry(
         state["all_events_log"],
         current_loc,
@@ -12841,7 +12850,7 @@ def apply_forced_progress_breakout(state, managers, *, pl_id, char_name):
         target=dest,
         roll_type=result.get("roll_type", action_id),
         adjudication=result,
-        actor_id=pl_id,
+        actor_id=result.get("lifecycle_actor_id") or pl_id,
     )
     # process_system_action(game_state=) で current_loc / キュー破棄済み。保険で再同期。
     apply_location_change_side_effects(
@@ -12852,6 +12861,7 @@ def apply_forced_progress_breakout(state, managers, *, pl_id, char_name):
             state["current_loc"] = scenario_mgr.location
 
     forced["action_origin"] = SYSTEM_FORCED
+    forced["actor_id"] = result.get("lifecycle_actor_id") or pl_id
     state["last_pl_action"] = forced
     state["last_system_result"] = result
     record_unified_turn(
@@ -14100,17 +14110,17 @@ def commit_system_resolution(state, result, *, current_loc, action_data=None, ha
     relation_transaction_id = (
         transaction_id or action_data.get("transaction_id") or state.get("pending_action_id")
     )
-    result = ensure_lifecycle_relation_id(
-        result, transaction_id=relation_transaction_id,
-    )
-    apply_system_roll_state_updates(state, result, had_san_pending=had_san_pending)
-
     actor_for_knowledge = (
         action_data.get("actor_id")
         or state.get("actor_id")
         or pl_id
         or state.get("pl_id")
     )
+    result = ensure_lifecycle_relation_id(
+        result, transaction_id=relation_transaction_id, actor_id=actor_for_knowledge,
+    )
+    apply_system_roll_state_updates(state, result, had_san_pending=had_san_pending)
+    actor_for_knowledge = result.get("lifecycle_actor_id") or actor_for_knowledge
     _append_result_log_with_knowledge(
         state, result,
         current_loc=current_loc,

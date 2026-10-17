@@ -191,6 +191,46 @@ class TestIntroductionFlowGuards(unittest.TestCase):
             0,
         )
 
+    def test_v8_forced_move_freezes_resolved_actor_for_both_logs(self):
+        """V8: stale state.pl_id must not replace the actor that resolved the move."""
+        from GameStateManager import GameStateManager
+        self.scenario.flags.update({
+            "talked_with_knott": True,
+            "case_accepted": True,
+            "knott_letter_read": True,
+            "knott_memo_read": True,
+        })
+        self.scenario.location = "introduction"
+        state_mgr = GameStateManager(self.char_mgr)
+        state_mgr.flags = self.scenario.flags
+        self.scenario.bind_game_state(state_mgr)
+        state = {
+            "all_events_log": [], "unified_event_log": [],
+            "current_loc": "introduction", "force_ic_action": True,
+            "stagnation_pl_hint": "ヒント",
+            "autonomous_guard": {"chat_rounds_without_action": 3},
+            "pl_id": "pc_01", "char_name": "マクガフィン刑事",
+        }
+        managers = (self.char_mgr, self.dice, state_mgr, self.scenario)
+        game_main.apply_forced_progress_breakout(
+            state, managers, pl_id="pc_02", char_name="新たな探索者",
+        )
+        display = next(
+            row for row in state["all_events_log"]
+            if (row.get("meta") or {}).get("lifecycle_relation_id")
+        )
+        authority = next(
+            row for row in state["unified_event_log"]
+            if row.get("event_type") == "LOCATION_CHANGE"
+        )
+        self.assertEqual(display["meta"]["actor_id"], "pc_02")
+        self.assertEqual(display["meta"]["lifecycle_actor_id"], "pc_02")
+        self.assertEqual(authority["actor"], "pc_02")
+        self.assertEqual(authority["lifecycle_actor_id"], "pc_02")
+        self.assertEqual(
+            authority["lifecycle_relation_id"], display["meta"]["lifecycle_relation_id"],
+        )
+
     def test_master_json_not_polluted_by_session_social(self):
         """save_data が session_social / session_skill_marks をマスターへ書かない。"""
         knott = self.char_mgr.characters["steven_knott"]

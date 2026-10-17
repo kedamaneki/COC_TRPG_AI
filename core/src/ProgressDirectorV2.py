@@ -725,10 +725,14 @@ def record_unified_turn(state, scenario_mgr, state_mgr=None, char_mgr=None, *, r
         or before.get("location") != after.get("location")
         or bool((result or {}).get("location_changed") or (result or {}).get("new_location"))
     )
+    lifecycle_actor = str((result or {}).get("lifecycle_actor_id") or "").strip()
+    action_actor = str(action.get("actor_id") or action.get("pc_id") or "").strip()
+    if location_changed and lifecycle_actor and action_actor and lifecycle_actor != action_actor:
+        raise ValueError("lifecycle actor contradicts resolved action actor")
     event = {
         "turn_id": len(state.setdefault("unified_event_log", [])) + 1,
         "scene_id": getattr(state_mgr, "current_scene_id", "") if state_mgr else "",
-        "actor": action.get("actor_id") or action.get("pc_id") or state.get("pl_id") or "",
+        "actor": lifecycle_actor or action_actor or state.get("pl_id") or "",
         "location": before.get("location") or "",
         "current_goal": goal_before.get("current_goal") or "",
         "action_intent": action.get("dialogue") or action.get("message") or "",
@@ -755,6 +759,7 @@ def record_unified_turn(state, scenario_mgr, state_mgr=None, char_mgr=None, *, r
     }
     if location_changed:
         event["lifecycle_relation_id"] = (result or {}).get("lifecycle_relation_id")
+        event["lifecycle_actor_id"] = lifecycle_actor
     if location_changed and source_evidence:
         adjudication_event = copy.deepcopy(event)
         adjudication_event["event_type"] = "MOVE_ACTION_RESOLVED"

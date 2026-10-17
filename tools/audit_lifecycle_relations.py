@@ -29,6 +29,8 @@ def audit(root):
                            | {key for key, count in d_counts.items() if count != 1})
     unmatched = sorted((set(a_counts) ^ set(d_counts)))
     contradictory = []
+    actor_contradictions = []
+    contradiction_details = []
     by_display = {
         str((row.get("meta") or {}).get("lifecycle_relation_id")): row
         for row in display if (row.get("meta") or {}).get("lifecycle_relation_id")
@@ -41,25 +43,41 @@ def audit(root):
         meta = counterpart.get("meta") or {}
         before = (row.get("state_before") or {}).get("location")
         after = (row.get("state_after") or {}).get("location")
-        if (
+        actor_mismatch = bool(meta.get("actor_id") and meta.get("actor_id") != row.get("actor"))
+        structural_mismatch = (
             row.get("selected_action") != "move"
             or meta.get("action_id") != "move"
             or counterpart.get("location") != before
             or meta.get("target") != after
-            or (meta.get("actor_id") and meta.get("actor_id") != row.get("actor"))
-        ):
+        )
+        if actor_mismatch:
+            actor_contradictions.append(relation)
+        if structural_mismatch or actor_mismatch:
             contradictory.append(relation)
+            contradiction_details.append({
+                "lifecycle_relation_id": relation,
+                "authority_actor": row.get("actor"),
+                "display_actor": meta.get("actor_id"),
+                "authority_from": before,
+                "display_from": counterpart.get("location"),
+                "authority_to": after,
+                "display_to": meta.get("target"),
+                "actor_contradiction": actor_mismatch,
+                "structural_contradiction": structural_mismatch,
+            })
     return {
         "lifecycle_relation_missing": missing,
         "lifecycle_relation_ambiguous": len(ambiguous_ids),
         "lifecycle_relation_unmatched": len(unmatched),
         "lifecycle_relation_contradictory": len(contradictory),
+        "lifecycle_actor_contradiction": len(set(actor_contradictions)),
         "authority_location_changes": len(authority),
         "display_location_changes": len(display),
         "relation_pairs": len(set(a_counts) & set(d_counts)),
         "ambiguous_relation_ids": ambiguous_ids,
         "unmatched_relation_ids": unmatched,
         "contradictory_relation_ids": sorted(set(contradictory)),
+        "contradiction_details": contradiction_details,
         "status": "PASS" if not (missing or ambiguous_ids or unmatched or contradictory) else "FAIL",
     }
 
