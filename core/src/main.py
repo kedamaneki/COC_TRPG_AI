@@ -10285,6 +10285,7 @@ def _build_system_action_result(
             "cause_event_ids", "result_event_ids", "world_fact",
             "human_readable_description",
             "resolution_reason", "narrative_fact_tags", "object_state_updates",
+            "completion_phase_deferred",
         ):
             if key in payload:
                 result[key] = copy.deepcopy(payload.get(key))
@@ -10314,6 +10315,57 @@ def _apply_combat_payload_effects(
     lines = []
     payload_adjudication_id = str(payload.get("adjudication_id") or "")
     payload_resolution_reason = str(payload.get("resolution_reason") or "")
+    world_fact = payload.get("world_fact") or {}
+    special_objective = (
+        str(world_fact.get("event") or "").upper() == "SPECIAL_OBJECTIVE_COMPLETED"
+    )
+
+    # Persist special-objective evidence even when the scenario resolves the
+    # finale without entering the ordinary attack/defence combat exchange.
+    if special_objective and game_state is not None and not state_mgr.in_combat:
+        objective_target = str(world_fact.get("target") or payload.get("target") or "")
+        objective_combat_id = str(
+            getattr(state_mgr, "combat_id", "")
+            or f"special_objective:{payload.get('trigger_event_id') or payload_adjudication_id}"
+        )
+        objective_transaction_id = str(
+            payload.get("transaction_id")
+            or f"special-objective:{payload_adjudication_id}"
+        )
+        append_combat_event(
+            game_state, "COMBAT_ACTION_RESOLVED", state_mgr=state_mgr,
+            combat_id=objective_combat_id,
+            actor=pl_id, target=objective_target,
+            combat_goal="SPECIAL_OBJECTIVE", action_category="SPECIAL",
+            selected_action=str(payload.get("selected_action") or ""),
+            action_origin=str(payload.get("action_origin") or AUTONOMOUS),
+            legality="LEGAL", result="SPECIAL_OBJECTIVE_COMPLETED",
+            final_result="SPECIAL_OBJECTIVE_COMPLETED",
+            objective_outcome="SPECIAL_OBJECTIVE_COMPLETED",
+            effect=payload.get("human_readable_description") or "",
+            combat_progress_delta=1,
+            combat_end_condition="scenario_condition",
+            transaction_id=objective_transaction_id,
+            adjudication_id=payload_adjudication_id,
+            resolution_mode=str(payload.get("resolution_mode") or "NO_ROLL"),
+            resolution_reason=payload_resolution_reason or "SPECIAL_OBJECTIVE_CONDITION",
+        )
+        append_combat_event(
+            game_state, "SPECIAL_OBJECTIVE_COMPLETED", state_mgr=state_mgr,
+            combat_id=objective_combat_id,
+            actor=pl_id, target=objective_target,
+            adjudication_id=payload_adjudication_id,
+            transaction_id=objective_transaction_id,
+            resolution_mode=str(payload.get("resolution_mode") or "NO_ROLL"),
+            resolution_reason=payload_resolution_reason or "SPECIAL_OBJECTIVE_CONDITION",
+            final_result="SPECIAL_OBJECTIVE_COMPLETED",
+            objective_outcome="SPECIAL_OBJECTIVE_COMPLETED",
+            world_fact=copy.deepcopy(world_fact),
+            human_readable_description=payload.get("human_readable_description"),
+            cause_event_ids=[str(payload.get("trigger_event_id") or "")],
+            state_before=copy.deepcopy(payload.get("state_before") or {}),
+            state_after=copy.deepcopy(payload.get("state_after") or {}),
+        )
 
     if payload.get("combat_end") and state_mgr.in_combat:
         if game_state is not None:
@@ -12615,6 +12667,8 @@ def process_system_action(
     if payload and state_mgr:
         payload = dict(payload)
         payload["adjudication_id"] = adjudication_id
+        payload.setdefault("target", target)
+        payload.setdefault("selected_action", effective_action_id)
         payload["resolution_mode"] = (
             "NO_ROLL" if dice_skipped or roll_type in {"none", "no_roll", "auto_success"} else "ROLL"
         )
@@ -14207,6 +14261,8 @@ def commit_system_resolution(state, result, *, current_loc, action_data=None, ha
     result = ensure_lifecycle_relation_id(
         result, transaction_id=relation_transaction_id, actor_id=actor_for_knowledge,
     )
+    from CompletionAtomicity import commit_special_objective_completion
+    commit_special_objective_completion(state, result, scenario_mgr, state_mgr)
     apply_system_roll_state_updates(state, result, had_san_pending=had_san_pending)
     actor_for_knowledge = result.get("lifecycle_actor_id") or actor_for_knowledge
     _append_result_log_with_knowledge(

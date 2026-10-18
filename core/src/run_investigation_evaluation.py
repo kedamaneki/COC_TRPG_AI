@@ -349,6 +349,20 @@ def _summary(state, scenario_mgr, state_mgr, *, session_id, scenario_file, seed,
         "scenario_file": scenario_file,
         "seed": seed,
         "completed": bool(main.is_game_cleared(scenario_mgr)),
+        "scenario_goal_completed": bool(main.is_game_cleared(scenario_mgr)),
+        "goal_completion_synchronized": bool(
+            (state.get("completion_envelope") or {}).get("gate") == "PASS"
+        ) if main.is_game_cleared(scenario_mgr) else True,
+        "special_objective_evidence": bool(
+            (state.get("completion_envelope") or {}).get("special_objective")
+        ),
+        "completion_atomicity_gate": (
+            (state.get("completion_envelope") or {}).get("gate")
+            or ("NOT_APPLICABLE" if not main.is_game_cleared(scenario_mgr) else "FAIL")
+        ),
+        "completion_state_contradictions": (
+            (state.get("completion_envelope") or {}).get("completion_state_contradictions", 0)
+        ),
         "phase": scenario_mgr.current_phase,
         "location": scenario_mgr.location,
         "turns": int(state_mgr.turn_count or 0),

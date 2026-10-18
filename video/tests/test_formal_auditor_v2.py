@@ -130,6 +130,27 @@ def write_cli_fixture(root: Path, *, completed=True):
 
 
 class FormalAuditorV2Tests(unittest.TestCase):
+    def test_v11_historical_goal_sync_failure_is_reproduced_exactly(self):
+        data = good_fixture()
+        data["result"]["session_id"] = "CORBITT_LONGRUN_ITERATION3_V11_HOME_001"
+        data["unified"] = [row for row in data["unified"] if row["event_id"] != "final_1"]
+        data["normalized_doc"]["events"] = [
+            row for row in data["normalized_doc"]["events"]
+            if row["event_id"] != "norm:final_1"
+        ]
+        report = audit(data)
+        finding = next(item for item in report["findings"] if item["finding_id"] == "goal_completion_sync")
+        self.assertEqual("SOURCE_CONTRADICTION", finding["category"])
+        self.assertEqual("CRITICAL", finding["severity"])
+        self.assertEqual({
+            "completed": True,
+            "clear": True,
+            "ending": True,
+            "corbitt_defeated": True,
+            "active_combat": False,
+            "special_objective": False,
+        }, finding["evidence"])
+
     def test_auditor_uses_explicit_or_latest_valid_checkpoint(self):
         with tempfile.TemporaryDirectory(dir=TEST_TMP) as tmp:
             root = Path(tmp)

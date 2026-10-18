@@ -1993,9 +1993,20 @@ class ScenarioManager:
             payload = self._resolve_conditional_effects(
                 triggered_event.get("payload", {}), success_level,
             )
+            special_objective_clear = (
+                str((payload.get("world_fact") or {}).get("event") or "").upper()
+                == "SPECIAL_OBJECTIVE_COMPLETED"
+                and str(payload.get("new_phase") or "").lower() == "clear"
+            )
             changed_keys = list((payload.get("flag_updates") or {}).keys())
             state_before = {key: copy.deepcopy(self.flags.get(key)) for key in changed_keys}
-            self._apply_payload_updates(payload)
+            if special_objective_clear:
+                updates = dict(payload)
+                updates.pop("new_phase", None)
+                self._apply_payload_updates(updates)
+                payload["completion_phase_deferred"] = "clear"
+            else:
+                self._apply_payload_updates(payload)
             state_after = {key: copy.deepcopy(self.flags.get(key)) for key in changed_keys}
             payload["trigger_event_id"] = event_id
             payload["state_before"] = state_before
