@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "baselines": [
+    {
+      "baseline_id": "CORBITT_KNOWN_GOOD_BASELINE_V13",
+      "session_id": "CORBITT_LONGRUN_ITERATION3_V13_HOME_001",
+      "status": "ACCEPTED",
+      "run_git_commit": "7e22972166a65539614e020e729e0baaefbca672",
+      "preflight_tag": "v13-preflight-accepted",
+      "acceptance_tag": "v13-full-long-accepted",
+      "accepted_evidence_manifest": "manifests/V13_ACCEPTED_EVIDENCE_MANIFEST.json",
+      "accepted_evidence_manifest_sha256": "a29c4de2b79cb34504de0889c4e6a17dc4ef6c8e398e570b7934c580da940b1d",
+      "raw_aggregate_sha256": "fd42df1dc3278ef3250486235f43a5693de4fea9ad3f7af5fc769690ab18e44d",
+      "video_source_eligible": true
+    }
+  ],
+  "historical_negative_references": [
+    {
+      "run": "V8",
+      "expected": "actor contradiction reproduced"
+    },
+    {
+      "run": "V9",
+      "expected": "Investigation ROLL failure reproduced"
+    },
+    {
+      "run": "V10",
+      "expected": "12 formal blockers reproduced"
+    },
+    {
+      "run": "V11",
+      "expected": "goal completion sync failure reproduced"
+    },
+    {
+      "run": "V12",
+      "expected": "basement stagnation reproduced"
+    }
+  ],
+  "promotion_policy": "New accepted runs are compared with V13 and do not delete or rewrite V13."
+}

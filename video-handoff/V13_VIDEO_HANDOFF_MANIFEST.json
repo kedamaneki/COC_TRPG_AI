@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "source_session_id": "CORBITT_LONGRUN_ITERATION3_V13_HOME_001",
+  "source_accepted": true,
+  "video_source_eligible": true,
+  "raw_aggregate_sha256": "fd42df1dc3278ef3250486235f43a5693de4fea9ad3f7af5fc769690ab18e44d",
+  "accepted_evidence_manifest": "F:\\制作物\\その3\\corbitt-trpg-system\\manifests\\V13_ACCEPTED_EVIDENCE_MANIFEST.json",
+  "accepted_evidence_manifest_sha256": "a29c4de2b79cb34504de0889c4e6a17dc4ef6c8e398e570b7934c580da940b1d",
+  "source_index": "F:\\制作物\\その3\\corbitt-trpg-system\\video-handoff\\V13_VIDEO_SOURCE_INDEX.json",
+  "source_index_sha256": "4edf21df9fdbd34ba5cc043cf019b47a1f5802435490d4770074711b4471f945",
+  "acceptance_context": "F:\\制作物\\その3\\corbitt-trpg-system\\video-handoff\\V13_VIDEO_ACCEPTANCE_CONTEXT.md",
+  "acceptance_context_sha256": "5e6803f06cfa6acfa5fef61d3ecf4766844323f340769b0f6cc2fc5cf4c9e515",
+  "normalizer_identity": {
+    "implementation_sha256": "05d9b8f15680ff43b1c39b0731305cc2d93720231b1bcaa276e299c37bfdc2ea",
+    "normalized_session_sha256": "fa019b933c94979f3c938f5558a570672224f52303a47a00622d22d11cc81fa3"
+  },
+  "auditor_identity": {
+    "version": "2.0.0",
+    "implementation_sha256": "858b33c80d73c940ca2c8e9e6c5b63d34bb6e792e29307ed438fc2169f86608e",
+    "formal_status": "PASS"
+  },
+  "input_identity": {
+    "status": "PASS",
+    "hashes": {
+      "scenario": "b6f0559ffca677b57bc3a69c16991bb24c483d30256cb6dfd30fc938ebd84ed7",
+      "pcs": "f47bb03ff6406c228dd7c88f94c597d6e28785b47c6e0afe1322b7596c31c3dd",
+      "npcs": "3c795e6098f97ae8e6240b9ed2412428ab332c91c30a1cb45b846d2f4628377c"
+    }
+  },
+  "source_read_only": true,
+  "derived_output_root": "F:\\制作物\\その3\\video-production\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001",
+  "derived_output_separate_from_source": true,
+  "auto_publish": "PROHIBITED",
+  "human_review": "REQUIRED",
+  "gate": {
+    "SOURCE_ACCEPTED": true,
+    "VIDEO_SOURCE_ELIGIBLE": true,
+    "RAW_HASH_VERIFIED": true,
+    "INPUT_IDENTITY_PASS": true,
+    "FORMAL_AUDITOR_PASS": true,
+    "LEGACY_COMPARISON_PASS": true,
+    "traceability": 1.0,
+    "segment_coverage": 1.0,
+    "dropped_events": 0
+  },
+  "VIDEO_PRODUCTION_HANDOFF_ALLOWED": true
+}

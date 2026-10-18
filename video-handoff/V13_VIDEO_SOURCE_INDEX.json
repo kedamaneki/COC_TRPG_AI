@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "source_session_id": "CORBITT_LONGRUN_ITERATION3_V13_HOME_001",
+  "authoritative_priority": [
+    "RAW_SESSION_ARCHIVE_AND_UNIFIED_EVENT_LOG",
+    "FORMAL_NORMALIZER",
+    "VIDEO_DERIVED_REPRESENTATION",
+    "SCRIPT_AND_NARRATIVE_RENDERING"
+  ],
+  "event_order_contract": {
+    "authority": "unified-event-log.json.raw_event_offset",
+    "event_count": 282,
+    "first_offset": 0,
+    "last_offset": 281,
+    "contiguous_unique": true
+  },
+  "sources": {
+    "session_archive": {
+      "path": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\session-log.json",
+      "sha256": "702dfdc2743ea0a87415a19f8dcb1633fff3c56e00f87d1f6bafdca3a4d2db2e",
+      "count": 349
+    },
+    "unified_events": {
+      "path": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\unified-event-log.json",
+      "sha256": "5897dd72e612266aa1b349512a22b1ef18e5e8868570f3bd5912f2ab45d9dd41",
+      "count": 282
+    },
+    "accepted_segments": {
+      "path": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\segments",
+      "identity": {
+        "file_count": 75,
+        "size": 922423,
+        "sha256": "4dc62b59a612b8ffa36bf3370c954df3a8367dfb91d07f966e32650debf7cd55",
+        "aggregate_algorithm": "sha256(relative_posix_path\\0file_sha256\\n, sorted)"
+      },
+      "coverage": 1.0
+    },
+    "formal_normalized_session": {
+      "path": "F:\\制作物\\その3\\evaluation-control\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\formal_normalizer_output\\normalized_session.json",
+      "sha256": "fa019b933c94979f3c938f5558a570672224f52303a47a00622d22d11cc81fa3",
+      "count": 617
+    },
+    "input_identity": {
+      "path": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\input_manifest.json",
+      "sha256": "332c0ced43eceeb5bc4d3bdaa201630008989ec39a0306bfa617e24489810684"
+    },
+    "final_acceptance_metadata": {
+      "path": "F:\\制作物\\その3\\evaluation-control\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\V13_FORMAL_ACCEPTANCE_RECEIPT.json",
+      "sha256": "555545ca5da02e861ff14b2b6be2f6c4c09e96dc6468717e547b00655d95f0ea"
+    },
+    "characters": {
+      "pcs": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\runtime_data\\pcs.json",
+      "npcs": "F:\\制作物\\その3\\evaluation-v2\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\runtime_data\\npcs.json",
+      "participant_map": [
+        {
+          "actor_id": "kp",
+          "speaker_id": "kp",
+          "display_name": "KP",
+          "role": "KP",
+          "voice_profile_id": "m1_vv_kp",
+          "voice_assignment": "FIXED"
+        },
+        {
+          "actor_id": "system",
+          "speaker_id": "system",
+          "display_name": "システム",
+          "role": "SYSTEM",
+          "voice_profile_id": null,
+          "voice_assignment": "EXPLICIT_UNASSIGNED_PRESENTATION"
+        },
+        {
+          "actor_id": "new_investigator",
+          "speaker_id": "new_investigator",
+          "display_name": "新たな探索者",
+          "role": "PC",
+          "voice_profile_id": null,
+          "voice_assignment": "EXPLICIT_UNASSIGNED_PRESENTATION"
+        },
+        {
+          "actor_id": "pc_01",
+          "speaker_id": "pc_01",
+          "display_name": "マクガフィン刑事",
+          "role": "PC",
+          "voice_profile_id": "m1_aq_f1",
+          "voice_assignment": "FIXED"
+        },
+        {
+          "actor_id": "pc_02",
+          "speaker_id": "pc_02",
+          "display_name": "エレノア教授",
+          "role": "PC",
+          "voice_profile_id": "aq_marisa_default",
+          "voice_assignment": "FIXED"
+        },
+        {
+          "actor_id": "artie_wilmott",
+          "speaker_id": "artie_wilmott",
+          "display_name": "アーティ・ウィルモット",
+          "role": "NPC",
+          "voice_profile_id": null,
+          "voice_assignment": "EXPLICIT_UNASSIGNED_PRESENTATION"
+        },
+        {
+          "actor_id": "corbitt_floating_dagger",
+          "speaker_id": "corbitt_floating_dagger",
+          "display_name": "空中に浮かぶ魔法のダガー",
+          "role": "NPC",
+          "voice_profile_id": null,
+          "voice_assignment": "EXPLICIT_UNASSIGNED_PRESENTATION"
+        },
+        {
+          "actor_id": "dolly_shopkeeper",
+          "speaker_id": "dolly_shopkeeper",
+          "display_name": "ドーリー氏",
+          "role": "NPC",
+          "voice_profile_id": null,
+          "voice_assignment": "EXPLICIT_UNASSIGNED_PRESENTATION"
+        },
+        {
+          "actor_id": "globe_receptionist",
+          "speaker_id": "globe_receptionist",
+          "display_name": "ボストン・グローブの受付",
+          "role": "NPC",
+          "voice_profile_id": null,
+          "voice_assignment": "EXPLICIT_UNASSIGNED_PRESENTATION"
+        },
+        {
+          "actor_id": "hall_records_clerk",
+          "speaker_id": "hall_records_clerk",
+          "display_name": "公文書館の事務官",
+          "role": "NPC",
+          "voice_profile_id": null,
+          "voice_assignment": "EXPLICIT_UNASSIGNED_PRESENTATION"
+        },
+        {
+          "actor_id": "kim_deblanc",
+          "speaker_id": "kim_deblanc",
+          "display_name": "キム・デブラン",
+          "role": "NPC",
+          "voice_profile_id": null,
+          "voice_assignment": "EXPLICIT_UNASSIGNED_PRESENTATION"
+        },
+        {
+          "actor_id": "npc_guard_01",
+          "speaker_id": "npc_guard_01",
+          "display_name": "警備員のボブ",
+          "role": "NPC",
+          "voice_profile_id": null,
+          "voice_assignment": "EXPLICIT_UNASSIGNED_PRESENTATION"
+        },
+        {
+          "actor_id": "npc_neighbor_elder",
+          "speaker_id": "npc_neighbor_elder",
+          "display_name": "近所の老人",
+          "role": "NPC",
+          "voice_profile_id": null,
+          "voice_assignment": "EXPLICIT_UNASSIGNED_PRESENTATION"
+        },
+        {
+          "actor_id": "npc_thug",
+          "speaker_id": "npc_thug",
+          "display_name": "街のチンピラ",
+          "role": "NPC",
+          "voice_profile_id": null,
+          "voice_assignment": "EXPLICIT_UNASSIGNED_PRESENTATION"
+        },
+        {
+          "actor_id": "steven_knott",
+          "speaker_id": "steven_knott",
+          "display_name": "スティーブン・ノット",
+          "role": "NPC",
+          "voice_profile_id": null,
+          "voice_assignment": "EXPLICIT_UNASSIGNED_PRESENTATION"
+        },
+        {
+          "actor_id": "walter_corbitt",
+          "speaker_id": "walter_corbitt",
+          "display_name": "ウォルター・コービット",
+          "role": "NPC",
+          "voice_profile_id": null,
+          "voice_assignment": "EXPLICIT_UNASSIGNED_PRESENTATION"
+        }
+      ]
+    },
+    "locations": {
+      "source": "unified-event-log.json",
+      "selector": "event_type == LOCATION_CHANGE",
+      "count": 14
+    },
+    "roll_events": {
+      "source": "unified-event-log.json",
+      "selector": "resolution_mode == ROLL",
+      "count": 51
+    },
+    "san_events": {
+      "source": "session-log.json",
+      "selector": "meta.roll_type == san_check",
+      "count": 1
+    },
+    "combat_events": {
+      "source": "unified-event-log.json",
+      "selector": "event_type starts with COMBAT",
+      "count": 25
+    },
+    "special_objective_events": {
+      "source": "unified-event-log.json",
+      "selector": "event_type == SPECIAL_OBJECTIVE_COMPLETED",
+      "count": 1
+    },
+    "ending_and_completion": {
+      "sources": [
+        "result.json",
+        "normalized_session.json"
+      ],
+      "completed": true,
+      "phase": "clear"
+    }
+  },
+  "fact_policy": {
+    "may_change": [
+      "subtitle_layout",
+      "narration_selection_from_existing_facts",
+      "camera",
+      "timing",
+      "music",
+      "sound_effects",
+      "visual_style"
+    ],
+    "must_not_change": [
+      "actor",
+      "location",
+      "dialogue_fact",
+      "event_order",
+      "roll",
+      "SAN",
+      "combat_result",
+      "Special_Objective",
+      "ending"
+    ],
+    "inference_must_not_be_presented_as_fact": true
+  }
+}

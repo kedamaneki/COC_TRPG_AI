@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "session_id": "CORBITT_LONGRUN_ITERATION3_V13_HOME_001",
+  "baseline_id": "CORBITT_KNOWN_GOOD_BASELINE_V13",
+  "accepted": true,
+  "known_good": true,
+  "accepted_at": "2026-10-18T18:14:07.469674+09:00",
+  "git_commit": "7e22972166a65539614e020e729e0baaefbca672",
+  "git_branch": "main",
+  "git_tag": "v13-preflight-accepted",
+  "acceptance_tag": "v13-full-long-accepted",
+  "raw_file_count": 373,
+  "raw_aggregate_sha256": "fd42df1dc3278ef3250486235f43a5693de4fea9ad3f7af5fc769690ab18e44d",
+  "formal_normalizer": {
+    "implementation_sha256": "05d9b8f15680ff43b1c39b0731305cc2d93720231b1bcaa276e299c37bfdc2ea",
+    "normalized_session_sha256": "fa019b933c94979f3c938f5558a570672224f52303a47a00622d22d11cc81fa3",
+    "output_identity": {
+      "file_count": 5,
+      "size": 2170339,
+      "sha256": "85e7592d24a33b65444ad165ca142f0f8f22aa3e85458c19799cada7cf0aafe8",
+      "aggregate_algorithm": "sha256(relative_posix_path\\0file_sha256\\n, sorted)"
+    }
+  },
+  "formal_auditor": {
+    "version": "2.0.0",
+    "implementation_sha256": "858b33c80d73c940ca2c8e9e6c5b63d34bb6e792e29307ed438fc2169f86608e",
+    "audit_json_sha256": "7de1205d63ee5c56eb727a5f7e04e20d4f0ff2efa92c6f3bf7f7b4d7772c5b8f",
+    "output_identity": {
+      "file_count": 3,
+      "size": 5478,
+      "sha256": "d44c39a49b9f099a36d635cca33604dc64ca9d66560a59ab94a713178ddd1a11",
+      "aggregate_algorithm": "sha256(relative_posix_path\\0file_sha256\\n, sorted)"
+    }
+  },
+  "legacy_comparison_hash": "d4d719673c7863b15d22eea69222a42c147e584d8a12faf41fe2cfba885ed590",
+  "input_identity_hashes": {
+    "scenario": "b6f0559ffca677b57bc3a69c16991bb24c483d30256cb6dfd30fc938ebd84ed7",
+    "pcs": "f47bb03ff6406c228dd7c88f94c597d6e28785b47c6e0afe1322b7596c31c3dd",
+    "npcs": "3c795e6098f97ae8e6240b9ed2412428ab332c91c30a1cb45b846d2f4628377c"
+  },
+  "video_source_eligible": true,
+  "immutability_policy": [
+    "RAW_EDIT_PROHIBITED",
+    "BACKFILL_PROHIBITED",
+    "RESUME_PROHIBITED",
+    "CHECKPOINT_REGENERATION_PROHIBITED",
+    "SEGMENT_REGENERATION_PROHIBITED",
+    "NORMALIZER_OVERWRITE_PROHIBITED",
+    "AUDITOR_OVERWRITE_PROHIBITED",
+    "LEGACY_COMPARISON_OVERWRITE_PROHIBITED",
+    "SAME_SESSION_RERUN_PROHIBITED"
+  ],
+  "artifacts": [
+    {
+      "root_id": "V13_RAW",
+      "relative_path": "input_manifest.json",
+      "size": 1680,
+      "sha256": "332c0ced43eceeb5bc4d3bdaa201630008989ec39a0306bfa617e24489810684",
+      "artifact_class": "input_identity"
+    },
+    {
+      "root_id": "V13_RAW",
+      "relative_path": "result.json",
+      "size": 9138,
+      "sha256": "8cccf98850f06e2038ca1acd7c6b987b8d020962edde7a2f01a9d2de01e141b1",
+      "artifact_class": "final_status"
+    },
+    {
+      "root_id": "V13_RAW",
+      "relative_path": "session-log.json",
+      "size": 266464,
+      "sha256": "702dfdc2743ea0a87415a19f8dcb1633fff3c56e00f87d1f6bafdca3a4d2db2e",
+      "artifact_class": "session_archive"
+    },
+    {
+      "root_id": "V13_RAW",
+      "relative_path": "unified-event-log.json",
+      "size": 871506,
+      "sha256": "5897dd72e612266aa1b349512a22b1ef18e5e8868570f3bd5912f2ab45d9dd41",
+      "artifact_class": "unified_event_log"
+    },
+    {
+      "root_id": "V13_RAW",
+      "relative_path": "merged/evaluation.json",
+      "size": 424,
+      "sha256": "d41f9f72bc9296f71ee77fc6d7b54c513d31cb06075fa8c8cfdbf8b741854dc2",
+      "artifact_class": "segment_gate"
+    },
+    {
+      "root_id": "V13_RAW",
+      "relative_path": "merged/events.jsonl",
+      "size": 673696,
+      "sha256": "57373763ca602e18327534aab6c7a87f6e045c2bb7187f72d61388b11b361917",
+      "artifact_class": "accepted_merged_events"
+    },
+    {
+      "root_id": "V13_RAW",
+      "relative_path": "runtime_data/scenario_corbitt.json",
+      "size": 164868,
+      "sha256": "b6f0559ffca677b57bc3a69c16991bb24c483d30256cb6dfd30fc938ebd84ed7",
+      "artifact_class": "scenario_input"
+    },
+    {
+      "root_id": "V13_RAW",
+      "relative_path": "runtime_data/pcs.json",
+      "size": 5397,
+      "sha256": "cc7fdc705fee20d8a9ac0ff674e176cd2d6d8f8f1d2e91c7053ed243a6cfa485",
+      "artifact_class": "character_input"
+    },
+    {
+      "root_id": "V13_RAW",
+      "relative_path": "runtime_data/npcs.json",
+      "size": 25880,
+      "sha256": "ca39ce5963f9521d9f2ed8926a98022719eda54c772167bf3639e7fb0ce3cf10",
+      "artifact_class": "character_input"
+    },
+    {
+      "root_id": "V13_CONTROL",
+      "relative_path": "prelaunch_receipt.json",
+      "size": 1066,
+      "sha256": "f5607ca906ac48b7914f7a0403937e450612aee27109a0f9dbefa464e0418139",
+      "artifact_class": "run_identity"
+    },
+    {
+      "root_id": "V13_CONTROL",
+      "relative_path": "launch_receipt.json",
+      "size": 736,
+      "sha256": "3cc10dafb03fb22d2ecc3894dccf48a51a73e9318fe7782275e538b20e44ed27",
+      "artifact_class": "run_identity"
+    },
+    {
+      "root_id": "V13_CONTROL",
+      "relative_path": "V13_CYCLE5_EARLY_GATE.json",
+      "size": 2687,
+      "sha256": "46ed4ed96fa0519e159507febbb42ae3af2bf5ed2a9483ec42484cd8f9ae9aa5",
+      "artifact_class": "early_gate"
+    },
+    {
+      "root_id": "V13_CONTROL",
+      "relative_path": "V13_RAW_FREEZE_MANIFEST.json",
+      "size": 71213,
+      "sha256": "47aa4a956a084231213b3addada9a5007d783a62f847a7ff29566dfd69556b44",
+      "artifact_class": "raw_freeze"
+    },
+    {
+      "root_id": "V13_CONTROL",
+      "relative_path": "V13_FINAL_RAW_GATES_PRE_RELATION_SKILL.json",
+      "size": 1078,
+      "sha256": "c2ea10027573a97f18ef30846aaea8c063f274cb6c6b5d9b3c97ff35646223d3",
+      "artifact_class": "final_raw_gate"
+    },
+    {
+      "root_id": "V13_CONTROL",
+      "relative_path": "V13_FINAL_LIFECYCLE_RELATION_GATE.json",
+      "size": 451,
+      "sha256": "c375d7a2f9cf8f91dae48d6571549adb9ae3705c578089872c88bd92c06fb0d9",
+      "artifact_class": "final_raw_gate"
+    },
+    {
+      "root_id": "V13_CONTROL",
+      "relative_path": "V13_FINAL_SKILL_REGISTRY_GATE.json",
+      "size": 82028,
+      "sha256": "a81fd46eb8d7c46daf0850b5fd68ac6264ef19db177a3c95773f475691fed19f",
+      "artifact_class": "final_raw_gate"
+    },
+    {
+      "root_id": "V13_CONTROL",
+      "relative_path": "V13_LEGACY_COMPARISON.json",
+      "size": 922,
+      "sha256": "d4d719673c7863b15d22eea69222a42c147e584d8a12faf41fe2cfba885ed590",
+      "artifact_class": "legacy_comparison"
+    },
+    {
+      "root_id": "V13_CONTROL",
+      "relative_path": "V13_FORMAL_ACCEPTANCE_RECEIPT.json",
+      "size": 2906,
+      "sha256": "555545ca5da02e861ff14b2b6be2f6c4c09e96dc6468717e547b00655d95f0ea",
+      "artifact_class": "final_acceptance"
+    },
+    {
+      "root_id": "V13_NORMALIZER",
+      "relative_path": "normalized_session.json",
+      "size": 2166712,
+      "sha256": "fa019b933c94979f3c938f5558a570672224f52303a47a00622d22d11cc81fa3",
+      "artifact_class": "formal_normalizer"
+    },
+    {
+      "root_id": "V13_NORMALIZER",
+      "relative_path": "provenance_report.json",
+      "size": 406,
+      "sha256": "f52bd4d332f3921745dc8802b0ecb328bb417ae82afcc1d051d19b2c128b059d",
+      "artifact_class": "formal_normalizer"
+    },
+    {
+      "root_id": "V13_NORMALIZER",
+      "relative_path": "validation_report.json",
+      "size": 408,
+      "sha256": "a1c6de07b46720734440d3b51e408802953049f45e2afef3eff4a61d8358401c",
+      "artifact_class": "formal_normalizer"
+    },
+    {
+      "root_id": "V13_NORMALIZER",
+      "relative_path": "character_map.json",
+      "size": 1378,
+      "sha256": "20451502df789d5fc1d8c2e9863188125b312a759453162c8bbb91c4bf4204b1",
+      "artifact_class": "formal_normalizer"
+    },
+    {
+      "root_id": "V13_NORMALIZER",
+      "relative_path": "source/source_manifest.json",
+      "size": 1435,
+      "sha256": "6559577c081c98a17aafafac93930afafa5f9c2a151747241ddb7997c96a9a8f",
+      "artifact_class": "formal_normalizer"
+    },
+    {
+      "root_id": "V13_AUDITOR",
+      "relative_path": "full_session_evidence_audit.json",
+      "size": 2495,
+      "sha256": "7de1205d63ee5c56eb727a5f7e04e20d4f0ff2efa92c6f3bf7f7b4d7772c5b8f",
+      "artifact_class": "formal_auditor"
+    },
+    {
+      "root_id": "V13_AUDITOR",
+      "relative_path": "FULL_SESSION_EVIDENCE_AUDIT.md",
+      "size": 1238,
+      "sha256": "e94cc9c6699b861e5a4a7c43ef354e170d135d1a1e1478fca805cc4b8088210f",
+      "artifact_class": "formal_auditor"
+    },
+    {
+      "root_id": "V13_AUDITOR",
+      "relative_path": "audit_manifest.json",
+      "size": 1745,
+      "sha256": "b535c46ebe912511dad375b532525dcd89f7a8fad474120f352709d19a374c82",
+      "artifact_class": "formal_auditor"
+    },
+    {
+      "root_id": "CANONICAL_REPO",
+      "relative_path": "docs/V13_FINAL_ACCEPTANCE_REPORT.md",
+      "size": 5896,
+      "sha256": "088777cad120d089a51df9d4ad750a32d89ab1355e55f79e909ebc38f2e5ae20",
+      "artifact_class": "acceptance_report"
+    },
+    {
+      "root_id": "CANONICAL_REPO",
+      "relative_path": "docs/KNOWN_GOOD_BASELINE_V13.md",
+      "size": 2699,
+      "sha256": "29bb01990b861f5889cf35c908f72c7b4a9ee7fe1d4209d76e5df18e86cd48ca",
+      "artifact_class": "known_good_baseline"
+    }
+  ]
+}

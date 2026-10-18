@@ -1,0 +1,13 @@
+{
+  "artifact_hash_mismatches": 0,
+  "accepted_manifest_hash_match": true,
+  "source_index_hash_match": true,
+  "raw_aggregate_match": true,
+  "handoff_allowed": true,
+  "source_read_only": true,
+  "event_order_valid": true,
+  "segment_coverage": 1.0,
+  "traceability": 1.0,
+  "dropped_events": 0,
+  "status": "PASS"
+}
