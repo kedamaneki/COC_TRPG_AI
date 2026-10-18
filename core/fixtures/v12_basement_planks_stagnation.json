@@ -1,0 +1,30 @@
+{
+  "session_id": "CORBITT_LONGRUN_ITERATION3_V12_HOME_001",
+  "historical_cycle": 45,
+  "historical_turn": 136,
+  "current_location": "corbitt_basement",
+  "current_phase": "investigation",
+  "flags": {
+    "basement_accessible": true,
+    "basement_door_unlocked": true,
+    "hidden_passage_found": true,
+    "basement_planks_examined": true,
+    "basement_planks_broken": false,
+    "junk_searched": true,
+    "corbitt_defeated": false,
+    "investigated_targets": ["basement_planks", "scattered_junk"]
+  },
+  "stall": {
+    "no_progress_streak": 20,
+    "intervention_level": "S4",
+    "s4_override_used": true,
+    "recent_failed_actions": [
+      ["break", "wall_planks"],
+      ["break", "wall_planks"],
+      ["search", "wall_planks"],
+      ["push", "basement_planks"]
+    ]
+  },
+  "historical_frontiers": ["break", "force", "push"],
+  "historical_stop_reason": "PROGRESSION_STAGNATION_UNRESOLVED"
+}

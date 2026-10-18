@@ -327,6 +327,9 @@ class ProgressionRevisitTests(unittest.TestCase):
             {
                 "action": "use", "target": "door", "skill": "",
                 "reason": "state_change_after_investigation", "event_id": "library__door__open",
+                "reachable": True, "executable": True, "blocked_reason": "",
+                "adjudication_route": "SCENARIO_EVENT:library__door__open",
+                "expected_state_effect": {"flag_updates": {"door_open": True}},
             },
         )
 
@@ -364,10 +367,14 @@ class ProgressionRevisitTests(unittest.TestCase):
         scenario.flags["book_read"] = True
         runtime = ensure_director_state({"current_loc": "library"}, scenario)
         candidates = runtime["goal"]["candidate_next_actions"]
-        self.assertIn(
-            {"action": "search", "target": "door", "skill": "", "reason": "unseen_target"},
-            candidates,
-        )
+        self.assertTrue(any(
+            item.get("action") == "search"
+            and item.get("target") == "door"
+            and item.get("reason") == "unseen_target"
+            and item.get("reachable") is True
+            and item.get("executable") is True
+            for item in candidates
+        ))
 
     def test_exhausted_location_prefers_unvisited_exit_over_roundtrip(self):
         scenario = FakeScenario()

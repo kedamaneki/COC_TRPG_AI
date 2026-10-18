@@ -247,6 +247,7 @@ from ProgressDirectorV2 import (
     SYSTEM_GUIDED,
     SYSTEM_FORCED,
     apply_s4_candidate_override,
+    mark_progression_adjudication_started,
     apply_stall_candidate_guidance,
     build_director_prompt,
     classify_action_origin,
@@ -14202,6 +14203,7 @@ def _action_data_from_timeline(state, scenario_mgr, char_name, char_mgr=None):
             "actor_id": meta.get("actor_id") or meta.get("pc_id"),
             "decision_owner_id": meta.get("decision_owner_id") or meta.get("pc_id"),
             "action_origin": meta.get("action_origin") or AUTONOMOUS,
+            "progression_binding": copy.deepcopy(meta.get("progression_binding") or {}),
         }, scenario_mgr, current_loc, char_mgr=char_mgr)
         # normalize_pc_action が落とす場合に備え明示復元
         if meta.get("transaction_id"):
@@ -14213,6 +14215,8 @@ def _action_data_from_timeline(state, scenario_mgr, char_name, char_mgr=None):
                 meta.get("decision_owner_id") or action_data.get("actor_id")
             )
         action_data["action_origin"] = meta.get("action_origin") or AUTONOMOUS
+        if meta.get("progression_binding"):
+            action_data["progression_binding"] = copy.deepcopy(meta["progression_binding"])
         # normalize_pc_action intentionally keeps the generic action schema small.
         # Combat routing metadata lives on the timeline entry and must survive until
         # commit_system_resolution so every selected combat action gets a matching
@@ -14566,6 +14570,9 @@ def step_pl_turn(state, char_mgr, scenario_mgr, pl_id, char_name, state_mgr=None
                         "director_forced": director_forced,
                         "director_guided": not director_forced,
                         "intervention_level": director_level,
+                        "progression_binding": copy.deepcopy(
+                            pc_action.get("progression_binding") or {}
+                        ),
                     })
                     entry["meta"] = meta
                     entry["text"] = f"{format_pc_log_prefix(char_mgr, pl_id)}: {fixed_message}"
@@ -14589,6 +14596,9 @@ def step_pl_turn(state, char_mgr, scenario_mgr, pl_id, char_name, state_mgr=None
                         "director_forced": director_forced,
                         "director_guided": not director_forced,
                         "intervention_level": director_level,
+                        "progression_binding": copy.deepcopy(
+                            pc_action.get("progression_binding") or {}
+                        ),
                     },
                 })
             state.setdefault("all_events_log", []).append({
@@ -15242,6 +15252,9 @@ def step_system_process(state, char_mgr, dice_engine, scenario_mgr, state_mgr, p
         dialogue_text=action_data.get("dialogue") or action_data.get("message", ""),
         game_state=state,
     )
+    if action_data.get("progression_binding"):
+        mark_progression_adjudication_started(action_data, result)
+        state["last_pl_action"] = action_data
     # 不在NPCブロック等で注入された代替ヒントを保持
     if result.get("stagnation_pl_hint"):
         state["stagnation_pl_hint"] = result["stagnation_pl_hint"]

@@ -597,7 +597,10 @@ def apply_s4_candidate_override(state, pc_action, scenario_mgr=None, actor=""):
             str(item.get("availability_context_version") or ""),
         )) not in forced_history
     ]
-    if str(stall.get("intervention_level") or "S0") != "S4" or bool(stall.get("s4_override_used", False)):
+    # s4_override_used documents that recovery was attempted. It must not
+    # suppress a different executable route after a legal failed roll. The
+    # forced-action context history provides the per-route idempotency guard.
+    if str(stall.get("intervention_level") or "S0") != "S4":
         return pc_action
     if not candidates:
         context = str((goal.get("blocked_candidate_actions") or [{}])[0].get("availability_context_version") or "")
@@ -605,12 +608,12 @@ def apply_s4_candidate_override(state, pc_action, scenario_mgr=None, actor=""):
         emitted = runtime.setdefault("no_available_progress_contexts", [])
         if marker not in emitted:
             append_unified_event(state, {
-                "event_type": "NO_AVAILABLE_PROGRESS_ACTION",
+                "event_type": "REACHABLE_FRONTIER_EXHAUSTED",
                 "actor": actor,
                 "action": "",
                 "target": "",
                 "status": "BLOCKED",
-                "reason_code": "NO_AVAILABLE_PROGRESS_ACTION",
+                "reason_code": "REACHABLE_FRONTIER_EXHAUSTED",
                 "context_version": context,
                 "cycle": state.get("evaluation_cycle", state.get("cycle", "")),
                 "turn": state.get("turn", state.get("turn_count", "")),
@@ -644,6 +647,16 @@ def apply_s4_candidate_override(state, pc_action, scenario_mgr=None, actor=""):
     fixed["intervention_level"] = "S4"
     fixed["intervention_reason"] = "s3_candidate_ignored"
     fixed["availability_snapshot"] = copy.deepcopy(top.get("availability_snapshot") or {})
+    fixed["progression_binding"] = {
+        "selected": True,
+        "proposal_bound": True,
+        "adjudication_started": False,
+        "action": fixed["action"],
+        "target": fixed["target"],
+        "adjudication_route": str(top.get("adjudication_route") or ""),
+        "expected_state_effect": copy.deepcopy(top.get("expected_state_effect") or {}),
+        "availability_context_version": str(top.get("availability_context_version") or ""),
+    }
     forced_key = "|".join((
         str(top.get("action") or ""), str(top.get("target") or ""),
         str(top.get("availability_context_version") or ""),
@@ -651,6 +664,24 @@ def apply_s4_candidate_override(state, pc_action, scenario_mgr=None, actor=""):
     runtime.setdefault("forced_action_contexts", []).append(forced_key)
     stall["s4_override_used"] = True
     return fixed
+
+
+def mark_progression_adjudication_started(action, result):
+    """Mark the final S4 binding boundary after the executor was invoked."""
+    action = action if isinstance(action, dict) else {}
+    if not action.get("progression_binding"):
+        return action
+    binding = copy.deepcopy(action["progression_binding"])
+    binding["adjudication_started"] = bool(
+        isinstance(result, dict) and (
+            result.get("adjudication_id")
+            or result.get("adjudication")
+            or result.get("resolution_mode")
+            or result.get("roll_type")
+        )
+    )
+    action["progression_binding"] = binding
+    return action
 
 
 def stamp_action_origin(logs, transaction_id, origin):

@@ -128,8 +128,25 @@ def filter_exhausted_candidates(goal, target_statuses, location_status):
     return goal
 
 
+def _expected_state_effect(payload):
+    """Return the declared effect without claiming that a roll will succeed."""
+    payload = payload or {}
+    effect = {}
+    if payload.get("flag_updates"):
+        effect["flag_updates"] = copy.deepcopy(payload["flag_updates"])
+    if payload.get("new_location"):
+        effect["new_location"] = str(payload["new_location"])
+    if payload.get("new_phase"):
+        effect["new_phase"] = str(payload["new_phase"])
+    return effect
+
+
 def _event_state_change_candidates(scenario_mgr, location, target_statuses):
-    """Derive executable world-state changes from scenario event metadata."""
+    """Derive every legal world-state frontier from scenario event metadata.
+
+    A scenario event may accept several verbs. They are distinct adjudication
+    routes: failure of one route must not erase the others from recovery.
+    """
     flags = getattr(scenario_mgr, "flags", None) or {}
     scoped_flags = (
         scenario_mgr._flags_for_location(location)
@@ -179,22 +196,28 @@ def _event_state_change_candidates(scenario_mgr, location, target_statuses):
         # object guard, preserve the scenario author's first declared verb.  This
         # keeps recovery aligned with the event contract (for example, climb out)
         # rather than substituting a generic state-changing verb.
-        action = actions[0] if target_status != "INVESTIGATED" else (ordered or actions)[0]
-        key = (action, target)
-        if key in seen:
-            continue
-        seen.add(key)
-        candidates.append({
-            "action": action,
-            "target": target,
-            "skill": "",
-            "reason": (
-                "state_change_after_investigation"
-                if target_status == "INVESTIGATED"
-                else "reachable_frontier_event_override"
-            ),
-            "event_id": str(event.get("event_id") or ""),
-        })
+        routes = actions if target_status != "INVESTIGATED" else (ordered or actions)
+        for action in routes:
+            key = (action, target)
+            if key in seen:
+                continue
+            seen.add(key)
+            candidates.append({
+                "action": action,
+                "target": target,
+                "skill": "",
+                "reason": (
+                    "state_change_after_investigation"
+                    if target_status == "INVESTIGATED"
+                    else "reachable_frontier_event_override"
+                ),
+                "event_id": str(event.get("event_id") or ""),
+                "reachable": True,
+                "executable": False,
+                "blocked_reason": "NOT_YET_VALIDATED",
+                "adjudication_route": f"SCENARIO_EVENT:{event.get('event_id') or ''}",
+                "expected_state_effect": _expected_state_effect(payload),
+            })
     return candidates
 
 

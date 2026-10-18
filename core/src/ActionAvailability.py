@@ -29,6 +29,7 @@ AVAILABILITY_EVENT_TYPES = frozenset({
     "ACTION_AVAILABILITY_CONTRACT_VIOLATION",
     "SCENARIO_RUNTIME_AVAILABILITY_CONFLICT",
     "NO_AVAILABLE_PROGRESS_ACTION",
+    "REACHABLE_FRONTIER_EXHAUSTED",
 })
 
 
@@ -238,7 +239,16 @@ def filter_available_candidates(goal, scenario_mgr, location, *, actor="", state
     blocked = []
     for item in goal.get("candidate_next_actions") or []:
         if not scenario_mgr or not hasattr(scenario_mgr, "evaluate_pre_action_guard"):
-            kept.append(dict(item))
+            stamped = dict(item)
+            stamped["reachable"] = True
+            stamped["executable"] = True
+            stamped["blocked_reason"] = ""
+            stamped.setdefault(
+                "adjudication_route",
+                f"ACTION_EXECUTOR:{stamped.get('action') or ''}",
+            )
+            stamped.setdefault("expected_state_effect", {})
+            kept.append(stamped)
             continue
         result = check_action_availability(
             scenario_mgr,
@@ -257,8 +267,24 @@ def filter_available_candidates(goal, scenario_mgr, location, *, actor="", state
         stamped["availability_reason"] = result["reason_code"]
         stamped["availability_snapshot"] = result
         if result["status"] == AVAILABLE:
+            stamped["reachable"] = True
+            stamped["executable"] = True
+            stamped["blocked_reason"] = ""
+            stamped.setdefault(
+                "adjudication_route",
+                f"ACTION_EXECUTOR:{stamped.get('action') or ''}",
+            )
+            stamped.setdefault("expected_state_effect", {})
             kept.append(stamped)
         else:
+            stamped["reachable"] = False
+            stamped["executable"] = False
+            stamped["blocked_reason"] = result["reason_code"]
+            stamped.setdefault(
+                "adjudication_route",
+                f"ACTION_EXECUTOR:{stamped.get('action') or ''}",
+            )
+            stamped.setdefault("expected_state_effect", {})
             blocked.append(stamped)
     goal["candidate_next_actions"] = kept
     goal["blocked_candidate_actions"] = blocked
