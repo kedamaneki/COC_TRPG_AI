@@ -12,7 +12,7 @@ source-versus-adaptation audit.
 
 Pre-push audit result:
 
-- 620 candidate files / 69,241,456 bytes
+- 620 candidate files / 69,242,398 bytes
 - files larger than 50 MiB: 0
 - video/audio/archive/executable candidates: 0
 - recognized secret findings: 0

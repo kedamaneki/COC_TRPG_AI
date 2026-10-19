@@ -11,6 +11,7 @@ import json
 import math
 import struct
 import wave
+import base64
 from pathlib import Path
 
 
@@ -50,7 +51,7 @@ def _ensure_voice_fixtures() -> None:
 
 
 def _ensure_existence_only_video_fixtures() -> None:
-    review = VIDEO_ROOT / "projects" / "m3_scene_preview" / "review"
+    review = VIDEO_ROOT / "projects" / "corbitt_clear_001" / "review"
     review.mkdir(parents=True, exist_ok=True)
     names = (
         "m3_scene_preview.mp4",
@@ -69,6 +70,22 @@ def _ensure_existence_only_video_fixtures() -> None:
     )
     for name in names:
         (review / name).touch(exist_ok=True)
+
+    # Valid 1x1 transparent PNGs are enough for tests that only assert the historical
+    # review fixture contract.  They are ignored local test artifacts, not review images.
+    transparent_png = base64.b64decode(
+        "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M/wHwAF"
+        "gAI/9pW5WQAAAABJRU5ErkJggg=="
+    )
+    for name in (
+        "m3_subtitle_readability_fixture.png",
+        "m3_subtitle_palette_fixture.png",
+        "m3_kp_subtitle_fixture.png",
+        "m3_system_presentation_fixture.png",
+    ):
+        destination = review / name
+        if not destination.exists():
+            destination.write_bytes(transparent_png)
 
     for project_name in ("m1_synthetic", "m1_real_session"):
         project = VIDEO_ROOT / "projects" / project_name

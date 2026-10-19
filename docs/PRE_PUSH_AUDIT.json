@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "candidate_file_count": 620,
-  "candidate_total_bytes": 69241456,
+  "candidate_total_bytes": 69242398,
   "max_file_size_bytes": 52428800,
   "oversized": [],
   "forbidden_media_or_archive": [],
