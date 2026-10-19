@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "repo": "F:\\制作物\\その3\\corbitt-trpg-system-portability-verified-20261020",
+  "source": {
+    "status": "PASS",
+    "file_count": 373,
+    "aggregate_sha256": "fd42df1dc3278ef3250486235f43a5693de4fea9ad3f7af5fc769690ab18e44d",
+    "failures": []
+  },
+  "assets": {
+    "status": "PASS",
+    "assets": [
+      {
+        "asset_id": "detected_aipict_basement_ruins01_334234bf_be2b81b6",
+        "kind": "external",
+        "exists": true,
+        "hash_match": true,
+        "resolved_path": "E:\\素材\\外部取得素材\\backgrounds\\basement\\AIPICT\\aipict_basement_ruins01.png"
+      },
+      {
+        "asset_id": "detected_itch_arkeia_tension_as_the_light_fades_f154e404_3bdff3eb",
+        "kind": "external",
+        "exists": true,
+        "hash_match": true,
+        "resolved_path": "E:\\素材\\外部取得素材\\bgm\\tension\\itch.io\\itch_arkeia_tension_as_the_light_fades.ogg"
+      },
+      {
+        "asset_id": "detected_nc42340_ダイス音_2_2d10_0e238a99_7b2e1d3e",
+        "kind": "external",
+        "exists": true,
+        "hash_match": true,
+        "resolved_path": "E:\\素材\\効果音素材\\nc42340_ダイス音・2（2D10）.wav"
+      },
+      {
+        "asset_id": "portrait_corbitt_shadow_candidate_01_v1",
+        "kind": "repo",
+        "exists": true,
+        "hash_match": true,
+        "resolved_path": "F:\\制作物\\その3\\corbitt-trpg-system-portability-verified-20261020\\video\\assets\\portraits\\mob_shadow_pack_v1\\corbitt_shadow_candidate_01.png"
+      },
+      {
+        "asset_id": "dialogue_frame_v7_default",
+        "kind": "repo",
+        "exists": true,
+        "hash_match": true,
+        "resolved_path": "F:\\制作物\\その3\\corbitt-trpg-system-portability-verified-20261020\\video\\assets\\user_inputs\\dialogue_frames\\nc131976_SF風シンプルセリフ枠_外周trim.png"
+      }
+    ]
+  },
+  "scenario_source": {
+    "status": "PASS",
+    "root": "F:\\制作物\\その3\\corbitt-trpg-system-portability-verified-20261020\\core\\scenario_sources\\corbitt\\e870e9f8fc96",
+    "file_count": 16,
+    "aggregate_sha256": "7fa5610fdc7d10865095772ac2f75216af5593e9e35858f5d7bff6b0b27b5033",
+    "failures": []
+  },
+  "runtime": {
+    "status": "PASS",
+    "checks": {
+      "FFMPEG_PATH": {
+        "configured": true,
+        "exists": true,
+        "version": "ffmpeg version N-124026-g96f82f4fbb-20260417 Copyright (c) 2000-2026 the FFmpeg developers"
+      },
+      "FFPROBE_PATH": {
+        "configured": true,
+        "exists": true
+      },
+      "VOICE_RUNTIME_PATH": {
+        "configured": true,
+        "exists": true
+      },
+      "VIDEO_FONT_PATH": {
+        "configured": true,
+        "exists": true
+      }
+    }
+  },
+  "runtime_paths": {
+    "status": "PASS",
+    "hardcoded_runtime_path_count": 0,
+    "findings": []
+  },
+  "pipeline_dry_run": {
+    "status": "PASS",
+    "source_event_count": 18,
+    "roll_offset_271_count": 1,
+    "registry_files_loaded": [
+      "asset_registry.json",
+      "character_registry.json",
+      "portrait_registry.json",
+      "presentation_layout_m3.json",
+      "voice_profiles.json",
+      "yukkuri_subtitle_styles.json"
+    ],
+    "render_executed": false
+  },
+  "status": "PASS"
+}

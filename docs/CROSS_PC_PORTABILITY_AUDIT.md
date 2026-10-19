@@ -61,3 +61,24 @@ out of version control while preserving the full 293-test baseline.
 The machine-readable checks are `docs/CROSS_PC_PORTABILITY_VERIFY.json` and
 `docs/PRE_PUSH_AUDIT.json`. The final GitHub Fresh Clone repeats these checks against the updated
 `main`; the annotated pre-audit tag remains an immutable checkpoint from before this follow-up fix.
+
+## Final GitHub Fresh Clone result
+
+- Source commit tested: `243ff228f6b9c4431b05793c325226cfbd7e7445`
+- Clone root: `F:\制作物\その3\corbitt-trpg-system-portability-verified-20261020`
+- Core: 626 passed, 26 subtests passed; 0 failed/error/skipped
+- Video Agent: 293 passed; 0 failed/error/skipped
+- Auditor/night/runtime: 64 passed; 0 failed/error/skipped
+- Asset scan: 32,158 unchanged; 0 new; 0 changed hash; 1 optional unapproved missing
+- V13 source: 373 files and expected aggregate SHA-256 matched
+- Packaged Scenario: 16 files and aggregate SHA-256 matched
+- Runtime tools and font: PASS
+- Active runtime hard-coded paths: 0
+- Video pipeline dry-run: PASS; no rendering performed
+- Fresh Clone worktree after checks: clean
+
+Machine-readable Fresh Clone receipt: `docs/CROSS_PC_PORTABILITY_FRESH_CLONE.json`.
+
+`CROSS_PC_PORTABILITY_AUDIT=PASS`
+
+`READY_FOR_SECOND_PC=true`
