@@ -1,0 +1,82 @@
+{
+  "name": "屋敷の近所",
+  "default_description": "第1次世界大戦の前からこの地区に住んでいた人々の大半は引っ越したか、すでに亡くなっている。19世紀の家屋は、新しい事務所や店に改装されている。問題の屋敷（コービット屋敷）は、表庭が雑草で伸び放題となっており、現在売りに出されている唯一の個人住宅である。",
+  "connected_to": [
+    "introduction",
+    "boston_globe",
+    "central_library",
+    "hall_of_records",
+    "higher_courts_police_station",
+    "the_neighborhood",
+    "roxbury_sanitarium",
+    "chapel_of_contemplation",
+    "corbitt_exterior",
+    "corbitt_ground_floor",
+    "corbitt_upper_floor",
+    "corbitt_basement"
+  ],
+  "npcs_present": [
+    "dolly_shopkeeper"
+  ],
+  "objects": [
+    {
+      "object_id": "local_residents",
+      "name": "ドーリー氏",
+      "description": "タバコや新聞を売っている店主のドーリー氏をはじめとする近隣住民。彼はこの地区に長く住んでおり、多くのことを知っているようだ。〈言いくるめ〉〈説得〉〈魅惑〉のいずれか、あるいは〈威圧〉や〈信用〉でも打ち解けて話を聞き出せるだろう。",
+      "investigated_flag": "dolly_talked",
+      "required_skill": ["言いくるめ", "説得", "魅惑", "威圧", "信用"],
+      "reject_message": "ドーリー氏は今は口が重い。〈言いくるめ〉〈説得〉〈魅惑〉など別の対人技能でアプローチし直せば、話を聞けるかもしれない。",
+      "clues": {
+        "macario_family_info": "マカリオ一家は2年前にこの屋敷へ引っ越してきた。1年後、父親が事故で狂気に陥り、『燃える目をした化け物』について話していた。約1か月後、母親も狂気に陥り、夫妻はボストンのロックスベリー・サナトリウムに入院している。子供たちはボルチモアの親戚に引き取られた。",
+        "corbitt_house_name": "屋敷は『コービット屋敷』と呼ばれている。",
+        "chapel_location_hint": "黙想チャペルはここから2、3ブロック離れた先にある。"
+      },
+      "triggers_flag_on_success": {
+        "dolly_told_chapel_location": true,
+        "dolly_told_sanitarium_location": true
+      },
+      "interaction_prompt": "近隣住民に話しかけますか？ (魅惑/言いくるめ/説得/威圧/信用)",
+      "usable_actions": [
+        "talk"
+      ]
+    },
+    {
+      "object_id": "corbitt_house_exterior_view",
+      "name": "コービット屋敷",
+      "description": "表庭が雑草で伸び放題となっており、現在売りに出されている唯一の個人住宅である。荒れ果てた様子から、長い間手入れされていないことがうかがえる。",
+      "investigated_flag": "corbitt_house_observed",
+      "reject_message": "屋敷は荒れ果てており、中に入るには何らかの方法を見つける必要があるだろう。",
+      "clues": {
+        "for_sale": "屋敷は売りに出されている。",
+        "neglected": "庭は雑草だらけで、手入れされていない。"
+      },
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    }
+  ],
+  "exits": {
+    "to_corbitt_exterior": {
+      "name": "コービット屋敷の外観へ",
+      "target_location": "corbitt_exterior",
+      "description": "荒れ果てたコービット屋敷の敷地へと足を踏み入れる。",
+      "condition": "true",
+      "reject_message": "【システムブロック】その方向へは進めません。"
+    },
+    "to_chapel_of_contemplation": {
+      "name": "黙想チャペルへ",
+      "target_location": "chapel_of_contemplation",
+      "description": "ドーリー氏から聞いた情報をもとに、黙想チャペルがあった場所へと向かう。",
+      "requires_flag": "dolly_told_chapel_location",
+      "reject_message": "黙想チャペルがどこにあるのか、まだ正確には分からない。"
+    },
+    "to_roxbury_sanitarium": {
+      "name": "ロックスベリー・サナトリウムへ",
+      "target_location": "roxbury_sanitarium",
+      "description": "マカリオ夫妻が入院しているというロックスベリー・サナトリウムへと向かう。",
+      "requires_flag": "dolly_told_sanitarium_location",
+      "reject_message": "マカリオ夫妻が入院しているサナトリウムの場所はまだ知らない。"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "地下の古い集会所跡",
+  "default_description": "隠し寝室のさらに脇に広がる、かつて『黙想のチャペル』の信者たちが秘密の儀式を行っていたと思われる空洞。崩れかけた不気味な祭壇の残骸があり、床には何らかの魔方陣の跡が薄れて残っている。",
+  "connected_to": [
+    "corbitt_basement_room2"
+  ],
+  "objects": [
+    {
+      "object_id": "ruined_altar",
+      "name": "崩れた地下の祭壇",
+      "description": "オカルト的なシンボルが刻まれた石造りの祭壇。コービットを完全に消滅させるためのヒントや、あるいは彼が力を引き出している神話的源泉（地底の裁判官）への冒涜的な繋がりを物語るフレーバーが残されている。",
+      "investigated_flag": "ruined_altar_investigated",
+      "required_skill": ["目星", "オカルト", "図書館"],
+      "difficulty": "通常",
+      "reject_message": "祭壇はすでに調べ尽くした。これ以上の手がかりは見当たらない。",
+      "success_message": "祭壇の刻印を読み解くと、コービットが『地底の裁判官』——イゴーロナクに連なる神格——から不死の力を引き出していること、そして彼を完全に滅ぼすには遺体を清め、破壊する必要があることが示唆されている。",
+      "clue_flags_on_success": [
+        "ruined_altar_investigated",
+        "learned_corbitt_weakness"
+      ],
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    }
+  ],
+  "exits": {
+    "back_to_room2": {
+      "name": "隠し部屋へ戻る",
+      "destination": "corbitt_basement_room2",
+      "condition": "true",
+      "reject_message": "【システムブロック】その方向へは進めません。"
+    }
+  }
+}

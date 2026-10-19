@@ -1,0 +1,70 @@
+{
+  "name": "コービット屋敷（外観）",
+  "default_description": "そのれんが造りの建物は、両隣を高く新しいオフィスビルに挟まれている。屋敷の正面は道路に面している。裏の庭に植えられた草木は伸び放題で、半壊した日除け棚がある。屋敷を眺めてみれば、屋敷が両隣のビルの陰になってすっかり目立たなくなっている様子に強い印象を受ける。また、カーテンの閉じた飾り気のない窓が、中に何があるのかをすべて覆い隠しているような印象も受ける。",
+  "connected_to": [
+    "the_neighborhood",
+    "corbitt_ground_floor"
+  ],
+  "objects": [
+    {
+      "object_id": "corbitt_house",
+      "name": "コービット屋敷",
+      "description": "荒れ果てたれんが造りの屋敷だ。ノット氏から受け取った正規の鍵があれば、正面玄関の鍵と差し錠を開けてそのまま入れる。扉が歪んで鍵が回りにくい場合は〈STR〉で力ずくでこじ開けるか、〈目星〉で裏手の弱い窓枠や隠された裏口を見つけて侵入できる。",
+      "investigated_flag": "corbitt_house_entered",
+      "required_skill": ["STR", "目星"],
+      "allows_key_use": true,
+      "auto_success_flag": "case_accepted",
+      "success_message": "ノット氏から渡された鍵で正面玄関を開けた。差し錠が固いときは力ずくでこじ開け、あるいは目星で見つけた裏口から屋敷の中へ足を踏み入れた。",
+      "reject_message": "まだ屋敷の中へ入れていない。正規の鍵を使うか、〈STR〉で扉をこじ開けるか、〈目星〉で別の侵入経路を探そう。",
+      "triggers_flag_on_success": {
+        "corbitt_house_entered": true,
+        "front_door_unlocked": true
+      },
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "front_door",
+      "name": "正面玄関のドア",
+      "description": "頑丈な木製のドアで、鍵1つと4本の差し錠で施錠されている。ノット氏の鍵があれば正規に開けられるが、年季で歪んでいる。力を入れればこじ開けられるかもしれない。",
+      "investigated_flag": "front_door_investigated",
+      "required_skill": ["STR", "目星"],
+      "allows_key_use": true,
+      "auto_success_flag": "case_accepted",
+      "reject_message": "ドアは閉ざされたままだ。ノット氏の鍵を使うか、力ずくでこじ開けるか、別の侵入経路を探そう。",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "exterior_windows",
+      "name": "1階の窓",
+      "description": "飾り気のない窓はカーテンが閉められ、内側から釘で打ち付けられている。〈目星〉で釘の緩い箇所や、裏庭側の弱い窓枠を見つければ、板を外して侵入できる可能性がある。",
+      "investigated_flag": "ground_floor_windows_investigated",
+      "required_skill": ["目星", "STR"],
+      "reject_message": "窓は固く固定されている。〈目星〉で緩い箇所を探すか、〈STR〉で板を外す手もある。",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ],
+      "aliases": ["ground_floor_windows", "1階の窓"]
+    }
+  ],
+  "exits": {
+    "enter_front_door": {
+      "name": "正面玄関から屋敷に入る",
+      "target_location_id": "corbitt_ground_floor",
+      "requires_flag": "corbitt_house_entered",
+      "reject_message": "まだ屋敷の中へ入れていない。正面玄関のドアを開けるか、別の侵入経路を見つけよう。"
+    },
+    "leave_to_neighborhood": {
+      "name": "周辺の通りへ戻る",
+      "target_location_id": "the_neighborhood",
+      "condition": "true",
+      "reject_message": "【システムブロック】その方向へは進めません。"
+    }
+  }
+}

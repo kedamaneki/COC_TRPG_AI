@@ -11,7 +11,7 @@ reproduction scripts may retain paths as evidence and are not runtime configurat
 ```powershell
 git clone https://github.com/kedamaneki/COC_TRPG_AI.git <new-directory>
 cd <new-directory>
-git checkout pre-corbitt-final-battle-scenario-audit
+git checkout main
 py -3.12 -m venv .venv-portability
 .\.venv-portability\Scripts\python -m pip install -r requirements-portability.txt
 .\.venv-portability\Scripts\python -m pip install -e video
@@ -28,8 +28,8 @@ python tools/scan_video_assets.py "$env:VIDEO_ASSET_ROOT" --registry video/confi
 ```
 
 The portability verifier checks V13 source count/hash, required asset hashes, native runtime paths,
-active runtime hard-codes, registry loading, event range 264..281, and the offset 271 roll without
-rendering or changing external files.
+the packaged Corbitt Scenario source, active runtime hard-codes, registry loading, event range
+264..281, and the offset 271 roll without rendering or changing external files.
 
 ## Pre-push result
 
@@ -46,5 +46,10 @@ The canonical checkout passed:
 - Full asset scan: 32,158 unchanged, 0 new, 0 changed hash; one optional unapproved registry
   entry (`nc86017`) is absent and is not referenced by the accepted pipeline
 
+The first GitHub Fresh Clone correctly exposed an ignored `.local` Corbitt Scenario dependency.
+The canonical 16-file Scenario source is now packaged under `core/scenario_sources`, verified by
+`manifests/CORBITT_SCENARIO_SOURCE.json`, and no ignored staging cache is required.
+
 The machine-readable checks are `docs/CROSS_PC_PORTABILITY_VERIFY.json` and
-`docs/PRE_PUSH_AUDIT.json`. GitHub Fresh Clone repeats these checks against the pushed tag.
+`docs/PRE_PUSH_AUDIT.json`. The final GitHub Fresh Clone repeats these checks against the updated
+`main`; the annotated pre-audit tag remains an immutable checkpoint from before this follow-up fix.

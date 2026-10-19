@@ -1,0 +1,54 @@
+{
+  "name": "ロックスベリー・サナトリウム",
+  "default_description": "ロックスベリー・サナトリウムは、ヴィットリオ・マカリオが収容されている施設です。彼の妻ガブリエラもここに滞在しています。静かで重苦しい空気が漂っています。",
+  "connected_to": [
+    "the_neighborhood"
+  ],
+  "objects": [
+    {
+      "object_id": "patient_records",
+      "name": "患者記録・カルテ",
+      "description": "事務室や看護師長のデスクに保管された患者記録だ。ウォルター・コービットやマカリオ夫妻に関する記載が残されているかもしれない。〈医学〉（通常難易度）でカルテを読み解くほか、〈図書館〉で膨大な書類から該当記録を索引し、〈説得〉や〈精神分析〉で職員を安心させて閲覧を許可させる、あるいは〈隠密〉でこっそりカルテを盗み見るなど、複数の手段で情報を得られる。",
+      "investigated_flag": "sanitarium_info_found",
+      "required_skill": ["医学", "図書館", "説得", "精神分析", "隠密"],
+      "difficulty": "通常",
+      "reject_message": "正面からは閲覧を断られた。〈医学〉でカルテを読むか、〈図書館〉で記録を探すか、〈説得〉〈精神分析〉で職員を説得するか、〈隠密〉で忍び込む——別のアプローチを試そう。",
+      "triggers_flag_on_success": {
+        "sanitarium_info_found": true
+      },
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "vittorio_macario",
+      "name": "ヴィットリオ・マカリオ",
+      "description": "正気を失ったヴィットリオ・マカリオが、胸に聖書を抱きしめています。彼は時折、聖書の一節を指差して「己の武器によって悪魔は滅びる！」とつぶやきます。これ以上、彼から具体的な情報は得られそうにありません。",
+      "investigated_flag": "vittorio_interviewed",
+      "reject_message": "ヴィットリオは同じ言葉を繰り返すばかりで、これ以上話すことはできません。",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "gabriella_macario",
+      "name": "ガブリエラ・マカリオ",
+      "description": "意識のはっきりしたガブリエラ・マカリオが、あなたに話しかけやすい様子です。彼女は屋敷に棲みつく悪霊のような存在について説明してくれます。その存在は夜中に彼女にのしかかり、皿などを部屋中に飛び回らせ、夫ヴィットリオに憎しみを向けていたと言います。彼女は質問に動揺しやすく、具体的な情報はあまり持っていません。",
+      "investigated_flag": "gabriella_interviewed",
+      "reject_message": "ガブリエラはこれ以上話すと激しく動揺してしまいます。今はそっとしておきましょう。",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    }
+  ],
+  "exits": {
+    "exit_to_neighborhood": {
+      "name": "サナトリウムを出る",
+      "destination": "the_neighborhood",
+      "reject_message": "近所へ戻ることができる。"
+    }
+  }
+}

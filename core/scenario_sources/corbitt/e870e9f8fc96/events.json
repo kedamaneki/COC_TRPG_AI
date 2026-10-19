@@ -1,0 +1,453 @@
+[
+  {
+    "event_id": "intro_case_acceptance",
+    "priority": 100,
+    "location": "introduction",
+    "target_object": "Mr. Knott",
+    "action_types": [
+      "set_flag",
+      "update_and_describe",
+      "system_unlock_location"
+    ],
+    "payloads": [
+      {
+        "action_type": "set_flag",
+        "flag_name": "case_accepted",
+        "value": true
+      },
+      {
+        "action_type": "update_and_describe",
+        "description_id": "knott_briefing_complete",
+        "text": "ノット氏から事件の概要と報酬、屋敷の鍵と住所を受け取った。調査を開始できる。"
+      },
+      {
+        "action_type": "system_unlock_location",
+        "location_id": "boston_globe"
+      },
+      {
+        "action_type": "system_unlock_location",
+        "location_id": "central_library"
+      },
+      {
+        "action_type": "system_unlock_location",
+        "location_id": "hall_of_records"
+      },
+      {
+        "action_type": "system_unlock_location",
+        "location_id": "the_neighborhood"
+      },
+      {
+        "action_type": "system_unlock_location",
+        "location_id": "corbitt_exterior"
+      }
+    ]
+  },
+  {
+    "event_id": "research_boston_globe",
+    "priority": 50,
+    "location": "boston_globe",
+    "target_object": "newspaper_archives",
+    "action_types": [
+      "system_intercept_roll",
+      "set_flag",
+      "update_and_describe"
+    ],
+    "payloads": [
+      {
+        "action_type": "system_intercept_roll",
+        "skill": "図書館",
+        "difficulty": "通常",
+        "success_payloads": [
+          {
+            "action_type": "set_flag",
+            "flag_name": "newspaper_info_found",
+            "value": true
+          },
+          {
+            "action_type": "update_and_describe",
+            "description_id": "newspaper_success",
+            "text": "古い新聞記事から、コービット屋敷で過去に不審な事件があったこと、そしてウォルター・コービットに関する奇妙な噂を見つけた。"
+          }
+        ],
+        "failure_payloads": [
+          {
+            "action_type": "update_and_describe",
+            "description_id": "newspaper_failure",
+            "text": "特に目新しい情報は得られなかった。もっと深く調べる必要があるだろう。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_id": "research_central_library",
+    "priority": 50,
+    "location": "central_library",
+    "target_object": "library_catalog",
+    "action_types": [
+      "system_intercept_roll",
+      "set_flag",
+      "update_and_describe"
+    ],
+    "payloads": [
+      {
+        "action_type": "system_intercept_roll",
+        "skill": "図書館",
+        "difficulty": "通常",
+        "success_payloads": [
+          {
+            "action_type": "set_flag",
+            "flag_name": "library_info_found",
+            "value": true
+          },
+          {
+            "action_type": "update_and_describe",
+            "description_id": "library_success",
+            "text": "図書館の資料から、コービット家の歴史や、ウォルター・コービットが奇妙な研究に没頭していたという記述を発見した。"
+          }
+        ],
+        "failure_payloads": [
+          {
+            "action_type": "update_and_describe",
+            "description_id": "library_failure",
+            "text": "図書館の膨大な資料の中から、関連する情報を見つけるのは困難だった。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_id": "research_hall_of_records",
+    "priority": 50,
+    "location": "hall_of_records",
+    "target_object": "public_records",
+    "action_types": [
+      "system_intercept_roll",
+      "set_flag",
+      "update_and_describe"
+    ],
+    "payloads": [
+      {
+        "action_type": "system_intercept_roll",
+        "skill": "法律",
+        "difficulty": "通常",
+        "success_payloads": [
+          {
+            "action_type": "set_flag",
+            "flag_name": "records_info_found",
+            "value": true
+          },
+          {
+            "action_type": "update_and_describe",
+            "description_id": "records_success",
+            "text": "公文書館でウォルター・コービットの死亡記録と遺言書を発見。遺言書には奇妙な条項が含まれていた。"
+          },
+          {
+            "action_type": "system_unlock_location",
+            "location_id": "roxbury_sanitarium"
+          },
+          {
+            "action_type": "system_unlock_location",
+            "location_id": "chapel_of_contemplation"
+          }
+        ],
+        "failure_payloads": [
+          {
+            "action_type": "update_and_describe",
+            "description_id": "records_failure",
+            "text": "公文書の山から、目的の情報を見つけ出すことはできなかった。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_id": "interview_neighborhood",
+    "priority": 50,
+    "location": "the_neighborhood",
+    "target_object": "local_residents",
+    "action_types": [
+      "system_intercept_roll",
+      "set_flag",
+      "update_and_describe"
+    ],
+    "payloads": [
+      {
+        "action_type": "system_intercept_roll",
+        "skill": "言いくるめ",
+        "difficulty": "通常",
+        "success_payloads": [
+          {
+            "action_type": "set_flag",
+            "flag_name": "neighbor_gossip_found",
+            "value": true
+          },
+          {
+            "action_type": "update_and_describe",
+            "description_id": "neighbor_success",
+            "text": "近隣住民から、コービット屋敷に関する不気味な噂や、マカリオ一家が経験した不幸について聞き出した。"
+          }
+        ],
+        "failure_payloads": [
+          {
+            "action_type": "update_and_describe",
+            "description_id": "neighbor_failure",
+            "text": "住民たちは屋敷の話をしたがらず、ほとんど情報は得られなかった。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_id": "approach_corbitt_exterior",
+    "priority": 80,
+    "location": "corbitt_exterior",
+    "target_object": "corbitt_house",
+    "max_triggers": 1,
+    "custom_eval": "global_states.flags.exterior_approached != True",
+    "action_types": [
+      "force_san_check",
+      "update_and_describe",
+      "system_unlock_location",
+      "set_flag"
+    ],
+    "payloads": [
+      {
+        "action_type": "update_and_describe",
+        "description_id": "exterior_description",
+        "text": "コービット屋敷は、荒れ果てた庭に囲まれた、陰鬱な雰囲気の古い建物だ。窓は板で打ち付けられ、まるで死んだ眼のように見える。"
+      },
+      {
+        "action_type": "force_san_check",
+        "reason": "屋敷の不気味な外観",
+        "san_loss_range": "0/1"
+      },
+      {
+        "action_type": "system_unlock_location",
+        "location_id": "corbitt_ground_floor"
+      },
+      {
+        "action_type": "set_flag",
+        "flag_name": "exterior_approached",
+        "value": true
+      }
+    ]
+  },
+  {
+    "event_id": "enter_corbitt_ground_floor",
+    "priority": 80,
+    "location": "corbitt_ground_floor",
+    "target_object": "main_entrance",
+    "action_types": [
+      "force_san_check",
+      "update_and_describe"
+    ],
+    "payloads": [
+      {
+        "action_type": "update_and_describe",
+        "description_id": "ground_floor_entrance",
+        "text": "屋敷の扉を開けると、埃とカビの匂いが鼻を突く。薄暗いホールには、朽ちた家具の影が不気味に伸びている。"
+      },
+      {
+        "action_type": "force_san_check",
+        "reason": "屋敷内部の陰鬱な雰囲気",
+        "san_loss_range": "0/1D2"
+      }
+    ]
+  },
+  {
+    "event_id": "investigate_living_room",
+    "priority": 50,
+    "location": "corbitt_ground_floor",
+    "target_object": "living_room_clutter",
+    "action_types": [
+      "system_intercept_roll",
+      "force_san_check",
+      "set_flag",
+      "update_and_describe"
+    ],
+    "payloads": [
+      {
+        "action_type": "system_intercept_roll",
+        "skill": "目星",
+        "difficulty": "困難",
+        "success_payloads": [
+          {
+            "action_type": "set_flag",
+            "flag_name": "living_room_investigated",
+            "value": true
+          },
+          {
+            "action_type": "update_and_describe",
+            "description_id": "living_room_success",
+            "text": "リビングルームを注意深く調べると、壁に血痕のような染みと、何かが引きずられたような跡を発見した。"
+          },
+          {
+            "action_type": "force_san_check",
+            "reason": "不気味な血痕と痕跡",
+            "san_loss_range": "0/1D3"
+          }
+        ],
+        "failure_payloads": [
+          {
+            "action_type": "update_and_describe",
+            "description_id": "living_room_failure",
+            "text": "リビングルームは荒れ放題で、特に目を引くものは見当たらなかった。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_id": "minor_haunting_ground_floor",
+    "priority": 80,
+    "location": "corbitt_ground_floor",
+    "target_object": "ambient_haunting",
+    "max_triggers": 1,
+    "custom_eval": "global_states.flags.ground_floor_haunting_done != True and global_states.flags.living_room_investigated != True",
+    "action_types": [
+      "force_san_check",
+      "update_and_describe",
+      "set_flag"
+    ],
+    "payloads": [
+      {
+        "action_type": "update_and_describe",
+        "description_id": "haunting_whisper",
+        "text": "突然、背後から冷たい風が吹き抜け、耳元で何かが囁いたような気がした。しかし、そこには誰もいない。"
+      },
+      {
+        "action_type": "force_san_check",
+        "reason": "不可解な現象",
+        "san_loss_range": "0/1"
+      },
+      {
+        "action_type": "set_flag",
+        "flag_name": "ground_floor_haunting_done",
+        "value": true
+      }
+    ]
+  },
+  {
+    "event_id": "research_roxbury_sanitarium",
+    "priority": 50,
+    "location": "roxbury_sanitarium",
+    "target_object": "patient_records",
+    "action_types": [
+      "system_intercept_roll",
+      "set_flag",
+      "update_and_describe"
+    ],
+    "payloads": [
+      {
+        "action_type": "system_intercept_roll",
+        "skill": "図書館",
+        "difficulty": "通常",
+        "success_payloads": [
+          {
+            "action_type": "set_flag",
+            "flag_name": "sanitarium_info_found",
+            "value": true
+          },
+          {
+            "action_type": "update_and_describe",
+            "description_id": "sanitarium_success",
+            "text": "ロックスベリー・サナトリウムの古い記録から、ウォルター・コービットが精神的な問題を抱え、一時的に入院していたこと、そして奇妙な治療法を求めていたことが判明した。"
+          }
+        ],
+        "failure_payloads": [
+          {
+            "action_type": "update_and_describe",
+            "description_id": "sanitarium_failure",
+            "text": "サナトリウムの記録は厳重に管理されており、ウォルター・コービットに関する情報は得られなかった。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_id": "investigate_chapel_of_contemplation",
+    "priority": 50,
+    "location": "chapel_of_contemplation",
+    "target_object": "chapel_ruins",
+    "action_types": [
+      "system_intercept_roll",
+      "force_san_check",
+      "set_flag",
+      "update_and_describe"
+    ],
+    "payloads": [
+      {
+        "action_type": "system_intercept_roll",
+        "skill": "図書館",
+        "difficulty": "通常",
+        "success_payloads": [
+          {
+            "action_type": "set_flag",
+            "flag_name": "chapel_investigated",
+            "value": true
+          },
+          {
+            "action_type": "update_and_describe",
+            "description_id": "chapel_success",
+            "text": "黙想チャペルの廃墟と散乱した教会記録を調べると、ウォルター・コービットの遺体が公式には埋葬されず、コービット屋敷の地下室に不法に埋葬された経緯が記されていた。付属の警察家宅捜索記録には地下室への隠蔽工作が示され、古い祈祷文には『闇の中で待つもの』への不気味な祈りが綴られていた。"
+          },
+          {
+            "action_type": "force_san_check",
+            "reason": "不法埋葬と邪教の祈祷文",
+            "san_loss_range": "0/1D4"
+          }
+        ],
+        "failure_payloads": [
+          {
+            "action_type": "update_and_describe",
+            "description_id": "chapel_failure",
+            "text": "崩れた礼拝堂の残骸と散乱した記録の中から、コービットに直接関係する手がかりは見つけられなかった。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_id": "corbitt_ground_floor_hidden_passage",
+    "priority": 50,
+    "location": "corbitt_ground_floor",
+    "target_object": "basement_door",
+    "action_types": [
+      "system_intercept_roll",
+      "set_flag",
+      "update_and_describe"
+    ],
+    "payloads": [
+      {
+        "action_type": "system_intercept_roll",
+        "skill": "目星",
+        "difficulty": "通常",
+        "success_payloads": [
+          {
+            "action_type": "set_flag",
+            "flag_name": "basement_accessible",
+            "value": true
+          },
+          {
+            "action_type": "set_flag",
+            "flag_name": "basement_door_unlocked",
+            "value": true
+          },
+          {
+            "action_type": "update_and_describe",
+            "description_id": "basement_door_opened_desc",
+            "text": "1階の奥にある地下室への扉を見つけた。差し錠と古い鍵で閉ざされていたが、目星で構造の隙間や錠前の弱点を突き、あるいは力ずくでこじ開けることで扉を開けた。冷たい空気とカビの匂いが地下から漂ってくる。"
+          }
+        ],
+        "failure_payloads": [
+          {
+            "action_type": "update_and_describe",
+            "description_id": "basement_door_not_opened_desc",
+            "text": "地下室への扉は頑丈に閉ざされたままだ。もう一度、鍵穴や蝶番の隙間を調べるか、力ずくでこじ開ける必要がある。"
+          }
+        ]
+      }
+    ]
+  }
+]

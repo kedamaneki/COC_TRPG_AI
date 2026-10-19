@@ -1,0 +1,68 @@
+{
+  "name": "公文書館",
+  "default_description": "古びた石造りの建物で、内部は薄暗く、埃っぽい紙の匂いが充満している。膨大な量の公文書が棚にぎっしりと並べられ、静寂が支配している。奥には事務官のデスクが見える。",
+  "connected_to": [
+    "the_neighborhood",
+    "central_library",
+    "higher_courts_police_station"
+  ],
+  "npcs_present": [
+    "hall_records_clerk"
+  ],
+  "objects": [
+    {
+      "object_id": "crime_court_records",
+      "name": "犯罪裁判所の記録",
+      "description": "過去の犯罪裁判に関する記録が収められた棚だ。黙想チャペルの名前を検索すると、1912年に行われた裁判で言及されているのを発見する。しかし、その裁判の具体的な記録はなぜか残されていない。〈法律〉の知識があれば手続き面から、〈図書館〉の索引術があれば資料の並びから、どちらでも辿ることができる。",
+      "investigated_flag": "hall_of_records_court_records_investigated",
+      "required_skill": ["法律", "図書館"],
+      "reject_message": "この記録からは、これ以上新しい情報は得られないようだ。なぜ記録が残っていないのかは不明だ。",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "clerk_desk",
+      "name": "事務官のデスク",
+      "description": "書類の山に埋もれたデスクで、初老の事務官が忙しそうに作業している。彼に話しかけると、重い犯罪は郡や州、あるいは連邦の裁判所へ送られること、そして逮捕や押収に関わる市の警官の記録は中央警察署にあることを教えてくれる。",
+      "investigated_flag": "hall_of_records_clerk_interacted",
+      "reject_message": "事務官は忙しそうだ。これ以上話しかけても、同じ情報しか得られないだろう。",
+      "usable_actions": [
+        "talk"
+      ]
+    },
+    {
+      "object_id": "public_records",
+      "name": "一般的な公文書",
+      "description": "様々な年代の公文書が分類され、保管されている。特定の情報を探すには、根気強い調査が必要だろう。もしかしたら、プレイヤー資料7に繋がる情報が見つかるかもしれない。〈法律〉で公的手続きの記録を辿ってもよいし、〈図書館〉で膨大な資料を効率よく索引しても構わない。どちらの技能でもアプローチできる。",
+      "investigated_flag": "hall_of_records_general_archives_searched",
+      "required_skill": ["法律", "図書館"],
+      "reject_message": "膨大な記録の山だ。これ以上、何かを見つけるには時間と根気が必要だろう。今は他に優先すべきことがあるかもしれない。",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    }
+  ],
+  "exits": {
+    "to_street": {
+      "name": "通りへ出る",
+      "description": "公文書館の外、賑やかな通りへと続く。",
+      "condition": "true",
+      "reject_message": "【システムブロック】その方向へは進めません。"
+    },
+    "to_central_library": {
+      "name": "中央図書館へ向かう",
+      "description": "さらに詳しい資料を探すため、中央図書館へ移動する。",
+      "condition": "true",
+      "reject_message": "【システムブロック】その方向へは進めません。"
+    },
+    "to_higher_courts_police_station": {
+      "name": "中央警察署へ向かう",
+      "description": "事務官が言っていた、市の警官の記録がある中央警察署へ向かう。",
+      "requires_flag": "hall_of_records_clerk_interacted",
+      "reject_message": "どこへ向かうべきか、まだはっきりしない。まずは公文書館で情報を集めるべきだろう。"
+    }
+  }
+}

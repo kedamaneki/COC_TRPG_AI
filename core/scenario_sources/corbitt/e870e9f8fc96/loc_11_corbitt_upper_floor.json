@@ -1,0 +1,65 @@
+{
+  "name": "コービット屋敷（2階）",
+  "default_description": "古びたコービット屋敷の2階だ。主人の寝室、子供の寝室、予備用寝室、そして浴室がある。全体的に生活感は薄れているが、各部屋には以前の住人の痕跡が残されている。特に予備用寝室からは、どこか不穏な気配が漂っている。",
+  "connected_to": [
+    "corbitt_ground_floor"
+  ],
+  "objects": [
+    {
+      "object_id": "master_bedroom_bookshelf",
+      "name": "主人の寝室の本棚",
+      "description": "平凡な本棚だが、宗教的な書物や聖具が並べられている。ヴィットリオとガブリエラの信仰心の深さがうかがえる。",
+      "investigated_flag": "master_bedroom_bookshelf_investigated",
+      "investigated_description": "本棚を詳しく調べると、いくつかの聖書や祈祷書の中に、古びた家族写真が挟まっているのを見つけた。写真には、ヴィットリオとガブリエラ、そして幼い子供たちが写っている。裏には『1920年、コービット屋敷にて』と書かれている。",
+      "reject_message": "特に変わったものはないようだ。",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "spare_bedroom_bed",
+      "name": "予備用寝室のベッド",
+      "description": "ベッドフレームとむき出しになったベッドスプリングがあるだけの、簡素なベッドだ。使われた形跡はないが、どこか不気味な雰囲気が漂っている。この部屋は以前、老コービットの部屋だったという。",
+      "investigated_flag": "spare_bedroom_bed_investigated",
+      "investigated_description": "ベッドを調べると、スプリングの一部が不自然に歪んでいることに気づく。また、微かに甘ったるい、吐き気を催すような腐敗臭がする。この部屋がコービットの霊的な影響下にあることを示唆している。",
+      "reject_message": "ただの古いベッドのようだ。",
+      "clue_flags_on_success": [
+        "spare_bedroom_bed_investigated",
+        "trigger_flying_bed"
+      ],
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "bathroom_bathtub",
+      "name": "浴室の浴槽",
+      "description": "浴槽には塩気を含んだ水がたまっている。蛇口が緩んでおり、水がしたたっている音がする。タオルなども家族4人分がまだ揃っている。",
+      "investigated_flag": "bathroom_bathtub_investigated",
+      "investigated_description": "浴槽の水をよく見ると、底に微細な黒い沈殿物があることに気づく。水は一般的な水道水とは異なる、奇妙な塩気を感じさせる。何かの儀式に使われたか、あるいは単なる腐敗の兆候か。",
+      "reject_message": "ただ水がたまっているだけの浴槽だ。",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    }
+  ],
+  "exits": {
+    "stairs_down_to_ground_floor": {
+      "name": "1階への階段",
+      "description": "古びた木製の階段が1階へと続いている。",
+      "destination": "corbitt_ground_floor",
+      "condition": "true",
+      "reject_message": "【システムブロック】その方向へは進めません。"
+    },
+    "window_spare_bedroom": {
+      "name": "予備用寝室の窓",
+      "description": "外が見える窓だが、どこか不安定な感じがする。コービットの霊的な影響が強い場所だ。",
+      "destination": "corbitt_exterior",
+      "condition": "false",
+      "reject_message": "窓から外に出るのは危険すぎる。特にこの部屋では、何かが起こりそうだ。窓ガラスがガタガタと音を立てている。"
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "name": "黙想チャペル",
+  "default_description": "古びた教会の残骸は、曲がりくねった薄汚い通りの突き当たりにある。風雨にさらされ続け、草木が生い茂っているため、灰色のがれきは建築物の壁や土台の跡というより、自然の石のように見える。探索者は崩れかけた壁のそばを通りかかる。壁には白いペンキで塗られた記号があり、これは明らかに最近になってブラシで描かれたものである。記号は、3つのYが三角形を形成している。Yの2つの頂点が、両側にある別のYの頂点と接する向きで配置されているのだ。そうやってできた真ん中のスペースには、じっと見つめているような目が描き込まれている。\n探索者が記号のそばにいる間、額の中でうずくような感じがし始める兆候をプレイヤーに描写する。これは頭痛のようだが、ちょっと頭痛とは違う感じだ。そこを離れれば、うずきは止まる。",
+  "connected_to": [
+    "the_neighborhood"
+  ],
+  "objects": [
+    {
+      "object_id": "chapel_secret_cellar",
+      "aliases": ["chapel_ruins"],
+      "name": "焼け残った祭壇下の秘密の保管庫",
+      "description": "焼け落ちた床の隙間に、かつての秘密の保管庫が隠されているのが見て取れる。崩れた祭壇の残骸の下に、火事を免れた区画があるようだ。〈目星〉で隙間や隠し扉の痕跡を見つけるか、〈図書館〉で散乱した教会記録や書付を読み解くことで、内部に眠るものへ辿り着けるだろう。",
+      "investigated_flag": "chapel_investigated",
+      "required_skill": ["目星", "図書館"],
+      "difficulty": "通常",
+      "success_message": "保管庫からは、カルトの不気味な儀式記録と、ウォルター・コービットが残した日記の断片が見つかった。そこにはコービットの遺体が自宅の地下室に埋葬された経緯や、『地底の裁判官』——イゴーロナクをはじめとする神格——に捧げられた冒涜的な記述が綴られている。読み進めるほどに、額の奥のうずきが増していく。",
+      "reject_message": "保管庫はすでに調べ尽くした。これ以上は新しい記述は見つからないだろう。",
+      "triggers_flag_on_success": {
+        "chapel_investigated": true
+      },
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "white_symbol",
+      "name": "白いペンキの記号",
+      "description": "崩れかけた壁に描かれた、3つのYが三角形を形成し、中央に目が描き込まれた奇妙な記号だ。最近描かれたもののようだ。見つめていると、額の奥でうずくような不快な感覚がする。",
+      "investigated_flag": "symbol_investigated",
+      "reject_message": "記号をじっと見つめていると、額の奥でうずくような不快な感覚が強まる。これ以上調べても、気分が悪くなるだけだろう。",
+      "requires_flag": "!in_basement",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "rotting_floorboards",
+      "name": "もろくなった床板",
+      "description": "足元の地面に隠された、もろくなった床板がある。注意深く調べれば、その下になにか隠されているかもしれない。踏み抜けば、地階へ落下する危険がある。",
+      "investigated_flag": "floorboards_examined",
+      "success_message": "もろくなった床板の下に空間があることに気づいた。踏み抜く／壊す（break / force / climb）で地階へ降りられそうだ。",
+      "reject_message": "床板は非常に脆く、少し力を加えるだけで崩れそうだ。慎重に扱わないと危険だろう。",
+      "investigated_reject_message": "床板はすでに調べた。下の空間へ進むなら break / force / climb を使え。再 search では新しい手がかりはない。",
+      "requires_flag": "!in_basement",
+      "required_skill": ["目星", "STR"],
+      "STR": 40,
+      "usable_actions": [
+        "search",
+        "inspect",
+        "break",
+        "force",
+        "push",
+        "climb"
+      ]
+    },
+    {
+      "object_id": "skeletons_in_robes",
+      "name": "ローブをまとった骸骨",
+      "description": "地階の棚のそばに横たわる、ぼろぼろの絹のローブをまとった2体の骸骨。おそらく警察から隠れていたものの、火事に巻き込まれて死んだのだろう。",
+      "investigated_flag": "skeletons_examined",
+      "reject_message": "骸骨はただの死体だ。これ以上調べても何も得られないだろう。",
+      "requires_flag": "in_basement",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "shelf_with_records",
+      "name": "朽ちかけた棚",
+      "description": "地階の壁際に置かれた、朽ちかけた木製の棚。中には古い教会の記録類が散乱している。注意深く調べれば、重要なものが見つかるかもしれない。",
+      "investigated_flag": "shelf_searched",
+      "reject_message": "棚はすでに調べ尽くした。これ以上は何も見つからないだろう。",
+      "requires_flag": "in_basement",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "cult_diary",
+      "name": "カルトの日誌",
+      "description": "カビ臭く古い日誌。ページをめくるたびにバラバラになってしまうが、ウォルター・コービットという名前と、彼がコービット屋敷の地階に埋葬されたことが記されている。「本人の希望と『闇の中で待つもの』の希望による」とある。",
+      "investigated_flag": "diary_read",
+      "reject_message": "日誌はすでに読んだ。これ以上読んでも、ただ朽ちていくだけだ。",
+      "requires_flag": "found_diary",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "grimoire_book_of_eibon",
+      "name": "魔道書『エイボンの書』",
+      "description": "日誌の隣にあった、手書きのラテン語で記された非常に分厚い本。かなり腐って虫が食い荒らしており、内容全体を理解することはもうできない。オカルト的な内容を論じているようだ。読むには時間がかかるだろう。",
+      "investigated_flag": "grimoire_examined",
+      "reject_message": "魔道書はすでに調べた。読むには時間がかかるだろう。",
+      "requires_flag": "found_grimoire",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    }
+  ],
+  "exits": {
+    "to_neighborhood": {
+      "name": "通りへ戻る",
+      "requires_flag": "!in_basement",
+      "reject_message": "ここから通りへ戻ることができる。",
+      "destination": "the_neighborhood"
+    },
+    "climb_out_of_basement": {
+      "name": "地階から這い上がる",
+      "requires_flag": "in_basement",
+      "reject_message": "崩れた床板の隙間から、上へ這い上がることができるだろう。"
+    }
+  }
+}

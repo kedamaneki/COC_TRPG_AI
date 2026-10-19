@@ -1,0 +1,60 @@
+{
+  "name": "ボストン・グローブ",
+  "default_description": "評判のいい日刊新聞社『ボストン・グローブ』のオフィスです。ロビーには受付デスクがあり、奥ではジャーナリストや編集者が行き交っています。地下には一般には公開されていない「参考資料室」（新聞の切り抜きファイルがある）が存在します。来客はまず受付で用件を伝え、担当者を呼び出してもらうのが通例だ。",
+  "connected_to": [
+    "introduction",
+    "central_library",
+    "hall_of_records"
+  ],
+  "npcs_present": [
+    "globe_receptionist",
+    "artie_wilmott"
+  ],
+  "objects": [
+    {
+      "object_id": "reception_desk",
+      "name": "受付デスク",
+      "description": "ボストン・グローブ社のロビーにある受付デスク。電話対応の合間でも、来客の用件を聞いてくれる女性（`globe_receptionist`）が座っている。コービット屋敷や過去の記事について尋ねれば、編集者のアーティ・ウィルモットを呼んでくれるだろう。デスク自体に調査の手がかりはない。",
+      "usable_actions": [
+        "inspect"
+      ],
+      "no_roll": true,
+      "empty_clue": true,
+      "reject_message": "受付デスクに手がかりはない。受付の女性に話しかけ、用件を伝えよう。"
+    },
+    {
+      "object_id": "reference_room_clipping_files",
+      "name": "参考資料室の切り抜きファイル",
+      "description": "ほこりだらけの地下室にあるファイル棚に並べられた、古い新聞の切り抜きファイルです。カビ臭い匂いが立ち込め、ボイラーの熱で暑い。コービット屋敷に関する記事を探すことができるでしょう。保管記録係のルース・ブレイクは、1878年の火事以前の記録は不完全だと教えてくれるかもしれません。",
+      "investigated_flag": "accessed_clipping_files",
+      "reject_message": "正面からは入れないが、アーティの許可を得るか、受付や廊下から地下へ忍び込む（隠密・鍵開け）など別手段を試せる。",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ],
+      "access_gate": {
+        "permission_flag": "artie_reference_room_access_granted",
+        "permission_npc_id": "artie_wilmott",
+        "allow_if_relationship": "協力的"
+      }
+    }
+  ],
+  "exits": {
+    "city_streets_exit": {
+      "name": "ボストン市街へ",
+      "connected_to": "introduction",
+      "requires_flag": null,
+      "reject_message": "【システムブロック】その方向へは進めません。"
+    },
+    "central_library": {
+      "name": "中央図書館",
+      "connected_to": "central_library",
+      "reject_message": "【システムブロック】その方向へは進めません。"
+    },
+    "hall_of_records": {
+      "name": "公文書館",
+      "connected_to": "hall_of_records",
+      "reject_message": "【システムブロック】その方向へは進めません。"
+    }
+  }
+}

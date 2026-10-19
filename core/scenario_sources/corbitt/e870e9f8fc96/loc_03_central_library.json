@@ -1,0 +1,46 @@
+{
+  "name": "中央図書館",
+  "default_description": "この立派な施設には興味深い情報がいくつも収められている。図書館での調査にゲーム内での半日を使うごとに、各プレイヤーに〈図書館〉ロールを1回ずつさせること。失敗しても、ロールをプッシュする必要はない。プレイヤーは何度でも挑戦できる。ただし、ロールするごとに調査にさらに半日使ったことになる。探索者が調査に1日以上の時間をかけているようなら、雇い主であるノット氏が探索者に連絡して調査の進捗具合を尋ね、問題の解決を促す。とどのつまり時は金なり、ということだ。",
+  "connected_to": [
+    "hall_of_records",
+    "higher_courts_police_station",
+    "the_neighborhood"
+  ],
+  "npcs_present": [],
+  "objects": [
+    {
+      "object_id": "newspaper_archives",
+      "name": "新聞アーカイブ",
+      "description": "古い新聞の山が積み上げられている。ボストン・グローブ紙のマイクロフィルムもあるようだ。特定の年代の記事を探すには、根気と集中力が必要だろう。成功すれば、1918年の未掲載記事（プレイヤー資料2）が見つかるかもしれない。",
+      "investigated_flag": "found_newspaper_article_1918",
+      "reject_message": "古い新聞をいくら漁っても、それらしい記事は見つからない。もっと時間をかける必要があるか、あるいは別の方法を試すべきだろう。すでにこの情報は見つけているかもしれない。",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "local_history_section",
+      "name": "郷土史資料",
+      "description": "この地域の歴史に関する書籍や文書が並べられている。古い不動産記録や人物伝記なども含まれているようだ。ウォルター・コービット氏や屋敷に関する情報が見つかるかもしれない。成功すれば、屋敷の歴史に関する資料（プレイヤー資料3〜6）が得られるだろう。",
+      "investigated_flag": "found_corbitt_history_all",
+      "reject_message": "郷土史資料を丹念に調べたが、コービット氏や屋敷に関する決定的な情報はまだ見つからない。さらに深く掘り下げる必要があるだろう。すでにこの情報は見つけているかもしれない。",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    }
+  ],
+  "exits": {
+    "to_neighborhood": {
+      "name": "図書館の出口",
+      "condition": "true",
+      "reject_message": "出口は開いている。"
+    },
+    "to_hall_of_records": {
+      "name": "記録保管所へ向かう",
+      "requires_flag": "found_corbitt_history_all",
+      "reject_message": "記録保管所へ行く必要性はまだ感じられない。まずは図書館で得られる情報を全て集めるべきだろう。"
+    }
+  }
+}

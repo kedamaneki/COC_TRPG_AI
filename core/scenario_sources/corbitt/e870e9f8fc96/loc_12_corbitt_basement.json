@@ -1,0 +1,85 @@
+{
+  "name": "コービット屋敷（地階・物置部屋）",
+  "default_description": "地階へ降りるドアは、鍵1つと差し錠3本によって閉じられている。そのため上の階の側からしか開けられない。階段を下りると、そこは大きな物置部屋になっている。階段は壊れたものを簡単に直しただけの状態で、電球も点灯しない。地階の壁は、板で隙間なく覆われている。コービットは1階の台所にあるブレーカーを落として地下の電気を止めてしまっている。探索者がもう一度通電させても、コービットはいつでも自分の都合の良い時に電気を止めることができる。この部屋はやや小さめで、道具類、鉛管、ごみ缶のふた、木材、釘、ねじなどが散らばっている。",
+  "connected_to": [
+    "corbitt_ground_floor",
+    "corbitt_basement_room2",
+    "corbitt_basement_room3"
+  ],
+  "objects": [
+    {
+      "object_id": "scattered_junk",
+      "name": "散らばったガラクタ",
+      "description": "部屋の床には、道具類、鉛管、ごみ缶のふた、木材、釘、ねじなどが無造作に散らばっている。",
+      "investigated_flag": "junk_searched",
+      "reject_message": "ガラクタの中には鋭利なものが多く、注意深く探さないと怪我をするかもしれない。",
+      "clue_on_success": "ガラクタの中から、古びたナイフの柄がわずかに見えている。刃は異様に厚いサビで覆われているようだ。",
+      "on_push_fail_damage": "不注意な探索者は鋭利な破片で手を切ってしまい、耐久力に1D4＋2ポイントのダメージを受けた。",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "basement_planks",
+      "aliases": ["wall_planks"],
+      "name": "板で覆われた壁",
+      "description": "地階の壁は木の板で隙間なく覆われている。ざっと見渡すと、板の向こうに空間があるように見える。〈STR〉で力ずくで板を破壊するか、〈近接戦闘（格闘）〉で板を叩き砕けば、奥の部屋へ進めるだろう。",
+      "investigated_flag": "basement_planks_examined",
+      "required_skill": ["STR", "近接戦闘（格闘）"],
+      "difficulty": "通常",
+      "reject_message": "板で覆われた壁は頑丈に見える。力でこじ開けるか、格闘技能で板を破壊しよう。",
+      "clue_on_success": "板の向こうに、さらに部屋があることがわかった。部屋2と部屋3のようだ。壊せば進めそうだ。",
+      "success_message": "力ずくで板を破壊し、奥の部屋への通路を開けた。",
+      "triggers_flag_on_success": {
+        "basement_planks_broken": true
+      },
+      "clue_flags_on_success": [
+        "basement_planks_examined",
+        "basement_planks_broken"
+      ],
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "corbitt_knife",
+      "name": "コービットのナイフ",
+      "description": "古いもののようで、柄には装飾が施され、刃は異様に厚いサビで覆われている。これはコービットの魔法のダガーで、サビのように見えるのは付着した犠牲者の血が乾いたものだ。",
+      "requires_flag": "junk_searched",
+      "investigated_flag": "has_corbitt_knife",
+      "reject_message": "ナイフは宙に浮いており、近づくと危険な気配がする。",
+      "clue_on_investigate": "ナイフを拾い上げると、ひとりでに探索者の手を振りほどいて宙に浮き上がり、攻撃してきた！",
+      "clue_flags_on_success": [
+        "has_corbitt_knife",
+        "trigger_knife_attack"
+      ],
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    }
+  ],
+  "exits": {
+    "stairs_to_ground_floor": {
+      "name": "1階へ続く階段",
+      "connected_to": "corbitt_ground_floor",
+      "condition": "DEXと〈登攀〉の組み合わせロールに成功する",
+      "reject_message": "階段は壊れかけており、コービットの妨害もあるため、慎重に進まないと危険だ。"
+    },
+    "room2_passage": {
+      "name": "空の物置場への通路",
+      "connected_to": "corbitt_basement_room2",
+      "requires_flag": "basement_planks_broken",
+      "reject_message": "板で塞がれており、通るには板を壊す必要がある。"
+    },
+    "room3_passage": {
+      "name": "コービットの隠れ家への通路",
+      "connected_to": "corbitt_basement_room3",
+      "requires_flag": "basement_planks_broken",
+      "reject_message": "板で塞がれており、通るには板を壊す必要がある。",
+      "clue_on_enter": "隙間の内壁には、乱暴に引っかいたような文字で「黙想チャペル」と彫り込まれている。"
+    }
+  }
+}

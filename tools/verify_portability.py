@@ -54,6 +54,34 @@ def verify_assets(repo: Path, asset_root: Path) -> dict:
     return {"status": "PASS" if all(row["exists"] and row["hash_match"] for row in rows) else "FAIL", "assets": rows}
 
 
+def verify_scenario_source(repo: Path) -> dict:
+    manifest = load(repo / "manifests/CORBITT_SCENARIO_SOURCE.json")
+    configured = os.environ.get("CORBITT_SCENARIO_SOURCE_ROOT")
+    root = Path(configured).expanduser().resolve() if configured else (
+        repo / manifest["default_relative_root"]
+    ).resolve()
+    failures, aggregate = [], hashlib.sha256()
+    for row in sorted(manifest["files"], key=lambda item: item["path"]):
+        path = root / row["path"]
+        actual = sha256(path) if path.is_file() else None
+        if actual != row["sha256"] or (path.is_file() and path.stat().st_size != row["size"]):
+            failures.append(row["path"])
+        aggregate.update(
+            row["path"].encode("utf-8")
+            + b"\0" + str(row["size"]).encode("ascii")
+            + b"\0" + row["sha256"].encode("ascii")
+            + b"\n"
+        )
+    actual_aggregate = aggregate.hexdigest()
+    return {
+        "status": "PASS" if not failures and actual_aggregate == manifest["aggregate_sha256"] else "FAIL",
+        "root": str(root),
+        "file_count": len(manifest["files"]),
+        "aggregate_sha256": actual_aggregate,
+        "failures": failures,
+    }
+
+
 def active_runtime_path_scan(repo: Path) -> dict:
     roots = [repo / "core/src", repo / "video/src", repo / "tools/runtime_isolation",
              repo / "tools/night_guard"]
@@ -115,14 +143,17 @@ def main() -> int:
     source = verify_source(args.source_root.resolve(), args.control_root.resolve())
     assets = verify_assets(repo, args.asset_root.resolve())
     report = {"schema_version": 1, "repo": str(repo), "source": source, "assets": assets,
+              "scenario_source": verify_scenario_source(repo),
               "runtime": runtime_check(), "runtime_paths": active_runtime_path_scan(repo)}
     report["pipeline_dry_run"] = pipeline_dry_run(repo, args.source_root.resolve(), assets)
     report["status"] = "PASS" if all(report[key]["status"] == "PASS" for key in
-                                        ("source", "assets", "runtime", "runtime_paths", "pipeline_dry_run")) else "FAIL"
+                                        ("source", "assets", "scenario_source", "runtime", "runtime_paths", "pipeline_dry_run")) else "FAIL"
     destination = args.json_report or repo / "docs/CROSS_PC_PORTABILITY_VERIFY.json"
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({key: report[key]["status"] for key in ("source", "assets", "runtime", "runtime_paths", "pipeline_dry_run")}, ensure_ascii=False))
+    print(json.dumps({key: report[key]["status"] for key in
+                      ("source", "assets", "scenario_source", "runtime", "runtime_paths", "pipeline_dry_run")},
+                     ensure_ascii=False))
     return 0 if report["status"] == "PASS" else 2
 
 

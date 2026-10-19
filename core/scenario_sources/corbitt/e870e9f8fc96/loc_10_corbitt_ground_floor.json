@@ -1,0 +1,120 @@
+{
+  "name": "コービット屋敷（1階）",
+  "default_description": "古びたコービット屋敷の1階は、薄暗く、どこか陰鬱な雰囲気が漂っている。窓は内側から釘で打ち付けられ、外の光をほとんど通さない。各部屋には生活の痕跡があるものの、全体的に荒廃しており、不気味な静けさが支配している。",
+  "connected_to": [
+    "corbitt_exterior",
+    "corbitt_upper_floor",
+    "corbitt_basement"
+  ],
+  "objects": [
+    {
+      "object_id": "living_room_clutter",
+      "name": "リビングの散乱した荷物",
+      "description": "リビングルームには家具や荷物が散乱している。壁や床に不気味な染みや引きずられた跡がないか、注意深く調べる価値がある。",
+      "investigated_flag": "living_room_investigated",
+      "required_skill": ["目星"],
+      "difficulty": "困難",
+      "reject_message": "リビングは荒れ放題だが、これ以上目立つ手がかりは見当たらない。",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "basement_door",
+      "aliases": ["hidden_passage"],
+      "name": "地下室への扉",
+      "description": "廊下の奥にある、頑丈な木製の扉。地下室へ続いているようだが、太いネジや板で厳重に打ち付けられているか、鍵がかかっている。〈STR〉で力ずくでこじ開けるか、〈目星〉で錠前の弱点や隙間を見つけて開けられるだろう。",
+      "investigated_flag": "basement_accessible",
+      "required_skill": ["STR", "目星"],
+      "difficulty": "通常",
+      "success_message": "地下室への扉を開けた。力ずくでこじ開けるか、目星で見つけた隙間から錠を外し、冷たい空気とカビの匂いが地下から漂ってくる。",
+      "reject_message": "扉はまだ閉ざされたままだ。〈STR〉でこじ開けるか、〈目星〉で錠や板の弱点を探そう。",
+      "triggers_flag_on_success": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "hidden_passage_found": true
+      },
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "storage_room1_cupboard",
+      "name": "物置部屋の食器棚",
+      "description": "この物置部屋の右端にある食器棚は、板で固くふさがれている。中には何か隠されているようだ。",
+      "investigated_flag": "corbitt_diaries_found",
+      "reject_message": "食器棚は板で固くふさがれており、素手では開けられそうにない。何かこじ開ける道具が必要だろう。",
+      "success_message": "食器棚をこじ開けると、丈夫な表紙の本が3冊見つかった。ウォルター・コービットの日記のようだ。1冊目の最初のページにそのことが書かれている。日記にはオカルトの実験や魔術、特に《彼方への道を切り開くものの招請》という呪文が記されている。",
+      "clue_flags_on_success": [
+        "corbitt_diaries_found",
+        "clue_occult_experiments",
+        "clue_summoning_spell"
+      ],
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "kitchen_breaker_box",
+      "name": "台所のブレーカーボックス",
+      "description": "台所の壁にある古いブレーカーボックスだ。地下への電気を制御しているようだ。",
+      "investigated_flag": "basement_power_state_known",
+      "reject_message": "ブレーカーボックスは古いが、特に異常はないようだ。触る必要もなさそうだ。",
+      "success_message": "ブレーカーを調べると、地下への電気が止められていることがわかった。これを操作すれば、地下の電気を通電させたり、止めたりできるだろう。しかし、コービットがいつでも電気を止めることができるという不穏な予感もする。",
+      "clue_flags_on_success": [
+        "basement_power_state_known"
+      ],
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    {
+      "object_id": "ground_floor_windows",
+      "name": "1階の窓",
+      "description": "1階の窓はすべて内側から釘で打ち付けられ、固定されている。外の様子はほとんど見えない。",
+      "investigated_flag": "ground_floor_windows_inspected",
+      "reject_message": "窓は内側から釘で打ち付けられており、開けることはできない。",
+      "success_message": "1階の窓はすべて内側から釘で厳重に打ち付けられている。まるで誰かが中に閉じこもったか、あるいは外からの侵入を防ごうとしたかのようだ。外から見ても、カーテンが閉ざされ、中の様子はうかがえない。",
+      "clue_flags_on_success": [
+        "ground_floor_windows_inspected"
+      ],
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    }
+  ],
+  "exits": {
+    "front_door": {
+      "name": "正面玄関",
+      "destination": "corbitt_exterior",
+      "description": "屋敷の正面に面した重厚なドア。厳重に施錠されている。",
+      "requires_flag": "front_door_unlocked",
+      "reject_message": "正面のドアには鍵が1つ、さらに4本の差し錠が追加で取り付けられており、固く閉ざされている。"
+    },
+    "back_door": {
+      "name": "通用口",
+      "destination": "corbitt_exterior",
+      "description": "マッドルームにある裏庭へと続く通用口。こちらも厳重に施錠されている。",
+      "requires_flag": "back_door_unlocked",
+      "reject_message": "通用口は3本の差し錠と2つの鍵で固く閉ざされている。"
+    },
+    "stairs_to_upper_floor": {
+      "name": "2階への階段",
+      "destination": "corbitt_upper_floor",
+      "description": "上階へと続く古い階段だ。軋む音が聞こえるかもしれない。",
+      "reject_message": "【システムブロック】その方向へは進めません。"
+    },
+    "stairs_to_basement": {
+      "name": "地階への階段",
+      "destination": "corbitt_basement",
+      "description": "薄暗い地階へと続く階段。ドアが固く閉ざされている。",
+      "requires_flag": "basement_door_unlocked",
+      "reject_message": "地階へ降りる扉はまだ開いていない。廊下奥の地下室への扉を開けよう。"
+    }
+  }
+}

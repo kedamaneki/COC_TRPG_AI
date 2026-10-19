@@ -13,11 +13,20 @@ from __future__ import annotations
 
 import copy
 import json
+import os
 from pathlib import Path
 
 from scenario_validation import ScenarioValidationError, validate_scenario
 
-CACHE_DIR = Path(__file__).resolve().parent / ".local" / ".staged_cache" / "e870e9f8fc96"
+_PACKAGED_SOURCE_DIR = (
+    Path(__file__).resolve().parents[1]
+    / "scenario_sources"
+    / "corbitt"
+    / "e870e9f8fc96"
+)
+CACHE_DIR = Path(
+    os.environ.get("CORBITT_SCENARIO_SOURCE_ROOT", str(_PACKAGED_SOURCE_DIR))
+).expanduser().resolve()
 OUT_FILE = Path(__file__).resolve().parent / "scenario_corbitt.json"
 CORBITT_SCENARIO_FILENAME = "scenario_corbitt.json"
 

@@ -1,0 +1,49 @@
+{
+  "name": "コービット屋敷（地下室の隠し部屋）",
+  "default_description": "板を打ち破った先にある、ジメジメとした悪臭の立ち込める不気味な空間。床は土が剥き出しになっており、中央には不自然な長方形の寝台（あるいは古びた棺）が置かれている。壁は奇妙な緑色の粘液で覆われ、この世のものとは思えない冒涜的な気配が部屋全体を支配している。",
+  "connected_to": [
+    "corbitt_basement",
+    "corbitt_basement_room3"
+  ],
+  "objects": [
+    {
+      "object_id": "corbitt_body",
+      "name": "ウォルター・コービットの遺体",
+      "description": "ベッドに横たわる、干からびた木乃伊（ミイラ）のような死体。しかし、その皮膚は異常な弾力を保っており、何よりその『ぎらぎらと輝く目』は見開かれ、憎悪を込めてあなたを凝視している。彼は生きている！",
+      "investigated_flag": "corbitt_body_encountered",
+      "reject_message": "コービットの遺体は憎悪に燃える目でこちらを睨んでいる。もはや調べている場合ではない——対峙するしかない。",
+      "clue_flags_on_success": [
+        "corbitt_body_encountered",
+        "trigger_corbitt_boss_battle"
+      ],
+      "san_check": {
+        "required": true,
+        "value": "1/1D8",
+        "reason": "生ける屍・ウォルター・コービットとの遭遇"
+      },
+      "combat_trigger": {
+        "event_id": "corbitt_boss_battle",
+        "enemy_id": "walter_corbitt",
+        "enemy_ref_flag": "walter_corbitt_stats"
+      },
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    }
+  ],
+  "exits": {
+    "back_to_basement": {
+      "name": "物置部屋へ戻る",
+      "destination": "corbitt_basement",
+      "condition": "true",
+      "reject_message": "【システムブロック】その方向へは進めません。"
+    },
+    "to_basement_room3": {
+      "name": "地下の集会所跡へ",
+      "destination": "corbitt_basement_room3",
+      "condition": "true",
+      "reject_message": "【システムブロック】その方向へは進めません。"
+    }
+  }
+}

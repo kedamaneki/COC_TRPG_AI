@@ -1,0 +1,82 @@
+{
+  "name": "導入",
+  "default_description": "あなたはスティーブン・ノット氏（`steven_knott`）と向かい合っている。場所はあなたの探偵事務所かもしれないし、馴染みの喫茶店の一角かもしれない。ノット氏は最近、とある屋敷を相続したものの、その悪評のせいで賃貸も売却もできずに困り果てている様子だ。彼はあなたに、その屋敷にまつわる奇妙な出来事を調査してほしいと依頼してきた。机上には依頼書とメモがあり、事務机自体は話の背景に過ぎない。",
+  "connected_to": [],
+  "_unlockable_locations": [
+    "boston_globe",
+    "central_library",
+    "hall_of_records",
+    "higher_courts_police_station",
+    "the_neighborhood",
+    "corbitt_exterior"
+  ],
+  "npcs_present": [
+    "steven_knott"
+  ],
+  "objects": {
+    "knott_letter": {
+      "name": "ノット氏からの依頼書",
+      "description": "スティーブン・ノット氏が作成した、屋敷の調査を依頼する正式な書類。屋敷の住所と、最近になって相続したこと、そして奇妙な出来事のために賃貸も売却もできない現状が記されている。書類の隅には、屋敷の過去の所有者に関する古い新聞記事の切り抜きがホチキスで留められている。",
+      "investigated_flag": "knott_letter_read",
+      "reject_message": "依頼書はすでに読んだはずだ。",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    "knott_memo": {
+      "name": "ノット氏のメモ",
+      "description": "ノット氏が依頼書に添えて渡してきた手書きのメモ。そこには、屋敷の近隣住民が『奇妙な音』や『不気味な影』について話していたこと、そして『ボストン・グローブ』紙の過去の記事に何か手がかりがあるかもしれない、という推測が走り書きされている。",
+      "investigated_flag": "knott_memo_read",
+      "reject_message": "メモはすでに確認した。",
+      "usable_actions": [
+        "search",
+        "inspect"
+      ]
+    },
+    "office_desk": {
+      "name": "事務机",
+      "type": "furniture",
+      "description": "ノット氏と向かい合う事務机。書類や筆記具が几帳面に並べられているだけで、調査の手がかりになるようなものは特に見当たらない。依頼の話を進めるための背景に過ぎない。",
+      "usable_actions": [
+        "inspect"
+      ],
+      "no_roll": true,
+      "empty_clue": true,
+      "clue_value": "none",
+      "reject_message": "事務机には依頼に役立つ手がかりはない。ノット氏と話すか、依頼書・メモを確認しよう。"
+    }
+  },
+  "exits": {
+    "boston_globe": {
+      "name": "ボストン・グローブ",
+      "condition": "flags.talked_with_knott == true or (flags.knott_letter_read == true and flags.knott_memo_read == true)",
+      "reject_message": "【システムブロック】依頼の確認がまだ不十分だ。まずスティーブン・ノット氏と話し、依頼書とメモを確認しよう。"
+    },
+    "central_library": {
+      "name": "中央図書館",
+      "condition": "flags.talked_with_knott == true or (flags.knott_letter_read == true and flags.knott_memo_read == true)",
+      "reject_message": "【システムブロック】依頼の確認がまだ不十分だ。まずスティーブン・ノット氏と話し、依頼書とメモを確認しよう。"
+    },
+    "hall_of_records": {
+      "name": "記録保管所",
+      "condition": "flags.talked_with_knott == true or (flags.knott_letter_read == true and flags.knott_memo_read == true)",
+      "reject_message": "【システムブロック】依頼の確認がまだ不十分だ。まずスティーブン・ノット氏と話し、依頼書とメモを確認しよう。"
+    },
+    "higher_courts_police_station": {
+      "name": "高等裁判所・警察署",
+      "condition": "flags.talked_with_knott == true or (flags.knott_letter_read == true and flags.knott_memo_read == true)",
+      "reject_message": "【システムブロック】依頼の確認がまだ不十分だ。まずスティーブン・ノット氏と話し、依頼書とメモを確認しよう。"
+    },
+    "the_neighborhood": {
+      "name": "コービット屋敷近隣",
+      "condition": "flags.talked_with_knott == true or (flags.knott_letter_read == true and flags.knott_memo_read == true)",
+      "reject_message": "【システムブロック】依頼の確認がまだ不十分だ。まずスティーブン・ノット氏と話し、依頼書とメモを確認しよう。"
+    },
+    "corbitt_exterior": {
+      "name": "コービット屋敷の外観",
+      "condition": "flags.knott_letter_read == true",
+      "reject_message": "ノット氏からの依頼書をよく読んでから、屋敷へ向かうべきだろう。"
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "source_id": "CORBITT_SCENARIO_STAGED_E870E9F8FC96",
+  "default_relative_root": "core/scenario_sources/corbitt/e870e9f8fc96",
+  "override_environment_variable": "CORBITT_SCENARIO_SOURCE_ROOT",
+  "file_count": 16,
+  "aggregate_sha256": "7fa5610fdc7d10865095772ac2f75216af5593e9e35858f5d7bff6b0b27b5033",
+  "aggregate_contract": "sha256(path + NUL + size + NUL + sha256 + LF, sorted by path)",
+  "files": [
+    {
+      "path": "events.json",
+      "size": 15178,
+      "sha256": "eec46a6d38105bfa931f2d1b301abf959c2f213b8ee7cd9b528b9540aea13565"
+    },
+    {
+      "path": "loc_01_introduction.json",
+      "size": 5093,
+      "sha256": "257395fc34587d3329e01e5e439f869095bc4f9912cf33c054ebd4b894548c47"
+    },
+    {
+      "path": "loc_02_boston_globe.json",
+      "size": 3177,
+      "sha256": "b44e79f4fcde7e48e430dc4023b7581d445e891fabd601d9e891b17eb2a4b393"
+    },
+    {
+      "path": "loc_03_central_library.json",
+      "size": 3110,
+      "sha256": "5704562ed848baf37ff8f6296507340ef3ec98b91c9c2e28521402bd62b4b1fa"
+    },
+    {
+      "path": "loc_04_hall_of_records.json",
+      "size": 4048,
+      "sha256": "55eff2b2836fb9418c8c54eabf24de88544ce62cc398d25f970da06f8adae0aa"
+    },
+    {
+      "path": "loc_05_higher_courts_police_station.json",
+      "size": 6092,
+      "sha256": "90b01e80bfa5a3bca1994ea6c2f35fd01db60ee62e15779c8e5e70ea62973bfd"
+    },
+    {
+      "path": "loc_06_the_neighborhood.json",
+      "size": 4658,
+      "sha256": "38fe97739022ba946c83ba17a38a4fa05b9e9155a912b53fccbd1be399763aa4"
+    },
+    {
+      "path": "loc_07_roxbury_sanitarium.json",
+      "size": 3417,
+      "sha256": "6c635658155d017622b7fd20ebb8a72a8e7a3c6d4b5a0a280921d7ca48d84569"
+    },
+    {
+      "path": "loc_08_chapel_of_contemplation.json",
+      "size": 7592,
+      "sha256": "4e4448c0d731ebc6af2297c910443adbf7bf272165ebd43919de51fdc7491a84"
+    },
+    {
+      "path": "loc_09_corbitt_exterior.json",
+      "size": 4076,
+      "sha256": "f9fafa0b8f41a20428dd6291f9f735eb971c941105d28ddcb25f4b1b575edb2c"
+    },
+    {
+      "path": "loc_10_corbitt_ground_floor.json",
+      "size": 6765,
+      "sha256": "caeed88f3c2e23a2a0e471e7bf997fd28849cdd5fce828cc4356f393ab5e8e9f"
+    },
+    {
+      "path": "loc_11_corbitt_upper_floor.json",
+      "size": 4001,
+      "sha256": "d4f55cc86e6ef78d5dcd1bd46a459b4bd3ff564ca880d5626a5b020d60bc1b90"
+    },
+    {
+      "path": "loc_12_corbitt_basement.json",
+      "size": 5094,
+      "sha256": "326b1648fc882f175be4ef9bf2d3929bd1d5a97a7cc5a50ec1484ff47a19204a"
+    },
+    {
+      "path": "loc_13_corbitt_basement_room2.json",
+      "size": 2291,
+      "sha256": "b7010993f405c93cd3c4342f6bf3f531b4ca80dc8b42e36e455005b5849942d7"
+    },
+    {
+      "path": "loc_14_corbitt_basement_room3.json",
+      "size": 1892,
+      "sha256": "e7395193f5d104b7a2fd27bef92128200bf6bc2b850da95d8300fab0c3f0b71f"
+    },
+    {
+      "path": "outline.json",
+      "size": 4887,
+      "sha256": "d082f9694dbde06d3baab3383ef57ddafd38a25f6cea79796e7ebc5e2bad3e15"
+    }
+  ]
+}

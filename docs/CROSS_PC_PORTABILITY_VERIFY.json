@@ -47,6 +47,13 @@
       }
     ]
   },
+  "scenario_source": {
+    "status": "PASS",
+    "root": "F:\\制作物\\その3\\corbitt-trpg-system\\core\\scenario_sources\\corbitt\\e870e9f8fc96",
+    "file_count": 16,
+    "aggregate_sha256": "7fa5610fdc7d10865095772ac2f75216af5593e9e35858f5d7bff6b0b27b5033",
+    "failures": []
+  },
   "runtime": {
     "status": "PASS",
     "checks": {

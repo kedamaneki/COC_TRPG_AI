@@ -12,3 +12,8 @@ The accepted source is external and immutable.
 
 Copy the complete Raw directory and its control directory to the second PC, set both variables,
 then run `python tools/verify_portability.py`. Do not regenerate checkpoints, segments, or logs.
+
+The Core Scenario staging source is repository-owned at
+`core/scenario_sources/corbitt/e870e9f8fc96` and is verified through
+`manifests/CORBITT_SCENARIO_SOURCE.json`. `CORBITT_SCENARIO_SOURCE_ROOT` is an optional local
+override; no ignored `.local` cache is required for a Fresh Clone.

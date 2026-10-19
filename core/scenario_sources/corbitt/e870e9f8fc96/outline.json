@@ -1,0 +1,156 @@
+{
+  "scenario_meta": {
+    "title": "悪霊の家",
+    "background": "ウォルター・コービットの遺体はコービット屋敷の地階に横たわっているが、彼の精神は生きており、屋敷にとりついている。クトゥルフ神話の魔術により死後も自我を保ち、体をよみがえらせることができる。彼は時に吸血鬼じみた姿で住人を襲い、秘密を知った者を追い払うか殺す。探索者が謎を解明するにはコービットについて知る必要があるが、彼は探索者を誤った方向に導き、怖がらせ、最終的には殺そうとするだろう。",
+    "summary": "探索者は1920年代のボストンで、幽霊が出ると噂される古い屋敷「コービット屋敷」の調査を家主のノット氏から依頼される。以前の借家人であるマカリオ一家が不幸に見舞われたため、ノット氏は屋敷の謎を解明し、評判を回復させたいと考えている。探索者には報酬、屋敷の鍵、住所、そして前払い金25ドルが渡される。",
+    "initial_phase": "introduction",
+    "initial_location": "introduction"
+  },
+  "initial_state": {
+    "current_phase": "introduction",
+    "location": "introduction",
+    "turn_counter": 0,
+    "flags": {
+      "case_accepted": false,
+      "knott_letter_read": false,
+      "knott_memo_read": false,
+      "talked_with_knott": false,
+      "artie_introduced": false,
+      "newspaper_info_found": false,
+      "library_info_found": false,
+      "records_info_found": false,
+      "neighbor_gossip_found": false,
+      "dolly_told_chapel_location": false,
+      "dolly_told_sanitarium_location": false,
+      "sanitarium_info_found": false,
+      "chapel_investigated": false,
+      "exterior_approached": false,
+      "corbitt_house_entered": false,
+      "front_door_unlocked": false,
+      "back_door_unlocked": false,
+      "living_room_investigated": false,
+      "ground_floor_haunting_done": false,
+      "basement_accessible": false,
+      "basement_door_unlocked": false,
+      "hidden_passage_found": false,
+      "basement_planks_broken": false,
+      "basement_planks_examined": false,
+      "junk_searched": false,
+      "has_corbitt_knife": false,
+      "trigger_flying_bed": false,
+      "trigger_knife_attack": false,
+      "spare_bedroom_bed_investigated": false,
+      "in_basement": false,
+      "found_corbitt_history_all": false,
+      "hall_of_records_clerk_interacted": false,
+      "higher_courts_records_accessed": false,
+      "kim_deblanc_interacted": false,
+      "corbitt_body_encountered": false,
+      "trigger_corbitt_boss_battle": false,
+      "corbitt_defeated": false,
+      "ruined_altar_investigated": false,
+      "learned_corbitt_weakness": false
+    },
+    "counters": {}
+  },
+  "location_plan": [
+    {
+      "id": "introduction",
+      "name": "導入",
+      "scene_nums": [
+        "1"
+      ]
+    },
+    {
+      "id": "boston_globe",
+      "name": "ボストン・グローブ",
+      "scene_nums": [
+        "2"
+      ]
+    },
+    {
+      "id": "central_library",
+      "name": "中央図書館",
+      "scene_nums": [
+        "3"
+      ]
+    },
+    {
+      "id": "hall_of_records",
+      "name": "公文書館",
+      "scene_nums": [
+        "4"
+      ]
+    },
+    {
+      "id": "higher_courts_police_station",
+      "name": "上級裁判所、中央警察署",
+      "scene_nums": [
+        "5"
+      ]
+    },
+    {
+      "id": "the_neighborhood",
+      "name": "屋敷の近所",
+      "scene_nums": [
+        "6"
+      ]
+    },
+    {
+      "id": "roxbury_sanitarium",
+      "name": "ロックスベリー・サナトリウム",
+      "scene_nums": [
+        "7"
+      ]
+    },
+    {
+      "id": "chapel_of_contemplation",
+      "name": "黙想チャペル",
+      "scene_nums": [
+        "8"
+      ]
+    },
+    {
+      "id": "corbitt_exterior",
+      "name": "コービット屋敷（外観）",
+      "scene_nums": [
+        "9"
+      ]
+    },
+    {
+      "id": "corbitt_ground_floor",
+      "name": "コービット屋敷（1階）",
+      "scene_nums": [
+        "9"
+      ]
+    },
+    {
+      "id": "corbitt_upper_floor",
+      "name": "コービット屋敷（2階）",
+      "scene_nums": [
+        "9"
+      ]
+    },
+    {
+      "id": "corbitt_basement",
+      "name": "コービット屋敷（地階）",
+      "scene_nums": [
+        "9"
+      ]
+    },
+    {
+      "id": "corbitt_basement_room2",
+      "name": "コービット屋敷（地下室の隠し部屋）",
+      "scene_nums": [
+        "9"
+      ]
+    },
+    {
+      "id": "corbitt_basement_room3",
+      "name": "地下の古い集会所跡",
+      "scene_nums": [
+        "9"
+      ]
+    }
+  ]
+}
