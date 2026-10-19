@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "asset_id": "portrait_mob_shadow_male_heavy_01_v1",
+  "source_type": "INTERNAL_GENERATED",
+  "generation_tool": "OpenAI built-in image generation",
+  "generated_at": "2026-10-19T12:23:02.097435+00:00",
+  "original_generated_file": "C:\\Users\\ri4re\\.codex\\generated_images\\01a1056c-61e0-7bd3-b32e-7086bfd35ffc\\exec-e3feefa6-0223-40b1-a4fb-7eaa196d4ef6.png",
+  "original_generated_sha256": "bd71abb4c6134975212cafe9f3274a2523d19e0f31e2d981fbf91732bec4d556",
+  "final_asset_sha256": "bd71abb4c6134975212cafe9f3274a2523d19e0f31e2d981fbf91732bec4d556",
+  "license_status": "LICENSE_REVIEW_REQUIRED",
+  "approval_status": "HUMAN_REVIEW_CANDIDATE",
+  "auto_use": false,
+  "prompt_constraints": [
+    "transparent background",
+    "faceless",
+    "single full-body figure",
+    "no text or watermark"
+  ],
+  "notes": "Heavyset civilian silhouette"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "asset_id": "portrait_mob_shadow_male_tall_01_v1",
+  "source_type": "INTERNAL_GENERATED",
+  "generation_tool": "OpenAI built-in image generation",
+  "generated_at": "2026-10-19T12:23:02.034796+00:00",
+  "original_generated_file": "C:\\Users\\ri4re\\.codex\\generated_images\\01a1056c-61e0-7bd3-b32e-7086bfd35ffc\\exec-b8e9e070-a015-49da-9f5c-842f57434760.png",
+  "original_generated_sha256": "a07b3ad046d48595333823ed4fba4e37bb613b27a90e3abb7db83b1d3685eae3",
+  "final_asset_sha256": "a07b3ad046d48595333823ed4fba4e37bb613b27a90e3abb7db83b1d3685eae3",
+  "license_status": "LICENSE_REVIEW_REQUIRED",
+  "approval_status": "HUMAN_REVIEW_CANDIDATE",
+  "auto_use": false,
+  "prompt_constraints": [
+    "transparent background",
+    "faceless",
+    "single full-body figure",
+    "no text or watermark"
+  ],
+  "notes": "Tall civilian silhouette"
+}

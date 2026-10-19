@@ -4,6 +4,7 @@ venv/
 **/__pycache__/
 **/.pytest_cache/
 **/*.py[cod]
+**/*.egg-info/
 .codex-testdeps/
 
 # Secrets and machine-local configuration
@@ -22,6 +23,10 @@ outputs/
 staging/
 **/.test-tmp/
 **/.tmp-tests/
+**/.cache/
+**/.tools/
+portability-clone/
+docs/VIDEO_EXTERNAL_ASSET_CLASSIFICATION.json
 evaluation-v2/
 raw-runs/
 checkpoints/
@@ -36,8 +41,13 @@ video/projects/**/*.jpeg
 *.wav
 *.mp3
 *.mp4
+*.ogg
+*.zip
+*.7z
+*.psd
 !video/assets/**/*.wav
 !video/assets/**/*.mp3
+!video/assets/**/*.ogg
 !video/assets/**/*.png
 !video/assets/**/*.jpg
 !video/assets/**/*.jpeg

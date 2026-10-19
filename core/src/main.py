@@ -12195,6 +12195,7 @@ def process_system_action(
             source=source_action.get("action_origin") or "free_input",
             skill=skill_name,
             pending_san_check=pending_san_check,
+            required_location=source_action.get("required_location") or "",
             log_events=game_state is not None,
         )
         compare_candidate_and_execution(
@@ -14573,6 +14574,7 @@ def step_pl_turn(state, char_mgr, scenario_mgr, pl_id, char_name, state_mgr=None
                         "progression_binding": copy.deepcopy(
                             pc_action.get("progression_binding") or {}
                         ),
+                        "required_location": pc_action.get("required_location") or "",
                     })
                     entry["meta"] = meta
                     entry["text"] = f"{format_pc_log_prefix(char_mgr, pl_id)}: {fixed_message}"
@@ -14599,6 +14601,7 @@ def step_pl_turn(state, char_mgr, scenario_mgr, pl_id, char_name, state_mgr=None
                         "progression_binding": copy.deepcopy(
                             pc_action.get("progression_binding") or {}
                         ),
+                        "required_location": pc_action.get("required_location") or "",
                     },
                 })
             state.setdefault("all_events_log", []).append({

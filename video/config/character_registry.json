@@ -1,0 +1,239 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "YUKKURI_PRESENTATION_REGISTRY_V1",
+  "source_policy": "REGISTRY_ONLY_FAIL_CLOSED",
+  "speaker_assignments": {
+    "pc_01": {
+      "character_id": "reimu",
+      "display_name": "マクガフィン刑事",
+      "auto_use": true,
+      "allowed_project_overrides": {
+        "portrait_asset_id": [
+          "m1_portrait_aquestalk"
+        ]
+      },
+      "presentation_character": "reimu",
+      "speaker_class": "PC",
+      "pc_display_name": "マクガフィン刑事"
+    },
+    "pl_01": {
+      "character_id": "reimu",
+      "display_name": "PL1",
+      "auto_use": true,
+      "pl_display_name": "霊夢",
+      "presentation_character": "reimu",
+      "speaker_class": "PL"
+    },
+    "pc_02": {
+      "character_id": "marisa",
+      "display_name": "エレノア教授",
+      "auto_use": true,
+      "allowed_project_overrides": {
+        "voice_profile_id": [
+          "m1_vv_pc2"
+        ],
+        "portrait_asset_id": [
+          "m1_portrait_voicevox"
+        ]
+      },
+      "presentation_character": "marisa",
+      "speaker_class": "PC",
+      "pc_display_name": "エレノア教授"
+    },
+    "pl_02": {
+      "character_id": "marisa",
+      "display_name": "PL2",
+      "auto_use": true,
+      "pl_display_name": "魔理沙",
+      "presentation_character": "marisa",
+      "speaker_class": "PL"
+    },
+    "kp": {
+      "character_id": "sakuya",
+      "display_name": "KP",
+      "auto_use": true,
+      "allowed_project_overrides": {
+        "voice_profile_id": [
+          "m1_vv_kp"
+        ],
+        "portrait_asset_id": [
+          null
+        ]
+      },
+      "presentation_character": "sakuya",
+      "speaker_class": "KP",
+      "kp_display_name": "KP"
+    },
+    "system": {
+      "character_id": null,
+      "display_name": "SYSTEM",
+      "auto_use": false,
+      "subtitle_profile_id": "subtitle_system_hud",
+      "system_display_name": null,
+      "presentation_character": null,
+      "speaker_class": "SYSTEM"
+    }
+  },
+  "characters": [
+    {
+      "character_id": "reimu",
+      "display_name": "霊夢",
+      "subtitle_style_source_id": "yukkuri_reimu_legacy_exact",
+      "subtitle_profile_id": "subtitle_reimu",
+      "voice_profile_id": "m1_aq_f1",
+      "portrait_profile_id": "portrait_reimu_head_only",
+      "assignment_status": "ACTIVE",
+      "auto_use": true
+    },
+    {
+      "character_id": "marisa",
+      "display_name": "魔理沙",
+      "subtitle_style_source_id": "yukkuri_marisa_legacy_exact",
+      "subtitle_profile_id": "subtitle_marisa",
+      "voice_profile_id": "aq_marisa_default",
+      "portrait_profile_id": "portrait_marisa_head_only",
+      "assignment_status": "ACTIVE",
+      "auto_use": true
+    },
+    {
+      "character_id": "alice",
+      "display_name": "アリス",
+      "subtitle_style_source_id": "yukkuri_alice_legacy_exact",
+      "subtitle_profile_id": "yukkuri_alice_legacy_exact",
+      "voice_profile_id": "ymm_alice_aquestalk_v1_7",
+      "portrait_profile_id": "portrait_alice_head_only",
+      "assignment_status": "FUTURE_CANDIDATE",
+      "auto_use": false
+    },
+    {
+      "character_id": "koishi",
+      "display_name": "こいし",
+      "subtitle_style_source_id": "yukkuri_koishi_legacy_exact",
+      "subtitle_profile_id": "yukkuri_koishi_legacy_exact",
+      "voice_profile_id": "ymm_koishi_aquestalk_v1_7",
+      "portrait_profile_id": "portrait_koishi_head_only",
+      "assignment_status": "FUTURE_CANDIDATE",
+      "auto_use": false
+    },
+    {
+      "character_id": "satori",
+      "display_name": "さとり",
+      "subtitle_style_source_id": "yukkuri_satori_legacy_exact",
+      "subtitle_profile_id": "yukkuri_satori_legacy_exact",
+      "voice_profile_id": "ymm_satori_aquestalk_v1_7",
+      "portrait_profile_id": "portrait_satori_head_only",
+      "assignment_status": "FUTURE_CANDIDATE",
+      "auto_use": false
+    },
+    {
+      "character_id": "flandre",
+      "display_name": "フラン",
+      "subtitle_style_source_id": "yukkuri_flandre_legacy_exact",
+      "subtitle_profile_id": "yukkuri_flandre_legacy_exact",
+      "voice_profile_id": "ymm_flandre_aquestalk_v1_7",
+      "portrait_profile_id": "portrait_flandre_head_only",
+      "assignment_status": "FUTURE_CANDIDATE",
+      "auto_use": false
+    },
+    {
+      "character_id": "patchouli",
+      "display_name": "パチュリー",
+      "subtitle_style_source_id": "yukkuri_patchouli_legacy_exact",
+      "subtitle_profile_id": "yukkuri_patchouli_legacy_exact",
+      "voice_profile_id": "ymm_patchouli_aquestalk_v1_7",
+      "portrait_profile_id": "portrait_patchouli_head_only",
+      "assignment_status": "FUTURE_CANDIDATE",
+      "auto_use": false
+    },
+    {
+      "character_id": "remilia",
+      "display_name": "レミリア",
+      "subtitle_style_source_id": "yukkuri_remilia_legacy_exact",
+      "subtitle_profile_id": "yukkuri_remilia_legacy_exact",
+      "voice_profile_id": "ymm_remilia_aquestalk_v1_7",
+      "portrait_profile_id": "portrait_remilia_head_only",
+      "assignment_status": "FUTURE_CANDIDATE",
+      "auto_use": false
+    },
+    {
+      "character_id": "sakuya",
+      "display_name": "咲夜",
+      "subtitle_style_source_id": "yukkuri_sakuya_legacy_exact",
+      "subtitle_profile_id": "subtitle_kp",
+      "voice_profile_id": "sakuya_tune_110_v1",
+      "portrait_profile_id": "portrait_sakuya_head_only",
+      "assignment_status": "ACTIVE",
+      "auto_use": true
+    },
+    {
+      "character_id": "keine",
+      "display_name": "慧音",
+      "subtitle_style_source_id": "yukkuri_keine_legacy_exact",
+      "subtitle_profile_id": "yukkuri_keine_legacy_exact",
+      "voice_profile_id": "ymm_keine_aquestalk_v1_7",
+      "portrait_profile_id": "portrait_keine_head_only",
+      "assignment_status": "FUTURE_CANDIDATE",
+      "auto_use": false
+    },
+    {
+      "character_id": "hakutaku_keine",
+      "display_name": "白澤慧音",
+      "subtitle_style_source_id": "yukkuri_hakutaku_keine_legacy_exact",
+      "subtitle_profile_id": "yukkuri_hakutaku_keine_legacy_exact",
+      "voice_profile_id": "ymm_hakutaku_keine_aquestalk_v1_7",
+      "portrait_profile_id": "portrait_hakutaku_keine_head_only",
+      "assignment_status": "FUTURE_CANDIDATE",
+      "auto_use": false
+    },
+    {
+      "character_id": "sanae",
+      "display_name": "早苗",
+      "subtitle_style_source_id": "yukkuri_sanae_legacy_exact",
+      "subtitle_profile_id": "yukkuri_sanae_legacy_exact",
+      "voice_profile_id": "ymm_sanae_aquestalk_v1_7",
+      "portrait_profile_id": "portrait_sanae_head_only",
+      "assignment_status": "FUTURE_CANDIDATE",
+      "auto_use": false
+    },
+    {
+      "character_id": "aya",
+      "display_name": "文",
+      "subtitle_style_source_id": "yukkuri_aya_legacy_exact",
+      "subtitle_profile_id": "yukkuri_aya_legacy_exact",
+      "voice_profile_id": "ymm_aya_aquestalk_v1_7",
+      "portrait_profile_id": "portrait_aya_head_only",
+      "assignment_status": "FUTURE_CANDIDATE",
+      "auto_use": false
+    },
+    {
+      "character_id": "mokou",
+      "display_name": "妹紅",
+      "subtitle_style_source_id": "yukkuri_mokou_legacy_exact",
+      "subtitle_profile_id": "yukkuri_mokou_legacy_exact",
+      "voice_profile_id": "ymm_mokou_aquestalk_v1_7",
+      "portrait_profile_id": "portrait_mokou_head_only",
+      "assignment_status": "FUTURE_CANDIDATE",
+      "auto_use": false
+    },
+    {
+      "character_id": "youmu",
+      "display_name": "妖夢",
+      "subtitle_style_source_id": "yukkuri_youmu_legacy_exact",
+      "subtitle_profile_id": "yukkuri_youmu_legacy_exact",
+      "voice_profile_id": "ymm_youmu_aquestalk_v1_7",
+      "portrait_profile_id": "portrait_youmu_head_only",
+      "assignment_status": "FUTURE_CANDIDATE",
+      "auto_use": false
+    },
+    {
+      "character_id": "cirno",
+      "display_name": "チルノ",
+      "subtitle_style_source_id": "yukkuri_cirno_legacy_exact",
+      "subtitle_profile_id": "yukkuri_cirno_legacy_exact",
+      "voice_profile_id": "ymm_cirno_aquestalk_v1_7",
+      "portrait_profile_id": "portrait_cirno_head_only",
+      "assignment_status": "FUTURE_CANDIDATE",
+      "auto_use": false
+    }
+  ]
+}

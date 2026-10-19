@@ -15,6 +15,8 @@ from video_agent.rendering.assets import compose_frame, create_test_assets
 from video_agent.rendering.subtitles import build_ass, paginate_text, readability_issues
 from video_agent.voice import AquesTalkAdapter, VoicevoxAdapter
 from video_agent.voice.engines import VoiceEngineUnavailable, wav_duration
+from video_agent.registry import PresentationRegistry
+from video_agent.local_paths import apply_render_overrides
 
 
 STATES = {"NEW", "SCRIPT_READY", "VOICE_READY", "TIMELINE_READY", "RENDERED", "QA_PASSED",
@@ -224,14 +226,16 @@ class M1Pipeline:
         self.root = Path(root)
         self.project = Path(project)
         self.spec = read_json(self.project / "project.json")
-        self.config = read_json(self.root / "config" / "render_m1.json")
+        self.config = apply_render_overrides(read_json(self.root / "config" / "render_m1.json"), self.root.parent)
         self.assets = {item["asset_id"]: item for item in read_json(self.root / "assets" / "manifest.json")["assets"]}
         project_manifest = self.project / "asset_manifest.json"
         if project_manifest.exists():
             self.assets.update({item["asset_id"]: item for item in read_json(project_manifest)["assets"]})
-        self.voice_profiles = {item["voice_profile_id"]: item for item in read_json(self.root / "config" / "voices" / "m1_profiles.json")}
-        self.subtitle_profiles = {item["subtitle_profile_id"]: item for item in read_json(self.root / "config" / "subtitles" / "defaults.json")}
-        self.characters = {item["character_id"]: item for item in read_json(self.project / "characters.json")}
+        self.presentation_registry = PresentationRegistry(self.root / "config")
+        self.voice_profiles = self.presentation_registry.voice_profiles
+        self.subtitle_profiles = self.presentation_registry.subtitle_profiles
+        project_characters = read_json(self.project / "characters.json")
+        self.characters = self.presentation_registry.resolve_project_characters(project_characters)
         layout_path = self.spec.get("subtitle_layout_config")
         self.subtitle_layout = read_json(self.root / layout_path) if layout_path else {}
         self.ffmpeg = Path(self.config["ffmpeg_path"])
@@ -280,6 +284,32 @@ class M1Pipeline:
                 voice_text = apply_dictionary(line.get("voice_text") or line["text"], pronunciation)
                 if profile["engine"] == "AQUESTALK" and re.search(r"[一-龯々]", voice_text):
                     voice_text = vv.phonetic_reading(voice_text, 3)
+                if profile.get("compatibility_mode") == "YMM4_EXACT_COMPAT":
+                    from video_agent.voice.yukkuri_voice_compat import render_exact_fixture
+                    destination = audio_dir / f"{line['line_id']}.wav"
+                    compatibility = render_exact_fixture(aq, self.ffmpeg, voice_text, profile, destination)
+                    cache_identity = {
+                        "voice_profile_id": line["voice_profile_id"],
+                        "source_text": voice_text,
+                        "voice_type": profile["voice_type"],
+                        "reading_speed": profile["synthesis_speed"],
+                        "playback_rate_percent": profile["playback_rate_percent"],
+                        "source_volume_percent": profile["source_volume_percent"],
+                        "raw_synthesis_sha256": compatibility["raw_synthesis_sha256"],
+                    }
+                    records[line["line_id"]] = {
+                        "audio_mode": "VOICE",
+                        "project_path": str(destination.relative_to(self.project)).replace("\\", "/"),
+                        "cache_path": compatibility["raw_synthesis_path"],
+                        "cache_key": stable_digest(cache_identity), "cache_identity": cache_identity,
+                        "cache_hit": False,
+                        "engine": "AQUESTALK", "engine_version": profile["engine_version"],
+                        "voice_profile_id": line["voice_profile_id"],
+                        "duration_sec": round(wav_duration(destination), 6), "sha256": sha256_file(destination),
+                        "compatibility_mode": "YMM4_EXACT_COMPAT",
+                        "playback_rate_semantics": profile["playback_rate_semantics"],
+                    }
+                    continue
                 if profile["engine"] == "AQUESTALK" and len(voice_text) > 48:
                     parts = [engines[profile["engine"]].synthesize(part, profile)
                              for part in split_voice_text(voice_text)]

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "asset_id": "portrait_shadow_npc_humanoid_01_v1",
+  "source_type": "INTERNAL_GENERATED",
+  "generation_tool": "OpenAI built-in image generation",
+  "generated_at": "2026-10-19T12:23:02.234314+00:00",
+  "original_generated_file": "C:\\Users\\ri4re\\.codex\\generated_images\\01a1056c-61e0-7bd3-b32e-7086bfd35ffc\\exec-888e0336-225b-4028-bdc0-91439a6a165b.png",
+  "original_generated_sha256": "996f3d6ca27ed82cbb820464a695557bbf23d09474f8d09c19f0521cbafdf4db",
+  "final_asset_sha256": "996f3d6ca27ed82cbb820464a695557bbf23d09474f8d09c19f0521cbafdf4db",
+  "license_status": "LICENSE_REVIEW_REQUIRED",
+  "approval_status": "HUMAN_REVIEW_CANDIDATE",
+  "auto_use": false,
+  "prompt_constraints": [
+    "transparent background",
+    "faceless",
+    "single full-body figure",
+    "no text or watermark"
+  ],
+  "notes": "Tall unnatural humanoid"
+}

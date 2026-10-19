@@ -5,6 +5,7 @@ import subprocess
 from pathlib import Path
 
 from video_agent.common.io import read_json, sha256_file, write_json
+from video_agent.local_paths import apply_render_overrides
 from video_agent.voice.engines import AquesTalkAdapter, VoicevoxAdapter
 
 
@@ -42,7 +43,7 @@ def _concat(parts: list[Path], output: Path, ffmpeg: Path) -> None:
 
 
 def build_prosody_ab_fixture(root: Path, project: Path, lines: list[dict]) -> dict:
-    config = read_json(root / "config" / "render_m1.json")
+    config = apply_render_overrides(read_json(root / "config" / "render_m1.json"), root.parent)
     profiles = {item["voice_profile_id"]: item
                 for item in read_json(root / "config" / "voices" / "m1_profiles.json")}
     cache = root / "cache" / "voice"

@@ -1,0 +1,86 @@
+# VIDEO_ASSET_SCAN_REPORT
+
+- Status: `PASS`
+- Scan root: `E:\素材\外部取得素材`
+- UNCHANGED: `0`
+- NEW_ASSET: `53`
+- CHANGED_HASH: `0`
+- DUPLICATE_CONTENT: `16`
+- MISSING_ASSET: `0`
+- APPROVED_ASSETS: `3`
+- UNAPPROVED_ASSETS: `32174`
+- Registry refreshed: `true`
+- Scan timestamp: `2026-10-19T02:52:34.374341+00:00`
+- Unapproved auto-used: `0`
+
+## Findings
+
+- `NEW_ASSET` `backgrounds/basement/AIPICT/aipict_basement_concrete01.png` `143af8e01147946d2a08d95c06199fefafade24191747564a879da58f7618333`
+- `NEW_ASSET` `backgrounds/basement/AIPICT/aipict_basement_concrete01.png.license.html` `6bc808837b6c66e80a9e4132700195a86cf887208dfdd8550e1898745ea56749`
+- `NEW_ASSET` `backgrounds/basement/AIPICT/aipict_basement_concrete01.png.license.txt` `5398f41ab8198eb16cdecb5d2a410c364da8e0140ad701406bd44cd027dd864f`
+- `NEW_ASSET` `backgrounds/basement/AIPICT/aipict_basement_concrete01.png.source.html` `de15c57a37f82bbb040d6b25cea68414a342b825d8847d98939d7b288efd63a2`
+- `NEW_ASSET` `backgrounds/basement/AIPICT/aipict_basement_concrete01.png.source.json` `583bc9eb0364e361d4e155746cba4c3fb4633babf243df6d64075cb4cedb5006`
+- `NEW_ASSET` `backgrounds/basement/AIPICT/aipict_basement_concrete04.png` `29e2d8f4825cbb8d34b7e57859211068917ad89628f2a79305bcf776c68d39ad`
+- `DUPLICATE_CONTENT` `backgrounds/basement/AIPICT/aipict_basement_concrete04.png.license.html` `6bc808837b6c66e80a9e4132700195a86cf887208dfdd8550e1898745ea56749`
+- `NEW_ASSET` `backgrounds/basement/AIPICT/aipict_basement_concrete04.png.license.txt` `fe2c869ddf3c0a2959b47f379d4eff0f2415e84523afe72f1256016aa8c8f765`
+- `DUPLICATE_CONTENT` `backgrounds/basement/AIPICT/aipict_basement_concrete04.png.source.html` `de15c57a37f82bbb040d6b25cea68414a342b825d8847d98939d7b288efd63a2`
+- `NEW_ASSET` `backgrounds/basement/AIPICT/aipict_basement_concrete04.png.source.json` `faea8d600b485a256f19eecf64f083398bef6431bf6dffef01fefb1c0be34699`
+- `NEW_ASSET` `backgrounds/basement/AIPICT/aipict_basement_ruins01.png` `334234bfc3735cbb7c2f8e2eb6c3e2ce200147435a79024d7e3e7ae2b407d6a1`
+- `DUPLICATE_CONTENT` `backgrounds/basement/AIPICT/aipict_basement_ruins01.png.license.html` `6bc808837b6c66e80a9e4132700195a86cf887208dfdd8550e1898745ea56749`
+- `NEW_ASSET` `backgrounds/basement/AIPICT/aipict_basement_ruins01.png.license.txt` `3ce2dd97f8d5e95127605719a3f3f8fb44b6827c46c19d49d14c62bf9c3b021c`
+- `DUPLICATE_CONTENT` `backgrounds/basement/AIPICT/aipict_basement_ruins01.png.source.html` `de15c57a37f82bbb040d6b25cea68414a342b825d8847d98939d7b288efd63a2`
+- `NEW_ASSET` `backgrounds/basement/AIPICT/aipict_basement_ruins01.png.source.json` `1b303318f7160c9b0ad3e3d43acac9853b71c5a8224028fd6c3660748ee8dac4`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_arkeia_tension_as_the_light_fades.ogg` `f154e4049600115483a50682e9c401e34645ebe267de0684bc467733100c87b9`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_arkeia_tension_as_the_light_fades.ogg.download_page.html` `4db347e232d3700f2915f6fdfbb0979fba2ae30e7bda605cae62fce93fdc9dbb`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_arkeia_tension_as_the_light_fades.ogg.license.html` `8dda1ccec4be91fc80821d4e4fd5c568072b9a3a74b2fdc07c249a27e920ef01`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_arkeia_tension_as_the_light_fades.ogg.license.txt` `e8f718bc75ce419cc220b9597d9d962b97c30faf63121aab3dfc881d5b288ac4`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_arkeia_tension_as_the_light_fades.ogg.source.html` `d18a8786744b625b71baeb2648b096e165fbb16d4a0034e5ac2dc3615a0a58d7`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_arkeia_tension_as_the_light_fades.ogg.source.json` `be1173083440fa61bf70dfeb2fccbd036c5aee0b4b7abd7d3108fc67f9d1c971`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_arkeia_tension_eyes_piercing_shadow.ogg` `05b5955439b9588928a0a9b93191404e35e92de6187e9fb3c260775266d0eedc`
+- `DUPLICATE_CONTENT` `bgm/tension/itch.io/itch_arkeia_tension_eyes_piercing_shadow.ogg.download_page.html` `4db347e232d3700f2915f6fdfbb0979fba2ae30e7bda605cae62fce93fdc9dbb`
+- `DUPLICATE_CONTENT` `bgm/tension/itch.io/itch_arkeia_tension_eyes_piercing_shadow.ogg.license.html` `8dda1ccec4be91fc80821d4e4fd5c568072b9a3a74b2fdc07c249a27e920ef01`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_arkeia_tension_eyes_piercing_shadow.ogg.license.txt` `3a216f7b9e969705ecfb9307b6f048f3f03177bf38ed1b895b11a0796261e76e`
+- `DUPLICATE_CONTENT` `bgm/tension/itch.io/itch_arkeia_tension_eyes_piercing_shadow.ogg.source.html` `d18a8786744b625b71baeb2648b096e165fbb16d4a0034e5ac2dc3615a0a58d7`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_arkeia_tension_eyes_piercing_shadow.ogg.source.json` `d4d27378aaf660dd96b5908a6ef18dc6595afd6cda26c69b785c49c0c573d9cf`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_arkeia_tension_monster.ogg` `1309690bb5a8017e8b98763c01aae48bb9a557845d7407fe14e7d74cd2ae087b`
+- `DUPLICATE_CONTENT` `bgm/tension/itch.io/itch_arkeia_tension_monster.ogg.download_page.html` `4db347e232d3700f2915f6fdfbb0979fba2ae30e7bda605cae62fce93fdc9dbb`
+- `DUPLICATE_CONTENT` `bgm/tension/itch.io/itch_arkeia_tension_monster.ogg.license.html` `8dda1ccec4be91fc80821d4e4fd5c568072b9a3a74b2fdc07c249a27e920ef01`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_arkeia_tension_monster.ogg.license.txt` `35d5a7520480ae2a9055ed7b1b5e55338f2382f6838ec1b4f0a542f57776e3fa`
+- `DUPLICATE_CONTENT` `bgm/tension/itch.io/itch_arkeia_tension_monster.ogg.source.html` `d18a8786744b625b71baeb2648b096e165fbb16d4a0034e5ac2dc3615a0a58d7`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_arkeia_tension_monster.ogg.source.json` `230ba5c75f591903d9773ef3ec7ef0b658bcdda62eb5d1831288529862184a01`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_mumusi_snaps_in_the_dark_tension_loop.wav` `64850823e2dd7f2fdd2465fd7655ab57fd3cad658881368479f0d3d0ee28e5eb`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_mumusi_snaps_in_the_dark_tension_loop.wav.download_page.html` `b6984f5ee8231f483bd501bb9b4c69c73e7059e51edb7c81d3b67d92cd3e9b37`
+- `DUPLICATE_CONTENT` `bgm/tension/itch.io/itch_mumusi_snaps_in_the_dark_tension_loop.wav.license.html` `8dda1ccec4be91fc80821d4e4fd5c568072b9a3a74b2fdc07c249a27e920ef01`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_mumusi_snaps_in_the_dark_tension_loop.wav.license.txt` `e717436afa450a499be1bdb6178ae32563b7a049645ddc1480df833b35de2ad9`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_mumusi_snaps_in_the_dark_tension_loop.wav.source.html` `77563877d62d8a1be4fd125158c948abc5f0aaa04403d93bb8b8954ade303dfd`
+- `NEW_ASSET` `bgm/tension/itch.io/itch_mumusi_snaps_in_the_dark_tension_loop.wav.source.json` `783861a5b39974c515cc6057ca286d94903220d6dddb33da9076cb82dc11c0a5`
+- `NEW_ASSET` `sfx/wood_break/Freesound/freesound_387014_wood_break_hq_preview.mp3` `0ecb5346d557f2470a56ecf7c3f014b6e0155f7ccd035e242467bd83591ce6f7`
+- `NEW_ASSET` `sfx/wood_break/Freesound/freesound_387014_wood_break_hq_preview.mp3.license.html` `abb4d48fc8b85de52b377dd105532c6c549f515d492a8e1712bc99e7316a1f12`
+- `NEW_ASSET` `sfx/wood_break/Freesound/freesound_387014_wood_break_hq_preview.mp3.license.txt` `c70b2f028c903493da5f3e6c64ba1af1ee824ea18b19bf0af3c6d96d45a6f397`
+- `NEW_ASSET` `sfx/wood_break/Freesound/freesound_387014_wood_break_hq_preview.mp3.source.html` `e4ff5af571f290ee1c8d7bcb419e07a46362502d066e32adf666f3307d455205`
+- `NEW_ASSET` `sfx/wood_break/Freesound/freesound_387014_wood_break_hq_preview.mp3.source.json` `ab4bd9becc3d6b4616ffea5a07bf9e523bc740d98ba2114f776330b6b11088f3`
+- `NEW_ASSET` `sfx/wood_break/Freesound/freesound_452109_branch_break_snap_crunch_hq_preview.mp3` `fd808fc1629b3b999b794df85c95f5fdaae19e81647c144d46e2a00dec9fbc38`
+- `DUPLICATE_CONTENT` `sfx/wood_break/Freesound/freesound_452109_branch_break_snap_crunch_hq_preview.mp3.license.html` `abb4d48fc8b85de52b377dd105532c6c549f515d492a8e1712bc99e7316a1f12`
+- `NEW_ASSET` `sfx/wood_break/Freesound/freesound_452109_branch_break_snap_crunch_hq_preview.mp3.license.txt` `9c48158c104b41f2344da3ba306a46ec1ea67faff59699854e86e0cf9cf34194`
+- `NEW_ASSET` `sfx/wood_break/Freesound/freesound_452109_branch_break_snap_crunch_hq_preview.mp3.source.html` `48e2ca76a0cf32013b9fa63c809cf6ec69ba8da56d8740ee4db3f8c253551de8`
+- `NEW_ASSET` `sfx/wood_break/Freesound/freesound_452109_branch_break_snap_crunch_hq_preview.mp3.source.json` `720e02cc1e869738348527ca01da9cb54f3d6258e7d822c3b308b8fb3b1d8f36`
+- `NEW_ASSET` `sfx/wood_break/Freesound/freesound_766406_branch_break_hq_preview.mp3` `9864d0de52bab9527700f47c168caf412789e09a4ac2c4677923b06c5f945124`
+- `DUPLICATE_CONTENT` `sfx/wood_break/Freesound/freesound_766406_branch_break_hq_preview.mp3.license.html` `abb4d48fc8b85de52b377dd105532c6c549f515d492a8e1712bc99e7316a1f12`
+- `NEW_ASSET` `sfx/wood_break/Freesound/freesound_766406_branch_break_hq_preview.mp3.license.txt` `ffe41fa3fe00b2187bb81f65b42140a113f26214d8110e85a07b726659e0cbe8`
+- `NEW_ASSET` `sfx/wood_break/Freesound/freesound_766406_branch_break_hq_preview.mp3.source.html` `0630fc6483dacce456a616b2fde88fbf69dd192b88f9add692ad2d620580fb06`
+- `NEW_ASSET` `sfx/wood_break/Freesound/freesound_766406_branch_break_hq_preview.mp3.source.json` `e7ef7f43305f0567af531ea395df213e1a3b00dd4b173a940e36e1b6038ca05b`
+- `NEW_ASSET` `sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502505_wood_creak_single_v1_hq_preview.mp3` `6eeb667fa6141151f9c37bd04bd9cbe229944f5e24efea7a9163e8150e9a8bb5`
+- `DUPLICATE_CONTENT` `sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502505_wood_creak_single_v1_hq_preview.mp3.license.html` `abb4d48fc8b85de52b377dd105532c6c549f515d492a8e1712bc99e7316a1f12`
+- `NEW_ASSET` `sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502505_wood_creak_single_v1_hq_preview.mp3.license.txt` `94898be48305319510e1bb00b1a3da74ead3615409d818abf558e92680bca547`
+- `NEW_ASSET` `sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502505_wood_creak_single_v1_hq_preview.mp3.source.html` `8dafba511910a341a91ec5208ec63090556ff4454f30dd1db29a1f0ab3406571`
+- `NEW_ASSET` `sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502505_wood_creak_single_v1_hq_preview.mp3.source.json` `b392b51f241a91ae9c54e8984e0c4e31007b9840fddb08bc4eb9131a3755c960`
+- `NEW_ASSET` `sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502511_wood_creak_single_v3_hq_preview.mp3` `88dfbeb46402c1de10b9425cd1794b6ae916deb96610434e29b6be6e80d572f0`
+- `DUPLICATE_CONTENT` `sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502511_wood_creak_single_v3_hq_preview.mp3.license.html` `abb4d48fc8b85de52b377dd105532c6c549f515d492a8e1712bc99e7316a1f12`
+- `NEW_ASSET` `sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502511_wood_creak_single_v3_hq_preview.mp3.license.txt` `378a620b4591dbd7fa7d58a6a2e1df0b460e62b2dd0ea25f57ce5b8e9bdd67b9`
+- `NEW_ASSET` `sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502511_wood_creak_single_v3_hq_preview.mp3.source.html` `c99792291c9900c1efcca072ec548673a025ab97b239f4e247ca03943d5cd0e8`
+- `NEW_ASSET` `sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502511_wood_creak_single_v3_hq_preview.mp3.source.json` `596d9293f259480702df83ffdaab0e7831d51e0bad0996280d5ed5d3170ba36b`
+- `NEW_ASSET` `sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_506660_wood_creak_single_v5_hq_preview.mp3` `ea2144a09b42a4e518fc83e3c1dc60de138029dec1cc8455ee2fb31884701c17`
+- `DUPLICATE_CONTENT` `sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_506660_wood_creak_single_v5_hq_preview.mp3.license.html` `abb4d48fc8b85de52b377dd105532c6c549f515d492a8e1712bc99e7316a1f12`
+- `NEW_ASSET` `sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_506660_wood_creak_single_v5_hq_preview.mp3.license.txt` `9768b7443c47c0fff366a0b0653e86a894ddcefd70ed0c38182bd7e5d020ebca`
+- `NEW_ASSET` `sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_506660_wood_creak_single_v5_hq_preview.mp3.source.html` `f416b217fdd0a5a05700ff91d013b3d04a20dccdc445a19854e355a718c0f848`
+- `NEW_ASSET` `sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_506660_wood_creak_single_v5_hq_preview.mp3.source.json` `f2610767ad69385c039020ee53459a4774b0576ed8376429308ea7000158f522`

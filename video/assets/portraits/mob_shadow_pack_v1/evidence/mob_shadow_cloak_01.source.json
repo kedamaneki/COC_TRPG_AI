@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "asset_id": "portrait_mob_shadow_cloak_01_v1",
+  "source_type": "INTERNAL_GENERATED",
+  "generation_tool": "OpenAI built-in image generation",
+  "generated_at": "2026-10-19T12:23:02.201796+00:00",
+  "original_generated_file": "C:\\Users\\ri4re\\.codex\\generated_images\\01a1056c-61e0-7bd3-b32e-7086bfd35ffc\\exec-4b11e986-aa78-4b63-bb10-7d7c10a30b52.png",
+  "original_generated_sha256": "a9da2013514e95725410e950658800050183decb84262df584ecaed0ebc60102",
+  "final_asset_sha256": "a9da2013514e95725410e950658800050183decb84262df584ecaed0ebc60102",
+  "license_status": "LICENSE_REVIEW_REQUIRED",
+  "approval_status": "HUMAN_REVIEW_CANDIDATE",
+  "auto_use": false,
+  "prompt_constraints": [
+    "transparent background",
+    "faceless",
+    "single full-body figure",
+    "no text or watermark"
+  ],
+  "notes": "Cloaked human silhouette"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "asset_id": "portrait_mob_shadow_male_thin_01_v1",
+  "source_type": "INTERNAL_GENERATED",
+  "generation_tool": "OpenAI built-in image generation",
+  "generated_at": "2026-10-19T12:23:02.062444+00:00",
+  "original_generated_file": "C:\\Users\\ri4re\\.codex\\generated_images\\01a1056c-61e0-7bd3-b32e-7086bfd35ffc\\exec-fe1c4048-1b47-4c37-a918-7bed2a8f05f4.png",
+  "original_generated_sha256": "3659c938c06049f50fef8f1c34ce6efcb380c70686ea3980870eac921cb1eadf",
+  "final_asset_sha256": "3659c938c06049f50fef8f1c34ce6efcb380c70686ea3980870eac921cb1eadf",
+  "license_status": "LICENSE_REVIEW_REQUIRED",
+  "approval_status": "HUMAN_REVIEW_CANDIDATE",
+  "auto_use": false,
+  "prompt_constraints": [
+    "transparent background",
+    "faceless",
+    "single full-body figure",
+    "no text or watermark"
+  ],
+  "notes": "Thin civilian silhouette"
+}

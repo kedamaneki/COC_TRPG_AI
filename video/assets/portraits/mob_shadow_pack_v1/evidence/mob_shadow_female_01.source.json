@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "asset_id": "portrait_mob_shadow_female_01_v1",
+  "source_type": "INTERNAL_GENERATED",
+  "generation_tool": "OpenAI built-in image generation",
+  "generated_at": "2026-10-19T12:23:02.131469+00:00",
+  "original_generated_file": "C:\\Users\\ri4re\\.codex\\generated_images\\01a1056c-61e0-7bd3-b32e-7086bfd35ffc\\exec-3dabcefe-5381-451e-a456-934b4a051d77.png",
+  "original_generated_sha256": "b421ae90d25b25483b77a9da2128c46601b7dc890a3f7cd68501f1612ffbf081",
+  "final_asset_sha256": "b421ae90d25b25483b77a9da2128c46601b7dc890a3f7cd68501f1612ffbf081",
+  "license_status": "LICENSE_REVIEW_REQUIRED",
+  "approval_status": "HUMAN_REVIEW_CANDIDATE",
+  "auto_use": false,
+  "prompt_constraints": [
+    "transparent background",
+    "faceless",
+    "single full-body figure",
+    "no text or watermark"
+  ],
+  "notes": "Civilian woman silhouette"
+}

@@ -1,0 +1,707 @@
+{
+  "schema_version": "1.0",
+  "acquisition_id": "EXTERNAL_ASSET_ACQUISITION_V1",
+  "downloaded_at": "2026-10-19T02:49:30.185853+00:00",
+  "asset_count": 13,
+  "assets": [
+    {
+      "path": "E:\\素材\\外部取得素材\\backgrounds\\basement\\AIPICT\\aipict_basement_concrete01.png",
+      "source_url": "https://aipict.com/en/general-en/basement-en/",
+      "media_url": "https://aipict.com/wp-content/uploads/basement_concrete01.png",
+      "source_site": "AIPICT",
+      "creator": "AIPICT",
+      "asset_title": "Basement Concrete 01",
+      "downloaded_at": "2026-10-19T02:49:30.185853+00:00",
+      "original_filename": "basement_concrete01.png",
+      "sha256": "143af8e01147946d2a08d95c06199fefafade24191747564a879da58f7618333",
+      "license_name": "AIPICT Terms of Use",
+      "license_url": "https://aipict.com/en/terms-of-use-en/",
+      "commercial_use": true,
+      "video_use": true,
+      "modification_allowed": true,
+      "attribution_required": false,
+      "redistribution_allowed": false,
+      "credit_text": null,
+      "terms_summary": "Commercial and video use and editing are permitted; credit is optional; redistribution or sale as material is prohibited.",
+      "generation_origin": "AI_GENERATED",
+      "official_preview_derivative": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false,
+      "license_review_recommendation": "RECOMMEND_APPROVE_WITH_ATTRIBUTION"
+    },
+    {
+      "path": "E:\\素材\\外部取得素材\\backgrounds\\basement\\AIPICT\\aipict_basement_concrete04.png",
+      "source_url": "https://aipict.com/en/general-en/basement-en/",
+      "media_url": "https://aipict.com/wp-content/uploads/basement_concrete04.png",
+      "source_site": "AIPICT",
+      "creator": "AIPICT",
+      "asset_title": "Basement Concrete 04",
+      "downloaded_at": "2026-10-19T02:49:30.185853+00:00",
+      "original_filename": "basement_concrete04.png",
+      "sha256": "29e2d8f4825cbb8d34b7e57859211068917ad89628f2a79305bcf776c68d39ad",
+      "license_name": "AIPICT Terms of Use",
+      "license_url": "https://aipict.com/en/terms-of-use-en/",
+      "commercial_use": true,
+      "video_use": true,
+      "modification_allowed": true,
+      "attribution_required": false,
+      "redistribution_allowed": false,
+      "credit_text": null,
+      "terms_summary": "Commercial and video use and editing are permitted; credit is optional; redistribution or sale as material is prohibited.",
+      "generation_origin": "AI_GENERATED",
+      "official_preview_derivative": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false,
+      "license_review_recommendation": "RECOMMEND_APPROVE_WITH_ATTRIBUTION"
+    },
+    {
+      "path": "E:\\素材\\外部取得素材\\backgrounds\\basement\\AIPICT\\aipict_basement_ruins01.png",
+      "source_url": "https://aipict.com/en/general-en/basement-en/",
+      "media_url": "https://aipict.com/wp-content/uploads/basement_ruins01.png",
+      "source_site": "AIPICT",
+      "creator": "AIPICT",
+      "asset_title": "Basement Ruins 01",
+      "downloaded_at": "2026-10-19T02:49:30.185853+00:00",
+      "original_filename": "basement_ruins01.png",
+      "sha256": "334234bfc3735cbb7c2f8e2eb6c3e2ce200147435a79024d7e3e7ae2b407d6a1",
+      "license_name": "AIPICT Terms of Use",
+      "license_url": "https://aipict.com/en/terms-of-use-en/",
+      "commercial_use": true,
+      "video_use": true,
+      "modification_allowed": true,
+      "attribution_required": false,
+      "redistribution_allowed": false,
+      "credit_text": null,
+      "terms_summary": "Commercial and video use and editing are permitted; credit is optional; redistribution or sale as material is prohibited.",
+      "generation_origin": "AI_GENERATED",
+      "official_preview_derivative": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false,
+      "license_review_recommendation": "RECOMMEND_APPROVE_WITH_ATTRIBUTION"
+    },
+    {
+      "path": "E:\\素材\\外部取得素材\\sfx\\wood_creak\\Freesound_Rudmer_Rotteveel\\freesound_502505_wood_creak_single_v1_hq_preview.mp3",
+      "source_url": "https://freesound.org/people/Rudmer_Rotteveel/sounds/502505/",
+      "media_url": "https://cdn.freesound.org/previews/502/502505_4921277-hq.mp3",
+      "source_site": "Freesound",
+      "creator": "Rudmer_Rotteveel",
+      "asset_title": "Wood Creak Single V1",
+      "downloaded_at": "2026-10-19T02:49:30.185853+00:00",
+      "original_filename": "502505_4921277-hq.mp3",
+      "sha256": "6eeb667fa6141151f9c37bd04bd9cbe229944f5e24efea7a9163e8150e9a8bb5",
+      "license_name": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "commercial_use": true,
+      "video_use": true,
+      "modification_allowed": true,
+      "attribution_required": false,
+      "redistribution_allowed": true,
+      "credit_text": null,
+      "terms_summary": "Individual sound page identifies this work as CC0. This file is Freesound's official HQ MP3 preview derivative of the original WAV.",
+      "generation_origin": "UNKNOWN",
+      "official_preview_derivative": true,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false,
+      "license_review_recommendation": "RECOMMEND_APPROVE"
+    },
+    {
+      "path": "E:\\素材\\外部取得素材\\sfx\\wood_creak\\Freesound_Rudmer_Rotteveel\\freesound_502511_wood_creak_single_v3_hq_preview.mp3",
+      "source_url": "https://freesound.org/people/Rudmer_Rotteveel/sounds/502511/",
+      "media_url": "https://cdn.freesound.org/previews/502/502511_4921277-hq.mp3",
+      "source_site": "Freesound",
+      "creator": "Rudmer_Rotteveel",
+      "asset_title": "Wood Creak Single V3",
+      "downloaded_at": "2026-10-19T02:49:30.185853+00:00",
+      "original_filename": "502511_4921277-hq.mp3",
+      "sha256": "88dfbeb46402c1de10b9425cd1794b6ae916deb96610434e29b6be6e80d572f0",
+      "license_name": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "commercial_use": true,
+      "video_use": true,
+      "modification_allowed": true,
+      "attribution_required": false,
+      "redistribution_allowed": true,
+      "credit_text": null,
+      "terms_summary": "Individual sound page identifies this work as CC0. This file is Freesound's official HQ MP3 preview derivative of the original WAV.",
+      "generation_origin": "UNKNOWN",
+      "official_preview_derivative": true,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false,
+      "license_review_recommendation": "RECOMMEND_APPROVE"
+    },
+    {
+      "path": "E:\\素材\\外部取得素材\\sfx\\wood_creak\\Freesound_Rudmer_Rotteveel\\freesound_506660_wood_creak_single_v5_hq_preview.mp3",
+      "source_url": "https://freesound.org/people/Rudmer_Rotteveel/sounds/506660/",
+      "media_url": "https://cdn.freesound.org/previews/506/506660_4921277-hq.mp3",
+      "source_site": "Freesound",
+      "creator": "Rudmer_Rotteveel",
+      "asset_title": "Wood Creak Single V5",
+      "downloaded_at": "2026-10-19T02:49:30.185853+00:00",
+      "original_filename": "506660_4921277-hq.mp3",
+      "sha256": "ea2144a09b42a4e518fc83e3c1dc60de138029dec1cc8455ee2fb31884701c17",
+      "license_name": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "commercial_use": true,
+      "video_use": true,
+      "modification_allowed": true,
+      "attribution_required": false,
+      "redistribution_allowed": true,
+      "credit_text": null,
+      "terms_summary": "Individual sound page identifies this work as CC0. This file is Freesound's official HQ MP3 preview derivative of the original WAV.",
+      "generation_origin": "UNKNOWN",
+      "official_preview_derivative": true,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false,
+      "license_review_recommendation": "RECOMMEND_APPROVE"
+    },
+    {
+      "path": "E:\\素材\\外部取得素材\\sfx\\wood_break\\Freesound\\freesound_387014_wood_break_hq_preview.mp3",
+      "source_url": "https://freesound.org/people/mlodydebus/sounds/387014/",
+      "media_url": "https://cdn.freesound.org/previews/387/387014_2984479-hq.mp3",
+      "source_site": "Freesound",
+      "creator": "mlodydebus",
+      "asset_title": "Wood Break",
+      "downloaded_at": "2026-10-19T02:49:30.185853+00:00",
+      "original_filename": "387014_2984479-hq.mp3",
+      "sha256": "0ecb5346d557f2470a56ecf7c3f014b6e0155f7ccd035e242467bd83591ce6f7",
+      "license_name": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "commercial_use": true,
+      "video_use": true,
+      "modification_allowed": true,
+      "attribution_required": false,
+      "redistribution_allowed": true,
+      "credit_text": null,
+      "terms_summary": "Individual sound page identifies this work as CC0. This file is Freesound's official HQ MP3 preview derivative of the original WAV.",
+      "generation_origin": "UNKNOWN",
+      "official_preview_derivative": true,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false,
+      "license_review_recommendation": "RECOMMEND_APPROVE"
+    },
+    {
+      "path": "E:\\素材\\外部取得素材\\sfx\\wood_break\\Freesound\\freesound_766406_branch_break_hq_preview.mp3",
+      "source_url": "https://freesound.org/people/DariusOW/sounds/766406/",
+      "media_url": "https://cdn.freesound.org/previews/766/766406_15764407-hq.mp3",
+      "source_site": "Freesound",
+      "creator": "DariusOW",
+      "asset_title": "Branch Break",
+      "downloaded_at": "2026-10-19T02:49:30.185853+00:00",
+      "original_filename": "766406_15764407-hq.mp3",
+      "sha256": "9864d0de52bab9527700f47c168caf412789e09a4ac2c4677923b06c5f945124",
+      "license_name": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "commercial_use": true,
+      "video_use": true,
+      "modification_allowed": true,
+      "attribution_required": false,
+      "redistribution_allowed": true,
+      "credit_text": null,
+      "terms_summary": "Individual sound page identifies this work as CC0. This file is Freesound's official HQ MP3 preview derivative of the original WAV.",
+      "generation_origin": "UNKNOWN",
+      "official_preview_derivative": true,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false,
+      "license_review_recommendation": "RECOMMEND_APPROVE"
+    },
+    {
+      "path": "E:\\素材\\外部取得素材\\sfx\\wood_break\\Freesound\\freesound_452109_branch_break_snap_crunch_hq_preview.mp3",
+      "source_url": "https://freesound.org/people/kyles/sounds/452109/",
+      "media_url": "https://cdn.freesound.org/previews/452/452109_612689-hq.mp3",
+      "source_site": "Freesound",
+      "creator": "kyles",
+      "asset_title": "branch break snap crunch nice.wav",
+      "downloaded_at": "2026-10-19T02:49:30.185853+00:00",
+      "original_filename": "452109_612689-hq.mp3",
+      "sha256": "fd808fc1629b3b999b794df85c95f5fdaae19e81647c144d46e2a00dec9fbc38",
+      "license_name": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "commercial_use": true,
+      "video_use": true,
+      "modification_allowed": true,
+      "attribution_required": false,
+      "redistribution_allowed": true,
+      "credit_text": null,
+      "terms_summary": "Individual sound page identifies this work as CC0. This file is Freesound's official HQ MP3 preview derivative of the original WAV.",
+      "generation_origin": "UNKNOWN",
+      "official_preview_derivative": true,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false,
+      "license_review_recommendation": "RECOMMEND_APPROVE"
+    },
+    {
+      "path": "E:\\素材\\外部取得素材\\bgm\\tension\\itch.io\\itch_mumusi_snaps_in_the_dark_tension_loop.wav",
+      "source_url": "https://mumusi-c21.itch.io/snaps-in-the-dark",
+      "media_url": "ITCH_FREE_DOWNLOAD_PACKAGE",
+      "source_site": "itch.io",
+      "creator": "mumusi_c21",
+      "asset_title": "Snaps In The Dark_loop",
+      "downloaded_at": "2026-10-19T02:49:30.185853+00:00",
+      "original_filename": "SnapsInTheDark_bgm_mumusi/Snaps In The Dark_loop.wav",
+      "package_sha256": "d45c89cfd7a716245a90a7170ee559e9623b156d90b5a3c6a6467cd8762dd67f",
+      "sha256": "64850823e2dd7f2fdd2465fd7655ab57fd3cad658881368479f0d3d0ee28e5eb",
+      "license_name": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "commercial_use": true,
+      "video_use": true,
+      "modification_allowed": true,
+      "attribution_required": true,
+      "redistribution_allowed": false,
+      "credit_text": "Music by mumusi_c21 – https://mumusi-c21.itch.io",
+      "terms_summary": "CC BY 4.0 permits commercial/video use and adaptation with attribution; standalone asset redistribution is not an approved use here.",
+      "generation_origin": "HUMAN_CREATED_NO_GENERATIVE_AI_DECLARED",
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false,
+      "license_review_recommendation": "RECOMMEND_APPROVE_WITH_ATTRIBUTION"
+    },
+    {
+      "path": "E:\\素材\\外部取得素材\\bgm\\tension\\itch.io\\itch_arkeia_tension_as_the_light_fades.ogg",
+      "source_url": "https://seciden.itch.io/music-pack-6",
+      "media_url": "ITCH_FREE_DOWNLOAD_PACKAGE",
+      "source_site": "itch.io",
+      "creator": "Arkeia / Seciden",
+      "asset_title": "as-the-light-fades",
+      "downloaded_at": "2026-10-19T02:49:30.185853+00:00",
+      "original_filename": "as-the-light-fades.ogg",
+      "package_sha256": "20fcc376aaa9909d6067297ca9edd48583b7df69565284595a2c6013d9b2a83a",
+      "sha256": "f154e4049600115483a50682e9c401e34645ebe267de0684bc467733100c87b9",
+      "license_name": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "commercial_use": true,
+      "video_use": true,
+      "modification_allowed": true,
+      "attribution_required": true,
+      "redistribution_allowed": false,
+      "credit_text": "Contains music ©2026 Arkeia (https://arkeiamusic.itch.io/)\nLicensed under Creative Commons Attribution 4.0 International",
+      "terms_summary": "CC BY 4.0 permits commercial/video use and adaptation with attribution; standalone asset redistribution is not an approved use here.",
+      "generation_origin": "HUMAN_CREATED_NO_GENERATIVE_AI_DECLARED",
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false,
+      "license_review_recommendation": "RECOMMEND_APPROVE_WITH_ATTRIBUTION"
+    },
+    {
+      "path": "E:\\素材\\外部取得素材\\bgm\\tension\\itch.io\\itch_arkeia_tension_eyes_piercing_shadow.ogg",
+      "source_url": "https://seciden.itch.io/music-pack-6",
+      "media_url": "ITCH_FREE_DOWNLOAD_PACKAGE",
+      "source_site": "itch.io",
+      "creator": "Arkeia / Seciden",
+      "asset_title": "eyes-piercing-shadow",
+      "downloaded_at": "2026-10-19T02:49:30.185853+00:00",
+      "original_filename": "eyes-piercing-shadow.ogg",
+      "package_sha256": "20fcc376aaa9909d6067297ca9edd48583b7df69565284595a2c6013d9b2a83a",
+      "sha256": "05b5955439b9588928a0a9b93191404e35e92de6187e9fb3c260775266d0eedc",
+      "license_name": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "commercial_use": true,
+      "video_use": true,
+      "modification_allowed": true,
+      "attribution_required": true,
+      "redistribution_allowed": false,
+      "credit_text": "Contains music ©2026 Arkeia (https://arkeiamusic.itch.io/)\nLicensed under Creative Commons Attribution 4.0 International",
+      "terms_summary": "CC BY 4.0 permits commercial/video use and adaptation with attribution; standalone asset redistribution is not an approved use here.",
+      "generation_origin": "HUMAN_CREATED_NO_GENERATIVE_AI_DECLARED",
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false,
+      "license_review_recommendation": "RECOMMEND_APPROVE_WITH_ATTRIBUTION"
+    },
+    {
+      "path": "E:\\素材\\外部取得素材\\bgm\\tension\\itch.io\\itch_arkeia_tension_monster.ogg",
+      "source_url": "https://seciden.itch.io/music-pack-6",
+      "media_url": "ITCH_FREE_DOWNLOAD_PACKAGE",
+      "source_site": "itch.io",
+      "creator": "Arkeia / Seciden",
+      "asset_title": "monster",
+      "downloaded_at": "2026-10-19T02:49:30.185853+00:00",
+      "original_filename": "monster.ogg",
+      "package_sha256": "20fcc376aaa9909d6067297ca9edd48583b7df69565284595a2c6013d9b2a83a",
+      "sha256": "1309690bb5a8017e8b98763c01aae48bb9a557845d7407fe14e7d74cd2ae087b",
+      "license_name": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "commercial_use": true,
+      "video_use": true,
+      "modification_allowed": true,
+      "attribution_required": true,
+      "redistribution_allowed": false,
+      "credit_text": "Contains music ©2026 Arkeia (https://arkeiamusic.itch.io/)\nLicensed under Creative Commons Attribution 4.0 International",
+      "terms_summary": "CC BY 4.0 permits commercial/video use and adaptation with attribution; standalone asset redistribution is not an approved use here.",
+      "generation_origin": "HUMAN_CREATED_NO_GENERATIVE_AI_DECLARED",
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false,
+      "license_review_recommendation": "RECOMMEND_APPROVE_WITH_ATTRIBUTION"
+    }
+  ],
+  "external_root_manifest": {
+    "root": "E:\\素材\\外部取得素材",
+    "file_count": 69,
+    "aggregate_sha256": "c10573643e35d3ef909c283bd69acf9d5c5dce91d54f7decadf13797a55cf42f",
+    "files": [
+      {
+        "path": "backgrounds/basement/AIPICT/aipict_basement_concrete01.png",
+        "size": 1711770,
+        "sha256": "143af8e01147946d2a08d95c06199fefafade24191747564a879da58f7618333"
+      },
+      {
+        "path": "backgrounds/basement/AIPICT/aipict_basement_concrete01.png.license.html",
+        "size": 112244,
+        "sha256": "6bc808837b6c66e80a9e4132700195a86cf887208dfdd8550e1898745ea56749"
+      },
+      {
+        "path": "backgrounds/basement/AIPICT/aipict_basement_concrete01.png.license.txt",
+        "size": 584,
+        "sha256": "5398f41ab8198eb16cdecb5d2a410c364da8e0140ad701406bd44cd027dd864f"
+      },
+      {
+        "path": "backgrounds/basement/AIPICT/aipict_basement_concrete01.png.source.html",
+        "size": 149536,
+        "sha256": "de15c57a37f82bbb040d6b25cea68414a342b825d8847d98939d7b288efd63a2"
+      },
+      {
+        "path": "backgrounds/basement/AIPICT/aipict_basement_concrete01.png.source.json",
+        "size": 1095,
+        "sha256": "583bc9eb0364e361d4e155746cba4c3fb4633babf243df6d64075cb4cedb5006"
+      },
+      {
+        "path": "backgrounds/basement/AIPICT/aipict_basement_concrete04.png",
+        "size": 1234950,
+        "sha256": "29e2d8f4825cbb8d34b7e57859211068917ad89628f2a79305bcf776c68d39ad"
+      },
+      {
+        "path": "backgrounds/basement/AIPICT/aipict_basement_concrete04.png.license.html",
+        "size": 112244,
+        "sha256": "6bc808837b6c66e80a9e4132700195a86cf887208dfdd8550e1898745ea56749"
+      },
+      {
+        "path": "backgrounds/basement/AIPICT/aipict_basement_concrete04.png.license.txt",
+        "size": 584,
+        "sha256": "fe2c869ddf3c0a2959b47f379d4eff0f2415e84523afe72f1256016aa8c8f765"
+      },
+      {
+        "path": "backgrounds/basement/AIPICT/aipict_basement_concrete04.png.source.html",
+        "size": 149536,
+        "sha256": "de15c57a37f82bbb040d6b25cea68414a342b825d8847d98939d7b288efd63a2"
+      },
+      {
+        "path": "backgrounds/basement/AIPICT/aipict_basement_concrete04.png.source.json",
+        "size": 1095,
+        "sha256": "faea8d600b485a256f19eecf64f083398bef6431bf6dffef01fefb1c0be34699"
+      },
+      {
+        "path": "backgrounds/basement/AIPICT/aipict_basement_ruins01.png",
+        "size": 1791900,
+        "sha256": "334234bfc3735cbb7c2f8e2eb6c3e2ce200147435a79024d7e3e7ae2b407d6a1"
+      },
+      {
+        "path": "backgrounds/basement/AIPICT/aipict_basement_ruins01.png.license.html",
+        "size": 112244,
+        "sha256": "6bc808837b6c66e80a9e4132700195a86cf887208dfdd8550e1898745ea56749"
+      },
+      {
+        "path": "backgrounds/basement/AIPICT/aipict_basement_ruins01.png.license.txt",
+        "size": 581,
+        "sha256": "3ce2dd97f8d5e95127605719a3f3f8fb44b6827c46c19d49d14c62bf9c3b021c"
+      },
+      {
+        "path": "backgrounds/basement/AIPICT/aipict_basement_ruins01.png.source.html",
+        "size": 149536,
+        "sha256": "de15c57a37f82bbb040d6b25cea68414a342b825d8847d98939d7b288efd63a2"
+      },
+      {
+        "path": "backgrounds/basement/AIPICT/aipict_basement_ruins01.png.source.json",
+        "size": 1086,
+        "sha256": "1b303318f7160c9b0ad3e3d43acac9853b71c5a8224028fd6c3660748ee8dac4"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_as_the_light_fades.ogg",
+        "size": 3958139,
+        "sha256": "f154e4049600115483a50682e9c401e34645ebe267de0684bc467733100c87b9"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_as_the_light_fades.ogg.download_page.html",
+        "size": 21240,
+        "sha256": "4db347e232d3700f2915f6fdfbb0979fba2ae30e7bda605cae62fce93fdc9dbb"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_as_the_light_fades.ogg.license.html",
+        "size": 31950,
+        "sha256": "8dda1ccec4be91fc80821d4e4fd5c568072b9a3a74b2fdc07c249a27e920ef01"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_as_the_light_fades.ogg.license.txt",
+        "size": 706,
+        "sha256": "e8f718bc75ce419cc220b9597d9d962b97c30faf63121aab3dfc881d5b288ac4"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_as_the_light_fades.ogg.source.html",
+        "size": 60554,
+        "sha256": "d18a8786744b625b71baeb2648b096e165fbb16d4a0034e5ac2dc3615a0a58d7"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_as_the_light_fades.ogg.source.json",
+        "size": 1260,
+        "sha256": "be1173083440fa61bf70dfeb2fccbd036c5aee0b4b7abd7d3108fc67f9d1c971"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_eyes_piercing_shadow.ogg",
+        "size": 2117611,
+        "sha256": "05b5955439b9588928a0a9b93191404e35e92de6187e9fb3c260775266d0eedc"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_eyes_piercing_shadow.ogg.download_page.html",
+        "size": 21240,
+        "sha256": "4db347e232d3700f2915f6fdfbb0979fba2ae30e7bda605cae62fce93fdc9dbb"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_eyes_piercing_shadow.ogg.license.html",
+        "size": 31950,
+        "sha256": "8dda1ccec4be91fc80821d4e4fd5c568072b9a3a74b2fdc07c249a27e920ef01"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_eyes_piercing_shadow.ogg.license.txt",
+        "size": 708,
+        "sha256": "3a216f7b9e969705ecfb9307b6f048f3f03177bf38ed1b895b11a0796261e76e"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_eyes_piercing_shadow.ogg.source.html",
+        "size": 60554,
+        "sha256": "d18a8786744b625b71baeb2648b096e165fbb16d4a0034e5ac2dc3615a0a58d7"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_eyes_piercing_shadow.ogg.source.json",
+        "size": 1264,
+        "sha256": "d4d27378aaf660dd96b5908a6ef18dc6595afd6cda26c69b785c49c0c573d9cf"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_monster.ogg",
+        "size": 3145455,
+        "sha256": "1309690bb5a8017e8b98763c01aae48bb9a557845d7407fe14e7d74cd2ae087b"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_monster.ogg.download_page.html",
+        "size": 21240,
+        "sha256": "4db347e232d3700f2915f6fdfbb0979fba2ae30e7bda605cae62fce93fdc9dbb"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_monster.ogg.license.html",
+        "size": 31950,
+        "sha256": "8dda1ccec4be91fc80821d4e4fd5c568072b9a3a74b2fdc07c249a27e920ef01"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_monster.ogg.license.txt",
+        "size": 695,
+        "sha256": "35d5a7520480ae2a9055ed7b1b5e55338f2382f6838ec1b4f0a542f57776e3fa"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_monster.ogg.source.html",
+        "size": 60554,
+        "sha256": "d18a8786744b625b71baeb2648b096e165fbb16d4a0034e5ac2dc3615a0a58d7"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_arkeia_tension_monster.ogg.source.json",
+        "size": 1238,
+        "sha256": "230ba5c75f591903d9773ef3ec7ef0b658bcdda62eb5d1831288529862184a01"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_mumusi_snaps_in_the_dark_tension_loop.wav",
+        "size": 16510850,
+        "sha256": "64850823e2dd7f2fdd2465fd7655ab57fd3cad658881368479f0d3d0ee28e5eb"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_mumusi_snaps_in_the_dark_tension_loop.wav.download_page.html",
+        "size": 19267,
+        "sha256": "b6984f5ee8231f483bd501bb9b4c69c73e7059e51edb7c81d3b67d92cd3e9b37"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_mumusi_snaps_in_the_dark_tension_loop.wav.license.html",
+        "size": 31950,
+        "sha256": "8dda1ccec4be91fc80821d4e4fd5c568072b9a3a74b2fdc07c249a27e920ef01"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_mumusi_snaps_in_the_dark_tension_loop.wav.license.txt",
+        "size": 641,
+        "sha256": "e717436afa450a499be1bdb6178ae32563b7a049645ddc1480df833b35de2ad9"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_mumusi_snaps_in_the_dark_tension_loop.wav.source.html",
+        "size": 24266,
+        "sha256": "77563877d62d8a1be4fd125158c948abc5f0aaa04403d93bb8b8954ade303dfd"
+      },
+      {
+        "path": "bgm/tension/itch.io/itch_mumusi_snaps_in_the_dark_tension_loop.wav.source.json",
+        "size": 1224,
+        "sha256": "783861a5b39974c515cc6057ca286d94903220d6dddb33da9076cb82dc11c0a5"
+      },
+      {
+        "path": "sfx/wood_break/Freesound/freesound_387014_wood_break_hq_preview.mp3",
+        "size": 76086,
+        "sha256": "0ecb5346d557f2470a56ecf7c3f014b6e0155f7ccd035e242467bd83591ce6f7"
+      },
+      {
+        "path": "sfx/wood_break/Freesound/freesound_387014_wood_break_hq_preview.mp3.license.html",
+        "size": 30248,
+        "sha256": "abb4d48fc8b85de52b377dd105532c6c549f515d492a8e1712bc99e7316a1f12"
+      },
+      {
+        "path": "sfx/wood_break/Freesound/freesound_387014_wood_break_hq_preview.mp3.license.txt",
+        "size": 596,
+        "sha256": "c70b2f028c903493da5f3e6c64ba1af1ee824ea18b19bf0af3c6d96d45a6f397"
+      },
+      {
+        "path": "sfx/wood_break/Freesound/freesound_387014_wood_break_hq_preview.mp3.source.html",
+        "size": 37848,
+        "sha256": "e4ff5af571f290ee1c8d7bcb419e07a46362502d066e32adf666f3307d455205"
+      },
+      {
+        "path": "sfx/wood_break/Freesound/freesound_387014_wood_break_hq_preview.mp3.source.json",
+        "size": 1084,
+        "sha256": "ab4bd9becc3d6b4616ffea5a07bf9e523bc740d98ba2114f776330b6b11088f3"
+      },
+      {
+        "path": "sfx/wood_break/Freesound/freesound_452109_branch_break_snap_crunch_hq_preview.mp3",
+        "size": 72288,
+        "sha256": "fd808fc1629b3b999b794df85c95f5fdaae19e81647c144d46e2a00dec9fbc38"
+      },
+      {
+        "path": "sfx/wood_break/Freesound/freesound_452109_branch_break_snap_crunch_hq_preview.mp3.license.html",
+        "size": 30248,
+        "sha256": "abb4d48fc8b85de52b377dd105532c6c549f515d492a8e1712bc99e7316a1f12"
+      },
+      {
+        "path": "sfx/wood_break/Freesound/freesound_452109_branch_break_snap_crunch_hq_preview.mp3.license.txt",
+        "size": 609,
+        "sha256": "9c48158c104b41f2344da3ba306a46ec1ea67faff59699854e86e0cf9cf34194"
+      },
+      {
+        "path": "sfx/wood_break/Freesound/freesound_452109_branch_break_snap_crunch_hq_preview.mp3.source.html",
+        "size": 35912,
+        "sha256": "48e2ca76a0cf32013b9fa63c809cf6ec69ba8da56d8740ee4db3f8c253551de8"
+      },
+      {
+        "path": "sfx/wood_break/Freesound/freesound_452109_branch_break_snap_crunch_hq_preview.mp3.source.json",
+        "size": 1095,
+        "sha256": "720e02cc1e869738348527ca01da9cb54f3d6258e7d822c3b308b8fb3b1d8f36"
+      },
+      {
+        "path": "sfx/wood_break/Freesound/freesound_766406_branch_break_hq_preview.mp3",
+        "size": 44064,
+        "sha256": "9864d0de52bab9527700f47c168caf412789e09a4ac2c4677923b06c5f945124"
+      },
+      {
+        "path": "sfx/wood_break/Freesound/freesound_766406_branch_break_hq_preview.mp3.license.html",
+        "size": 30248,
+        "sha256": "abb4d48fc8b85de52b377dd105532c6c549f515d492a8e1712bc99e7316a1f12"
+      },
+      {
+        "path": "sfx/wood_break/Freesound/freesound_766406_branch_break_hq_preview.mp3.license.txt",
+        "size": 594,
+        "sha256": "ffe41fa3fe00b2187bb81f65b42140a113f26214d8110e85a07b726659e0cbe8"
+      },
+      {
+        "path": "sfx/wood_break/Freesound/freesound_766406_branch_break_hq_preview.mp3.source.html",
+        "size": 35939,
+        "sha256": "0630fc6483dacce456a616b2fde88fbf69dd192b88f9add692ad2d620580fb06"
+      },
+      {
+        "path": "sfx/wood_break/Freesound/freesound_766406_branch_break_hq_preview.mp3.source.json",
+        "size": 1084,
+        "sha256": "e7ef7f43305f0567af531ea395df213e1a3b00dd4b173a940e36e1b6038ca05b"
+      },
+      {
+        "path": "sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502505_wood_creak_single_v1_hq_preview.mp3",
+        "size": 23796,
+        "sha256": "6eeb667fa6141151f9c37bd04bd9cbe229944f5e24efea7a9163e8150e9a8bb5"
+      },
+      {
+        "path": "sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502505_wood_creak_single_v1_hq_preview.mp3.license.html",
+        "size": 30248,
+        "sha256": "abb4d48fc8b85de52b377dd105532c6c549f515d492a8e1712bc99e7316a1f12"
+      },
+      {
+        "path": "sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502505_wood_creak_single_v1_hq_preview.mp3.license.txt",
+        "size": 618,
+        "sha256": "94898be48305319510e1bb00b1a3da74ead3615409d818abf558e92680bca547"
+      },
+      {
+        "path": "sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502505_wood_creak_single_v1_hq_preview.mp3.source.html",
+        "size": 46057,
+        "sha256": "8dafba511910a341a91ec5208ec63090556ff4454f30dd1db29a1f0ab3406571"
+      },
+      {
+        "path": "sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502505_wood_creak_single_v1_hq_preview.mp3.source.json",
+        "size": 1106,
+        "sha256": "b392b51f241a91ae9c54e8984e0c4e31007b9840fddb08bc4eb9131a3755c960"
+      },
+      {
+        "path": "sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502511_wood_creak_single_v3_hq_preview.mp3",
+        "size": 30218,
+        "sha256": "88dfbeb46402c1de10b9425cd1794b6ae916deb96610434e29b6be6e80d572f0"
+      },
+      {
+        "path": "sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502511_wood_creak_single_v3_hq_preview.mp3.license.html",
+        "size": 30248,
+        "sha256": "abb4d48fc8b85de52b377dd105532c6c549f515d492a8e1712bc99e7316a1f12"
+      },
+      {
+        "path": "sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502511_wood_creak_single_v3_hq_preview.mp3.license.txt",
+        "size": 618,
+        "sha256": "378a620b4591dbd7fa7d58a6a2e1df0b460e62b2dd0ea25f57ce5b8e9bdd67b9"
+      },
+      {
+        "path": "sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502511_wood_creak_single_v3_hq_preview.mp3.source.html",
+        "size": 50208,
+        "sha256": "c99792291c9900c1efcca072ec548673a025ab97b239f4e247ca03943d5cd0e8"
+      },
+      {
+        "path": "sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_502511_wood_creak_single_v3_hq_preview.mp3.source.json",
+        "size": 1106,
+        "sha256": "596d9293f259480702df83ffdaab0e7831d51e0bad0996280d5ed5d3170ba36b"
+      },
+      {
+        "path": "sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_506660_wood_creak_single_v5_hq_preview.mp3",
+        "size": 39237,
+        "sha256": "ea2144a09b42a4e518fc83e3c1dc60de138029dec1cc8455ee2fb31884701c17"
+      },
+      {
+        "path": "sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_506660_wood_creak_single_v5_hq_preview.mp3.license.html",
+        "size": 30248,
+        "sha256": "abb4d48fc8b85de52b377dd105532c6c549f515d492a8e1712bc99e7316a1f12"
+      },
+      {
+        "path": "sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_506660_wood_creak_single_v5_hq_preview.mp3.license.txt",
+        "size": 618,
+        "sha256": "9768b7443c47c0fff366a0b0653e86a894ddcefd70ed0c38182bd7e5d020ebca"
+      },
+      {
+        "path": "sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_506660_wood_creak_single_v5_hq_preview.mp3.source.html",
+        "size": 46928,
+        "sha256": "f416b217fdd0a5a05700ff91d013b3d04a20dccdc445a19854e355a718c0f848"
+      },
+      {
+        "path": "sfx/wood_creak/Freesound_Rudmer_Rotteveel/freesound_506660_wood_creak_single_v5_hq_preview.mp3.source.json",
+        "size": 1106,
+        "sha256": "f2610767ad69385c039020ee53459a4774b0576ed8376429308ea7000158f522"
+      }
+    ]
+  },
+  "existing_materials_before": {
+    "file_count": 32089,
+    "aggregate_sha256": "310b6432289c59bb7844255e34ceadd44598a0bc36e0cb85b380b6076d18cb1f"
+  },
+  "existing_materials_after": {
+    "file_count": 32089,
+    "aggregate_sha256": "310b6432289c59bb7844255e34ceadd44598a0bc36e0cb85b380b6076d18cb1f"
+  },
+  "existing_materials_modified": 0
+}

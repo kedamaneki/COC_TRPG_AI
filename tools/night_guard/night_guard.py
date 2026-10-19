@@ -227,12 +227,11 @@ class Controller:
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 ROOT = REPO_ROOT
-RUN_ROOT = (Path('F:/') / ''.join(chr(value) for value in (0x5236, 0x4f5c, 0x7269))
-            / ''.join(chr(value) for value in (0x305d, 0x306e, 0x33)))
+RUN_ROOT = Path(os.environ.get('CORBITT_RUN_ROOT', REPO_ROOT.parent))
 CORE = REPO_ROOT / 'core'
 VIDEO = REPO_ROOT / 'video'
-CORE_PYTHON = RUN_ROOT / '.venv-resume-local/Scripts/python.exe'
-VIDEO_PYTHON = Path(r'C:\Users\ri4re\Documents\Codex\2026-10-04\referenced-chatgpt-conversation-this-is-an\video-production-agent\.venv-tools\Scripts\python.exe')
+CORE_PYTHON = Path(os.environ.get('CORE_PYTHON', RUN_ROOT / '.venv-resume-local/Scripts/python.exe'))
+VIDEO_PYTHON = Path(os.environ.get('VIDEO_PYTHON', CORE_PYTHON))
 NETWORK_GUARD = REPO_ROOT / 'tools/runtime_isolation'
 ACCEPTED = VIDEO
 SESSION_ID = 'CORBITT_LONGRUN_ITERATION3_V5_HOME_001'

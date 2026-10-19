@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "asset_id": "portrait_shadow_npc_distorted_01_v1",
+  "source_type": "INTERNAL_GENERATED",
+  "generation_tool": "OpenAI built-in image generation",
+  "generated_at": "2026-10-19T12:23:02.308634+00:00",
+  "original_generated_file": "C:\\Users\\ri4re\\.codex\\generated_images\\01a1056c-61e0-7bd3-b32e-7086bfd35ffc\\exec-11056db1-0762-4904-9e71-b7812b713f60.png",
+  "original_generated_sha256": "b4729111d13814df1fe57420bc7450e414772b5c3545566a8f6ddc122e62d135",
+  "final_asset_sha256": "b4729111d13814df1fe57420bc7450e414772b5c3545566a8f6ddc122e62d135",
+  "license_status": "LICENSE_REVIEW_REQUIRED",
+  "approval_status": "HUMAN_REVIEW_CANDIDATE",
+  "auto_use": false,
+  "prompt_constraints": [
+    "transparent background",
+    "faceless",
+    "single full-body figure",
+    "no text or watermark"
+  ],
+  "notes": "Controlled distorted humanoid"
+}

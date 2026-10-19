@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "asset_root_environment_variable": "VIDEO_ASSET_ROOT",
+  "assets": [
+    {
+      "asset_id": "detected_aipict_basement_ruins01_334234bf_be2b81b6",
+      "relative_path": "外部取得素材/backgrounds/basement/AIPICT/aipict_basement_ruins01.png",
+      "sha256": "334234bfc3735cbb7c2f8e2eb6c3e2ce200147435a79024d7e3e7ae2b407d6a1",
+      "asset_type": "BACKGROUND",
+      "license_status": "LICENSE_APPROVED",
+      "approval_status": "APPROVED_FOR_PREVIEW",
+      "required": true,
+      "scope": "VIDEO_002_FINAL_BATTLE"
+    },
+    {
+      "asset_id": "detected_itch_arkeia_tension_as_the_light_fades_f154e404_3bdff3eb",
+      "relative_path": "外部取得素材/bgm/tension/itch.io/itch_arkeia_tension_as_the_light_fades.ogg",
+      "sha256": "f154e4049600115483a50682e9c401e34645ebe267de0684bc467733100c87b9",
+      "asset_type": "BGM",
+      "license_status": "LICENSE_APPROVED",
+      "approval_status": "APPROVED_FOR_PREVIEW",
+      "required": true,
+      "scope": "VIDEO_002_FINAL_BATTLE"
+    },
+    {
+      "asset_id": "detected_nc42340_ダイス音_2_2d10_0e238a99_7b2e1d3e",
+      "relative_path": "効果音素材/nc42340_ダイス音・2（2D10）.wav",
+      "sha256": "0e238a99c0582900d868037b353e52b561c3c258cb25d6d6f15901fb588c0a78",
+      "asset_type": "SFX",
+      "license_status": "LICENSE_APPROVED",
+      "approval_status": "APPROVED_FOR_PREVIEW",
+      "required": true,
+      "scope": "VIDEO_002_FINAL_BATTLE"
+    }
+  ],
+  "repo_assets": [
+    {
+      "asset_id": "portrait_corbitt_shadow_candidate_01_v1",
+      "relative_path": "video/assets/portraits/mob_shadow_pack_v1/corbitt_shadow_candidate_01.png",
+      "sha256": "d6ebcabf4071987e3b6457e89c0c5a9637386a27510afed217a2337a2bc846fa",
+      "asset_type": "PORTRAIT",
+      "license_status": "LICENSE_APPROVED",
+      "approval_status": "APPROVED_FOR_PREVIEW",
+      "required": true,
+      "scope": "VIDEO_002_FINAL_BATTLE"
+    },
+    {
+      "asset_id": "dialogue_frame_v7_default",
+      "relative_path": "video/assets/user_inputs/dialogue_frames/nc131976_SF風シンプルセリフ枠_外周trim.png",
+      "sha256": "86fc9ecebd4346d88b7ba4226f97a28ddffda87a87704cdb7760aa108fdd6a4b",
+      "asset_type": "UI",
+      "required": true,
+      "scope": "VIDEO_DEFAULT"
+    }
+  ]
+}

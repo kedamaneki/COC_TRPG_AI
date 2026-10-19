@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "gates": {
+    "SOURCE_URL_MISSING": 0,
+    "LICENSE_EVIDENCE_MISSING_FOR_DOWNLOADED": 0,
+    "SHA256_MISSING": 0,
+    "SEMANTIC_CLASSIFICATION_MISSING": 0,
+    "UNAPPROVED_ASSET_AUTO_USED": 0,
+    "P0_CANDIDATES": 13
+  },
+  "counts": {
+    "BACKGROUND": 3,
+    "BGM": 4,
+    "SFX": 6
+  },
+  "canonical_assets": 13,
+  "classification_confidence": {
+    "HIGH": 13
+  }
+}

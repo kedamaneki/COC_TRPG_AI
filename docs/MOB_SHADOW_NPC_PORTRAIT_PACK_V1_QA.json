@@ -1,0 +1,33 @@
+{
+  "pack_id": "mob_shadow_npc_portrait_pack_v1",
+  "status": "PASS",
+  "asset_count": 12,
+  "category_counts": {
+    "mob": 6,
+    "shadow": 4,
+    "corbitt_candidate": 2
+  },
+  "missing_files": [],
+  "duplicate_asset_ids": [],
+  "duplicate_portrait_ids": [],
+  "transparency_issues": [],
+  "opaque_edge_clipping": [],
+  "dimension_issues": [],
+  "semantic_missing": [],
+  "auto_use_on_unapproved": [],
+  "corbitt_exclusive": true,
+  "regression": {
+    "dedicated_fixture": "6 passed",
+    "video_agent_full_suite": "282 passed",
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "historical_artifacts": {
+    "v13_raw_files_verified": 373,
+    "v13_raw_hash_mismatches": 0,
+    "v13_raw_aggregate_sha256": "fd42df1dc3278ef3250486235f43a5693de4fea9ad3f7af5fc769690ab18e44d",
+    "v1_to_v2_8_writes": 0,
+    "video_rerender": false
+  }
+}

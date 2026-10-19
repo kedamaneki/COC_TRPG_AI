@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "asset_id": "portrait_shadow_npc_ghostlike_01_v1",
+  "source_type": "INTERNAL_GENERATED",
+  "generation_tool": "OpenAI built-in image generation",
+  "generated_at": "2026-10-19T12:23:02.347226+00:00",
+  "original_generated_file": "C:\\Users\\ri4re\\.codex\\generated_images\\01a1056c-61e0-7bd3-b32e-7086bfd35ffc\\exec-f666f81c-e49a-4a88-8e08-21ef3d5befe1.png",
+  "original_generated_sha256": "cb9a10e88df2984649eaab69401f61c8137ed4227c737e332a3f93d454a86595",
+  "final_asset_sha256": "cb9a10e88df2984649eaab69401f61c8137ed4227c737e332a3f93d454a86595",
+  "license_status": "LICENSE_REVIEW_REQUIRED",
+  "approval_status": "HUMAN_REVIEW_CANDIDATE",
+  "auto_use": false,
+  "prompt_constraints": [
+    "transparent background",
+    "faceless",
+    "single full-body figure",
+    "no text or watermark"
+  ],
+  "notes": "Translucent ghostlike presence"
+}

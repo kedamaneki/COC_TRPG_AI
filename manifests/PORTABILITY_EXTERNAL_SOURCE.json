@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "session_id": "CORBITT_LONGRUN_ITERATION3_V13_HOME_001",
+  "root_environment_variable": "CORBITT_V13_SOURCE_ROOT",
+  "control_environment_variable": "CORBITT_V13_CONTROL_ROOT",
+  "freeze_manifest_relative_path": "V13_RAW_FREEZE_MANIFEST.json",
+  "expected_file_count": 373,
+  "aggregate_algorithm": "sha256(path\\0sha256\\n, UTF-8, sorted by relative POSIX path)",
+  "expected_aggregate_sha256": "fd42df1dc3278ef3250486235f43a5693de4fea9ad3f7af5fc769690ab18e44d",
+  "required_files": [
+    "input_manifest.json",
+    "result.json",
+    "session-log.json",
+    "unified-event-log.json",
+    "merged/events.jsonl",
+    "merged/evaluation.json"
+  ],
+  "immutable": true
+}

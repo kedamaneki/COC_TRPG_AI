@@ -1,0 +1,17 @@
+{
+  "fixture_id": "FIXTURE_EXTERNAL_ASSET_ACQUISITION_001",
+  "checks": {
+    "source_url_recorded": true,
+    "license_evidence_recorded": true,
+    "sha_registered": true,
+    "semantic_classification": true,
+    "p0_queue_added": true,
+    "unapproved_asset_not_auto_used": true,
+    "noncommercial_rejected": true,
+    "missing_license_unresolved": true,
+    "cc0_recommendation_correct": true,
+    "cc_by_attribution_retained": true,
+    "changed_hash_approval_invalidation": true
+  },
+  "status": "PASS"
+}

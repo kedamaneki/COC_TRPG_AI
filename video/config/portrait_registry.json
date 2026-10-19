@@ -1,0 +1,683 @@
+{
+  "schema_version": "1.0",
+  "portraits": [
+    {
+      "portrait_profile_id": "portrait_reimu_head_only",
+      "character_id": "reimu",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_reimu_v13",
+      "source_asset_id": "portrait_source_reimu",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\れいむ",
+      "approval_status": "APPROVED_FOR_LOCAL_PREVIEW",
+      "usage_status": "ACTIVE",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_marisa_head_only",
+      "character_id": "marisa",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_marisa_v13",
+      "source_asset_id": "portrait_source_marisa",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\まりさ",
+      "approval_status": "APPROVED_FOR_LOCAL_PREVIEW",
+      "usage_status": "ACTIVE",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_alice_head_only",
+      "character_id": "alice",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_source_alice",
+      "source_asset_id": "portrait_source_alice",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\ありす",
+      "approval_status": "NOT_APPROVED",
+      "usage_status": "CANDIDATE_ONLY",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_koishi_head_only",
+      "character_id": "koishi",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_source_koishi",
+      "source_asset_id": "portrait_source_koishi",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\こいし",
+      "approval_status": "NOT_APPROVED",
+      "usage_status": "CANDIDATE_ONLY",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_satori_head_only",
+      "character_id": "satori",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_source_satori",
+      "source_asset_id": "portrait_source_satori",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\さとり",
+      "approval_status": "NOT_APPROVED",
+      "usage_status": "CANDIDATE_ONLY",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_flandre_head_only",
+      "character_id": "flandre",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_source_flandre",
+      "source_asset_id": "portrait_source_flandre",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\ふらん",
+      "approval_status": "NOT_APPROVED",
+      "usage_status": "CANDIDATE_ONLY",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_patchouli_head_only",
+      "character_id": "patchouli",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_source_patchouli",
+      "source_asset_id": "portrait_source_patchouli",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\ぱちゅりー",
+      "approval_status": "NOT_APPROVED",
+      "usage_status": "CANDIDATE_ONLY",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_remilia_head_only",
+      "character_id": "remilia",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_source_remilia",
+      "source_asset_id": "portrait_source_remilia",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\レミリア",
+      "approval_status": "NOT_APPROVED",
+      "usage_status": "CANDIDATE_ONLY",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_sakuya_head_only",
+      "character_id": "sakuya",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_sakuya_v21",
+      "source_asset_id": "portrait_source_sakuya",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\さくや",
+      "approval_status": "APPROVED_FOR_LOCAL_PREVIEW",
+      "usage_status": "ACTIVE",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_keine_head_only",
+      "character_id": "keine",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_source_keine",
+      "source_asset_id": "portrait_source_keine",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\けーね",
+      "approval_status": "NOT_APPROVED",
+      "usage_status": "CANDIDATE_ONLY",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_hakutaku_keine_head_only",
+      "character_id": "hakutaku_keine",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_source_hakutaku_keine",
+      "source_asset_id": "portrait_source_hakutaku_keine",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\きもけーね",
+      "approval_status": "NOT_APPROVED",
+      "usage_status": "CANDIDATE_ONLY",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_sanae_head_only",
+      "character_id": "sanae",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_source_sanae",
+      "source_asset_id": "portrait_source_sanae",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\さなえ",
+      "approval_status": "NOT_APPROVED",
+      "usage_status": "CANDIDATE_ONLY",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_aya_head_only",
+      "character_id": "aya",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_source_aya",
+      "source_asset_id": "portrait_source_aya",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\しゃめいまる",
+      "approval_status": "NOT_APPROVED",
+      "usage_status": "CANDIDATE_ONLY",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_mokou_head_only",
+      "character_id": "mokou",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_source_mokou",
+      "source_asset_id": "portrait_source_mokou",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\もこう",
+      "approval_status": "NOT_APPROVED",
+      "usage_status": "CANDIDATE_ONLY",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_youmu_head_only",
+      "character_id": "youmu",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_source_youmu",
+      "source_asset_id": "portrait_source_youmu",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\ようむ",
+      "approval_status": "NOT_APPROVED",
+      "usage_status": "CANDIDATE_ONLY",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_cirno_head_only",
+      "character_id": "cirno",
+      "portrait_kind": "HEAD_ONLY",
+      "asset_id": "portrait_source_cirno",
+      "source_asset_id": "portrait_source_cirno",
+      "external_source_path": "E:\\素材\\旧きつね式ゆっくり立ち絵素材\\ちるの",
+      "approval_status": "NOT_APPROVED",
+      "usage_status": "CANDIDATE_ONLY",
+      "license_status": "LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "portrait_profile_id": "portrait_profile_mob_shadow_male_tall_01_v1",
+      "portrait_id": "mob_shadow_male_tall_01",
+      "asset_id": "portrait_mob_shadow_male_tall_01_v1",
+      "display_name": "mob_shadow_male_tall_01",
+      "portrait_kind": "FULL_BODY",
+      "category": "mob",
+      "pack_id": "mob_shadow_npc_portrait_pack_v1",
+      "usable_for_roles": [
+        "NPC"
+      ],
+      "semantic_tags": [
+        "npc",
+        "mob",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "civilian",
+        "resident",
+        "indoor",
+        "old_house"
+      ],
+      "default_scale": 0.72,
+      "default_anchor": "BOTTOM_CENTER",
+      "allowed_scene_types": [
+        "indoor",
+        "old_house",
+        "horror",
+        "civilian"
+      ],
+      "always_visible_eligible": true,
+      "speaker_icon_eligible": false,
+      "npc_presence_layer_eligible": true,
+      "human_review_required": true,
+      "approval_status": "HUMAN_REVIEW_CANDIDATE",
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "auto_use": false,
+      "exclusive_character_id": null,
+      "reuse_policy": "GENERIC_NPC_AFTER_APPROVAL"
+    },
+    {
+      "portrait_profile_id": "portrait_profile_mob_shadow_male_thin_01_v1",
+      "portrait_id": "mob_shadow_male_thin_01",
+      "asset_id": "portrait_mob_shadow_male_thin_01_v1",
+      "display_name": "mob_shadow_male_thin_01",
+      "portrait_kind": "FULL_BODY",
+      "category": "mob",
+      "pack_id": "mob_shadow_npc_portrait_pack_v1",
+      "usable_for_roles": [
+        "NPC"
+      ],
+      "semantic_tags": [
+        "npc",
+        "mob",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "civilian",
+        "resident",
+        "indoor"
+      ],
+      "default_scale": 0.72,
+      "default_anchor": "BOTTOM_CENTER",
+      "allowed_scene_types": [
+        "indoor",
+        "old_house",
+        "horror",
+        "civilian"
+      ],
+      "always_visible_eligible": true,
+      "speaker_icon_eligible": false,
+      "npc_presence_layer_eligible": true,
+      "human_review_required": true,
+      "approval_status": "HUMAN_REVIEW_CANDIDATE",
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "auto_use": false,
+      "exclusive_character_id": null,
+      "reuse_policy": "GENERIC_NPC_AFTER_APPROVAL"
+    },
+    {
+      "portrait_profile_id": "portrait_profile_mob_shadow_male_heavy_01_v1",
+      "portrait_id": "mob_shadow_male_heavy_01",
+      "asset_id": "portrait_mob_shadow_male_heavy_01_v1",
+      "display_name": "mob_shadow_male_heavy_01",
+      "portrait_kind": "FULL_BODY",
+      "category": "mob",
+      "pack_id": "mob_shadow_npc_portrait_pack_v1",
+      "usable_for_roles": [
+        "NPC"
+      ],
+      "semantic_tags": [
+        "npc",
+        "mob",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "civilian",
+        "resident",
+        "indoor"
+      ],
+      "default_scale": 0.72,
+      "default_anchor": "BOTTOM_CENTER",
+      "allowed_scene_types": [
+        "indoor",
+        "old_house",
+        "horror",
+        "civilian"
+      ],
+      "always_visible_eligible": true,
+      "speaker_icon_eligible": false,
+      "npc_presence_layer_eligible": true,
+      "human_review_required": true,
+      "approval_status": "HUMAN_REVIEW_CANDIDATE",
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "auto_use": false,
+      "exclusive_character_id": null,
+      "reuse_policy": "GENERIC_NPC_AFTER_APPROVAL"
+    },
+    {
+      "portrait_profile_id": "portrait_profile_mob_shadow_female_01_v1",
+      "portrait_id": "mob_shadow_female_01",
+      "asset_id": "portrait_mob_shadow_female_01_v1",
+      "display_name": "mob_shadow_female_01",
+      "portrait_kind": "FULL_BODY",
+      "category": "mob",
+      "pack_id": "mob_shadow_npc_portrait_pack_v1",
+      "usable_for_roles": [
+        "NPC"
+      ],
+      "semantic_tags": [
+        "npc",
+        "mob",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "civilian",
+        "resident",
+        "indoor"
+      ],
+      "default_scale": 0.72,
+      "default_anchor": "BOTTOM_CENTER",
+      "allowed_scene_types": [
+        "indoor",
+        "old_house",
+        "horror",
+        "civilian"
+      ],
+      "always_visible_eligible": true,
+      "speaker_icon_eligible": false,
+      "npc_presence_layer_eligible": true,
+      "human_review_required": true,
+      "approval_status": "HUMAN_REVIEW_CANDIDATE",
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "auto_use": false,
+      "exclusive_character_id": null,
+      "reuse_policy": "GENERIC_NPC_AFTER_APPROVAL"
+    },
+    {
+      "portrait_profile_id": "portrait_profile_mob_shadow_old_person_01_v1",
+      "portrait_id": "mob_shadow_old_person_01",
+      "asset_id": "portrait_mob_shadow_old_person_01_v1",
+      "display_name": "mob_shadow_old_person_01",
+      "portrait_kind": "FULL_BODY",
+      "category": "mob",
+      "pack_id": "mob_shadow_npc_portrait_pack_v1",
+      "usable_for_roles": [
+        "NPC"
+      ],
+      "semantic_tags": [
+        "npc",
+        "mob",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "civilian",
+        "resident",
+        "old_person",
+        "indoor"
+      ],
+      "default_scale": 0.72,
+      "default_anchor": "BOTTOM_CENTER",
+      "allowed_scene_types": [
+        "indoor",
+        "old_house",
+        "horror",
+        "civilian"
+      ],
+      "always_visible_eligible": true,
+      "speaker_icon_eligible": false,
+      "npc_presence_layer_eligible": true,
+      "human_review_required": true,
+      "approval_status": "HUMAN_REVIEW_CANDIDATE",
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "auto_use": false,
+      "exclusive_character_id": null,
+      "reuse_policy": "GENERIC_NPC_AFTER_APPROVAL"
+    },
+    {
+      "portrait_profile_id": "portrait_profile_mob_shadow_cloak_01_v1",
+      "portrait_id": "mob_shadow_cloak_01",
+      "asset_id": "portrait_mob_shadow_cloak_01_v1",
+      "display_name": "mob_shadow_cloak_01",
+      "portrait_kind": "FULL_BODY",
+      "category": "mob",
+      "pack_id": "mob_shadow_npc_portrait_pack_v1",
+      "usable_for_roles": [
+        "NPC"
+      ],
+      "semantic_tags": [
+        "npc",
+        "mob",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "mysterious",
+        "cloak",
+        "indoor",
+        "old_house"
+      ],
+      "default_scale": 0.72,
+      "default_anchor": "BOTTOM_CENTER",
+      "allowed_scene_types": [
+        "indoor",
+        "old_house",
+        "horror",
+        "civilian"
+      ],
+      "always_visible_eligible": true,
+      "speaker_icon_eligible": false,
+      "npc_presence_layer_eligible": true,
+      "human_review_required": true,
+      "approval_status": "HUMAN_REVIEW_CANDIDATE",
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "auto_use": false,
+      "exclusive_character_id": null,
+      "reuse_policy": "GENERIC_NPC_AFTER_APPROVAL"
+    },
+    {
+      "portrait_profile_id": "portrait_profile_shadow_npc_humanoid_01_v1",
+      "portrait_id": "shadow_npc_humanoid_01",
+      "asset_id": "portrait_shadow_npc_humanoid_01_v1",
+      "display_name": "shadow_npc_humanoid_01",
+      "portrait_kind": "FULL_BODY",
+      "category": "shadow",
+      "pack_id": "mob_shadow_npc_portrait_pack_v1",
+      "usable_for_roles": [
+        "NPC"
+      ],
+      "semantic_tags": [
+        "npc",
+        "shadow",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "mysterious",
+        "occult",
+        "horror",
+        "old_house"
+      ],
+      "default_scale": 0.72,
+      "default_anchor": "BOTTOM_CENTER",
+      "allowed_scene_types": [
+        "indoor",
+        "old_house",
+        "horror",
+        "civilian"
+      ],
+      "always_visible_eligible": true,
+      "speaker_icon_eligible": false,
+      "npc_presence_layer_eligible": true,
+      "human_review_required": true,
+      "approval_status": "HUMAN_REVIEW_CANDIDATE",
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "auto_use": false,
+      "exclusive_character_id": null,
+      "reuse_policy": "GENERIC_NPC_AFTER_APPROVAL"
+    },
+    {
+      "portrait_profile_id": "portrait_profile_shadow_npc_humanoid_02_v1",
+      "portrait_id": "shadow_npc_humanoid_02",
+      "asset_id": "portrait_shadow_npc_humanoid_02_v1",
+      "display_name": "shadow_npc_humanoid_02",
+      "portrait_kind": "FULL_BODY",
+      "category": "shadow",
+      "pack_id": "mob_shadow_npc_portrait_pack_v1",
+      "usable_for_roles": [
+        "NPC"
+      ],
+      "semantic_tags": [
+        "npc",
+        "shadow",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "mysterious",
+        "occult",
+        "horror",
+        "old_house"
+      ],
+      "default_scale": 0.72,
+      "default_anchor": "BOTTOM_CENTER",
+      "allowed_scene_types": [
+        "indoor",
+        "old_house",
+        "horror",
+        "civilian"
+      ],
+      "always_visible_eligible": true,
+      "speaker_icon_eligible": false,
+      "npc_presence_layer_eligible": true,
+      "human_review_required": true,
+      "approval_status": "HUMAN_REVIEW_CANDIDATE",
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "auto_use": false,
+      "exclusive_character_id": null,
+      "reuse_policy": "GENERIC_NPC_AFTER_APPROVAL"
+    },
+    {
+      "portrait_profile_id": "portrait_profile_shadow_npc_distorted_01_v1",
+      "portrait_id": "shadow_npc_distorted_01",
+      "asset_id": "portrait_shadow_npc_distorted_01_v1",
+      "display_name": "shadow_npc_distorted_01",
+      "portrait_kind": "FULL_BODY",
+      "category": "shadow",
+      "pack_id": "mob_shadow_npc_portrait_pack_v1",
+      "usable_for_roles": [
+        "NPC"
+      ],
+      "semantic_tags": [
+        "npc",
+        "shadow",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "mysterious",
+        "hostile",
+        "occult",
+        "distorted",
+        "horror"
+      ],
+      "default_scale": 0.72,
+      "default_anchor": "BOTTOM_CENTER",
+      "allowed_scene_types": [
+        "indoor",
+        "old_house",
+        "horror",
+        "civilian"
+      ],
+      "always_visible_eligible": true,
+      "speaker_icon_eligible": false,
+      "npc_presence_layer_eligible": true,
+      "human_review_required": true,
+      "approval_status": "HUMAN_REVIEW_CANDIDATE",
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "auto_use": false,
+      "exclusive_character_id": null,
+      "reuse_policy": "GENERIC_NPC_AFTER_APPROVAL"
+    },
+    {
+      "portrait_profile_id": "portrait_profile_shadow_npc_ghostlike_01_v1",
+      "portrait_id": "shadow_npc_ghostlike_01",
+      "asset_id": "portrait_shadow_npc_ghostlike_01_v1",
+      "display_name": "shadow_npc_ghostlike_01",
+      "portrait_kind": "FULL_BODY",
+      "category": "shadow",
+      "pack_id": "mob_shadow_npc_portrait_pack_v1",
+      "usable_for_roles": [
+        "NPC"
+      ],
+      "semantic_tags": [
+        "npc",
+        "shadow",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "mysterious",
+        "occult",
+        "ghostlike",
+        "horror"
+      ],
+      "default_scale": 0.72,
+      "default_anchor": "BOTTOM_CENTER",
+      "allowed_scene_types": [
+        "indoor",
+        "old_house",
+        "horror",
+        "civilian"
+      ],
+      "always_visible_eligible": true,
+      "speaker_icon_eligible": false,
+      "npc_presence_layer_eligible": true,
+      "human_review_required": true,
+      "approval_status": "HUMAN_REVIEW_CANDIDATE",
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "auto_use": false,
+      "exclusive_character_id": null,
+      "reuse_policy": "GENERIC_NPC_AFTER_APPROVAL"
+    },
+    {
+      "portrait_profile_id": "portrait_profile_corbitt_shadow_candidate_01_v1",
+      "portrait_id": "corbitt_shadow_candidate_01",
+      "asset_id": "portrait_corbitt_shadow_candidate_01_v1",
+      "display_name": "corbitt_shadow_candidate_01",
+      "portrait_kind": "FULL_BODY",
+      "category": "corbitt_candidate",
+      "pack_id": "mob_shadow_npc_portrait_pack_v1",
+      "usable_for_roles": [
+        "NPC",
+        "ENEMY"
+      ],
+      "semantic_tags": [
+        "npc",
+        "shadow",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "hostile",
+        "occult",
+        "horror",
+        "corbitt_candidate",
+        "special_npc",
+        "final_battle",
+        "basement",
+        "unnatural_presence"
+      ],
+      "default_scale": 0.78,
+      "default_anchor": "BOTTOM_CENTER",
+      "allowed_scene_types": [
+        "final_battle",
+        "basement",
+        "horror"
+      ],
+      "always_visible_eligible": true,
+      "speaker_icon_eligible": false,
+      "npc_presence_layer_eligible": true,
+      "human_review_required": true,
+      "approval_status": "APPROVED_FOR_PREVIEW",
+      "license_status": "LICENSE_APPROVED",
+      "auto_use": false,
+      "exclusive_character_id": "corbitt",
+      "reuse_policy": "CORBITT_ONLY_V1",
+      "human_selected": true,
+      "selection_status": "SELECTED_FOR_VIDEO_002",
+      "approved_video_scopes": [
+        "VIDEO_002_FINAL_BATTLE"
+      ]
+    },
+    {
+      "portrait_profile_id": "portrait_profile_corbitt_shadow_candidate_02_v1",
+      "portrait_id": "corbitt_shadow_candidate_02",
+      "asset_id": "portrait_corbitt_shadow_candidate_02_v1",
+      "display_name": "corbitt_shadow_candidate_02",
+      "portrait_kind": "FULL_BODY",
+      "category": "corbitt_candidate",
+      "pack_id": "mob_shadow_npc_portrait_pack_v1",
+      "usable_for_roles": [
+        "NPC",
+        "ENEMY"
+      ],
+      "semantic_tags": [
+        "npc",
+        "shadow",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "hostile",
+        "occult",
+        "horror",
+        "corbitt_candidate",
+        "special_npc",
+        "final_battle",
+        "basement",
+        "unnatural_presence"
+      ],
+      "default_scale": 0.78,
+      "default_anchor": "BOTTOM_CENTER",
+      "allowed_scene_types": [
+        "final_battle",
+        "basement",
+        "horror"
+      ],
+      "always_visible_eligible": true,
+      "speaker_icon_eligible": false,
+      "npc_presence_layer_eligible": true,
+      "human_review_required": true,
+      "approval_status": "HUMAN_REVIEW_CANDIDATE",
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "auto_use": false,
+      "exclusive_character_id": "corbitt",
+      "reuse_policy": "CORBITT_ONLY_V1",
+      "selection_status": "RESERVE",
+      "human_selected": false
+    }
+  ],
+  "policy": {
+    "unapproved_auto_use": false,
+    "missing_asset": "FAIL_CLOSED_FOR_ACTIVE",
+    "mob_shadow_pack_v1": {
+      "auto_use_before_approval": false,
+      "corbitt_candidates_exclusive_to": "corbitt",
+      "npc_scene_actor_layer_requires_source_presence": true
+    }
+  }
+}

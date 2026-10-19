@@ -1,0 +1,16 @@
+{
+  "fixture_id": "FIXTURE_SAKUYA_TUNING_001",
+  "mapping": {
+    "A": 110,
+    "B": 120,
+    "C": 105,
+    "D": 115
+  },
+  "profile_by_rate": {
+    "120": "sakuya_tune_120_v1",
+    "115": "sakuya_tune_115_v1",
+    "110": "sakuya_tune_110_v1",
+    "105": "sakuya_tune_105_v1"
+  },
+  "notice": "Keep this mapping separate while conducting blind review."
+}

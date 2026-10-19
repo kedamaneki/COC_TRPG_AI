@@ -569,6 +569,7 @@ def apply_stall_candidate_guidance(state, pc_action, scenario_mgr=None, actor=""
         "exhausted_target_reselected" if exhausted_repeat else "action_phase_mismatch"
     )
     fixed["availability_snapshot"] = copy.deepcopy(top.get("availability_snapshot") or {})
+    fixed["required_location"] = str(top.get("required_location") or "")
     return fixed
 
 
@@ -647,6 +648,7 @@ def apply_s4_candidate_override(state, pc_action, scenario_mgr=None, actor=""):
     fixed["intervention_level"] = "S4"
     fixed["intervention_reason"] = "s3_candidate_ignored"
     fixed["availability_snapshot"] = copy.deepcopy(top.get("availability_snapshot") or {})
+    fixed["required_location"] = str(top.get("required_location") or "")
     fixed["progression_binding"] = {
         "selected": True,
         "proposal_bound": True,
@@ -655,6 +657,7 @@ def apply_s4_candidate_override(state, pc_action, scenario_mgr=None, actor=""):
         "target": fixed["target"],
         "adjudication_route": str(top.get("adjudication_route") or ""),
         "expected_state_effect": copy.deepcopy(top.get("expected_state_effect") or {}),
+        "required_location": str(top.get("required_location") or ""),
         "availability_context_version": str(top.get("availability_context_version") or ""),
     }
     forced_key = "|".join((

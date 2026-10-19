@@ -1,0 +1,201 @@
+{
+  "fixture_id": "FIXTURE_YMM4_VOICE_COMPAT_001",
+  "status": "PASS",
+  "records": [
+    {
+      "character_id": "reimu",
+      "fixture_text_phonetic": "これは、おんせいせっていの、かくにんです。きこえかたと、はなすすぴーどを、かくにんしてください。",
+      "baseline_profile_id": "m1_aq_f1",
+      "exact_profile_id": "ymm_exact_reimu_v1",
+      "baseline": {
+        "render": {
+          "raw_synthesis_path": "V:\\fixtures\\ymm4_voice_compat\\.cache\\cb417a7249abbc2e4b6520b71850a641c1bc4d9b47e9826df6818aca60982654.wav",
+          "raw_synthesis_sha256": "4a41d8a76cf6d71d024a2c159402e4d7d9eb7d9fe72bf0fc379a0ed4c03536a3",
+          "output_sha256": "f46a0df6650c5eb5a032e28a9bea62d764ac20fc27327137eda38d9e6271a017",
+          "filter": "loudnorm=I=-20:TP=-2:LRA=7,aresample=48000",
+          "reading_speed": 110,
+          "renderer_unused_profile_fields": [
+            "pitch_playback",
+            "volume"
+          ]
+        },
+        "measurement": {
+          "path": "V:\\fixtures\\ymm4_voice_compat\\reimu_baseline.wav",
+          "sha256": "f46a0df6650c5eb5a032e28a9bea62d764ac20fc27327137eda38d9e6271a017",
+          "duration_sec": 6.635875,
+          "sample_rate": 48000,
+          "channels": 1,
+          "sample_width_bytes": 2,
+          "rms_linear": 3403,
+          "rms_dbfs": -19.671,
+          "peak_linear": 17799,
+          "peak_dbfs": -5.301,
+          "trailing_silence_sec_at_minus_50_dbfs": 0.032021,
+          "integrated_lufs": -19.97,
+          "true_peak_dbtp": -5.29,
+          "loudness_range_lu": 0.7,
+          "status": "PASS"
+        }
+      },
+      "exact": {
+        "render": {
+          "raw_synthesis_path": "V:\\fixtures\\ymm4_voice_compat\\.cache\\fd4e7579c76e64ea1bd97f125ca4250c9c6bf195fa659e48315f786225ef75bd.wav",
+          "raw_synthesis_sha256": "ade7f37aa7449a1bc8e775c37b21eeb72e47876a5d0add61a5ce92fe7a6481f7",
+          "output_sha256": "439c25f20144cdbd7f62a449dc99fac58f9f07d6314ca45c8cf8a8afb10c2fc4",
+          "filter": "aresample=48000,volume=0.500000000",
+          "synthesis_speed": 125,
+          "playback_rate_percent": 100.0,
+          "source_volume_percent": 50.0
+        },
+        "measurement": {
+          "path": "V:\\fixtures\\ymm4_voice_compat\\reimu_exact.wav",
+          "sha256": "439c25f20144cdbd7f62a449dc99fac58f9f07d6314ca45c8cf8a8afb10c2fc4",
+          "duration_sec": 5.75725,
+          "sample_rate": 48000,
+          "channels": 1,
+          "sample_width_bytes": 2,
+          "rms_linear": 3162,
+          "rms_dbfs": -20.309,
+          "peak_linear": 16793,
+          "peak_dbfs": -5.806,
+          "trailing_silence_sec_at_minus_50_dbfs": 0.031917,
+          "integrated_lufs": -20.62,
+          "true_peak_dbtp": -5.79,
+          "loudness_range_lu": 0.8,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "character_id": "marisa",
+      "fixture_text_phonetic": "これは、おんせいせっていの、かくにんです。きこえかたと、はなすすぴーどを、かくにんしてください。",
+      "baseline_profile_id": "aq_marisa_default",
+      "exact_profile_id": "ymm_exact_marisa_v1",
+      "baseline": {
+        "render": {
+          "raw_synthesis_path": "V:\\fixtures\\ymm4_voice_compat\\.cache\\388490011a250f0e793a086ad29675384810232a0c76304ec18f07ce2fab4620.wav",
+          "raw_synthesis_sha256": "b87855b93552503d92f3c1fe2f4ccf48ebb267527f23af84d1cade542299f54c",
+          "output_sha256": "a77e1df572a4ed41d19810bca558faeac2319017c8d5545f6349e2d4678bf25b",
+          "filter": "loudnorm=I=-20:TP=-2:LRA=7,aresample=48000",
+          "reading_speed": 105,
+          "renderer_unused_profile_fields": [
+            "pitch_playback",
+            "volume"
+          ]
+        },
+        "measurement": {
+          "path": "V:\\fixtures\\ymm4_voice_compat\\marisa_baseline.wav",
+          "sha256": "a77e1df572a4ed41d19810bca558faeac2319017c8d5545f6349e2d4678bf25b",
+          "duration_sec": 6.86,
+          "sample_rate": 48000,
+          "channels": 1,
+          "sample_width_bytes": 2,
+          "rms_linear": 3272,
+          "rms_dbfs": -20.012,
+          "peak_linear": 18986,
+          "peak_dbfs": -4.74,
+          "trailing_silence_sec_at_minus_50_dbfs": 0.032021,
+          "integrated_lufs": -20.38,
+          "true_peak_dbtp": -4.73,
+          "loudness_range_lu": 1.0,
+          "status": "PASS"
+        }
+      },
+      "exact": {
+        "render": {
+          "raw_synthesis_path": "V:\\fixtures\\ymm4_voice_compat\\.cache\\8c841ec8086dac4af5338627bbeace6d416131fdb8e6f2aadb879ea914eb73a1.wav",
+          "raw_synthesis_sha256": "7604b0a8df4e7a8c46ded4b7913b791235649ca301293acbaa688c4a4e798630",
+          "output_sha256": "4bff866c59cdc1b83771934f7fd925af0a884fc32e76be13e6cb0df1db1aae7d",
+          "filter": "aresample=48000,volume=0.500000000",
+          "synthesis_speed": 125,
+          "playback_rate_percent": 100.0,
+          "source_volume_percent": 50.0
+        },
+        "measurement": {
+          "path": "V:\\fixtures\\ymm4_voice_compat\\marisa_exact.wav",
+          "sha256": "4bff866c59cdc1b83771934f7fd925af0a884fc32e76be13e6cb0df1db1aae7d",
+          "duration_sec": 5.75725,
+          "sample_rate": 48000,
+          "channels": 1,
+          "sample_width_bytes": 2,
+          "rms_linear": 2791,
+          "rms_dbfs": -21.394,
+          "peak_linear": 16435,
+          "peak_dbfs": -5.993,
+          "trailing_silence_sec_at_minus_50_dbfs": 0.032188,
+          "integrated_lufs": -21.72,
+          "true_peak_dbtp": -5.99,
+          "loudness_range_lu": 0.6,
+          "status": "PASS"
+        }
+      }
+    },
+    {
+      "character_id": "sakuya",
+      "fixture_text_phonetic": "これは、おんせいせっていの、かくにんです。きこえかたと、はなすすぴーどを、かくにんしてください。",
+      "baseline_profile_id": "aq_kp_sakuya_v21",
+      "exact_profile_id": "ymm_exact_sakuya_v1",
+      "baseline": {
+        "render": {
+          "raw_synthesis_path": "V:\\fixtures\\ymm4_voice_compat\\.cache\\3679962cf8747bb38abb87d5ff9f64aa6e0c9990895525c07bc5262161cfbeec.wav",
+          "raw_synthesis_sha256": "f9e9e54dc93b1623023b8f68aaff50441484b1587df2aba48d52d5d8684454de",
+          "output_sha256": "5a74bb73b3061f6237dfed240b542344eaa568eb754dc486d60701f248f8a165",
+          "filter": "loudnorm=I=-20:TP=-2:LRA=7,aresample=48000",
+          "reading_speed": 102,
+          "renderer_unused_profile_fields": [
+            "pitch_playback",
+            "volume"
+          ]
+        },
+        "measurement": {
+          "path": "V:\\fixtures\\ymm4_voice_compat\\sakuya_baseline.wav",
+          "sha256": "5a74bb73b3061f6237dfed240b542344eaa568eb754dc486d60701f248f8a165",
+          "duration_sec": 7.1645,
+          "sample_rate": 48000,
+          "channels": 1,
+          "sample_width_bytes": 2,
+          "rms_linear": 3331,
+          "rms_dbfs": -19.857,
+          "peak_linear": 17699,
+          "peak_dbfs": -5.35,
+          "trailing_silence_sec_at_minus_50_dbfs": 0.031917,
+          "integrated_lufs": -20.1,
+          "true_peak_dbtp": -5.34,
+          "loudness_range_lu": 1.2,
+          "status": "PASS"
+        }
+      },
+      "exact": {
+        "render": {
+          "raw_synthesis_path": "V:\\fixtures\\ymm4_voice_compat\\.cache\\5fbb27e29f90b3c67124df5a6510c2438dc310303d81c97d89b5cf5232a55b89.wav",
+          "raw_synthesis_sha256": "ab1784f9c44bb5ab4f51729b55053204fb487deb4fbac207b0ecff646c3dc5fc",
+          "output_sha256": "7403d0ae26d2bcefeae97f0aaffcf6882f69168ff4dac8c27e3c89fe607c620b",
+          "filter": "asetrate=9600.000000,aresample=48000,volume=0.500000000",
+          "synthesis_speed": 105,
+          "playback_rate_percent": 120.0,
+          "source_volume_percent": 50.0
+        },
+        "measurement": {
+          "path": "V:\\fixtures\\ymm4_voice_compat\\sakuya_exact.wav",
+          "sha256": "7403d0ae26d2bcefeae97f0aaffcf6882f69168ff4dac8c27e3c89fe607c620b",
+          "duration_sec": 5.716667,
+          "sample_rate": 48000,
+          "channels": 1,
+          "sample_width_bytes": 2,
+          "rms_linear": 3170,
+          "rms_dbfs": -20.288,
+          "peak_linear": 17508,
+          "peak_dbfs": -5.444,
+          "trailing_silence_sec_at_minus_50_dbfs": 0.026687,
+          "integrated_lufs": -20.45,
+          "true_peak_dbtp": -5.42,
+          "loudness_range_lu": 0.7,
+          "status": "PASS"
+        }
+      }
+    }
+  ],
+  "human_review": "PENDING",
+  "active_mapping_changed": false,
+  "pure_direct_ymm_reference": "REFERENCE_NOT_AVAILABLE"
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "asset_id": "portrait_corbitt_shadow_candidate_01_v1",
+  "source_type": "INTERNAL_GENERATED",
+  "generation_tool": "OpenAI built-in image generation",
+  "generated_at": "2026-10-19T12:23:02.384759+00:00",
+  "original_generated_file": "C:\\Users\\ri4re\\.codex\\generated_images\\01a1056c-61e0-7bd3-b32e-7086bfd35ffc\\exec-06ab25e8-9b94-44ba-b02e-9f61031df88e.png",
+  "original_generated_sha256": "d6ebcabf4071987e3b6457e89c0c5a9637386a27510afed217a2337a2bc846fa",
+  "final_asset_sha256": "d6ebcabf4071987e3b6457e89c0c5a9637386a27510afed217a2337a2bc846fa",
+  "license_status": "LICENSE_APPROVED",
+  "approval_status": "APPROVED_FOR_PREVIEW",
+  "auto_use": false,
+  "prompt_constraints": [
+    "transparent background",
+    "faceless",
+    "single full-body figure",
+    "no text or watermark"
+  ],
+  "notes": "Gaunt forward-leaning Corbitt candidate",
+  "approved_video_scopes": [
+    "VIDEO_002_FINAL_BATTLE"
+  ],
+  "human_selected": true,
+  "selection_status": "SELECTED_FOR_VIDEO_002",
+  "license_authority_url": "https://openai.com/policies/terms-of-use/"
+}

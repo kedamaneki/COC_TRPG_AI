@@ -2,7 +2,17 @@ from __future__ import annotations
 
 import re
 
+from video_agent.assets.classification import semantic_lookup
 from video_agent.presentation.assets import resolve_background, resolve_expression
+
+
+def semantic_asset_candidates(index: dict, category: str, semantic: str, *, automatic: bool = True) -> list[str]:
+    """Resolve Planner candidates by semantic meaning, never by filename.
+
+    Automatic lookup reads only the precomputed eligible branch.  The index
+    builder places an asset there only after both approval gates and auto_use.
+    """
+    return semantic_lookup(index, category, semantic, automatic=automatic)
 
 
 def bgm_category(scene_type: str) -> str:

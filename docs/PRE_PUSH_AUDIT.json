@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "candidate_file_count": 602,
+  "candidate_total_bytes": 69150172,
+  "max_file_size_bytes": 52428800,
+  "oversized": [],
+  "forbidden_media_or_archive": [],
+  "secret_findings": [],
+  "missing_candidates": []
+}

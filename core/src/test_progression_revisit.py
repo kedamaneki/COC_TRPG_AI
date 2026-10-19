@@ -330,6 +330,7 @@ class ProgressionRevisitTests(unittest.TestCase):
                 "reachable": True, "executable": True, "blocked_reason": "",
                 "adjudication_route": "SCENARIO_EVENT:library__door__open",
                 "expected_state_effect": {"flag_updates": {"door_open": True}},
+                "required_location": "library",
             },
         )
 

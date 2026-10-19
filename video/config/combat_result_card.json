@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "component_id": "COMBAT_RESULT_CARD_V1",
+  "scope": "VIDEO_002_FINAL_BATTLE",
+  "speaker_class": "SYSTEM",
+  "voice": "NONE",
+  "portrait": "NONE",
+  "stage_order": [
+    "ACTION",
+    "OBJECTIVE",
+    "COMBAT_END"
+  ],
+  "labels": {
+    "ACTION": "遺体を破壊",
+    "OBJECTIVE": "コービットを打倒",
+    "COMBAT_END": "戦闘終了"
+  },
+  "source_contract": {
+    "required_event_types": [
+      "COMBAT_ACTION_SELECTED",
+      "COMBAT_ACTION_RESOLVED",
+      "SPECIAL_OBJECTIVE_COMPLETED",
+      "COMBAT_ENDING",
+      "COMBAT_ENDED"
+    ],
+    "required_resolution_mode": "NO_ROLL",
+    "required_world_fact": "CORBITT_BODY_DESTROYED",
+    "forbidden_inventions": [
+      "ATTACK_ROLL",
+      "DAMAGE_ROLL",
+      "HP_CHANGE",
+      "ENEMY_ACTION"
+    ]
+  },
+  "scene_actor_policy": {
+    "actor_id": "walter_corbitt",
+    "visible_only_while_source_confirmed_present": true,
+    "fade_out_after_event_type": "SPECIAL_OBJECTIVE_COMPLETED",
+    "fade_style": "NATURAL_SHORT_FADE"
+  },
+  "render_policy": {
+    "auto_render": false,
+    "human_review_required": true
+  }
+}

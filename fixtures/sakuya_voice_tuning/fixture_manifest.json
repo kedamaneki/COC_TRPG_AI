@@ -1,0 +1,241 @@
+{
+  "fixture_id": "FIXTURE_SAKUYA_TUNING_001",
+  "status": "PASS",
+  "candidate_labels": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "line_ids": [
+    "check",
+    "kp_check",
+    "kp_result"
+  ],
+  "voice_type_all": "f1",
+  "reading_speed_all": 105,
+  "source_volume_all": 50,
+  "pitch_speed_coupling": "PASS",
+  "pitch_preserving_process_count": 0,
+  "active_mapping_changed": false,
+  "auto_use": false,
+  "human_review": "PENDING",
+  "anonymous_records": [
+    {
+      "candidate": "A",
+      "line_id": "check",
+      "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_A_check.wav",
+      "measurement": {
+        "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_A_check.wav",
+        "sha256": "f43503d19b16ca25bbc56b1c5561d8b783fa641e0c6851412ab38fd82fcd70a9",
+        "duration_sec": 6.236375,
+        "sample_rate": 48000,
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "rms_linear": 3170,
+        "rms_dbfs": -20.288,
+        "peak_linear": 17511,
+        "peak_dbfs": -5.443,
+        "trailing_silence_sec_at_minus_50_dbfs": 0.029125
+      }
+    },
+    {
+      "candidate": "A",
+      "line_id": "kp_check",
+      "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_A_kp_check.wav",
+      "measurement": {
+        "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_A_kp_check.wav",
+        "sha256": "6885449b4190bc8c0a39c46f563f4cba2543f116e24b0fd24fa080518b68fc96",
+        "duration_sec": 4.633312,
+        "sample_rate": 48000,
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "rms_linear": 3068,
+        "rms_dbfs": -20.572,
+        "peak_linear": 16588,
+        "peak_dbfs": -5.913,
+        "trailing_silence_sec_at_minus_50_dbfs": 0.029125
+      }
+    },
+    {
+      "candidate": "A",
+      "line_id": "kp_result",
+      "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_A_kp_result.wav",
+      "measurement": {
+        "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_A_kp_result.wav",
+        "sha256": "0aa045e4a9e80110cf7593a02f8daed5e972a81bb4aad1d57d99c31b0945fabb",
+        "duration_sec": 3.122854,
+        "sample_rate": 48000,
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "rms_linear": 3173,
+        "rms_dbfs": -20.279,
+        "peak_linear": 17001,
+        "peak_dbfs": -5.699,
+        "trailing_silence_sec_at_minus_50_dbfs": 0.029167
+      }
+    },
+    {
+      "candidate": "B",
+      "line_id": "check",
+      "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_B_check.wav",
+      "measurement": {
+        "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_B_check.wav",
+        "sha256": "7403d0ae26d2bcefeae97f0aaffcf6882f69168ff4dac8c27e3c89fe607c620b",
+        "duration_sec": 5.716667,
+        "sample_rate": 48000,
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "rms_linear": 3170,
+        "rms_dbfs": -20.288,
+        "peak_linear": 17508,
+        "peak_dbfs": -5.444,
+        "trailing_silence_sec_at_minus_50_dbfs": 0.026687
+      }
+    },
+    {
+      "candidate": "B",
+      "line_id": "kp_check",
+      "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_B_kp_check.wav",
+      "measurement": {
+        "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_B_kp_check.wav",
+        "sha256": "54d2ec5adb7a17648cb7d60f37bca099a85eb179de6102e6de1a7f75739b2454",
+        "duration_sec": 4.247187,
+        "sample_rate": 48000,
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "rms_linear": 3068,
+        "rms_dbfs": -20.572,
+        "peak_linear": 16556,
+        "peak_dbfs": -5.93,
+        "trailing_silence_sec_at_minus_50_dbfs": 0.026687
+      }
+    },
+    {
+      "candidate": "B",
+      "line_id": "kp_result",
+      "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_B_kp_result.wav",
+      "measurement": {
+        "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_B_kp_result.wav",
+        "sha256": "35aad458c7de520f85b276d907632cde10d9781de5bc5383af750417dbf01034",
+        "duration_sec": 2.862604,
+        "sample_rate": 48000,
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "rms_linear": 3173,
+        "rms_dbfs": -20.279,
+        "peak_linear": 17049,
+        "peak_dbfs": -5.675,
+        "trailing_silence_sec_at_minus_50_dbfs": 0.026708
+      }
+    },
+    {
+      "candidate": "C",
+      "line_id": "check",
+      "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_C_check.wav",
+      "measurement": {
+        "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_C_check.wav",
+        "sha256": "00f46d7dd318df3f367641d37201e17fc5b237c9f500335a20d8c717548f4e02",
+        "duration_sec": 6.533333,
+        "sample_rate": 48000,
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "rms_linear": 3170,
+        "rms_dbfs": -20.288,
+        "peak_linear": 17508,
+        "peak_dbfs": -5.444,
+        "trailing_silence_sec_at_minus_50_dbfs": 0.0305
+      }
+    },
+    {
+      "candidate": "C",
+      "line_id": "kp_check",
+      "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_C_kp_check.wav",
+      "measurement": {
+        "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_C_kp_check.wav",
+        "sha256": "3f08aa427d01609afcc64264137ae427a6c6fe137b3254009764f2da495bc0cf",
+        "duration_sec": 4.853937,
+        "sample_rate": 48000,
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "rms_linear": 3068,
+        "rms_dbfs": -20.572,
+        "peak_linear": 16582,
+        "peak_dbfs": -5.916,
+        "trailing_silence_sec_at_minus_50_dbfs": 0.0305
+      }
+    },
+    {
+      "candidate": "C",
+      "line_id": "kp_result",
+      "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_C_kp_result.wav",
+      "measurement": {
+        "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_C_kp_result.wav",
+        "sha256": "245e170713c427dce262ea68dea20656e9f6b3d607359eb2c23eb32d4cda910d",
+        "duration_sec": 3.271562,
+        "sample_rate": 48000,
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "rms_linear": 3173,
+        "rms_dbfs": -20.279,
+        "peak_linear": 17067,
+        "peak_dbfs": -5.666,
+        "trailing_silence_sec_at_minus_50_dbfs": 0.030542
+      }
+    },
+    {
+      "candidate": "D",
+      "line_id": "check",
+      "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_D_check.wav",
+      "measurement": {
+        "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_D_check.wav",
+        "sha256": "3416368eff3a7501fbb05053d03011b016c73eae2a910ef3e829b3b924350b7b",
+        "duration_sec": 5.965229,
+        "sample_rate": 48000,
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "rms_linear": 3170,
+        "rms_dbfs": -20.288,
+        "peak_linear": 17553,
+        "peak_dbfs": -5.422,
+        "trailing_silence_sec_at_minus_50_dbfs": 0.027854
+      }
+    },
+    {
+      "candidate": "D",
+      "line_id": "kp_check",
+      "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_D_kp_check.wav",
+      "measurement": {
+        "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_D_kp_check.wav",
+        "sha256": "bee01728070b5adf5b07f8a8abd5d70718350c101d89d0a0d0fa3f137bf39751",
+        "duration_sec": 4.431854,
+        "sample_rate": 48000,
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "rms_linear": 3068,
+        "rms_dbfs": -20.572,
+        "peak_linear": 16583,
+        "peak_dbfs": -5.915,
+        "trailing_silence_sec_at_minus_50_dbfs": 0.027854
+      }
+    },
+    {
+      "candidate": "D",
+      "line_id": "kp_result",
+      "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_D_kp_result.wav",
+      "measurement": {
+        "path": "V:\\fixtures\\sakuya_voice_tuning\\sakuya_D_kp_result.wav",
+        "sha256": "b0e8eda4b5755bce81e96b8e711f664f2649ba4b3fb28b2b0f91481052a1acb9",
+        "duration_sec": 2.987083,
+        "sample_rate": 48000,
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "rms_linear": 3173,
+        "rms_dbfs": -20.279,
+        "peak_linear": 17003,
+        "peak_dbfs": -5.698,
+        "trailing_silence_sec_at_minus_50_dbfs": 0.027896
+      }
+    }
+  ]
+}

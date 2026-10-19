@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "scan_root": "E:\\素材",
+  "scan_timestamp": "2026-10-18T23:56:32.523858+00:00",
+  "registered_files": 32089,
+  "new_content_assets": 13365,
+  "duplicate_content_records": 18724,
+  "missing_assets": 0,
+  "changed_assets": 0,
+  "unique_asset_ids": 32089,
+  "duplicate_asset_ids": 0,
+  "by_top_folder": {
+    "BGM素材": 30,
+    "効果音素材": 137,
+    "旧きつね式ゆっくり立ち絵Zip素材": 94,
+    "旧きつね式ゆっくり立ち絵素材": 31798,
+    "背景素材": 30
+  },
+  "by_asset_type": {
+    "AUDIO": 167,
+    "PORTRAIT_OR_IMAGE": 31735,
+    "UNKNOWN": 187
+  },
+  "by_extension": {
+    ".png": 31712,
+    ".mp3": 158,
+    ".zip": 94,
+    ".txt": 92,
+    ".jpg": 23,
+    ".wav": 9,
+    ".avif": 1
+  },
+  "policy": {
+    "detection_status": "DETECTED",
+    "approval_status": "NOT_APPROVED",
+    "license_status": "LICENSE_REVIEW_REQUIRED",
+    "auto_use": false
+  },
+  "invalid_policy_records": 0,
+  "registry_path": "F:\\制作物\\その3\\corbitt-trpg-system\\video\\config\\asset_registry.json",
+  "registry_sha256": "ba7a63391a95b2f16ae91c706a628e189ec5a0a3003c81927806418ca38b4c49"
+}

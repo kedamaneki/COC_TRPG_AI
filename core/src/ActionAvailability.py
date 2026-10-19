@@ -91,6 +91,7 @@ def _append_event(state, event_type, result, *, candidate_status="", state_chang
         "cycle": state.get("evaluation_cycle", state.get("cycle", "")),
         "turn": state.get("turn", state.get("turn_count", "")),
         "location": result.get("location", ""),
+        "required_location": result.get("required_location", ""),
         "scene": str(state.get("current_scene_id") or ""),
         "scenario_id": result.get("scenario_id", ""),
         "goal": str((((state.get("director_v2") or {}).get("goal") or {}).get("current_goal")) or ""),
@@ -115,6 +116,7 @@ def check_action_availability(
     source="autonomous",
     skill="",
     pending_san_check=None,
+    required_location="",
     log_events=False,
 ):
     """Return an availability decision using the executor's guard rules."""
@@ -122,6 +124,7 @@ def check_action_availability(
     action = str(action or "").lower()
     target = str(target or "").strip()
     location = str(location or state.get("current_loc") or getattr(scenario_mgr, "location", "") or "")
+    required_location = str(required_location or "")
     ctx = action_context_version(state, scenario_mgr, actor=actor, location=location)
     result = {
         "status": AVAILABLE,
@@ -133,6 +136,7 @@ def check_action_availability(
         "action": action,
         "target": target,
         "location": location,
+        "required_location": required_location,
         "source": str(source or "autonomous").lower(),
         "scenario_runtime_conflict": False,
         "scenario_id": str(
@@ -141,6 +145,20 @@ def check_action_availability(
             or ""
         ),
     }
+    if required_location and location != required_location:
+        result.update({
+            "status": BLOCKED,
+            "reason_code": "REQUIRES_RETURN",
+            "reason_detail": (
+                f"This action requires location `{required_location}`; "
+                f"the current location is `{location}`."
+            ),
+            "required_preconditions": [f"location:{required_location}"],
+        })
+        if log_events:
+            _append_event(state, "ACTION_AVAILABILITY_CHECKED", result)
+            _append_event(state, "ACTION_BLOCKED", result)
+        return result
     if not scenario_mgr or not hasattr(scenario_mgr, "evaluate_pre_action_guard"):
         return result
 
@@ -238,8 +256,20 @@ def filter_available_candidates(goal, scenario_mgr, location, *, actor="", state
     kept = []
     blocked = []
     for item in goal.get("candidate_next_actions") or []:
+        required_location = str(item.get("required_location") or location or "")
         if not scenario_mgr or not hasattr(scenario_mgr, "evaluate_pre_action_guard"):
             stamped = dict(item)
+            stamped["required_location"] = required_location
+            if required_location and str(location or "") != required_location:
+                stamped.update({
+                    "reachable": False,
+                    "executable": False,
+                    "blocked_reason": "REQUIRES_RETURN",
+                    "availability_status": BLOCKED,
+                    "availability_reason": "REQUIRES_RETURN",
+                })
+                blocked.append(stamped)
+                continue
             stamped["reachable"] = True
             stamped["executable"] = True
             stamped["blocked_reason"] = ""
@@ -259,9 +289,11 @@ def filter_available_candidates(goal, scenario_mgr, location, *, actor="", state
             state=state,
             source=source,
             skill=item.get("skill", ""),
+            required_location=required_location,
             log_events=False,
         )
         stamped = dict(item)
+        stamped["required_location"] = required_location
         stamped["availability_status"] = result["status"]
         stamped["availability_context_version"] = result["context_version"]
         stamped["availability_reason"] = result["reason_code"]

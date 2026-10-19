@@ -217,6 +217,7 @@ def _event_state_change_candidates(scenario_mgr, location, target_statuses):
                 "blocked_reason": "NOT_YET_VALIDATED",
                 "adjudication_route": f"SCENARIO_EVENT:{event.get('event_id') or ''}",
                 "expected_state_effect": _expected_state_effect(payload),
+                "required_location": str(location or ""),
             })
     return candidates
 
@@ -228,6 +229,11 @@ def _transition_candidates(scenario_mgr, location, runtime=None):
         {
             "action": "move", "target": str(item.get("id") or ""), "skill": "",
             "reason": "location_objective_complete",
+            "required_location": str(location or ""),
+            "expected_state_effect": {
+                "intent": "change_location",
+                "new_location": str(item.get("id") or ""),
+            },
         }
         for item in (scenario_mgr.get_available_exits(location) or [])
         if item.get("id")
@@ -269,6 +275,12 @@ def _unseen_information_candidates(scenario_mgr, location, target_statuses):
         candidates.append({
             "action": ordered[0], "target": str(target), "skill": "",
             "reason": "unseen_target",
+            "required_location": str(location or ""),
+            "expected_state_effect": {
+                "intent": "investigate_target",
+                "target": str(target),
+                "target_status": "INVESTIGATED",
+            },
         })
     return candidates
 
@@ -283,12 +295,103 @@ def add_progression_candidates(goal, scenario_mgr, location, target_statuses, lo
     merged = []
     seen = set()
     for item in derived + existing:
+        item = dict(item)
+        item.setdefault("required_location", str(location or ""))
         key = (str(item.get("action") or ""), str(item.get("target") or ""))
         if key in seen:
             continue
         seen.add(key)
         merged.append(item)
     goal["candidate_next_actions"] = merged
+    return goal
+
+
+def rank_candidates_by_continuity(goal, location, target_statuses, runtime=None, *, stamp_scores=True):
+    """Rank valid candidates by local and goal continuity, separately from availability.
+
+    The score describes how well an already-available action continues the current
+    line of play.  It never changes whether the action is legal and never predicts
+    success.  This keeps a local unresolved frontier ahead of low-value movement or
+    exhausted retries without weakening the executor's availability contract.
+    """
+    goal = copy.deepcopy(goal or {})
+    runtime = runtime or {}
+    stall = runtime.get("stall") or {}
+    recent_actions = [tuple(map(str, row[:2])) for row in (stall.get("recent_actions") or []) if row]
+    recent_failed = {tuple(map(str, row[:2])) for row in (stall.get("recent_failed_actions") or []) if row}
+    visited = {str(value) for value in (runtime.get("visited_locations") or [])}
+
+    ranked = []
+    for ordinal, original in enumerate(goal.get("candidate_next_actions") or []):
+        item = dict(original)
+        action = str(item.get("action") or "").lower()
+        target = str(item.get("target") or "")
+        required_location = str(item.get("required_location") or location or "")
+        status = str(target_statuses.get(target) or "")
+        components = {}
+
+        if item.get("availability_status") == "BLOCKED" or item.get("executable") is False:
+            components["unavailable"] = -10000
+        if required_location and required_location != str(location or ""):
+            components["outside_required_location"] = -10000
+        if action in INFORMATION_ACTIONS and status == "EXHAUSTED":
+            components["attempt_exhausted"] = -10000
+
+        local_frontier = (
+            action in STATE_CHANGING_ACTIONS
+            and action != "move"
+            and required_location == str(location or "")
+            and item.get("reachable", True)
+            and item.get("executable", True)
+        )
+        if local_frontier:
+            components["local_frontier"] = 100
+        if item.get("event_id") or str(item.get("reason") or "").startswith("goal_route:"):
+            components["goal_continuity"] = 45
+        if item.get("expected_state_effect"):
+            components["declared_state_effect"] = 25
+        if (action, target) in recent_actions[-4:]:
+            components["recent_context"] = 10
+        # Route failure is handled by the S4 forced-action context rotation.
+        # Keeping it out of the score preserves the scenario-authored route order.
+        if action in INFORMATION_ACTIONS and status == "UNSEEN":
+            components["new_local_information"] = 30
+        if action == "move":
+            components["movement_cost"] = -20
+            if target in visited:
+                components["visited_destination"] = -20
+            recent_locations = [str(value) for value in (stall.get("recent_locations") or [])]
+            if target in recent_locations[-3:]:
+                components["recent_location_loop"] = -30
+
+        item["continuity_score"] = sum(components.values())
+        item["continuity_score_components"] = components
+        item["local_frontier"] = local_frontier
+        item["continuity_rank_input_order"] = ordinal
+        ranked.append(item)
+
+    ranked = [
+        item for item in ranked
+        if not any(key in item["continuity_score_components"] for key in (
+            "unavailable", "outside_required_location", "attempt_exhausted",
+        ))
+    ]
+    ranked.sort(key=lambda item: (-item["continuity_score"], item["continuity_rank_input_order"]))
+    for rank, item in enumerate(ranked, 1):
+        item["continuity_rank"] = rank
+    runtime["candidate_continuity_scores"] = [
+        {key: item.get(key) for key in (
+            "action", "target", "continuity_score", "continuity_score_components",
+            "local_frontier", "continuity_rank",
+        )}
+        for item in ranked
+    ]
+    if not stamp_scores:
+        for item in ranked:
+            for key in ("continuity_score", "continuity_score_components", "local_frontier",
+                        "continuity_rank_input_order", "continuity_rank"):
+                item.pop(key, None)
+    goal["candidate_next_actions"] = ranked
     return goal
 
 
@@ -341,6 +444,7 @@ def enrich_runtime(runtime, goal, scenario_mgr, location, *, actor="", state=Non
         goal, scenario_mgr, location, actor=actor, state=state,
         source="candidate_generation",
     )
+    goal = rank_candidates_by_continuity(goal, location, statuses, runtime, stamp_scores=False)
     goal = limit_available_candidates(goal, location_status)
     runtime["target_statuses"] = statuses
     runtime["location_objective_status"] = location_status

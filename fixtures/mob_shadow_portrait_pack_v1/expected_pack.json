@@ -1,0 +1,32 @@
+{
+  "pack_id": "mob_shadow_npc_portrait_pack_v1",
+  "asset_ids": [
+    "portrait_mob_shadow_male_tall_01_v1",
+    "portrait_mob_shadow_male_thin_01_v1",
+    "portrait_mob_shadow_male_heavy_01_v1",
+    "portrait_mob_shadow_female_01_v1",
+    "portrait_mob_shadow_old_person_01_v1",
+    "portrait_mob_shadow_cloak_01_v1",
+    "portrait_shadow_npc_humanoid_01_v1",
+    "portrait_shadow_npc_humanoid_02_v1",
+    "portrait_shadow_npc_distorted_01_v1",
+    "portrait_shadow_npc_ghostlike_01_v1",
+    "portrait_corbitt_shadow_candidate_01_v1",
+    "portrait_corbitt_shadow_candidate_02_v1"
+  ],
+  "portrait_profile_ids": [
+    "portrait_profile_mob_shadow_male_tall_01_v1",
+    "portrait_profile_mob_shadow_male_thin_01_v1",
+    "portrait_profile_mob_shadow_male_heavy_01_v1",
+    "portrait_profile_mob_shadow_female_01_v1",
+    "portrait_profile_mob_shadow_old_person_01_v1",
+    "portrait_profile_mob_shadow_cloak_01_v1",
+    "portrait_profile_shadow_npc_humanoid_01_v1",
+    "portrait_profile_shadow_npc_humanoid_02_v1",
+    "portrait_profile_shadow_npc_distorted_01_v1",
+    "portrait_profile_shadow_npc_ghostlike_01_v1",
+    "portrait_profile_corbitt_shadow_candidate_01_v1",
+    "portrait_profile_corbitt_shadow_candidate_02_v1"
+  ],
+  "auto_use": false
+}

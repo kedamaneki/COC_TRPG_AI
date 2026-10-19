@@ -214,9 +214,10 @@ def build_ass(path: Path, clips: list[dict], profiles: dict, font_name: str = "N
     overlay_x, overlay_y = _region_center(layout.get("dice_san_overlay_region", {}), 960, 90)
     page_width = int(layout.get("pagination", {}).get("characters_per_line", 30))
     page_lines = int(layout.get("pagination", {}).get("lines_per_page", 3))
-    default_size = int(layout.get("dialogue_font_size", 52))
-    long_size = int(layout.get("long_text_font_size", 46))
-    name_size = int(layout.get("name_font_size", 38))
+    # Accepted V2.6 Alt Dialogue Frame Prototype V7 defaults.
+    default_size = int(layout.get("dialogue_font_size", 62))
+    long_size = int(layout.get("long_text_font_size", 55))
+    name_size = int(layout.get("name_font_size", 62))
     header = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: 1920

@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "gates": {
+    "BACKGROUND_CLASSIFIED": true,
+    "BGM_CLASSIFIED": true,
+    "SFX_CLASSIFIED": true,
+    "DUPLICATE_CANONICALIZATION": true,
+    "UNAPPROVED_ASSET_AUTO_USED": 0,
+    "LICENSE_APPROVAL_WITHOUT_EVIDENCE": 0,
+    "SEMANTIC_INDEX": true,
+    "PLANNER_ONLY_APPROVED_AUTO_USE": true,
+    "EXTERNAL_FILES_MODIFIED": 0,
+    "PROTECTED_ARTIFACTS_CHANGED": 0,
+    "V2_3_CHANGED": 0,
+    "V13_ACCEPTED_SOURCE_CHANGED": 0,
+    "FIXTURE": true,
+    "VIDEO_AGENT_REGRESSION": "244/244 PASS"
+  },
+  "external_before": {
+    "E:\\素材\\背景素材": [
+      30,
+      "c215f8fafe2b6e871c3bd961751b5c0e678da50376a36ce595b10bb5730c8c36"
+    ],
+    "E:\\素材\\BGM素材": [
+      30,
+      "5359b0be22e826fe02e4ffb2c2ef9aaa0851ca09a890d227695908a9dfce70e6"
+    ],
+    "E:\\素材\\効果音素材": [
+      137,
+      "577ea3d44a74e3509e25f0eab12c1e0b7187882518b2d4a98ed82867388a7e29"
+    ]
+  },
+  "external_after": {
+    "E:\\素材\\背景素材": [
+      30,
+      "c215f8fafe2b6e871c3bd961751b5c0e678da50376a36ce595b10bb5730c8c36"
+    ],
+    "E:\\素材\\BGM素材": [
+      30,
+      "5359b0be22e826fe02e4ffb2c2ef9aaa0851ca09a890d227695908a9dfce70e6"
+    ],
+    "E:\\素材\\効果音素材": [
+      137,
+      "577ea3d44a74e3509e25f0eab12c1e0b7187882518b2d4a98ed82867388a7e29"
+    ]
+  },
+  "protected_before": {
+    "F:\\制作物\\その3\\video-production\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\video_001_basement_planks": [
+      65,
+      "3879bee2a2bb5a7e9924aa061d5586b408f153f0dc1f8f0d59289480cb818091"
+    ],
+    "F:\\制作物\\その3\\video-production\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\video_001_basement_planks_v2": [
+      20,
+      "16f073f14e28f121ade4f85013e327fc078e5c56841fdd87fc11235dd4d99327"
+    ],
+    "F:\\制作物\\その3\\video-production\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\video_001_basement_planks_v2_1": [
+      14,
+      "bd0136f0241687e02738fb422d865ab20131a4c44e311208f33292c1ec8a0d16"
+    ],
+    "F:\\制作物\\その3\\video-production\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\video_001_basement_planks_v2_2": [
+      15,
+      "0bd2f4d076b9ec2cfd4972354622cef714c015577a9b5778fdba07cf8a6a8ee4"
+    ],
+    "F:\\制作物\\その3\\video-production\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\video_001_basement_planks_v2_3": [
+      20,
+      "3ff2a3eb3334f73ff67567d56dd8af626604981068beb121f082aafdd80baedc"
+    ]
+  },
+  "protected_after": {
+    "F:\\制作物\\その3\\video-production\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\video_001_basement_planks": [
+      65,
+      "3879bee2a2bb5a7e9924aa061d5586b408f153f0dc1f8f0d59289480cb818091"
+    ],
+    "F:\\制作物\\その3\\video-production\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\video_001_basement_planks_v2": [
+      20,
+      "16f073f14e28f121ade4f85013e327fc078e5c56841fdd87fc11235dd4d99327"
+    ],
+    "F:\\制作物\\その3\\video-production\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\video_001_basement_planks_v2_1": [
+      14,
+      "bd0136f0241687e02738fb422d865ab20131a4c44e311208f33292c1ec8a0d16"
+    ],
+    "F:\\制作物\\その3\\video-production\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\video_001_basement_planks_v2_2": [
+      15,
+      "0bd2f4d076b9ec2cfd4972354622cef714c015577a9b5778fdba07cf8a6a8ee4"
+    ],
+    "F:\\制作物\\その3\\video-production\\CORBITT_LONGRUN_ITERATION3_V13_HOME_001\\video_001_basement_planks_v2_3": [
+      20,
+      "3ff2a3eb3334f73ff67567d56dd8af626604981068beb121f082aafdd80baedc"
+    ]
+  },
+  "accepted_raw_verification": {
+    "status": "PASS",
+    "file_count": 373,
+    "mismatch_count": 0,
+    "mismatches": [],
+    "aggregate_sha256": "fd42df1dc3278ef3250486235f43a5693de4fea9ad3f7af5fc769690ab18e44d",
+    "expected_aggregate_sha256": "fd42df1dc3278ef3250486235f43a5693de4fea9ad3f7af5fc769690ab18e44d"
+  }
+}

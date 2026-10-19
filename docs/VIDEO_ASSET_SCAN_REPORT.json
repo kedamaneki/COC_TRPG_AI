@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "scan_root": "F:\\制作物\\その3\\corbitt-trpg-system\\video\\assets\\user_inputs",
+  "registry_path": "F:\\制作物\\その3\\corbitt-trpg-system\\video\\config\\asset_registry.json",
+  "findings": [],
+  "registered": [],
+  "counts": {
+    "UNCHANGED": 0,
+    "NEW_ASSET": 0,
+    "CHANGED_HASH": 0,
+    "DUPLICATE_CONTENT": 0
+  },
+  "unapproved_auto_used": 0,
+  "policy": "DETECTED / NOT_APPROVED / LICENSE_REVIEW_REQUIRED"
+}

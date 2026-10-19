@@ -1,0 +1,3932 @@
+{
+  "schema_version": "1.0",
+  "duplicate_aware": true,
+  "items": [
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_aipict_basement_concrete01_143af8e0_19e02ddf",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\外部取得素材\\backgrounds\\basement\\AIPICT\\aipict_basement_concrete01.png",
+      "semantic_tags": [
+        "BASEMENT",
+        "DARK_INTERIOR",
+        "CORBITT_HOUSE"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "BASEMENT"
+      ],
+      "license_evidence_found": true,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_aipict_basement_concrete04_29e2d8f4_4f0c3893",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\外部取得素材\\backgrounds\\basement\\AIPICT\\aipict_basement_concrete04.png",
+      "semantic_tags": [
+        "BASEMENT",
+        "DARK_INTERIOR",
+        "CORBITT_HOUSE"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "BASEMENT"
+      ],
+      "license_evidence_found": true,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_aipict_basement_ruins01_334234bf_5301eeda",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\外部取得素材\\backgrounds\\basement\\AIPICT\\aipict_basement_ruins01.png",
+      "semantic_tags": [
+        "BASEMENT",
+        "DARK_INTERIOR",
+        "CORBITT_HOUSE"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "BASEMENT"
+      ],
+      "license_evidence_found": true,
+      "license_status": "LICENSE_APPROVED",
+      "approval_status": "APPROVED_FOR_PREVIEW",
+      "auto_use": false,
+      "review_status": "COMPLETED_FOR_V2_5"
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_nc73544__背景素材_紅魔館_9ac9bd38_690455c7",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc73544_【背景素材】紅魔館.jpg",
+      "semantic_tags": [
+        "OLD_HOUSE",
+        "MANSION_EXTERIOR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "OLD_HOUSE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_nc77065__背景素材_紅魔館ロビー_58c20f04_b35a09e7",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc77065_【背景素材】紅魔館ロビー.jpg",
+      "semantic_tags": [
+        "OLD_HOUSE_INTERIOR",
+        "INTERIOR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "OLD_HOUSE_INTERIOR"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_nc96304_moment_b8fc6a93_04b0b7b6",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc96304_Moment.mp3",
+      "semantic_tags": [
+        "INVESTIGATION",
+        "REFLECTION"
+      ],
+      "classification_confidence": "MEDIUM",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "INVESTIGATION"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_recollections_3c352540_6168dd76",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\Recollections.mp3",
+      "semantic_tags": [
+        "INVESTIGATION",
+        "REFLECTION"
+      ],
+      "classification_confidence": "MEDIUM",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "INVESTIGATION"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_itch_arkeia_tension_as_the_light_fades_f154e404_e37cfd77",
+      "category": "BGM",
+      "file": "E:\\素材\\外部取得素材\\bgm\\tension\\itch.io\\itch_arkeia_tension_as_the_light_fades.ogg",
+      "semantic_tags": [
+        "TENSION",
+        "TENSION_BUILD",
+        "HORROR",
+        "INVESTIGATION"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "INVESTIGATION",
+        "TENSION",
+        "TENSION_BUILD"
+      ],
+      "license_evidence_found": true,
+      "license_status": "LICENSE_APPROVED",
+      "approval_status": "APPROVED_FOR_PREVIEW",
+      "auto_use": false,
+      "review_status": "COMPLETED_FOR_V2_5"
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_itch_arkeia_tension_eyes_piercing_shadow_05b59554_65ab2c34",
+      "category": "BGM",
+      "file": "E:\\素材\\外部取得素材\\bgm\\tension\\itch.io\\itch_arkeia_tension_eyes_piercing_shadow.ogg",
+      "semantic_tags": [
+        "TENSION",
+        "TENSION_BUILD",
+        "HORROR",
+        "INVESTIGATION"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "INVESTIGATION",
+        "TENSION",
+        "TENSION_BUILD"
+      ],
+      "license_evidence_found": true,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_itch_arkeia_tension_monster_1309690b_c3edf605",
+      "category": "BGM",
+      "file": "E:\\素材\\外部取得素材\\bgm\\tension\\itch.io\\itch_arkeia_tension_monster.ogg",
+      "semantic_tags": [
+        "TENSION",
+        "TENSION_BUILD",
+        "HORROR",
+        "INVESTIGATION"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "INVESTIGATION",
+        "TENSION",
+        "TENSION_BUILD"
+      ],
+      "license_evidence_found": true,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_itch_mumusi_snaps_in_the_dark_tension_loop_64850823_5b206a73",
+      "category": "BGM",
+      "file": "E:\\素材\\外部取得素材\\bgm\\tension\\itch.io\\itch_mumusi_snaps_in_the_dark_tension_loop.wav",
+      "semantic_tags": [
+        "TENSION",
+        "TENSION_BUILD",
+        "HORROR",
+        "INVESTIGATION"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "INVESTIGATION",
+        "TENSION",
+        "TENSION_BUILD"
+      ],
+      "license_evidence_found": true,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_きらーん1_74f4ebd9_89280fa5",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\きらーん1.mp3",
+      "semantic_tags": [
+        "success_feedback",
+        "SUCCESS"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "success_feedback"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_きらーん2_214729eb_e0760f00",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\きらーん2.mp3",
+      "semantic_tags": [
+        "success_feedback",
+        "SUCCESS"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "success_feedback"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_しょげる_ad4bea61_87e7f056",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\しょげる.mp3",
+      "semantic_tags": [
+        "failure_feedback",
+        "FAILURE"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "failure_feedback"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_ずっこける_42b0e110_3a12b956",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ずっこける.mp3",
+      "semantic_tags": [
+        "failure_feedback",
+        "FAILURE"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "failure_feedback"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_ひらめく1_08cbac5c_74be3af5",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ひらめく1.mp3",
+      "semantic_tags": [
+        "success_feedback",
+        "SUCCESS"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "success_feedback"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_キラッ1_a3683b12_8b501e0d",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\キラッ1.mp3",
+      "semantic_tags": [
+        "success_feedback",
+        "SUCCESS"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "success_feedback"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_キラッ2_ddd05cda_3d63e2d2",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\キラッ2.mp3",
+      "semantic_tags": [
+        "success_feedback",
+        "SUCCESS"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "success_feedback"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_クイズ不正解1_b3a349f3_1b6b17b1",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\クイズ不正解1.mp3",
+      "semantic_tags": [
+        "failure_feedback",
+        "FAILURE"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "failure_feedback"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_クイズ正解1_ff3f5255_0657606d",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\クイズ正解1.mp3",
+      "semantic_tags": [
+        "success_feedback",
+        "SUCCESS"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "success_feedback"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_クイズ正解2_4188eb4c_97355e1c",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\クイズ正解2.mp3",
+      "semantic_tags": [
+        "success_feedback",
+        "SUCCESS"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "success_feedback"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_クイズ正解5_aca93919_05f7a16b",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\クイズ正解5.mp3",
+      "semantic_tags": [
+        "success_feedback",
+        "SUCCESS"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "success_feedback"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_ラッパのファンファーレ_7bc8c97e_3814ad12",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ラッパのファンファーレ.mp3",
+      "semantic_tags": [
+        "success_feedback",
+        "SUCCESS"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "success_feedback"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_レベルアップ_89facd35_3346ba21",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\レベルアップ.mp3",
+      "semantic_tags": [
+        "success_feedback",
+        "SUCCESS"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "success_feedback"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_freesound_387014_wood_break_hq_preview_0ecb5346_edf6271b",
+      "category": "SFX",
+      "file": "E:\\素材\\外部取得素材\\sfx\\wood_break\\Freesound\\freesound_387014_wood_break_hq_preview.mp3",
+      "semantic_tags": [
+        "wood_break",
+        "WOOD"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "wood_break"
+      ],
+      "license_evidence_found": true,
+      "license_status": "LICENSE_APPROVED",
+      "approval_status": "APPROVED_FOR_PREVIEW",
+      "auto_use": false,
+      "review_status": "COMPLETED_FOR_V2_5"
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_freesound_452109_branch_break_snap_crunch_hq_preview_fd808fc1_cccc8f92",
+      "category": "SFX",
+      "file": "E:\\素材\\外部取得素材\\sfx\\wood_break\\Freesound\\freesound_452109_branch_break_snap_crunch_hq_preview.mp3",
+      "semantic_tags": [
+        "wood_break",
+        "WOOD"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "wood_break"
+      ],
+      "license_evidence_found": true,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_freesound_766406_branch_break_hq_preview_9864d0de_8d5d4818",
+      "category": "SFX",
+      "file": "E:\\素材\\外部取得素材\\sfx\\wood_break\\Freesound\\freesound_766406_branch_break_hq_preview.mp3",
+      "semantic_tags": [
+        "wood_break",
+        "WOOD"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "wood_break"
+      ],
+      "license_evidence_found": true,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_freesound_502505_wood_creak_single_v1_hq_preview_6eeb667f_aa5189ff",
+      "category": "SFX",
+      "file": "E:\\素材\\外部取得素材\\sfx\\wood_creak\\Freesound_Rudmer_Rotteveel\\freesound_502505_wood_creak_single_v1_hq_preview.mp3",
+      "semantic_tags": [
+        "wood_creak",
+        "WOOD"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "wood_creak"
+      ],
+      "license_evidence_found": true,
+      "license_status": "LICENSE_APPROVED",
+      "approval_status": "APPROVED_FOR_PREVIEW",
+      "auto_use": false,
+      "review_status": "COMPLETED_FOR_V2_5"
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_freesound_502511_wood_creak_single_v3_hq_preview_88dfbeb4_ccd6a0b4",
+      "category": "SFX",
+      "file": "E:\\素材\\外部取得素材\\sfx\\wood_creak\\Freesound_Rudmer_Rotteveel\\freesound_502511_wood_creak_single_v3_hq_preview.mp3",
+      "semantic_tags": [
+        "wood_creak",
+        "WOOD"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "wood_creak"
+      ],
+      "license_evidence_found": true,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P0",
+      "canonical_asset_id": "detected_freesound_506660_wood_creak_single_v5_hq_preview_ea2144a0_c029d7e4",
+      "category": "SFX",
+      "file": "E:\\素材\\外部取得素材\\sfx\\wood_creak\\Freesound_Rudmer_Rotteveel\\freesound_506660_wood_creak_single_v5_hq_preview.mp3",
+      "semantic_tags": [
+        "wood_creak",
+        "WOOD"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "wood_creak"
+      ],
+      "license_evidence_found": true,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc77876__背景素材_スキマ_3a74996b_caec6bf4",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc77876_【背景素材】スキマ.jpg",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_マテガイ_0ae01d74_4528d6d9",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\マテガイ.avif",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_1_cef9ddf1_8c032f50",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\悪霊のでそうな家マップセット\\1.jpg",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_2_ca772e7f_726fdf74",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\悪霊のでそうな家マップセット\\2.jpg",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_3_f35b2175_c523f49a",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\悪霊のでそうな家マップセット\\3.jpg",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc103280_04d71f0d_f40ce842",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc103280.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc115889_18f65c9d_a9833b90",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc115889.wav",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc129018_c7b74d89_85eeafd4",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc129018.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc135860__日常bgm_昼下がり気分_かわいい_おしゃれ_b3be5e54_47889e83",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc135860_【日常BGM】昼下がり気分【かわいい・おしゃれ】.mp3",
+      "semantic_tags": [
+        "CALM_EXPLORATION",
+        "LIGHT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "GENERAL_TRPG_UTILITY"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc155808_e1f1c04a_92360543",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc155808.wav",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc193153_35e3d7f4_64011f5d",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc193153.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc2003_766db4cf_8bdc683c",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc2003.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc20217_0759b593_0464a577",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc20217.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc20612_341cb9b3_66b272a0",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc20612.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc208589_恋色マスタースパーク_jazz風_eebcf434_eec43bab",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc208589_恋色マスタースパーク_Jazz風.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc217594_43970aa5_2cbc6764",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc217594.wav",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc22928_3f45c236_1051fcbb",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc22928.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc245962__東方_マスタースパーク効果音_高音質_52c87c04_9658d3f5",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc245962_【東方】マスタースパーク効果音_高音質.wav",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc25747_aa6f717c_4cdcfe2c",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc25747.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc257635_ac9513be_0badd4ad",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc257635.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc321999_1328e0a7_ad2fc0ac",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc321999.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc323487_00c8e801_5b5a7faf",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc323487.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc325275_51de8ac0_13a1bd1b",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc325275.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc75438__日常系bgm_なんでしょう__ゆるい系_ヘンテコ系_95c57f06_cffc4424",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc75438_【日常系BGM】なんでしょう？【ゆるい系・ヘンテコ系】.mp3",
+      "semantic_tags": [
+        "CALM_EXPLORATION",
+        "LIGHT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "GENERAL_TRPG_UTILITY"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc766_36a92ea6_079b836c",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc766.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc76949_5bffd66f_be0fbaeb",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc76949.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc78818_b005b74b_0a4a4c39",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc78818.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc83180_34f7c648_841ac5e2",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc83180.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc97759_3b32e11f_69762208",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc97759.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_djのスクラッチ1_349d26b1_47d81f8e",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\DJのスクラッチ1.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_djのスクラッチ2_0384ceeb_919d8a7b",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\DJのスクラッチ2.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc184182_6bf853d8_1bc5ff2b",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\nc184182.wav",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc30635_11cd7b86_17c2e33f",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\nc30635.wav",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc31909_0e254ed9_83bc08aa",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\nc31909.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc37835_2c576877_d641c123",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\nc37835.wav",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc42339_ダイス音_1_1d10_e09bd219_e685378a",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\nc42339_ダイス音・1（1D10）.wav",
+      "semantic_tags": [
+        "dice_roll",
+        "DICE"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "GENERAL_TRPG_UTILITY"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_nc42340_ダイス音_2_2d10_0e238a99_7b2e1d3e",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\nc42340_ダイス音・2（2D10）.wav",
+      "semantic_tags": [
+        "dice_roll",
+        "DICE"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "EXACT_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "GENERAL_TRPG_UTILITY"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_きらきら輝く3_3df3c167_5306c328",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\きらきら輝く3.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ちゃんちゃん_1_bcea0692_dc48776e",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ちゃんちゃん♪1.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ちゃんちゃん_2_c5652f2a_e1a943d6",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ちゃんちゃん♪2.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ちゃんちゃん_3_c4616159_e299775d",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ちゃんちゃん♪3.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ぷよん_8fe972f5_78f828db",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ぷよん.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_エアーホーン_52fa1acb_c6600167",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\エアーホーン.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_カタカタ震える_943523b5_97c011bd",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\カタカタ震える.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_クイズ出題1_34443762_9715f86f",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\クイズ出題1.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_シャキーン1_b55b0553_f3c15c57",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\シャキーン1.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ショック1_3aed3338_411f2030",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ショック1.mp3",
+      "semantic_tags": [
+        "ominous_stinger",
+        "HORROR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "GENERAL_TRPG_UTILITY"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ショック2_8e66779d_894c9660",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ショック2.mp3",
+      "semantic_tags": [
+        "ominous_stinger",
+        "HORROR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "GENERAL_TRPG_UTILITY"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ショック3_91613fe9_cf9fc3f2",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ショック3.mp3",
+      "semantic_tags": [
+        "ominous_stinger",
+        "HORROR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "GENERAL_TRPG_UTILITY"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ジャジャーン_81646979_891a4154",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ジャジャーン.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ジャン_7a1ccf08_4cadb9bf",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ジャン！.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ティンパニロール_bee2c37e_01318c2f",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ティンパニロール.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ドラムロール_0fc22adf_f46ce1ca",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ドラムロール.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ドンドンパフパフ_f3a368fa_ce757175",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ドンドンパフパフ.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_パッ_939188bd_cb077e24",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\パッ.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_パフ_c2d3e74d_efd16db8",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\パフ.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ヒヨコが頭の上を回るmp3_b69ac580_32c9d68c",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ヒヨコが頭の上を回るmp3.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ビシッとツッコミ1_ab738555_9344995c",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ビシッとツッコミ1.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ビシッとツッコミ2_4e68118d_728c60cd",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ビシッとツッコミ2.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ビシッとツッコミ3_c4a011dc_ddd78a02",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ビシッとツッコミ3.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ピアノの単音_11c7b074_792f119c",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ピアノの単音.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ボヨヨーン_9f1e6b25_3b47737d",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ボヨヨーン.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ボヨン_192a3046_f537e184",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ボヨン.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_ロールの閉め_e85fbc28_f2881dbb",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ロールの閉め.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_不安_ピアノ演奏_604b3de3_37f6a13a",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\不安（ピアノ演奏）.mp3",
+      "semantic_tags": [
+        "ominous_stinger",
+        "HORROR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "GENERAL_TRPG_UTILITY"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_伸びる_edb69850_2d86dc61",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\伸びる.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_呪いの旋律_8ffd5b67_085d2745",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\呪いの旋律.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_和太鼓でカカッ_fbd3603d_fbafdea0",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\和太鼓でカカッ.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_和太鼓でドドン_2a7215ff_bf8a4534",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\和太鼓でドドン.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_和太鼓でドン_6601cdb0_d3abd088",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\和太鼓でドン.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_女衆_おう_b7b699fd_50a35ab8",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\女衆「おう！」.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_寒いギャグで突風が吹く_6727ad11_2076073c",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\寒いギャグで突風が吹く.mp3",
+      "semantic_tags": [
+        "ominous_stinger",
+        "HORROR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "GENERAL_TRPG_UTILITY"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_小鼓_こつづみ_02151dbf_1b4127ea",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\小鼓（こつづみ）.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_尺八_f3c9532e_3c22a3d3",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\尺八.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_心臓の鼓動1_1a14457f_7957a38e",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\心臓の鼓動1.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_心臓の鼓動2_0a0ae63c_bdcb2b01",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\心臓の鼓動2.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_拍子木1_09d744eb_486d8b35",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\拍子木1.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_拍子木2_9d32e2fc_bd4aa7db",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\拍子木2.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_拍子木3_81b7803d_8287f248",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\拍子木3.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_時代劇演出1_d9a896cd_1f560915",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\時代劇演出1.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_時代劇演出2_063e6e99_e5498d70",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\時代劇演出2.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_時代劇演出3_3d56d4c0_9c76ac28",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\時代劇演出3.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_木魚ポク_ポク_ポク_870c8f02_aa4166c0",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\木魚ポク・ポク・ポク.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_涙のしずく_222e537a_78475bab",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\涙のしずく.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_煙モクモク_8abd5faf_c4a5173d",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\煙モクモク.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_琴の滑奏_c137efa8_9e5aa410",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\琴の滑奏.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_男衆_イエーイ_6ec4b807_4e9391de",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\男衆「イエーイ！」.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_男衆_イヤッホー_1e48bbd2_5fd7d3e5",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\男衆「イヤッホー！」.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_男衆_オウ_2c37498a_0b8eabd0",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\男衆「オウ！」.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_男衆_喝_6fd1996b_eae2327d",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\男衆「喝！」.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_目が点になる_2e88c545_47b926dd",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\目が点になる.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_突撃ラッパ_1f9d2119_00994241",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\突撃ラッパ.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_縮む_e46e8a31_c81120a4",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\縮む.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_肉を食べる_e2178824_e4f4d274",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\肉を食べる.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_自主規制ピー音_062de1fd_4a348c2a",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\自主規制ピー音.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_荘厳な雰囲気_882ae699_a7caffd1",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\荘厳な雰囲気.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_試合終了のゴング_1cfed6d3_19762475",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\試合終了のゴング.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_試合開始のゴング_c4672be7_78b7f3a7",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\試合開始のゴング.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_警報が鳴る_d9c4a388_0348e5c3",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\警報が鳴る.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_超高速ダッシュ_3b8b49fe_4cd6f542",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\超高速ダッシュ.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_足首がグキッ_107f99e3_8fe7e10f",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\足首がグキッ.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_金額表示_901a2086_a7d889f0",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\金額表示.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_開演ブザー_52d5bae1_d3b84476",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\開演ブザー.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_間抜け1_bbc02627_4bec3300",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\間抜け1.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_間抜け2_786ff8cc_6aed5e3f",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\間抜け2.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_間抜け3_ccd135c1_8e713429",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\間抜け3.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_間抜け4_6a01fafc_0883b6f6",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\間抜け4.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_間抜け5_83e0b3c2_86279712",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\間抜け5.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_間抜け6_46c62749_3b7879bb",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\間抜け6.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_間抜け7_fb0e99aa_be1a9361",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\間抜け7.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_食べ物をパクッ_c7e09291_23353b6a",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\食べ物をパクッ.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_鳩時計1_7f48060c_1791609a",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\鳩時計1.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P1",
+      "canonical_asset_id": "detected_鳩時計2_bfeec53e_9b8a33b1",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\鳩時計2.mp3",
+      "semantic_tags": [],
+      "classification_confidence": "LOW",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "LOW_CONFIDENCE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc13676_床の間_007e79ab_3f307607",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc13676_床の間.png",
+      "semantic_tags": [
+        "ROOM_GENERIC",
+        "INTERIOR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc187870_白い部屋_fc4da8b3_82e03560",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc187870_白い部屋.jpg",
+      "semantic_tags": [
+        "ROOM_GENERIC",
+        "INTERIOR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc199755__フリー素材あそび_黒板02_背景02_背景_e0fa30c8_455b798d",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc199755_【フリー素材あそび】黒板02+背景02【背景】.jpg",
+      "semantic_tags": [
+        "GRAPHIC",
+        "FRAME_OR_TEXTURE"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "UNSUITABLE",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc201337__背景_和室05_床の間_8k_フリー素材あそび_768091af_0ff44d02",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc201337_【背景】和室05（床の間）8K【フリー素材あそび】.jpg",
+      "semantic_tags": [
+        "ROOM_GENERIC",
+        "INTERIOR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc210520_aribカラーバー_png_svg_e8b8a0a1_599e4679",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc210520_ARIBカラーバー_PNG_SVG.png",
+      "semantic_tags": [
+        "GRAPHIC",
+        "FRAME_OR_TEXTURE"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "UNSUITABLE",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc211667_まがまがしい背景_cbe47ce1_3edc52b2",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc211667_まがまがしい背景.jpg",
+      "semantic_tags": [
+        "HORROR",
+        "OMINOUS",
+        "DARK_INTERIOR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc228371_何かの施設の廊下_日中_f9c2a48f_c791c898",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc228371_何かの施設の廊下（日中）.jpg",
+      "semantic_tags": [
+        "HALLWAY",
+        "INTERIOR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc232701_物置_照明on_65735927_f8d91168",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc232701_物置（照明ON）.jpg",
+      "semantic_tags": [
+        "ROOM_GENERIC",
+        "INTERIOR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc238754_一人部屋_日中_5941bd73_f9fd015b",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc238754_一人部屋（日中）.jpg",
+      "semantic_tags": [
+        "ROOM_GENERIC",
+        "INTERIOR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc239694_会社のオフィス_日中_f8a41687_868cbe3e",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc239694_会社のオフィス（日中）.jpg",
+      "semantic_tags": [
+        "OFFICE",
+        "INTERIOR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc240173_住宅街_日中_9560a17c_fc269117",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc240173_住宅街（日中）.jpg",
+      "semantic_tags": [
+        "STREET",
+        "DAY"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc240176_住宅街_夜_灯り有り_a039e2b1_d7432d3c",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc240176_住宅街（夜・灯り有り）.jpg",
+      "semantic_tags": [
+        "STREET",
+        "NIGHT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc242826_喫茶店_日中_189ebecc_01882da0",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc242826_喫茶店（日中）.jpg",
+      "semantic_tags": [
+        "ROOM_GENERIC",
+        "INTERIOR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc247229_都会の街中_日中_8ea2b684_d5ef5e67",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc247229_都会の街中（日中）.jpg",
+      "semantic_tags": [
+        "STREET",
+        "DAY"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc263185_繁華街の駅前_日中_f2759e9a_e7cca647",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc263185_繁華街の駅前（日中）.jpg",
+      "semantic_tags": [
+        "STREET",
+        "DAY"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc321164_シンプル同系色モロッカン柄背景_紫__1920_1080_c6c60752_d7a3e709",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc321164_シンプル同系色モロッカン柄背景【紫】（1920×1080）.png",
+      "semantic_tags": [
+        "GRAPHIC",
+        "FRAME_OR_TEXTURE"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "UNSUITABLE",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc358041_和室にモニター部分透過したフレーム_フリー素材あそび_a3dadcc3_a5635d8a",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc358041_和室にモニター部分透過したフレーム【フリー素材あそび】.png",
+      "semantic_tags": [
+        "ROOM_GENERIC",
+        "INTERIOR"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc397093_木枠付きコルクボード風背景_1920_1080_透過無し_5f058149_05ee49ce",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc397093_木枠付きコルクボード風背景（1920×1080・透過無し）.png",
+      "semantic_tags": [
+        "GRAPHIC",
+        "FRAME_OR_TEXTURE"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "UNSUITABLE",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc67726_古い紙_faf5fcf0_f09dbe96",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc67726_古い紙.jpg",
+      "semantic_tags": [
+        "GRAPHIC",
+        "FRAME_OR_TEXTURE"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "UNSUITABLE",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc73538__背景素材_博麗神社_3cac715b_dd77fde5",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc73538_【背景素材】博麗神社.jpg",
+      "semantic_tags": [
+        "FANTASY_BUILDING"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc73546__背景素材_白玉楼_50774dba_11491aec",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc73546_【背景素材】白玉楼.jpg",
+      "semantic_tags": [
+        "FANTASY_BUILDING"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc77891__背景素材_魔法の森_23096947_86cdd0df",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc77891_【背景素材】魔法の森.jpg",
+      "semantic_tags": [
+        "FOREST",
+        "MYSTERIOUS"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc86017__素材_セリフ枠_50130744_a47f47a2",
+      "category": "BACKGROUND",
+      "file": "E:\\素材\\背景素材\\nc86017_【素材】セリフ枠.png",
+      "semantic_tags": [
+        "GRAPHIC",
+        "FRAME_OR_TEXTURE"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "UNSUITABLE",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc114628_コロンビア_b6872f71_46d850bc",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc114628_コロンビア.mp3",
+      "semantic_tags": [
+        "BREAKTHROUGH",
+        "STINGER"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc192171_暴れん坊将軍のテーマ_46486480_b57fe60b",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc192171_暴れん坊将軍のテーマ.mp3",
+      "semantic_tags": [
+        "COMEDIC",
+        "HIGH_INTENSITY"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc77916__東方アレンジ_恋色マスタースパーク_騒がしく_87ae68b7_fa55b4dc",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc77916_【東方アレンジ】恋色マスタースパーク【騒がしく】.mp3",
+      "semantic_tags": [
+        "COMEDIC",
+        "HIGH_INTENSITY"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_nc90638_大慌て__ギャグ系bgm_0e917342_6bdaf1cf",
+      "category": "BGM",
+      "file": "E:\\素材\\BGM素材\\nc90638_大慌て！【ギャグ系BGM】.mp3",
+      "semantic_tags": [
+        "COMEDIC",
+        "HIGH_INTENSITY"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "WEAK_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_お寺の鐘_e848099d_cf08b37c",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\お寺の鐘.mp3",
+      "semantic_tags": [
+        "bell_or_chime",
+        "METAL"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_ちょこっと触る_0bd1543c_5d797a2f",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ちょこっと触る.mp3",
+      "semantic_tags": [
+        "object_interaction",
+        "OBJECT_INTERACTION"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_カキーンと打つ_72d4ed18_8eb8173a",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\カキーンと打つ.mp3",
+      "semantic_tags": [
+        "impact_heavy",
+        "IMPACT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_クイズ早押しボタン1_bdf25128_4eee4a3d",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\クイズ早押しボタン1.mp3",
+      "semantic_tags": [
+        "ui_confirm",
+        "UI"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_クイズ早押しボタン2_ea4c8622_bbc9f58d",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\クイズ早押しボタン2.mp3",
+      "semantic_tags": [
+        "ui_confirm",
+        "UI"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_グサッ1_26fa8b15_ec24fe8f",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\グサッ1.mp3",
+      "semantic_tags": [
+        "impact_heavy",
+        "IMPACT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_グサッ2_27901c9c_d05ff265",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\グサッ2.mp3",
+      "semantic_tags": [
+        "impact_heavy",
+        "IMPACT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_シーン切り替え1_bccd846d_b21ff715",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\シーン切り替え1.mp3",
+      "semantic_tags": [
+        "scene_transition",
+        "UI"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_シーン切り替え2_ab577a30_29ecb2fe",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\シーン切り替え2.mp3",
+      "semantic_tags": [
+        "scene_transition",
+        "UI"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_ジャンプ_1737f750_b3add214",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ジャンプ.mp3",
+      "semantic_tags": [
+        "movement",
+        "MOVEMENT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_スイッチを押す_4c39e3b2_7384d9e6",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\スイッチを押す.mp3",
+      "semantic_tags": [
+        "ui_confirm",
+        "UI"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_スポッ_14800500_41e22079",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\スポッ.mp3",
+      "semantic_tags": [
+        "object_interaction",
+        "OBJECT_INTERACTION"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_タイトル表示_08561d0c_013cd0f0",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\タイトル表示.mp3",
+      "semantic_tags": [
+        "scene_transition",
+        "UI"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_タイプライターで文字を打つ1_cdc52fca_d22a0487",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\タイプライターで文字を打つ1.mp3",
+      "semantic_tags": [
+        "paper_or_text",
+        "PAPER"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_タイプライターで文字を打つ2_cc81ab32_7d944d91",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\タイプライターで文字を打つ2.mp3",
+      "semantic_tags": [
+        "paper_or_text",
+        "PAPER"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_チリン_64e587fc_75c87d87",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\チリン.mp3",
+      "semantic_tags": [
+        "bell_or_chime",
+        "METAL"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_チーン1_0896e131_1229337b",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\チーン1.mp3",
+      "semantic_tags": [
+        "bell_or_chime",
+        "METAL"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_チーン2_1d69c26d_db157a50",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\チーン2.mp3",
+      "semantic_tags": [
+        "bell_or_chime",
+        "METAL"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_データ解析_ac3bf5cb_303dd6b6",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\データ解析.mp3",
+      "semantic_tags": [
+        "scene_transition",
+        "UI"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_ドーン_095d02b7_3c1671ba",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ドーン.mp3",
+      "semantic_tags": [
+        "impact_heavy",
+        "IMPACT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_ニュッ1_b083bf7d_74bf068e",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ニュッ1.mp3",
+      "semantic_tags": [
+        "object_interaction",
+        "OBJECT_INTERACTION"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_ニュッ2_cece8937_961625d8",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ニュッ2.mp3",
+      "semantic_tags": [
+        "object_interaction",
+        "OBJECT_INTERACTION"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_ニュッ3_b43e26bd_97f093fe",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ニュッ3.mp3",
+      "semantic_tags": [
+        "object_interaction",
+        "OBJECT_INTERACTION"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_バーン_ffc21016_ba6e5a1a",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\バーン.mp3",
+      "semantic_tags": [
+        "impact_heavy",
+        "IMPACT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_ヒューンと落下_d0af29c0_5bebcd32",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ヒューンと落下.mp3",
+      "semantic_tags": [
+        "movement",
+        "MOVEMENT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_ピコッ_e9267ca3_73472eba",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ピコッ.mp3",
+      "semantic_tags": [
+        "ui_confirm",
+        "UI"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_ピューンと逃げる_6021b70f_39b653d2",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ピューンと逃げる.mp3",
+      "semantic_tags": [
+        "movement",
+        "MOVEMENT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_ペタッ_b6f472ef_2d391395",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ペタッ.mp3",
+      "semantic_tags": [
+        "object_interaction",
+        "OBJECT_INTERACTION"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_ポカンとげんこつ_5bd2684c_b6b6c653",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\ポカンとげんこつ.mp3",
+      "semantic_tags": [
+        "impact_heavy",
+        "IMPACT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_可愛いジャンプ_5ef64f9b_c50708b6",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\可愛いジャンプ.mp3",
+      "semantic_tags": [
+        "movement",
+        "MOVEMENT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_可愛い動作1_4afec80e_57110934",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\可愛い動作1.mp3",
+      "semantic_tags": [
+        "movement",
+        "MOVEMENT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_可愛く座る_b978809f_6025b906",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\可愛く座る.mp3",
+      "semantic_tags": [
+        "movement",
+        "MOVEMENT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_噛みつく_6a0d32af_59e49752",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\噛みつく.mp3",
+      "semantic_tags": [
+        "impact_heavy",
+        "IMPACT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_回想_6704c089_f5033c95",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\回想.mp3",
+      "semantic_tags": [
+        "scene_transition",
+        "UI"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_学校のチャイム_e9f579c0_5bae9169",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\学校のチャイム.mp3",
+      "semantic_tags": [
+        "bell_or_chime",
+        "METAL"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_放送開始チャイム_98504349_4cc3a027",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\放送開始チャイム.mp3",
+      "semantic_tags": [
+        "bell_or_chime",
+        "METAL"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_爆発1_2c6e099a_c16673d8",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\爆発1.mp3",
+      "semantic_tags": [
+        "impact_heavy",
+        "IMPACT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_爆発2_c8e95d71_f08eda6d",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\爆発2.mp3",
+      "semantic_tags": [
+        "impact_heavy",
+        "IMPACT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_鈴を鳴らす_3766075f_2d96ce8a",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\鈴を鳴らす.mp3",
+      "semantic_tags": [
+        "bell_or_chime",
+        "METAL"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    },
+    {
+      "priority": "P2",
+      "canonical_asset_id": "detected_靴でブレーキ_79807a46_ce71ecd9",
+      "category": "SFX",
+      "file": "E:\\素材\\効果音素材\\靴でブレーキ.mp3",
+      "semantic_tags": [
+        "movement",
+        "MOVEMENT"
+      ],
+      "classification_confidence": "HIGH",
+      "match_quality": "GOOD_MATCH",
+      "duplicate_count": 0,
+      "priority_reasons": [
+        "FUTURE_USE"
+      ],
+      "license_evidence_found": false,
+      "license_status": "LICENSE_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED",
+      "auto_use": false
+    }
+  ],
+  "required_p0_review_topics": [
+    "basement background",
+    "old house interior",
+    "wood_creak",
+    "wood_break",
+    "success_feedback",
+    "failure_feedback",
+    "investigation BGM",
+    "tension BGM"
+  ],
+  "p0_topics_without_named_candidate": [
+    "basement background",
+    "wood_creak",
+    "wood_break",
+    "tension BGM"
+  ]
+}

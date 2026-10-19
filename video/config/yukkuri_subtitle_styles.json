@@ -1,0 +1,678 @@
+{
+  "schema_version": "1.0",
+  "source_runtime": {
+    "path": "C:\\Users\\ri4re\\Desktop\\YMM4\\YukkuriMovieMaker_v4\\user\\setting\\4.56.1.1\\YukkuriMovieMaker.Settings.CharacterSettings.json",
+    "sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b"
+  },
+  "common_style": {
+    "style_id": "ymm4_legacy_common_v1",
+    "font_family": "たぬき油性マジック",
+    "font_size_px": 100.0,
+    "position": {
+      "x_px": 0.0,
+      "y_px": 530.0,
+      "z": 0.0
+    },
+    "anchor": "CENTER_BOTTOM",
+    "alignment": "CENTER_BOTTOM",
+    "line_height_percent": 100.0,
+    "letter_spacing_px": 0.0,
+    "word_wrap": "NO_WRAP",
+    "max_width_px": 1920.0,
+    "opacity_percent": 100.0,
+    "zoom_percent": 100.0,
+    "rotation_deg": 0.0,
+    "bold": false,
+    "italic": false,
+    "underline": false,
+    "strikethrough": false,
+    "trim_end": true,
+    "display_direction": "FROM_FIRST",
+    "hide_direction": "FROM_FIRST",
+    "outline": {
+      "width_px": 5.0,
+      "quality": 64.0,
+      "blur": 0.0,
+      "smoothness": 100.0,
+      "offset_x_px": 0.0,
+      "offset_y_px": 0.0,
+      "angular": false
+    }
+  },
+  "styles": [
+    {
+      "style_id": "yukkuri_reimu_legacy_exact",
+      "character_id": "reimu",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくり霊夢",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FFFF0000",
+      "text_color_hex": "#FF0000",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FFFFFFFF",
+      "decoration_color_hex": "#FFFFFF",
+      "outline_color_argb": "#FFFF0000",
+      "outline_color_hex": "#FF0000",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "subtitle_reimu"
+    },
+    {
+      "style_id": "yukkuri_marisa_legacy_exact",
+      "character_id": "marisa",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくり魔理沙",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FFFFFF00",
+      "text_color_hex": "#FFFF00",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FF000000",
+      "decoration_color_hex": "#000000",
+      "outline_color_argb": "#FFFFFFFF",
+      "outline_color_hex": "#FFFFFF",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "subtitle_marisa"
+    },
+    {
+      "style_id": "yukkuri_alice_legacy_exact",
+      "character_id": "alice",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくりアリス",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FFFFFFFF",
+      "text_color_hex": "#FFFFFF",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FF0000FF",
+      "decoration_color_hex": "#0000FF",
+      "outline_color_argb": "#FFFF004B",
+      "outline_color_hex": "#FF004B",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "yukkuri_alice_legacy_exact"
+    },
+    {
+      "style_id": "yukkuri_koishi_legacy_exact",
+      "character_id": "koishi",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくりこいし",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FF4BFF87",
+      "text_color_hex": "#4BFF87",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FF000000",
+      "decoration_color_hex": "#000000",
+      "outline_color_argb": "#FFFFFFFF",
+      "outline_color_hex": "#FFFFFF",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "yukkuri_koishi_legacy_exact"
+    },
+    {
+      "style_id": "yukkuri_satori_legacy_exact",
+      "character_id": "satori",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくりさとり",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FFFF00FF",
+      "text_color_hex": "#FF00FF",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FFFFFFFF",
+      "decoration_color_hex": "#FFFFFF",
+      "outline_color_argb": "#FFFF00FF",
+      "outline_color_hex": "#FF00FF",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "yukkuri_satori_legacy_exact"
+    },
+    {
+      "style_id": "yukkuri_flandre_legacy_exact",
+      "character_id": "flandre",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくりフラン",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FFFFFFFF",
+      "text_color_hex": "#FFFFFF",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FFFF0000",
+      "decoration_color_hex": "#FF0000",
+      "outline_color_argb": "#FFFFD200",
+      "outline_color_hex": "#FFD200",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "yukkuri_flandre_legacy_exact"
+    },
+    {
+      "style_id": "yukkuri_patchouli_legacy_exact",
+      "character_id": "patchouli",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくりパチュリー",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FFFFFFFF",
+      "text_color_hex": "#FFFFFF",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FFC400FF",
+      "decoration_color_hex": "#C400FF",
+      "outline_color_argb": "#FFFFFFFF",
+      "outline_color_hex": "#FFFFFF",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "yukkuri_patchouli_legacy_exact"
+    },
+    {
+      "style_id": "yukkuri_remilia_legacy_exact",
+      "character_id": "remilia",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくりレミリア",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FFFF3A44",
+      "text_color_hex": "#FF3A44",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FFFFFFFF",
+      "decoration_color_hex": "#FFFFFF",
+      "outline_color_argb": "#FF4A148C",
+      "outline_color_hex": "#4A148C",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "yukkuri_remilia_legacy_exact"
+    },
+    {
+      "style_id": "yukkuri_sakuya_legacy_exact",
+      "character_id": "sakuya",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくり咲夜",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FFFFFFFF",
+      "text_color_hex": "#FFFFFF",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FF464646",
+      "decoration_color_hex": "#464646",
+      "outline_color_argb": "#FFFFFFFF",
+      "outline_color_hex": "#FFFFFF",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "subtitle_kp"
+    },
+    {
+      "style_id": "yukkuri_keine_legacy_exact",
+      "character_id": "keine",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくり慧音",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FF77FFFF",
+      "text_color_hex": "#77FFFF",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FF0600FF",
+      "decoration_color_hex": "#0600FF",
+      "outline_color_argb": "#FFFFFFFF",
+      "outline_color_hex": "#FFFFFF",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "yukkuri_keine_legacy_exact"
+    },
+    {
+      "style_id": "yukkuri_hakutaku_keine_legacy_exact",
+      "character_id": "hakutaku_keine",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくり白澤慧音",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FFBBFF63",
+      "text_color_hex": "#BBFF63",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FF000000",
+      "decoration_color_hex": "#000000",
+      "outline_color_argb": "#FFFFFFFF",
+      "outline_color_hex": "#FFFFFF",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "yukkuri_hakutaku_keine_legacy_exact"
+    },
+    {
+      "style_id": "yukkuri_sanae_legacy_exact",
+      "character_id": "sanae",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくり早苗",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FFFFFFFF",
+      "text_color_hex": "#FFFFFF",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FF00AA20",
+      "decoration_color_hex": "#00AA20",
+      "outline_color_argb": "#FF69F999",
+      "outline_color_hex": "#69F999",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "yukkuri_sanae_legacy_exact"
+    },
+    {
+      "style_id": "yukkuri_aya_legacy_exact",
+      "character_id": "aya",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくり文",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FFFBB02C",
+      "text_color_hex": "#FBB02C",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FF000000",
+      "decoration_color_hex": "#000000",
+      "outline_color_argb": "#FFFFFFFF",
+      "outline_color_hex": "#FFFFFF",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "yukkuri_aya_legacy_exact"
+    },
+    {
+      "style_id": "yukkuri_mokou_legacy_exact",
+      "character_id": "mokou",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくり妹紅",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FFFFBEBE",
+      "text_color_hex": "#FFBEBE",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FFFF0027",
+      "decoration_color_hex": "#FF0027",
+      "outline_color_argb": "#FFFFFFFF",
+      "outline_color_hex": "#FFFFFF",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "yukkuri_mokou_legacy_exact"
+    },
+    {
+      "style_id": "yukkuri_youmu_legacy_exact",
+      "character_id": "youmu",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくり妖夢",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FFA4FF5B",
+      "text_color_hex": "#A4FF5B",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FF004700",
+      "decoration_color_hex": "#004700",
+      "outline_color_argb": "#FFFFFFFF",
+      "outline_color_hex": "#FFFFFF",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "yukkuri_youmu_legacy_exact"
+    },
+    {
+      "style_id": "yukkuri_cirno_legacy_exact",
+      "character_id": "cirno",
+      "source": "YMM4_RUNTIME_EXACT",
+      "source_character_name": "ゆっくりチルノ",
+      "source_sha256": "50d4871eb5853e6e6f74f999c9017e4aea80b162c959e3ce9aab78f874459e4b",
+      "common_style_ref": "ymm4_legacy_common_v1",
+      "text_color_argb": "#FF00FFFF",
+      "text_color_hex": "#00FFFF",
+      "decoration": "BORDER",
+      "decoration_color_argb": "#FF000000",
+      "decoration_color_hex": "#000000",
+      "outline_color_argb": "#FFFFFFFF",
+      "outline_color_hex": "#FFFFFF",
+      "outline_width_px": 5.0,
+      "outline_quality": 64.0,
+      "legacy_exact": true,
+      "renderer_profile_id": "yukkuri_cirno_legacy_exact"
+    }
+  ],
+  "renderer_profiles": [
+    {
+      "subtitle_profile_id": "subtitle_reimu",
+      "font_family": "たぬき油性マジック",
+      "font_size": 52,
+      "text_color": "#FF3030",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": null,
+      "name_outline_color": "#FFFFFF",
+      "name_outline_width": 2.5,
+      "outlines": [
+        {
+          "width": 2,
+          "color": "#FFFFFF"
+        },
+        {
+          "width": 4.5,
+          "color": "#800000"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "subtitle_marisa",
+      "font_family": "たぬき油性マジック",
+      "font_size": 52,
+      "text_color": "#FFF040",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": null,
+      "name_outline_color": "#181818",
+      "name_outline_width": 2.5,
+      "outlines": [
+        {
+          "width": 4,
+          "color": "#202020"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "subtitle_kp",
+      "font_family": "たぬき油性マジック",
+      "font_size": 52,
+      "text_color": "#F4F4F0",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": null,
+      "name_outline_color": "#181818",
+      "name_outline_width": 2.5,
+      "outlines": [
+        {
+          "width": 2.25,
+          "color": "#252A30"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "subtitle_system_hud",
+      "font_family": "たぬき油性マジック",
+      "font_size": 52,
+      "text_color": "#F4F4F0",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": null,
+      "name_outline_color": "#181818",
+      "name_outline_width": 2.5,
+      "outlines": [
+        {
+          "width": 2.25,
+          "color": "#252A30"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "yukkuri_alice_legacy_exact",
+      "font_family": "たぬき油性マジック",
+      "font_size": 100,
+      "text_color": "#FFFFFF",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": 530,
+      "name_outline_color": "#0000FF",
+      "name_outline_width": 5.0,
+      "outlines": [
+        {
+          "width": 5.0,
+          "color": "#FF004B"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "yukkuri_koishi_legacy_exact",
+      "font_family": "たぬき油性マジック",
+      "font_size": 100,
+      "text_color": "#4BFF87",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": 530,
+      "name_outline_color": "#000000",
+      "name_outline_width": 5.0,
+      "outlines": [
+        {
+          "width": 5.0,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "yukkuri_satori_legacy_exact",
+      "font_family": "たぬき油性マジック",
+      "font_size": 100,
+      "text_color": "#FF00FF",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": 530,
+      "name_outline_color": "#FFFFFF",
+      "name_outline_width": 5.0,
+      "outlines": [
+        {
+          "width": 5.0,
+          "color": "#FF00FF"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "yukkuri_flandre_legacy_exact",
+      "font_family": "たぬき油性マジック",
+      "font_size": 100,
+      "text_color": "#FFFFFF",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": 530,
+      "name_outline_color": "#FF0000",
+      "name_outline_width": 5.0,
+      "outlines": [
+        {
+          "width": 5.0,
+          "color": "#FFD200"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "yukkuri_patchouli_legacy_exact",
+      "font_family": "たぬき油性マジック",
+      "font_size": 100,
+      "text_color": "#FFFFFF",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": 530,
+      "name_outline_color": "#C400FF",
+      "name_outline_width": 5.0,
+      "outlines": [
+        {
+          "width": 5.0,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "yukkuri_remilia_legacy_exact",
+      "font_family": "たぬき油性マジック",
+      "font_size": 100,
+      "text_color": "#FF3A44",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": 530,
+      "name_outline_color": "#FFFFFF",
+      "name_outline_width": 5.0,
+      "outlines": [
+        {
+          "width": 5.0,
+          "color": "#4A148C"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "yukkuri_keine_legacy_exact",
+      "font_family": "たぬき油性マジック",
+      "font_size": 100,
+      "text_color": "#77FFFF",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": 530,
+      "name_outline_color": "#0600FF",
+      "name_outline_width": 5.0,
+      "outlines": [
+        {
+          "width": 5.0,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "yukkuri_hakutaku_keine_legacy_exact",
+      "font_family": "たぬき油性マジック",
+      "font_size": 100,
+      "text_color": "#BBFF63",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": 530,
+      "name_outline_color": "#000000",
+      "name_outline_width": 5.0,
+      "outlines": [
+        {
+          "width": 5.0,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "yukkuri_sanae_legacy_exact",
+      "font_family": "たぬき油性マジック",
+      "font_size": 100,
+      "text_color": "#FFFFFF",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": 530,
+      "name_outline_color": "#00AA20",
+      "name_outline_width": 5.0,
+      "outlines": [
+        {
+          "width": 5.0,
+          "color": "#69F999"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "yukkuri_aya_legacy_exact",
+      "font_family": "たぬき油性マジック",
+      "font_size": 100,
+      "text_color": "#FBB02C",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": 530,
+      "name_outline_color": "#000000",
+      "name_outline_width": 5.0,
+      "outlines": [
+        {
+          "width": 5.0,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "yukkuri_mokou_legacy_exact",
+      "font_family": "たぬき油性マジック",
+      "font_size": 100,
+      "text_color": "#FFBEBE",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": 530,
+      "name_outline_color": "#FF0027",
+      "name_outline_width": 5.0,
+      "outlines": [
+        {
+          "width": 5.0,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "yukkuri_youmu_legacy_exact",
+      "font_family": "たぬき油性マジック",
+      "font_size": 100,
+      "text_color": "#A4FF5B",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": 530,
+      "name_outline_color": "#004700",
+      "name_outline_width": 5.0,
+      "outlines": [
+        {
+          "width": 5.0,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "subtitle_profile_id": "yukkuri_cirno_legacy_exact",
+      "font_family": "たぬき油性マジック",
+      "font_size": 100,
+      "text_color": "#00FFFF",
+      "alignment": "center",
+      "line_height": 1.0,
+      "letter_spacing": 0,
+      "opacity": 1.0,
+      "position_y": 530,
+      "name_outline_color": "#000000",
+      "name_outline_width": 5.0,
+      "outlines": [
+        {
+          "width": 5.0,
+          "color": "#FFFFFF"
+        }
+      ]
+    }
+  ],
+  "renderer_adaptation_policy": "Legacy exact values are immutable references; active renderer profiles are explicit adaptations."
+}

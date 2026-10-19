@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "python": {"required": ">=3.11", "validated": "3.12.10", "lock": "requirements-portability.txt"},
+  "node": {"required_for_core_ui": false, "validated": "24.19.0", "npm": "11.17.0"},
+  "ffmpeg": {"required": true, "environment_variable": "FFMPEG_PATH", "validated_version": "N-124026-g96f82f4fbb-20260417"},
+  "ffprobe": {"required": true, "environment_variable": "FFPROBE_PATH"},
+  "aquestalk": {"required_for_voiced_render": true, "environment_variable": "VOICE_RUNTIME_PATH", "redistribution": "NOT_INCLUDED_REVIEW_LICENSE"},
+  "voicevox": {"required_only_for_voicevox_profiles": true, "environment_variable": "VOICEVOX_URL", "default": "http://127.0.0.1:50021"},
+  "font": {"required_name": "Noto Sans JP", "environment_variable": "VIDEO_FONT_PATH", "font_file_in_repository": false},
+  "csharp_compiler": {"required_for_aquestalk_bridge_build": true, "environment_variable": "CSC_PATH"},
+  "network": {"runtime_allowed": ["127.0.0.1:11434", "127.0.0.1:50021"], "cloud_api_required": false}
+}

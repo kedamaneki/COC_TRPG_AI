@@ -1,0 +1,1032 @@
+{
+  "schema_version": "1.0",
+  "selection_policy": "Planner automatic selection requires LICENSE_APPROVED + APPROVED_FOR_PREVIEW + auto_use=true.",
+  "background": {
+    "ABSTRACT": [
+      "detected_nc211667_まがまがしい背景_cbe47ce1_3edc52b2"
+    ],
+    "BUILDING_GENERIC": [
+      "detected_nc73538__背景素材_博麗神社_3cac715b_dd77fde5",
+      "detected_nc73546__背景素材_白玉楼_50774dba_11491aec"
+    ],
+    "DARK_INTERIOR": [
+      "detected_aipict_basement_concrete01_143af8e0_19e02ddf",
+      "detected_aipict_basement_concrete04_29e2d8f4_4f0c3893",
+      "detected_aipict_basement_ruins01_334234bf_5301eeda",
+      "detected_nc211667_まがまがしい背景_cbe47ce1_3edc52b2"
+    ],
+    "DAY": [
+      "detected_nc240173_住宅街_日中_9560a17c_fc269117",
+      "detected_nc247229_都会の街中_日中_8ea2b684_d5ef5e67",
+      "detected_nc263185_繁華街の駅前_日中_f2759e9a_e7cca647"
+    ],
+    "FANTASY_BUILDING": [
+      "detected_nc73538__背景素材_博麗神社_3cac715b_dd77fde5",
+      "detected_nc73546__背景素材_白玉楼_50774dba_11491aec"
+    ],
+    "FOREST": [
+      "detected_nc77891__背景素材_魔法の森_23096947_86cdd0df"
+    ],
+    "FRAME_OR_TEXTURE": [
+      "detected_nc199755__フリー素材あそび_黒板02_背景02_背景_e0fa30c8_455b798d",
+      "detected_nc210520_aribカラーバー_png_svg_e8b8a0a1_599e4679",
+      "detected_nc321164_シンプル同系色モロッカン柄背景_紫__1920_1080_c6c60752_d7a3e709",
+      "detected_nc397093_木枠付きコルクボード風背景_1920_1080_透過無し_5f058149_05ee49ce",
+      "detected_nc67726_古い紙_faf5fcf0_f09dbe96",
+      "detected_nc86017__素材_セリフ枠_50130744_a47f47a2"
+    ],
+    "GRAPHIC": [
+      "detected_nc199755__フリー素材あそび_黒板02_背景02_背景_e0fa30c8_455b798d",
+      "detected_nc210520_aribカラーバー_png_svg_e8b8a0a1_599e4679",
+      "detected_nc321164_シンプル同系色モロッカン柄背景_紫__1920_1080_c6c60752_d7a3e709",
+      "detected_nc397093_木枠付きコルクボード風背景_1920_1080_透過無し_5f058149_05ee49ce",
+      "detected_nc67726_古い紙_faf5fcf0_f09dbe96",
+      "detected_nc86017__素材_セリフ枠_50130744_a47f47a2"
+    ],
+    "GRAPHIC_OR_FRAME": [
+      "detected_nc199755__フリー素材あそび_黒板02_背景02_背景_e0fa30c8_455b798d",
+      "detected_nc210520_aribカラーバー_png_svg_e8b8a0a1_599e4679",
+      "detected_nc321164_シンプル同系色モロッカン柄背景_紫__1920_1080_c6c60752_d7a3e709",
+      "detected_nc397093_木枠付きコルクボード風背景_1920_1080_透過無し_5f058149_05ee49ce",
+      "detected_nc67726_古い紙_faf5fcf0_f09dbe96",
+      "detected_nc86017__素材_セリフ枠_50130744_a47f47a2"
+    ],
+    "HALL": [
+      "detected_nc77065__背景素材_紅魔館ロビー_58c20f04_b35a09e7"
+    ],
+    "HALLWAY": [
+      "detected_nc228371_何かの施設の廊下_日中_f9c2a48f_c791c898"
+    ],
+    "HORROR": [
+      "detected_nc211667_まがまがしい背景_cbe47ce1_3edc52b2"
+    ],
+    "HOUSE_EXTERIOR": [
+      "detected_nc73544__背景素材_紅魔館_9ac9bd38_690455c7"
+    ],
+    "HOUSE_INTERIOR": [
+      "detected_nc77065__背景素材_紅魔館ロビー_58c20f04_b35a09e7"
+    ],
+    "INTERIOR": [
+      "detected_nc13676_床の間_007e79ab_3f307607",
+      "detected_nc187870_白い部屋_fc4da8b3_82e03560",
+      "detected_nc201337__背景_和室05_床の間_8k_フリー素材あそび_768091af_0ff44d02",
+      "detected_nc228371_何かの施設の廊下_日中_f9c2a48f_c791c898",
+      "detected_nc232701_物置_照明on_65735927_f8d91168",
+      "detected_nc238754_一人部屋_日中_5941bd73_f9fd015b",
+      "detected_nc239694_会社のオフィス_日中_f8a41687_868cbe3e",
+      "detected_nc242826_喫茶店_日中_189ebecc_01882da0",
+      "detected_nc358041_和室にモニター部分透過したフレーム_フリー素材あそび_a3dadcc3_a5635d8a",
+      "detected_nc77065__背景素材_紅魔館ロビー_58c20f04_b35a09e7"
+    ],
+    "MANSION": [
+      "detected_nc73544__背景素材_紅魔館_9ac9bd38_690455c7"
+    ],
+    "MANSION_EXTERIOR": [
+      "detected_nc73544__背景素材_紅魔館_9ac9bd38_690455c7"
+    ],
+    "MYSTERIOUS": [
+      "detected_nc77891__背景素材_魔法の森_23096947_86cdd0df"
+    ],
+    "NIGHT": [
+      "detected_nc240176_住宅街_夜_灯り有り_a039e2b1_d7432d3c"
+    ],
+    "OFFICE": [
+      "detected_nc239694_会社のオフィス_日中_f8a41687_868cbe3e"
+    ],
+    "OLD_HOUSE": [
+      "detected_nc73544__背景素材_紅魔館_9ac9bd38_690455c7"
+    ],
+    "OLD_HOUSE_INTERIOR": [
+      "detected_nc77065__背景素材_紅魔館ロビー_58c20f04_b35a09e7"
+    ],
+    "OMINOUS": [
+      "detected_nc211667_まがまがしい背景_cbe47ce1_3edc52b2"
+    ],
+    "ROOM_GENERIC": [
+      "detected_nc13676_床の間_007e79ab_3f307607",
+      "detected_nc187870_白い部屋_fc4da8b3_82e03560",
+      "detected_nc201337__背景_和室05_床の間_8k_フリー素材あそび_768091af_0ff44d02",
+      "detected_nc232701_物置_照明on_65735927_f8d91168",
+      "detected_nc238754_一人部屋_日中_5941bd73_f9fd015b",
+      "detected_nc239694_会社のオフィス_日中_f8a41687_868cbe3e",
+      "detected_nc242826_喫茶店_日中_189ebecc_01882da0",
+      "detected_nc358041_和室にモニター部分透過したフレーム_フリー素材あそび_a3dadcc3_a5635d8a"
+    ],
+    "SHRINE_OR_FANTASY_BUILDING": [
+      "detected_nc73538__背景素材_博麗神社_3cac715b_dd77fde5",
+      "detected_nc73546__背景素材_白玉楼_50774dba_11491aec"
+    ],
+    "STORAGE": [
+      "detected_nc232701_物置_照明on_65735927_f8d91168"
+    ],
+    "STREET": [
+      "detected_nc240173_住宅街_日中_9560a17c_fc269117",
+      "detected_nc240176_住宅街_夜_灯り有り_a039e2b1_d7432d3c",
+      "detected_nc247229_都会の街中_日中_8ea2b684_d5ef5e67",
+      "detected_nc263185_繁華街の駅前_日中_f2759e9a_e7cca647"
+    ],
+    "BASEMENT": [
+      "detected_aipict_basement_concrete01_143af8e0_19e02ddf",
+      "detected_aipict_basement_concrete04_29e2d8f4_4f0c3893",
+      "detected_aipict_basement_ruins01_334234bf_5301eeda"
+    ],
+    "CORBITT_HOUSE": [
+      "detected_aipict_basement_concrete01_143af8e0_19e02ddf",
+      "detected_aipict_basement_concrete04_29e2d8f4_4f0c3893",
+      "detected_aipict_basement_ruins01_334234bf_5301eeda"
+    ]
+  },
+  "bgm": {
+    "AFTERMATH": [
+      "detected_nc96304_moment_b8fc6a93_04b0b7b6",
+      "detected_recollections_3c352540_6168dd76"
+    ],
+    "BREAKTHROUGH": [
+      "detected_nc114628_コロンビア_b6872f71_46d850bc"
+    ],
+    "CALM": [
+      "detected_nc135860__日常bgm_昼下がり気分_かわいい_おしゃれ_b3be5e54_47889e83",
+      "detected_nc75438__日常系bgm_なんでしょう__ゆるい系_ヘンテコ系_95c57f06_cffc4424"
+    ],
+    "CALM_EXPLORATION": [
+      "detected_nc135860__日常bgm_昼下がり気分_かわいい_おしゃれ_b3be5e54_47889e83",
+      "detected_nc75438__日常系bgm_なんでしょう__ゆるい系_ヘンテコ系_95c57f06_cffc4424"
+    ],
+    "COMBAT": [
+      "detected_nc77916__東方アレンジ_恋色マスタースパーク_騒がしく_87ae68b7_fa55b4dc"
+    ],
+    "COMEDIC": [
+      "detected_nc192171_暴れん坊将軍のテーマ_46486480_b57fe60b",
+      "detected_nc77916__東方アレンジ_恋色マスタースパーク_騒がしく_87ae68b7_fa55b4dc",
+      "detected_nc90638_大慌て__ギャグ系bgm_0e917342_6bdaf1cf"
+    ],
+    "EXPLORATION": [
+      "detected_nc135860__日常bgm_昼下がり気分_かわいい_おしゃれ_b3be5e54_47889e83",
+      "detected_nc75438__日常系bgm_なんでしょう__ゆるい系_ヘンテコ系_95c57f06_cffc4424"
+    ],
+    "GENERIC_BACKGROUND": [
+      "detected_nc103280_04d71f0d_f40ce842",
+      "detected_nc115889_18f65c9d_a9833b90",
+      "detected_nc129018_c7b74d89_85eeafd4",
+      "detected_nc135860__日常bgm_昼下がり気分_かわいい_おしゃれ_b3be5e54_47889e83",
+      "detected_nc155808_e1f1c04a_92360543",
+      "detected_nc192171_暴れん坊将軍のテーマ_46486480_b57fe60b",
+      "detected_nc193153_35e3d7f4_64011f5d",
+      "detected_nc2003_766db4cf_8bdc683c",
+      "detected_nc20217_0759b593_0464a577",
+      "detected_nc20612_341cb9b3_66b272a0",
+      "detected_nc208589_恋色マスタースパーク_jazz風_eebcf434_eec43bab",
+      "detected_nc217594_43970aa5_2cbc6764",
+      "detected_nc22928_3f45c236_1051fcbb",
+      "detected_nc245962__東方_マスタースパーク効果音_高音質_52c87c04_9658d3f5",
+      "detected_nc25747_aa6f717c_4cdcfe2c",
+      "detected_nc257635_ac9513be_0badd4ad",
+      "detected_nc321999_1328e0a7_ad2fc0ac",
+      "detected_nc323487_00c8e801_5b5a7faf",
+      "detected_nc325275_51de8ac0_13a1bd1b",
+      "detected_nc75438__日常系bgm_なんでしょう__ゆるい系_ヘンテコ系_95c57f06_cffc4424",
+      "detected_nc766_36a92ea6_079b836c",
+      "detected_nc76949_5bffd66f_be0fbaeb",
+      "detected_nc78818_b005b74b_0a4a4c39",
+      "detected_nc83180_34f7c648_841ac5e2",
+      "detected_nc90638_大慌て__ギャグ系bgm_0e917342_6bdaf1cf",
+      "detected_nc97759_3b32e11f_69762208"
+    ],
+    "HIGH_INTENSITY": [
+      "detected_nc192171_暴れん坊将軍のテーマ_46486480_b57fe60b",
+      "detected_nc77916__東方アレンジ_恋色マスタースパーク_騒がしく_87ae68b7_fa55b4dc",
+      "detected_nc90638_大慌て__ギャグ系bgm_0e917342_6bdaf1cf"
+    ],
+    "INVESTIGATION": [
+      "detected_itch_arkeia_tension_as_the_light_fades_f154e404_e37cfd77",
+      "detected_itch_arkeia_tension_eyes_piercing_shadow_05b59554_65ab2c34",
+      "detected_itch_arkeia_tension_monster_1309690b_c3edf605",
+      "detected_itch_mumusi_snaps_in_the_dark_tension_loop_64850823_5b206a73",
+      "detected_nc96304_moment_b8fc6a93_04b0b7b6",
+      "detected_recollections_3c352540_6168dd76"
+    ],
+    "LIGHT": [
+      "detected_nc135860__日常bgm_昼下がり気分_かわいい_おしゃれ_b3be5e54_47889e83",
+      "detected_nc75438__日常系bgm_なんでしょう__ゆるい系_ヘンテコ系_95c57f06_cffc4424"
+    ],
+    "MYSTERIOUS": [
+      "detected_nc96304_moment_b8fc6a93_04b0b7b6",
+      "detected_recollections_3c352540_6168dd76"
+    ],
+    "REFLECTION": [
+      "detected_nc96304_moment_b8fc6a93_04b0b7b6",
+      "detected_recollections_3c352540_6168dd76"
+    ],
+    "SAD": [
+      "detected_nc96304_moment_b8fc6a93_04b0b7b6",
+      "detected_recollections_3c352540_6168dd76"
+    ],
+    "STINGER": [
+      "detected_nc114628_コロンビア_b6872f71_46d850bc"
+    ],
+    "DARK": [
+      "detected_itch_arkeia_tension_as_the_light_fades_f154e404_e37cfd77",
+      "detected_itch_arkeia_tension_eyes_piercing_shadow_05b59554_65ab2c34",
+      "detected_itch_arkeia_tension_monster_1309690b_c3edf605",
+      "detected_itch_mumusi_snaps_in_the_dark_tension_loop_64850823_5b206a73"
+    ],
+    "HORROR": [
+      "detected_itch_arkeia_tension_as_the_light_fades_f154e404_e37cfd77",
+      "detected_itch_arkeia_tension_eyes_piercing_shadow_05b59554_65ab2c34",
+      "detected_itch_arkeia_tension_monster_1309690b_c3edf605",
+      "detected_itch_mumusi_snaps_in_the_dark_tension_loop_64850823_5b206a73"
+    ],
+    "OMINOUS": [
+      "detected_itch_arkeia_tension_as_the_light_fades_f154e404_e37cfd77",
+      "detected_itch_arkeia_tension_eyes_piercing_shadow_05b59554_65ab2c34",
+      "detected_itch_arkeia_tension_monster_1309690b_c3edf605",
+      "detected_itch_mumusi_snaps_in_the_dark_tension_loop_64850823_5b206a73"
+    ],
+    "TENSION": [
+      "detected_itch_arkeia_tension_as_the_light_fades_f154e404_e37cfd77",
+      "detected_itch_arkeia_tension_eyes_piercing_shadow_05b59554_65ab2c34",
+      "detected_itch_arkeia_tension_monster_1309690b_c3edf605",
+      "detected_itch_mumusi_snaps_in_the_dark_tension_loop_64850823_5b206a73"
+    ],
+    "TENSION_BUILD": [
+      "detected_itch_arkeia_tension_as_the_light_fades_f154e404_e37cfd77",
+      "detected_itch_arkeia_tension_eyes_piercing_shadow_05b59554_65ab2c34",
+      "detected_itch_arkeia_tension_monster_1309690b_c3edf605",
+      "detected_itch_mumusi_snaps_in_the_dark_tension_loop_64850823_5b206a73"
+    ]
+  },
+  "sfx": {
+    "DICE": [
+      "detected_nc42339_ダイス音_1_1d10_e09bd219_e685378a",
+      "detected_nc42340_ダイス音_2_2d10_0e238a99_7b2e1d3e"
+    ],
+    "FAILURE": [
+      "detected_しょげる_ad4bea61_87e7f056",
+      "detected_ずっこける_42b0e110_3a12b956",
+      "detected_クイズ不正解1_b3a349f3_1b6b17b1"
+    ],
+    "HORROR": [
+      "detected_ショック1_3aed3338_411f2030",
+      "detected_ショック2_8e66779d_894c9660",
+      "detected_ショック3_91613fe9_cf9fc3f2",
+      "detected_不安_ピアノ演奏_604b3de3_37f6a13a",
+      "detected_寒いギャグで突風が吹く_6727ad11_2076073c"
+    ],
+    "IMPACT": [
+      "detected_カキーンと打つ_72d4ed18_8eb8173a",
+      "detected_グサッ1_26fa8b15_ec24fe8f",
+      "detected_グサッ2_27901c9c_d05ff265",
+      "detected_ドーン_095d02b7_3c1671ba",
+      "detected_バーン_ffc21016_ba6e5a1a",
+      "detected_ポカンとげんこつ_5bd2684c_b6b6c653",
+      "detected_噛みつく_6a0d32af_59e49752",
+      "detected_爆発1_2c6e099a_c16673d8",
+      "detected_爆発2_c8e95d71_f08eda6d"
+    ],
+    "METAL": [
+      "detected_お寺の鐘_e848099d_cf08b37c",
+      "detected_チリン_64e587fc_75c87d87",
+      "detected_チーン1_0896e131_1229337b",
+      "detected_チーン2_1d69c26d_db157a50",
+      "detected_学校のチャイム_e9f579c0_5bae9169",
+      "detected_放送開始チャイム_98504349_4cc3a027",
+      "detected_鈴を鳴らす_3766075f_2d96ce8a"
+    ],
+    "PAPER": [
+      "detected_タイプライターで文字を打つ1_cdc52fca_d22a0487",
+      "detected_タイプライターで文字を打つ2_cc81ab32_7d944d91"
+    ],
+    "SUCCESS": [
+      "detected_きらーん1_74f4ebd9_89280fa5",
+      "detected_きらーん2_214729eb_e0760f00",
+      "detected_ひらめく1_08cbac5c_74be3af5",
+      "detected_キラッ1_a3683b12_8b501e0d",
+      "detected_キラッ2_ddd05cda_3d63e2d2",
+      "detected_クイズ正解1_ff3f5255_0657606d",
+      "detected_クイズ正解2_4188eb4c_97355e1c",
+      "detected_クイズ正解5_aca93919_05f7a16b",
+      "detected_ラッパのファンファーレ_7bc8c97e_3814ad12",
+      "detected_レベルアップ_89facd35_3346ba21"
+    ],
+    "UI": [
+      "detected_クイズ早押しボタン1_bdf25128_4eee4a3d",
+      "detected_クイズ早押しボタン2_ea4c8622_bbc9f58d",
+      "detected_シーン切り替え1_bccd846d_b21ff715",
+      "detected_シーン切り替え2_ab577a30_29ecb2fe",
+      "detected_スイッチを押す_4c39e3b2_7384d9e6",
+      "detected_タイトル表示_08561d0c_013cd0f0",
+      "detected_データ解析_ac3bf5cb_303dd6b6",
+      "detected_ピコッ_e9267ca3_73472eba",
+      "detected_回想_6704c089_f5033c95"
+    ],
+    "bell_or_chime": [
+      "detected_お寺の鐘_e848099d_cf08b37c",
+      "detected_チリン_64e587fc_75c87d87",
+      "detected_チーン1_0896e131_1229337b",
+      "detected_チーン2_1d69c26d_db157a50",
+      "detected_学校のチャイム_e9f579c0_5bae9169",
+      "detected_放送開始チャイム_98504349_4cc3a027",
+      "detected_鈴を鳴らす_3766075f_2d96ce8a"
+    ],
+    "dice_roll": [
+      "detected_nc42339_ダイス音_1_1d10_e09bd219_e685378a",
+      "detected_nc42340_ダイス音_2_2d10_0e238a99_7b2e1d3e"
+    ],
+    "failure_feedback": [
+      "detected_しょげる_ad4bea61_87e7f056",
+      "detected_ずっこける_42b0e110_3a12b956",
+      "detected_クイズ不正解1_b3a349f3_1b6b17b1"
+    ],
+    "impact_heavy": [
+      "detected_カキーンと打つ_72d4ed18_8eb8173a",
+      "detected_グサッ1_26fa8b15_ec24fe8f",
+      "detected_グサッ2_27901c9c_d05ff265",
+      "detected_ドーン_095d02b7_3c1671ba",
+      "detected_バーン_ffc21016_ba6e5a1a",
+      "detected_ポカンとげんこつ_5bd2684c_b6b6c653",
+      "detected_噛みつく_6a0d32af_59e49752",
+      "detected_爆発1_2c6e099a_c16673d8",
+      "detected_爆発2_c8e95d71_f08eda6d"
+    ],
+    "movement": [
+      "detected_ジャンプ_1737f750_b3add214",
+      "detected_ヒューンと落下_d0af29c0_5bebcd32",
+      "detected_ピューンと逃げる_6021b70f_39b653d2",
+      "detected_可愛いジャンプ_5ef64f9b_c50708b6",
+      "detected_可愛い動作1_4afec80e_57110934",
+      "detected_可愛く座る_b978809f_6025b906",
+      "detected_靴でブレーキ_79807a46_ce71ecd9"
+    ],
+    "object_interaction": [
+      "detected_ちょこっと触る_0bd1543c_5d797a2f",
+      "detected_スポッ_14800500_41e22079",
+      "detected_ニュッ1_b083bf7d_74bf068e",
+      "detected_ニュッ2_cece8937_961625d8",
+      "detected_ニュッ3_b43e26bd_97f093fe",
+      "detected_ペタッ_b6f472ef_2d391395"
+    ],
+    "ominous_stinger": [
+      "detected_ショック1_3aed3338_411f2030",
+      "detected_ショック2_8e66779d_894c9660",
+      "detected_ショック3_91613fe9_cf9fc3f2",
+      "detected_不安_ピアノ演奏_604b3de3_37f6a13a",
+      "detected_寒いギャグで突風が吹く_6727ad11_2076073c"
+    ],
+    "paper_or_text": [
+      "detected_タイプライターで文字を打つ1_cdc52fca_d22a0487",
+      "detected_タイプライターで文字を打つ2_cc81ab32_7d944d91"
+    ],
+    "scene_transition": [
+      "detected_シーン切り替え1_bccd846d_b21ff715",
+      "detected_シーン切り替え2_ab577a30_29ecb2fe",
+      "detected_タイトル表示_08561d0c_013cd0f0",
+      "detected_データ解析_ac3bf5cb_303dd6b6",
+      "detected_回想_6704c089_f5033c95"
+    ],
+    "success_feedback": [
+      "detected_きらーん1_74f4ebd9_89280fa5",
+      "detected_きらーん2_214729eb_e0760f00",
+      "detected_ひらめく1_08cbac5c_74be3af5",
+      "detected_キラッ1_a3683b12_8b501e0d",
+      "detected_キラッ2_ddd05cda_3d63e2d2",
+      "detected_クイズ正解1_ff3f5255_0657606d",
+      "detected_クイズ正解2_4188eb4c_97355e1c",
+      "detected_クイズ正解5_aca93919_05f7a16b",
+      "detected_ラッパのファンファーレ_7bc8c97e_3814ad12",
+      "detected_レベルアップ_89facd35_3346ba21"
+    ],
+    "ui_confirm": [
+      "detected_クイズ早押しボタン1_bdf25128_4eee4a3d",
+      "detected_クイズ早押しボタン2_ea4c8622_bbc9f58d",
+      "detected_スイッチを押す_4c39e3b2_7384d9e6",
+      "detected_ピコッ_e9267ca3_73472eba"
+    ],
+    "WOOD": [
+      "detected_freesound_387014_wood_break_hq_preview_0ecb5346_edf6271b",
+      "detected_freesound_452109_branch_break_snap_crunch_hq_preview_fd808fc1_cccc8f92",
+      "detected_freesound_502505_wood_creak_single_v1_hq_preview_6eeb667f_aa5189ff",
+      "detected_freesound_502511_wood_creak_single_v3_hq_preview_88dfbeb4_ccd6a0b4",
+      "detected_freesound_506660_wood_creak_single_v5_hq_preview_ea2144a0_c029d7e4",
+      "detected_freesound_766406_branch_break_hq_preview_9864d0de_8d5d4818"
+    ],
+    "wood_break": [
+      "detected_freesound_387014_wood_break_hq_preview_0ecb5346_edf6271b",
+      "detected_freesound_452109_branch_break_snap_crunch_hq_preview_fd808fc1_cccc8f92",
+      "detected_freesound_766406_branch_break_hq_preview_9864d0de_8d5d4818"
+    ],
+    "wood_creak": [
+      "detected_freesound_502505_wood_creak_single_v1_hq_preview_6eeb667f_aa5189ff",
+      "detected_freesound_502511_wood_creak_single_v3_hq_preview_88dfbeb4_ccd6a0b4",
+      "detected_freesound_506660_wood_creak_single_v5_hq_preview_ea2144a0_c029d7e4"
+    ]
+  },
+  "all_classified": {
+    "background": {
+      "ABSTRACT": [
+        "detected_nc211667_まがまがしい背景_cbe47ce1_3edc52b2"
+      ],
+      "BUILDING_GENERIC": [
+        "detected_nc73538__背景素材_博麗神社_3cac715b_dd77fde5",
+        "detected_nc73546__背景素材_白玉楼_50774dba_11491aec"
+      ],
+      "DARK_INTERIOR": [
+        "detected_aipict_basement_concrete01_143af8e0_19e02ddf",
+        "detected_aipict_basement_concrete04_29e2d8f4_4f0c3893",
+        "detected_aipict_basement_ruins01_334234bf_5301eeda",
+        "detected_nc211667_まがまがしい背景_cbe47ce1_3edc52b2"
+      ],
+      "DAY": [
+        "detected_nc240173_住宅街_日中_9560a17c_fc269117",
+        "detected_nc247229_都会の街中_日中_8ea2b684_d5ef5e67",
+        "detected_nc263185_繁華街の駅前_日中_f2759e9a_e7cca647"
+      ],
+      "FANTASY_BUILDING": [
+        "detected_nc73538__背景素材_博麗神社_3cac715b_dd77fde5",
+        "detected_nc73546__背景素材_白玉楼_50774dba_11491aec"
+      ],
+      "FOREST": [
+        "detected_nc77891__背景素材_魔法の森_23096947_86cdd0df"
+      ],
+      "FRAME_OR_TEXTURE": [
+        "detected_nc199755__フリー素材あそび_黒板02_背景02_背景_e0fa30c8_455b798d",
+        "detected_nc210520_aribカラーバー_png_svg_e8b8a0a1_599e4679",
+        "detected_nc321164_シンプル同系色モロッカン柄背景_紫__1920_1080_c6c60752_d7a3e709",
+        "detected_nc397093_木枠付きコルクボード風背景_1920_1080_透過無し_5f058149_05ee49ce",
+        "detected_nc67726_古い紙_faf5fcf0_f09dbe96",
+        "detected_nc86017__素材_セリフ枠_50130744_a47f47a2"
+      ],
+      "GRAPHIC": [
+        "detected_nc199755__フリー素材あそび_黒板02_背景02_背景_e0fa30c8_455b798d",
+        "detected_nc210520_aribカラーバー_png_svg_e8b8a0a1_599e4679",
+        "detected_nc321164_シンプル同系色モロッカン柄背景_紫__1920_1080_c6c60752_d7a3e709",
+        "detected_nc397093_木枠付きコルクボード風背景_1920_1080_透過無し_5f058149_05ee49ce",
+        "detected_nc67726_古い紙_faf5fcf0_f09dbe96",
+        "detected_nc86017__素材_セリフ枠_50130744_a47f47a2"
+      ],
+      "GRAPHIC_OR_FRAME": [
+        "detected_nc199755__フリー素材あそび_黒板02_背景02_背景_e0fa30c8_455b798d",
+        "detected_nc210520_aribカラーバー_png_svg_e8b8a0a1_599e4679",
+        "detected_nc321164_シンプル同系色モロッカン柄背景_紫__1920_1080_c6c60752_d7a3e709",
+        "detected_nc397093_木枠付きコルクボード風背景_1920_1080_透過無し_5f058149_05ee49ce",
+        "detected_nc67726_古い紙_faf5fcf0_f09dbe96",
+        "detected_nc86017__素材_セリフ枠_50130744_a47f47a2"
+      ],
+      "HALL": [
+        "detected_nc77065__背景素材_紅魔館ロビー_58c20f04_b35a09e7"
+      ],
+      "HALLWAY": [
+        "detected_nc228371_何かの施設の廊下_日中_f9c2a48f_c791c898"
+      ],
+      "HORROR": [
+        "detected_nc211667_まがまがしい背景_cbe47ce1_3edc52b2"
+      ],
+      "HOUSE_EXTERIOR": [
+        "detected_nc73544__背景素材_紅魔館_9ac9bd38_690455c7"
+      ],
+      "HOUSE_INTERIOR": [
+        "detected_nc77065__背景素材_紅魔館ロビー_58c20f04_b35a09e7"
+      ],
+      "INTERIOR": [
+        "detected_nc13676_床の間_007e79ab_3f307607",
+        "detected_nc187870_白い部屋_fc4da8b3_82e03560",
+        "detected_nc201337__背景_和室05_床の間_8k_フリー素材あそび_768091af_0ff44d02",
+        "detected_nc228371_何かの施設の廊下_日中_f9c2a48f_c791c898",
+        "detected_nc232701_物置_照明on_65735927_f8d91168",
+        "detected_nc238754_一人部屋_日中_5941bd73_f9fd015b",
+        "detected_nc239694_会社のオフィス_日中_f8a41687_868cbe3e",
+        "detected_nc242826_喫茶店_日中_189ebecc_01882da0",
+        "detected_nc358041_和室にモニター部分透過したフレーム_フリー素材あそび_a3dadcc3_a5635d8a",
+        "detected_nc77065__背景素材_紅魔館ロビー_58c20f04_b35a09e7"
+      ],
+      "MANSION": [
+        "detected_nc73544__背景素材_紅魔館_9ac9bd38_690455c7"
+      ],
+      "MANSION_EXTERIOR": [
+        "detected_nc73544__背景素材_紅魔館_9ac9bd38_690455c7"
+      ],
+      "MYSTERIOUS": [
+        "detected_nc77891__背景素材_魔法の森_23096947_86cdd0df"
+      ],
+      "NIGHT": [
+        "detected_nc240176_住宅街_夜_灯り有り_a039e2b1_d7432d3c"
+      ],
+      "OFFICE": [
+        "detected_nc239694_会社のオフィス_日中_f8a41687_868cbe3e"
+      ],
+      "OLD_HOUSE": [
+        "detected_nc73544__背景素材_紅魔館_9ac9bd38_690455c7"
+      ],
+      "OLD_HOUSE_INTERIOR": [
+        "detected_nc77065__背景素材_紅魔館ロビー_58c20f04_b35a09e7"
+      ],
+      "OMINOUS": [
+        "detected_nc211667_まがまがしい背景_cbe47ce1_3edc52b2"
+      ],
+      "ROOM_GENERIC": [
+        "detected_nc13676_床の間_007e79ab_3f307607",
+        "detected_nc187870_白い部屋_fc4da8b3_82e03560",
+        "detected_nc201337__背景_和室05_床の間_8k_フリー素材あそび_768091af_0ff44d02",
+        "detected_nc232701_物置_照明on_65735927_f8d91168",
+        "detected_nc238754_一人部屋_日中_5941bd73_f9fd015b",
+        "detected_nc239694_会社のオフィス_日中_f8a41687_868cbe3e",
+        "detected_nc242826_喫茶店_日中_189ebecc_01882da0",
+        "detected_nc358041_和室にモニター部分透過したフレーム_フリー素材あそび_a3dadcc3_a5635d8a"
+      ],
+      "SHRINE_OR_FANTASY_BUILDING": [
+        "detected_nc73538__背景素材_博麗神社_3cac715b_dd77fde5",
+        "detected_nc73546__背景素材_白玉楼_50774dba_11491aec"
+      ],
+      "STORAGE": [
+        "detected_nc232701_物置_照明on_65735927_f8d91168"
+      ],
+      "STREET": [
+        "detected_nc240173_住宅街_日中_9560a17c_fc269117",
+        "detected_nc240176_住宅街_夜_灯り有り_a039e2b1_d7432d3c",
+        "detected_nc247229_都会の街中_日中_8ea2b684_d5ef5e67",
+        "detected_nc263185_繁華街の駅前_日中_f2759e9a_e7cca647"
+      ],
+      "BASEMENT": [
+        "detected_aipict_basement_concrete01_143af8e0_19e02ddf",
+        "detected_aipict_basement_concrete04_29e2d8f4_4f0c3893",
+        "detected_aipict_basement_ruins01_334234bf_5301eeda"
+      ],
+      "CORBITT_HOUSE": [
+        "detected_aipict_basement_concrete01_143af8e0_19e02ddf",
+        "detected_aipict_basement_concrete04_29e2d8f4_4f0c3893",
+        "detected_aipict_basement_ruins01_334234bf_5301eeda"
+      ]
+    },
+    "bgm": {
+      "AFTERMATH": [
+        "detected_nc96304_moment_b8fc6a93_04b0b7b6",
+        "detected_recollections_3c352540_6168dd76"
+      ],
+      "BREAKTHROUGH": [
+        "detected_nc114628_コロンビア_b6872f71_46d850bc"
+      ],
+      "CALM": [
+        "detected_nc135860__日常bgm_昼下がり気分_かわいい_おしゃれ_b3be5e54_47889e83",
+        "detected_nc75438__日常系bgm_なんでしょう__ゆるい系_ヘンテコ系_95c57f06_cffc4424"
+      ],
+      "CALM_EXPLORATION": [
+        "detected_nc135860__日常bgm_昼下がり気分_かわいい_おしゃれ_b3be5e54_47889e83",
+        "detected_nc75438__日常系bgm_なんでしょう__ゆるい系_ヘンテコ系_95c57f06_cffc4424"
+      ],
+      "COMBAT": [
+        "detected_nc77916__東方アレンジ_恋色マスタースパーク_騒がしく_87ae68b7_fa55b4dc"
+      ],
+      "COMEDIC": [
+        "detected_nc192171_暴れん坊将軍のテーマ_46486480_b57fe60b",
+        "detected_nc77916__東方アレンジ_恋色マスタースパーク_騒がしく_87ae68b7_fa55b4dc",
+        "detected_nc90638_大慌て__ギャグ系bgm_0e917342_6bdaf1cf"
+      ],
+      "EXPLORATION": [
+        "detected_nc135860__日常bgm_昼下がり気分_かわいい_おしゃれ_b3be5e54_47889e83",
+        "detected_nc75438__日常系bgm_なんでしょう__ゆるい系_ヘンテコ系_95c57f06_cffc4424"
+      ],
+      "GENERIC_BACKGROUND": [
+        "detected_nc103280_04d71f0d_f40ce842",
+        "detected_nc115889_18f65c9d_a9833b90",
+        "detected_nc129018_c7b74d89_85eeafd4",
+        "detected_nc135860__日常bgm_昼下がり気分_かわいい_おしゃれ_b3be5e54_47889e83",
+        "detected_nc155808_e1f1c04a_92360543",
+        "detected_nc192171_暴れん坊将軍のテーマ_46486480_b57fe60b",
+        "detected_nc193153_35e3d7f4_64011f5d",
+        "detected_nc2003_766db4cf_8bdc683c",
+        "detected_nc20217_0759b593_0464a577",
+        "detected_nc20612_341cb9b3_66b272a0",
+        "detected_nc208589_恋色マスタースパーク_jazz風_eebcf434_eec43bab",
+        "detected_nc217594_43970aa5_2cbc6764",
+        "detected_nc22928_3f45c236_1051fcbb",
+        "detected_nc245962__東方_マスタースパーク効果音_高音質_52c87c04_9658d3f5",
+        "detected_nc25747_aa6f717c_4cdcfe2c",
+        "detected_nc257635_ac9513be_0badd4ad",
+        "detected_nc321999_1328e0a7_ad2fc0ac",
+        "detected_nc323487_00c8e801_5b5a7faf",
+        "detected_nc325275_51de8ac0_13a1bd1b",
+        "detected_nc75438__日常系bgm_なんでしょう__ゆるい系_ヘンテコ系_95c57f06_cffc4424",
+        "detected_nc766_36a92ea6_079b836c",
+        "detected_nc76949_5bffd66f_be0fbaeb",
+        "detected_nc78818_b005b74b_0a4a4c39",
+        "detected_nc83180_34f7c648_841ac5e2",
+        "detected_nc90638_大慌て__ギャグ系bgm_0e917342_6bdaf1cf",
+        "detected_nc97759_3b32e11f_69762208"
+      ],
+      "HIGH_INTENSITY": [
+        "detected_nc192171_暴れん坊将軍のテーマ_46486480_b57fe60b",
+        "detected_nc77916__東方アレンジ_恋色マスタースパーク_騒がしく_87ae68b7_fa55b4dc",
+        "detected_nc90638_大慌て__ギャグ系bgm_0e917342_6bdaf1cf"
+      ],
+      "INVESTIGATION": [
+        "detected_itch_arkeia_tension_as_the_light_fades_f154e404_e37cfd77",
+        "detected_itch_arkeia_tension_eyes_piercing_shadow_05b59554_65ab2c34",
+        "detected_itch_arkeia_tension_monster_1309690b_c3edf605",
+        "detected_itch_mumusi_snaps_in_the_dark_tension_loop_64850823_5b206a73",
+        "detected_nc96304_moment_b8fc6a93_04b0b7b6",
+        "detected_recollections_3c352540_6168dd76"
+      ],
+      "LIGHT": [
+        "detected_nc135860__日常bgm_昼下がり気分_かわいい_おしゃれ_b3be5e54_47889e83",
+        "detected_nc75438__日常系bgm_なんでしょう__ゆるい系_ヘンテコ系_95c57f06_cffc4424"
+      ],
+      "MYSTERIOUS": [
+        "detected_nc96304_moment_b8fc6a93_04b0b7b6",
+        "detected_recollections_3c352540_6168dd76"
+      ],
+      "REFLECTION": [
+        "detected_nc96304_moment_b8fc6a93_04b0b7b6",
+        "detected_recollections_3c352540_6168dd76"
+      ],
+      "SAD": [
+        "detected_nc96304_moment_b8fc6a93_04b0b7b6",
+        "detected_recollections_3c352540_6168dd76"
+      ],
+      "STINGER": [
+        "detected_nc114628_コロンビア_b6872f71_46d850bc"
+      ],
+      "DARK": [
+        "detected_itch_arkeia_tension_as_the_light_fades_f154e404_e37cfd77",
+        "detected_itch_arkeia_tension_eyes_piercing_shadow_05b59554_65ab2c34",
+        "detected_itch_arkeia_tension_monster_1309690b_c3edf605",
+        "detected_itch_mumusi_snaps_in_the_dark_tension_loop_64850823_5b206a73"
+      ],
+      "HORROR": [
+        "detected_itch_arkeia_tension_as_the_light_fades_f154e404_e37cfd77",
+        "detected_itch_arkeia_tension_eyes_piercing_shadow_05b59554_65ab2c34",
+        "detected_itch_arkeia_tension_monster_1309690b_c3edf605",
+        "detected_itch_mumusi_snaps_in_the_dark_tension_loop_64850823_5b206a73"
+      ],
+      "OMINOUS": [
+        "detected_itch_arkeia_tension_as_the_light_fades_f154e404_e37cfd77",
+        "detected_itch_arkeia_tension_eyes_piercing_shadow_05b59554_65ab2c34",
+        "detected_itch_arkeia_tension_monster_1309690b_c3edf605",
+        "detected_itch_mumusi_snaps_in_the_dark_tension_loop_64850823_5b206a73"
+      ],
+      "TENSION": [
+        "detected_itch_arkeia_tension_as_the_light_fades_f154e404_e37cfd77",
+        "detected_itch_arkeia_tension_eyes_piercing_shadow_05b59554_65ab2c34",
+        "detected_itch_arkeia_tension_monster_1309690b_c3edf605",
+        "detected_itch_mumusi_snaps_in_the_dark_tension_loop_64850823_5b206a73"
+      ],
+      "TENSION_BUILD": [
+        "detected_itch_arkeia_tension_as_the_light_fades_f154e404_e37cfd77",
+        "detected_itch_arkeia_tension_eyes_piercing_shadow_05b59554_65ab2c34",
+        "detected_itch_arkeia_tension_monster_1309690b_c3edf605",
+        "detected_itch_mumusi_snaps_in_the_dark_tension_loop_64850823_5b206a73"
+      ]
+    },
+    "sfx": {
+      "DICE": [
+        "detected_nc42339_ダイス音_1_1d10_e09bd219_e685378a",
+        "detected_nc42340_ダイス音_2_2d10_0e238a99_7b2e1d3e"
+      ],
+      "FAILURE": [
+        "detected_しょげる_ad4bea61_87e7f056",
+        "detected_ずっこける_42b0e110_3a12b956",
+        "detected_クイズ不正解1_b3a349f3_1b6b17b1"
+      ],
+      "HORROR": [
+        "detected_ショック1_3aed3338_411f2030",
+        "detected_ショック2_8e66779d_894c9660",
+        "detected_ショック3_91613fe9_cf9fc3f2",
+        "detected_不安_ピアノ演奏_604b3de3_37f6a13a",
+        "detected_寒いギャグで突風が吹く_6727ad11_2076073c"
+      ],
+      "IMPACT": [
+        "detected_カキーンと打つ_72d4ed18_8eb8173a",
+        "detected_グサッ1_26fa8b15_ec24fe8f",
+        "detected_グサッ2_27901c9c_d05ff265",
+        "detected_ドーン_095d02b7_3c1671ba",
+        "detected_バーン_ffc21016_ba6e5a1a",
+        "detected_ポカンとげんこつ_5bd2684c_b6b6c653",
+        "detected_噛みつく_6a0d32af_59e49752",
+        "detected_爆発1_2c6e099a_c16673d8",
+        "detected_爆発2_c8e95d71_f08eda6d"
+      ],
+      "METAL": [
+        "detected_お寺の鐘_e848099d_cf08b37c",
+        "detected_チリン_64e587fc_75c87d87",
+        "detected_チーン1_0896e131_1229337b",
+        "detected_チーン2_1d69c26d_db157a50",
+        "detected_学校のチャイム_e9f579c0_5bae9169",
+        "detected_放送開始チャイム_98504349_4cc3a027",
+        "detected_鈴を鳴らす_3766075f_2d96ce8a"
+      ],
+      "PAPER": [
+        "detected_タイプライターで文字を打つ1_cdc52fca_d22a0487",
+        "detected_タイプライターで文字を打つ2_cc81ab32_7d944d91"
+      ],
+      "SUCCESS": [
+        "detected_きらーん1_74f4ebd9_89280fa5",
+        "detected_きらーん2_214729eb_e0760f00",
+        "detected_ひらめく1_08cbac5c_74be3af5",
+        "detected_キラッ1_a3683b12_8b501e0d",
+        "detected_キラッ2_ddd05cda_3d63e2d2",
+        "detected_クイズ正解1_ff3f5255_0657606d",
+        "detected_クイズ正解2_4188eb4c_97355e1c",
+        "detected_クイズ正解5_aca93919_05f7a16b",
+        "detected_ラッパのファンファーレ_7bc8c97e_3814ad12",
+        "detected_レベルアップ_89facd35_3346ba21"
+      ],
+      "UI": [
+        "detected_クイズ早押しボタン1_bdf25128_4eee4a3d",
+        "detected_クイズ早押しボタン2_ea4c8622_bbc9f58d",
+        "detected_シーン切り替え1_bccd846d_b21ff715",
+        "detected_シーン切り替え2_ab577a30_29ecb2fe",
+        "detected_スイッチを押す_4c39e3b2_7384d9e6",
+        "detected_タイトル表示_08561d0c_013cd0f0",
+        "detected_データ解析_ac3bf5cb_303dd6b6",
+        "detected_ピコッ_e9267ca3_73472eba",
+        "detected_回想_6704c089_f5033c95"
+      ],
+      "bell_or_chime": [
+        "detected_お寺の鐘_e848099d_cf08b37c",
+        "detected_チリン_64e587fc_75c87d87",
+        "detected_チーン1_0896e131_1229337b",
+        "detected_チーン2_1d69c26d_db157a50",
+        "detected_学校のチャイム_e9f579c0_5bae9169",
+        "detected_放送開始チャイム_98504349_4cc3a027",
+        "detected_鈴を鳴らす_3766075f_2d96ce8a"
+      ],
+      "dice_roll": [
+        "detected_nc42339_ダイス音_1_1d10_e09bd219_e685378a",
+        "detected_nc42340_ダイス音_2_2d10_0e238a99_7b2e1d3e"
+      ],
+      "failure_feedback": [
+        "detected_しょげる_ad4bea61_87e7f056",
+        "detected_ずっこける_42b0e110_3a12b956",
+        "detected_クイズ不正解1_b3a349f3_1b6b17b1"
+      ],
+      "impact_heavy": [
+        "detected_カキーンと打つ_72d4ed18_8eb8173a",
+        "detected_グサッ1_26fa8b15_ec24fe8f",
+        "detected_グサッ2_27901c9c_d05ff265",
+        "detected_ドーン_095d02b7_3c1671ba",
+        "detected_バーン_ffc21016_ba6e5a1a",
+        "detected_ポカンとげんこつ_5bd2684c_b6b6c653",
+        "detected_噛みつく_6a0d32af_59e49752",
+        "detected_爆発1_2c6e099a_c16673d8",
+        "detected_爆発2_c8e95d71_f08eda6d"
+      ],
+      "movement": [
+        "detected_ジャンプ_1737f750_b3add214",
+        "detected_ヒューンと落下_d0af29c0_5bebcd32",
+        "detected_ピューンと逃げる_6021b70f_39b653d2",
+        "detected_可愛いジャンプ_5ef64f9b_c50708b6",
+        "detected_可愛い動作1_4afec80e_57110934",
+        "detected_可愛く座る_b978809f_6025b906",
+        "detected_靴でブレーキ_79807a46_ce71ecd9"
+      ],
+      "object_interaction": [
+        "detected_ちょこっと触る_0bd1543c_5d797a2f",
+        "detected_スポッ_14800500_41e22079",
+        "detected_ニュッ1_b083bf7d_74bf068e",
+        "detected_ニュッ2_cece8937_961625d8",
+        "detected_ニュッ3_b43e26bd_97f093fe",
+        "detected_ペタッ_b6f472ef_2d391395"
+      ],
+      "ominous_stinger": [
+        "detected_ショック1_3aed3338_411f2030",
+        "detected_ショック2_8e66779d_894c9660",
+        "detected_ショック3_91613fe9_cf9fc3f2",
+        "detected_不安_ピアノ演奏_604b3de3_37f6a13a",
+        "detected_寒いギャグで突風が吹く_6727ad11_2076073c"
+      ],
+      "paper_or_text": [
+        "detected_タイプライターで文字を打つ1_cdc52fca_d22a0487",
+        "detected_タイプライターで文字を打つ2_cc81ab32_7d944d91"
+      ],
+      "scene_transition": [
+        "detected_シーン切り替え1_bccd846d_b21ff715",
+        "detected_シーン切り替え2_ab577a30_29ecb2fe",
+        "detected_タイトル表示_08561d0c_013cd0f0",
+        "detected_データ解析_ac3bf5cb_303dd6b6",
+        "detected_回想_6704c089_f5033c95"
+      ],
+      "success_feedback": [
+        "detected_きらーん1_74f4ebd9_89280fa5",
+        "detected_きらーん2_214729eb_e0760f00",
+        "detected_ひらめく1_08cbac5c_74be3af5",
+        "detected_キラッ1_a3683b12_8b501e0d",
+        "detected_キラッ2_ddd05cda_3d63e2d2",
+        "detected_クイズ正解1_ff3f5255_0657606d",
+        "detected_クイズ正解2_4188eb4c_97355e1c",
+        "detected_クイズ正解5_aca93919_05f7a16b",
+        "detected_ラッパのファンファーレ_7bc8c97e_3814ad12",
+        "detected_レベルアップ_89facd35_3346ba21"
+      ],
+      "ui_confirm": [
+        "detected_クイズ早押しボタン1_bdf25128_4eee4a3d",
+        "detected_クイズ早押しボタン2_ea4c8622_bbc9f58d",
+        "detected_スイッチを押す_4c39e3b2_7384d9e6",
+        "detected_ピコッ_e9267ca3_73472eba"
+      ],
+      "WOOD": [
+        "detected_freesound_387014_wood_break_hq_preview_0ecb5346_edf6271b",
+        "detected_freesound_452109_branch_break_snap_crunch_hq_preview_fd808fc1_cccc8f92",
+        "detected_freesound_502505_wood_creak_single_v1_hq_preview_6eeb667f_aa5189ff",
+        "detected_freesound_502511_wood_creak_single_v3_hq_preview_88dfbeb4_ccd6a0b4",
+        "detected_freesound_506660_wood_creak_single_v5_hq_preview_ea2144a0_c029d7e4",
+        "detected_freesound_766406_branch_break_hq_preview_9864d0de_8d5d4818"
+      ],
+      "wood_break": [
+        "detected_freesound_387014_wood_break_hq_preview_0ecb5346_edf6271b",
+        "detected_freesound_452109_branch_break_snap_crunch_hq_preview_fd808fc1_cccc8f92",
+        "detected_freesound_766406_branch_break_hq_preview_9864d0de_8d5d4818"
+      ],
+      "wood_creak": [
+        "detected_freesound_502505_wood_creak_single_v1_hq_preview_6eeb667f_aa5189ff",
+        "detected_freesound_502511_wood_creak_single_v3_hq_preview_88dfbeb4_ccd6a0b4",
+        "detected_freesound_506660_wood_creak_single_v5_hq_preview_ea2144a0_c029d7e4"
+      ]
+    }
+  },
+  "planner_auto_eligible": {
+    "background": {},
+    "bgm": {},
+    "sfx": {},
+    "portrait": []
+  },
+  "portrait": {
+    "BASEMENT": [
+      "portrait_corbitt_shadow_candidate_01_v1",
+      "portrait_corbitt_shadow_candidate_02_v1"
+    ],
+    "CIVILIAN": [
+      "portrait_mob_shadow_female_01_v1",
+      "portrait_mob_shadow_male_heavy_01_v1",
+      "portrait_mob_shadow_male_tall_01_v1",
+      "portrait_mob_shadow_male_thin_01_v1",
+      "portrait_mob_shadow_old_person_01_v1"
+    ],
+    "CLOAK": [
+      "portrait_mob_shadow_cloak_01_v1"
+    ],
+    "CORBITT_CANDIDATE": [
+      "portrait_corbitt_shadow_candidate_01_v1",
+      "portrait_corbitt_shadow_candidate_02_v1"
+    ],
+    "DISTORTED": [
+      "portrait_shadow_npc_distorted_01_v1"
+    ],
+    "FACELESS": [
+      "portrait_corbitt_shadow_candidate_01_v1",
+      "portrait_corbitt_shadow_candidate_02_v1",
+      "portrait_mob_shadow_cloak_01_v1",
+      "portrait_mob_shadow_female_01_v1",
+      "portrait_mob_shadow_male_heavy_01_v1",
+      "portrait_mob_shadow_male_tall_01_v1",
+      "portrait_mob_shadow_male_thin_01_v1",
+      "portrait_mob_shadow_old_person_01_v1",
+      "portrait_shadow_npc_distorted_01_v1",
+      "portrait_shadow_npc_ghostlike_01_v1",
+      "portrait_shadow_npc_humanoid_01_v1",
+      "portrait_shadow_npc_humanoid_02_v1"
+    ],
+    "FINAL_BATTLE": [
+      "portrait_corbitt_shadow_candidate_01_v1",
+      "portrait_corbitt_shadow_candidate_02_v1"
+    ],
+    "GHOSTLIKE": [
+      "portrait_shadow_npc_ghostlike_01_v1"
+    ],
+    "HORROR": [
+      "portrait_corbitt_shadow_candidate_01_v1",
+      "portrait_corbitt_shadow_candidate_02_v1",
+      "portrait_shadow_npc_distorted_01_v1",
+      "portrait_shadow_npc_ghostlike_01_v1",
+      "portrait_shadow_npc_humanoid_01_v1",
+      "portrait_shadow_npc_humanoid_02_v1"
+    ],
+    "HOSTILE": [
+      "portrait_corbitt_shadow_candidate_01_v1",
+      "portrait_corbitt_shadow_candidate_02_v1",
+      "portrait_shadow_npc_distorted_01_v1"
+    ],
+    "HUMANOID": [
+      "portrait_corbitt_shadow_candidate_01_v1",
+      "portrait_corbitt_shadow_candidate_02_v1",
+      "portrait_mob_shadow_cloak_01_v1",
+      "portrait_mob_shadow_female_01_v1",
+      "portrait_mob_shadow_male_heavy_01_v1",
+      "portrait_mob_shadow_male_tall_01_v1",
+      "portrait_mob_shadow_male_thin_01_v1",
+      "portrait_mob_shadow_old_person_01_v1",
+      "portrait_shadow_npc_distorted_01_v1",
+      "portrait_shadow_npc_ghostlike_01_v1",
+      "portrait_shadow_npc_humanoid_01_v1",
+      "portrait_shadow_npc_humanoid_02_v1"
+    ],
+    "INDOOR": [
+      "portrait_mob_shadow_cloak_01_v1",
+      "portrait_mob_shadow_female_01_v1",
+      "portrait_mob_shadow_male_heavy_01_v1",
+      "portrait_mob_shadow_male_tall_01_v1",
+      "portrait_mob_shadow_male_thin_01_v1",
+      "portrait_mob_shadow_old_person_01_v1"
+    ],
+    "MOB": [
+      "portrait_mob_shadow_cloak_01_v1",
+      "portrait_mob_shadow_female_01_v1",
+      "portrait_mob_shadow_male_heavy_01_v1",
+      "portrait_mob_shadow_male_tall_01_v1",
+      "portrait_mob_shadow_male_thin_01_v1",
+      "portrait_mob_shadow_old_person_01_v1"
+    ],
+    "MYSTERIOUS": [
+      "portrait_mob_shadow_cloak_01_v1",
+      "portrait_shadow_npc_distorted_01_v1",
+      "portrait_shadow_npc_ghostlike_01_v1",
+      "portrait_shadow_npc_humanoid_01_v1",
+      "portrait_shadow_npc_humanoid_02_v1"
+    ],
+    "NPC": [
+      "portrait_corbitt_shadow_candidate_01_v1",
+      "portrait_corbitt_shadow_candidate_02_v1",
+      "portrait_mob_shadow_cloak_01_v1",
+      "portrait_mob_shadow_female_01_v1",
+      "portrait_mob_shadow_male_heavy_01_v1",
+      "portrait_mob_shadow_male_tall_01_v1",
+      "portrait_mob_shadow_male_thin_01_v1",
+      "portrait_mob_shadow_old_person_01_v1",
+      "portrait_shadow_npc_distorted_01_v1",
+      "portrait_shadow_npc_ghostlike_01_v1",
+      "portrait_shadow_npc_humanoid_01_v1",
+      "portrait_shadow_npc_humanoid_02_v1"
+    ],
+    "OCCULT": [
+      "portrait_corbitt_shadow_candidate_01_v1",
+      "portrait_corbitt_shadow_candidate_02_v1",
+      "portrait_shadow_npc_distorted_01_v1",
+      "portrait_shadow_npc_ghostlike_01_v1",
+      "portrait_shadow_npc_humanoid_01_v1",
+      "portrait_shadow_npc_humanoid_02_v1"
+    ],
+    "OLD_HOUSE": [
+      "portrait_mob_shadow_cloak_01_v1",
+      "portrait_mob_shadow_male_tall_01_v1",
+      "portrait_shadow_npc_humanoid_01_v1",
+      "portrait_shadow_npc_humanoid_02_v1"
+    ],
+    "OLD_PERSON": [
+      "portrait_mob_shadow_old_person_01_v1"
+    ],
+    "RESIDENT": [
+      "portrait_mob_shadow_female_01_v1",
+      "portrait_mob_shadow_male_heavy_01_v1",
+      "portrait_mob_shadow_male_tall_01_v1",
+      "portrait_mob_shadow_male_thin_01_v1",
+      "portrait_mob_shadow_old_person_01_v1"
+    ],
+    "SHADOW": [
+      "portrait_corbitt_shadow_candidate_01_v1",
+      "portrait_corbitt_shadow_candidate_02_v1",
+      "portrait_shadow_npc_distorted_01_v1",
+      "portrait_shadow_npc_ghostlike_01_v1",
+      "portrait_shadow_npc_humanoid_01_v1",
+      "portrait_shadow_npc_humanoid_02_v1"
+    ],
+    "SILHOUETTE": [
+      "portrait_corbitt_shadow_candidate_01_v1",
+      "portrait_corbitt_shadow_candidate_02_v1",
+      "portrait_mob_shadow_cloak_01_v1",
+      "portrait_mob_shadow_female_01_v1",
+      "portrait_mob_shadow_male_heavy_01_v1",
+      "portrait_mob_shadow_male_tall_01_v1",
+      "portrait_mob_shadow_male_thin_01_v1",
+      "portrait_mob_shadow_old_person_01_v1",
+      "portrait_shadow_npc_distorted_01_v1",
+      "portrait_shadow_npc_ghostlike_01_v1",
+      "portrait_shadow_npc_humanoid_01_v1",
+      "portrait_shadow_npc_humanoid_02_v1"
+    ],
+    "SPECIAL_NPC": [
+      "portrait_corbitt_shadow_candidate_01_v1",
+      "portrait_corbitt_shadow_candidate_02_v1"
+    ],
+    "UNNATURAL_PRESENCE": [
+      "portrait_corbitt_shadow_candidate_01_v1",
+      "portrait_corbitt_shadow_candidate_02_v1"
+    ]
+  },
+  "portrait_pack_profiles": {
+    "mob": [
+      "portrait_profile_mob_shadow_male_tall_01_v1",
+      "portrait_profile_mob_shadow_male_thin_01_v1",
+      "portrait_profile_mob_shadow_male_heavy_01_v1",
+      "portrait_profile_mob_shadow_female_01_v1",
+      "portrait_profile_mob_shadow_old_person_01_v1",
+      "portrait_profile_mob_shadow_cloak_01_v1"
+    ],
+    "shadow": [
+      "portrait_profile_shadow_npc_humanoid_01_v1",
+      "portrait_profile_shadow_npc_humanoid_02_v1",
+      "portrait_profile_shadow_npc_distorted_01_v1",
+      "portrait_profile_shadow_npc_ghostlike_01_v1"
+    ],
+    "corbitt_candidate": [
+      "portrait_profile_corbitt_shadow_candidate_01_v1",
+      "portrait_profile_corbitt_shadow_candidate_02_v1"
+    ]
+  }
+}

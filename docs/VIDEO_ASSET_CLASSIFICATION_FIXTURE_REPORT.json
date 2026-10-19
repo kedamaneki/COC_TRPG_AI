@@ -1,0 +1,15 @@
+{
+  "fixture_id": "FIXTURE_ASSET_CLASSIFICATION_APPROVAL_001",
+  "checks": {
+    "duplicate_assets_grouped": true,
+    "background_classification": true,
+    "bgm_classification": true,
+    "sfx_classification": true,
+    "unknown_classification_remains_unresolved": true,
+    "license_evidence_indexed": true,
+    "unapproved_asset_not_auto_used": true,
+    "approved_semantic_lookup_works": true,
+    "changed_hash_invalidates_approval": true
+  },
+  "status": "PASS"
+}

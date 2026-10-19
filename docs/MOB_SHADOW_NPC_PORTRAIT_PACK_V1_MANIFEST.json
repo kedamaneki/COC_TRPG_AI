@@ -1,0 +1,497 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "mob_shadow_npc_portrait_pack_v1",
+  "created_at": "2026-10-19T12:23:04.347252+00:00",
+  "status": "HUMAN_REVIEW_PENDING",
+  "license_status": "LICENSE_REVIEW_REQUIRED",
+  "auto_use": false,
+  "counts": {
+    "mob": 6,
+    "shadow": 4,
+    "corbitt_candidate": 2
+  },
+  "total": 12,
+  "assets": [
+    {
+      "id": "mob_shadow_male_tall_01",
+      "asset_id": "portrait_mob_shadow_male_tall_01_v1",
+      "profile_id": "portrait_profile_mob_shadow_male_tall_01_v1",
+      "category": "mob",
+      "tags": [
+        "npc",
+        "mob",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "civilian",
+        "resident",
+        "indoor",
+        "old_house"
+      ],
+      "description": "Tall civilian silhouette",
+      "relative_path": "assets/portraits/mob_shadow_pack_v1/mob_shadow_male_tall_01.png",
+      "sha256": "a07b3ad046d48595333823ed4fba4e37bb613b27a90e3abb7db83b1d3685eae3",
+      "width": 1024,
+      "height": 1536,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        33,
+        19,
+        986,
+        1518
+      ],
+      "transparent_margins_px": {
+        "left": 33,
+        "top": 19,
+        "right": 38,
+        "bottom": 18
+      },
+      "evidence_path": "assets/portraits/mob_shadow_pack_v1/evidence/mob_shadow_male_tall_01.source.json"
+    },
+    {
+      "id": "mob_shadow_male_thin_01",
+      "asset_id": "portrait_mob_shadow_male_thin_01_v1",
+      "profile_id": "portrait_profile_mob_shadow_male_thin_01_v1",
+      "category": "mob",
+      "tags": [
+        "npc",
+        "mob",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "civilian",
+        "resident",
+        "indoor"
+      ],
+      "description": "Thin civilian silhouette",
+      "relative_path": "assets/portraits/mob_shadow_pack_v1/mob_shadow_male_thin_01.png",
+      "sha256": "3659c938c06049f50fef8f1c34ce6efcb380c70686ea3980870eac921cb1eadf",
+      "width": 1024,
+      "height": 1536,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        16,
+        976,
+        1536
+      ],
+      "transparent_margins_px": {
+        "left": 0,
+        "top": 16,
+        "right": 48,
+        "bottom": 0
+      },
+      "evidence_path": "assets/portraits/mob_shadow_pack_v1/evidence/mob_shadow_male_thin_01.source.json"
+    },
+    {
+      "id": "mob_shadow_male_heavy_01",
+      "asset_id": "portrait_mob_shadow_male_heavy_01_v1",
+      "profile_id": "portrait_profile_mob_shadow_male_heavy_01_v1",
+      "category": "mob",
+      "tags": [
+        "npc",
+        "mob",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "civilian",
+        "resident",
+        "indoor"
+      ],
+      "description": "Heavyset civilian silhouette",
+      "relative_path": "assets/portraits/mob_shadow_pack_v1/mob_shadow_male_heavy_01.png",
+      "sha256": "bd71abb4c6134975212cafe9f3274a2523d19e0f31e2d981fbf91732bec4d556",
+      "width": 1024,
+      "height": 1536,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        178,
+        14,
+        852,
+        1513
+      ],
+      "transparent_margins_px": {
+        "left": 178,
+        "top": 14,
+        "right": 172,
+        "bottom": 23
+      },
+      "evidence_path": "assets/portraits/mob_shadow_pack_v1/evidence/mob_shadow_male_heavy_01.source.json"
+    },
+    {
+      "id": "mob_shadow_female_01",
+      "asset_id": "portrait_mob_shadow_female_01_v1",
+      "profile_id": "portrait_profile_mob_shadow_female_01_v1",
+      "category": "mob",
+      "tags": [
+        "npc",
+        "mob",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "civilian",
+        "resident",
+        "indoor"
+      ],
+      "description": "Civilian woman silhouette",
+      "relative_path": "assets/portraits/mob_shadow_pack_v1/mob_shadow_female_01.png",
+      "sha256": "b421ae90d25b25483b77a9da2128c46601b7dc890a3f7cd68501f1612ffbf081",
+      "width": 1024,
+      "height": 1536,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        83,
+        14,
+        934,
+        1523
+      ],
+      "transparent_margins_px": {
+        "left": 83,
+        "top": 14,
+        "right": 90,
+        "bottom": 13
+      },
+      "evidence_path": "assets/portraits/mob_shadow_pack_v1/evidence/mob_shadow_female_01.source.json"
+    },
+    {
+      "id": "mob_shadow_old_person_01",
+      "asset_id": "portrait_mob_shadow_old_person_01_v1",
+      "profile_id": "portrait_profile_mob_shadow_old_person_01_v1",
+      "category": "mob",
+      "tags": [
+        "npc",
+        "mob",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "civilian",
+        "resident",
+        "old_person",
+        "indoor"
+      ],
+      "description": "Elderly civilian with cane",
+      "relative_path": "assets/portraits/mob_shadow_pack_v1/mob_shadow_old_person_01.png",
+      "sha256": "e18b57378f06920c30098597723a19d956e535d9aa2ea2a7f0b60b98295620d0",
+      "width": 1024,
+      "height": 1536,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        57,
+        14,
+        858,
+        1502
+      ],
+      "transparent_margins_px": {
+        "left": 57,
+        "top": 14,
+        "right": 166,
+        "bottom": 34
+      },
+      "evidence_path": "assets/portraits/mob_shadow_pack_v1/evidence/mob_shadow_old_person_01.source.json"
+    },
+    {
+      "id": "mob_shadow_cloak_01",
+      "asset_id": "portrait_mob_shadow_cloak_01_v1",
+      "profile_id": "portrait_profile_mob_shadow_cloak_01_v1",
+      "category": "mob",
+      "tags": [
+        "npc",
+        "mob",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "mysterious",
+        "cloak",
+        "indoor",
+        "old_house"
+      ],
+      "description": "Cloaked human silhouette",
+      "relative_path": "assets/portraits/mob_shadow_pack_v1/mob_shadow_cloak_01.png",
+      "sha256": "a9da2013514e95725410e950658800050183decb84262df584ecaed0ebc60102",
+      "width": 1024,
+      "height": 1536,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        67,
+        0,
+        984,
+        1520
+      ],
+      "transparent_margins_px": {
+        "left": 67,
+        "top": 0,
+        "right": 40,
+        "bottom": 16
+      },
+      "evidence_path": "assets/portraits/mob_shadow_pack_v1/evidence/mob_shadow_cloak_01.source.json"
+    },
+    {
+      "id": "shadow_npc_humanoid_01",
+      "asset_id": "portrait_shadow_npc_humanoid_01_v1",
+      "profile_id": "portrait_profile_shadow_npc_humanoid_01_v1",
+      "category": "shadow",
+      "tags": [
+        "npc",
+        "shadow",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "mysterious",
+        "occult",
+        "horror",
+        "old_house"
+      ],
+      "description": "Tall unnatural humanoid",
+      "relative_path": "assets/portraits/mob_shadow_pack_v1/shadow_npc_humanoid_01.png",
+      "sha256": "996f3d6ca27ed82cbb820464a695557bbf23d09474f8d09c19f0521cbafdf4db",
+      "width": 1024,
+      "height": 1536,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        31,
+        10,
+        988,
+        1536
+      ],
+      "transparent_margins_px": {
+        "left": 31,
+        "top": 10,
+        "right": 36,
+        "bottom": 0
+      },
+      "evidence_path": "assets/portraits/mob_shadow_pack_v1/evidence/shadow_npc_humanoid_01.source.json"
+    },
+    {
+      "id": "shadow_npc_humanoid_02",
+      "asset_id": "portrait_shadow_npc_humanoid_02_v1",
+      "profile_id": "portrait_profile_shadow_npc_humanoid_02_v1",
+      "category": "shadow",
+      "tags": [
+        "npc",
+        "shadow",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "mysterious",
+        "occult",
+        "horror",
+        "old_house"
+      ],
+      "description": "Medium unknown humanoid",
+      "relative_path": "assets/portraits/mob_shadow_pack_v1/shadow_npc_humanoid_02.png",
+      "sha256": "4d87024dd2ef25f19ee19b8685d7d984fb35615a2647dd514914e292eb875af8",
+      "width": 1024,
+      "height": 1536,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        45,
+        19,
+        1020,
+        1536
+      ],
+      "transparent_margins_px": {
+        "left": 45,
+        "top": 19,
+        "right": 4,
+        "bottom": 0
+      },
+      "evidence_path": "assets/portraits/mob_shadow_pack_v1/evidence/shadow_npc_humanoid_02.source.json"
+    },
+    {
+      "id": "shadow_npc_distorted_01",
+      "asset_id": "portrait_shadow_npc_distorted_01_v1",
+      "profile_id": "portrait_profile_shadow_npc_distorted_01_v1",
+      "category": "shadow",
+      "tags": [
+        "npc",
+        "shadow",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "mysterious",
+        "hostile",
+        "occult",
+        "distorted",
+        "horror"
+      ],
+      "description": "Controlled distorted humanoid",
+      "relative_path": "assets/portraits/mob_shadow_pack_v1/shadow_npc_distorted_01.png",
+      "sha256": "b4729111d13814df1fe57420bc7450e414772b5c3545566a8f6ddc122e62d135",
+      "width": 1024,
+      "height": 1536,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        41,
+        0,
+        1006,
+        1536
+      ],
+      "transparent_margins_px": {
+        "left": 41,
+        "top": 0,
+        "right": 18,
+        "bottom": 0
+      },
+      "evidence_path": "assets/portraits/mob_shadow_pack_v1/evidence/shadow_npc_distorted_01.source.json"
+    },
+    {
+      "id": "shadow_npc_ghostlike_01",
+      "asset_id": "portrait_shadow_npc_ghostlike_01_v1",
+      "profile_id": "portrait_profile_shadow_npc_ghostlike_01_v1",
+      "category": "shadow",
+      "tags": [
+        "npc",
+        "shadow",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "mysterious",
+        "occult",
+        "ghostlike",
+        "horror"
+      ],
+      "description": "Translucent ghostlike presence",
+      "relative_path": "assets/portraits/mob_shadow_pack_v1/shadow_npc_ghostlike_01.png",
+      "sha256": "cb9a10e88df2984649eaab69401f61c8137ed4227c737e332a3f93d454a86595",
+      "width": 1024,
+      "height": 1536,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        55,
+        15,
+        982,
+        1536
+      ],
+      "transparent_margins_px": {
+        "left": 55,
+        "top": 15,
+        "right": 42,
+        "bottom": 0
+      },
+      "evidence_path": "assets/portraits/mob_shadow_pack_v1/evidence/shadow_npc_ghostlike_01.source.json"
+    },
+    {
+      "id": "corbitt_shadow_candidate_01",
+      "asset_id": "portrait_corbitt_shadow_candidate_01_v1",
+      "profile_id": "portrait_profile_corbitt_shadow_candidate_01_v1",
+      "category": "corbitt_candidate",
+      "tags": [
+        "npc",
+        "shadow",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "hostile",
+        "occult",
+        "horror",
+        "corbitt_candidate",
+        "special_npc",
+        "final_battle",
+        "basement",
+        "unnatural_presence"
+      ],
+      "description": "Gaunt forward-leaning Corbitt candidate",
+      "relative_path": "assets/portraits/mob_shadow_pack_v1/corbitt_shadow_candidate_01.png",
+      "sha256": "d6ebcabf4071987e3b6457e89c0c5a9637386a27510afed217a2337a2bc846fa",
+      "width": 1024,
+      "height": 1536,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1018,
+        1536
+      ],
+      "transparent_margins_px": {
+        "left": 0,
+        "top": 0,
+        "right": 6,
+        "bottom": 0
+      },
+      "evidence_path": "assets/portraits/mob_shadow_pack_v1/evidence/corbitt_shadow_candidate_01.source.json"
+    },
+    {
+      "id": "corbitt_shadow_candidate_02",
+      "asset_id": "portrait_corbitt_shadow_candidate_02_v1",
+      "profile_id": "portrait_profile_corbitt_shadow_candidate_02_v1",
+      "category": "corbitt_candidate",
+      "tags": [
+        "npc",
+        "shadow",
+        "humanoid",
+        "faceless",
+        "silhouette",
+        "hostile",
+        "occult",
+        "horror",
+        "corbitt_candidate",
+        "special_npc",
+        "final_battle",
+        "basement",
+        "unnatural_presence"
+      ],
+      "description": "Broad tilted Corbitt candidate",
+      "relative_path": "assets/portraits/mob_shadow_pack_v1/corbitt_shadow_candidate_02.png",
+      "sha256": "b9a7df7f798578a2851efb79de7f9adfc91c6bada0e326e78cab7881e043b347",
+      "width": 1024,
+      "height": 1536,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        41,
+        14,
+        1010,
+        1536
+      ],
+      "transparent_margins_px": {
+        "left": 41,
+        "top": 14,
+        "right": 14,
+        "bottom": 0
+      },
+      "evidence_path": "assets/portraits/mob_shadow_pack_v1/evidence/corbitt_shadow_candidate_02.source.json"
+    }
+  ],
+  "review_artifacts": [
+    "video/assets/portraits/mob_shadow_pack_v1/review/all_candidates_contact_sheet.jpg",
+    "video/assets/portraits/mob_shadow_pack_v1/review/corbitt_basement_mockup.jpg",
+    "video/assets/portraits/mob_shadow_pack_v1/review/corbitt_candidates_contact_sheet.jpg",
+    "video/assets/portraits/mob_shadow_pack_v1/review/mob_candidates_contact_sheet.jpg",
+    "video/assets/portraits/mob_shadow_pack_v1/review/shadow_candidates_contact_sheet.jpg"
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "registry_id": "YUKKURI_PRESENTATION_REGISTRY_V1",
+  "character_count": 16,
+  "common_style": {
+    "style_id": "ymm4_legacy_common_v1",
+    "font_family": "たぬき油性マジック",
+    "font_size_px": 100.0,
+    "position": {
+      "x_px": 0.0,
+      "y_px": 530.0,
+      "z": 0.0
+    },
+    "anchor": "CENTER_BOTTOM",
+    "alignment": "CENTER_BOTTOM",
+    "line_height_percent": 100.0,
+    "letter_spacing_px": 0.0,
+    "word_wrap": "NO_WRAP",
+    "max_width_px": 1920.0,
+    "opacity_percent": 100.0,
+    "zoom_percent": 100.0,
+    "rotation_deg": 0.0,
+    "bold": false,
+    "italic": false,
+    "underline": false,
+    "strikethrough": false,
+    "trim_end": true,
+    "display_direction": "FROM_FIRST",
+    "hide_direction": "FROM_FIRST",
+    "outline": {
+      "width_px": 5.0,
+      "quality": 64.0,
+      "blur": 0.0,
+      "smoothness": 100.0,
+      "offset_x_px": 0.0,
+      "offset_y_px": 0.0,
+      "angular": false
+    }
+  },
+  "active_resolution": {
+    "pc_01": {
+      "character_id": "reimu",
+      "display_name": "マクガフィン刑事",
+      "voice_profile_id": "m1_aq_f1",
+      "subtitle_profile_id": "subtitle_reimu",
+      "portrait_profile_id": "portrait_reimu_head_only"
+    },
+    "pl_01": {
+      "character_id": "reimu",
+      "display_name": "PL1",
+      "voice_profile_id": "m1_aq_f1",
+      "subtitle_profile_id": "subtitle_reimu",
+      "portrait_profile_id": "portrait_reimu_head_only"
+    },
+    "pc_02": {
+      "character_id": "marisa",
+      "display_name": "エレノア教授",
+      "voice_profile_id": "aq_marisa_default",
+      "subtitle_profile_id": "subtitle_marisa",
+      "portrait_profile_id": "portrait_marisa_head_only"
+    },
+    "pl_02": {
+      "character_id": "marisa",
+      "display_name": "PL2",
+      "voice_profile_id": "aq_marisa_default",
+      "subtitle_profile_id": "subtitle_marisa",
+      "portrait_profile_id": "portrait_marisa_head_only"
+    },
+    "kp": {
+      "character_id": "sakuya",
+      "display_name": "KP",
+      "voice_profile_id": "aq_kp_sakuya_v21",
+      "subtitle_profile_id": "subtitle_kp",
+      "portrait_profile_id": "portrait_sakuya_head_only"
+    },
+    "system": {
+      "character_id": null,
+      "display_name": "SYSTEM",
+      "voice_profile_id": null,
+      "subtitle_profile_id": "subtitle_system_hud",
+      "portrait_profile_id": null
+    }
+  },
+  "future_candidate_count": 13,
+  "new_asset_policy": [
+    "DETECTED",
+    "NOT_APPROVED",
+    "LICENSE_REVIEW_REQUIRED"
+  ],
+  "unapproved_asset_auto_use": 0,
+  "missing_asset_behavior": "FAIL_CLOSED",
+  "historical_artifacts": {
+    "video_001_basement_planks": {
+      "file_count": 65,
+      "sha256": "0245d76dafe43858b046dd52a5a5904d4dc237aafa68ca7da9f619b6530ed79d",
+      "access_mode": "READ_ONLY",
+      "write_count": 0
+    },
+    "video_001_basement_planks_v2": {
+      "file_count": 20,
+      "sha256": "9af5c59515a61fea42da08d574a05f4932d145c1858f29bed2d132c23db074b5",
+      "access_mode": "READ_ONLY",
+      "write_count": 0
+    },
+    "video_001_basement_planks_v2_1": {
+      "file_count": 14,
+      "sha256": "bd0136f0241687e02738fb422d865ab20131a4c44e311208f33292c1ec8a0d16",
+      "access_mode": "READ_ONLY",
+      "write_count": 0
+    }
+  },
+  "v13_raw_aggregate_from_accepted_manifest": "fd42df1dc3278ef3250486235f43a5693de4fea9ad3f7af5fc769690ab18e44d"
+}

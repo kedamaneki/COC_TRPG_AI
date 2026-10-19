@@ -20,6 +20,8 @@ from video_agent.presentation.narrative import (apply_narrative_presentation,
                                                  finalize_narrative_markdown,
                                                  write_narrative_markdown)
 from video_agent.presentation.planner import build_visual_plan
+from video_agent.registry import PresentationRegistry
+from video_agent.local_paths import resolve_external_asset
 from video_agent.presentation.system_filter import system_presentation_decision
 from video_agent.presentation.system_interaction import resolve_system_interactions, required_fixture
 from video_agent.rendering import M1Pipeline
@@ -60,6 +62,7 @@ class M3Pipeline:
         self.state_path = self.project / "m3_project_state.json"
         self.asset_root = self.project / "scenario_assets" / "corbitt"
         self.identity_schema = read_json(self.root / "config" / "speaker_identity_m3.json")
+        self.presentation_registry = PresentationRegistry(self.root / "config")
 
     def _state(self, status: str, completed: list[str], phase_decisions: list[str] | None = None):
         value = {"status": status, "completed_steps": completed}
@@ -70,7 +73,9 @@ class M3Pipeline:
     def import_assets(self) -> list[dict]:
         assets = []
         for source_key, (asset_id, kind, relative, tags) in ASSET_SPECS.items():
-            source = Path(self.config["asset_sources"][source_key])
+            source = resolve_external_asset(self.config["asset_sources"][source_key])
+            if not source.is_absolute():
+                source = self.root / source
             destination = self.asset_root / relative
             if not source.exists():
                 continue
@@ -84,18 +89,34 @@ class M3Pipeline:
                 "commercial_use": None, "credit_required": None, "credit_text": None,
                 "status": "UNKNOWN", "tags": tags, "sha256": sha256_file(destination),
             })
+        for speaker_id in ("pc_01", "pc_02", "kp"):
+            resolved = self.presentation_registry.resolve_speaker(speaker_id)
+            asset_id = resolved.get("portrait_asset_id")
+            if not asset_id:
+                continue
+            registered = self.presentation_registry.resolve_asset(asset_id)
+            assets.append({
+                "asset_id": asset_id, "type": registered["asset_type"],
+                "file_path": registered["path"], "source": registered["source"],
+                "creator": registered.get("author", "UNKNOWN"), "license": registered.get("license", "UNKNOWN"),
+                "commercial_use": registered.get("commercial_use"),
+                "credit_required": registered.get("credit_required"), "credit_text": registered.get("credit_text"),
+                "status": registered["approval_status"], "tags": ["REGISTRY", "HEAD_ONLY"],
+                "sha256": registered["sha256"],
+            })
         manifest = {"schema_version": "0.1", "assets": assets, "imported_at": datetime.now(timezone.utc).isoformat()}
         write_json(self.asset_root / "manifest.json", manifest)
         self._state("ASSETS_RESOLVED", ["assets"])
         return assets
 
     def plan(self, assets: list[dict]) -> dict:
-        portraits = {
-            "pc_01": {"profile_id": "kitsune_reimu_old", "position": "LEFT", "scale": 1.0,
-                      "portrait_kind": "HEAD_ONLY", "expressions": {"NORMAL": "portrait_pc01_kitsune_reimu"}},
-            "pc_02": {"profile_id": "kitsune_marisa_old", "position": "RIGHT", "scale": 1.0,
-                      "portrait_kind": "HEAD_ONLY", "expressions": {"NORMAL": "portrait_pc02_kitsune_marisa"}},
-        }
+        portraits = {}
+        for speaker_id, position in (("pc_01", "LEFT"), ("pc_02", "RIGHT")):
+            resolved = self.presentation_registry.resolve_speaker(speaker_id)
+            portraits[speaker_id] = {
+                "profile_id": resolved["portrait_profile_id"], "position": position, "scale": 1.0,
+                "portrait_kind": "HEAD_ONLY", "expressions": {"NORMAL": resolved["portrait_asset_id"]},
+            }
         plan = build_visual_plan(self.edited["lines"], self.scenes, portraits, {}, "bg_neutral_user")
         plan["metadata"] = {"planner": "deterministic_m3_v1", "edited_script_sha256": stable_digest(self.edited)}
         write_json(self.project / "visual_plan.json", plan)
@@ -149,9 +170,8 @@ class M3Pipeline:
             write_json(self.project / "review" / "m3_system_interaction_fixture.json",
                        {**fixture, "observed_preview": interaction_report})
         visual = {entry["script_line_id"]: entry for entry in plan["entries"]}
-        profile_for = {"pc_01": ("m1_aq_f1", "subtitle_reimu"), "pc_02": ("aq_marisa_default", "subtitle_marisa"),
-                       "kp": ("m1_vv_kp", "subtitle_kp"), "system": (None, "subtitle_kp")}
-        display_for = {"pc_01": "マクガフィン刑事", "pc_02": "エレノア教授", "kp": "KP", "system": "SYSTEM"}
+        resolved_speakers = {speaker: self.presentation_registry.resolve_speaker(speaker)
+                             for speaker in ("pc_01", "pl_01", "pc_02", "pl_02", "kp", "system")}
         result = []
         decisions = []
         for line in selected:
@@ -161,9 +181,11 @@ class M3Pipeline:
             if system_decision["is_system"] and not system_decision["allowed"]:
                 continue
             entry = visual[line.get("visual_source_script_line_id", line["script_line_id"])]
-            voice, subtitle = profile_for.get(line["speaker_id"], profile_for["system"])
+            registry_speaker = resolved_speakers.get(line["speaker_id"], resolved_speakers["system"])
+            voice = registry_speaker["voice_profile_id"]
+            subtitle = registry_speaker["subtitle_profile_id"]
             portrait = entry["portrait"] if line.get("presentation_as") != "KP" else None
-            fallback = {"display_name": display_for.get(line["speaker_id"], line["speaker_id"]),
+            fallback = {"display_name": registry_speaker.get("display_name", line["speaker_id"]),
                         "voice_profile_id": voice, "subtitle_profile_id": subtitle,
                         "portrait_profile_id": portrait["profile_id"] if portrait else None}
             source_actor = line.get("player_id") or line["speaker_id"]
@@ -234,12 +256,12 @@ class M3Pipeline:
             "subtitle_layout_config": self.config["layout_config"],
             "speech_chunking": {"enabled": True, "max_chars": 52},
         })
-        write_json(preview / "characters.json", [
-            {"character_id": "kp", "display_name": "KP", "role": "KP", "voice_profile_id": "m1_vv_kp", "expected_voice_profile_id": "m1_vv_kp", "subtitle_profile_id": "subtitle_kp", "portrait_asset_id": None},
-            {"character_id": "pc_01", "display_name": "マクガフィン刑事", "role": "PC", "voice_profile_id": "m1_aq_f1", "expected_voice_profile_id": "m1_aq_f1", "subtitle_profile_id": "subtitle_reimu", "portrait_asset_id": "portrait_pc01_kitsune_reimu"},
-            {"character_id": "pc_02", "display_name": "エレノア教授", "role": "PC", "voice_profile_id": "aq_marisa_default", "expected_voice_profile_id": "aq_marisa_default", "subtitle_profile_id": "subtitle_marisa", "portrait_asset_id": "portrait_pc02_kitsune_marisa"},
-            {"character_id": "system", "display_name": "SYSTEM", "role": "SYSTEM", "voice_profile_id": None, "subtitle_profile_id": "subtitle_kp", "portrait_asset_id": None},
-        ])
+        roles = {"kp": "KP", "pc_01": "PC", "pc_02": "PC", "system": "SYSTEM"}
+        characters = []
+        for speaker_id in ("kp", "pc_01", "pc_02", "system"):
+            resolved = self.presentation_registry.resolve_speaker(speaker_id)
+            characters.append({"character_id": speaker_id, "role": roles[speaker_id], **resolved})
+        write_json(preview / "characters.json", characters)
         write_json(preview / "asset_manifest.json", {"schema_version": "0.1", "assets": assets})
 
     @staticmethod
