@@ -31,6 +31,10 @@ The portability verifier checks V13 source count/hash, required asset hashes, na
 the packaged Corbitt Scenario source, active runtime hard-codes, registry loading, event range
 264..281, and the offset 271 roll without rendering or changing external files.
 
+The Video suite recreates its small ignored WAV and existence-only preview fixtures at test startup.
+Accepted videos and synthesized audio remain excluded from Git; the generated files are test data
+only and are covered by `.gitignore`.
+
 ## Pre-push result
 
 The canonical checkout passed:
@@ -49,6 +53,10 @@ The canonical checkout passed:
 The first GitHub Fresh Clone correctly exposed an ignored `.local` Corbitt Scenario dependency.
 The canonical 16-file Scenario source is now packaged under `core/scenario_sources`, verified by
 `manifests/CORBITT_SCENARIO_SOURCE.json`, and no ignored staging cache is required.
+
+The same clone also exposed historical Video tests that depended on ignored generated media. The
+suite now creates deterministic local fixtures at test startup, keeping generated MP4/WAV content
+out of version control while preserving the full 293-test baseline.
 
 The machine-readable checks are `docs/CROSS_PC_PORTABILITY_VERIFY.json` and
 `docs/PRE_PUSH_AUDIT.json`. The final GitHub Fresh Clone repeats these checks against the updated

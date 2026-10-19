@@ -12,7 +12,7 @@ source-versus-adaptation audit.
 
 Pre-push audit result:
 
-- 619 candidate files / 69,237,036 bytes
+- 620 candidate files / 69,241,456 bytes
 - files larger than 50 MiB: 0
 - video/audio/archive/executable candidates: 0
 - recognized secret findings: 0
@@ -27,3 +27,7 @@ one portability defect after the tag was published: the Corbitt Scenario builder
 ignored local staging cache. The same 16 source files were copied into the repository with an
 aggregate SHA-256 contract, and the fix is delivered as a follow-up commit on `main` without moving
 or replacing the checkpoint tag.
+
+The Fresh Clone also revealed historical Video tests that expected ignored generated media. A
+test-only bootstrap now recreates deterministic ignored WAV and existence-only preview fixtures;
+no accepted video, voice output, or external asset was added to Git.
