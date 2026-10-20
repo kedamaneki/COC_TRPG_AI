@@ -72,6 +72,41 @@ class CorbittFidelityAuditorTests(unittest.TestCase):
         self.assertIn("UNSUPPORTED_COMBAT_NO_ROLL", cats)
         self.assertTrue(any(f.get("blocking") for f in findings))
 
+    def test_N2_N3_categories_on_bad_so(self):
+        unified = [{
+            "event_id": "e1",
+            "event_type": "SPECIAL_OBJECTIVE_COMPLETED",
+            "final_result": "SPECIAL_OBJECTIVE_COMPLETED",
+            "combat_id": "c1",
+            "target": "corbitt_body",
+            "world_fact": {
+                "event": "SPECIAL_OBJECTIVE_COMPLETED",
+                "target": "corbitt_body",
+                "fact": "CORBITT_BODY_DESTROYED",
+            },
+            "resolution_mode": "NO_ROLL",
+        }]
+        report = auditor.run_audit(**_base_inputs(unified), fidelity_pack="corbitt_v14")
+        cats = {f["category"] for f in report["findings"]}
+        self.assertIn("SPECIAL_OBJECTIVE_WITHOUT_VALIDATED_KILL_ROUTE", cats)
+        self.assertIn("UNSUPPORTED_COMBAT_NO_ROLL", cats)
+
+    def test_P4_non_victory_missing_provenance_not_emitted_by_v14_pack(self):
+        """Non-victory clue gaps stay outside victory-critical V14 kill findings."""
+        unified = [{
+            "event_id": "clue1",
+            "event_type": "CLUE_FOUND",
+            "resolution_mode": "NO_ROLL",
+            "resolution_reason": "scenario",
+            "final_result": "REGULAR_SUCCESS",
+        }]
+        findings = auditor.audit_corbitt_final_battle_fidelity(
+            {**_base_inputs(unified)["result"], "final_flags": {"corbitt_defeated": False}},
+            unified,
+            "cp-test",
+        )
+        self.assertEqual(findings, [])
+
     def test_validated_route_a_passes_fidelity(self):
         unified = [{
             "event_id": "e1",
