@@ -36,7 +36,14 @@ ITERATION2_CATEGORIES = {
     "OBJECT_NARRATIVE_STATE_CONTRADICTION",
     "UNGROUNDED_NARRATIVE_OPTION",
 }
-ALL_CATEGORIES = OLD_CATEGORIES | ITERATION2_CATEGORIES
+CORBITT_V14_CATEGORIES = {
+    "UNSUPPORTED_COMBAT_NO_ROLL",
+    "COMBAT_KILL_WITHOUT_RESOLUTION",
+    "SPECIAL_OBJECTIVE_WITHOUT_VALIDATED_KILL_ROUTE",
+    "SCENARIO_SOURCE_PROVENANCE_MISSING",
+}
+ALL_CATEGORIES = OLD_CATEGORIES | ITERATION2_CATEGORIES | CORBITT_V14_CATEGORIES
+VALID_KILL_ROUTES = frozenset({"ROUTE_A_HP0", "ROUTE_B_DAGGER"})
 
 LIFECYCLE_TYPES = {
     "LOCATION_CHANGE", "MOVEMENT", "STATE_TRANSITION",
@@ -140,6 +147,7 @@ def _finding(
     evidence: Any = None,
     evidence_state: str = "GAP",
     classification: str | None = None,
+    blocking: bool = False,
 ) -> dict[str, Any]:
     return {
         "finding_id": finding_id,
@@ -154,6 +162,7 @@ def _finding(
         "cycle": cycle,
         "evidence_state": evidence_state,
         "evidence": evidence or {},
+        "blocking": bool(blocking),
     }
 
 
@@ -508,6 +517,153 @@ def audit_objects(
     return findings
 
 
+def _is_corbitt_victory_event(event: dict[str, Any]) -> bool:
+    world_fact = event.get("world_fact") or {}
+    fact = str(world_fact.get("fact") or event.get("fact") or "").upper()
+    target = str(world_fact.get("target") or event.get("target") or "").lower()
+    if event.get("validated_kill_route_id") or world_fact.get("validated_kill_route_id"):
+        return True
+    if fact == "CORBITT_BODY_DESTROYED":
+        return True
+    if str(event.get("event_type") or "").upper() == "SPECIAL_OBJECTIVE_COMPLETED" and target in {
+        "corbitt_body", "walter_corbitt",
+    }:
+        return True
+    return False
+
+
+def audit_corbitt_final_battle_fidelity(
+    result: dict[str, Any],
+    unified: list[dict[str, Any]],
+    checkpoint_id: str,
+) -> list[dict[str, Any]]:
+    """V14 fidelity pack: gated findings (do not apply to historical V8–V13 Accepted)."""
+    findings: list[dict[str, Any]] = []
+    has_validated_kill = False
+    has_roll_resolution_for_kill = False
+    body_destroyed = False
+
+    for index, event in enumerate(unified):
+        event_id = _event_id(event, "unified", index)
+        world_fact = event.get("world_fact") or {}
+        mode = str(event.get("resolution_mode") or "").upper()
+        resolution_class = str(
+            event.get("resolution_class") or event.get("combat_resolution_class") or ""
+        ).upper()
+        combatish = bool(
+            event.get("combat_id")
+            or str(event.get("event_type") or "").upper().startswith("COMBAT_")
+            or _is_corbitt_victory_event(event)
+        )
+        if combatish and mode == "NO_ROLL":
+            explicit_ok = resolution_class in {"EXPLICIT_NO_ROLL", "DETERMINISTIC_RULE"}
+            if resolution_class == "EXPLICIT_NO_ROLL":
+                explicit_ok = explicit_ok and all(
+                    event.get(key) for key in (
+                        "explicit_no_roll_reason", "source_rule_id", "deterministic_precondition",
+                    )
+                )
+            if resolution_class == "DETERMINISTIC_RULE":
+                explicit_ok = explicit_ok and bool(
+                    event.get("resolution_reason") or world_fact.get("validated_kill_route_id")
+                )
+            if not explicit_ok:
+                findings.append(_finding(
+                    f"unsupported_combat_no_roll:{event_id}",
+                    "UNSUPPORTED_COMBAT_NO_ROLL",
+                    "CRITICAL",
+                    "Combat/irreversible NO_ROLL lacks EXPLICIT_NO_ROLL or DETERMINISTIC_RULE fields.",
+                    source_event_ids=[event_id],
+                    adjudication_id=event.get("adjudication_id"),
+                    checkpoint=checkpoint_id,
+                    evidence={"resolution_mode": mode, "resolution_class": resolution_class},
+                    blocking=True,
+                    classification="SOURCE_GAMEPLAY_GAP",
+                ))
+
+        route = str(
+            event.get("validated_kill_route_id")
+            or world_fact.get("validated_kill_route_id")
+            or ""
+        ).upper()
+        is_so = (
+            str(event.get("event_type") or "").upper() == "SPECIAL_OBJECTIVE_COMPLETED"
+            or str(event.get("final_result") or "").upper() == "SPECIAL_OBJECTIVE_COMPLETED"
+            or str(world_fact.get("fact") or "") == "CORBITT_BODY_DESTROYED"
+            or str(world_fact.get("event") or "").upper() == "SPECIAL_OBJECTIVE_COMPLETED"
+        )
+        if is_so and _is_corbitt_victory_event(event):
+            body_destroyed = True
+            if route in VALID_KILL_ROUTES:
+                has_validated_kill = True
+            else:
+                findings.append(_finding(
+                    f"so_without_kill_route:{event_id}",
+                    "SPECIAL_OBJECTIVE_WITHOUT_VALIDATED_KILL_ROUTE",
+                    "CRITICAL",
+                    "Corbitt SPECIAL_OBJECTIVE_COMPLETED lacks validated_kill_route_id.",
+                    source_event_ids=[event_id],
+                    adjudication_id=event.get("adjudication_id"),
+                    checkpoint=checkpoint_id,
+                    evidence={"world_fact": world_fact},
+                    blocking=True,
+                    classification="SOURCE_GAMEPLAY_GAP",
+                ))
+
+            origin = str(
+                event.get("fact_origin") or world_fact.get("fact_origin") or ""
+            ).upper()
+            source_rule = (
+                event.get("source_rule_id")
+                or world_fact.get("source_rule_id")
+                or (world_fact.get("source_ref") or {}).get("rule_id")
+            )
+            if origin != "SOURCE" or not source_rule:
+                findings.append(_finding(
+                    f"provenance_missing:{event_id}",
+                    "SCENARIO_SOURCE_PROVENANCE_MISSING",
+                    "CRITICAL",
+                    "Victory-critical Corbitt fact lacks SOURCE provenance chain.",
+                    source_event_ids=[event_id],
+                    adjudication_id=event.get("adjudication_id"),
+                    checkpoint=checkpoint_id,
+                    evidence={
+                        "fact_origin": origin,
+                        "source_rule_id": source_rule,
+                        "victory_critical": True,
+                    },
+                    blocking=True,
+                    classification="SOURCE_GAMEPLAY_GAP",
+                ))
+
+        if mode == "ROLL" and combatish:
+            has_roll_resolution_for_kill = True
+        if resolution_class == "DETERMINISTIC_RULE" and route in VALID_KILL_ROUTES:
+            has_roll_resolution_for_kill = True
+
+    flags = result.get("final_flags") or {}
+    defeated = flags.get("corbitt_defeated") is True
+    if (defeated or body_destroyed) and not (has_validated_kill and has_roll_resolution_for_kill):
+        # Allow derived DETERMINISTIC_RULE SO with validated route even without prior ROLL
+        # when Route B/A terminal emits DETERMINISTIC_RULE (has_roll already true above).
+        if not has_validated_kill:
+            findings.append(_finding(
+                "combat_kill_without_resolution",
+                "COMBAT_KILL_WITHOUT_RESOLUTION",
+                "CRITICAL",
+                "Corbitt defeat/body destroy lacks validated kill-route resolution chain.",
+                checkpoint=checkpoint_id,
+                evidence={
+                    "corbitt_defeated": defeated,
+                    "body_destroyed": body_destroyed,
+                    "has_validated_kill": has_validated_kill,
+                },
+                blocking=True,
+                classification="SOURCE_GAMEPLAY_GAP",
+            ))
+    return findings
+
+
 def audit_combat_and_goal(
     result: dict[str, Any], unified: list[dict[str, Any]], checkpoint_state: dict[str, Any], checkpoint_id: str
 ) -> tuple[list[dict[str, Any]], dict[str, bool]]:
@@ -606,6 +762,7 @@ def run_audit(
     *, result: dict[str, Any], session: list[dict[str, Any]], unified: list[dict[str, Any]],
     normalized_doc: dict[str, Any], provenance: dict[str, Any], validation: dict[str, Any],
     checkpoint_state: dict[str, Any], checkpoint_manifest: dict[str, Any], input_manifest: dict[str, Any],
+    fidelity_pack: str = "none",
 ) -> dict[str, Any]:
     checkpoint_id = str(checkpoint_manifest.get("checkpoint_id") or "UNKNOWN")
     normalized = list(normalized_doc.get("events") or [])
@@ -617,6 +774,9 @@ def run_audit(
     findings += audit_objects(session, unified, normalized, checkpoint_id)
     combat_findings, completion = audit_combat_and_goal(result, unified, checkpoint_state, checkpoint_id)
     findings += combat_findings
+    # Historical V8–V13 Accepted reproductions stay on fidelity_pack=none.
+    if str(fidelity_pack or "none").lower() == "corbitt_v14":
+        findings += audit_corbitt_final_battle_fidelity(result, unified, checkpoint_id)
     trace_findings, traceability = audit_traceability(normalized, provenance, validation, checkpoint_id)
     findings += trace_findings
     findings += audit_normalizer_warnings(normalized_doc, checkpoint_id)
@@ -638,6 +798,12 @@ def run_audit(
         "normalization_source_contradiction_zero": categories["NORMALIZATION_SOURCE_CONTRADICTION"] == 0,
         "lifecycle_misclassification_zero": categories["LIFECYCLE_MISCLASSIFIED_AS_NO_ROLL"] == 0,
         **{f"{name.lower()}_zero": categories[name] == 0 for name in sorted(ITERATION2_CATEGORIES)},
+        **{
+            f"{name.lower()}_zero": categories[name] == 0
+            for name in sorted(CORBITT_V14_CATEGORIES)
+            if str(fidelity_pack or "none").lower() == "corbitt_v14"
+        },
+        "blocking_zero": not any(item.get("blocking") for item in findings),
         "legacy_text_parse_zero": not any(item["finding_id"] == "legacy_text_parse" for item in findings),
         "traceability_one": traceability == 1.0,
         "input_identity_pass": input_identity,
@@ -692,6 +858,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--validation", type=Path)
     parser.add_argument("--normalizer-implementation", type=Path, required=True)
     parser.add_argument("--legacy-project", type=Path, action="append", default=[])
+    parser.add_argument(
+        "--fidelity-pack",
+        choices=["none", "corbitt_v14"],
+        default="none",
+        help="Enable Corbitt V14 fidelity findings (default none preserves V8–V13 Accepted).",
+    )
     args = parser.parse_args(argv)
     started = datetime.now(timezone.utc).isoformat()
     core_run, normalized_path, output_dir = args.core_run.resolve(), args.normalized.resolve(), args.output_dir.resolve()
@@ -715,6 +887,7 @@ def main(argv: list[str] | None = None) -> int:
         validation=read_json(validation_path), checkpoint_state=read_json(checkpoint / "state.json"),
         checkpoint_manifest=read_json(checkpoint / "manifest.json"),
         input_manifest=read_json(input_manifest_path) if input_manifest_path.is_file() else {},
+        fidelity_pack=args.fidelity_pack,
     )
     output_dir.mkdir(parents=True, exist_ok=False)
     implementation = sha256(Path(__file__).resolve())

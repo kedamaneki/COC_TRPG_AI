@@ -13,6 +13,11 @@ COMBAT_TYPE_MAP = {
     "COMBAT_ACTION_RESOLVED": "COMBAT_ACTION",
     "COMBAT_ACTION_REJECTED": "COMBAT_ACTION",
     "COMBAT_ROUND_STARTED": "COMBAT_ACTION",
+    "SPECIAL_OBJECTIVE_COMPLETED": "SCENARIO_EVENT",
+    "CORBITT_BODY_ACTIVATED": "COMBAT_ACTION",
+    "CORBITT_BODY_ACTIVATION_EXPIRED": "COMBAT_ACTION",
+    "ARMOR_APPLIED": "COMBAT_ACTION",
+    "ARMOR_ROLLED": "COMBAT_ACTION",
 }
 
 LIFECYCLE_TYPES = {
@@ -182,6 +187,21 @@ def _dice(record, text=""):
         "automatic_result": record.get("automatic_result"),
         "critical": _explicit_bool(record, "critical", text),
         "fumble": _explicit_bool(record, "fumble", text),
+        # Corbitt V14 fidelity fields — pass-through only (never invent kill routes).
+        "resolution_class": record.get("resolution_class") or record.get("combat_resolution_class"),
+        "validated_kill_route_id": (
+            record.get("validated_kill_route_id")
+            or (record.get("world_fact") or {}).get("validated_kill_route_id")
+        ),
+        "explicit_no_roll_reason": record.get("explicit_no_roll_reason"),
+        "source_rule_id": (
+            record.get("source_rule_id")
+            or (record.get("world_fact") or {}).get("source_rule_id")
+        ),
+        "fact_origin": (
+            record.get("fact_origin")
+            or (record.get("world_fact") or {}).get("fact_origin")
+        ),
     }
 
 
@@ -262,8 +282,19 @@ def _modifier(record, text=""):
 
 
 def _combat(record):
-    if not record.get("combat_id") and not str(record.get("event_type") or "").startswith("COMBAT_"):
+    et = str(record.get("event_type") or "").upper()
+    combatish = (
+        record.get("combat_id")
+        or et.startswith("COMBAT_")
+        or et in {
+            "ARMOR_APPLIED", "ARMOR_ROLLED", "CORBITT_BODY_ACTIVATED",
+            "CORBITT_BODY_ACTIVATION_EXPIRED", "SPECIAL_OBJECTIVE_COMPLETED",
+        }
+    )
+    if not combatish:
         return None
+    world_fact = record.get("world_fact") or {}
+    object_after = record.get("object_state_after") or {}
     return {
         "combat_id": record.get("combat_id"),
         "attacker": record.get("actor"),
@@ -271,8 +302,19 @@ def _combat(record):
         "action": record.get("selected_action"),
         "roll": record.get("roll"),
         "damage": record.get("damage"),
-        "hp_before": record.get("HP_before"),
-        "hp_after": record.get("HP_after"),
+        "hp_before": record.get("HP_before") or record.get("hp_before"),
+        "hp_after": record.get("HP_after") or record.get("hp_after"),
+        "armor_before": record.get("armor_before"),
+        "armor_after": record.get("armor_after"),
+        "raw_damage": record.get("raw_damage"),
+        "penetrating_damage": record.get("penetrating_damage"),
+        "validated_kill_route_id": (
+            record.get("validated_kill_route_id") or world_fact.get("validated_kill_route_id")
+        ),
+        "resolution_class": record.get("resolution_class") or record.get("combat_resolution_class"),
+        "dagger_object_id": record.get("object_id") or record.get("weapon_id"),
+        "dagger_status": object_after.get("status") or record.get("dagger_status"),
+        "body_activation_rounds": record.get("rounds") or record.get("rounds_remaining"),
     }
 
 
