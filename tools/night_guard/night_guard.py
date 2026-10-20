@@ -234,8 +234,17 @@ CORE_PYTHON = Path(os.environ.get('CORE_PYTHON', RUN_ROOT / '.venv-resume-local/
 VIDEO_PYTHON = Path(os.environ.get('VIDEO_PYTHON', CORE_PYTHON))
 NETWORK_GUARD = REPO_ROOT / 'tools/runtime_isolation'
 ACCEPTED = VIDEO
-SESSION_ID = 'CORBITT_LONGRUN_ITERATION3_V5_HOME_001'
+DEFAULT_SESSION_ID = 'CORBITT_LONGRUN_ITERATION3_V5_HOME_001'
+SESSION_ID = DEFAULT_SESSION_ID
 RAW = RUN_ROOT / 'evaluation-v2' / SESSION_ID
+
+
+def configure_session(session_id: str | None = None) -> str:
+    """Override the Night Guard session id (e.g. V14 Fresh Full-Long)."""
+    global SESSION_ID, RAW
+    SESSION_ID = str(session_id or DEFAULT_SESSION_ID).strip() or DEFAULT_SESSION_ID
+    RAW = RUN_ROOT / 'evaluation-v2' / SESSION_ID
+    return SESSION_ID
 LEGACY = VIDEO / 'projects/corbitt_clear_001'
 OLD_RUN_NAMES = (
     'CORBITT_LONGRUN_ITERATION2_V2_HOME_001',
@@ -243,6 +252,8 @@ OLD_RUN_NAMES = (
     'CORBITT_LONGRUN_ITERATION3_V2_HOME_001',
     'CORBITT_LONGRUN_ITERATION3_V3_HOME_001',
     'CORBITT_LONGRUN_ITERATION2_V2_001',
+    # Immutable Accepted Raw trees — never resume / rewrite from Night Guard.
+    'CORBITT_LONGRUN_ITERATION3_V13_HOME_001',
 )
 
 def utcnow():
@@ -659,7 +670,17 @@ def cli(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('mode', choices=('dry-run', 'execute'))
     parser.add_argument('--output', required=True)
+    parser.add_argument(
+        '--session-id',
+        default=None,
+        help=(
+            'Override evaluation-v2 session directory name. '
+            'Default keeps current Night Guard constant; '
+            'use CORBITT_LONGRUN_ITERATION3_V14_HOME_001 for V14 Fresh Full-Long.'
+        ),
+    )
     args = parser.parse_args(argv)
+    configure_session(args.session_id)
     output = Path(args.output).resolve()
     output.mkdir(parents=True, exist_ok=False)
     network = NetworkGuardAdapter()
