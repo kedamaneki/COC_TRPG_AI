@@ -239,28 +239,26 @@ class TestCorbittBuildIntegration(unittest.TestCase):
             "corbitt_ground_floor", loc_id="corbitt_basement",
         ))
 
-    def test_weakness_flag_selects_informed_ending(self):
+    def test_corbitt_body_defeat_auto_clear_triggers_removed(self):
+        """WP-A: scenario no longer ships break→SO defeat triggers."""
         from build_corbitt_scenario import build_scenario_dict, staged_cache_available
-        from ScenarioManager import ScenarioManager
 
         if not staged_cache_available():
             self.skipTest("ステージングキャッシュがありません")
         scenario = build_scenario_dict()
-        manager = ScenarioManager(scenario)
-        manager.flags["corbitt_body_encountered"] = True
-        events = {event["event_id"]: event for event in scenario["event_triggers"]}
-        ordinary = events["corbitt_basement_room2__corbitt_body__defeat"]["trigger_condition"]
-        informed = events["corbitt_basement_room2__corbitt_body__informed_defeat"]["trigger_condition"]
-        def matches(condition):
-            return manager.evaluate_expression(
-                condition, action_id="attack", target="corbitt_body",
-                success_level=2, loc_id="corbitt_basement_room2",
-            )
-        self.assertTrue(matches(ordinary))
-        self.assertFalse(matches(informed))
-        manager.flags["learned_corbitt_weakness"] = True
-        self.assertFalse(matches(ordinary))
-        self.assertTrue(matches(informed))
+        event_ids = {event["event_id"] for event in scenario["event_triggers"]}
+        self.assertNotIn("corbitt_basement_room2__corbitt_body__defeat", event_ids)
+        self.assertNotIn("corbitt_basement_room2__corbitt_body__informed_defeat", event_ids)
+        self.assertNotIn("corbitt_basement_room2__corbitt_body__defeat_fail", event_ids)
+        self.assertIn("corbitt_basement_room2__corbitt_body__encounter", event_ids)
+        encounter = next(
+            e for e in scenario["event_triggers"]
+            if e["event_id"] == "corbitt_basement_room2__corbitt_body__encounter"
+        )
+        self.assertEqual(
+            (encounter.get("payload") or {}).get("combat_start", {}).get("roll_armor_for"),
+            ["walter_corbitt"],
+        )
 
 
 if __name__ == "__main__":

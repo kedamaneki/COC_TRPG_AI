@@ -172,7 +172,10 @@ class AdjudicationEvidenceRecoveryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "OBJECT_STATE_INVALID_TRANSITION"):
             apply_object_transition(states, "knife", {"status": "OWNED", "owner_id": "pc_01"})
 
-    def test_final_battle_remains_special_objective(self):
+    def test_final_battle_break_body_no_longer_auto_clears(self):
+        """WP-A: break+corbitt_body must not SPECIAL auto-clear (Route A/B only)."""
+        from CorbittKillRoutes import remap_body_break_to_attack
+
         scenario = self._scenario("corbitt_basement_room2")
         scenario.flags.update({
             "corbitt_defeated": False,
@@ -180,12 +183,16 @@ class AdjudicationEvidenceRecoveryTests(unittest.TestCase):
             "learned_corbitt_weakness": False,
         })
         result = scenario.process_action("break", "corbitt_body", 2)
-        self.assertTrue(result["combat_end"])
-        self.assertEqual(result["world_fact"]["event"], "SPECIAL_OBJECTIVE_COMPLETED")
-        self.assertEqual(result["world_fact"]["fact"], "CORBITT_BODY_DESTROYED")
-        self.assertEqual(result["resolution_reason"], "SPECIAL_OBJECTIVE:CORBITT_BODY_DESTROYED")
-        self.assertNotIn("あるいは", result["system_log"])
-        self.assertEqual(result["new_phase"], "clear")
+        self.assertFalse(bool(result.get("combat_end")))
+        self.assertNotEqual(
+            (result.get("world_fact") or {}).get("event"),
+            "SPECIAL_OBJECTIVE_COMPLETED",
+        )
+        self.assertFalse(bool(scenario.flags.get("corbitt_defeated")))
+        remap = remap_body_break_to_attack("break", "corbitt_body", scenario_mgr=scenario)
+        self.assertTrue(remap["remapped"])
+        self.assertEqual(remap["action_id"], "attack")
+        self.assertEqual(remap["target"], "walter_corbitt")
 
 
 if __name__ == "__main__":

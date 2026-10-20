@@ -78,6 +78,14 @@ def _scenario_special_candidates(scenario_mgr, current_location: str):
             continue
         if not target:
             continue
+        # WP-A: corbitt_body break/force is never a SPECIAL auto-clear candidate.
+        if str(target).lower() == "corbitt_body":
+            continue
+        world_fact = payload.get("world_fact") or {}
+        if str(world_fact.get("fact") or "") == "CORBITT_BODY_DESTROYED" and not world_fact.get(
+            "validated_kill_route_id"
+        ):
+            continue
         for action in actions:
             candidates.append({
                 "action": action,

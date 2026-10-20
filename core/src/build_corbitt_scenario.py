@@ -566,8 +566,8 @@ def _special_events(loc_id, oid, obj):
                 ),
                 "kp_instruction": (
                     "生ける屍コービットとの戦闘開始を描写してください。"
-                    "探索者は攻撃するか、遺体を破壊・浄化するか、逃走するかを選べます。"
-                    "遺体（corbitt_body）を破壊すればシナリオクリアです。"
+                    "討伐は装甲を削りHPを0にするか、魔法のダガーによる特効のみです。"
+                    "corbitt_body への break/force は攻撃（walter_corbitt）へ remap されます。"
                 ),
                 "flag_updates": {"corbitt_body_encountered": True, "trigger_corbitt_boss_battle": True},
                 "san_check": {"required": True, "value": "1D8", "source": "generic"},
@@ -577,55 +577,8 @@ def _special_events(loc_id, oid, obj):
                 },
             },
         })
-        # 撃破 → クリア
-        defeat_base = (
-            f"action_id in ['break', 'force', 'attack', 'use', 'push', 'kick'] "
-            f"and target == '{oid}' and location == '{loc_id}' "
-            f"and flags.corbitt_defeated == false and flags.corbitt_body_encountered == true"
-        )
-        events.append({
-            "event_id": f"{loc_id}__corbitt_body__defeat",
-            "priority": 95,
-            "trigger_condition": f"{defeat_base} and flags.learned_corbitt_weakness == false and success_level >= 2",
-            "action_type": "update_and_describe",
-            "payload": {
-                "system_log": "ウォルター・コービットの遺体が破壊され、屋敷の呪いが解けた。",
-                "kp_instruction": "コービット討伐とシナリオクリアを劇的に描写して、セッションを締めくくってください。",
-                "flag_updates": {"corbitt_defeated": True},
-                "world_fact": {
-                    "event": "SPECIAL_OBJECTIVE_COMPLETED",
-                    "target": "corbitt_body",
-                    "fact": "CORBITT_BODY_DESTROYED",
-                },
-                "human_readable_description": "コービットの遺体が破壊され、屋敷の呪いが解けた。",
-                "resolution_reason": "SPECIAL_OBJECTIVE:CORBITT_BODY_DESTROYED",
-                "narrative_fact_tags": ["CORBITT_BODY_DESTROYED", "HOUSE_CURSE_BROKEN"],
-                "new_phase": "clear",
-                "combat_end": True,
-                "san_check": {"required": False},
-            },
-        })
-        informed_defeat = copy.deepcopy(events[-1])
-        informed_defeat["event_id"] = f"{loc_id}__corbitt_body__informed_defeat"
-        informed_defeat["trigger_condition"] = (
-            f"{defeat_base} and flags.learned_corbitt_weakness == true and success_level >= 2"
-        )
-        informed_defeat["payload"]["system_log"] = (
-            "祭壇で知った弱点に従って遺体を清め、破壊した。"
-            "ウォルター・コービットの力は断たれ、屋敷の呪いが解けた。"
-        )
-        events.append(informed_defeat)
-        events.append({
-            "event_id": f"{loc_id}__corbitt_body__defeat_fail",
-            "priority": 95,
-            "trigger_condition": f"{defeat_base} and success_level <= 1",
-            "action_type": "update_and_describe",
-            "payload": {
-                "system_log": "攻撃は決定打とならず、コービットは反撃してくる。戦いは続く。",
-                "kp_instruction": "攻撃が失敗し反撃されることを描写し、再挑戦を促してください。",
-                "san_check": {"required": False},
-            },
-        })
+        # WP-A: break/force on body no longer auto-clears.
+        # Route A (armor→HP0) / Route B (owned magic dagger) emit derived SO in engine.
         return events
 
     return events

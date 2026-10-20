@@ -252,6 +252,15 @@ from CombatResolutionGuard import (
     is_corbitt_victory_critical,
     is_irreversible_candidate,
 )
+from CorbittKillRoutes import (
+    CORBITT_NPC_ID,
+    ROUTE_A_HP0,
+    ROUTE_B_DAGGER,
+    apply_kill_payload_to_scenario,
+    remap_body_break_to_attack,
+    try_route_a_on_hp0,
+    try_route_b_on_hit,
+)
 from ProgressDirectorV2 import (
     AUTONOMOUS,
     HUMAN_GUIDED,
@@ -10814,6 +10823,80 @@ def begin_shoot_attack(
     }
 
 
+def _finalize_corbitt_kill_from_hit(
+    *,
+    hit,
+    attacker_id,
+    defender_id,
+    weapon,
+    scenario_mgr,
+    state_mgr,
+    game_state=None,
+    adjudication_id="",
+    log_parts=None,
+    kp_notes=None,
+):
+    """Apply Route B (dagger) or Route A (HP0) after a damaging hit on Corbitt."""
+    log_parts = log_parts if log_parts is not None else []
+    kp_notes = kp_notes if kp_notes is not None else []
+    kill_payload = None
+    if hit and hit.get("status") == "success":
+        kill_payload = try_route_b_on_hit(
+            attacker_id=attacker_id,
+            defender_id=defender_id,
+            weapon=weapon or hit.get("weapon"),
+            scenario_mgr=scenario_mgr,
+        )
+        if kill_payload:
+            # Route B bypasses residual HP/armor: force HP to 0 for bookkeeping.
+            char_mgr = getattr(state_mgr, "char_mgr", None)
+            if char_mgr and defender_id in (char_mgr.characters or {}):
+                hp_now = int(char_mgr.get_stat_current(defender_id, "HP") or 0)
+                if hp_now > 0:
+                    char_mgr.apply_pool_damage(defender_id, "HP", hp_now)
+            kill_payload["adjudication_id"] = adjudication_id or kill_payload.get("adjudication_id")
+            log_parts.append("→ 【Route B】魔法のダガー特効！ 装甲・残HPを無視して灰化。")
+            kp_notes.append("【システム】CORBITT_DAGGER_SPECIAL_KILL → CORBITT_BODY_DESTROYED")
+        else:
+            kill_payload = try_route_a_on_hp0(
+                defender_id=defender_id,
+                new_hp=int(hit.get("new_hp") if hit.get("new_hp") is not None else 1),
+                adjudication_id=adjudication_id,
+            )
+            if kill_payload:
+                log_parts.append("→ 【Route A】コービット HP0。遺体は灰と化した。")
+                kp_notes.append("【システム】CORBITT_HP_DEPLETED → CORBITT_BODY_DESTROYED")
+                if hit.get("armor_applied"):
+                    kp_notes.append(
+                        "【ARMOR_APPLIED】"
+                        f" armor {hit['armor_applied'].get('armor_before')}→{hit['armor_applied'].get('armor_after')}"
+                        f" raw={hit['armor_applied'].get('raw_damage')}"
+                        f" penetrating={hit['armor_applied'].get('penetrating_damage')}"
+                        f" HP {hit['armor_applied'].get('hp_before')}→{hit['armor_applied'].get('hp_after')}"
+                    )
+    if not kill_payload:
+        return None
+    apply_kill_payload_to_scenario(scenario_mgr, kill_payload)
+    char_mgr = getattr(state_mgr, "char_mgr", None)
+    if game_state is not None and char_mgr is not None:
+        _apply_combat_payload_effects(
+            kill_payload, state_mgr, char_mgr,
+            attacker_id, game_state=game_state,
+            current_loc=str(game_state.get("current_loc") or ""),
+        )
+        if not kill_payload.get("blocked"):
+            from CompletionAtomicity import commit_special_objective_completion
+            try:
+                commit_special_objective_completion(
+                    game_state, kill_payload, scenario_mgr, state_mgr,
+                )
+            except Exception:
+                pass
+    elif state_mgr and getattr(state_mgr, "in_combat", False):
+        state_mgr.end_combat("corbitt_validated_kill")
+    return kill_payload
+
+
 def resolve_melee_combat_exchange(
     pending_combat_defense,
     defense_mode,
@@ -10821,6 +10904,8 @@ def resolve_melee_combat_exchange(
     char_mgr,
     dice_engine,
     state_mgr,
+    scenario_mgr=None,
+    game_state=None,
 ):
     """
     双方宣言確定後の対抗ロールとダメージ適用。
@@ -10845,6 +10930,7 @@ def resolve_melee_combat_exchange(
     atk_name = char_mgr.characters[attacker_id]["profile"]["name"]
     def_name = char_mgr.characters[defender_id]["profile"]["name"]
     mode_label = "応戦" if mode == "fight_back" else "回避"
+    adjudication_id = str(pending.get("adjudication_id") or _new_adjudication_id())
 
     opposed = dice_engine.execute_melee_opposed_roll(
         atk_name, atk_skill, atk_value,
@@ -10858,6 +10944,7 @@ def resolve_melee_combat_exchange(
     ]
     damage_results = []
     kp_notes = []
+    corbitt_kill = None
 
     if outcome == "dodged":
         log_parts.append(f"→ {def_name} の回避成功。ダメージなし。")
@@ -10878,37 +10965,85 @@ def resolve_melee_combat_exchange(
         )
         for ev in hit.get("events") or []:
             kp_notes.append(ev.get("instruction", ""))
+        corbitt_kill = _finalize_corbitt_kill_from_hit(
+            hit=hit, attacker_id=defender_id, defender_id=attacker_id,
+            weapon=state_mgr.get_default_melee_weapon(defender_id),
+            scenario_mgr=scenario_mgr, state_mgr=state_mgr, game_state=game_state,
+            adjudication_id=adjudication_id, log_parts=log_parts, kp_notes=kp_notes,
+        )
     elif outcome == "hit_attacker":
-        hit = state_mgr.apply_melee_hit(
-            attacker_id, defender_id,
-            weapon=weapon,
-            is_extreme=int(opposed.get("attacker_level") or 0) >= 4,
-            dice_engine=dice_engine,
+        # Route B: owned magic dagger vs Corbitt bypasses armor/HP on hit.
+        route_b = try_route_b_on_hit(
+            attacker_id=attacker_id, defender_id=defender_id,
+            weapon=weapon, scenario_mgr=scenario_mgr,
         )
-        damage_results.append(hit)
-        log_parts.append(
-            f"→ 攻撃命中！ "
-            f"（{hit.get('weapon_name')}: {hit.get('damage_detail', '')} → {hit.get('damage', 0)}点）"
-            f" {def_name} HP {hit.get('old_hp')}→{hit.get('new_hp')}"
-        )
-        for ev in hit.get("events") or []:
-            kp_notes.append(ev.get("instruction", ""))
+        if route_b and str(defender_id) == CORBITT_NPC_ID:
+            hp_before = int(char_mgr.get_stat_current(defender_id, "HP") or 0)
+            hit = {
+                "status": "success",
+                "old_hp": hp_before,
+                "new_hp": 0,
+                "damage": hp_before,
+                "weapon_name": (weapon or {}).get("name") or "magic dagger",
+                "damage_detail": "DAGGER_SPECIAL_KILL",
+                "weapon": weapon,
+                "bypass_armor": True,
+            }
+            if hp_before > 0:
+                char_mgr.apply_pool_damage(defender_id, "HP", hp_before)
+            damage_results.append(hit)
+            log_parts.append(
+                f"→ 攻撃命中！ 魔法のダガー特効（装甲・HP無視） "
+                f"{def_name} HP {hp_before}→0"
+            )
+            corbitt_kill = _finalize_corbitt_kill_from_hit(
+                hit=hit, attacker_id=attacker_id, defender_id=defender_id,
+                weapon=weapon, scenario_mgr=scenario_mgr, state_mgr=state_mgr,
+                game_state=game_state, adjudication_id=adjudication_id,
+                log_parts=log_parts, kp_notes=kp_notes,
+            )
+        else:
+            hit = state_mgr.apply_melee_hit(
+                attacker_id, defender_id,
+                weapon=weapon,
+                is_extreme=int(opposed.get("attacker_level") or 0) >= 4,
+                dice_engine=dice_engine,
+            )
+            damage_results.append(hit)
+            log_parts.append(
+                f"→ 攻撃命中！ "
+                f"（{hit.get('weapon_name')}: {hit.get('damage_detail', '')} → {hit.get('damage', 0)}点"
+                f"{'／装甲' + str(hit.get('armor_mitigated', 0)) + '減' if hit.get('armor_mitigated') else ''}）"
+                f" {def_name} HP {hit.get('old_hp')}→{hit.get('new_hp')}"
+            )
+            for ev in hit.get("events") or []:
+                kp_notes.append(ev.get("instruction", ""))
+            corbitt_kill = _finalize_corbitt_kill_from_hit(
+                hit=hit, attacker_id=attacker_id, defender_id=defender_id,
+                weapon=weapon, scenario_mgr=scenario_mgr, state_mgr=state_mgr,
+                game_state=game_state, adjudication_id=adjudication_id,
+                log_parts=log_parts, kp_notes=kp_notes,
+            )
 
     state_mgr.clear_pending_combat_defense()
-    next_actor = state_mgr.next_turn()
-    next_name = ""
-    if next_actor and next_actor in char_mgr.characters:
-        next_name = char_mgr.characters[next_actor]["profile"]["name"]
-        log_parts.append(f"【手番】次は {next_name}（ラウンド {state_mgr.round_number}）")
+    next_actor = None
+    if not corbitt_kill:
+        next_actor = state_mgr.next_turn()
+        next_name = ""
+        if next_actor and next_actor in char_mgr.characters:
+            next_name = char_mgr.characters[next_actor]["profile"]["name"]
+            log_parts.append(f"【手番】次は {next_name}（ラウンド {state_mgr.round_number}）")
 
-    # 戦闘終了判定: 片陣営全滅
-    living = [
-        cid for cid in (state_mgr.combat_turn_queue or state_mgr.turn_order or [])
-        if not state_mgr.is_combat_participant_incapacitated(cid)
-    ]
-    if len(living) <= 1:
-        state_mgr.end_combat()
-        log_parts.append("【戦闘終了】行動可能な戦闘参加者が残りわずかのため戦闘を終了。")
+        # 戦闘終了判定: 片陣営全滅
+        living = [
+            cid for cid in (state_mgr.combat_turn_queue or state_mgr.turn_order or [])
+            if not state_mgr.is_combat_participant_incapacitated(cid)
+        ]
+        if len(living) <= 1:
+            state_mgr.end_combat()
+            log_parts.append("【戦闘終了】行動可能な戦闘参加者が残りわずかのため戦闘を終了。")
+    else:
+        log_parts.append("【戦闘終了】コービット討伐（validated kill route）。")
 
     kp_instruction = "戦闘の攻防結果を情景として描写してください。"
     if kp_notes:
@@ -10923,6 +11058,8 @@ def resolve_melee_combat_exchange(
         "next_actor": next_actor,
         "kp_instruction": kp_instruction,
         "opposed": opposed,
+        "corbitt_kill": corbitt_kill,
+        "validated_kill_route_id": (corbitt_kill or {}).get("validated_kill_route_id"),
     }
 
 
@@ -10933,6 +11070,8 @@ def resolve_shoot_combat_exchange(
     char_mgr,
     dice_engine,
     state_mgr,
+    scenario_mgr=None,
+    game_state=None,
 ):
     """
     射撃の防衛選択後ロールとダメージ適用（貫通／肉体的限界込み）。
@@ -10969,6 +11108,7 @@ def resolve_shoot_combat_exchange(
     atk_name = char_mgr.characters[attacker_id]["profile"]["name"]
     def_name = char_mgr.characters[defender_id]["profile"]["name"]
     mode_label = "甘んじて受ける" if mode == "accept" else "回避"
+    adjudication_id = str(pending.get("adjudication_id") or _new_adjudication_id())
 
     opposed = dice_engine.execute_firearm_attack_roll(
         atk_name, atk_skill, atk_value,
@@ -10994,6 +11134,7 @@ def resolve_shoot_combat_exchange(
 
     damage_results = []
     kp_notes = []
+    corbitt_kill = None
     atk_level = int(opposed.get("attacker_level") or 0)
     is_impale = atk_level >= int(SuccessLevel.EXTREME_SUCCESS)
 
@@ -11010,27 +11151,40 @@ def resolve_shoot_combat_exchange(
         )
         damage_results.append(hit)
         impale_note = "【貫通（インペール）】" if hit.get("impale") else ""
+        armor_note = ""
+        if hit.get("armor_mitigated"):
+            armor_note = f"／装甲{hit.get('armor_mitigated')}減"
         log_parts.append(
             f"→ 射撃命中！{impale_note} "
-            f"（{hit.get('weapon_name')}: {hit.get('damage_detail', '')} → {hit.get('damage', 0)}点）"
+            f"（{hit.get('weapon_name')}: {hit.get('damage_detail', '')} → {hit.get('damage', 0)}点{armor_note}）"
             f" {def_name} HP {hit.get('old_hp')}→{hit.get('new_hp')}"
         )
         for ev in hit.get("events") or []:
             kp_notes.append(ev.get("instruction", ""))
+        corbitt_kill = _finalize_corbitt_kill_from_hit(
+            hit=hit, attacker_id=attacker_id, defender_id=defender_id,
+            weapon=weapon, scenario_mgr=scenario_mgr, state_mgr=state_mgr,
+            game_state=game_state, adjudication_id=adjudication_id,
+            log_parts=log_parts, kp_notes=kp_notes,
+        )
 
     state_mgr.clear_pending_combat_defense()
-    next_actor = state_mgr.next_turn()
-    if next_actor and next_actor in char_mgr.characters:
-        next_name = char_mgr.characters[next_actor]["profile"]["name"]
-        log_parts.append(f"【手番】次は {next_name}（ラウンド {state_mgr.round_number}）")
+    next_actor = None
+    if not corbitt_kill:
+        next_actor = state_mgr.next_turn()
+        if next_actor and next_actor in char_mgr.characters:
+            next_name = char_mgr.characters[next_actor]["profile"]["name"]
+            log_parts.append(f"【手番】次は {next_name}（ラウンド {state_mgr.round_number}）")
 
-    living = [
-        cid for cid in (state_mgr.combat_turn_queue or state_mgr.turn_order or [])
-        if not state_mgr.is_combat_participant_incapacitated(cid)
-    ]
-    if len(living) <= 1:
-        state_mgr.end_combat()
-        log_parts.append("【戦闘終了】行動可能な戦闘参加者が残りわずかのため戦闘を終了。")
+        living = [
+            cid for cid in (state_mgr.combat_turn_queue or state_mgr.turn_order or [])
+            if not state_mgr.is_combat_participant_incapacitated(cid)
+        ]
+        if len(living) <= 1:
+            state_mgr.end_combat()
+            log_parts.append("【戦闘終了】行動可能な戦闘参加者が残りわずかのため戦闘を終了。")
+    else:
+        log_parts.append("【戦闘終了】コービット討伐（validated kill route）。")
 
     kp_instruction = "射撃の結果を情景として描写してください。"
     if kp_notes:
@@ -11048,6 +11202,8 @@ def resolve_shoot_combat_exchange(
         "impale": is_impale and outcome == "hit_attacker",
         "point_blank": bool(pending.get("point_blank")),
         "bonus_dice": bonus_dice,
+        "corbitt_kill": corbitt_kill,
+        "validated_kill_route_id": (corbitt_kill or {}).get("validated_kill_route_id"),
     }
 
 
@@ -11363,6 +11519,20 @@ def process_system_action(
     adjudication_id = _new_adjudication_id()
     in_combat = bool(state_mgr and getattr(state_mgr, "in_combat", False))
     mythos_san_check_pending = _is_san_check_pending(pending_san_check)
+
+    # WP-A: pre-defeat break/force/kick/push on corbitt_body → attack walter_corbitt.
+    _body_remap = remap_body_break_to_attack(action_id, target, scenario_mgr=scenario_mgr)
+    if _body_remap.get("remapped"):
+        action_id = _body_remap["action_id"]
+        target = _body_remap["target"]
+        skill_name = _body_remap.get("skill") or skill_name or "近接戦闘"
+        effective_action_id = action_id
+        sys_log += (
+            f"【ACTION_REMAPPED】{_body_remap.get('original_action_id')}@{_body_remap.get('original_target')}"
+            f" → attack@{CORBITT_NPC_ID} ({_body_remap.get('remap_rule_id')})\n"
+        )
+        if game_state is not None:
+            game_state.setdefault("action_remap_log", []).append(copy.deepcopy(_body_remap))
 
     if in_combat:
         active = active_pcs or (
@@ -15883,6 +16053,7 @@ def step_combat_defense(state, char_mgr, dice_engine, scenario_mgr, state_mgr, p
         resolved = resolve_shoot_combat_exchange(
             pending, defense_mode,
             char_mgr=char_mgr, dice_engine=dice_engine, state_mgr=state_mgr,
+            scenario_mgr=scenario_mgr, game_state=state,
         )
         if resolved.get("rejected_fight_back") or resolved.get("outcome") == "not_allowed":
             append_system_log_entry(
@@ -15908,6 +16079,7 @@ def step_combat_defense(state, char_mgr, dice_engine, scenario_mgr, state_mgr, p
         resolved = resolve_melee_combat_exchange(
             pending, defense_mode,
             char_mgr=char_mgr, dice_engine=dice_engine, state_mgr=state_mgr,
+            scenario_mgr=scenario_mgr, game_state=state,
         )
         action_id = "attack"
         roll_type = "combat_opposed"

@@ -969,6 +969,7 @@ class GameStateManager:
         is_extreme=False,
         is_firearm=False,
         dice_engine=None,
+        bypass_armor=False,
     ):
         """命中ダメージ算出・装甲減算・物理ダメージ適用の共通処理。"""
         rolled = self.resolve_weapon_damage_amount(
@@ -977,22 +978,44 @@ class GameStateManager:
         raw = int(rolled["damage"])
         defender = self.char_mgr.characters.get(defender_id) or {}
         cp = defender.get("combat_profile") or {}
-        armor = int(cp.get("armor_points") or 0)
+        armor_before = int(cp.get("armor_points") or 0)
+        hp_before = int(self.char_mgr.get_stat_current(defender_id, "HP") or 0)
         mitigated = 0
-        if armor > 0:
-            mitigated = min(armor, raw)
-            cp["armor_points"] = max(0, armor - mitigated)
-            defender["combat_profile"] = cp
-            self.char_mgr.save_data()
-        final_dmg = max(0, raw - mitigated)
+        if bypass_armor:
+            armor = armor_before
+        else:
+            armor = armor_before
+            if armor > 0:
+                mitigated = min(armor, raw)
+                cp["armor_points"] = max(0, armor - mitigated)
+                defender["combat_profile"] = cp
+                self.char_mgr.save_data()
+        final_dmg = raw if bypass_armor else max(0, raw - mitigated)
         result = self.apply_physical_damage(
             defender_id, final_dmg, dice_engine=dice_engine,
         )
+        armor_after = int((defender.get("combat_profile") or {}).get("armor_points") or 0)
         result["rolled_damage"] = raw
         result["armor_mitigated"] = mitigated
+        result["armor_before"] = armor_before
+        result["armor_after"] = armor_after
+        result["penetrating_damage"] = final_dmg
+        result["hp_before"] = hp_before
+        result["hp_after"] = int(result.get("new_hp") if result.get("new_hp") is not None else hp_before)
         result["damage_detail"] = rolled["detail"]
         result["weapon_name"] = (rolled.get("weapon") or {}).get("name") or rolled.get("dice")
+        result["weapon"] = rolled.get("weapon") or weapon
         result["impale"] = bool(rolled.get("impale"))
+        result["bypass_armor"] = bool(bypass_armor)
+        result["armor_applied"] = {
+            "armor_before": armor_before,
+            "armor_after": armor_after,
+            "raw_damage": raw,
+            "penetrating_damage": final_dmg,
+            "armor_mitigated": mitigated,
+            "hp_before": hp_before,
+            "hp_after": result["hp_after"],
+        }
         return result
 
     def apply_melee_hit(
