@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "corbitt_scenario_provenance_draft_v1",
+  "title": "Scenario fact provenance (draft)",
+  "description": "Design draft only. Not wired into runtime. Kill-route authority is SOURCE only. ADAPTATION_TRANSFORM may restate a SOURCE rule via source_ref.rule_id and cannot define a kill route.",
+  "type": "object",
+  "required": ["fact_id", "fact_origin"],
+  "properties": {
+    "fact_id": { "type": "string" },
+    "fact_origin": {
+      "type": "string",
+      "enum": [
+        "SOURCE",
+        "ADAPTATION_TRANSFORM",
+        "ADAPTATION_INFERENCE",
+        "SYSTEM_GENERATED",
+        "SYSTEM_GENERATED_BRIDGE"
+      ]
+    },
+    "source_ref": {
+      "type": "object",
+      "properties": {
+        "work": { "type": "string", "const": "The Haunting / 悪霊の家" },
+        "page": { "type": "string" },
+        "section": { "type": "string" },
+        "rule_id": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "may_define_kill_route": {
+      "type": "boolean",
+      "description": "true only when fact_origin=SOURCE. Any other origin must be false or omitted."
+    },
+    "notes": { "type": "string" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": ["may_define_kill_route"],
+        "properties": { "may_define_kill_route": { "const": true } }
+      },
+      "then": {
+        "required": ["fact_origin"],
+        "properties": { "fact_origin": { "const": "SOURCE" } }
+      }
+    },
+    {
+      "if": {
+        "required": ["fact_origin"],
+        "properties": { "fact_origin": { "const": "ADAPTATION_TRANSFORM" } }
+      },
+      "then": {
+        "required": ["source_ref"],
+        "properties": {
+          "source_ref": { "required": ["rule_id"] },
+          "may_define_kill_route": { "const": false }
+        }
+      }
+    }
+  ]
+}
