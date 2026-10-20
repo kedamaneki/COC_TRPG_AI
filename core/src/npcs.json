@@ -373,7 +373,9 @@
             "armor_note": "装甲ポイントは受けたダメージ分だけ減少する。非魔術的攻撃のみ軽減。",
             "mp_recovery": "1ポイント/時間",
             "sanity_loss_on_sight": "1/1D8",
-            "ignore_spell_san_cost": true
+            "ignore_spell_san_cost": true,
+            "preferred_defense": "fight_back",
+            "aggression": 90
         },
         "weapons": [
             {

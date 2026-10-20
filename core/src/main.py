@@ -254,12 +254,21 @@ from CombatResolutionGuard import (
 )
 from CorbittKillRoutes import (
     CORBITT_NPC_ID,
-    ROUTE_A_HP0,
-    ROUTE_B_DAGGER,
     apply_kill_payload_to_scenario,
     remap_body_break_to_attack,
     try_route_a_on_hp0,
     try_route_b_on_hit,
+)
+from BossCombatPolicy import (
+    ACTION_BODY_ACTIVATION,
+    ACTION_DOMINATE,
+    ACTION_MAGIC_DAGGER,
+    ACTION_NORMAL_ATTACK,
+    activate_body,
+    choose_corbitt_action,
+    note_pc_hit,
+    resolve_dominate,
+    tick_body_activation,
 )
 from ProgressDirectorV2 import (
     AUTONOMOUS,
@@ -10874,6 +10883,8 @@ def _finalize_corbitt_kill_from_hit(
                         f" penetrating={hit['armor_applied'].get('penetrating_damage')}"
                         f" HP {hit['armor_applied'].get('hp_before')}→{hit['armor_applied'].get('hp_after')}"
                     )
+            elif game_state is not None and str(defender_id) == CORBITT_NPC_ID and int(hit.get("damage") or 0) > 0:
+                note_pc_hit(game_state)
     if not kill_payload:
         return None
     apply_kill_payload_to_scenario(scenario_mgr, kill_payload)
@@ -11260,7 +11271,7 @@ JSONのみで回答してください。defense_mode は "dodge" または "acce
 """
 
 
-def queue_npc_combat_attack(state, state_mgr, char_mgr, pl_id, current_loc):
+def queue_npc_combat_attack(state, state_mgr, char_mgr, pl_id, current_loc, scenario_mgr=None):
     """NPC手番なら参加PCへの自動攻撃を宣言し pending_combat_defense をセットする。"""
     if not state_mgr or not state_mgr.in_combat:
         return None
@@ -11289,6 +11300,69 @@ def queue_npc_combat_attack(state, state_mgr, char_mgr, pl_id, current_loc):
             "log": "【戦闘】攻撃対象がいないため戦闘終了。",
             "ended": True,
         }
+
+    # WP-B: Corbitt uses BossCombatPolicy instead of always normal-attacking.
+    if str(actor) == CORBITT_NPC_ID:
+        decision = choose_corbitt_action(
+            state=state,
+            char_mgr=char_mgr,
+            scenario_mgr=scenario_mgr,
+            state_mgr=state_mgr,
+            target_id=target,
+        )
+        action = decision.get("action")
+        round_number = int(getattr(state_mgr, "round_number", 0) or 0)
+        if action == ACTION_BODY_ACTIVATION:
+            activated = activate_body(state, char_mgr, round_number=round_number)
+            log = "【コービット】肉体を起動した（BODY_ACTIVATION / 5ラウンド）。"
+            if activated.get("ok") and state is not None:
+                state.setdefault("unified_event_log", []).append(activated.get("event") or {})
+            state_mgr.next_turn()
+            return {"ok": True, "log": log, "corbitt_policy": decision, "body_activation": activated}
+        if action == ACTION_DOMINATE:
+            from DiceEngine import DiceEngine
+            dice = getattr(state_mgr, "dice_engine", None) or DiceEngine()
+            dominated = resolve_dominate(
+                char_mgr=char_mgr, dice_engine=dice,
+                caster_id=actor, target_id=target,
+            )
+            state_mgr.next_turn()
+            return {
+                "ok": True,
+                "log": dominated.get("log") or "【コービット】《支配》を詠唱した。",
+                "corbitt_policy": decision,
+                "dominate": dominated,
+            }
+        if action == ACTION_MAGIC_DAGGER:
+            # Dagger attack: spend MP and begin attack using floating dagger weapon.
+            dagger_weapon = None
+            corbitt = (char_mgr.characters or {}).get(CORBITT_NPC_ID) or {}
+            for w in corbitt.get("weapons") or []:
+                if str((w or {}).get("id") or "") == "corbitt_floating_dagger":
+                    dagger_weapon = dict(w)
+                    break
+            if hasattr(char_mgr, "apply_mp_cost"):
+                char_mgr.apply_mp_cost(CORBITT_NPC_ID, 1)
+            result = begin_combat_attack(
+                actor, target,
+                char_mgr=char_mgr,
+                state_mgr=state_mgr,
+                current_loc=current_loc,
+                weapon=dagger_weapon,
+            )
+            if result.get("ok"):
+                result["corbitt_policy"] = decision
+                state["pending_combat_defense"] = result["pending_combat_defense"]
+                sync_timeline_pending_phase(state)
+            return result
+        if action != ACTION_NORMAL_ATTACK:
+            state_mgr.next_turn()
+            return {
+                "ok": True,
+                "log": "【コービット】静止して機会を窺っている。",
+                "corbitt_policy": decision,
+            }
+
     result = begin_combat_attack(
         actor, target,
         char_mgr=char_mgr,
@@ -11296,6 +11370,8 @@ def queue_npc_combat_attack(state, state_mgr, char_mgr, pl_id, current_loc):
         current_loc=current_loc,
     )
     if result.get("ok"):
+        if str(actor) == CORBITT_NPC_ID:
+            result["corbitt_policy"] = {"action": ACTION_NORMAL_ATTACK, "target_id": target}
         state["pending_combat_defense"] = result["pending_combat_defense"]
         sync_timeline_pending_phase(state)
     return result
@@ -16221,7 +16297,12 @@ def step_combat_defense(state, char_mgr, dice_engine, scenario_mgr, state_mgr, p
 def step_combat_npc_act(state, char_mgr, dice_engine, scenario_mgr, state_mgr, pl_id, char_name):
     """戦闘中の NPC 手番: PL への攻撃を自動宣言し防衛保留へ進む。"""
     current_loc = state.get("current_loc", "")
-    result = queue_npc_combat_attack(state, state_mgr, char_mgr, pl_id, current_loc)
+    tick = tick_body_activation(state, round_number=int(getattr(state_mgr, "round_number", 0) or 0))
+    if tick and tick.get("event_type") == "CORBITT_BODY_ACTIVATION_EXPIRED":
+        state.setdefault("unified_event_log", []).append(tick)
+    result = queue_npc_combat_attack(
+        state, state_mgr, char_mgr, pl_id, current_loc, scenario_mgr=scenario_mgr,
+    )
     if not result:
         return None
     if result.get("ended"):
