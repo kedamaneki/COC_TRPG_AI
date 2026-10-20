@@ -41,6 +41,20 @@ def validate_evidence(payload):
         raise EvidenceContractError(f"incomplete {mode} evidence: {', '.join(missing)}")
     if mode == ROLL:
         normalize_modifier(payload.get("modifier"))
+    # Combat EXPLICIT_NO_ROLL must carry the fail-closed contract fields.
+    resolution_class = str((payload or {}).get("resolution_class") or "").upper()
+    if mode == NO_ROLL and resolution_class == "EXPLICIT_NO_ROLL":
+        extra = [
+            "explicit_no_roll_reason",
+            "source_rule_id",
+            "deterministic_precondition",
+            "resolution_class",
+        ]
+        missing_ex = [name for name in extra if not _present((payload or {}).get(name))]
+        if missing_ex:
+            raise EvidenceContractError(
+                f"incomplete EXPLICIT_NO_ROLL evidence: {', '.join(missing_ex)}"
+            )
     return True
 
 
@@ -90,3 +104,30 @@ def no_roll_evidence(*, adjudication_id, reason, final_outcome,
     result.update(extra)
     validate_evidence(result)
     return result
+
+
+def explicit_no_roll_evidence(
+    *,
+    adjudication_id,
+    reason,
+    final_outcome,
+    explicit_no_roll_reason,
+    source_rule_id,
+    deterministic_precondition,
+    effect_result=None,
+    objective_outcome=None,
+    **extra,
+):
+    """NO_ROLL admissible only with the combat fail-closed contract fields."""
+    return no_roll_evidence(
+        adjudication_id=adjudication_id,
+        reason=reason,
+        final_outcome=final_outcome,
+        effect_result=effect_result,
+        objective_outcome=objective_outcome,
+        resolution_class="EXPLICIT_NO_ROLL",
+        explicit_no_roll_reason=explicit_no_roll_reason,
+        source_rule_id=source_rule_id,
+        deterministic_precondition=deterministic_precondition,
+        **extra,
+    )

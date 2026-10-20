@@ -241,6 +241,17 @@ from CombatProgression import (
     validate_combat_action,
     validate_combat_location,
 )
+from CombatResolutionGuard import (
+    DETERMINISTIC_RULE,
+    EXPLICIT_NO_ROLL,
+    ROLL,
+    UNRESOLVED_COMBAT_ACTION,
+    CombatResolutionError,
+    declare_resolution_class,
+    guard_special_objective_payload,
+    is_corbitt_victory_critical,
+    is_irreversible_candidate,
+)
 from ProgressDirectorV2 import (
     AUTONOMOUS,
     HUMAN_GUIDED,
@@ -10321,6 +10332,23 @@ def _apply_combat_payload_effects(
         str(world_fact.get("event") or "").upper() == "SPECIAL_OBJECTIVE_COMPLETED"
     )
 
+    # Corbitt victory-critical SO / combat_end require validated SOURCE kill.
+    if is_corbitt_victory_critical(payload):
+        try:
+            guard_special_objective_payload(payload)
+        except CombatResolutionError as exc:
+            payload["blocked"] = True
+            payload["blocked_reason"] = exc.code
+            payload.pop("combat_end", None)
+            payload.pop("completion_phase_deferred", None)
+            if payload.get("flag_updates"):
+                payload["flag_updates"] = {
+                    k: v for k, v in (payload.get("flag_updates") or {}).items()
+                    if k != "corbitt_defeated"
+                }
+            lines.append(f"【システムブロック】{exc.code}: {exc}")
+            return (sys_log + ("\n" if sys_log else "") + "\n".join(lines)).strip()
+
     # Persist special-objective evidence even when the scenario resolves the
     # finale without entering the ordinary attack/defence combat exchange.
     if special_objective and game_state is not None and not state_mgr.in_combat:
@@ -10348,8 +10376,10 @@ def _apply_combat_payload_effects(
             combat_end_condition="scenario_condition",
             transaction_id=objective_transaction_id,
             adjudication_id=payload_adjudication_id,
-            resolution_mode=str(payload.get("resolution_mode") or "NO_ROLL"),
-            resolution_reason=payload_resolution_reason or "SPECIAL_OBJECTIVE_CONDITION",
+            # Evidence mode stays ROLL|NO_ROLL; combat class is DETERMINISTIC_RULE.
+            resolution_mode="NO_ROLL",
+            resolution_class=str(payload.get("resolution_class") or DETERMINISTIC_RULE),
+            resolution_reason=payload_resolution_reason or "DERIVED_AFTER_VALIDATED_KILL",
         )
         append_combat_event(
             game_state, "SPECIAL_OBJECTIVE_COMPLETED", state_mgr=state_mgr,
@@ -10357,8 +10387,9 @@ def _apply_combat_payload_effects(
             actor=pl_id, target=objective_target,
             adjudication_id=payload_adjudication_id,
             transaction_id=objective_transaction_id,
-            resolution_mode=str(payload.get("resolution_mode") or "NO_ROLL"),
-            resolution_reason=payload_resolution_reason or "SPECIAL_OBJECTIVE_CONDITION",
+            resolution_mode="NO_ROLL",
+            resolution_class=str(payload.get("resolution_class") or DETERMINISTIC_RULE),
+            resolution_reason=payload_resolution_reason or "DERIVED_AFTER_VALIDATED_KILL",
             final_result="SPECIAL_OBJECTIVE_COMPLETED",
             objective_outcome="SPECIAL_OBJECTIVE_COMPLETED",
             world_fact=copy.deepcopy(world_fact),
@@ -10411,8 +10442,9 @@ def _apply_combat_payload_effects(
                     combat_end_condition="scenario_condition",
                     transaction_id=selected.get("transaction_id") or "",
                     adjudication_id=payload_adjudication_id,
-                    resolution_mode=str(payload.get("resolution_mode") or "NO_ROLL"),
-                    resolution_reason=payload_resolution_reason or "SPECIAL_OBJECTIVE_CONDITION",
+                    resolution_mode="NO_ROLL",
+                    resolution_class=str(payload.get("resolution_class") or DETERMINISTIC_RULE),
+                    resolution_reason=payload_resolution_reason or "DERIVED_AFTER_VALIDATED_KILL",
                 )
             if payload.get("world_fact"):
                 append_combat_event(
@@ -10420,8 +10452,9 @@ def _apply_combat_payload_effects(
                     actor=pl_id, target=(payload.get("world_fact") or {}).get("target") or "",
                     adjudication_id=payload_adjudication_id,
                     transaction_id=(selected or {}).get("transaction_id") or "",
-                    resolution_mode=str(payload.get("resolution_mode") or "NO_ROLL"),
-                    resolution_reason=payload_resolution_reason or "SPECIAL_OBJECTIVE_CONDITION",
+                    resolution_mode="NO_ROLL",
+                    resolution_class=str(payload.get("resolution_class") or DETERMINISTIC_RULE),
+                    resolution_reason=payload_resolution_reason or "DERIVED_AFTER_VALIDATED_KILL",
                     final_result="SPECIAL_OBJECTIVE_COMPLETED",
                     objective_outcome="SPECIAL_OBJECTIVE_COMPLETED",
                     world_fact=copy.deepcopy(payload.get("world_fact")),
@@ -12585,10 +12618,71 @@ def process_system_action(
         new_pending_push_roll = None
         roll_type = "opposed_str"
     elif not dice_skipped:
-        success_level = int(SuccessLevel.REGULAR_SUCCESS)
-        if not sys_log:
-            sys_log = "判定なし（自動成功）"
-        roll_type = "none"
+        # Fail-closed: combat / irreversible actions must not auto-succeed.
+        try:
+            res_class = declare_resolution_class(
+                resolution_class=str((payload or {}).get("resolution_class") or ""),
+                in_combat=in_combat,
+                action_id=effective_action_id,
+                target=target,
+                payload=payload or {},
+                roll_type="none",
+                dice_skipped=True,
+            )
+        except CombatResolutionError as exc:
+            blocked_payload = scenario_mgr.finalize_blocked_action(
+                effective_action_id, target, {
+                    "system_log": f"【システムブロック】{exc.code}: 戦闘中の状態変更には明示的な判定が必要です。",
+                    "kp_instruction": (
+                        "戦闘アクションが未解決です。ROLL / EXPLICIT_NO_ROLL / "
+                        "DETERMINISTIC_RULE のいずれかを宣言してください。"
+                    ),
+                    "blocked": True,
+                    "blocked_reason": UNRESOLVED_COMBAT_ACTION,
+                    "san_check": {"required": False},
+                },
+            ) if scenario_mgr else {
+                "blocked": True,
+                "blocked_reason": UNRESOLVED_COMBAT_ACTION,
+                "system_log": f"【システムブロック】{exc.code}",
+            }
+            return _build_system_action_result(
+                0,
+                blocked_payload.get("system_log", str(exc)),
+                blocked_payload,
+                effective_action_id,
+                None,
+                current_loc=current_loc,
+                scenario_mgr=scenario_mgr,
+                roll_type="blocked",
+                action_target=target,
+            )
+        if res_class in {EXPLICIT_NO_ROLL, DETERMINISTIC_RULE}:
+            success_level = int(SuccessLevel.REGULAR_SUCCESS)
+            if not sys_log:
+                sys_log = "判定なし（明示契約による成功）"
+            roll_type = "no_roll" if res_class == EXPLICIT_NO_ROLL else "auto_success"
+        elif not in_combat and not is_irreversible_candidate(
+            effective_action_id, target, in_combat=False, payload=payload or {},
+        ):
+            # Legacy non-combat fallthrough (empty clues / trivial moves, etc.).
+            success_level = int(SuccessLevel.REGULAR_SUCCESS)
+            if not sys_log:
+                sys_log = "判定なし（自動成功）"
+            roll_type = "none"
+        else:
+            blocked_payload = {
+                "blocked": True,
+                "blocked_reason": UNRESOLVED_COMBAT_ACTION,
+                "system_log": "【システムブロック】UNRESOLVED_COMBAT_ACTION",
+                "san_check": {"required": False},
+            }
+            return _build_system_action_result(
+                0, blocked_payload["system_log"], blocked_payload,
+                effective_action_id, None,
+                current_loc=current_loc, scenario_mgr=scenario_mgr,
+                roll_type="blocked", action_target=target,
+            )
 
     # 幸運消費の判断待ち：シナリオ処理を保留して PL に委ねる
     if pending_luck_burn:

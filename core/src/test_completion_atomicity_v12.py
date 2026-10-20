@@ -41,6 +41,10 @@ def _event():
             "event": "SPECIAL_OBJECTIVE_COMPLETED",
             "target": "corbitt_body",
             "fact": "CORBITT_BODY_DESTROYED",
+            "validated_kill_route_id": "ROUTE_A_HP0",
+            "fact_origin": "SOURCE",
+            "source_rule_id": "CORBITT_HP0_DUST",
+            "may_define_kill_route": True,
         },
     }
 
@@ -95,6 +99,7 @@ class CompletionAtomicityV12Tests(unittest.TestCase):
         self.assertEqual(len(state["unified_event_log"]), 1)
 
     def test_inactive_finale_persists_objective_before_clear(self):
+        """Derived SO after validated SOURCE kill still commits clear atomically."""
         scenario = ScenarioManager({
             "scenario_meta": {"title": "atomic-finale"},
             "initial_state": {"location": "room", "current_phase": "investigation", "flags": {"corbitt_defeated": False}},
@@ -108,8 +113,18 @@ class CompletionAtomicityV12Tests(unittest.TestCase):
                     "flag_updates": {"corbitt_defeated": True},
                     "new_phase": "clear",
                     "combat_end": True,
-                    "world_fact": {"event": "SPECIAL_OBJECTIVE_COMPLETED", "target": "corbitt_body", "fact": "CORBITT_BODY_DESTROYED"},
-                    "resolution_reason": "SPECIAL_OBJECTIVE:CORBITT_BODY_DESTROYED",
+                    "world_fact": {
+                        "event": "SPECIAL_OBJECTIVE_COMPLETED",
+                        "target": "corbitt_body",
+                        "fact": "CORBITT_BODY_DESTROYED",
+                        "validated_kill_route_id": "ROUTE_A_HP0",
+                        "fact_origin": "SOURCE",
+                        "source_rule_id": "CORBITT_HP0_DUST",
+                        "may_define_kill_route": True,
+                    },
+                    "resolution_reason": "DERIVED_AFTER_VALIDATED_KILL",
+                    "resolution_class": "DETERMINISTIC_RULE",
+                    "resolution_mode": "NO_ROLL",
                 },
             }],
         })
@@ -118,13 +133,43 @@ class CompletionAtomicityV12Tests(unittest.TestCase):
         state = {"current_loc": "room", "unified_event_log": []}
         payload = scenario.process_action("break", "corbitt_body", 2)
         self.assertEqual(scenario.current_phase, "investigation")
-        payload.update({"adjudication_id": "adj-special", "resolution_mode": "NO_ROLL", "target": "corbitt_body", "selected_action": "break"})
+        payload.update({
+            "adjudication_id": "adj-special",
+            "resolution_mode": "NO_ROLL",
+            "resolution_class": "DETERMINISTIC_RULE",
+            "target": "corbitt_body",
+            "selected_action": "break",
+        })
         game_main._apply_combat_payload_effects(payload, combat, characters, "pc", game_state=state, current_loc="room")
         game_main._apply_combat_payload_effects(payload, combat, characters, "pc", game_state=state, current_loc="room")
         result = dict(payload)
         commit_special_objective_completion(state, result, scenario, combat)
         self.assertEqual([e["event_type"] for e in state["unified_event_log"]], ["COMBAT_ACTION_RESOLVED", "SPECIAL_OBJECTIVE_COMPLETED"])
         self.assertEqual(scenario.current_phase, "clear")
+
+    def test_so_without_validated_kill_is_blocked_by_payload_guard(self):
+        characters = _Characters()
+        combat = GameStateManager(characters)
+        state = {"current_loc": "room", "unified_event_log": []}
+        payload = {
+            "adjudication_id": "adj-bad",
+            "target": "corbitt_body",
+            "selected_action": "break",
+            "combat_end": True,
+            "flag_updates": {"corbitt_defeated": True},
+            "world_fact": {
+                "event": "SPECIAL_OBJECTIVE_COMPLETED",
+                "target": "corbitt_body",
+                "fact": "CORBITT_BODY_DESTROYED",
+            },
+            "resolution_mode": "NO_ROLL",
+        }
+        game_main._apply_combat_payload_effects(
+            payload, combat, characters, "pc", game_state=state, current_loc="room",
+        )
+        self.assertTrue(payload.get("blocked"))
+        self.assertEqual(payload.get("blocked_reason"), "SPECIAL_OBJECTIVE_WITHOUT_VALIDATED_KILL_ROUTE")
+        self.assertEqual(state["unified_event_log"], [])
 
 
 if __name__ == "__main__":
