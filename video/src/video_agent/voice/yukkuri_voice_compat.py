@@ -3,12 +3,13 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import os
 import re
 import shutil
 import subprocess
 import struct
 import wave
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
 from video_agent.voice.engines import AquesTalkAdapter
@@ -31,6 +32,7 @@ EXACT_SOURCE = {
 CANDIDATE_IDS = {
     "reimu": "ymm_exact_reimu_v1", "marisa": "ymm_exact_marisa_v1", "sakuya": "ymm_exact_sakuya_v1",
 }
+BASELINE_IDS = {"reimu": "m1_aq_f1", "marisa": "aq_marisa_default", "sakuya": "aq_kp_sakuya_v21"}
 
 
 def sha256_file(path: Path) -> str:
@@ -168,4 +170,169 @@ def measure_loudness(ffmpeg: Path, path: Path) -> dict[str, float | str | None]:
     values = json.loads(blocks[-1])
     return {"integrated_lufs": float(values["input_i"]), "true_peak_dbtp": float(values["input_tp"]),
             "loudness_range_lu": float(values["input_lra"]), "status": "PASS"}
+
+
+def _required_path(explicit: Path | None, environment_name: str, *, directory: bool) -> Path:
+    value = explicit or (Path(os.environ[environment_name]) if os.environ.get(environment_name) else None)
+    kind = "directory" if directory else "file"
+    if value is None:
+        raise ValueError(f"{environment_name} is required for runtime-generated voice fixtures")
+    value = Path(value).expanduser().resolve()
+    valid = value.is_dir() if directory else value.is_file()
+    if not valid:
+        raise ValueError(f"{environment_name} does not identify an existing {kind}: {value}")
+    return value
+
+
+def resolve_csc_path(explicit: Path | None = None) -> Path:
+    if explicit is not None:
+        return _required_path(explicit, "CSC_PATH", directory=False)
+    configured = os.environ.get("CSC_PATH")
+    if configured:
+        return _required_path(Path(configured), "CSC_PATH", directory=False)
+    windows_value = os.environ.get("WINDIR")
+    if not windows_value:
+        raise ValueError("CSC_PATH is required when WINDIR is not configured")
+    windows = Path(windows_value)
+    for candidate in (windows / "Microsoft.NET/Framework/v4.0.30319/csc.exe",
+                      windows / "Microsoft.NET/Framework64/v4.0.30319/csc.exe"):
+        if candidate.is_file():
+            return candidate.resolve()
+    raise ValueError("CSC_PATH is required: no .NET Framework C# compiler was found")
+
+
+def generate_compatibility_fixtures(
+    video_root: Path,
+    output: Path,
+    profiles: dict[str, dict[str, Any]],
+    *,
+    voice_runtime_path: Path | None = None,
+    ffmpeg_path: Path | None = None,
+    csc_path: Path | None = None,
+) -> list[dict[str, Any]]:
+    """Generate the six compatibility WAVs below *output* and return runtime-only measurements."""
+    errors = validate_source_profiles(profiles)
+    if errors:
+        raise ValueError(";".join(errors))
+    root = Path(video_root).resolve()
+    destination_root = Path(output).resolve()
+    voice_root = _required_path(voice_runtime_path, "VOICE_RUNTIME_PATH", directory=True)
+    ffmpeg = _required_path(ffmpeg_path, "FFMPEG_PATH", directory=False)
+    adapter = AquesTalkAdapter(
+        destination_root / ".cache",
+        dll_root=voice_root,
+        bridge_source=root / "src/video_agent/voice/AquesTalkBridge.cs",
+        bridge_exe=destination_root / ".tools/AquesTalkBridge.exe",
+        csc_path=resolve_csc_path(csc_path),
+    )
+    destination_root.mkdir(parents=True, exist_ok=True)
+    records = []
+    for character_id in ("reimu", "marisa", "sakuya"):
+        baseline = profiles[BASELINE_IDS[character_id]]
+        candidate = profiles[CANDIDATE_IDS[character_id]]
+        variants = {}
+        for variant, profile, renderer in (
+            ("baseline", baseline, render_baseline_fixture),
+            ("exact", candidate, render_exact_fixture),
+        ):
+            path = destination_root / f"{character_id}_{variant}.wav"
+            render = renderer(adapter, ffmpeg, FIXTURE_TEXT, profile, path)
+            variants[variant] = {
+                "render": render,
+                "measurement": {**measure_wav(path), **measure_loudness(ffmpeg, path)},
+            }
+        records.append({
+            "character_id": character_id,
+            "fixture_text_phonetic": FIXTURE_TEXT,
+            "baseline_profile_id": baseline["voice_profile_id"],
+            "exact_profile_id": candidate["voice_profile_id"],
+            **variants,
+        })
+    return records
+
+
+def portable_fixture_manifest(records: list[dict[str, Any]], output: Path) -> dict[str, Any]:
+    """Convert runtime records into portable metadata without retaining machine paths."""
+    root = Path(output).resolve()
+    portable_records = json.loads(json.dumps(records))
+    for record in portable_records:
+        for variant in ("baseline", "exact"):
+            render = record[variant]["render"]
+            raw_path = Path(render.pop("raw_synthesis_path")).resolve()
+            render["raw_synthesis_relative_path"] = raw_path.relative_to(root).as_posix()
+            measurement = record[variant]["measurement"]
+            path = Path(measurement.pop("path")).resolve()
+            measurement["relative_path"] = path.relative_to(root).as_posix()
+    return {
+        "fixture_id": "FIXTURE_YMM4_VOICE_COMPAT_001",
+        "schema_version": 2,
+        "path_mode": "RUNTIME_GENERATED",
+        "bit_exact_policy": "DETERMINISTIC_PASS",
+        "status": "PASS",
+        "records": portable_records,
+        "human_review": "PENDING",
+        "active_mapping_changed": False,
+        "pure_direct_ymm_reference": "REFERENCE_NOT_AVAILABLE",
+    }
+
+
+def validate_portable_fixture_manifest(manifest: dict[str, Any]) -> list[str]:
+    errors = []
+    if manifest.get("schema_version") != 2:
+        errors.append("SCHEMA_VERSION")
+    if manifest.get("path_mode") != "RUNTIME_GENERATED":
+        errors.append("PATH_MODE")
+
+    def inspect(value: Any, location: str) -> None:
+        if isinstance(value, dict):
+            for key, child in value.items():
+                if key in {"path", "raw_synthesis_path"}:
+                    errors.append(f"MACHINE_PATH_FIELD:{location}.{key}")
+                inspect(child, f"{location}.{key}")
+        elif isinstance(value, list):
+            for index, child in enumerate(value):
+                inspect(child, f"{location}[{index}]")
+        elif isinstance(value, str):
+            if PureWindowsPath(value).is_absolute() or PurePosixPath(value).is_absolute():
+                errors.append(f"ABSOLUTE_PATH:{location}")
+
+    inspect(manifest, "manifest")
+    return errors
+
+
+def validate_runtime_fixtures(
+    generated: list[dict[str, Any]],
+    expected_manifest: dict[str, Any],
+    *,
+    require_historical_sha: bool,
+) -> list[str]:
+    errors = []
+    expected_records = {row["character_id"]: row for row in expected_manifest.get("records", [])}
+    if len(generated) != 3:
+        errors.append(f"RUNTIME_RECORD_COUNT:{len(generated)}")
+    for record in generated:
+        character_id = record["character_id"]
+        expected = expected_records.get(character_id)
+        if expected is None:
+            errors.append(f"EXPECTED_RECORD_MISSING:{character_id}")
+            continue
+        for variant in ("baseline", "exact"):
+            measurement = record[variant]["measurement"]
+            render = record[variant]["render"]
+            path = Path(measurement["path"])
+            actual_sha = sha256_file(path) if path.is_file() else None
+            prefix = f"{character_id}:{variant}"
+            if not path.is_file() or path.stat().st_size == 0:
+                errors.append(f"GENERATED_WAV_MISSING:{prefix}")
+            if measurement.get("sha256") != actual_sha or render.get("output_sha256") != actual_sha:
+                errors.append(f"GENERATED_SHA_MISMATCH:{prefix}")
+            for field, value in (("sample_rate", 48000), ("channels", 1), ("sample_width_bytes", 2),
+                                 ("status", "PASS")):
+                if measurement.get(field) != value:
+                    errors.append(f"VOICE_CONTRACT_MISMATCH:{prefix}:{field}")
+            if render.get("filter") != expected[variant]["render"].get("filter"):
+                errors.append(f"PLAYBACK_FILTER_MISMATCH:{prefix}")
+            if require_historical_sha and actual_sha != expected[variant]["measurement"].get("sha256"):
+                errors.append(f"HISTORICAL_SHA_MISMATCH:{prefix}")
+    return errors
 
