@@ -579,6 +579,10 @@ def apply_s4_candidate_override(state, pc_action, scenario_mgr=None, actor=""):
     The caller has already given the model the S1/S2/S3 progression across
     preceding no-progress turns.  This function is the final S4 boundary and
     deliberately performs at most one action replacement per stalled streak.
+
+    When director_v2.natural_decision_v1 is enabled, prefer frontier-set recovery
+    (return to meaningful location / restore unresolved high-value frontiers)
+    over binding a single destructive solution action.
     """
     runtime = (state or {}).get("director_v2") or {}
     stall = runtime.get("stall") or {}
@@ -603,6 +607,26 @@ def apply_s4_candidate_override(state, pc_action, scenario_mgr=None, actor=""):
     # forced-action context history provides the per-route idempotency guard.
     if str(stall.get("intervention_level") or "S0") != "S4":
         return pc_action
+
+    if runtime.get("natural_decision_v1"):
+        try:
+            from reasoning.progress_bridge import apply_natural_s4_override
+            natural = apply_natural_s4_override(state, pc_action, candidates=candidates)
+        except Exception:
+            natural = None
+        if natural is not None:
+            if natural.get("s4_recovery_mode") == "FRONTIER_SET_RECOVERY":
+                forced_key = "|".join((
+                    str(natural.get("action") or ""), str(natural.get("target") or ""),
+                    "frontier_set_recovery",
+                ))
+                runtime.setdefault("forced_action_contexts", []).append(forced_key)
+                stall["s4_override_used"] = True
+                stall["s4_recovery_mode"] = "FRONTIER_SET_RECOVERY"
+                # Post-S4 freedom: clear pressure so grace can hold
+                stall["post_s4_freedom"] = True
+            return natural
+
     if not candidates:
         context = str((goal.get("blocked_candidate_actions") or [{}])[0].get("availability_context_version") or "")
         marker = f"{actor}|{context}"
