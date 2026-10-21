@@ -11,6 +11,7 @@ import importlib.util
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
@@ -594,14 +595,55 @@ def git_repository_identity():
     return {'git_commit': commit, 'git_branch': branch, 'git_tags': tags, 'git_dirty': dirty}
 
 
-def formal_run_identity(model, implementation):
+def _preflight_tags_at_head(git_tags):
+    """Return *-preflight-accepted tags currently pointing at HEAD (historical names immutable)."""
+    return [t for t in (git_tags or []) if str(t).endswith('-preflight-accepted')]
+
+
+def _preflight_version(tag_name):
+    match = re.match(r'^v(\d+)-preflight-accepted$', str(tag_name or ''))
+    return int(match.group(1)) if match else -1
+
+
+def formal_run_identity(model, implementation, *, preflight_tag=None, implementation_commit=None):
+    """Admit formal runs without retargeting historical tags (e.g. v5-preflight-accepted).
+
+    Admission requires:
+      - clean worktree on main
+      - either an explicit --preflight-tag that points at HEAD, or any
+        ``*-preflight-accepted`` tag that already points at HEAD
+      - optional --implementation-commit must equal HEAD when provided
+
+    Historical tags are never rewritten by this gate.
+    """
     git_info = git_repository_identity()
-    if git_info['git_dirty'] or git_info['git_branch'] != 'main' or 'v5-preflight-accepted' not in git_info['git_tags']:
+    if git_info['git_dirty'] or git_info['git_branch'] != 'main':
         raise Stop('GIT_IDENTITY_NOT_ACCEPTED')
+
+    head_preflight = _preflight_tags_at_head(git_info['git_tags'])
+    required = str(preflight_tag or '').strip() or None
+    if required:
+        if required not in git_info['git_tags']:
+            raise Stop('GIT_IDENTITY_NOT_ACCEPTED')
+        selected_preflight = required
+    elif head_preflight:
+        # Highest numeric vN-preflight-accepted; never retarget older historical tags.
+        selected_preflight = sorted(head_preflight, key=_preflight_version)[-1]
+    else:
+        raise Stop('GIT_IDENTITY_NOT_ACCEPTED')
+
+    if implementation_commit:
+        expected = str(implementation_commit).strip()
+        if expected and expected != git_info['git_commit']:
+            raise Stop('GIT_IDENTITY_NOT_ACCEPTED')
+
     return {
         'session_id': SESSION_ID,
         'machine_identity': os.environ.get('COMPUTERNAME'),
         **git_info,
+        'preflight_tag': selected_preflight,
+        'implementation_commit': git_info['git_commit'],
+        'historical_tag_retarget_required': False,
         'core_hash': implementation['files'][str(CORE / 'src/main.py')],
         'normalizer_hash': implementation['files'][str(VIDEO / 'src/video_agent/normalizer/session.py')],
         'auditor_hash': implementation['files'][str(VIDEO / 'tools/audit_longrun_formal_v2.py')],
@@ -676,8 +718,21 @@ def cli(argv=None):
         help=(
             'Override evaluation-v2 session directory name. '
             'Default keeps current Night Guard constant; '
-            'use CORBITT_LONGRUN_ITERATION3_V14_HOME_001 for V14 Fresh Full-Long.'
+            'use CORBITT_LONGRUN_ITERATION3_V15_HOME_001 for V15 Fresh Full-Long.'
         ),
+    )
+    parser.add_argument(
+        '--preflight-tag',
+        default=None,
+        help=(
+            'Formal admission tag that must already point at HEAD '
+            '(e.g. v15-preflight-accepted). Does not retarget historical tags.'
+        ),
+    )
+    parser.add_argument(
+        '--implementation-commit',
+        default=None,
+        help='Optional SHA that must equal HEAD (release identity field).',
     )
     args = parser.parse_args(argv)
     configure_session(args.session_id)
@@ -711,7 +766,12 @@ def cli(argv=None):
         print(json.dumps(dry, ensure_ascii=False, indent=2))
         return 0
 
-    run_identity = formal_run_identity(model, identities)
+    run_identity = formal_run_identity(
+        model,
+        identities,
+        preflight_tag=args.preflight_tag,
+        implementation_commit=args.implementation_commit,
+    )
     controller = Controller(output / 'journal')
     controller.state = 'READY'
     controller.next_allowed = True
