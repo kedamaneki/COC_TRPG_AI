@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "design_id": "V16_PREIMPLEMENTATION_FIX_DESIGN_V1",
+  "status": "READY_FOR_HUMAN_REVIEW",
+  "DESIGN_APPROVED_FOR_IMPLEMENTATION": false,
+  "IMPLEMENTATION_STARTED": false,
+  "CODE_CHANGED": 0,
+  "DESIGN_DOCS_COMMITTED": false,
+  "V16_RUN": false,
+  "V16_READY": false,
+  "PRIMARY_A": "COMBAT_TERMINATION_GUARD_GAP",
+  "PRIMARY_B": "NATURAL_DECISION_PRODUCTION_WIRING_GAP",
+  "V15_NDM_QUALITY_VALID_EVALUATION": false,
+  "V15_NDM_QUALITY_INVALID_REASON": "production_main_unwired_natural_decision_v1_unset_stalldetector_primary",
+  "formal_v16_session_id": "CORBITT_LONGRUN_ITERATION3_V16_HOME_001",
+  "smoke_session_id_pattern": "CORBITT_NDM_WIRING_SMOKE_V16PRE_<nnn>",
+  "smoke_uses_formal_v16_id": false,
+  "natural_decision": {
+    "NATURAL_DECISION_REQUIRED": true,
+    "INIT_FAIL_OPEN_TO_LEGACY_FULL_LONG": false,
+    "SAFE_LEGACY_PROGRESSION": "single_reasoning_cycle_failure_only",
+    "NDM_FALLBACK_STREAK_LIMIT_DEFAULT": 3,
+    "production_path": [
+      "Night Guard",
+      "runtime bootstrap",
+      "NATURAL_DECISION_REQUIRED init",
+      "natural_decision_v1",
+      "PL reasoning",
+      "group decision",
+      "Progression safety",
+      "KP assessment",
+      "S0-S4 natural_decision_v1 authority",
+      "Executor"
+    ],
+    "runtime_evidence_required": {
+      "NATURAL_DECISION_RUNTIME_ACTIVE": true,
+      "PL_REASONING_EVENT_COUNT_MIN": 1,
+      "KP_PROGRESS_ASSESSMENT_COUNT_MIN": 1,
+      "S_LEVEL_AUTHORITY": "natural_decision_v1",
+      "LEGACY_STALL_DETECTOR_PRIMARY": false,
+      "LEGACY_DECISION_COMMIT_COUNT": 0
+    },
+    "selected_action_causal_bind": {
+      "required_fields": ["reasoning_id", "decision_source"],
+      "decision_source_ndm": "natural_decision_v1",
+      "unbound_commit_class": "UNBOUND_DECISION_COMMIT"
+    },
+    "DUAL_S_LEVEL_AUTHORITY": "FORBIDDEN"
+  },
+  "combat": {
+    "explicit_reason_and_evidence_required": true,
+    "bare_resolved_forbidden_for_new_paths": true,
+    "non_terminators": [
+      "no_active_target",
+      "boss_policy_returns_none",
+      "empty_combat_candidates"
+    ],
+    "corbitt_final_battle": {
+      "end_allowed_iff": "FULL_CHAIN",
+      "full_chain": [
+        "VALIDATED_KILL",
+        "corbitt_defeated",
+        "DERIVED_SPECIAL_OBJECTIVE_COMPLETED",
+        "COMBAT_ENDING",
+        "TERMINATION_VALIDATION",
+        "COMBAT_ENDED"
+      ],
+      "validated_kill_routes": ["ROUTE_A_HP0", "ROUTE_B_DAGGER"],
+      "forbid_ENDING_ENDED_when": "corbitt_defeated=false AND no validated_kill_route_id OR any_chain_gap",
+      "intermediate_gap_negative_fixtures": ["CN1", "CN2", "CN3", "CN4", "CN5", "CN6", "CN7"],
+      "party_incapacitation_policy": "COMBAT_PARTY_DOWN_or_COMBAT_ABORT_EVALUATION_no_progression_resume"
+    }
+  },
+  "telemetry": {
+    "must_be_numeric_on_full_long_when_runtime_active": [
+      "UNEXPLAINED_ACTION_RATE",
+      "UNRESOLVED_LEAD_ABANDON_RATE",
+      "SELF_RECOVERY_RATE",
+      "MEANINGFUL_PROGRESS_RATE"
+    ],
+    "null_after_active_runtime": "TELEMETRY_CONTRACT_FAIL"
+  },
+  "artifacts": [
+    "docs/V16_PREIMPLEMENTATION_FIX_DESIGN_V1.md",
+    "docs/V16_NDM_PRODUCTION_WIRING_DESIGN.md",
+    "docs/V16_COMBAT_TERMINATION_CONTRACT_DESIGN.md",
+    "docs/V16_NDM_TELEMETRY_DESIGN.md",
+    "docs/V16_PREIMPLEMENTATION_TEST_PLAN.md",
+    "docs/V16_PRECHECK_GATES.md",
+    "docs/V16_PREIMPLEMENTATION_FIX_DESIGN_V1_QA.md",
+    "docs/V16_PREIMPLEMENTATION_FIX_DESIGN_V1.json"
+  ],
+  "RECOMMENDED_NEXT_STEP": "HUMAN_REVIEW_THEN_IMPLEMENTATION"
+}
