@@ -707,10 +707,34 @@ class GameStateManager:
             print(f"[システム] {next_actor_name} のターンです。")
         return actor
 
-    def end_combat(self, reason="resolved"):
-        """戦闘を終了する"""
+    def end_combat(self, reason="resolved", *, state=None, skip_corbitt_contract=False):
+        """戦闘を終了する。
+
+        Corbitt final battle: VALIDATED_KILL full chain required unless
+        skip_corbitt_contract (tests / non-boss) or reason is corbitt_validated_kill
+        with chain already validated on state.
+        """
+        reason = str(reason or "resolved")
+        if not skip_corbitt_contract and state is not None:
+            try:
+                from CombatTerminationContract import (
+                    is_corbitt_final_battle,
+                    forbid_corbitt_auto_end_without_kill,
+                    _chain_store,
+                )
+                if is_corbitt_final_battle(self, state=state):
+                    store = _chain_store(state if isinstance(state, dict) else {})
+                    if reason == "corbitt_validated_kill" and store.get("termination_contract_validated"):
+                        pass
+                    else:
+                        forbid_corbitt_auto_end_without_kill(
+                            state if isinstance(state, dict) else {"flags": {}},
+                            reason=reason,
+                        )
+            except ImportError:
+                pass
         self.combat_state = "ENDING"
-        self.combat_end_reason = str(reason or "resolved")
+        self.combat_end_reason = reason
         self.in_combat = False
         self.turn_order = []
         self.combat_turn_queue = []
