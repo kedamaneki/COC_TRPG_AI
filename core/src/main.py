@@ -10903,8 +10903,27 @@ def _finalize_corbitt_kill_from_hit(
                 )
             except Exception:
                 pass
+            # V16 full termination chain before combat ENDED
+            try:
+                from CombatTerminationContract import run_full_corbitt_termination_chain
+                run_full_corbitt_termination_chain(
+                    game_state,
+                    validated_kill_route_id=str(
+                        kill_payload.get("validated_kill_route_id") or ""
+                    ),
+                    source_rule_id=str(kill_payload.get("source_rule_id") or ""),
+                    combat_id=str(getattr(state_mgr, "combat_id", "") or ""),
+                )
+                if state_mgr and getattr(state_mgr, "in_combat", False):
+                    state_mgr.end_combat(
+                        "corbitt_validated_kill",
+                        state=game_state,
+                        skip_corbitt_contract=False,
+                    )
+            except Exception:
+                pass
     elif state_mgr and getattr(state_mgr, "in_combat", False):
-        state_mgr.end_combat("corbitt_validated_kill")
+        state_mgr.end_combat("corbitt_validated_kill", skip_corbitt_contract=True)
     return kill_payload
 
 
@@ -11046,13 +11065,33 @@ def resolve_melee_combat_exchange(
             log_parts.append(f"【手番】次は {next_name}（ラウンド {state_mgr.round_number}）")
 
         # 戦闘終了判定: 片陣営全滅
+        # V16: Corbitt final battle must NOT end on living<=1 without validated-kill chain.
         living = [
             cid for cid in (state_mgr.combat_turn_queue or state_mgr.turn_order or [])
             if not state_mgr.is_combat_participant_incapacitated(cid)
         ]
         if len(living) <= 1:
-            state_mgr.end_combat()
-            log_parts.append("【戦闘終了】行動可能な戦闘参加者が残りわずかのため戦闘を終了。")
+            ended = False
+            try:
+                from ndm_integration import maybe_end_combat_corbitt_safe
+                ended = maybe_end_combat_corbitt_safe(
+                    state_mgr, game_state if isinstance(game_state, dict) else {},
+                    reason="resolved",
+                )
+            except Exception:
+                # Non-corbitt / legacy path
+                try:
+                    state_mgr.end_combat("resolved", skip_corbitt_contract=True)
+                    ended = True
+                except TypeError:
+                    state_mgr.end_combat("resolved")
+                    ended = True
+            if ended:
+                log_parts.append("【戦闘終了】行動可能な戦闘参加者が残りわずかのため戦闘を終了。")
+            else:
+                log_parts.append(
+                    "【戦闘継続】Corbitt最終戦では validated kill chain なしに living<=1 では終了しない。"
+                )
     else:
         log_parts.append("【戦闘終了】コービット討伐（validated kill route）。")
 
@@ -11192,8 +11231,26 @@ def resolve_shoot_combat_exchange(
             if not state_mgr.is_combat_participant_incapacitated(cid)
         ]
         if len(living) <= 1:
-            state_mgr.end_combat()
-            log_parts.append("【戦闘終了】行動可能な戦闘参加者が残りわずかのため戦闘を終了。")
+            ended = False
+            try:
+                from ndm_integration import maybe_end_combat_corbitt_safe
+                ended = maybe_end_combat_corbitt_safe(
+                    state_mgr, game_state if isinstance(game_state, dict) else {},
+                    reason="resolved",
+                )
+            except Exception:
+                try:
+                    state_mgr.end_combat("resolved", skip_corbitt_contract=True)
+                    ended = True
+                except TypeError:
+                    state_mgr.end_combat("resolved")
+                    ended = True
+            if ended:
+                log_parts.append("【戦闘終了】行動可能な戦闘参加者が残りわずかのため戦闘を終了。")
+            else:
+                log_parts.append(
+                    "【戦闘継続】Corbitt最終戦では validated kill chain なしに living<=1 では終了しない。"
+                )
     else:
         log_parts.append("【戦闘終了】コービット討伐（validated kill route）。")
 
@@ -14867,12 +14924,33 @@ def step_pl_turn(state, char_mgr, scenario_mgr, pl_id, char_name, state_mgr=None
                     transaction_id=original_tid,
                 )
         else:
-            pc_action = apply_stall_candidate_guidance(
-                state, pc_action, scenario_mgr=scenario_mgr, actor=pl_id,
-            )
-            pc_action = apply_s4_candidate_override(
-                state, pc_action, scenario_mgr=scenario_mgr, actor=pl_id,
-            )
+            # V16: Natural Decision production path — causal bind before legacy guidance.
+            try:
+                from ndm_integration import enrich_pc_action_with_ndm, get_active_runtime
+                from reasoning.runtime import get_active_runtime as _gar
+                if _gar() is not None and _gar().active:
+                    pc_action = enrich_pc_action_with_ndm(
+                        state, pc_action, actor_id=pl_id, scenario_mgr=scenario_mgr,
+                    )
+                else:
+                    pc_action = apply_stall_candidate_guidance(
+                        state, pc_action, scenario_mgr=scenario_mgr, actor=pl_id,
+                    )
+                    pc_action = apply_s4_candidate_override(
+                        state, pc_action, scenario_mgr=scenario_mgr, actor=pl_id,
+                    )
+            except Exception:
+                # If NDM required, re-raise; otherwise fall back to legacy guidance.
+                from reasoning.runtime import get_active_runtime as _gar2, NDMInitFailure
+                rt = _gar2()
+                if rt is not None and rt.required:
+                    raise
+                pc_action = apply_stall_candidate_guidance(
+                    state, pc_action, scenario_mgr=scenario_mgr, actor=pl_id,
+                )
+                pc_action = apply_s4_candidate_override(
+                    state, pc_action, scenario_mgr=scenario_mgr, actor=pl_id,
+                )
         if pc_action is not original_pc_action and (
             pc_action.get("director_forced") or pc_action.get("director_guided")
         ):

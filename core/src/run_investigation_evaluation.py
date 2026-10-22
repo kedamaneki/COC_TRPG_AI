@@ -286,6 +286,7 @@ def _initial_state(scenario_file, char_mgr, scenario_mgr, state_mgr):
         "investigation_flow": {},
         "unified_event_log": [],
         "director_v2": {},
+        "ndm_runtime": {},
         "partial_system_log": None,
         "push_decision_required": False,
         "timeline_pending": None,
@@ -627,6 +628,19 @@ def run(args):
         state = _initial_state(args.scenario, char_mgr, scenario_mgr, state_mgr)
         # Keep ScenarioManager/GameStateManager flags as one source of truth.
         scenario_mgr.bind_game_state(state_mgr)
+        # V16: Natural Decision production runtime (required by default).
+        try:
+            from ndm_integration import ensure_ndm_runtime
+            ensure_ndm_runtime(
+                state,
+                required=True,
+                enabled=True,
+                implementation_commit=str(
+                    (os.environ.get("CORBITT_IMPLEMENTATION_COMMIT") or "").strip()
+                ),
+            )
+        except Exception as ndm_exc:
+            raise SystemExit(f"NATURAL_DECISION_INIT_FAILED: {ndm_exc}") from ndm_exc
         main.start_new_ai_session()
         main.begin_autonomous_runtime(state)
         evaluator_state = {}

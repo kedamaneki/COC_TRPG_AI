@@ -20,6 +20,13 @@ from .kp_intervention import KPInterventionPolicy, InterventionLevel
 from .frontier_recovery import FrontierRecoveryPolicy
 from .group_decision import GroupDeliberation
 from .safe_fallback import SafeLegacyProgression, REASONING_MODEL_FALLBACK
+from .runtime import (
+    NaturalDecisionRuntime,
+    NDMInitFailure,
+    UnboundDecisionCommit,
+    bootstrap_natural_decision,
+    DECISION_SOURCE_NDM,
+)
 
 __all__ = [
     "NaturalDecisionPipeline",
@@ -44,4 +51,9 @@ __all__ = [
     "GroupDeliberation",
     "SafeLegacyProgression",
     "REASONING_MODEL_FALLBACK",
+    "NaturalDecisionRuntime",
+    "NDMInitFailure",
+    "UnboundDecisionCommit",
+    "bootstrap_natural_decision",
+    "DECISION_SOURCE_NDM",
 ]

@@ -738,6 +738,8 @@ def cli(argv=None):
     configure_session(args.session_id)
     output = Path(args.output).resolve()
     output.mkdir(parents=True, exist_ok=False)
+    # V16+: Natural Decision required on production Full-Long / smoke launches.
+    os.environ.setdefault('NATURAL_DECISION_REQUIRED', 'true')
     network = NetworkGuardAdapter()
     network.provider('LOCAL_OLLAMA_EXISTING_MODEL')
     model = network.model_identity()

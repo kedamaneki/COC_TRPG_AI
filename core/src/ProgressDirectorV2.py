@@ -431,7 +431,15 @@ class StallDetectorV2:
         else:
             level = "S0"
 
-        runtime.update({
+        # V16: when natural_decision_v1 is active, StallDetector is observer-only.
+        # Do not overwrite intervention_level (S-level authority = natural_decision_v1).
+        ndm_active = bool(
+            runtime.get("natural_decision_v1")
+            or runtime.get("NATURAL_DECISION_RUNTIME_ACTIVE")
+            or str(runtime.get("s_level_authority") or "") == "natural_decision_v1"
+        )
+        prior_level = str(runtime.get("intervention_level") or "S0")
+        update = {
             "no_progress_streak": no_progress,
             "max_no_progress_streak": max(int(runtime.get("max_no_progress_streak") or 0), no_progress),
             "recent_actions": actions,
@@ -441,9 +449,16 @@ class StallDetectorV2:
             "roundtrip_count": roundtrip_count,
             "max_roundtrip_count": max(int(runtime.get("max_roundtrip_count") or 0), roundtrip_count),
             "signals": signals,
-            "intervention_level": level,
             "s4_override_used": s4_override_used,
-        })
+            "observer_recommended_level": level,
+        }
+        if ndm_active:
+            update["intervention_level"] = prior_level
+            update["s_level_authority"] = "natural_decision_v1"
+            update["legacy_stall_detector_primary"] = False
+        else:
+            update["intervention_level"] = level
+        runtime.update(update)
         return runtime
 
 
