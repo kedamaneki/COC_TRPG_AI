@@ -317,8 +317,16 @@ def rank_candidates_by_continuity(goal, location, target_statuses, runtime=None,
     goal = copy.deepcopy(goal or {})
     runtime = runtime or {}
     stall = runtime.get("stall") or {}
-    recent_actions = [tuple(map(str, row[:2])) for row in (stall.get("recent_actions") or []) if row]
-    recent_failed = {tuple(map(str, row[:2])) for row in (stall.get("recent_failed_actions") or []) if row}
+    # V17: read via RecentAction adapter (legacy list or canonical dict)
+    from reasoning.recent_action import normalize_recent_actions
+    try:
+        recent_actions = [r.as_pair() for r in normalize_recent_actions(stall.get("recent_actions") or [])]
+    except Exception:
+        recent_actions = []
+    try:
+        recent_failed = {r.as_pair() for r in normalize_recent_actions(stall.get("recent_failed_actions") or [])}
+    except Exception:
+        recent_failed = set()
     visited = {str(value) for value in (runtime.get("visited_locations") or [])}
 
     ranked = []

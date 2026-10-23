@@ -366,11 +366,29 @@ class StallDetectorV2:
     @staticmethod
     def update(runtime, *, action, target, location_before, location_after, progress_delta):
         runtime = dict(runtime or {})
-        actions = list(runtime.get("recent_actions") or [])
+        from reasoning.recent_action import make_recent_action, normalize_recent_actions
+
+        # V17: canonical RecentAction writes only (no legacy [action,target] lists)
+        actions = [r.to_dict() for r in normalize_recent_actions(runtime.get("recent_actions") or [])]
         locations = list(runtime.get("recent_locations") or [])
-        failed = list(runtime.get("recent_failed_actions") or [])
-        key = [str(action or ""), str(target or "")]
-        actions.append(key)
+        failed_raw = list(runtime.get("recent_failed_actions") or [])
+        try:
+            failed = [r.to_dict() for r in normalize_recent_actions(failed_raw)]
+        except Exception:
+            # failed_actions may still be legacy pairs in old sessions — normalize via adapter
+            failed = []
+            for row in failed_raw:
+                try:
+                    failed.append(normalize_recent_actions([row])[0].to_dict())
+                except Exception:
+                    continue
+        entry = make_recent_action(
+            action=str(action or ""),
+            target=str(target or ""),
+            location=str(location_after or location_before or ""),
+        )
+        key = (entry["action"], entry["target"])
+        actions.append(entry)
         actions = actions[-8:]
         if not locations and location_before:
             locations.append(str(location_before))
@@ -386,12 +404,13 @@ class StallDetectorV2:
             no_progress = int(runtime.get("no_progress_streak") or 0) + 1
             s4_override_used = bool(runtime.get("s4_override_used", False))
             if key[0] and key[0] not in {"move", "wait", "none"}:
-                failed.append(key)
+                failed.append(entry)
                 failed = failed[-8:]
 
         same_action = 1
         for prior in reversed(actions[:-1]):
-            if prior == key:
+            prior_pair = (str(prior.get("action") or ""), str(prior.get("target") or ""))
+            if prior_pair == key:
                 same_action += 1
             else:
                 break
@@ -412,7 +431,12 @@ class StallDetectorV2:
             signals.append("repeated_action")
         if roundtrip_count >= 2:
             signals.append("location_pingpong")
-        if key in failed[:-1]:
+        failed_pairs = {
+            (str(x.get("action") or ""), str(x.get("target") or ""))
+            for x in failed[:-1]
+            if isinstance(x, dict)
+        }
+        if key in failed_pairs:
             signals.append("known_failed_action_reselected")
 
         pressure = max(
@@ -790,6 +814,21 @@ def record_unified_turn(state, scenario_mgr, state_mgr=None, char_mgr=None, *, r
     )
     runtime["stall"] = stall
     runtime["goal"] = goal_after
+    # V17: wire ProgressEvent producers into director_v2.progress_events
+    try:
+        from reasoning.progress_events import emit_progress_from_director_delta
+        emit_progress_from_director_delta(
+            state if isinstance(state, dict) else {"director_v2": runtime},
+            progress=progress,
+            actor_id=str(action.get("actor_id") or action.get("pc_id") or ""),
+        )
+        # ensure runtime buffer survives even if state wrapper differs
+        if isinstance(state, dict):
+            runtime["progress_events"] = list(
+                ((state.get("director_v2") or {}).get("progress_events")) or runtime.get("progress_events") or []
+            )
+    except Exception:
+        pass
 
     dice = (result or {}).get("dice") or {}
     source_evidence = (result or {}).get("adjudication") or {}

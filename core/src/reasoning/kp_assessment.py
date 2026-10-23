@@ -5,6 +5,8 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass, field
 from typing import Any, Mapping, Optional, Sequence
 
+from .recent_action import normalize_recent_actions, RecentActionContractError
+
 
 MEANINGFUL_PROGRESS_KINDS = frozenset({
     "new_fact",
@@ -15,6 +17,10 @@ MEANINGFUL_PROGRESS_KINDS = frozenset({
     "objective_advancement",
     "major_risk_discovery",
     "useful_resource_acquisition",
+    # V17 progress_type aliases (lowercase)
+    "object_state_change",
+    "risk_discovery",
+    "resource_gain",
 })
 
 
@@ -60,22 +66,32 @@ def assess_party_progress(
     hypothesis_tests: Sequence[Mapping[str, Any]] = (),
     alternative_explorations: Sequence[Mapping[str, Any]] = (),
 ) -> KPProgressAssessment:
-    meaningful = any(classify_progress_event(e.get("kind", "")) for e in progress_events)
+    meaningful = any(
+        classify_progress_event(e.get("kind") or e.get("progress_type") or "")
+        for e in progress_events
+        if isinstance(e, Mapping)
+    )
     hyp_test = bool(hypothesis_tests)
     alt_explore = bool(alternative_explorations)
 
+    # V17: normalize recent_actions to canonical dicts before .get
+    try:
+        recent_canon = [r.to_dict() for r in normalize_recent_actions(recent_actions or [])]
+    except RecentActionContractError:
+        raise
+
     # repetition: last 3 actions same action+target
     merely = False
-    if len(recent_actions) >= 3:
+    if len(recent_canon) >= 3:
         keys = [
             (str(a.get("action") or ""), str(a.get("target") or ""))
-            for a in recent_actions[-3:]
+            for a in recent_canon[-3:]
         ]
         merely = len(set(keys)) == 1
 
     remember = True
-    if unresolved_leads and recent_actions:
-        recent_targets = " ".join(str(a.get("target") or "") for a in recent_actions[-5:])
+    if unresolved_leads and recent_canon:
+        recent_targets = " ".join(str(a.get("target") or "") for a in recent_canon[-5:])
         # if no recent action mentions any unresolved lead, may have forgotten
         if not any(str(lead) in recent_targets for lead in unresolved_leads):
             # not conclusive forget — only flag when also merely repeating elsewhere

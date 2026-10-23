@@ -10,6 +10,7 @@ from .knowledge_boundary import (
     KnowledgeBoundaryError,
     ReasoningKnowledgeBoundary,
 )
+from .recent_action import normalize_recent_actions, RecentActionContractError
 
 
 REASONING_MODEL_FALLBACK = "REASONING_MODEL_FALLBACK"
@@ -83,7 +84,12 @@ class SafeLegacyProgression:
         legal_locs = set(legal_locations or [])
         resolved = set(resolved_objectives or [])
         hidden = set(hidden_candidate_ids or [])
-        recent = list(recent_actions or [])
+        # V17: canonical RecentAction only — never .get on legacy lists
+        try:
+            recent_canon = normalize_recent_actions(recent_actions or [])
+        except RecentActionContractError:
+            raise
+        recent = [r.to_dict() for r in recent_canon]
 
         out: list[dict] = []
         for raw in candidates:
