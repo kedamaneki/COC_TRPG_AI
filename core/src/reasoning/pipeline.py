@@ -20,6 +20,7 @@ from .lead_tracker import LeadTracker
 from .pl_policy import PLDecisionPolicy, UnexplainedActionError
 from .pl_state import PLReasoningState
 from .safe_fallback import SafeLegacyProgression, FallbackEvidence, FallbackUnboundedError
+from .recent_action import RecentActionContractError
 
 
 @dataclass
@@ -191,8 +192,11 @@ class NaturalDecisionPipeline:
                 return result
             return result
 
+        except (RecentActionContractError, AttributeError, TypeError, KeyError):
+            # V17: internal contract / programming errors never become SAFE_LEGACY here
+            raise
         except Exception as exc:
-            # Reasoning model failure → SAFE_LEGACY_PROGRESSION
+            # Recoverable reasoning / model failure → SAFE_LEGACY_PROGRESSION
             result.errors.append({"type": type(exc).__name__, "msg": str(exc)})
             all_cands: list[dict] = []
             for cands in candidate_actions_by_actor.values():
@@ -217,6 +221,10 @@ class NaturalDecisionPipeline:
             except FallbackUnboundedError as fb_exc:
                 result.errors.append({"type": "FallbackUnboundedError", "msg": str(fb_exc)})
                 result.mode = "FAIL_CLOSED"
+            except (RecentActionContractError, AttributeError, TypeError, KeyError) as fb_exc:
+                # Fallback itself hit a contract bug → do not recurse; surface failure
+                result.errors.append({"type": type(fb_exc).__name__, "msg": str(fb_exc)})
+                result.mode = "SAFE_FALLBACK_FAILURE"
             return result
 
 

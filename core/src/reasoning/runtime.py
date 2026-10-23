@@ -18,6 +18,20 @@ from .pipeline import NaturalDecisionPipeline, NaturalDecisionResult
 from .pl_policy import PLDecisionPolicy, UnexplainedActionError
 from .pl_state import PLReasoningState
 from .safe_fallback import SafeLegacyProgression, FallbackUnboundedError
+from .recent_action import (
+    RECENT_ACTION_SCHEMA_VERSION,
+    normalize_recent_actions,
+    recent_actions_as_dicts,
+    RecentActionContractError,
+)
+from .error_class import (
+    classify_exception,
+    NDMRuntimeContractViolation,
+    SafeFallbackFailure,
+    FALLBACK_ELIGIBLE,
+    PROGRAMMING_ERROR,
+    RUNTIME_CONTRACT_VIOLATION,
+)
 
 
 DECISION_SOURCE_NDM = "natural_decision_v1"
@@ -58,23 +72,35 @@ class NDMTelemetry:
     kp_progress_assessment_count: int = 0
     selected_action_with_ndm_reasoning_count: int = 0
     selected_action_reasoning_id_missing: int = 0
-    LEGACY_DECISION_COMMIT_COUNT: int = 0
+    # V17 separated counters
+    NDM_DECISION_COMMIT_COUNT: int = 0
+    SAFE_LEGACY_DECISION_COMMIT_COUNT: int = 0
+    UNSAFE_LEGACY_DECISION_COMMIT_COUNT: int = 0
+    REASONING_FALLBACK_COUNT: int = 0
+    RUNTIME_CONTRACT_VIOLATION_COUNT: int = 0
+    SAFE_FALLBACK_FAILURE_COUNT: int = 0
+    SAFE_FALLBACK_RECURSION_COUNT: int = 0
+    # Compat aliases (SAFE only — never conflate unsafe)
     SAFE_LEGACY_PROGRESSION_COUNT: int = 0
+    LEGACY_DECISION_COMMIT_COUNT: int = 0  # deprecated alias; mirrors UNSAFE only after V17
     fallback_streak: int = 0
     unexplained_action_count: int = 0
     lead_abandon_count: int = 0
     self_recovery_count: int = 0
     meaningful_progress_count: int = 0
+    progress_event_count: int = 0
     total_autonomous_commits: int = 0
     ndm_decision_causal_coverage: float = 0.0
+    recent_action_schema_version: int = RECENT_ACTION_SCHEMA_VERSION
     events: list = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return asdict(self)
 
     def recompute_coverage(self) -> float:
-        total = max(1, int(self.total_autonomous_commits))
-        self.ndm_decision_causal_coverage = float(self.selected_action_with_ndm_reasoning_count) / float(total)
+        # V17: NDM / (NDM + SAFE_LEGACY); unsafe excluded (run should block)
+        denom = max(1, int(self.NDM_DECISION_COMMIT_COUNT) + int(self.SAFE_LEGACY_DECISION_COMMIT_COUNT))
+        self.ndm_decision_causal_coverage = float(self.NDM_DECISION_COMMIT_COUNT) / float(denom)
         return self.ndm_decision_causal_coverage
 
     def rates(self) -> dict:
@@ -85,8 +111,17 @@ class NDMTelemetry:
             "SELF_RECOVERY_RATE": float(self.self_recovery_count) / turns,
             "MEANINGFUL_PROGRESS_RATE": float(self.meaningful_progress_count) / turns,
             "NDM_DECISION_CAUSAL_COVERAGE": self.recompute_coverage(),
-            "LEGACY_DECISION_COMMIT_COUNT": self.LEGACY_DECISION_COMMIT_COUNT,
+            "SAFE_FALLBACK_RATE": float(self.SAFE_LEGACY_DECISION_COMMIT_COUNT) / turns,
+            "NDM_DECISION_COMMIT_COUNT": self.NDM_DECISION_COMMIT_COUNT,
+            "SAFE_LEGACY_DECISION_COMMIT_COUNT": self.SAFE_LEGACY_DECISION_COMMIT_COUNT,
+            "UNSAFE_LEGACY_DECISION_COMMIT_COUNT": self.UNSAFE_LEGACY_DECISION_COMMIT_COUNT,
+            "REASONING_FALLBACK_COUNT": self.REASONING_FALLBACK_COUNT,
+            "RUNTIME_CONTRACT_VIOLATION_COUNT": self.RUNTIME_CONTRACT_VIOLATION_COUNT,
+            "SAFE_FALLBACK_FAILURE_COUNT": self.SAFE_FALLBACK_FAILURE_COUNT,
+            "PROGRESS_EVENT_COUNT": self.progress_event_count,
             "SELECTED_ACTION_REASONING_ID_MISSING": self.selected_action_reasoning_id_missing,
+            # deprecated: unsafe-only mirror
+            "LEGACY_DECISION_COMMIT_COUNT": self.UNSAFE_LEGACY_DECISION_COMMIT_COUNT,
         }
 
 
@@ -242,21 +277,45 @@ class NaturalDecisionRuntime:
             st.high_value_leads = open_hv
 
         decision_transaction_id = f"dtx_{uuid.uuid4().hex[:12]}"
+        # V17: validate RecentAction context before pipeline (first failure → BLOCK)
+        try:
+            recent_canon = recent_actions_as_dicts(normalize_recent_actions(recent_actions or []))
+        except RecentActionContractError as exc:
+            self._emit_contract_violation(exc, decision_transaction_id=decision_transaction_id, module="reasoning.runtime")
+            raise NDMRuntimeContractViolation(str(exc), evidence={"decision_transaction_id": decision_transaction_id}) from exc
+
+        # Track progress events for telemetry completeness
+        if progress_events:
+            self.telemetry.progress_event_count += sum(1 for e in progress_events if isinstance(e, Mapping))
+
         try:
             result = self.pipeline.run_cycle(
                 pl_states=[st],
                 candidate_actions_by_actor={actor_id: enriched_candidates},
-                recent_actions=recent_actions,
+                recent_actions=recent_canon,
                 progress_events=progress_events,
                 restore_location=restore_location,
                 use_group=False,
             )
             if result.mode == "REJECT":
                 raise UnboundDecisionCommit("NDM rejected candidates")
+            if result.mode in {"FAIL_CLOSED", "SAFE_FALLBACK_FAILURE"}:
+                self.telemetry.SAFE_FALLBACK_FAILURE_COUNT += 1
+                self.telemetry.events.append({
+                    "event_type": "SAFE_FALLBACK_FAILURE",
+                    "decision_transaction_id": decision_transaction_id,
+                    "mode": result.mode,
+                    "errors": list(result.errors or []),
+                })
+                raise SafeFallbackFailure(
+                    f"pipeline mode={result.mode}",
+                    evidence={"decision_transaction_id": decision_transaction_id, "errors": result.errors},
+                )
             if result.mode == "SAFE_LEGACY_PROGRESSION":
                 return self._commit_safe_legacy(
                     state, result, actor_id=actor_id, candidate_set_id=candidate_set_id,
                     decision_transaction_id=decision_transaction_id,
+                    recent_actions=recent_canon,
                 )
             selected = dict(result.selected_action or {})
             evidence = result.reasoning_evidence or {}
@@ -357,7 +416,11 @@ class NaturalDecisionRuntime:
             selected["ndm_intervention_id"] = intervention_id
             self.assert_commit_bound(selected)
             self.telemetry.selected_action_with_ndm_reasoning_count += 1
+            self.telemetry.NDM_DECISION_COMMIT_COUNT += 1
             self.telemetry.total_autonomous_commits += 1
+            self.telemetry.fallback_streak = 0
+            if self.pipeline and getattr(self.pipeline, "fallback", None):
+                self.pipeline.fallback.reset_streak_on_success()
             self.telemetry.events.append({
                 "event_type": "ACTION_SELECTED",
                 "decision_source": DECISION_SOURCE_NDM,
@@ -372,10 +435,30 @@ class NaturalDecisionRuntime:
             return selected
         except (UnexplainedActionError, KnowledgeBoundaryError, UnboundDecisionCommit):
             raise
-        except FallbackUnboundedError:
+        except (NDMRuntimeContractViolation, SafeFallbackFailure):
             raise
+        except FallbackUnboundedError as exc:
+            self.telemetry.SAFE_FALLBACK_FAILURE_COUNT += 1
+            raise SafeFallbackFailure(str(exc), evidence={"decision_transaction_id": decision_transaction_id}) from exc
         except Exception as exc:
-            # Single reasoning failure → SAFE_LEGACY_PROGRESSION (runtime already active)
+            classified = classify_exception(
+                exc,
+                module="reasoning.runtime.decide",
+                decision_transaction_id=decision_transaction_id,
+            )
+            self.telemetry.events.append({"event_type": "NDM_FAILURE_CLASSIFIED", **classified.to_dict()})
+            if not classified.fallback_eligible or classified.error_class not in FALLBACK_ELIGIBLE:
+                self._emit_contract_violation(
+                    exc,
+                    decision_transaction_id=decision_transaction_id,
+                    module=classified.module,
+                    classified=classified,
+                )
+                raise NDMRuntimeContractViolation(
+                    classified.message or str(exc),
+                    evidence=classified.to_dict(),
+                ) from exc
+            # Recoverable → SAFE_LEGACY (single shot; no recursion)
             return self._fallback_select(
                 state,
                 actor_id=actor_id,
@@ -383,6 +466,8 @@ class NaturalDecisionRuntime:
                 candidate_set_id=candidate_set_id,
                 decision_transaction_id=decision_transaction_id,
                 failure_reason=str(exc),
+                failure_class=classified.error_class,
+                recent_actions=recent_canon,
             )
 
     def _match_candidate_id(self, selected: Mapping[str, Any], candidates: Sequence[Mapping[str, Any]]) -> str:
@@ -393,6 +478,23 @@ class NaturalDecisionRuntime:
                 return str(c.get("candidate_id") or "")
         return ""
 
+    def _emit_contract_violation(
+        self,
+        exc: BaseException,
+        *,
+        decision_transaction_id: str = "",
+        module: str = "",
+        classified: Any = None,
+    ) -> None:
+        info = classified.to_dict() if classified is not None else classify_exception(
+            exc, module=module, decision_transaction_id=decision_transaction_id
+        ).to_dict()
+        self.telemetry.RUNTIME_CONTRACT_VIOLATION_COUNT += 1
+        self.telemetry.events.append({
+            "event_type": "NDM_RUNTIME_CONTRACT_VIOLATION",
+            **info,
+        })
+
     def _commit_safe_legacy(
         self,
         state: dict,
@@ -401,26 +503,50 @@ class NaturalDecisionRuntime:
         actor_id: str,
         candidate_set_id: str,
         decision_transaction_id: str,
+        recent_actions: Sequence[Mapping[str, Any]] = (),
+        failure_class: str = "RECOVERABLE_REASONING_FAILURE",
     ) -> dict:
+        # Re-validate contract before SAFE_LEGACY commit
+        try:
+            normalize_recent_actions(recent_actions or [])
+        except RecentActionContractError as exc:
+            self.telemetry.SAFE_FALLBACK_FAILURE_COUNT += 1
+            self._emit_contract_violation(exc, decision_transaction_id=decision_transaction_id, module="reasoning.safe_legacy")
+            raise SafeFallbackFailure(str(exc), evidence={"decision_transaction_id": decision_transaction_id}) from exc
+
         selected = dict(result.selected_action or {"action": "wait", "target": ""})
+        fallback_id = f"fb_{uuid.uuid4().hex[:10]}"
+        fb_payload = dict(result.fallback or {})
         selected.update({
             "decision_source": DECISION_SOURCE_SAFE_LEGACY,
             "candidate_set_id": candidate_set_id,
             "decision_transaction_id": decision_transaction_id,
             "reasoning_id": f"fallback_{uuid.uuid4().hex[:10]}",
             "selection_reason": "SAFE_LEGACY_PROGRESSION",
-            "fallback": (result.fallback or {}),
+            "fallback": fb_payload,
+            "fallback_id": fallback_id,
+            "fallback_error_class": failure_class,
+            "selected_candidate_id": str(selected.get("candidate_id") or selected.get("selected_candidate_id") or ""),
         })
+        self.telemetry.SAFE_LEGACY_DECISION_COMMIT_COUNT += 1
         self.telemetry.SAFE_LEGACY_PROGRESSION_COUNT += 1
-        self.telemetry.LEGACY_DECISION_COMMIT_COUNT += 1
+        self.telemetry.REASONING_FALLBACK_COUNT += 1
         self.telemetry.fallback_streak += 1
         self.telemetry.total_autonomous_commits += 1
+        # Do NOT increment UNSAFE / deprecated LEGACY violation bucket
         self.telemetry.events.append({
             "event_type": "PL_REASONING_FALLBACK",
+            "fallback_id": fallback_id,
             "fallback_mode": "SAFE_LEGACY_PROGRESSION",
+            "fallback_reason": fb_payload.get("failure_reason") or failure_class,
+            "fallback_error_class": failure_class,
             "decision_source": DECISION_SOURCE_SAFE_LEGACY,
             "decision_transaction_id": decision_transaction_id,
-            "failure_reason": (result.fallback or {}).get("failure_reason"),
+            "candidate_id": selected.get("selected_candidate_id"),
+            "selected_action": selected.get("action"),
+            "selected_target": selected.get("target"),
+            "fallback_streak": self.telemetry.fallback_streak,
+            "failure_reason": fb_payload.get("failure_reason"),
         })
         self._stamp_state(state, active=True)
         return selected
@@ -434,9 +560,29 @@ class NaturalDecisionRuntime:
         candidate_set_id: str,
         decision_transaction_id: str,
         failure_reason: str,
+        failure_class: str = "RECOVERABLE_REASONING_FAILURE",
+        recent_actions: Sequence[Mapping[str, Any]] = (),
+        _depth: int = 0,
     ) -> dict:
-        fb = SafeLegacyProgression(self.boundary)
-        selected, evidence = fb.select(candidates, failure_reason=failure_reason)
+        if _depth > 0:
+            self.telemetry.SAFE_FALLBACK_RECURSION_COUNT += 1
+            self.telemetry.SAFE_FALLBACK_FAILURE_COUNT += 1
+            raise SafeFallbackFailure(
+                "SAFE_FALLBACK_RECURSION forbidden",
+                evidence={"decision_transaction_id": decision_transaction_id},
+            )
+        try:
+            fb = SafeLegacyProgression(self.boundary)
+            selected, evidence = fb.select(
+                candidates,
+                failure_reason=failure_reason,
+                recent_actions=recent_actions,
+            )
+        except Exception as exc:
+            self.telemetry.SAFE_FALLBACK_FAILURE_COUNT += 1
+            classified = classify_exception(exc, module="reasoning.safe_fallback", decision_transaction_id=decision_transaction_id)
+            self.telemetry.events.append({"event_type": "SAFE_FALLBACK_FAILURE", **classified.to_dict()})
+            raise SafeFallbackFailure(str(exc), evidence=classified.to_dict()) from exc
         result = NaturalDecisionResult(
             selected_action=selected or {"action": "wait", "target": "", "reason": "fallback_wait"},
             fallback=evidence.to_dict(),
@@ -445,6 +591,8 @@ class NaturalDecisionRuntime:
         return self._commit_safe_legacy(
             state, result, actor_id=actor_id, candidate_set_id=candidate_set_id,
             decision_transaction_id=decision_transaction_id,
+            recent_actions=recent_actions,
+            failure_class=failure_class,
         )
 
     def _apply_s_level(self, state: dict, level: int, *, intervention_id: str) -> None:
@@ -473,6 +621,9 @@ class NaturalDecisionRuntime:
         rid = str(action.get("reasoning_id") or "")
         if not source or source not in ALLOWED_SOURCES:
             self.telemetry.selected_action_reasoning_id_missing += 1
+            if source in LEGACY_SOURCES or source.startswith("legacy") or source == "unbound_legacy":
+                self.telemetry.UNSAFE_LEGACY_DECISION_COMMIT_COUNT += 1
+                self.telemetry.LEGACY_DECISION_COMMIT_COUNT = self.telemetry.UNSAFE_LEGACY_DECISION_COMMIT_COUNT
             raise UnboundDecisionCommit("UNBOUND_DECISION_COMMIT: missing/invalid decision_source")
         if source == DECISION_SOURCE_NDM:
             if not rid:
@@ -488,7 +639,8 @@ class NaturalDecisionRuntime:
                 if scid not in self._candidate_sets[cset]:
                     raise UnboundDecisionCommit("UNBOUND_DECISION_COMMIT: candidate set mismatch")
         if source in LEGACY_SOURCES and source != DECISION_SOURCE_SAFE_LEGACY:
-            self.telemetry.LEGACY_DECISION_COMMIT_COUNT += 1
+            self.telemetry.UNSAFE_LEGACY_DECISION_COMMIT_COUNT += 1
+            self.telemetry.LEGACY_DECISION_COMMIT_COUNT = self.telemetry.UNSAFE_LEGACY_DECISION_COMMIT_COUNT
             raise UnboundDecisionCommit("LEGACY_DECISION_COMMIT forbidden under NDM authority")
 
     def mark_executed(self, action: Mapping[str, Any]) -> None:
