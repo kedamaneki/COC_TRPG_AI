@@ -83,11 +83,14 @@ def enrich_pc_action_with_ndm(
     if not candidates:
         candidates = [proposal]
 
+    from reasoning.progress_events import progress_events_for_ndm
+
     selected = rt.decide(
         state,
         actor_id=actor_id,
         candidates=candidates,
         recent_actions=list((runtime.get("stall") or {}).get("recent_actions") or []),
+        progress_events=progress_events_for_ndm(state),
         restore_location=str(
             (runtime.get("natural_decision") or {}).get("restore_location")
             or state.get("current_loc")
