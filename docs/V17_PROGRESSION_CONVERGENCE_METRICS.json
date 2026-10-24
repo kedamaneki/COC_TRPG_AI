@@ -1,0 +1,1965 @@
+{
+  "V17_REHASH": {
+    "files": 862,
+    "sha256": "ca7f5627007ec8e0452a6c6de11c4f2d893c28ccc2ab355557065cf0bfcacb9c",
+    "status": "PASS"
+  },
+  "V13_REHASH": {
+    "files": 373,
+    "sha256": "fd42df1dc3278ef3250486235f43a5693de4fea9ad3f7af5fc769690ab18e44d",
+    "status": "PASS"
+  },
+  "result_v17": {
+    "completed": false,
+    "cycles": 60,
+    "turns": 179,
+    "location": "corbitt_ground_floor",
+    "corbitt_defeated": false,
+    "no_progress_count": 169
+  },
+  "result_v13": {
+    "completed": true,
+    "cycles": 25,
+    "turns": 65,
+    "location": "corbitt_basement_room2",
+    "corbitt_defeated": true,
+    "no_progress_count": 55
+  },
+  "milestones": {
+    "V13_BASEMENT_FIRST_ARRIVAL": "C10",
+    "V17_BASEMENT_FIRST_ARRIVAL": "C8",
+    "V13_PLANKS_EXAMINED": "C14",
+    "V13_PLANKS_BROKEN": "C21",
+    "V17_PLANKS_EXAMINED": null,
+    "V17_PLANKS_BROKEN": null,
+    "V13_FINAL_BATTLE_TRIGGER": "C25",
+    "V17_FINAL_BATTLE_TRIGGER": null,
+    "V13_FINAL_CYCLE": 25,
+    "V17_FINAL_CYCLE": 60
+  },
+  "FIRST_CONVERGENCE_DIVERGENCE": {
+    "cycle": 9,
+    "turn_approx": null,
+    "event": "leave_basement_without_plank_resolution",
+    "reason": "After first corbitt_basement arrival (C8) with basement_planks as top continuity candidate, party moved to corbitt_ground_floor (C9) and entered cupboard/door/passage oscillation; basement_planks_examined/broken remained false through C60.",
+    "pre": {
+      "cycle": 8,
+      "location": "corbitt_basement",
+      "action": "search",
+      "target": "scattered_junk",
+      "top_candidate": {
+        "action": "search",
+        "target": "basement_planks",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      },
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": false,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    "post": {
+      "cycle": 9,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "hidden_passage",
+      "top_candidate": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    }
+  },
+  "MEANINGFUL_PROGRESS_RATE": 0.995049504950495,
+  "GOAL_DIRECTED_PROGRESS_RATE": 0.1,
+  "LATERAL_EXPLORATION_PROGRESS_RATE": 0.7,
+  "MAX_GOAL_DIRECTED_NO_PROGRESS_STREAK": 35,
+  "MEANINGFUL_PROGRESS_INFLATION": "true",
+  "progress_event_types_buffered_union": {
+    "NEW_FACT": 13,
+    "NEW_LOCATION": 79,
+    "OBJECT_STATE_CHANGE": 41
+  },
+  "progress_event_class_buffered_union": {
+    "INFORMATION_OR_STATE_PROGRESS": 54,
+    "LATERAL_EXPLORATION_PROGRESS": 79
+  },
+  "progress_event_unique_buffered": 133,
+  "NOTE_PROGRESS_BUFFER": "director_v2.progress_events maxlen=64; union across checkpoints undercounts early events",
+  "FRONTIER_SWITCH_RATE": 0.7627,
+  "FRONTIER_PERSISTENCE": 1.3043,
+  "FRONTIER_CONVERGENCE_QUALITY": "FAIL",
+  "LOCATION_REVISIT_RATE": 0.7619,
+  "UNIQUE_LOCATION_COUNT": 5,
+  "LOCATION_VISIT_TRANSITIONS": 21,
+  "location_cycle_counts": {
+    "introduction": 2,
+    "corbitt_exterior": 5,
+    "corbitt_ground_floor": 37,
+    "corbitt_basement": 5,
+    "corbitt_upper_floor": 11
+  },
+  "GROUND_FLOOR_CYCLE_COUNT": 37,
+  "GROUND_FLOOR_RETURN_COUNT": 8,
+  "GROUND_FLOOR_CYCLE_SHARE": 0.6167,
+  "PROGRESSION_LOCAL_OPTIMUM": true,
+  "STALL_CLASSIFICATION_GAP": true,
+  "KP_EMPTY_UNRESOLVED_LEADS_RATE": 1.0,
+  "KP_EMPTY_AVAILABLE_FRONTIERS_RATE": 1.0,
+  "CRITICAL_TOP_CANDIDATE_PRESENT": 17,
+  "CRITICAL_TOP_CANDIDATE_IGNORED": 17,
+  "action_target_counts": {
+    "move|corbitt_ground_floor": 37,
+    "search|storage_room1_cupboard": 35,
+    "search|basement_door": 29,
+    "search|living_room_clutter": 14,
+    "search|hidden_passage": 12,
+    "search|basement_planks": 10,
+    "search|kitchen_breaker_box": 9,
+    "move|corbitt_upper_floor": 8,
+    "inspect|basement_door": 7,
+    "search|spare_bedroom_bed": 6,
+    "search|scattered_junk": 5,
+    "move|corbitt_basement": 5,
+    "search|master_bedroom_bookshelf": 4,
+    "wait|": 2,
+    "search|corbitt_house": 2,
+    "search|exterior_windows": 2,
+    "search|bathroom_bathtub": 2,
+    "search|knott_letter": 1,
+    "talk|steven_knott": 1,
+    "search|corbitt_house_exterior_view": 1,
+    "search|front_door": 1,
+    "inspect|front_door": 1,
+    "search|1階の窓": 1,
+    "use|front_door": 1,
+    "use|corbitt_house": 1,
+    "break|basement_door": 1,
+    "search|corbitt_upper_floor": 1,
+    "search|ground_floor_windows": 1,
+    "move|corbitt_exterior": 1,
+    "search|corbitt_ground_floor": 1
+  },
+  "basement_planks_search_count": 10,
+  "move_basement_count": 5,
+  "cupboard_search_count": 35,
+  "basement_door_search_count": 29,
+  "goal_state": {
+    "current_goal_constant": "悪霊の家",
+    "remaining_requirements_always_empty": true,
+    "completed_requirements_always_empty": true
+  },
+  "gaps": {
+    "SCENARIO_FRONTIER_GAP": false,
+    "GOAL_TO_LEAD_GAP": true,
+    "LEAD_TO_FRONTIER_GAP": true,
+    "FRONTIER_TO_ACTION_GAP": true,
+    "ACTION_TO_STATE_EFFECT_GAP": true,
+    "NDM_DECISION_POLICY_PROBLEM": "partial"
+  },
+  "PRIMARY_ROOT_CAUSE": "MEANINGFUL_PROGRESS_INFLATION + GOAL_CONVERGENCE_SIGNAL_GAP: NEW_LOCATION/OBJECT_STATE_CHANGE keep KP meaningful_progress=true (trend=advancing), while goal/lead/frontier signals stay empty; after C8 basement arrival the party abandons unresolved planks lead and oscillates on ground_floor cupboard/door/passage.",
+  "SECONDARY_ROOT_CAUSES": [
+    "FRONTIER_PRIORITIZATION_GAP (equal continuity scores; novelty/local targets compete with planks)",
+    "ACTION_TO_STATE_EFFECT_GAP (repeated basement_planks search without plank examined/broken flags)",
+    "STALL_CLASSIFICATION_GAP (director no_progress_streak rises but KP resets intervention via meaningful progress)",
+    "GOAL_TO_LEAD_GAP / LEAD_TO_FRONTIER_GAP (KP unresolved_leads and available_meaningful_frontiers always [])"
+  ],
+  "V17_FAILURE_INTERPRETATION": [
+    "MEANINGFUL_PROGRESS_INFLATION",
+    "GOAL_CONVERGENCE_SIGNAL_GAP",
+    "FRONTIER_PRIORITIZATION_GAP",
+    "STALL_CLASSIFICATION_GAP",
+    "MULTI_COMPONENT"
+  ],
+  "V18_FIX_SCOPE": "MULTI_COMPONENT_FIX",
+  "V18_READY": false,
+  "timeline_v17_compact": [
+    {
+      "cycle": 1,
+      "location": "introduction",
+      "action": null,
+      "target": null,
+      "goal": null,
+      "planks": "None/None",
+      "bsmt_acc": null,
+      "streak": null,
+      "top_cand": null
+    },
+    {
+      "cycle": 2,
+      "location": "introduction",
+      "action": "wait",
+      "target": "",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": false,
+      "streak": 1,
+      "top_cand": null
+    },
+    {
+      "cycle": 3,
+      "location": "corbitt_exterior",
+      "action": "wait",
+      "target": "",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": false,
+      "streak": 1,
+      "top_cand": {
+        "action": "search",
+        "target": "corbitt_house",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 4,
+      "location": "corbitt_exterior",
+      "action": "search",
+      "target": "exterior_windows",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": false,
+      "streak": 1,
+      "top_cand": {
+        "action": "search",
+        "target": "corbitt_house",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 5,
+      "location": "corbitt_exterior",
+      "action": "use",
+      "target": "corbitt_house",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": false,
+      "streak": 0,
+      "top_cand": {
+        "action": "use",
+        "target": "corbitt_house",
+        "score": 170,
+        "local_frontier": true,
+        "components": {
+          "declared_state_effect": 25,
+          "goal_continuity": 45,
+          "local_frontier": 100
+        }
+      }
+    },
+    {
+      "cycle": 6,
+      "location": "corbitt_exterior",
+      "action": "use",
+      "target": "corbitt_house",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": false,
+      "streak": 0,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_ground_floor",
+        "score": 5,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20
+        }
+      }
+    },
+    {
+      "cycle": 7,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "basement_door",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": false,
+      "streak": 1,
+      "top_cand": {
+        "action": "push",
+        "target": "basement_door",
+        "score": 170,
+        "local_frontier": true,
+        "components": {
+          "declared_state_effect": 25,
+          "goal_continuity": 45,
+          "local_frontier": 100
+        }
+      }
+    },
+    {
+      "cycle": 8,
+      "location": "corbitt_basement",
+      "action": "search",
+      "target": "scattered_junk",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 1,
+      "top_cand": {
+        "action": "search",
+        "target": "basement_planks",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 9,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "hidden_passage",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 4,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 10,
+      "location": "corbitt_upper_floor",
+      "action": "search",
+      "target": "bathroom_bathtub",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 0,
+      "top_cand": {
+        "action": "search",
+        "target": "spare_bedroom_bed",
+        "score": 65,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30,
+          "recent_context": 10
+        }
+      }
+    },
+    {
+      "cycle": 11,
+      "location": "corbitt_upper_floor",
+      "action": "search",
+      "target": "master_bedroom_bookshelf",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 0,
+      "top_cand": {
+        "action": "search",
+        "target": "spare_bedroom_bed",
+        "score": 65,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30,
+          "recent_context": 10
+        }
+      }
+    },
+    {
+      "cycle": 12,
+      "location": "corbitt_upper_floor",
+      "action": "search",
+      "target": "master_bedroom_bookshelf",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 2,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_ground_floor",
+        "score": -15,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 13,
+      "location": "corbitt_upper_floor",
+      "action": "move",
+      "target": "corbitt_upper_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 5,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_ground_floor",
+        "score": -35,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "recent_context": 10,
+          "recent_location_loop": -30,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 14,
+      "location": "corbitt_upper_floor",
+      "action": "move",
+      "target": "corbitt_upper_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 5,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_ground_floor",
+        "score": -35,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "recent_context": 10,
+          "recent_location_loop": -30,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 15,
+      "location": "corbitt_upper_floor",
+      "action": "move",
+      "target": "corbitt_upper_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 5,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_ground_floor",
+        "score": -35,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "recent_context": 10,
+          "recent_location_loop": -30,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 16,
+      "location": "corbitt_upper_floor",
+      "action": "move",
+      "target": "corbitt_upper_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 9,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 17,
+      "location": "corbitt_basement",
+      "action": "move",
+      "target": "corbitt_basement",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 13,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 65,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30,
+          "recent_context": 10
+        }
+      }
+    },
+    {
+      "cycle": 18,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "basement_door",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 17,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 19,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "basement_door",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 17,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 20,
+      "location": "corbitt_basement",
+      "action": "search",
+      "target": "scattered_junk",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 21,
+      "top_cand": {
+        "action": "search",
+        "target": "basement_planks",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 21,
+      "location": "corbitt_basement",
+      "action": "search",
+      "target": "scattered_junk",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 21,
+      "top_cand": {
+        "action": "search",
+        "target": "basement_planks",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 22,
+      "location": "corbitt_exterior",
+      "action": "move",
+      "target": "corbitt_exterior",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 25,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 23,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "living_room_clutter",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 29,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 24,
+      "location": "corbitt_ground_floor",
+      "action": "move",
+      "target": "corbitt_ground_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 33,
+      "top_cand": {
+        "action": "move",
+        "target": "the_neighborhood",
+        "score": -15,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 25,
+      "location": "corbitt_basement",
+      "action": "move",
+      "target": "corbitt_basement",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 37,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 26,
+      "location": "corbitt_ground_floor",
+      "action": "move",
+      "target": "corbitt_ground_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 41,
+      "top_cand": {
+        "action": "search",
+        "target": "basement_planks",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 27,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "storage_room1_cupboard",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 45,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 28,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "storage_room1_cupboard",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 48,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 65,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30,
+          "recent_context": 10
+        }
+      }
+    },
+    {
+      "cycle": 29,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "basement_door",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 50,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 65,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30,
+          "recent_context": 10
+        }
+      }
+    },
+    {
+      "cycle": 30,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "basement_door",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 50,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 65,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30,
+          "recent_context": 10
+        }
+      }
+    },
+    {
+      "cycle": 31,
+      "location": "corbitt_ground_floor",
+      "action": "wait",
+      "target": "",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 51,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 65,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30,
+          "recent_context": 10
+        }
+      }
+    },
+    {
+      "cycle": 32,
+      "location": "corbitt_ground_floor",
+      "action": "move",
+      "target": "corbitt_ground_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 55,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_ground_floor",
+        "score": -35,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "recent_context": 10,
+          "recent_location_loop": -30,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 33,
+      "location": "corbitt_ground_floor",
+      "action": "wait",
+      "target": "",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 58,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 34,
+      "location": "corbitt_upper_floor",
+      "action": "move",
+      "target": "corbitt_upper_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 62,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 35,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "basement_door",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 66,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 36,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "storage_room1_cupboard",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 0,
+      "top_cand": {
+        "action": "search",
+        "target": "storage_room1_cupboard",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 37,
+      "location": "corbitt_upper_floor",
+      "action": "wait",
+      "target": "",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 2,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_ground_floor",
+        "score": -45,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "recent_location_loop": -30,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 38,
+      "location": "corbitt_ground_floor",
+      "action": "move",
+      "target": "corbitt_ground_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 6,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_ground_floor",
+        "score": -35,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "recent_context": 10,
+          "recent_location_loop": -30,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 39,
+      "location": "corbitt_upper_floor",
+      "action": "wait",
+      "target": "",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 8,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_ground_floor",
+        "score": -35,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "recent_context": 10,
+          "recent_location_loop": -30,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 40,
+      "location": "corbitt_ground_floor",
+      "action": "move",
+      "target": "corbitt_ground_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 12,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_ground_floor",
+        "score": -35,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "recent_context": 10,
+          "recent_location_loop": -30,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 41,
+      "location": "corbitt_ground_floor",
+      "action": "move",
+      "target": "corbitt_ground_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 15,
+      "top_cand": {
+        "action": "search",
+        "target": "kitchen_breaker_box",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 42,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "ground_floor_windows",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 0,
+      "top_cand": {
+        "action": "search",
+        "target": "kitchen_breaker_box",
+        "score": 65,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30,
+          "recent_context": 10
+        }
+      }
+    },
+    {
+      "cycle": 43,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "basement_door",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 4,
+      "top_cand": {
+        "action": "search",
+        "target": "kitchen_breaker_box",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 44,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "kitchen_breaker_box",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 1,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_basement",
+        "score": -15,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 45,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "basement_door",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 5,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_basement",
+        "score": -15,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 46,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "hidden_passage",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 9,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_basement",
+        "score": -15,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 47,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "hidden_passage",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 13,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_basement",
+        "score": -15,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 48,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "basement_door",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 17,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_basement",
+        "score": -15,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 49,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "hidden_passage",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 21,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_basement",
+        "score": -15,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 50,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "basement_door",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 25,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_basement",
+        "score": -15,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 51,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "basement_door",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 29,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_basement",
+        "score": -15,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 52,
+      "location": "corbitt_ground_floor",
+      "action": "move",
+      "target": "corbitt_ground_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 33,
+      "top_cand": {
+        "action": "search",
+        "target": "basement_planks",
+        "score": 55,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "new_local_information": 30
+        }
+      }
+    },
+    {
+      "cycle": 53,
+      "location": "corbitt_ground_floor",
+      "action": "inspect",
+      "target": "basement_door",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 37,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_exterior",
+        "score": -15,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 54,
+      "location": "corbitt_ground_floor",
+      "action": "move",
+      "target": "corbitt_ground_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 41,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_ground_floor",
+        "score": -45,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "recent_location_loop": -30,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 55,
+      "location": "corbitt_ground_floor",
+      "action": "move",
+      "target": "corbitt_ground_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 45,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_ground_floor",
+        "score": -5,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "recent_context": 10,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 56,
+      "location": "corbitt_ground_floor",
+      "action": "wait",
+      "target": "",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 48,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_basement",
+        "score": -15,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 57,
+      "location": "corbitt_upper_floor",
+      "action": "move",
+      "target": "corbitt_upper_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 52,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_basement",
+        "score": -15,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 58,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "living_room_clutter",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 56,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_basement",
+        "score": -15,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 59,
+      "location": "corbitt_ground_floor",
+      "action": "inspect",
+      "target": "basement_door",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 57,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_basement",
+        "score": -15,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "visited_destination": -20
+        }
+      }
+    },
+    {
+      "cycle": 60,
+      "location": "corbitt_ground_floor",
+      "action": "move",
+      "target": "corbitt_ground_floor",
+      "goal": "悪霊の家",
+      "planks": "False/False",
+      "bsmt_acc": true,
+      "streak": 61,
+      "top_cand": {
+        "action": "move",
+        "target": "corbitt_ground_floor",
+        "score": -35,
+        "local_frontier": false,
+        "components": {
+          "declared_state_effect": 25,
+          "movement_cost": -20,
+          "recent_context": 10,
+          "recent_location_loop": -30,
+          "visited_destination": -20
+        }
+      }
+    }
+  ],
+  "timeline_v13_compact": [
+    {
+      "cycle": 1,
+      "location": "introduction",
+      "action": null,
+      "target": null,
+      "flags": {
+        "basement_accessible": null,
+        "basement_door_unlocked": null,
+        "basement_planks_examined": null,
+        "basement_planks_broken": null,
+        "in_basement": null,
+        "hidden_passage_found": null,
+        "junk_searched": null,
+        "has_corbitt_knife": null,
+        "corbitt_body_encountered": null,
+        "trigger_corbitt_boss_battle": null,
+        "corbitt_defeated": null,
+        "corbitt_house_entered": null,
+        "living_room_investigated": null
+      }
+    },
+    {
+      "cycle": 2,
+      "location": "introduction",
+      "action": "talk",
+      "target": "steven_knott",
+      "flags": {
+        "basement_accessible": false,
+        "basement_door_unlocked": false,
+        "basement_planks_examined": false,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": false,
+        "junk_searched": false,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": false,
+        "living_room_investigated": false
+      }
+    },
+    {
+      "cycle": 3,
+      "location": "corbitt_exterior",
+      "action": "search",
+      "target": "1階の窓",
+      "flags": {
+        "basement_accessible": false,
+        "basement_door_unlocked": false,
+        "basement_planks_examined": false,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": false,
+        "junk_searched": false,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": false,
+        "living_room_investigated": false
+      }
+    },
+    {
+      "cycle": 4,
+      "location": "corbitt_exterior",
+      "action": "wait",
+      "target": "",
+      "flags": {
+        "basement_accessible": false,
+        "basement_door_unlocked": false,
+        "basement_planks_examined": false,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": false,
+        "junk_searched": false,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": false,
+        "living_room_investigated": false
+      }
+    },
+    {
+      "cycle": 5,
+      "location": "corbitt_exterior",
+      "action": "wait",
+      "target": "",
+      "flags": {
+        "basement_accessible": false,
+        "basement_door_unlocked": false,
+        "basement_planks_examined": false,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": false,
+        "junk_searched": false,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": false,
+        "living_room_investigated": false
+      }
+    },
+    {
+      "cycle": 6,
+      "location": "corbitt_exterior",
+      "action": "search",
+      "target": "corbitt_house",
+      "flags": {
+        "basement_accessible": false,
+        "basement_door_unlocked": false,
+        "basement_planks_examined": false,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": false,
+        "junk_searched": false,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": false,
+        "living_room_investigated": false
+      }
+    },
+    {
+      "cycle": 7,
+      "location": "corbitt_exterior",
+      "action": "use",
+      "target": "corbitt_house",
+      "flags": {
+        "basement_accessible": false,
+        "basement_door_unlocked": false,
+        "basement_planks_examined": false,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": false,
+        "junk_searched": false,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": false
+      }
+    },
+    {
+      "cycle": 8,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "basement_door",
+      "flags": {
+        "basement_accessible": false,
+        "basement_door_unlocked": false,
+        "basement_planks_examined": false,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": false,
+        "junk_searched": false,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 9,
+      "location": "corbitt_ground_floor",
+      "action": "force",
+      "target": "basement_door",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": false,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": false,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 10,
+      "location": "corbitt_basement",
+      "action": "search",
+      "target": "scattered_junk",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": false,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 11,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "basement_door",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": false,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 12,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "ground_floor_windows",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": false,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 13,
+      "location": "corbitt_basement",
+      "action": "search",
+      "target": "wall_planks",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": false,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 14,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "storage_room1_cupboard",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": true,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 15,
+      "location": "corbitt_ground_floor",
+      "action": "search",
+      "target": "basement_door",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": true,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 16,
+      "location": "corbitt_upper_floor",
+      "action": "move",
+      "target": "corbitt_upper_floor",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": true,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 17,
+      "location": "corbitt_upper_floor",
+      "action": "search",
+      "target": "spare_bedroom_bed",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": true,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 18,
+      "location": "corbitt_upper_floor",
+      "action": "search",
+      "target": "bathroom_bathtub",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": true,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 19,
+      "location": "corbitt_upper_floor",
+      "action": "search",
+      "target": "bathroom_bathtub",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": true,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 20,
+      "location": "corbitt_ground_floor",
+      "action": "move",
+      "target": "corbitt_ground_floor",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": true,
+        "basement_planks_broken": false,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 21,
+      "location": "corbitt_basement",
+      "action": "listen",
+      "target": "wall_planks",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": true,
+        "basement_planks_broken": true,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 22,
+      "location": "corbitt_basement",
+      "action": "listen",
+      "target": "",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": true,
+        "basement_planks_broken": true,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 23,
+      "location": "corbitt_basement",
+      "action": "listen",
+      "target": "",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": true,
+        "basement_planks_broken": true,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 24,
+      "location": "corbitt_basement",
+      "action": "wait",
+      "target": "",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": true,
+        "basement_planks_broken": true,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": false,
+        "trigger_corbitt_boss_battle": false,
+        "corbitt_defeated": false,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    },
+    {
+      "cycle": 25,
+      "location": "corbitt_basement_room2",
+      "action": "move",
+      "target": "corbitt_basement_room2",
+      "flags": {
+        "basement_accessible": true,
+        "basement_door_unlocked": true,
+        "basement_planks_examined": true,
+        "basement_planks_broken": true,
+        "in_basement": false,
+        "hidden_passage_found": true,
+        "junk_searched": true,
+        "has_corbitt_knife": false,
+        "corbitt_body_encountered": true,
+        "trigger_corbitt_boss_battle": true,
+        "corbitt_defeated": true,
+        "corbitt_house_entered": true,
+        "living_room_investigated": true
+      }
+    }
+  ],
+  "HIDDEN_SOLUTION_USED_FOR_ANALYSIS": 0,
+  "CODE_CHANGED": 0,
+  "V17_RAW_CHANGED": 0
+}
