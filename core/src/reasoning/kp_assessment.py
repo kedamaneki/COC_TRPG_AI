@@ -36,6 +36,14 @@ class KPProgressAssessment:
     intervention_history: list[dict] = field(default_factory=list)
     current_hint_level: int = 0  # S0..S4
     meaningful_progress_this_cycle: bool = False
+    # V18 dual-stall inputs
+    goal_directed_progress_this_cycle: bool = False
+    lateral_exploration_progress_this_cycle: bool = False
+    terminal_progress_this_cycle: bool = False
+    activity_stall: int = 0
+    goal_convergence_stall: int = 0
+    local_optimum: bool = False
+    frontier_ignore_streak: int = 0
     testing_valid_hypothesis: bool = False
     exploring_valid_alternative: bool = False
     merely_repeating: bool = False
@@ -65,12 +73,35 @@ def assess_party_progress(
     progress_events: Sequence[Mapping[str, Any]] = (),
     hypothesis_tests: Sequence[Mapping[str, Any]] = (),
     alternative_explorations: Sequence[Mapping[str, Any]] = (),
+    visible_goal_ids: Sequence[str] = (),
+    known_blocker_ids: Sequence[str] = (),
+    activity_stall: int = 0,
+    goal_convergence_stall: int = 0,
+    local_optimum: bool = False,
+    frontier_ignore_streak: int = 0,
 ) -> KPProgressAssessment:
-    meaningful = any(
+    from .progress_semantics_v2 import summarize_cycle_progress
+
+    summary = summarize_cycle_progress(
+        [e for e in progress_events if isinstance(e, Mapping)],
+        visible_goal_ids=visible_goal_ids or unresolved_leads,
+        unresolved_lead_ids=unresolved_leads,
+        known_blocker_ids=known_blocker_ids,
+        known_frontier_ids=available_frontiers,
+    )
+    # Fallback: legacy kind-only meaningful if no v2 classes fired but kinds match
+    legacy_meaningful = any(
         classify_progress_event(e.get("kind") or e.get("progress_type") or "")
         for e in progress_events
         if isinstance(e, Mapping)
     )
+    meaningful = bool(summary["meaningful_progress"] or legacy_meaningful)
+    goal_directed = bool(summary["goal_directed_progress"])
+    lateral = bool(summary["lateral_exploration_progress"])
+    if meaningful and not goal_directed and not lateral:
+        # Explicit class / legacy kind without GD links → lateral exploration
+        lateral = True
+    terminal = bool(summary["terminal_progress"])
     hyp_test = bool(hypothesis_tests)
     alt_explore = bool(alternative_explorations)
 
@@ -97,8 +128,10 @@ def assess_party_progress(
             # not conclusive forget — only flag when also merely repeating elsewhere
             remember = not merely
 
-    if meaningful:
+    if goal_directed:
         trend = "advancing"
+    elif lateral or meaningful:
+        trend = "exploring"
     elif hyp_test or alt_explore:
         trend = "exploring"
     elif merely:
@@ -108,12 +141,21 @@ def assess_party_progress(
 
     necessary = False
     least = 0
+    # Activity stall: no meaningful at all
     if merely and not meaningful and not hyp_test and not alt_explore:
         necessary = True
         least = 1  # S1 self-review at minimum
         if not remember:
             least = max(least, 2)
-        # further escalation left to InterventionPolicy with history
+    # Goal convergence stall with lateral-only progress → soft self-review, not S4
+    if int(goal_convergence_stall) >= 3 and not goal_directed and unresolved_leads:
+        necessary = True
+        least = max(least, 1)
+        if int(frontier_ignore_streak) >= 3:
+            least = max(least, 2)
+    if local_optimum:
+        necessary = True
+        least = max(least, 1)
 
     return KPProgressAssessment(
         party_understanding=list(party_understanding),
@@ -126,6 +168,13 @@ def assess_party_progress(
         intervention_history=[dict(x) for x in intervention_history],
         current_hint_level=int(current_hint_level),
         meaningful_progress_this_cycle=meaningful,
+        goal_directed_progress_this_cycle=goal_directed,
+        lateral_exploration_progress_this_cycle=lateral,
+        terminal_progress_this_cycle=terminal,
+        activity_stall=int(activity_stall),
+        goal_convergence_stall=int(goal_convergence_stall),
+        local_optimum=bool(local_optimum),
+        frontier_ignore_streak=int(frontier_ignore_streak),
         testing_valid_hypothesis=hyp_test,
         exploring_valid_alternative=alt_explore,
         merely_repeating=merely,
@@ -138,10 +187,19 @@ def assess_party_progress(
 
 def stall_weight(assessment: KPProgressAssessment) -> float:
     """Reduce stall accrual when rational exploration continues without mutation."""
-    if assessment.meaningful_progress_this_cycle:
+    # Goal-directed clears activity stall accrual
+    if assessment.goal_directed_progress_this_cycle or assessment.terminal_progress_this_cycle:
+        return 0.0
+    # Lateral progress: activity stall weight 0, but goal convergence may still accrue via policy
+    if assessment.lateral_exploration_progress_this_cycle:
+        return 0.0
+    if assessment.meaningful_progress_this_cycle and not assessment.unresolved_leads:
         return 0.0
     if assessment.testing_valid_hypothesis or assessment.exploring_valid_alternative:
         return 0.25
     if assessment.merely_repeating:
         return 1.0
+    # Goal convergence pressure without activity progress
+    if int(assessment.goal_convergence_stall) > 0 and assessment.unresolved_leads:
+        return 0.35
     return 0.5

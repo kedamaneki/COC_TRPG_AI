@@ -188,12 +188,21 @@ class TestKPIntervention(unittest.TestCase):
     def test_r4_no_intervention_during_meaningful_elsewhere(self):
         policy = KPInterventionPolicy(s1_threshold=2, s2_threshold=4, s3_threshold=6, s4_threshold=8)
         runtime = InterventionRuntimeState(stall_score=5.0, current_s_level=2)
+        # V18: full de-escalation requires goal-directed progress (linked lead/goal),
+        # not lateral NEW_FACT alone.
         assessment = assess_party_progress(
             unresolved_leads=["basement_planks"],
             available_frontiers=["basement_planks", "library_clue"],
-            progress_events=[{"kind": "new_fact"}],
+            progress_events=[{
+                "kind": "new_fact",
+                "progress_type": "NEW_FACT",
+                "lead_ids": ["basement_planks"],
+                "goal_ids": ["investigate_basement"],
+            }],
+            visible_goal_ids=["investigate_basement"],
             recent_actions=[{"action": "search", "target": "library"}],
         )
+        self.assertTrue(assessment.goal_directed_progress_this_cycle)
         decision, runtime = policy.decide(assessment, runtime, frontier_set=["basement_planks"])
         self.assertEqual(decision.s_level, 0)
         self.assertTrue(decision.deescalated)
@@ -303,8 +312,15 @@ class TestKPIntervention(unittest.TestCase):
         assessment = assess_party_progress(
             unresolved_leads=["basement_planks"],
             available_frontiers=["basement_planks"],
-            progress_events=[{"kind": "new_viable_lead"}],
+            progress_events=[{
+                "kind": "new_viable_lead",
+                "progress_type": "NEW_VIABLE_LEAD",
+                "lead_ids": ["basement_planks"],
+                "goal_ids": ["investigate_basement"],
+            }],
+            visible_goal_ids=["investigate_basement"],
         )
+        self.assertTrue(assessment.goal_directed_progress_this_cycle)
         decision, runtime = policy.decide(assessment, runtime, frontier_set=["basement_planks"])
         self.assertEqual(decision.s_level, 0)
         self.assertEqual(runtime.current_s_level, 0)

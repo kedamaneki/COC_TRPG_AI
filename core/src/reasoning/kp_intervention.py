@@ -56,6 +56,11 @@ class InterventionRuntimeState:
     recovery_grace_remaining: int = 0
     last_intervention: Optional[dict] = None
     history: list[dict] = field(default_factory=list)
+    # V18 dual stall mirrors (activity vs goal convergence)
+    activity_stall_streak: int = 0
+    goal_convergence_stall_streak: int = 0
+    frontier_ignore_streak: int = 0
+    local_optimum: bool = False
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -154,10 +159,83 @@ class KPInterventionPolicy:
             recovery_grace_remaining=runtime.recovery_grace_remaining,
             last_intervention=runtime.last_intervention,
             history=list(runtime.history),
+            activity_stall_streak=int(
+                getattr(assessment, "activity_stall", None)
+                if getattr(assessment, "activity_stall", None) is not None
+                else runtime.activity_stall_streak
+            ),
+            goal_convergence_stall_streak=int(
+                getattr(assessment, "goal_convergence_stall", None)
+                if getattr(assessment, "goal_convergence_stall", None) is not None
+                else runtime.goal_convergence_stall_streak
+            ),
+            frontier_ignore_streak=int(
+                getattr(assessment, "frontier_ignore_streak", None)
+                if getattr(assessment, "frontier_ignore_streak", None) is not None
+                else runtime.frontier_ignore_streak
+            ),
+            local_optimum=bool(
+                getattr(assessment, "local_optimum", False) or runtime.local_optimum
+            ),
         )
+        # Prefer assessment dual-stall fields when provided
+        if hasattr(assessment, "activity_stall"):
+            new_runtime.activity_stall_streak = int(assessment.activity_stall or 0)
+        if hasattr(assessment, "goal_convergence_stall"):
+            new_runtime.goal_convergence_stall_streak = int(assessment.goal_convergence_stall or 0)
+        if hasattr(assessment, "frontier_ignore_streak"):
+            new_runtime.frontier_ignore_streak = int(assessment.frontier_ignore_streak or 0)
+        if hasattr(assessment, "local_optimum"):
+            new_runtime.local_optimum = bool(assessment.local_optimum)
 
-        # De-escalation paths first
-        if assessment.meaningful_progress_this_cycle:
+        gd = bool(getattr(assessment, "goal_directed_progress_this_cycle", False))
+        lateral = bool(getattr(assessment, "lateral_exploration_progress_this_cycle", False))
+        terminal = bool(getattr(assessment, "terminal_progress_this_cycle", False))
+        unresolved = list(assessment.unresolved_leads or [])
+
+        # De-escalation: goal-directed / terminal → full reset (legacy + V18)
+        if gd or terminal:
+            decision = InterventionDecision(
+                s_level=0,
+                name=S_LEVEL_NAMES[0],
+                payload={},
+                deescalated=True,
+                reason="goal_directed_progress",
+            )
+            new_runtime.current_s_level = 0
+            new_runtime.stall_score = 0.0
+            new_runtime.activity_stall_streak = 0
+            new_runtime.goal_convergence_stall_streak = 0
+            new_runtime.local_optimum = False
+            new_runtime.recovery_grace_remaining = 0
+            new_runtime.last_intervention = decision.to_dict()
+            new_runtime.history.append(decision.to_dict())
+            return decision, new_runtime
+
+        # Lateral meaningful progress: ACTIVITY stall relief only; goal stall continues
+        if lateral and unresolved:
+            new_runtime.activity_stall_streak = 0
+            new_runtime.goal_convergence_stall_streak = max(
+                1, int(new_runtime.goal_convergence_stall_streak) + 1
+            )
+            # Soften activity-driven S but do not wipe goal-convergence pressure
+            if new_runtime.current_s_level <= 1 and not new_runtime.local_optimum:
+                new_runtime.current_s_level = 0
+            # Keep a floor on stall_score so goal-convergence can still escalate gently
+            new_runtime.stall_score = max(float(new_runtime.stall_score) * 0.5, 0.5)
+            decision = InterventionDecision(
+                s_level=new_runtime.current_s_level,
+                name=S_LEVEL_NAMES.get(new_runtime.current_s_level, "NONE"),
+                payload=self._build_s1(assessment) if new_runtime.goal_convergence_stall_streak >= 3 else {},
+                deescalated=new_runtime.current_s_level == 0,
+                reason="lateral_progress_activity_reset_goal_stall_continues",
+            )
+            new_runtime.last_intervention = decision.to_dict()
+            new_runtime.history.append(decision.to_dict())
+            return decision, new_runtime
+
+        # Legacy full reset: meaningful with no unresolved goal/lead pressure
+        if assessment.meaningful_progress_this_cycle and not unresolved:
             decision = InterventionDecision(
                 s_level=0,
                 name=S_LEVEL_NAMES[0],
@@ -168,6 +246,27 @@ class KPInterventionPolicy:
             new_runtime.current_s_level = 0
             new_runtime.stall_score = 0.0
             new_runtime.recovery_grace_remaining = 0
+            new_runtime.last_intervention = decision.to_dict()
+            new_runtime.history.append(decision.to_dict())
+            return decision, new_runtime
+
+        # Meaningful without explicit lateral/gd flags but with unresolved leads:
+        # treat as lateral (V18) — do not full-reset goal stall
+        if assessment.meaningful_progress_this_cycle and unresolved and not gd:
+            new_runtime.activity_stall_streak = 0
+            new_runtime.goal_convergence_stall_streak = max(
+                1, int(new_runtime.goal_convergence_stall_streak) + 1
+            )
+            new_runtime.stall_score = max(float(new_runtime.stall_score) * 0.5, 0.5)
+            if new_runtime.current_s_level <= 1:
+                new_runtime.current_s_level = 0
+            decision = InterventionDecision(
+                s_level=new_runtime.current_s_level,
+                name=S_LEVEL_NAMES.get(new_runtime.current_s_level, "NONE"),
+                payload={},
+                deescalated=True,
+                reason="lateral_progress_activity_reset_goal_stall_continues",
+            )
             new_runtime.last_intervention = decision.to_dict()
             new_runtime.history.append(decision.to_dict())
             return decision, new_runtime
@@ -239,6 +338,23 @@ class KPInterventionPolicy:
         if assessment.intervention_necessary and level < assessment.least_intrusive_level:
             level = assessment.least_intrusive_level
 
+        # V18: never jump to S4 solely from goal_convergence_stall / local_optimum.
+        # Soft ladder: S1 self-review → S2 lead reminder → S3 frontier persistence nudge → S4 set recovery.
+        if new_runtime.local_optimum and level >= 4:
+            level = max(1, min(level, 2))
+        if (
+            int(new_runtime.goal_convergence_stall_streak) > 0
+            and not assessment.merely_repeating
+            and level >= 4
+            and int(new_runtime.activity_stall_streak) < 3
+        ):
+            # Goal stall alone → cap at S3 persistence nudge (not direct solution S4)
+            level = min(level, 3)
+        if int(new_runtime.frontier_ignore_streak) >= 3 and level < 2:
+            level = max(level, 1)
+            if int(new_runtime.frontier_ignore_streak) >= 5:
+                level = max(level, 2)
+
         payload: dict = {}
         if level == 1:
             payload = self._build_s1(assessment)
@@ -246,6 +362,9 @@ class KPInterventionPolicy:
             payload = self._build_s2(assessment)
         elif level == 3:
             payload = self._build_s3(assessment, frontier_set)
+            payload["mode"] = payload.get("mode") or "FRONTIER_PERSISTENCE_NUDGE"
+            payload["forbid_correct_action_name"] = True
+            payload["mandatory_top_frontier"] = False
         elif level == 4:
             payload = self._build_s4(assessment, frontier_set, restore_location=restore_location)
             # After S4 decision, prepare grace for next cycles
