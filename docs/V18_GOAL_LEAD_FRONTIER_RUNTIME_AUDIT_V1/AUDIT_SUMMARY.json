@@ -1,0 +1,354 @@
+{
+  "TASK_ID": "V18_GOAL_LEAD_FRONTIER_RUNTIME_AUDIT_V1",
+  "generated_at": "2026-10-24T10:14:29.078384+00:00",
+  "historical_integrity": {
+    "RAW_FILE_COUNT": 862,
+    "RAW_SHA256": "796150da1389a10fdd5bcfa7d0a4fcd131c7326f5354ae6c7dcdb6eebb7ff241",
+    "EXPECTED_COUNT": 862,
+    "EXPECTED_SHA256": "796150da1389a10fdd5bcfa7d0a4fcd131c7326f5354ae6c7dcdb6eebb7ff241",
+    "MATCH": true,
+    "algorithm": "sha256(path\\0file_sha256\\n, UTF-8, sorted POSIX) — same as V18_RAW_FREEZE_MANIFEST / _v18_rehash"
+  },
+  "result_summary": {
+    "completed": false,
+    "cycles": 60,
+    "turns": 117,
+    "location": "corbitt_ground_floor",
+    "corbitt_house_entered": true,
+    "in_basement": false,
+    "basement_planks_examined": false,
+    "basement_planks_broken": false,
+    "corbitt_defeated": false
+  },
+  "house_enter_cycle_heuristic": 9,
+  "ndm_commit_count_telemetry": 173,
+  "ACTION_SELECTED_raw_count": 173,
+  "ACTION_SELECTED_unique_count": 173,
+  "binding_totals": {
+    "DECISIONS_WITH_GOAL_ID": 0,
+    "DECISIONS_WITH_LEAD_ID": 0,
+    "DECISIONS_WITH_FRONTIER_ID": 0,
+    "DECISIONS_WITH_EXPECTED_EFFECT": 0,
+    "DECISIONS_WITH_OBSERVED_EFFECT": 0,
+    "binding_class_counts": {
+      "MULTIPLE_MISSING_LINKS": 173
+    }
+  },
+  "population_cycle60": {
+    "cycle": 60,
+    "checkpoint": "cycle_000060",
+    "location": "corbitt_ground_floor",
+    "prog_goal_count": 1,
+    "prog_goal_ids": "default_goal",
+    "prog_frontier_count": 0,
+    "prog_frontier_active": 0,
+    "prog_frontier_deferred": 0,
+    "dual_stall_class": "LOCAL_OPTIMUM",
+    "goal_stall": 173,
+    "activity_stall": 0,
+    "ndm_commits": 173,
+    "gd_count": 0,
+    "lat_count": 172,
+    "mp_count": 172,
+    "director_goal_id": "",
+    "director_goal_keys": "blocked_candidate_actions|blocked_requirements|candidate_next_actions|completed_requirements|current_goal|remaining_requirements|subgoals|terminal_event_id",
+    "candidate_next_actions_count": 3,
+    "progress_events_buf": 64,
+    "natural_decision_frontier_set": "",
+    "related_store_keys": "goal|goal_before",
+    "corbitt_house_entered_flag": "NOT_IN_STATE",
+    "in_basement_flag": "NOT_IN_STATE"
+  },
+  "population_nonzero_frontier_cycles": 0,
+  "population_nonzero_goal_cycles": 59,
+  "progress_event_classes_last_buffer": {
+    "MEANINGFUL_PROGRESS": 64,
+    "LATERAL_EXPLORATION_PROGRESS": 64
+  },
+  "classifier_reeval_empty_context": {
+    "meaningful_progress": true,
+    "goal_directed_progress": false,
+    "lateral_exploration_progress": true,
+    "terminal_progress": false
+  },
+  "static_callers": {
+    "leads.upsert": [
+      {
+        "file": "core/src/test_natural_decision_controlled_compare.py",
+        "line": 93
+      },
+      {
+        "file": "core/src/test_natural_decision_model_v1.py",
+        "line": 72
+      },
+      {
+        "file": "core/src/test_natural_decision_model_v1.py",
+        "line": 81
+      },
+      {
+        "file": "core/src/test_natural_decision_model_v1.py",
+        "line": 149
+      },
+      {
+        "file": "core/src/test_natural_decision_model_v1.py",
+        "line": 421
+      },
+      {
+        "file": "core/src/test_natural_decision_model_v1.py",
+        "line": 429
+      }
+    ],
+    "upsert_frontier": [
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 157
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 181
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 201
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 229
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 302
+      },
+      {
+        "file": "core/src/reasoning/frontier_persistence.py",
+        "line": 114
+      }
+    ],
+    "tick_progression_cycle": [
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 316
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 339
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 364
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 403
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 409
+      },
+      {
+        "file": "core/src/reasoning/progression_convergence.py",
+        "line": 155
+      },
+      {
+        "file": "core/src/reasoning/runtime.py",
+        "line": 395
+      }
+    ],
+    "ensure_progression_runtime": [
+      {
+        "file": "core/src/reasoning/progression_convergence.py",
+        "line": 137
+      },
+      {
+        "file": "core/src/reasoning/runtime.py",
+        "line": 394
+      }
+    ],
+    "GoalConvergenceTracker": [
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 26
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 29
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 119
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 121
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 147
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 148
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 149
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 150
+      },
+      {
+        "file": "core/src/reasoning/goal_convergence.py",
+        "line": 29
+      },
+      {
+        "file": "core/src/reasoning/goal_convergence.py",
+        "line": 73
+      },
+      {
+        "file": "core/src/reasoning/goal_convergence.py",
+        "line": 74
+      },
+      {
+        "file": "core/src/reasoning/goal_convergence.py",
+        "line": 138
+      },
+      {
+        "file": "core/src/reasoning/progression_convergence.py",
+        "line": 20
+      },
+      {
+        "file": "core/src/reasoning/progression_convergence.py",
+        "line": 24
+      },
+      {
+        "file": "core/src/reasoning/progression_convergence.py",
+        "line": 66
+      },
+      {
+        "file": "core/src/reasoning/progression_convergence.py",
+        "line": 66
+      },
+      {
+        "file": "core/src/reasoning/progression_convergence.py",
+        "line": 105
+      },
+      {
+        "file": "core/src/reasoning/progression_convergence.py",
+        "line": 220
+      }
+    ],
+    "defer_frontier": [
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 167
+      },
+      {
+        "file": "core/src/test_v18_progression_convergence.py",
+        "line": 333
+      },
+      {
+        "file": "core/src/reasoning/frontier_persistence.py",
+        "line": 122
+      }
+    ],
+    "emit_progress_from_director_delta": [
+      {
+        "file": "core/src/ProgressDirectorV2.py",
+        "line": 820
+      },
+      {
+        "file": "core/src/test_v17_runtime_schema_and_fallback.py",
+        "line": 149
+      },
+      {
+        "file": "core/src/reasoning/progress_events.py",
+        "line": 102
+      }
+    ],
+    "enrich_pc_action_with_ndm": [
+      {
+        "file": "core/src/main.py",
+        "line": 14932
+      },
+      {
+        "file": "core/src/ndm_integration.py",
+        "line": 51
+      },
+      {
+        "file": "core/src/test_v16_ndm_causal_and_combat.py",
+        "line": 92
+      }
+    ]
+  },
+  "production_upsert_frontier_call_sites": [],
+  "production_lead_upsert_call_sites": [],
+  "prior_axis_extraction_progression": {
+    "dual_stall": {
+      "activity_stall_streak": 0,
+      "goal_convergence_stall_streak": 173,
+      "last_goal_directed_progress_cycle": null,
+      "last_meaningful_progress_cycle": null,
+      "max_activity_stall_streak": 1,
+      "max_goal_convergence_stall_streak": 173,
+      "stall_class": "LOCAL_OPTIMUM"
+    },
+    "metrics_rates": {
+      "FRONTIER_SWITCH_RATE": 0.6647398843930635,
+      "GOAL_DIRECTED_PROGRESS_RATE": 0.0,
+      "GOAL_RELEVANT_ACTION_RATE": 0.0,
+      "LATERAL_EXPLORATION_PROGRESS_RATE": 0.9942196531791907,
+      "LOCATION_REVISIT_RATE": 0.8081395348837209,
+      "MEANINGFUL_PROGRESS_RATE": 0.9942196531791907
+    },
+    "PROGRESSION_LOCAL_OPTIMUM_COUNT": 1,
+    "FRONTIER_PERSISTENCE": 0,
+    "MAX_GOAL_DIRECTED_NO_PROGRESS_STREAK": 173,
+    "CRITICAL_FRONTIER_IGNORE_RATE": 0.0,
+    "CRITICAL_FRONTIER_SILENT_DROP_COUNT": 0,
+    "hidden_solution_signal": 0,
+    "corbitt_specific_force_path": 0,
+    "mandatory_top_frontier_selection": false,
+    "last_trace_breaks": [],
+    "MEANINGFUL_PROGRESS_INFLATION": true,
+    "LATERAL_PROGRESS_GOAL_STALL_RESET_COUNT": 0,
+    "basement_audit": {
+      "basement_accessible": false,
+      "basement_door_unlocked": false,
+      "in_basement": false,
+      "basement_planks_examined": false,
+      "basement_planks_broken": false,
+      "frontier_store_count": 0,
+      "deferred_frontiers": 0,
+      "return_pressure": 2.0,
+      "critical_frontier_silent_drop_count": 0
+    },
+    "V17_COMPARE": {
+      "GOAL_DIRECTED_PROGRESS_RATE_V17": 0.1,
+      "GOAL_DIRECTED_PROGRESS_RATE_V18": 0.0,
+      "LATERAL_V17": 0.7,
+      "LATERAL_V18": 0.9942196531791907,
+      "MAX_GD_STREAK_V17": 35,
+      "MAX_GD_STREAK_V18": 173,
+      "FRONTIER_SWITCH_V17": 0.7627,
+      "FRONTIER_SWITCH_V18": 0.6647398843930635,
+      "PERSISTENCE_V17": 1.3043,
+      "PERSISTENCE_V18": 0,
+      "REVISIT_V17": 0.7619,
+      "REVISIT_V18": 0.8081395348837209
+    }
+  },
+  "prior_counters": {
+    "NATURAL_DECISION_RUNTIME_ACTIVE": true,
+    "NDM_DECISION_COMMIT_COUNT": 173,
+    "SAFE_LEGACY_DECISION_COMMIT_COUNT": 0,
+    "UNSAFE_LEGACY_DECISION_COMMIT_COUNT": 0,
+    "REASONING_FALLBACK_COUNT": 0,
+    "NDM_DECISION_CAUSAL_COVERAGE": 1.0,
+    "RECENT_ACTION_SCHEMA_MISMATCH_COUNT": 0,
+    "LIST_GET_ATTRIBUTE_ERROR_COUNT": 0,
+    "RUNTIME_CONTRACT_VIOLATION_COUNT": 0,
+    "SAFE_FALLBACK_FAILURE_COUNT": 0,
+    "SAFE_FALLBACK_RECURSION_COUNT": 0
+  }
+}
