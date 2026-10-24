@@ -38,24 +38,50 @@ def make_progress_event(
     turn: Any = None,
     goal_id: str = "",
     lead_id: str = "",
+    frontier_id: str = "",
     source_event_id: str = "",
     progress_class: str = "MEANINGFUL",
+    progress_classes: Sequence[str] | None = None,
+    goal_ids: Sequence[str] | None = None,
+    lead_ids: Sequence[str] | None = None,
+    frontier_ids: Sequence[str] | None = None,
+    source_event_ids: Sequence[str] | None = None,
+    observed_state_effect: Mapping[str, Any] | None = None,
+    expected_state_effect: Mapping[str, Any] | None = None,
 ) -> dict:
     ptype = str(progress_type or "").upper()
     if ptype not in PROGRESS_TYPES:
         ptype = "OBJECTIVE_ADVANCEMENT"
+    gids = [str(x) for x in (goal_ids or [])]
+    if goal_id:
+        gids.append(str(goal_id))
+    lids = [str(x) for x in (lead_ids or [])]
+    if lead_id:
+        lids.append(str(lead_id))
+    fids = [str(x) for x in (frontier_ids or [])]
+    if frontier_id:
+        fids.append(str(frontier_id))
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "progress_event_id": f"pev_{uuid.uuid4().hex[:12]}",
         "progress_type": ptype,
         "progress_class": progress_class,
+        "progress_classes": list(progress_classes or ([progress_class] if progress_class else [])),
+        "progress_types": [ptype],
         "kind": TYPE_TO_KIND.get(ptype, "objective_advancement"),
         "source_event_id": source_event_id or None,
+        "source_event_ids": list(source_event_ids or ([source_event_id] if source_event_id else [])),
         "actor_id": str(actor_id or ""),
         "cycle": cycle,
         "turn": turn,
-        "goal_id": goal_id or None,
-        "lead_id": lead_id or None,
+        "goal_id": goal_id or (gids[0] if gids else None),
+        "lead_id": lead_id or (lids[0] if lids else None),
+        "frontier_id": frontier_id or (fids[0] if fids else None),
+        "goal_ids": gids,
+        "lead_ids": lids,
+        "frontier_ids": fids,
+        "observed_state_effect": dict(observed_state_effect) if observed_state_effect else None,
+        "expected_state_effect": dict(expected_state_effect) if expected_state_effect else None,
     }
 
 

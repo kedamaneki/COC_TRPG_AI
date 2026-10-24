@@ -88,7 +88,17 @@ class NDMTelemetry:
     lead_abandon_count: int = 0
     self_recovery_count: int = 0
     meaningful_progress_count: int = 0
+    goal_directed_progress_count: int = 0
+    lateral_exploration_progress_count: int = 0
     progress_event_count: int = 0
+    progression_local_optimum_count: int = 0
+    max_goal_directed_no_progress_streak: int = 0
+    frontier_switch_count: int = 0
+    location_revisit_count: int = 0
+    location_visit_count: int = 0
+    frontier_persistence_count: int = 0
+    critical_frontier_ignore_count: int = 0
+    goal_relevant_action_count: int = 0
     total_autonomous_commits: int = 0
     ndm_decision_causal_coverage: float = 0.0
     recent_action_schema_version: int = RECENT_ACTION_SCHEMA_VERSION
@@ -105,11 +115,21 @@ class NDMTelemetry:
 
     def rates(self) -> dict:
         turns = max(1, int(self.total_autonomous_commits) or int(self.pl_reasoning_event_count) or 1)
+        visits = max(1, int(self.location_visit_count) or turns)
         return {
             "UNEXPLAINED_ACTION_RATE": float(self.unexplained_action_count) / turns,
             "UNRESOLVED_LEAD_ABANDON_RATE": float(self.lead_abandon_count) / turns,
             "SELF_RECOVERY_RATE": float(self.self_recovery_count) / turns,
             "MEANINGFUL_PROGRESS_RATE": float(self.meaningful_progress_count) / turns,
+            "GOAL_DIRECTED_PROGRESS_RATE": float(self.goal_directed_progress_count) / turns,
+            "LATERAL_EXPLORATION_PROGRESS_RATE": float(self.lateral_exploration_progress_count) / turns,
+            "MAX_GOAL_DIRECTED_NO_PROGRESS_STREAK": int(self.max_goal_directed_no_progress_streak),
+            "FRONTIER_SWITCH_RATE": float(self.frontier_switch_count) / turns,
+            "FRONTIER_PERSISTENCE": int(self.frontier_persistence_count),
+            "CRITICAL_FRONTIER_IGNORE_RATE": float(self.critical_frontier_ignore_count) / turns,
+            "LOCATION_REVISIT_RATE": float(self.location_revisit_count) / visits,
+            "GOAL_RELEVANT_ACTION_RATE": float(self.goal_relevant_action_count) / turns,
+            "PROGRESSION_LOCAL_OPTIMUM_COUNT": int(self.progression_local_optimum_count),
             "NDM_DECISION_CAUSAL_COVERAGE": self.recompute_coverage(),
             "SAFE_FALLBACK_RATE": float(self.SAFE_LEGACY_DECISION_COMMIT_COUNT) / turns,
             "NDM_DECISION_COMMIT_COUNT": self.NDM_DECISION_COMMIT_COUNT,
@@ -365,6 +385,27 @@ class NaturalDecisionRuntime:
                 "decision_transaction_id": decision_transaction_id,
             })
 
+            # V18 progression convergence tick (additive; historical Raw untouched)
+            from .progression_convergence import (
+                ensure_progression_runtime,
+                persist_progression_runtime,
+                tick_progression_cycle,
+            )
+            prog = ensure_progression_runtime(state)
+            prog_summary = tick_progression_cycle(
+                prog,
+                progress_events=progress_events,
+                visible_goal_ids=list(st.high_value_leads or []),
+                unresolved_lead_ids=list(st.high_value_leads or []),
+                known_frontier_ids=list(st.high_value_leads or []),
+                cycle=None,
+                location=str(selected.get("location") or selected.get("target") or ""),
+                selected_frontier_id=str(selected.get("frontier_id") or selected.get("target") or ""),
+                goal_relevant_action=_action_goal_relevant(selected, st.high_value_leads or []),
+            )
+            persist_progression_runtime(state, prog)
+            self._sync_progression_telemetry(prog)
+
             # KP assessment + S-level
             assessment = assess_party_progress(
                 unresolved_leads=list(st.high_value_leads or []),
@@ -372,6 +413,10 @@ class NaturalDecisionRuntime:
                 recent_actions=recent_actions,
                 progress_events=progress_events,
                 current_hint_level=self.intervention_runtime.current_s_level,
+                activity_stall=int(prog.dual_stall.activity_stall_streak),
+                goal_convergence_stall=int(prog.dual_stall.goal_convergence_stall_streak),
+                local_optimum=bool(prog_summary.get("local_optimum")),
+                frontier_ignore_streak=int(prog.frontiers.frontier_ignore_streak),
             )
             self.telemetry.kp_progress_assessment_count += 1
             assessment_id = f"kpa_{uuid.uuid4().hex[:10]}"
@@ -383,6 +428,10 @@ class NaturalDecisionRuntime:
             })
             if assessment.meaningful_progress_this_cycle:
                 self.telemetry.meaningful_progress_count += 1
+            if assessment.goal_directed_progress_this_cycle:
+                self.telemetry.goal_directed_progress_count += 1
+            if assessment.lateral_exploration_progress_this_cycle:
+                self.telemetry.lateral_exploration_progress_count += 1
             if assessment.testing_valid_hypothesis or assessment.exploring_valid_alternative:
                 self.telemetry.self_recovery_count += 1
 
@@ -469,6 +518,26 @@ class NaturalDecisionRuntime:
                 failure_class=classified.error_class,
                 recent_actions=recent_canon,
             )
+
+    def _sync_progression_telemetry(self, prog) -> None:
+        """Mirror V18 progression_convergence counters into NDMTelemetry."""
+        self.telemetry.max_goal_directed_no_progress_streak = max(
+            int(self.telemetry.max_goal_directed_no_progress_streak),
+            int(prog.dual_stall.max_goal_convergence_stall_streak),
+        )
+        self.telemetry.progression_local_optimum_count = int(
+            prog.goals.progression_local_optimum_count
+        )
+        self.telemetry.frontier_switch_count = int(prog.metrics.frontier_switch_count)
+        self.telemetry.location_revisit_count = int(prog.metrics.location_revisit_count)
+        self.telemetry.location_visit_count = int(prog.metrics.location_visit_count)
+        self.telemetry.frontier_persistence_count = len(
+            [f for f in prog.frontiers.frontiers.values() if f.status in ("ACTIVE", "DEFERRED")]
+        )
+        self.telemetry.critical_frontier_ignore_count = int(
+            prog.frontiers.critical_frontier_ignore_count
+        )
+        self.telemetry.goal_relevant_action_count = int(prog.metrics.goal_relevant_action_count)
 
     def _match_candidate_id(self, selected: Mapping[str, Any], candidates: Sequence[Mapping[str, Any]]) -> str:
         sa = str(selected.get("action") or "")
@@ -669,6 +738,14 @@ class NaturalDecisionRuntime:
         snap = self.telemetry.to_dict()
         snap["rates"] = self.telemetry.rates()
         return snap
+
+
+def _action_goal_relevant(selected: Mapping[str, Any], leads: Sequence[str]) -> bool:
+    blob = " ".join(
+        str(selected.get(k) or "")
+        for k in ("target", "frontier_id", "lead_id", "goal_id", "action", "reason")
+    )
+    return any(str(lead) and str(lead) in blob for lead in (leads or []))
 
 
 # Process-global for evaluation runner / smoke (tests may replace)
